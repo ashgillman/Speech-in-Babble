@@ -1,0 +1,62 @@
+{
+	"name": "Speech Enhancement Classification",
+	"children": [
+		{
+			"name": "Noise Source",
+			"children": [
+				{"name": "Stationary/Non-stationary"},
+				{"name": "Steady-state/Time-varying"},
+				{"name": "Spectral characteristics"},
+				{"name": "Signal-to-Noise Ratio"}
+			]
+		},
+		{
+			"name": "No. Channels",
+			"children": [
+				{
+					"name": "Monaural",
+					"desc": "Use a single microphone. Most difficult."
+				},
+				{
+					"name": "Binaural",
+					"desc": "Use two microphones, replicating human hearing."
+				},
+				{
+					"name": "Array",
+					"desc": "Use a microphone array, giving maximum spacial context."
+				}
+			]
+		},
+		{
+			"name": "Method",
+			"children": [
+				{
+					"name": "Spectral Subtraction",
+					"desc": "Simplest to implement. Noise is estimated and subtracted in the frequency domain."
+				},
+				{
+					"name": "Statistical Models",
+					"desc": "Uses statistical models to evaluate maximum-likelihood estimation of speech.",
+					"children": [
+						{"name": "Weiner Algorithm"},
+						{"name": "Minimum Mean Square Error Algorithms"}
+					]
+				},
+				{
+					"name": "Subspace Analysis",
+					"desc": "Reduce the dimensionality and analyse lower dimension features to estimate speech.",
+					"children": [
+						{"name": "Principal Component Analysis"},
+						{"name": "Non-negative Matrix Factorisation"},
+						{"name": "Vector Quantisation"},
+						{"name": "etc..."}
+					]
+				},
+				{
+					"name": "Binary Masking",
+					"desc": "The spectral components are estimated as 'speech' or 'non-speech'."
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		5E7280F718DD23DC004EEEE8 /* .directory */ = {isa = PBXFileReference; lastKnownFileType = text; path = .directory; sourceTree = "<group>"; };
+		5E7280F818DD23DC004EEEE8 /* ChangeLog */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
+		5E7280F918DD23DC004EEEE8 /* ChangeLog.CUHTK */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChangeLog.CUHTK; sourceTree = "<group>"; };
+		5E7280FA18DD23DC004EEEE8 /* esig_asc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = esig_asc.c; sourceTree = "<group>"; };
+		5E7280FB18DD23DC004EEEE8 /* esig_edr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = esig_edr.c; sourceTree = "<group>"; };
+		5E7280FC18DD23DC004EEEE8 /* esig_nat.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = esig_nat.c; sourceTree = "<group>"; };
+		5E7280FD18DD23DC004EEEE8 /* esignal.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = esignal.c; sourceTree = "<group>"; };
+		5E7280FE18DD23DC004EEEE8 /* esignal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = esignal.h; sourceTree = "<group>"; };
+		5E7280FF18DD23DC004EEEE8 /* HAdapt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HAdapt.c; sourceTree = "<group>"; };
+		5E72810018DD23DC004EEEE8 /* HAdapt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAdapt.h; sourceTree = "<group>"; };
+		5E72810118DD23DC004EEEE8 /* HArc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HArc.c; sourceTree = "<group>"; };
+		5E72810218DD23DC004EEEE8 /* HArc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HArc.h; sourceTree = "<group>"; };
+		5E72810318DD23DC004EEEE8 /* HAudio.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HAudio.c; sourceTree = "<group>"; };
+		5E72810418DD23DC004EEEE8 /* HAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAudio.h; sourceTree = "<group>"; };
+		5E72810518DD23DC004EEEE8 /* HDict.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HDict.c; sourceTree = "<group>"; };
+		5E72810618DD23DC004EEEE8 /* HDict.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDict.h; sourceTree = "<group>"; };
+		5E72810718DD23DC004EEEE8 /* HExactMPE.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HExactMPE.c; sourceTree = "<group>"; };
+		5E72810818DD23DC004EEEE8 /* HExactMPE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HExactMPE.h; sourceTree = "<group>"; };
+		5E72810918DD23DC004EEEE8 /* HFB.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HFB.c; sourceTree = "<group>"; };
+		5E72810A18DD23DC004EEEE8 /* HFB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFB.h; sourceTree = "<group>"; };
+		5E72810B18DD23DC004EEEE8 /* HFBLat.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HFBLat.c; sourceTree = "<group>"; };
+		5E72810C18DD23DC004EEEE8 /* HFBLat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFBLat.h; sourceTree = "<group>"; };
+		5E72810D18DD23DC004EEEE8 /* HGraf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HGraf.c; sourceTree = "<group>"; };
+		5E72810E18DD23DC004EEEE8 /* HGraf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HGraf.h; sourceTree = "<group>"; };
+		5E72810F18DD23DC004EEEE8 /* HGraf.null.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HGraf.null.c; sourceTree = "<group>"; };
+		5E72811018DD23DC004EEEE8 /* HGraf_WIN32.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HGraf_WIN32.c; sourceTree = "<group>"; };
+		5E72811118DD23DC004EEEE8 /* HLabel.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HLabel.c; sourceTree = "<group>"; };
+		5E72811218DD23DC004EEEE8 /* HLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLabel.h; sourceTree = "<group>"; };
+		5E72811318DD23DC004EEEE8 /* HLat.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HLat.c; sourceTree = "<group>"; };
+		5E72811418DD23DC004EEEE8 /* HLat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLat.h; sourceTree = "<group>"; };
+		5E72811518DD23DC004EEEE8 /* HLM.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HLM.c; sourceTree = "<group>"; };
+		5E72811618DD23DC004EEEE8 /* HLM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLM.h; sourceTree = "<group>"; };
+		5E72811718DD23DC004EEEE8 /* HMap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HMap.c; sourceTree = "<group>"; };
+		5E72811818DD23DC004EEEE8 /* HMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMap.h; sourceTree = "<group>"; };
+		5E72811918DD23DC004EEEE8 /* HMath.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HMath.c; sourceTree = "<group>"; };
+		5E72811A18DD23DC004EEEE8 /* HMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMath.h; sourceTree = "<group>"; };
+		5E72811B18DD23DC004EEEE8 /* HMem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HMem.c; sourceTree = "<group>"; };
+		5E72811C18DD23DC004EEEE8 /* HMem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMem.h; sourceTree = "<group>"; };
+		5E72811D18DD23DC004EEEE8 /* HModel.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HModel.c; sourceTree = "<group>"; };
+		5E72811E18DD23DC004EEEE8 /* HModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HModel.h; sourceTree = "<group>"; };
+		5E72811F18DD23DC004EEEE8 /* HNet.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HNet.c; sourceTree = "<group>"; };
+		5E72812018DD23DC004EEEE8 /* HNet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HNet.h; sourceTree = "<group>"; };
+		5E72812118DD23DC004EEEE8 /* HParm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HParm.c; sourceTree = "<group>"; };
+		5E72812218DD23DC004EEEE8 /* HParm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HParm.h; sourceTree = "<group>"; };
+		5E72812318DD23DC004EEEE8 /* HRec.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HRec.c; sourceTree = "<group>"; };
+		5E72812418DD23DC004EEEE8 /* HRec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRec.h; sourceTree = "<group>"; };
+		5E72812518DD23DC004EEEE8 /* HShell.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HShell.c; sourceTree = "<group>"; };
+		5E72812618DD23DC004EEEE8 /* HShell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HShell.h; sourceTree = "<group>"; };
+		5E72812718DD23DC004EEEE8 /* HSigP.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HSigP.c; sourceTree = "<group>"; };
+		5E72812818DD23DC004EEEE8 /* HSigP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSigP.h; sourceTree = "<group>"; };
+		5E72812918DD23DC004EEEE8 /* htk_htklib_nt.mkf */ = {isa = PBXFileReference; lastKnownFileType = text; path = htk_htklib_nt.mkf; sourceTree = "<group>"; };
+		5E72812A18DD23DC004EEEE8 /* HTrain.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HTrain.c; sourceTree = "<group>"; };
+		5E72812B18DD23DC004EEEE8 /* HTrain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTrain.h; sourceTree = "<group>"; };
+		5E72812C18DD23DC004EEEE8 /* HUtil.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HUtil.c; sourceTree = "<group>"; };
+		5E72812D18DD23DC004EEEE8 /* HUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUtil.h; sourceTree = "<group>"; };
+		5E72812E18DD23DC004EEEE8 /* HVQ.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HVQ.c; sourceTree = "<group>"; };
+		5E72812F18DD23DC004EEEE8 /* HVQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HVQ.h; sourceTree = "<group>"; };
+		5E72813018DD23DC004EEEE8 /* HWave.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HWave.c; sourceTree = "<group>"; };
+		5E72813118DD23DC004EEEE8 /* HWave.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWave.h; sourceTree = "<group>"; };
+		5E72813218DD23DC004EEEE8 /* i686.cpu */ = {isa = PBXFileReference; lastKnownFileType = text; path = i686.cpu; sourceTree = "<group>"; };
+		5E72813318DD23DC004EEEE8 /* Makefile.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		5E72813418DD23DC004EEEE8 /* strarr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = strarr.c; sourceTree = "<group>"; };
+		5E72813518DD23DC004EEEE8 /* strarr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strarr.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		5E7280F118DD23DC004EEEE8 = {
+			isa = PBXGroup;
+			children = (
+				5E7280F718DD23DC004EEEE8 /* .directory */,
+				5E7280F818DD23DC004EEEE8 /* ChangeLog */,
+				5E7280F918DD23DC004EEEE8 /* ChangeLog.CUHTK */,
+				5E7280FA18DD23DC004EEEE8 /* esig_asc.c */,
+				5E7280FB18DD23DC004EEEE8 /* esig_edr.c */,
+				5E7280FC18DD23DC004EEEE8 /* esig_nat.c */,
+				5E7280FD18DD23DC004EEEE8 /* esignal.c */,
+				5E7280FE18DD23DC004EEEE8 /* esignal.h */,
+				5E7280FF18DD23DC004EEEE8 /* HAdapt.c */,
+				5E72810018DD23DC004EEEE8 /* HAdapt.h */,
+				5E72810118DD23DC004EEEE8 /* HArc.c */,
+				5E72810218DD23DC004EEEE8 /* HArc.h */,
+				5E72810318DD23DC004EEEE8 /* HAudio.c */,
+				5E72810418DD23DC004EEEE8 /* HAudio.h */,
+				5E72810518DD23DC004EEEE8 /* HDict.c */,
+				5E72810618DD23DC004EEEE8 /* HDict.h */,
+				5E72810718DD23DC004EEEE8 /* HExactMPE.c */,
+				5E72810818DD23DC004EEEE8 /* HExactMPE.h */,
+				5E72810918DD23DC004EEEE8 /* HFB.c */,
+				5E72810A18DD23DC004EEEE8 /* HFB.h */,
+				5E72810B18DD23DC004EEEE8 /* HFBLat.c */,
+				5E72810C18DD23DC004EEEE8 /* HFBLat.h */,
+				5E72810D18DD23DC004EEEE8 /* HGraf.c */,
+				5E72810E18DD23DC004EEEE8 /* HGraf.h */,
+				5E72810F18DD23DC004EEEE8 /* HGraf.null.c */,
+				5E72811018DD23DC004EEEE8 /* HGraf_WIN32.c */,
+				5E72811118DD23DC004EEEE8 /* HLabel.c */,
+				5E72811218DD23DC004EEEE8 /* HLabel.h */,
+				5E72811318DD23DC004EEEE8 /* HLat.c */,
+				5E72811418DD23DC004EEEE8 /* HLat.h */,
+				5E72811518DD23DC004EEEE8 /* HLM.c */,
+				5E72811618DD23DC004EEEE8 /* HLM.h */,
+				5E72811718DD23DC004EEEE8 /* HMap.c */,
+				5E72811818DD23DC004EEEE8 /* HMap.h */,
+				5E72811918DD23DC004EEEE8 /* HMath.c */,
+				5E72811A18DD23DC004EEEE8 /* HMath.h */,
+				5E72811B18DD23DC004EEEE8 /* HMem.c */,
+				5E72811C18DD23DC004EEEE8 /* HMem.h */,
+				5E72811D18DD23DC004EEEE8 /* HModel.c */,
+				5E72811E18DD23DC004EEEE8 /* HModel.h */,
+				5E72811F18DD23DC004EEEE8 /* HNet.c */,
+				5E72812018DD23DC004EEEE8 /* HNet.h */,
+				5E72812118DD23DC004EEEE8 /* HParm.c */,
+				5E72812218DD23DC004EEEE8 /* HParm.h */,
+				5E72812318DD23DC004EEEE8 /* HRec.c */,
+				5E72812418DD23DC004EEEE8 /* HRec.h */,
+				5E72812518DD23DC004EEEE8 /* HShell.c */,
+				5E72812618DD23DC004EEEE8 /* HShell.h */,
+				5E72812718DD23DC004EEEE8 /* HSigP.c */,
+				5E72812818DD23DC004EEEE8 /* HSigP.h */,
+				5E72812918DD23DC004EEEE8 /* htk_htklib_nt.mkf */,
+				5E72812A18DD23DC004EEEE8 /* HTrain.c */,
+				5E72812B18DD23DC004EEEE8 /* HTrain.h */,
+				5E72812C18DD23DC004EEEE8 /* HUtil.c */,
+				5E72812D18DD23DC004EEEE8 /* HUtil.h */,
+				5E72812E18DD23DC004EEEE8 /* HVQ.c */,
+				5E72812F18DD23DC004EEEE8 /* HVQ.h */,
+				5E72813018DD23DC004EEEE8 /* HWave.c */,
+				5E72813118DD23DC004EEEE8 /* HWave.h */,
+				5E72813218DD23DC004EEEE8 /* i686.cpu */,
+				5E72813318DD23DC004EEEE8 /* Makefile.in */,
+				5E72813418DD23DC004EEEE8 /* strarr.c */,
+				5E72813518DD23DC004EEEE8 /* strarr.h */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		5E7280F618DD23DC004EEEE8 /* HTKLib */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 5E72813618DD23DC004EEEE8 /* Build configuration list for PBXLegacyTarget "HTKLib" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/Ash/Dropbox/Uni/2014/Thesis/Code/htk/HTKLib;
+			dependencies = (
+			);
+			name = HTKLib;
+			passBuildSettingsInEnvironment = 1;
+			productName = HTKLib;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		5E7280F218DD23DC004EEEE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 5E7280F518DD23DC004EEEE8 /* Build configuration list for PBXProject "HTKLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5E7280F118DD23DC004EEEE8;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E7280F618DD23DC004EEEE8 /* HTKLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		5E7280F318DD23DC004EEEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		5E7280F418DD23DC004EEEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		5E72813718DD23DC004EEEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = HTKLib;
+			};
+			name = Debug;
+		};
+		5E72813818DD23DC004EEEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = HTKLib;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E7280F518DD23DC004EEEE8 /* Build configuration list for PBXProject "HTKLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E7280F318DD23DC004EEEE8 /* Debug */,
+				5E7280F418DD23DC004EEEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E72813618DD23DC004EEEE8 /* Build configuration list for PBXLegacyTarget "HTKLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E72813718DD23DC004EEEE8 /* Debug */,
+				5E72813818DD23DC004EEEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E7280F218DD23DC004EEEE8 /* Project object */;
+}

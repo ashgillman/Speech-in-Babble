@@ -1,0 +1,30 @@
+{
+	"name": ["from Babble", "Separating Speech"],
+	"children": [
+		{
+			"name": ["Spatial Differences"],
+			"desc": "Differing directions",
+			"value": 1
+		},
+		{
+			"name": ["Visual Cues"],
+			"desc": "Lip reading, gestures",
+			"value": 2
+		},
+		{
+			"name": ["Differences in Voices"],
+			"desc": "Pitch, speed, gender",
+			"value": 3
+		},
+		{
+			"name": ["pronunciation", "Differences in"],
+			"desc": "Accents",
+			"value": 4
+		},
+		{
+			"name": ["and Context", "Transitional Probabilities"],
+			"desc": "Subject matter, grammatical syntax",
+			"value": 5
+		}
+	]
+}

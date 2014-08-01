@@ -1,0 +1,196 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		5E7280CF18DD23DC004EEEE8 /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = .DS_Store; sourceTree = "<group>"; };
+		5E7280D018DD23DC004EEEE8 /* adapt.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = adapt.tex; sourceTree = "<group>"; };
+		5E7280D118DD23DC004EEEE8 /* ChangeLog */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
+		5E7280D218DD23DC004EEEE8 /* ChangeLog.CUHTK */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChangeLog.CUHTK; sourceTree = "<group>"; };
+		5E7280D318DD23DC004EEEE8 /* config.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.tex; sourceTree = "<group>"; };
+		5E7280D418DD23DC004EEEE8 /* decode.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = decode.tex; sourceTree = "<group>"; };
+		5E7280D518DD23DC004EEEE8 /* discmods.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = discmods.tex; sourceTree = "<group>"; };
+		5E7280D618DD23DC004EEEE8 /* errors.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = errors.tex; sourceTree = "<group>"; };
+		5E7280D718DD23DC004EEEE8 /* exampsys.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampsys.tex; sourceTree = "<group>"; };
+		5E7280D818DD23DC004EEEE8 /* fundaments.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = fundaments.tex; sourceTree = "<group>"; };
+		5E7280D918DD23DC004EEEE8 /* hlmfiles.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = hlmfiles.tex; sourceTree = "<group>"; };
+		5E7280DA18DD23DC004EEEE8 /* hlmfund.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = hlmfund.tex; sourceTree = "<group>"; };
+		5E7280DB18DD23DC004EEEE8 /* hlmtutorial.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = hlmtutorial.tex; sourceTree = "<group>"; };
+		5E7280DC18DD23DC004EEEE8 /* HTK.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = HTK.tex; sourceTree = "<group>"; };
+		5E7280DD18DD23DC004EEEE8 /* htkbook-pdf.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = "htkbook-pdf.tex"; sourceTree = "<group>"; };
+		5E7280DE18DD23DC004EEEE8 /* htkbook.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = htkbook.tex; sourceTree = "<group>"; };
+		5E7280DF18DD23DC004EEEE8 /* HTKFigs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTKFigs; sourceTree = "<group>"; };
+		5E7280E018DD23DC004EEEE8 /* htkoview.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = htkoview.tex; sourceTree = "<group>"; };
+		5E7280E118DD23DC004EEEE8 /* HTKRef */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTKRef; sourceTree = "<group>"; };
+		5E7280E218DD23DC004EEEE8 /* htkslf.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = htkslf.tex; sourceTree = "<group>"; };
+		5E7280E318DD23DC004EEEE8 /* HTKXFigs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTKXFigs; sourceTree = "<group>"; };
+		5E7280E418DD23DC004EEEE8 /* labels.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = labels.tex; sourceTree = "<group>"; };
+		5E7280E518DD23DC004EEEE8 /* latex2html-init */ = {isa = PBXFileReference; lastKnownFileType = text; path = "latex2html-init"; sourceTree = "<group>"; };
+		5E7280E618DD23DC004EEEE8 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		5E7280E718DD23DC004EEEE8 /* models.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = models.tex; sourceTree = "<group>"; };
+		5E7280E818DD23DC004EEEE8 /* netdict.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = netdict.tex; sourceTree = "<group>"; };
+		5E7280E918DD23DC004EEEE8 /* openviron.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = openviron.tex; sourceTree = "<group>"; };
+		5E7280EA18DD23DC004EEEE8 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		5E7280EB18DD23DC004EEEE8 /* refine.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = refine.tex; sourceTree = "<group>"; };
+		5E7280EC18DD23DC004EEEE8 /* speechio.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = speechio.tex; sourceTree = "<group>"; };
+		5E7280ED18DD23DC004EEEE8 /* train.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = train.tex; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		5E7280C918DD23DC004EEEE8 = {
+			isa = PBXGroup;
+			children = (
+				5E7280CF18DD23DC004EEEE8 /* .DS_Store */,
+				5E7280D018DD23DC004EEEE8 /* adapt.tex */,
+				5E7280D118DD23DC004EEEE8 /* ChangeLog */,
+				5E7280D218DD23DC004EEEE8 /* ChangeLog.CUHTK */,
+				5E7280D318DD23DC004EEEE8 /* config.tex */,
+				5E7280D418DD23DC004EEEE8 /* decode.tex */,
+				5E7280D518DD23DC004EEEE8 /* discmods.tex */,
+				5E7280D618DD23DC004EEEE8 /* errors.tex */,
+				5E7280D718DD23DC004EEEE8 /* exampsys.tex */,
+				5E7280D818DD23DC004EEEE8 /* fundaments.tex */,
+				5E7280D918DD23DC004EEEE8 /* hlmfiles.tex */,
+				5E7280DA18DD23DC004EEEE8 /* hlmfund.tex */,
+				5E7280DB18DD23DC004EEEE8 /* hlmtutorial.tex */,
+				5E7280DC18DD23DC004EEEE8 /* HTK.tex */,
+				5E7280DD18DD23DC004EEEE8 /* htkbook-pdf.tex */,
+				5E7280DE18DD23DC004EEEE8 /* htkbook.tex */,
+				5E7280DF18DD23DC004EEEE8 /* HTKFigs */,
+				5E7280E018DD23DC004EEEE8 /* htkoview.tex */,
+				5E7280E118DD23DC004EEEE8 /* HTKRef */,
+				5E7280E218DD23DC004EEEE8 /* htkslf.tex */,
+				5E7280E318DD23DC004EEEE8 /* HTKXFigs */,
+				5E7280E418DD23DC004EEEE8 /* labels.tex */,
+				5E7280E518DD23DC004EEEE8 /* latex2html-init */,
+				5E7280E618DD23DC004EEEE8 /* Makefile */,
+				5E7280E718DD23DC004EEEE8 /* models.tex */,
+				5E7280E818DD23DC004EEEE8 /* netdict.tex */,
+				5E7280E918DD23DC004EEEE8 /* openviron.tex */,
+				5E7280EA18DD23DC004EEEE8 /* README */,
+				5E7280EB18DD23DC004EEEE8 /* refine.tex */,
+				5E7280EC18DD23DC004EEEE8 /* speechio.tex */,
+				5E7280ED18DD23DC004EEEE8 /* train.tex */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		5E7280CE18DD23DC004EEEE8 /* HTKBook */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 5E7280EE18DD23DC004EEEE8 /* Build configuration list for PBXLegacyTarget "HTKBook" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/Ash/Dropbox/Uni/2014/Thesis/Code/htk/HTKBook;
+			dependencies = (
+			);
+			name = HTKBook;
+			passBuildSettingsInEnvironment = 1;
+			productName = HTKBook;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		5E7280CA18DD23DC004EEEE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 5E7280CD18DD23DC004EEEE8 /* Build configuration list for PBXProject "HTKBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5E7280C918DD23DC004EEEE8;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E7280CE18DD23DC004EEEE8 /* HTKBook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		5E7280CB18DD23DC004EEEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		5E7280CC18DD23DC004EEEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		5E7280EF18DD23DC004EEEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = HTKBook;
+			};
+			name = Debug;
+		};
+		5E7280F018DD23DC004EEEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = HTKBook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E7280CD18DD23DC004EEEE8 /* Build configuration list for PBXProject "HTKBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E7280CB18DD23DC004EEEE8 /* Debug */,
+				5E7280CC18DD23DC004EEEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E7280EE18DD23DC004EEEE8 /* Build configuration list for PBXLegacyTarget "HTKBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E7280EF18DD23DC004EEEE8 /* Debug */,
+				5E7280F018DD23DC004EEEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E7280CA18DD23DC004EEEE8 /* Project object */;
+}

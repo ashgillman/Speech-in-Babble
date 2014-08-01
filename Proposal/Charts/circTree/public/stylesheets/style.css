@@ -1,0 +1,40 @@
+body {
+  padding: 50px;
+  font: 14px Helvetica, "Lucida Grande", Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+.desc {
+  font: 9px "Lucida Grande", Helvetica, Arial, sans-serif;
+  fill: Gray;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}

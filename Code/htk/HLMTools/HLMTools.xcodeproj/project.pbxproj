@@ -1,0 +1,170 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		5E7280B418DD23DC004EEEE8 /* .directory */ = {isa = PBXFileReference; lastKnownFileType = text; path = .directory; sourceTree = "<group>"; };
+		5E7280B518DD23DC004EEEE8 /* ChangeLog */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
+		5E7280B618DD23DC004EEEE8 /* Cluster.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Cluster.c; sourceTree = "<group>"; };
+		5E7280B718DD23DC004EEEE8 /* HLMCopy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HLMCopy.c; sourceTree = "<group>"; };
+		5E7280B818DD23DC004EEEE8 /* htk_hlmtools_nt.mkf */ = {isa = PBXFileReference; lastKnownFileType = text; path = htk_hlmtools_nt.mkf; sourceTree = "<group>"; };
+		5E7280B918DD23DC004EEEE8 /* LAdapt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LAdapt.c; sourceTree = "<group>"; };
+		5E7280BA18DD23DC004EEEE8 /* LBuild.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LBuild.c; sourceTree = "<group>"; };
+		5E7280BB18DD23DC004EEEE8 /* LFoF.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LFoF.c; sourceTree = "<group>"; };
+		5E7280BC18DD23DC004EEEE8 /* LGCopy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LGCopy.c; sourceTree = "<group>"; };
+		5E7280BD18DD23DC004EEEE8 /* LGList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LGList.c; sourceTree = "<group>"; };
+		5E7280BE18DD23DC004EEEE8 /* LGPrep.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LGPrep.c; sourceTree = "<group>"; };
+		5E7280BF18DD23DC004EEEE8 /* LLink.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LLink.c; sourceTree = "<group>"; };
+		5E7280C018DD23DC004EEEE8 /* LMerge.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LMerge.c; sourceTree = "<group>"; };
+		5E7280C118DD23DC004EEEE8 /* LNewMap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LNewMap.c; sourceTree = "<group>"; };
+		5E7280C218DD23DC004EEEE8 /* LNorm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LNorm.c; sourceTree = "<group>"; };
+		5E7280C318DD23DC004EEEE8 /* LPlex.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LPlex.c; sourceTree = "<group>"; };
+		5E7280C418DD23DC004EEEE8 /* LSubset.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LSubset.c; sourceTree = "<group>"; };
+		5E7280C518DD23DC004EEEE8 /* Makefile.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		5E7280AE18DD23DC004EEEE8 = {
+			isa = PBXGroup;
+			children = (
+				5E7280B418DD23DC004EEEE8 /* .directory */,
+				5E7280B518DD23DC004EEEE8 /* ChangeLog */,
+				5E7280B618DD23DC004EEEE8 /* Cluster.c */,
+				5E7280B718DD23DC004EEEE8 /* HLMCopy.c */,
+				5E7280B818DD23DC004EEEE8 /* htk_hlmtools_nt.mkf */,
+				5E7280B918DD23DC004EEEE8 /* LAdapt.c */,
+				5E7280BA18DD23DC004EEEE8 /* LBuild.c */,
+				5E7280BB18DD23DC004EEEE8 /* LFoF.c */,
+				5E7280BC18DD23DC004EEEE8 /* LGCopy.c */,
+				5E7280BD18DD23DC004EEEE8 /* LGList.c */,
+				5E7280BE18DD23DC004EEEE8 /* LGPrep.c */,
+				5E7280BF18DD23DC004EEEE8 /* LLink.c */,
+				5E7280C018DD23DC004EEEE8 /* LMerge.c */,
+				5E7280C118DD23DC004EEEE8 /* LNewMap.c */,
+				5E7280C218DD23DC004EEEE8 /* LNorm.c */,
+				5E7280C318DD23DC004EEEE8 /* LPlex.c */,
+				5E7280C418DD23DC004EEEE8 /* LSubset.c */,
+				5E7280C518DD23DC004EEEE8 /* Makefile.in */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		5E7280B318DD23DC004EEEE8 /* HLMTools */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 5E7280C618DD23DC004EEEE8 /* Build configuration list for PBXLegacyTarget "HLMTools" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/Ash/Dropbox/Uni/2014/Thesis/Code/htk/HLMTools;
+			dependencies = (
+			);
+			name = HLMTools;
+			passBuildSettingsInEnvironment = 1;
+			productName = HLMTools;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		5E7280AF18DD23DC004EEEE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 5E7280B218DD23DC004EEEE8 /* Build configuration list for PBXProject "HLMTools" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5E7280AE18DD23DC004EEEE8;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E7280B318DD23DC004EEEE8 /* HLMTools */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		5E7280B018DD23DC004EEEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		5E7280B118DD23DC004EEEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		5E7280C718DD23DC004EEEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = HLMTools;
+			};
+			name = Debug;
+		};
+		5E7280C818DD23DC004EEEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = HLMTools;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E7280B218DD23DC004EEEE8 /* Build configuration list for PBXProject "HLMTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E7280B018DD23DC004EEEE8 /* Debug */,
+				5E7280B118DD23DC004EEEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E7280C618DD23DC004EEEE8 /* Build configuration list for PBXLegacyTarget "HLMTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E7280C718DD23DC004EEEE8 /* Debug */,
+				5E7280C818DD23DC004EEEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E7280AF18DD23DC004EEEE8 /* Project object */;
+}

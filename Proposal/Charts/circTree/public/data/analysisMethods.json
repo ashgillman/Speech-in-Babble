@@ -1,0 +1,61 @@
+{
+	"name": "/",
+	"children": [
+		{
+			"short": "NMF w/ Priors",
+			"name": "Speech denoising using nonnegative matrix factorization with priors",
+			"author": "Wilson, Raj, Smaragdis, Divakaran",
+			"methods": ["PESQ", "Segmental SNR"],
+			"classif": "Human Recognition Only"
+		},
+		{
+			"short": "1-ch SNMF Sep",
+			"name": "Single-channel speech separation using sparse non-negative matrix factorization",
+			"author": "Schmidt, Olsson",
+			"methods": ["WRR"],
+			"classif": "Machine Recognition Only"
+		},
+		{
+			"short": "",
+			"name": "Recognizing speech from simultaneous speakers",
+			"author": "Raj, Singh, Smaragdis",
+			"methods": ["WRR"],
+			"classif": "Machine Recognition Only"
+		},
+		{
+			"short": "",
+			"name": "Latent variable decomposition of spectrograms for single channel speaker separation",
+			"author": "Raj, Smaragdis",
+			"methods": ["SNR"],
+			"classif": "Neither"
+		},
+		{
+			"short": "",
+			"name": "Phoneme-Dependent NMF for Speech Enhancement in Monaural Mixtures",
+			"author": "Raj, Singh, Virtanen",
+			"methods": ["Visual"],
+			"classif": "Neither"
+		},
+		{
+			"short": "",
+			"name": "Nonnegative HMM for babble noise derived from speech HMM: Application to speech enhancement",
+			"author": "Mohammadiha, Leijon",
+			"methods": ["PESQ", "Segmental SNR", "SDR", "SNR", "SD", "MOS"],
+			"classif": "Human Recognition Only"
+		},
+		{
+			"short": "",
+			"name": "Majorization-minimization algorithm for smooth Itakura-Saito nonnegative matrix factorization",
+			"author": "Févotte",
+			"methods": ["Visual"],
+			"classif": "Neither"
+		},
+		{
+			"short": "",
+			"name": "MULTI-STREAM ASR EXPLOITING BLSTM NETWORKS AND SPARSE NMF",
+			"author": "Geiger, Weninger, et al.",
+			"methods": ["WRR"],
+			"classif": "Human Recognition Only"
+		}
+	]
+}

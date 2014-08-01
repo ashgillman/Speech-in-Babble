@@ -1,0 +1,136 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		5E72813F18DD23DC004EEEE8 /* Makefile.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		5E72813918DD23DC004EEEE8 = {
+			isa = PBXGroup;
+			children = (
+				5E72813F18DD23DC004EEEE8 /* Makefile.in */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		5E72813E18DD23DC004EEEE8 /* HTKLVRec */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 5E72814018DD23DC004EEEE8 /* Build configuration list for PBXLegacyTarget "HTKLVRec" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/Ash/Dropbox/Uni/2014/Thesis/Code/htk/HTKLVRec;
+			dependencies = (
+			);
+			name = HTKLVRec;
+			passBuildSettingsInEnvironment = 1;
+			productName = HTKLVRec;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		5E72813A18DD23DC004EEEE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 5E72813D18DD23DC004EEEE8 /* Build configuration list for PBXProject "HTKLVRec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5E72813918DD23DC004EEEE8;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E72813E18DD23DC004EEEE8 /* HTKLVRec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		5E72813B18DD23DC004EEEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		5E72813C18DD23DC004EEEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		5E72814118DD23DC004EEEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = HTKLVRec;
+			};
+			name = Debug;
+		};
+		5E72814218DD23DC004EEEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = HTKLVRec;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E72813D18DD23DC004EEEE8 /* Build configuration list for PBXProject "HTKLVRec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E72813B18DD23DC004EEEE8 /* Debug */,
+				5E72813C18DD23DC004EEEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E72814018DD23DC004EEEE8 /* Build configuration list for PBXLegacyTarget "HTKLVRec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E72814118DD23DC004EEEE8 /* Debug */,
+				5E72814218DD23DC004EEEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E72813A18DD23DC004EEEE8 /* Project object */;
+}

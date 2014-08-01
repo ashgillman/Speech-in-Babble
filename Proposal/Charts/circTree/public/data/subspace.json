@@ -1,0 +1,32 @@
+{
+	"name": "Decomposition Techniques",
+	"desc": [],
+	"children": [
+		{
+			"name": "Non-negative Matrix Factorisation",
+			"desc": ["Enforces non-negativity and sparsity"]
+		},
+		{
+			"name": "Principal Component Analysis",
+			"desc": [
+				"For jointly normally distrbuted data",
+				"Creates orthogonal respresentation"
+			]
+		},
+		{
+			"name": "Independant Component Analysis",
+			"desc": ["Assumes components are independant"]
+		},
+		{
+			"name": "Singular Value Decomposition",
+			"desc": [
+				"Decomposes into 3 matrices",
+				"Useful in least-squares fitting"
+			]
+		},
+		{
+			"name": "Vector Quantisation",
+			"desc": ["Estimates by forming prototypes"]
+		}
+	]
+}
