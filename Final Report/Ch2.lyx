@@ -383,12 +383,9 @@ ac{SSN}
 
  is under-defined and subjective.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Table 2-2
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Subjective-classification-noise"
 
 \end_inset
 
@@ -404,6 +401,1416 @@ key "Krishnamurthy2009"
  It was found that for four to six speakers the classification of whether
  noise was babble or speech-shaped varied from person-to-person, even for
  the same recording.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Subjective classification of babble noise vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SSN}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Subjective-classification-noise"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features rotate="0" tabularvalignment="middle" tabularwidth="100text%">
+<column alignment="center" valignment="top" width="30text%">
+<column alignment="center" valignment="top" width="30text%">
+<column alignment="center" valignment="top" width="30text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Number of Speaker in Babble
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Percentage of Speakers Identifying Recording as Babble
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Percentage of Speakers Identifying Recording as Speech-Shaped
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\leq3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+66%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+34%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+82%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+27%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+73%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\geq7$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Human listeners compensate for babble and competing speaker noise by exploiting
+ the time-modulated property of the noise.
+ Listeners focus on the target speech during moments of low noise levels
+ to piece together the target’s message.
+ Therefore, human recognition in modulated noise is better than in steady-state
+ noise.
+ However, the opposite is true for a machine: steady state noise conditions
+ are easier to handle than modulated noise with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{DSP}
+\end_layout
+
+\end_inset
+
+ techniques 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Loizou2013a"
+
+\end_inset
+
+.
+ Of course, the level of improvement directly depends on the speech enhancement
+ technique used.
+\end_layout
+
+\begin_layout Section
+Speech Enhancement
+\end_layout
+
+\begin_layout Standard
+Speech enhancement has various practical applications, including:
+\end_layout
+
+\begin_layout Itemize
+improving hearing with hearing aids and cochlear implants 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wang2008,Yang2005"
+
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+increasing the accuracy of ASR systems,
+\end_layout
+
+\begin_layout Itemize
+denoising of telecommunications systems
+\end_layout
+
+\begin_layout Itemize
+and refining recorded audio 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Benesty2005"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Due to the many application areas, various algorithms may be used under
+ different contexts in order to balance the condition-specific performance,
+ calculation efficiency, flexibility and ease of implementation.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Speech-Enhance-Classifications"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "fig:Speech-Enhance-Classifications"
+
+\end_inset
+
+ illustrates some of the many variations in methods for speech enhancement,
+ with data extracted from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yang2005,Pollack1958,Loizou2013b,Kamath2002"
+
+\end_inset
+
+.
+ Some methods provide better performance than others, but at the expense
+ of practicality.
+ For example, recognition can be improved under non-stationary noise by
+ using a microphone array, however such a set up is more expensive.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fig/speech-enhancement-methods.eps
+	height 90theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Some classifications of Speech Enhancement Methods
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Speech-Enhance-Classifications"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Modelling Babble
+\end_layout
+
+\begin_layout Standard
+In a multi-speaker environment, and ignoring other forms of noise, a signal
+ can be considered a sum of multiple speakers:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X_{Babble}=\sum X_{Speakers}\label{eq:babble-sum-speakers}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:babble-sum-speakers"
+
+\end_inset
+
+ follows directly from the definition of babble.
+ The number of speaker signals used may vary, but to align with with the
+ definition for babble should be between three and six.
+\end_layout
+
+\begin_layout Subsection
+For Generation
+\end_layout
+
+\begin_layout Standard
+It is generally desirable in testing to be able to present noise at different
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acp{SNR}
+\end_layout
+
+\end_inset
+
+.
+ Rather than recording noise in a range of conditions directly, it is more
+ convenient to have separate speech and noise and to model the speech with
+ noise signal.
+ Thus, the effects of babble are often modelled rather than directly recorded.
+ This type of babble can be classed as synthetic babble, and may or may
+ not accurately represent real babble 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Krishnamurthy2009"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The most common method of creating synthetic babble is to use a number of
+ speech recordings, adding them together to form babble.
+ This presents a number of issues.
+ Firstly, real conversations are not simply a number of voices speaking
+ simultaneously.
+ Rather, conversations are dynamic, where there is generally one speaker
+ but occasionally more or none 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Krishnamurthy2009"
+
+\end_inset
+
+.
+ Secondly, synthetic babble generally does not take into effect environmental
+ effects, such as reverberation, generally present alongside babble 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Krishnamurthy2009"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+For Analysis and Enhancement
+\end_layout
+
+\begin_layout Standard
+For analysis, it is generally preferable to model a signal as a sum consisting
+ of a desired component and a noise component.
+ The babble model may exploit 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:babble-sum-speakers"
+
+\end_inset
+
+, such that a single voice is modelled and extended to multiple speakers
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mohammadiha2013a"
+
+\end_inset
+
+, whereas other methods leave the model for babble as a generic noise model
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wilson2008"
+
+\end_inset
+
+.
+ The advantage of the latter is that the same model may be applicable to
+ other forms of noise.
+\end_layout
+
+\begin_layout Subsection
+Separating Speech from Babble
+\end_layout
+
+\begin_layout Standard
+When the cocktail party problem was originally proposed, five factors were
+ identified as to how the human brain may differentiate between the sources
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cherry1953"
+
+\end_inset
+
+, shown in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Differentiating-Speech-Babble"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "fig:Differentiating-Speech-Babble"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fig/babble Separation.eps
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Differentiating Speech from Babble
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Differentiating-Speech-Babble"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Algorithms taking advantage of spatial differences and visual cues, although
+ effective 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dupont2000"
+
+\end_inset
+
+, require multiple channels and visual data.
+ Subspace methods take advantage of differences in voices and differences
+ in pronunciation.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HMM}
+\end_layout
+
+\end_inset
+
+ models for speech recognition also take advantage of transitional probabilities
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mohammadiha2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Methods for Evaluation of Speech Enhancement
+\end_layout
+
+\begin_layout Standard
+Methods for evaluating the intelligibility of speech, and by extension speech
+ enhancement, can be classified by the type of recognition they measure:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+.
+ This is necessary since 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ systems often recognise speech through a relatively low dimension feature
+ vector, whereas the human brain is far more sensitive.
+ An algorithm for enhancement may indeed improve the intelligibility for
+ an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system, but side effects may be distracting or distortive to a human listener.
+\end_layout
+
+\begin_layout Subsection
+Human Recognition
+\end_layout
+
+\begin_layout Standard
+Intelligibility of a speech signal by humans is difficult to accurately
+ and quantitatively measure.
+ The most obvious measure is to have human test subjects listen to signals
+ and judge which are more intelligible.
+ In order to achieve reputable, repeatable and accurate results a large
+ test is required with a large number of test subjects and recordings.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ITU}
+\end_layout
+
+\end_inset
+
+ standard for such tests is the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "InternationalTelecommunicationUnion1996"
+
+\end_inset
+
+.
+ The test is designed to give an indication of the quality of telecommunication
+ transmission, but is applicable as a measure of speech intelligibility.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ results are a score calculated by the mean of the listeners’ scores in
+ the range one to five, with one representing the worst quality and five
+ representing the highest quality of intelligibility.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+is the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ITU}
+\end_layout
+
+\end_inset
+
+ standard for evaluation of objective speech quality 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "InternationalTelecommunicationUnion2001"
+
+\end_inset
+
+.
+ This method provides an algorithm which estimates the improvement quality
+ by comparing a system’s input and output 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rix2001"
+
+\end_inset
+
+.
+ Results show 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scores give consistent and reliable estimates on human perception, although
+ are not directly comparable with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ scores 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rix2003"
+
+\end_inset
+
+.
+ Other methods for measuring perceptual quality include long-term 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+, segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+, weighted spectral slope, log-likelihood ratio, Itakura-Saito distance,
+ cepstrum distance, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SD}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SDR}
+\end_layout
+
+\end_inset
+
+ and variations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Loizou2008"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Machine Recognition
+\end_layout
+
+\begin_layout Standard
+The most common technique to evaluate machine recognition quality of speech
+ is to run an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ algorithm on the signal and perform a comparison of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WRR}
+\end_layout
+
+\end_inset
+
+.
+ It should be noted that this method is somewhat limited, in that different
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ algorithms, which may implement different feature vectors, may perform
+ differently.
+ As such, results from different 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ algorithms are not directly comparable.
+\end_layout
+
+\begin_layout Standard
+Algorithms in literature tend to limit evaluation methods to either human
+ recognition or machine recognition methods, as seen in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Assessment-methods"
+
+\end_inset
+
+, showing the evaluation measures used in various papers.
+ This data was gathered from the following papers 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fig/assessment Methods.eps
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Assessment methods used in literature
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Assessment-methods"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Subspace Methods by Decomposition
+\end_layout
+
+\begin_layout Standard
+Subspace methods focus on reducing the dimensionality of a system.
+ This is done by decomposition or factorisation of a signal into lower dimension
+al systems.
+ Many techniques exist for decomposing a signal, some of which are outlined
+ in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:subspace-decomposition"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fig/subspace.eps
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mathematical decomposition techniques for subspace analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:subspace-decomposition"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These techniques factorise a matrix into two matrix factors of the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{i\times j}\approx B_{i\times k}A_{k\times j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Often 
+\begin_inset Formula $k\ll i$
+\end_inset
+
+ and 
+\begin_inset Formula $k\ll j$
+\end_inset
+
+, meaning the factorised form may be considered a more compact form.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acf{NMF}
+\end_layout
+
+\end_inset
+
+, previously known as positive matrix factorisation, was popularised by
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lee1999"
+
+\end_inset
+
+ as a method lending itself to breaking objects into their composing parts
+ The distinguishing characteristic of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ is that the product matrix, along with both its factors, are non-negative,
+ i.e.
+ 
+\begin_inset Formula $A_{ij}\ge0,\, B_{ij}\ge0,\, C_{ij}\ge0\quad\forall\, i,\, j$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ has been demonstrated to be an effective method in dividing images into
+ parts 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee1999,Donoho2003"
+
+\end_inset
+
+.
+ Furthermore, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ also has been shown to be useful on signals, specifically as a source-
+ separation algorithm 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mohammadiha2013a,Wilson2008,Mohammadiha2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+ and Speech
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ can be used in signal analysis, such that 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee1999,Paatero1994"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X_{n_{f}\times n_{s}}\approx V_{n_{f}\times n_{c}}W_{n_{c}\times n_{s}}\label{eq:nmf-approx}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X$
+\end_inset
+
+ represents the signal with rows of frequency bins results from a Fourier
+ transform and columns of time segments;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V$
+\end_inset
+
+ is the spectral components with columns representing typical spectral vectors;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $W$
+\end_inset
+
+ is the activation matrix, where each row represents the activation levels
+ of components at given times;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_{f}$
+\end_inset
+
+ is the number of Frequency bins;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_{s}$
+\end_inset
+
+ is the number of samples; and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_{c}$
+\end_inset
+
+ is the number of components.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:nmf-on-speech"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mohammadiha2013"
+
+\end_inset
+
+ shows a visual representation of this factorisation.
+ It can be seen that the columns of the spectral component matrix, 
+\begin_inset Formula $V$
+\end_inset
+
+, represent approximations of the spectral components, and that the activation
+ matrix, 
+\begin_inset Formula $W$
+\end_inset
+
+, is sparse.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/NMF-speech.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ on speech
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:nmf-on-speech"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Assessment of Methods of Factorisation
+\end_layout
+
+\begin_layout Subsection
+Objective Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+algorithms aim to minimise or maximise an objective function.
+ The objective function is designed with an intent that optimisation will
+ ensure the approximation in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:nmf-approx"
+
+\end_inset
+
+.
+ The common choice is to minimise the square error, or Euclidean distance
+ between ! and !" seen in (2-4) [30].
 \end_layout
 
 \end_body

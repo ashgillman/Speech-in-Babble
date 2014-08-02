@@ -6,11 +6,25 @@
 \begin_preamble
 \usepackage{acronym}
 \usepackage{graphicx}
-\bibliographystyle{IEEEtranN}
+\usepackage[numbers, sort&compress]{natbib}
+
+% capitalise references
+%\renewcommand{\eqref}{\Eqref}
+\renewcommand{\figref}{\Figref}
+\renewcommand{\tabref}{\Tabref}
+\renewcommand{\secref}{\Secref}
+
+% automaticall number all display equations
+\renewcommand\[{\begin{equation}}
+\renewcommand\]{\end{equation}}
+
+% no paragraph gaps in lists
+\setlist{noitemsep}
 \end_preamble
 \use_default_options true
 \begin_modules
 customHeadersFooters
+enumitem
 \end_modules
 \maintain_unincluded_children false
 \language english
@@ -32,6 +46,7 @@ customHeadersFooters
 \output_sync 1
 \bibtex_command default
 \index_command default
+\float_placement h
 \paperfontsize 11
 \spacing onehalf
 \use_hyperref false
@@ -47,8 +62,8 @@ customHeadersFooters
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine natbib
-\cite_engine_type numerical
+\cite_engine basic
+\cite_engine_type default
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -94,10 +109,20 @@ Gillman
 \end_layout
 
 \begin_layout Right Header
-Practical Speech Enhancement in Babble
+Practical Speech Enhancement in Babble using NMF
 \end_layout
 
 \begin_layout Center Footer
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}% remove centered page no.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -122,57 +147,44 @@ thepage}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
-\begin_layout Plain Layout
+\end_inset
 
 
-\backslash
-section*{List of Acronyms}
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
 
 
-\backslash
-begin{acronym}
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset FloatList table
 
-  
-\backslash
-acro{ASR}{Automated Speech Recognition}
+\end_inset
+
+
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
 
-  
-\backslash
-acro{NMF}{Non-negative Matrix Factorisation}
+\end_inset
+
+
 \end_layout
 
-\begin_layout Plain Layout
-
-  
-\backslash
-acro{SoI}{Speaker of Interest}
-\end_layout
-
-\begin_layout Plain Layout
-
-  
-\backslash
-acro{SSN}{Speech-Shaped Noise}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{acronym}
-\end_layout
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Ac.lyx"
 
 \end_inset
 
@@ -203,7 +215,7 @@ filename "Ch2.lyx"
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "IEEEabrv,bib/library"
-options "IEEEtranN"
+options "bib/IEEEtranN"
 
 \end_inset
 
