@@ -28,7 +28,7 @@ customHeadersFooters
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
+\spacing onehalf
 \use_hyperref false
 \papersize default
 \use_geometry true
@@ -86,7 +86,7 @@ status open
 
 \begin_layout Plain Layout
 
-
+%
 \backslash
 thispagestyle{empty}
 \end_layout
@@ -124,7 +124,7 @@ status open
 
 
 \backslash
-ac{SoI}
+acf{SoI}
 \end_layout
 
 \end_inset
@@ -140,7 +140,7 @@ status open
 
 
 \backslash
-ac{SSN}
+acf{SSN}
 \end_layout
 
 \end_inset
@@ -423,7 +423,7 @@ status open
 
 
 \backslash
-ac{SSN}
+acl{SSN}
 \end_layout
 
 \end_inset
@@ -803,6 +803,17 @@ In a multi-speaker environment, and ignoring other forms of noise, a signal
 \begin{equation}
 X_{Babble}=\sum X_{Speakers}\label{eq:babble-sum-speakers}
 \end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$X$"
+description "Short-time Fourier transform of a signal or recording, either with or without noise present. Rows represent frequency bins and columns represent time frames."
 
 \end_inset
 
@@ -1504,6 +1515,17 @@ C_{i\times j}\approx B_{i\times k}A_{k\times j}
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$i$, $j$, $k$"
+description "Matrix indexing placeholders."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Often 
 \begin_inset Formula $k\ll i$
 \end_inset
@@ -1702,6 +1724,49 @@ where:
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$V$"
+description "Spectral component matrix, one of the decompositions formed through the non-negative matrix factorisation procedure. Rows represent frequency bins and columns represent the component bases."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$W$"
+description "Activation matrix, one of the decompositions formed through the non-negative matrix factorisation procedure. Rows represent the component bases and columns represent time frames."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$n_f$"
+description "The total number of frequency bins."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$n_s$"
+description "The total number of time frames (samples)."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$n_c$"
+description "The total number of component bases."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:nmf-on-speech"
@@ -1753,7 +1818,7 @@ status open
 
 
 \backslash
-ac{NMF}
+acl{NMF}
 \end_layout
 
 \end_inset
@@ -1799,7 +1864,7 @@ ac{NMF}
 
 \end_inset
 
-algorithms aim to minimise or maximise an objective function.
+ algorithms aim to minimise or maximise an objective function.
  The objective function is designed with an intent that optimisation will
  ensure the approximation in 
 \begin_inset CommandInset ref
@@ -1810,7 +1875,951 @@ reference "eq:nmf-approx"
 
 .
  The common choice is to minimise the square error, or Euclidean distance
- between ! and !" seen in (2-4) [30].
+ between 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $VW$
+\end_inset
+
+ seen in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:euclidean-distance-def"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee2000"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F=\left\Vert X-VW\right\Vert ^{2}=\sum_{f=1}^{n_{f}}\sum_{s=1}^{n_{s}}\left[X_{fs}-\left(VW\right)_{fs}\right]^{2}\label{eq:euclidean-distance-def}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$F$"
+description "The chosen objective function."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\Vert . \\Vert ^2$"
+description "Indicates the Euclidean distance."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$f$"
+description "Frequency bin index."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$s$"
+description "Time frame (sample) index."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another standard objective function based on the Kullback-Leibler divergence
+ of 
+\begin_inset Formula $VW$
+\end_inset
+
+ from 
+\begin_inset Formula $X$
+\end_inset
+
+ was proposed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lee1999"
+
+\end_inset
+
+ and is given as 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:kl-divergence-def"
+
+\end_inset
+
+.
+ Here, the objective is maximisation of the divergence objective function.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F=D_{KL}\left(X\|VW\right)=\sum_{f=1}^{n_{f}}\sum_{s=1}^{n_{s}}\left[X_{fs}\log\left(VW\right)_{fs}-\left(VW\right)_{fs}\right]\label{eq:kl-divergence-def}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$D_{KL}\\left(.\\right)$"
+description "Indicates the Kullback-Leibler divergence."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Often a modified objective function is used.
+ This may add a cost function in order to achieve auxiliary constraints
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Berry2007"
+
+\end_inset
+
+.
+ Some examples of this are further discussed below.
+ The objective function is implemented using a series of update functions.
+ The update functions are iteratively processed until the approximation
+ of 
+\begin_inset Formula $VW$
+\end_inset
+
+ to 
+\begin_inset Formula $X$
+\end_inset
+
+ is sufficient.
+\end_layout
+
+\begin_layout Subsection
+Multiplicative Update Algorithms
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Multiplicative-Update-Algorithms"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Updates are often implemented multiplicatively, since if all initial matrices
+ are non-negative and multiplications are positive, then the final matrix
+ will also implicitly be non-negative.
+ This prevents the need to explicitly enforce non-negativity.
+ For the Euclidean distance objective function, the multiplicative update
+ rules are 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee2000"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{fc}\leftarrow V_{fc}\otimes\left(XW^{T}\right)\oslash\left(VWW^{T}\right)\label{eq:mult-update-euc-v}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\leftarrow$"
+description "Indicates an iterative update rule."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\otimes$"
+description "Element-wise multiplication."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\oslash$"
+description "Element-wise division."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\left(.\\right)^T$"
+description "Matrix transpose."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$c$"
+description "Component base index."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{cs}\leftarrow W_{cs}\otimes\left(V^{T}X\right)\oslash\left(V^{T}VW\right)\label{eq:mult-update-euc-w}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\otimes$
+\end_inset
+
+ and 
+\begin_inset Formula $\oslash$
+\end_inset
+
+ are the element-wise multiplication and division operators.
+ Alternatively, if the divergence objective function is to be used,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{fc}\leftarrow V_{fc}\sum_{s}\frac{X_{fs}}{\left(VW\right)_{fs}}W_{cs}\label{eq:mult-update-div-v}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{cs}\leftarrow W_{cs}\sum_{s}V_{fc}\frac{X_{fs}}{(VW)_{fs}}\label{eq:mult-update-div-w}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+provide the required update rules 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee1999"
+
+\end_inset
+
+.
+ Additionally, a third update rule 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee1999"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{fs}\leftarrow\frac{V_{fc}}{\sum_{f}V_{fc}}\label{eq:mult-update-div-normalise}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+was included to normalise columns in the component matrix.
+ This is included to prevent continuously updating 
+\begin_inset Formula $V$
+\end_inset
+
+ by a constant and 
+\begin_inset Formula $W$
+\end_inset
+
+ by its inverse, which would otherwise be a valid update since 
+\begin_inset Formula $VW$
+\end_inset
+
+ would be identical.
+\end_layout
+
+\begin_layout Standard
+In addition, equivalent additive expressions can be formulated, known as
+ the gradient descent algorithms 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee2000,Berry2007"
+
+\end_inset
+
+.
+ In this thesis, these forms are considered as equivalent 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Berry2007"
+
+\end_inset
+
+ and thus are not considered separately.
+\end_layout
+
+\begin_layout Standard
+The multiplicative update method of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ has been used extensively in literature with good results 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wilson2008,Raj2005"
+
+\end_inset
+
+.
+ However, it has been shown that the proof given by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lee2000"
+
+\end_inset
+
+, attempting to prove the convergence of the multiplicative update rules
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:mult-update-euc-v"
+
+\end_inset
+
+ through 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:mult-update-div-normalise"
+
+\end_inset
+
+, was incomplete 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Berry2007,Finesso2006"
+
+\end_inset
+
+.
+ The above equations may become stuck at stationary points and do not always
+ converge to the desired objective function 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Berry2007,Finesso2006,Finesso2004"
+
+\end_inset
+
+.
+ When an element in 
+\begin_inset Formula $V$
+\end_inset
+
+ or 
+\begin_inset Formula $W$
+\end_inset
+
+ becomes zero it becomes “locked” and must remain as zero, an inherent flaw
+ of the multiplicative update functions 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Albright2006"
+
+\end_inset
+
+.
+ The following class of algorithms allow flexibility in this respect.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{ALS}
+\end_layout
+
+\end_inset
+
+ Algorithms
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ALS}
+\end_layout
+
+\end_inset
+
+ algorithms are based on the initial proposed algorithms by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Paatero1994"
+
+\end_inset
+
+.
+ These algorithms are based on the alternating variables method (or coordinate
+ descent method) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wright1999"
+
+\end_inset
+
+.
+ In these algorithms, first 
+\begin_inset Formula $V$
+\end_inset
+
+ is fixed and 
+\begin_inset Formula $W$
+\end_inset
+
+ is calculated using a least squares method, then 
+\begin_inset Formula $W$
+\end_inset
+
+ is fixed and 
+\begin_inset Formula $V$
+\end_inset
+
+ is calculated in a similar manner.
+ These two steps are repeated until an adequate approximation is achieved
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Albright2006"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The least squares method used varies between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ALS}
+\end_layout
+
+\end_inset
+
+ algorithms.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ALS}
+\end_layout
+
+\end_inset
+
+ algorithms can be generally classified by whether a non-negative least
+ squares method is used; or a general least squares method where any negative
+ values are subsequently set to zero.
+ Non-negative least squares methods converge to a local minimum successfully,
+ however the calculation cost per iteration is far higher despite attempts
+ to improve performance 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Berry2007,Albright2006,Lin2007,VanBenthem2004,Bro1997"
+
+\end_inset
+
+.
+ General least squares methods may converge to a saddle point as opposed
+ to a minima.
+ This is generally still preferred under practical conditions due to the
+ speed.
+ Performance can also be improved by using a good initialisation.
+\end_layout
+
+\begin_layout Standard
+Typical 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ALS}
+\end_layout
+
+\end_inset
+
+ algorithms 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Berry2007"
+
+\end_inset
+
+ using general least squares method resemble the following:
+\end_layout
+
+\begin_layout Enumerate
+Initialise 
+\begin_inset Formula $V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Repeat the following for a predefined number of iterations:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Solve for 
+\begin_inset Formula $W$
+\end_inset
+
+ using 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:als-update-w"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Set any negative elements in 
+\begin_inset Formula $W$
+\end_inset
+
+ to zero.
+\end_layout
+
+\begin_layout Enumerate
+Solve for 
+\begin_inset Formula $V$
+\end_inset
+
+ using 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:als-update-v"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Set any negative elements in 
+\begin_inset Formula $V$
+\end_inset
+
+ to zero.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V^{T}VW=V^{T}X\label{eq:als-update-w}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+WW^{T}V^{T}=WX^{T}\label{eq:als-update-v}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The algorithms presented thus far present a common weakness in that the
+ update rules for the component matrix and the activation matrix are the
+ same (except that in some cases the component matrix also has a normalisation
+ update).
+ This means there is little control over which information is captured in
+ the component matrix and which is captured in the activation matrix.
+\end_layout
+
+\begin_layout Standard
+The following algorithms are variations that attempt to provide further
+ control over ensuring that the components are completely captured in the
+ component matrix.
+\end_layout
+
+\begin_layout Subsection
+Exemplar-Based 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This variation on the multiplicative update algorithm can be made where
+ it is expected that the components of the signal present themselves individuall
+y, i.e.
+ the signal is assumed to be a time series of components, but with no simultaneo
+us combinations of the components (this could only be true for a single
+ speaker).
+ Here, the component matrix components are drawn from the desired signal.
+ This leaves only the activation matrix to be calculated, so only one update
+ rule is required, 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:mult-update-div-w"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Raj2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This is the case for clean speech signals, where bases are taken to be phonemes
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Raj2011"
+
+\end_inset
+
+.
+ Taking advantage of this, phonemes may be drawn randomly from speech and
+ used to form the spectral component matrix.
+ The advantage of this method is that meaning is brought to the components.
+ This allows activations of a given component matrix to be compared with
+ those of another.
+\end_layout
+
+\begin_layout Subsection
+Constrained 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another method to ensure component information is captured within the component
+ matrix is to introduce sparseness constraints on the activation matrix.
+ By its nature, the activation matrix should be sparser than the component
+ matrix.
+ Through the non-negative constraint of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+, sparseness of the activation matrix (and indeed, also the component matrix)
+ naturally occurs 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Albright2006,Hoyer2004"
+
+\end_inset
+
+.
+ However, it can be desirable to allow explicit control over the sparseness,
+ especially in speech applications 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Schmidt2006"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hoyer2002"
+
+\end_inset
+
+ proposed an algorithm based on the multiplicative update algorithm in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee1999"
+
+\end_inset
+
+ with an introduced cost function to aid in control of the sparseness.
+ This algorithm was further improved in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hoyer2004"
+
+\end_inset
+
+ where the explicit control of sparseness was introduced.
+ This was achieved by defining the sparseness measure 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hoyer2004"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+sparssness(x)=\frac{\sqrt{n}-\left(\sum\left|x_{i}\right|\right)/\sqrt{\sum x_{i}^{2}}}{\sqrt{n}-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the length of vector 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The developed algorithm is then based on the Euclidean distance objective
+ function, employing a combination of multiplicative update functions (§
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Multiplicative-Update-Algorithms"
+
+\end_inset
+
+) and gradient descent functions.
+ However, the theory developed is applicable to many types of objective
+ functions and implementation algorithms 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cichocki2006"
+
+\end_inset
+
+.
+ Similarly, the cost functions introduced need not be specific to sparsity,
+ but can be applied to many auxiliary constraints, such as enforcing smoothness
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Fevotte2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+General 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+ approaches to Source Separation
+\end_layout
+
+\begin_layout Standard
+There are a number of methods to construct a clean-speech estimation using
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+.
+ The particular methods used largely depend on the specifics of the model
+ used.
+ However, the general concept is the same.
+ It is known that 
+\begin_inset Formula $X$
+\end_inset
+
+ is approximated as 
+\begin_inset Formula $V\times W$
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:nmf-approx"
+
+\end_inset
+
+ and therefore we can we can reconstruct a desired signal as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{X}_{Desired}=V_{Desired}\times\hat{W}_{Desired}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\hat{.}$"
+description "Indicates an estimated value."
+
+\end_inset
+
+
 \end_layout
 
 \end_body

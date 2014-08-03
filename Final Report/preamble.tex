@@ -1,0 +1,42 @@
+\usepackage{pdfsync}
+
+% acronyms
+\usepackage{acronym}
+
+% use instead of standard natbib to compress conecutive references
+\usepackage[numbers, sort&compress]{natbib}
+
+% capitalise references
+\renewcommand{\figref}{\Figref}
+\renewcommand{\tabref}{\Tabref}
+\renewcommand{\secref}{\Secref}
+
+% automaticall number all display equations
+\renewcommand\[{\begin{equation}}
+\renewcommand\]{\end{equation}}
+
+% no paragraph gaps in lists
+\setlist{noitemsep}
+
+% format captions
+\usepackage[labelfont=bf]{caption}
+\captionsetup[table]{singlelinecheck=off,justification=justified} 
+
+% equations use dashed numbering
+\makeatletter
+\long\def\theequation{\ifnum \c@chapter > \z@ \thechapter --\fi \@arabic \c@equation}
+
+% all headings same, (no difference for chapter beginnings)
+\let\ps@plain\ps@fancy
+\makeatother
+
+% rename nomenclature
+ \renewcommand{\nomname}{List of Symbols}
+
+% chapter title spacing
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\normalfont\Huge\bfseries}{\chaptertitlename \enspace \thechapter :}{20pt}{}{}
+\titlespacing*{\chapter}{0pt}{-1cm}{0.5cm}
+
+\clubpenalty=9999
+\widowpenalty=9999

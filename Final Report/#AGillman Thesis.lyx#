@@ -4,23 +4,12 @@
 \begin_header
 \textclass report
 \begin_preamble
-\usepackage{acronym}
-\usepackage{graphicx}
-%\usepackage{amsmath}
-
-% capitalise references
-%\renewcommand{\eqref}{\Eqref}
-\renewcommand{\figref}{\Figref}
-\renewcommand{\tabref}{\Tabref}
-\renewcommand{\secref}{\Secref}
-
-% automaticall number all display equations
-\renewcommand\[{\begin{equation}}
-\renewcommand\]{\end{equation}}
+\include{preamble}
 \end_preamble
 \use_default_options true
 \begin_modules
 customHeadersFooters
+enumitem
 \end_modules
 \maintain_unincluded_children false
 \language english
@@ -42,6 +31,7 @@ customHeadersFooters
 \output_sync 1
 \bibtex_command default
 \index_command default
+\float_placement h
 \paperfontsize 11
 \spacing onehalf
 \use_hyperref false
@@ -57,8 +47,8 @@ customHeadersFooters
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine natbib
-\cite_engine_type numerical
+\cite_engine basic
+\cite_engine_type default
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -142,6 +132,22 @@ thepage}
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -169,7 +175,19 @@ LatexCommand tableofcontents
 \begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
-set_width "auto"
+set_width "custom"
+width "1.5cm"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol " "
+description "In this thesis, matrices are denoted by capitalised letters. Subscript notation on matrices using commas denotes indexation (i.e. $A_{ij}$ represents the $i$th row and $j$th column) whereas using the multiplication symbol, $\\times$, denotes a size definition (i.e. $A_{i\\times j}$ defines an $i$-by-$j$ matrix)."
 
 \end_inset
 
@@ -180,6 +198,22 @@ set_width "auto"
 \begin_inset CommandInset include
 LatexCommand include
 filename "Ac.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
 
 \end_inset
 

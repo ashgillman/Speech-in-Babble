@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass report
+\begin_preamble
+\include{preamble}
+\end_preamble
 \use_default_options true
 \begin_modules
 customHeadersFooters
@@ -44,7 +47,7 @@ customHeadersFooters
 \use_package undertilde 1
 \cite_engine natbib
 \cite_engine_type numerical
-\biblio_style plain
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -86,7 +89,7 @@ status open
 
 \begin_layout Plain Layout
 
-
+%
 \backslash
 thispagestyle{empty}
 \end_layout

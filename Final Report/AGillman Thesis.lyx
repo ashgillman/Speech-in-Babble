@@ -4,22 +4,7 @@
 \begin_header
 \textclass report
 \begin_preamble
-\usepackage{acronym}
-\usepackage{graphicx}
-\usepackage[numbers, sort&compress]{natbib}
-
-% capitalise references
-%\renewcommand{\eqref}{\Eqref}
-\renewcommand{\figref}{\Figref}
-\renewcommand{\tabref}{\Tabref}
-\renewcommand{\secref}{\Secref}
-
-% automaticall number all display equations
-\renewcommand\[{\begin{equation}}
-\renewcommand\]{\end{equation}}
-
-% no paragraph gaps in lists
-\setlist{noitemsep}
+\include{preamble}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -147,6 +132,22 @@ thepage}
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -182,9 +183,36 @@ set_width "auto"
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol " Matrix notation"
+description "In this thesis, matrices are denoted by capitalised letters. Subscript notation on matrices using commas denotes indexation (i.e. $A_{ij}$ represents the $i$th row and $j$th column) whereas using the multiplication symbol, $\\times$, denotes a size definition (i.e. $A_{i\\times j}$ defines an $i$-by-$j$ matrix)."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "Ac.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
 
 \end_inset
 
