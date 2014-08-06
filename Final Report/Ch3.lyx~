@@ -1,0 +1,299 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\include{preamble}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language australian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 40mm
+\topmargin 25mm
+\rightmargin 25mm
+\bottommargin 25mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+cocktail party problem
+\begin_inset Quotes erd
+\end_inset
+
+ was first posed in 1953 by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Cherry1953"
+
+\end_inset
+
+, where the human ability, or often difficulty, to hear speech in the presence
+ of multiple speakers was noted.
+ After analysis into the complexity of the problem, it is amazing that humans
+ have the ability to hear over one-another at all!
+\end_layout
+
+\begin_layout Standard
+The cocktail party problem refers to the problem of recognising speech in
+ the presence of babble.
+ A number of speakers are present, and each can be distinguished individually.
+ This has been noted as an extremely difficult task in speech analysis and
+ enhancement.
+ With the rise of modern technology and the desire to incorporate alternative
+ human-machine interfaces, the motivation to improve 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ systems has increased.
+ Additionally, the problem still exists of aiding human understanding in
+ such situations, e.g.
+ hearing aid systems or telecommunications systems.
+\end_layout
+
+\begin_layout Standard
+One method of subspace analysis that has shown promising results is that
+ of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+.
+ This is a relatively new method of decomposition proposed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lee1999"
+
+\end_inset
+
+, with applications to spectral analysis due to the non-negativity constraints
+ of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ and the non-negative nature of spectral magnitude data.
+ The components of a desired signal and be learned and extracted from a
+ signal.
+ Babble filtering systems are required to be trained to recognise the individual
+ speaker, which is often a difficult process and a practical limitation
+ in these systems.
+\end_layout
+
+\begin_layout Standard
+A number of different challenges have been held with the motivation of improving
+ the performance of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ systems under difficult noise conditions 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cooke2010,Barker2013,Vincent2013"
+
+\end_inset
+
+.
+ Entries into such competitions can be broadly categorised into two categories,
+ those that perform recognition themselves, and those that clean the signal
+ and supply a cleaned signal to a standardised recogniser.
+ Algorithms that fall into the latter category have a possible additional
+ application: improving intelligibility for human listeners.
+ It is these algorithms that are of interest in this thesis.
+\end_layout
+
+\begin_layout Section
+Research Questions
+\end_layout
+
+\begin_layout Standard
+The aim of this thesis is to address the following research questions:
+\end_layout
+
+\begin_layout Enumerate
+Are good enhancement algorithms effective for both human listeners and machine
+ listeners? Can a generic and practical speech enhancement algorithm find
+ application in signal enhancement and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Enumerate
+Can the results be improved by modifying algorithms to concentrate the focus
+ on recognition of the desired speakers voice?
+\end_layout
+
+\begin_layout Enumerate
+Can the practicality of existing algorithms be improved to allow applications
+ in end- user hardware?
+\end_layout
+
+\begin_layout Section
+Scope
+\end_layout
+
+\begin_layout Standard
+The scope of this thesis is to develop a general and practical speech enhancemen
+t algorithm with applications in a number of areas, including enhancement
+ for human listeners and for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ systems.
+ Such an algorithm should be efficient, have low requirements, and operate
+ on monaural recordings.
+\end_layout
+
+\begin_layout Standard
+The scope does not encompass specific applications, and thus does not consider
+ special requirements beyond normal hearing for hearing aid and cochlear
+ implant listeners.
+ It is assumed that the performance increases for normal hearing listeners
+ will be applicable to impaired hearing listeners.
+ Further studies would be required to ensure this is the case.
+\end_layout
+
+\end_body
+\end_document

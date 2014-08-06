@@ -1,11 +1,16 @@
+%% Init
+clear all;
+
 Fs = 16000;
 nf = 513;
 nb = 80;
-speaker = 'c3c';
-recVals = ['2':'9' 'a':'z']; % 34 recordings. Ignore '1', it's silence
-DATA_LOC = '/users/ash/documents/thesisdata/wsjcam0/rawdat/si_dt/';
+nsLvl = 0.1;
+TEST_ID = 'alphatesting';
+SPKRS = {'c3c','c3f'}; % Speaker IDs used in this test
+REC_VALS = ['2':'9' 'a':'z']; % 34 recordings. Ignore '1', it's silence
+ROOT_LOC = '/users/ash/documents/thesisdata/wsjcam0/rawdat/si_dt/';
 
-% Include Voicebox Library
+% Include Libraries
 VOICEBOX_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/voicebox';
 if isempty(strfind(path,VOICEBOX_LOC))
     path(VOICEBOX_LOC,path)
@@ -14,51 +19,104 @@ WSJTOOLS_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/wsjtools';
 if isempty(strfind(path,WSJTOOLS_LOC))
     path(WSJTOOLS_LOC,path)
 end
-
-% Form training data
-trainingData = [];
-age = getfromifo(sprintf('%s%s/%sa0100.ifo',DATA_LOC,speaker,speaker),...
-    'Talker Age');
-sex = getfromifo(sprintf('%s%s/%sa0100.ifo',DATA_LOC,speaker,speaker),...
-    'Talker Sex');
-sex = sex(1);
-%f = fopen(
-fprintf(    ['Training on speaker %3s (%2s %1s):              ' ...
-        '                                      | start |  end  |\n'], ...
-        speaker,age,sex)
-for recIndex = 1:8 % first 8 for training
-    recNum = recVals(recIndex);
-    [rec,FsIn] = audioread([DATA_LOC speaker '/' speaker 'a010' recNum ...
-        '.wav']);
-    rec = resample(rec,FsIn,Fs);
-    fprintf(['             %s%s/%sa010%s.wav |%7d|%7d|\n'],DATA_LOC, ...
-        speaker,speaker,recNum,length(trainingData)+1, ...
-        length(trainingData)+length(rec));
-    trainingData = [trainingData;rec];
+PESQ_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/pesq';
+if isempty(strfind(path,PESQ_LOC))
+    path(PESQ_LOC,path)
 end
 
-% Nicities
-%soundsc(trainingData,Fs);
+%% Data retrieval and training
+trainWav = cell(size(SPKRS));
+spkrData = cell(size(SPKRS));
+X_train = cell(size(SPKRS));
+V_train = cell(size(SPKRS));
+W_train = cell(size(SPKRS));
+testWav = cell(size(SPKRS));
+X_test = cell(size(SPKRS));
+V_test = cell(size(SPKRS));
+W_test = cell(size(SPKRS));
 figure()
-plot(trainingData);
-figure()
+set(gca, 'LooseInset', get(gca,'TightInset'))
+for spkrI = 1:numel(SPKRS)
+    % Training data
+    speaker = SPKRS{spkrI};
+    wav = trainWav{spkrI};
+    spkrData{spkrI} = getfromifo( ...
+        sprintf('%s%s/%sa0100.ifo',ROOT_LOC,speaker,speaker));
+    age = spkrData{spkrI}.Talker_Age;
+    sex = spkrData{spkrI}.Talker_Sex(1); % f or m
+    fprintf(    ['Training on speaker %3s (%2s %1s):' ...
+        blanks(numel(ROOT_LOC)-10) '| start |  end  |\n'],speaker,age,sex)
+    for recIndex = 1:8 % first 8 for training
+        recNum = REC_VALS(recIndex);
+        [rec,FsIn] = audioread(sprintf('%s%s/%sa010%s.wav',ROOT_LOC, ...
+            speaker,speaker,recNum));
+        rec = resample(rec,FsIn,Fs);
+        fprintf('    %s%s/%sa010%s.wav |%7d|%7d|\n',ROOT_LOC, ...
+            speaker,speaker,recNum,length(wav)+1, ...
+            length(wav)+length(rec));
+        wav = [wav;rec];
+    end
+    trainWav{spkrI} = wav;
 
-% STFT
-frameN = (nf-1)*2;
+    % STFT
+    frameN = (nf-1)*2; % frame length (no. samples)
+    win = hamming(frameN,'periodic');
+    trainSTFT = rfft(enframe(wav,win,nf-1),frameN,2); % 50% overlap
+    X_train{spkrI} = abs(trainSTFT)';
+    subplot(numel(SPKRS),2,2*spkrI-1);
+    surf(log10(X_train{spkrI}),'EdgeColor','none');
+    axis xy; axis tight; view(0,90);
+    title(sprintf('%s: X \rightarrow Input Signal',speaker));
+
+    rev = overlapadd(irfft(trainSTFT,frameN,2),win,nf-1);
+    %soundsc(rev,Fs)
+
+    % Training
+    [Vspeech,Wspeech] = nnmf(X_train{spkrI},nb);
+    V_train{spkrI} = Vspeech; W_train{spkrI} = Wspeech;
+    subplot(numel(SPKRS),2,2*spkrI);
+    surf(log10(Vspeech*Wspeech),'EdgeColor','none');
+    axis xy; axis tight; view(0,90);
+    title(['V_{all} \times W_{all} \rightarrow Approximation by ' ...
+        'factorisation']);
+
+    recovered = overlapadd(irfft((Vspeech*Wspeech)',frameN,2),win,nf-1);
+    %soundsc(recovered,Fs)
+
+    % Test Data
+    recIndex = recIndex + 1;
+    recNum = REC_VALS(recIndex);
+    [rec,FsIn] = audioread(sprintf('%s%s/%sa010%s.wav',ROOT_LOC, ...
+        speaker,speaker,recNum));
+    testWav{sprkI} = resample(rec,FsIn,Fs);
+end
+
+target = testWav{1};
+noise = testWav{2};
+
+% get target and noise same length
+if numel(target) > numel(noise)
+    noise = [noise;zeros(numel(target)-numel(noise),1)];
+else
+    target = [target;zeros(numel(noise)-numel(target),1)];
+end
+
+% create mixed signal
+mixed = target + nsLvl*noise;
+soundsc(mixed,Fs)
+
+%% Extract
+frameN = (nf-1)*2; % frame length (no. samples)
 win = hamming(frameN,'periodic');
-trainSTFT = rfft(enframe(trainingData,win,nf-1),frameN,2); % 50% overlap
-X = abs(trainSTFT)';
-surf(log10(X),'EdgeColor','none'); axis xy; axis tight; view(0,90);
+sigSTFT = rfft(enframe(mixed,win,nf-1),frameN,2); % 50% overlap
+X_sig = abs(sigSTFT)';
 
-rev = overlapadd(irfft(trainSTFT,frameN,2),win,nf-1);
-%soundsc(rev,Fs)
+targetEst = 
 
-% Training
-[V,W] = nnmf(X,nb);
-figure()
-surf(log10(V*W),'EdgeColor','none'); axis xy; axis tight; view(0,90);
+before = 'before.wav';
+after = 'after.wav';
+audiowrite(before,trainWav,Fs)
+audiowrite(after,recovered,Fs)
 
-rev = overlapadd(irfft((V*W)',frameN,2),win,nf-1);
-soundsc(rev,Fs)
-
+[pesq_mos] = pesq(Fs,after,before)
     

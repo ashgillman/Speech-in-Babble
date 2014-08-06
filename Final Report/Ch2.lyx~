@@ -2800,5 +2800,27 @@ reference "eq:nmf-approx"
  and therefore we can we can reconstruct a desired signal as:
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{X}_{Desired}=V_{Desired}\times\hat{W}_{Desired}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\hat{.}$"
+description "Indicates an estimated value."
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

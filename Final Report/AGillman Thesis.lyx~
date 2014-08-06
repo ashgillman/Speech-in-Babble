@@ -183,6 +183,17 @@ set_width "auto"
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol " Matrix notation"
+description "In this thesis, matrices are denoted by capitalised letters. Subscript notation on matrices using commas denotes indexation (i.e. $A_{ij}$ represents the $i$th row and $j$th column) whereas using the multiplication symbol, $\\times$, denotes a size definition (i.e. $A_{i\\times j}$ defines an $i$-by-$j$ matrix)."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "Ac.lyx"
