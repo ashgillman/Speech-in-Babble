@@ -1,10 +1,11 @@
 %% Init
 clear all;
 
+% Test parameters
 Fs = 16000;
 nf = 513;
 nb = 80;
-nsLvl = 0.1;
+nsLvl = 0.5;
 TEST_ID = 'alphatesting';
 SPKRS = {'c3c','c3f'}; % Speaker IDs used in this test
 REC_VALS = ['2':'9' 'a':'z']; % 34 recordings. Ignore '1', it's silence
@@ -114,7 +115,7 @@ Lambda_speech = cov(log(Wspeech)'); Lambda_noise = cov(log(Wnoise)');
 
 %% Mix
 mixed = speech + nsLvl*noise;
-soundsc(mixed,Fs)
+%soundsc(mixed,Fs)
 
 frameN = (nf-1)*2; % frame length (no. samples)
 win = hamming(frameN,'periodic');
@@ -123,12 +124,15 @@ X_sig = abs(sigSTFT)';
 
 %% Denoise
 Vall = [Vspeech Vnoise];
-%targetEst = 
+[ignore,Wall_est] = nmf_kl(X_sig,2*nb,'W',Vall);
+XspeechEst = Vspeech*Wall_est(1:nb,:);
+recovered = overlapadd(irfft((XspeechEst)',frameN,2),win,nf-1);
+soundsc(recovered,Fs);
 
 before = 'before.wav';
 after = 'after.wav';
 audiowrite(before,mixed,Fs)
-%audiowrite(after,recovered,Fs)
+audiowrite(after,recovered,Fs)
 
 [pesq_mos] = pesq(Fs,after,before)
     
