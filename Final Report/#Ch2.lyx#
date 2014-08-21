@@ -2803,8 +2803,19 @@ reference "eq:nmf-approx"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\hat{X}
+\hat{X}_{Desired}=V_{Desired}\times\hat{W}_{Desired}
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\hat{.}$"
+description "Indicates an estimated value."
 
 \end_inset
 

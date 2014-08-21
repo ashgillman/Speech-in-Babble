@@ -1,0 +1,794 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'figlet' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose cache add [ 'figlet', null ]
+5 verbose cache add name=undefined spec="figlet" args=["figlet",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'figlet',
+6 verbose parsed url   path: 'figlet',
+6 verbose parsed url   href: 'figlet' }
+7 silly lockFile b9071348-figlet figlet
+8 verbose lock figlet /Users/Ash/.npm/b9071348-figlet.lock
+9 silly lockFile b9071348-figlet figlet
+10 silly lockFile b9071348-figlet figlet
+11 verbose addNamed [ 'figlet', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile a40df646-figlet figlet@
+14 verbose lock figlet@ /Users/Ash/.npm/a40df646-figlet.lock
+15 silly addNameRange { name: 'figlet', range: '*', hasData: false }
+16 verbose url raw figlet
+17 verbose url resolving [ 'https://registry.npmjs.org/', './figlet' ]
+18 verbose url resolved https://registry.npmjs.org/figlet
+19 info trying registry request attempt 1 at 22:03:53
+20 http GET https://registry.npmjs.org/figlet
+21 http 200 https://registry.npmjs.org/figlet
+22 silly registry.get cb [ 200,
+22 silly registry.get   { date: 'Wed, 13 Aug 2014 12:03:54 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly registry.get     etag: '"BYG6WFBBCVIM4RTBSL5ZU773V"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=60',
+22 silly registry.get     'content-length': '18307',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '0',
+22 silly registry.get     'x-served-by': 'cache-syd1620-SYD',
+22 silly registry.get     'x-cache': 'MISS',
+22 silly registry.get     'x-cache-hits': '0',
+22 silly registry.get     'x-timer': 'S1407931434.553951,VS0,VE361',
+22 silly registry.get     vary: 'Accept',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'figlet', range: '*', hasData: true }
+24 silly addNameRange versions [ 'figlet',
+24 silly addNameRange   [ '1.0.1',
+24 silly addNameRange     '1.0.2',
+24 silly addNameRange     '1.0.3',
+24 silly addNameRange     '1.0.5',
+24 silly addNameRange     '1.0.6',
+24 silly addNameRange     '1.0.7',
+24 silly addNameRange     '1.0.8',
+24 silly addNameRange     '1.0.9',
+24 silly addNameRange     '1.0.10' ] ]
+25 verbose addNamed [ 'figlet', '1.0.10' ]
+26 verbose addNamed [ '1.0.10', '1.0.10' ]
+27 silly lockFile c81a39ef-figlet-1-0-10 figlet@1.0.10
+28 verbose lock figlet@1.0.10 /Users/Ash/.npm/c81a39ef-figlet-1-0-10.lock
+29 silly lockFile dd9dba4c-mjs-org-figlet-figlet-1-0-10-tgz https://registry.npmjs.org/figlet/-/figlet-1.0.10.tgz
+30 verbose lock https://registry.npmjs.org/figlet/-/figlet-1.0.10.tgz /Users/Ash/.npm/dd9dba4c-mjs-org-figlet-figlet-1-0-10-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/figlet/-/figlet-1.0.10.tgz',
+31 verbose addRemoteTarball   'cebd2f4131a507cce84e42ba370136a73d7eb5dc' ]
+32 info retry fetch attempt 1 at 22:03:55
+33 verbose fetch to= /var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/tmp.tgz
+34 http GET https://registry.npmjs.org/figlet/-/figlet-1.0.10.tgz
+35 http 200 https://registry.npmjs.org/figlet/-/figlet-1.0.10.tgz
+36 verbose tar unpack /var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/tmp.tgz
+37 silly lockFile 86c3919b-35203-0-6251062031369656-package tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package
+38 verbose lock tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package /Users/Ash/.npm/86c3919b-35203-0-6251062031369656-package.lock
+39 silly lockFile e1c36043-35203-0-6251062031369656-tmp-tgz tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/tmp.tgz
+40 verbose lock tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/tmp.tgz /Users/Ash/.npm/e1c36043-35203-0-6251062031369656-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm extractEntry .npmignore
+44 silly gunzTarPerm extractEntry README.md
+45 silly gunzTarPerm extractEntry Gruntfile.js
+46 silly gunzTarPerm extractEntry test.js
+47 silly gunzTarPerm extractEntry examples/front-end/jquery-1.7.2.min.js
+48 silly gunzTarPerm extractEntry examples/front-end/index.htm
+49 silly gunzTarPerm extractEntry examples/node/app.js
+50 silly gunzTarPerm extractEntry .jshintrc
+51 silly gunzTarPerm extractEntry lib/figlet.js
+52 silly gunzTarPerm extractEntry lib/node-figlet.js
+53 silly gunzTarPerm extractEntry doc/figfont.txt
+54 silly gunzTarPerm extractEntry test/figlet_test.js
+55 silly gunzTarPerm extractEntry test/DONNOW.ASC
+56 silly gunzTarPerm extractEntry test/expected/dancingFont
+57 silly gunzTarPerm extractEntry test/expected/graffiti
+58 silly gunzTarPerm extractEntry test/expected/standard
+59 silly gunzTarPerm extractEntry fonts/JS Bracket Letters.flf
+60 silly gunzTarPerm extractEntry fonts/1Row.flf
+61 silly gunzTarPerm extractEntry fonts/3D Diagonal.flf
+62 silly gunzTarPerm extractEntry fonts/3D-ASCII.flf
+63 silly gunzTarPerm extractEntry fonts/3x5.flf
+64 silly gunzTarPerm extractEntry fonts/4Max.flf
+65 silly gunzTarPerm extractEntry fonts/5 Line Oblique.flf
+66 silly gunzTarPerm extractEntry fonts/AMC 3 Line.flf
+67 silly gunzTarPerm extractEntry fonts/AMC 3 Liv1.flf
+68 silly gunzTarPerm extractEntry fonts/AMC AAA01.flf
+69 silly gunzTarPerm extractEntry fonts/AMC Neko.flf
+70 silly gunzTarPerm extractEntry fonts/AMC Razor.flf
+71 silly gunzTarPerm extractEntry fonts/AMC Razor2.flf
+72 silly gunzTarPerm extractEntry fonts/AMC Slash.flf
+73 silly gunzTarPerm extractEntry fonts/AMC Slider.flf
+74 silly gunzTarPerm extractEntry fonts/AMC Thin.flf
+75 silly gunzTarPerm extractEntry fonts/AMC Tubes.flf
+76 silly gunzTarPerm extractEntry fonts/AMC Untitled.flf
+77 silly gunzTarPerm extractEntry fonts/ANSI Shadow.flf
+78 silly gunzTarPerm extractEntry fonts/ASCII New Roman.flf
+79 silly gunzTarPerm extractEntry fonts/Acrobatic.flf
+80 silly gunzTarPerm extractEntry fonts/Alligator.flf
+81 silly gunzTarPerm extractEntry fonts/Alligator2.flf
+82 silly gunzTarPerm extractEntry fonts/Alpha.flf
+83 silly gunzTarPerm extractEntry fonts/Alphabet.flf
+84 silly gunzTarPerm extractEntry fonts/Arrows.flf
+85 silly gunzTarPerm extractEntry fonts/Avatar.flf
+86 silly gunzTarPerm extractEntry fonts/B1FF.flf
+87 silly gunzTarPerm extractEntry fonts/B1FF.php
+88 silly gunzTarPerm extractEntry fonts/Banner.flf
+89 silly gunzTarPerm extractEntry fonts/Banner3-D.flf
+90 silly gunzTarPerm extractEntry fonts/Banner3.flf
+91 silly gunzTarPerm extractEntry fonts/Banner4.flf
+92 silly gunzTarPerm extractEntry fonts/Barbwire.flf
+93 silly gunzTarPerm extractEntry fonts/Basic.flf
+94 silly gunzTarPerm extractEntry fonts/Bear.flf
+95 silly gunzTarPerm extractEntry fonts/Bell.flf
+96 silly gunzTarPerm extractEntry fonts/Benjamin.flf
+97 silly gunzTarPerm extractEntry fonts/Big Chief.flf
+98 silly gunzTarPerm extractEntry fonts/Big Money-ne.flf
+99 silly gunzTarPerm extractEntry fonts/Big Money-nw.flf
+100 silly gunzTarPerm extractEntry fonts/Big Money-se.flf
+101 silly gunzTarPerm extractEntry fonts/Big Money-sw.flf
+102 silly gunzTarPerm extractEntry fonts/Big.flf
+103 silly gunzTarPerm extractEntry fonts/Bigfig.flf
+104 silly gunzTarPerm extractEntry fonts/Binary.flf
+105 silly gunzTarPerm extractEntry fonts/Block.flf
+106 silly gunzTarPerm extractEntry fonts/Blocks.flf
+107 silly gunzTarPerm extractEntry fonts/Bloody.flf
+108 silly gunzTarPerm extractEntry fonts/Bolger.flf
+109 silly gunzTarPerm extractEntry fonts/Braced.flf
+110 silly gunzTarPerm extractEntry fonts/Bright.flf
+111 silly gunzTarPerm extractEntry fonts/Broadway KB.flf
+112 silly gunzTarPerm extractEntry fonts/Broadway.flf
+113 silly gunzTarPerm extractEntry fonts/Bubble.flf
+114 silly gunzTarPerm extractEntry fonts/Bulbhead.flf
+115 silly gunzTarPerm extractEntry fonts/Caligraphy.flf
+116 silly gunzTarPerm extractEntry fonts/Caligraphy2.flf
+117 silly gunzTarPerm extractEntry fonts/Calvin S.flf
+118 silly gunzTarPerm extractEntry fonts/Cards.flf
+119 silly gunzTarPerm extractEntry fonts/Catwalk.flf
+120 silly gunzTarPerm extractEntry fonts/Chiseled.flf
+121 silly gunzTarPerm extractEntry fonts/Chunky.flf
+122 silly gunzTarPerm extractEntry fonts/Coinstak.flf
+123 silly gunzTarPerm extractEntry fonts/Cola.flf
+124 silly gunzTarPerm extractEntry fonts/Colossal.flf
+125 silly gunzTarPerm extractEntry fonts/Computer.flf
+126 silly gunzTarPerm extractEntry fonts/Contessa.flf
+127 silly gunzTarPerm extractEntry fonts/Contrast.flf
+128 silly gunzTarPerm extractEntry fonts/Cosmike.flf
+129 silly gunzTarPerm extractEntry fonts/Crawford.flf
+130 silly gunzTarPerm extractEntry fonts/Crawford2.flf
+131 silly gunzTarPerm extractEntry fonts/Crazy.flf
+132 silly gunzTarPerm extractEntry fonts/Cricket.flf
+133 silly gunzTarPerm extractEntry fonts/Cursive.flf
+134 silly gunzTarPerm extractEntry fonts/Cyberlarge.flf
+135 silly gunzTarPerm extractEntry fonts/Cybermedium.flf
+136 silly gunzTarPerm extractEntry fonts/Cybersmall.flf
+137 silly gunzTarPerm extractEntry fonts/Cygnet.flf
+138 silly gunzTarPerm extractEntry fonts/DANC4.flf
+139 silly gunzTarPerm extractEntry fonts/DWhistled.flf
+140 silly gunzTarPerm extractEntry fonts/Dancing Font.flf
+141 silly gunzTarPerm extractEntry fonts/Decimal.flf
+142 silly gunzTarPerm extractEntry fonts/Def Leppard.flf
+143 silly gunzTarPerm extractEntry fonts/Delta Corps Priest 1.flf
+144 silly gunzTarPerm extractEntry fonts/Diamond.flf
+145 silly gunzTarPerm extractEntry fonts/Diet Cola.flf
+146 silly gunzTarPerm extractEntry fonts/Digital.flf
+147 silly gunzTarPerm extractEntry fonts/Doh.flf
+148 silly gunzTarPerm extractEntry fonts/Doom.flf
+149 silly gunzTarPerm extractEntry fonts/Dot Matrix.flf
+150 silly gunzTarPerm extractEntry fonts/Double Shorts.flf
+151 silly gunzTarPerm extractEntry fonts/Double.flf
+152 silly gunzTarPerm extractEntry fonts/Dr Pepper.flf
+153 silly gunzTarPerm extractEntry fonts/Efti Chess.flf
+154 silly gunzTarPerm extractEntry fonts/Efti Font.flf
+155 silly gunzTarPerm extractEntry fonts/Efti Italic.flf
+156 silly gunzTarPerm extractEntry fonts/Efti Piti.flf
+157 silly gunzTarPerm extractEntry fonts/Efti Robot.flf
+158 silly gunzTarPerm extractEntry fonts/Efti Wall.flf
+159 silly gunzTarPerm extractEntry fonts/Efti Water.flf
+160 silly gunzTarPerm extractEntry fonts/Electronic.flf
+161 silly gunzTarPerm extractEntry fonts/Elite.flf
+162 silly gunzTarPerm extractEntry fonts/Epic.flf
+163 silly gunzTarPerm extractEntry fonts/Fender.flf
+164 silly gunzTarPerm extractEntry fonts/Filter.flf
+165 silly gunzTarPerm extractEntry fonts/Fire Font-k.flf
+166 silly gunzTarPerm extractEntry fonts/Fire Font-s.flf
+167 silly gunzTarPerm extractEntry fonts/Flipped.flf
+168 silly gunzTarPerm extractEntry fonts/Flower Power.flf
+169 silly gunzTarPerm extractEntry fonts/Four Tops.flf
+170 silly gunzTarPerm extractEntry fonts/Fraktur.flf
+171 silly gunzTarPerm extractEntry fonts/Fun Face.flf
+172 silly gunzTarPerm extractEntry fonts/Fun Faces.flf
+173 silly gunzTarPerm extractEntry fonts/Fuzzy.flf
+174 silly gunzTarPerm extractEntry fonts/Georgi16.flf
+175 silly gunzTarPerm extractEntry fonts/Georgia11.flf
+176 silly gunzTarPerm extractEntry fonts/Ghost.flf
+177 silly gunzTarPerm extractEntry fonts/Ghoulish.flf
+178 silly gunzTarPerm extractEntry fonts/Glenyn.flf
+179 silly gunzTarPerm extractEntry fonts/Goofy.flf
+180 silly gunzTarPerm extractEntry fonts/Gothic.flf
+181 silly gunzTarPerm extractEntry fonts/Graceful.flf
+182 silly gunzTarPerm extractEntry fonts/Gradient.flf
+183 silly gunzTarPerm extractEntry fonts/Graffiti.flf
+184 silly gunzTarPerm extractEntry fonts/Greek.flf
+185 silly gunzTarPerm extractEntry fonts/Heart Left.flf
+186 silly gunzTarPerm extractEntry fonts/Heart Right.flf
+187 silly gunzTarPerm extractEntry fonts/Henry 3D.flf
+188 silly gunzTarPerm extractEntry fonts/Hex.flf
+189 silly gunzTarPerm extractEntry fonts/Hieroglyphs.flf
+190 silly gunzTarPerm extractEntry fonts/Hollywood.flf
+191 silly gunzTarPerm extractEntry fonts/Horizontal Left.flf
+192 silly gunzTarPerm extractEntry fonts/Horizontal Right.flf
+193 silly gunzTarPerm extractEntry fonts/ICL-1900.flf
+194 silly gunzTarPerm extractEntry fonts/Impossible.flf
+195 silly gunzTarPerm extractEntry fonts/Invita.flf
+196 silly gunzTarPerm extractEntry fonts/Isometric1.flf
+197 silly gunzTarPerm extractEntry fonts/Isometric2.flf
+198 silly gunzTarPerm extractEntry fonts/Isometric3.flf
+199 silly gunzTarPerm extractEntry fonts/Isometric4.flf
+200 silly gunzTarPerm extractEntry fonts/Italic.flf
+201 silly gunzTarPerm extractEntry fonts/Ivrit.flf
+202 silly gunzTarPerm extractEntry fonts/JS Block Letters.flf
+203 silly gunzTarPerm extractEntry fonts/3-D.flf
+204 silly gunzTarPerm extractEntry fonts/JS Capital Curves.flf
+205 silly gunzTarPerm extractEntry fonts/JS Cursive.flf
+206 silly gunzTarPerm extractEntry fonts/JS Stick Letters.flf
+207 silly gunzTarPerm extractEntry fonts/Jacky.flf
+208 silly gunzTarPerm extractEntry fonts/Jazmine.flf
+209 silly gunzTarPerm extractEntry fonts/Jerusalem.flf
+210 silly gunzTarPerm extractEntry fonts/Katakana.flf
+211 silly gunzTarPerm extractEntry fonts/Kban.flf
+212 silly gunzTarPerm extractEntry fonts/Keyboard.flf
+213 silly gunzTarPerm extractEntry fonts/Knob.flf
+214 silly gunzTarPerm extractEntry fonts/Konto Slant.flf
+215 silly gunzTarPerm extractEntry fonts/Konto.flf
+216 silly gunzTarPerm extractEntry fonts/LCD.flf
+217 silly gunzTarPerm extractEntry fonts/Larry 3D 2.flf
+218 silly gunzTarPerm extractEntry fonts/Larry 3D.flf
+219 silly gunzTarPerm extractEntry fonts/Lean.flf
+220 silly gunzTarPerm extractEntry fonts/Letters.flf
+221 silly gunzTarPerm extractEntry fonts/Lil Devil.flf
+222 silly gunzTarPerm extractEntry fonts/Line Blocks.flf
+223 silly gunzTarPerm extractEntry fonts/Linux.flf
+224 silly gunzTarPerm extractEntry fonts/Lockergnome.flf
+225 silly gunzTarPerm extractEntry fonts/Madrid.flf
+226 silly gunzTarPerm extractEntry fonts/Marquee.flf
+227 silly gunzTarPerm extractEntry fonts/Maxfour.flf
+228 silly gunzTarPerm extractEntry fonts/Merlin1.flf
+229 silly gunzTarPerm extractEntry fonts/Merlin2.flf
+230 silly gunzTarPerm extractEntry fonts/Mike.flf
+231 silly gunzTarPerm extractEntry fonts/Mini.flf
+232 silly gunzTarPerm extractEntry fonts/Mirror.flf
+233 silly gunzTarPerm extractEntry fonts/Mnemonic.flf
+234 silly gunzTarPerm extractEntry fonts/Modular.flf
+235 silly gunzTarPerm extractEntry fonts/Morse.flf
+236 silly gunzTarPerm extractEntry fonts/Morse2.flf
+237 silly gunzTarPerm extractEntry fonts/Moscow.flf
+238 silly gunzTarPerm extractEntry fonts/Mshebrew210.flf
+239 silly gunzTarPerm extractEntry fonts/Muzzle.flf
+240 silly gunzTarPerm extractEntry fonts/NScript.flf
+241 silly gunzTarPerm extractEntry fonts/NT Greek.flf
+242 silly gunzTarPerm extractEntry fonts/NV Script.flf
+243 silly gunzTarPerm extractEntry fonts/Nancyj-Fancy.flf
+244 silly gunzTarPerm extractEntry fonts/Nancyj-Improved.flf
+245 silly gunzTarPerm extractEntry fonts/Nancyj-Underlined.flf
+246 silly gunzTarPerm extractEntry fonts/Nancyj.flf
+247 silly gunzTarPerm extractEntry fonts/Nipples.flf
+248 silly gunzTarPerm extractEntry fonts/O8.flf
+249 silly gunzTarPerm extractEntry fonts/OS2.flf
+250 silly gunzTarPerm extractEntry fonts/Octal.flf
+251 silly gunzTarPerm extractEntry fonts/Ogre.flf
+252 silly gunzTarPerm extractEntry fonts/Old Banner.flf
+253 silly gunzTarPerm extractEntry fonts/Patorjk's Cheese.flf
+254 silly gunzTarPerm extractEntry fonts/Patorjk-HeX.flf
+255 silly gunzTarPerm extractEntry fonts/Pawp.flf
+256 silly gunzTarPerm extractEntry fonts/Peaks Slant.flf
+257 silly gunzTarPerm extractEntry fonts/Peaks.flf
+258 silly gunzTarPerm extractEntry fonts/Pebbles.flf
+259 silly gunzTarPerm extractEntry fonts/Pepper.flf
+260 silly gunzTarPerm extractEntry fonts/Poison.flf
+261 silly gunzTarPerm extractEntry fonts/Puffy.flf
+262 silly gunzTarPerm extractEntry fonts/Puzzle.flf
+263 silly gunzTarPerm extractEntry fonts/Pyramid.flf
+264 silly gunzTarPerm extractEntry fonts/Rammstein.flf
+265 silly gunzTarPerm extractEntry fonts/Rectangles.flf
+266 silly gunzTarPerm extractEntry fonts/Red Phoenix.flf
+267 silly gunzTarPerm extractEntry fonts/Relief.flf
+268 silly gunzTarPerm extractEntry fonts/Relief2.flf
+269 silly gunzTarPerm extractEntry fonts/Reverse.flf
+270 silly gunzTarPerm extractEntry fonts/Roman.flf
+271 silly gunzTarPerm extractEntry fonts/Rot13.flf
+272 silly gunzTarPerm extractEntry fonts/Rot13.php
+273 silly gunzTarPerm extractEntry fonts/Rotated.flf
+274 silly gunzTarPerm extractEntry fonts/Rounded.flf
+275 silly gunzTarPerm extractEntry fonts/Rowan Cap.flf
+276 silly gunzTarPerm extractEntry fonts/Rozzo.flf
+277 silly gunzTarPerm extractEntry fonts/Runic.flf
+278 silly gunzTarPerm extractEntry fonts/Runyc.flf
+279 silly gunzTarPerm extractEntry fonts/S Blood.flf
+280 silly gunzTarPerm extractEntry fonts/SL Script.flf
+281 silly gunzTarPerm extractEntry fonts/Santa Clara.flf
+282 silly gunzTarPerm extractEntry fonts/Script.flf
+283 silly gunzTarPerm extractEntry fonts/Serifcap.flf
+284 silly gunzTarPerm extractEntry fonts/Shadow.flf
+285 silly gunzTarPerm extractEntry fonts/Shimrod.flf
+286 silly gunzTarPerm extractEntry fonts/Short.flf
+287 silly gunzTarPerm extractEntry fonts/Slant Relief.flf
+288 silly gunzTarPerm extractEntry fonts/Slant.flf
+289 silly gunzTarPerm extractEntry fonts/Slide.flf
+290 silly gunzTarPerm extractEntry fonts/Small Caps.flf
+291 silly gunzTarPerm extractEntry fonts/Small Isometric1.flf
+292 silly gunzTarPerm extractEntry fonts/Small Keyboard.flf
+293 silly gunzTarPerm extractEntry fonts/Small Poison.flf
+294 silly gunzTarPerm extractEntry fonts/Small Script.flf
+295 silly gunzTarPerm extractEntry fonts/Small Shadow.flf
+296 silly gunzTarPerm extractEntry fonts/Small Slant.flf
+297 silly gunzTarPerm extractEntry fonts/Small Tengwar.flf
+298 silly gunzTarPerm extractEntry fonts/Small.flf
+299 silly gunzTarPerm extractEntry fonts/Soft.flf
+300 silly gunzTarPerm extractEntry fonts/Speed.flf
+301 silly gunzTarPerm extractEntry fonts/Spliff.flf
+302 silly gunzTarPerm extractEntry fonts/Stacey.flf
+303 silly gunzTarPerm extractEntry fonts/Stampate.flf
+304 silly gunzTarPerm extractEntry fonts/Stampatello.flf
+305 silly gunzTarPerm extractEntry fonts/Standard.flf
+306 silly gunzTarPerm extractEntry fonts/Star Strips.flf
+307 silly gunzTarPerm extractEntry fonts/Star Wars.flf
+308 silly gunzTarPerm extractEntry fonts/Stellar.flf
+309 silly gunzTarPerm extractEntry fonts/Stforek.flf
+310 silly gunzTarPerm extractEntry fonts/Stick Letters.flf
+311 silly gunzTarPerm extractEntry fonts/Stop.flf
+312 silly gunzTarPerm extractEntry fonts/Straight.flf
+313 silly gunzTarPerm extractEntry fonts/Stronger Than All.flf
+314 silly gunzTarPerm extractEntry fonts/Sub-Zero.flf
+315 silly gunzTarPerm extractEntry fonts/Swamp Land.flf
+316 silly gunzTarPerm extractEntry fonts/Swan.flf
+317 silly gunzTarPerm extractEntry fonts/Sweet.flf
+318 silly gunzTarPerm extractEntry fonts/THIS.flf
+319 silly gunzTarPerm extractEntry fonts/Tanja.flf
+320 silly gunzTarPerm extractEntry fonts/Tengwar.flf
+321 silly gunzTarPerm extractEntry fonts/Term.flf
+322 silly gunzTarPerm extractEntry fonts/Test1.flf
+323 silly gunzTarPerm extractEntry fonts/The Edge.flf
+324 silly gunzTarPerm extractEntry fonts/Thick.flf
+325 silly gunzTarPerm extractEntry fonts/Thin.flf
+326 silly gunzTarPerm extractEntry fonts/Thorned.flf
+327 silly gunzTarPerm extractEntry fonts/Three Point.flf
+328 silly gunzTarPerm extractEntry fonts/Ticks Slant.flf
+329 silly gunzTarPerm extractEntry fonts/Ticks.flf
+330 silly gunzTarPerm extractEntry fonts/Tiles.flf
+331 silly gunzTarPerm extractEntry fonts/Tinker-Toy.flf
+332 silly gunzTarPerm extractEntry fonts/Tombstone.flf
+333 silly gunzTarPerm extractEntry fonts/Train.flf
+334 silly gunzTarPerm extractEntry fonts/Trek.flf
+335 silly gunzTarPerm extractEntry fonts/Tsalagi.flf
+336 silly gunzTarPerm extractEntry fonts/Tubular.flf
+337 silly gunzTarPerm extractEntry fonts/Twisted.flf
+338 silly gunzTarPerm extractEntry fonts/Two Point.flf
+339 silly gunzTarPerm extractEntry fonts/USA Flag.flf
+340 silly gunzTarPerm extractEntry fonts/Univers.flf
+341 silly gunzTarPerm extractEntry fonts/Varsity.flf
+342 silly gunzTarPerm extractEntry fonts/Wavy.flf
+343 silly gunzTarPerm extractEntry fonts/Weird.flf
+344 silly gunzTarPerm extractEntry fonts/Wet Letter.flf
+345 silly gunzTarPerm extractEntry fonts/Whimsy.flf
+346 silly gunzTarPerm extractEntry fonts/Wow.flf
+347 silly lockFile 86c3919b-35203-0-6251062031369656-package tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package
+348 silly lockFile 86c3919b-35203-0-6251062031369656-package tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package
+349 silly lockFile e1c36043-35203-0-6251062031369656-tmp-tgz tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/tmp.tgz
+350 silly lockFile e1c36043-35203-0-6251062031369656-tmp-tgz tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/tmp.tgz
+351 verbose tar pack [ '/Users/Ash/.npm/figlet/1.0.10/package.tgz',
+351 verbose tar pack   '/var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package' ]
+352 verbose tarball /Users/Ash/.npm/figlet/1.0.10/package.tgz
+353 verbose folder /var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package
+354 silly lockFile 86c3919b-35203-0-6251062031369656-package tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package
+355 verbose lock tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package /Users/Ash/.npm/86c3919b-35203-0-6251062031369656-package.lock
+356 silly lockFile 4b84f82a-sh-npm-figlet-1-0-10-package-tgz tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz
+357 verbose lock tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz /Users/Ash/.npm/4b84f82a-sh-npm-figlet-1-0-10-package-tgz.lock
+358 silly lockFile 86c3919b-35203-0-6251062031369656-package tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package
+359 silly lockFile 86c3919b-35203-0-6251062031369656-package tar:///var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/npm-81475-idzZfqY-/1407931435203-0.6251062031369656/package
+360 silly lockFile 4b84f82a-sh-npm-figlet-1-0-10-package-tgz tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz
+361 silly lockFile 4b84f82a-sh-npm-figlet-1-0-10-package-tgz tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz
+362 silly lockFile 84708af6-rs-Ash-npm-figlet-1-0-10-package /Users/Ash/.npm/figlet/1.0.10/package
+363 verbose lock /Users/Ash/.npm/figlet/1.0.10/package /Users/Ash/.npm/84708af6-rs-Ash-npm-figlet-1-0-10-package.lock
+364 silly lockFile 84708af6-rs-Ash-npm-figlet-1-0-10-package /Users/Ash/.npm/figlet/1.0.10/package
+365 silly lockFile 84708af6-rs-Ash-npm-figlet-1-0-10-package /Users/Ash/.npm/figlet/1.0.10/package
+366 verbose tar unpack /Users/Ash/.npm/figlet/1.0.10/package.tgz
+367 silly lockFile 4d41d66a-rs-Ash-npm-figlet-1-0-10-package tar:///Users/Ash/.npm/figlet/1.0.10/package
+368 verbose lock tar:///Users/Ash/.npm/figlet/1.0.10/package /Users/Ash/.npm/4d41d66a-rs-Ash-npm-figlet-1-0-10-package.lock
+369 silly lockFile 4b84f82a-sh-npm-figlet-1-0-10-package-tgz tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz
+370 verbose lock tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz /Users/Ash/.npm/4b84f82a-sh-npm-figlet-1-0-10-package-tgz.lock
+371 silly gunzTarPerm modes [ '755', '644' ]
+372 silly gunzTarPerm extractEntry package.json
+373 silly gunzTarPerm extractEntry .npmignore
+374 silly gunzTarPerm extractEntry README.md
+375 silly gunzTarPerm extractEntry test.js
+376 silly gunzTarPerm extractEntry Gruntfile.js
+377 silly gunzTarPerm extractEntry .jshintrc
+378 silly gunzTarPerm extractEntry fonts/JS Bracket Letters.flf
+379 silly gunzTarPerm extractEntry fonts/1Row.flf
+380 silly gunzTarPerm extractEntry fonts/3D Diagonal.flf
+381 silly gunzTarPerm extractEntry fonts/3D-ASCII.flf
+382 silly gunzTarPerm extractEntry fonts/3x5.flf
+383 silly gunzTarPerm extractEntry fonts/4Max.flf
+384 silly gunzTarPerm extractEntry fonts/5 Line Oblique.flf
+385 silly gunzTarPerm extractEntry fonts/AMC 3 Line.flf
+386 silly gunzTarPerm extractEntry fonts/AMC 3 Liv1.flf
+387 silly gunzTarPerm extractEntry fonts/AMC AAA01.flf
+388 silly gunzTarPerm extractEntry fonts/AMC Neko.flf
+389 silly gunzTarPerm extractEntry fonts/AMC Razor.flf
+390 silly gunzTarPerm extractEntry fonts/AMC Razor2.flf
+391 silly gunzTarPerm extractEntry fonts/AMC Slash.flf
+392 silly gunzTarPerm extractEntry fonts/AMC Slider.flf
+393 silly gunzTarPerm extractEntry fonts/AMC Thin.flf
+394 silly gunzTarPerm extractEntry fonts/AMC Tubes.flf
+395 silly gunzTarPerm extractEntry fonts/AMC Untitled.flf
+396 silly gunzTarPerm extractEntry fonts/ANSI Shadow.flf
+397 silly gunzTarPerm extractEntry fonts/ASCII New Roman.flf
+398 silly gunzTarPerm extractEntry fonts/Acrobatic.flf
+399 silly gunzTarPerm extractEntry fonts/Alligator.flf
+400 silly gunzTarPerm extractEntry fonts/Alligator2.flf
+401 silly gunzTarPerm extractEntry fonts/Alpha.flf
+402 silly gunzTarPerm extractEntry fonts/Alphabet.flf
+403 silly gunzTarPerm extractEntry fonts/Arrows.flf
+404 silly gunzTarPerm extractEntry fonts/Avatar.flf
+405 silly gunzTarPerm extractEntry fonts/B1FF.flf
+406 silly gunzTarPerm extractEntry fonts/B1FF.php
+407 silly gunzTarPerm extractEntry fonts/Banner.flf
+408 silly gunzTarPerm extractEntry fonts/Banner3-D.flf
+409 silly gunzTarPerm extractEntry fonts/Banner3.flf
+410 silly gunzTarPerm extractEntry fonts/Banner4.flf
+411 silly gunzTarPerm extractEntry fonts/Barbwire.flf
+412 silly gunzTarPerm extractEntry fonts/Basic.flf
+413 silly gunzTarPerm extractEntry fonts/Bear.flf
+414 silly gunzTarPerm extractEntry fonts/Bell.flf
+415 silly gunzTarPerm extractEntry fonts/Benjamin.flf
+416 silly gunzTarPerm extractEntry fonts/Big Chief.flf
+417 silly gunzTarPerm extractEntry fonts/Big Money-ne.flf
+418 silly gunzTarPerm extractEntry fonts/Big Money-nw.flf
+419 silly gunzTarPerm extractEntry fonts/Big Money-se.flf
+420 silly gunzTarPerm extractEntry fonts/Big Money-sw.flf
+421 silly gunzTarPerm extractEntry fonts/Big.flf
+422 silly gunzTarPerm extractEntry fonts/Bigfig.flf
+423 silly gunzTarPerm extractEntry fonts/Binary.flf
+424 silly gunzTarPerm extractEntry fonts/Block.flf
+425 silly gunzTarPerm extractEntry fonts/Blocks.flf
+426 silly gunzTarPerm extractEntry fonts/Bloody.flf
+427 silly gunzTarPerm extractEntry fonts/Bolger.flf
+428 silly gunzTarPerm extractEntry fonts/Braced.flf
+429 silly gunzTarPerm extractEntry fonts/Bright.flf
+430 silly gunzTarPerm extractEntry fonts/Broadway KB.flf
+431 silly gunzTarPerm extractEntry fonts/Broadway.flf
+432 silly gunzTarPerm extractEntry fonts/Bubble.flf
+433 silly gunzTarPerm extractEntry fonts/Bulbhead.flf
+434 silly gunzTarPerm extractEntry fonts/Caligraphy.flf
+435 silly gunzTarPerm extractEntry fonts/Caligraphy2.flf
+436 silly gunzTarPerm extractEntry fonts/Calvin S.flf
+437 silly gunzTarPerm extractEntry fonts/Cards.flf
+438 silly gunzTarPerm extractEntry fonts/Catwalk.flf
+439 silly gunzTarPerm extractEntry fonts/Chiseled.flf
+440 silly gunzTarPerm extractEntry fonts/Chunky.flf
+441 silly gunzTarPerm extractEntry fonts/Coinstak.flf
+442 silly gunzTarPerm extractEntry fonts/Cola.flf
+443 silly gunzTarPerm extractEntry fonts/Colossal.flf
+444 silly gunzTarPerm extractEntry fonts/Computer.flf
+445 silly gunzTarPerm extractEntry fonts/Contessa.flf
+446 silly gunzTarPerm extractEntry fonts/Contrast.flf
+447 silly gunzTarPerm extractEntry fonts/Cosmike.flf
+448 silly gunzTarPerm extractEntry fonts/Crawford.flf
+449 silly gunzTarPerm extractEntry fonts/Crawford2.flf
+450 silly gunzTarPerm extractEntry fonts/Crazy.flf
+451 silly gunzTarPerm extractEntry fonts/Cricket.flf
+452 silly gunzTarPerm extractEntry fonts/Cursive.flf
+453 silly gunzTarPerm extractEntry fonts/Cyberlarge.flf
+454 silly gunzTarPerm extractEntry fonts/Cybermedium.flf
+455 silly gunzTarPerm extractEntry fonts/Cybersmall.flf
+456 silly gunzTarPerm extractEntry fonts/Cygnet.flf
+457 silly gunzTarPerm extractEntry fonts/DANC4.flf
+458 silly gunzTarPerm extractEntry fonts/DWhistled.flf
+459 silly gunzTarPerm extractEntry fonts/Dancing Font.flf
+460 silly gunzTarPerm extractEntry fonts/Decimal.flf
+461 silly gunzTarPerm extractEntry fonts/Def Leppard.flf
+462 silly gunzTarPerm extractEntry fonts/Delta Corps Priest 1.flf
+463 silly gunzTarPerm extractEntry fonts/Diamond.flf
+464 silly gunzTarPerm extractEntry fonts/Diet Cola.flf
+465 silly gunzTarPerm extractEntry fonts/Digital.flf
+466 silly gunzTarPerm extractEntry fonts/Doh.flf
+467 silly gunzTarPerm extractEntry fonts/Doom.flf
+468 silly gunzTarPerm extractEntry fonts/Dot Matrix.flf
+469 silly gunzTarPerm extractEntry fonts/Double Shorts.flf
+470 silly gunzTarPerm extractEntry fonts/Double.flf
+471 silly gunzTarPerm extractEntry fonts/Dr Pepper.flf
+472 silly gunzTarPerm extractEntry fonts/Efti Chess.flf
+473 silly gunzTarPerm extractEntry fonts/Efti Font.flf
+474 silly gunzTarPerm extractEntry fonts/Efti Italic.flf
+475 silly gunzTarPerm extractEntry fonts/Efti Piti.flf
+476 silly gunzTarPerm extractEntry fonts/Efti Robot.flf
+477 silly gunzTarPerm extractEntry fonts/Efti Wall.flf
+478 silly gunzTarPerm extractEntry fonts/Efti Water.flf
+479 silly gunzTarPerm extractEntry fonts/Electronic.flf
+480 silly gunzTarPerm extractEntry fonts/Elite.flf
+481 silly gunzTarPerm extractEntry fonts/Epic.flf
+482 silly gunzTarPerm extractEntry fonts/Fender.flf
+483 silly gunzTarPerm extractEntry fonts/Filter.flf
+484 silly gunzTarPerm extractEntry fonts/Fire Font-k.flf
+485 silly gunzTarPerm extractEntry fonts/Fire Font-s.flf
+486 silly gunzTarPerm extractEntry fonts/Flipped.flf
+487 silly gunzTarPerm extractEntry fonts/Flower Power.flf
+488 silly gunzTarPerm extractEntry fonts/Four Tops.flf
+489 silly gunzTarPerm extractEntry fonts/Fraktur.flf
+490 silly gunzTarPerm extractEntry fonts/Fun Face.flf
+491 silly gunzTarPerm extractEntry fonts/Fun Faces.flf
+492 silly gunzTarPerm extractEntry fonts/Fuzzy.flf
+493 silly gunzTarPerm extractEntry fonts/Georgi16.flf
+494 silly gunzTarPerm extractEntry fonts/Georgia11.flf
+495 silly gunzTarPerm extractEntry fonts/Ghost.flf
+496 silly gunzTarPerm extractEntry fonts/Ghoulish.flf
+497 silly gunzTarPerm extractEntry fonts/Glenyn.flf
+498 silly gunzTarPerm extractEntry fonts/Goofy.flf
+499 silly gunzTarPerm extractEntry fonts/Gothic.flf
+500 silly gunzTarPerm extractEntry fonts/Graceful.flf
+501 silly gunzTarPerm extractEntry fonts/Gradient.flf
+502 silly gunzTarPerm extractEntry fonts/Graffiti.flf
+503 silly gunzTarPerm extractEntry fonts/Greek.flf
+504 silly gunzTarPerm extractEntry fonts/Heart Left.flf
+505 silly gunzTarPerm extractEntry fonts/Heart Right.flf
+506 silly gunzTarPerm extractEntry fonts/Henry 3D.flf
+507 silly gunzTarPerm extractEntry fonts/Hex.flf
+508 silly gunzTarPerm extractEntry fonts/Hieroglyphs.flf
+509 silly gunzTarPerm extractEntry fonts/Hollywood.flf
+510 silly gunzTarPerm extractEntry fonts/Horizontal Left.flf
+511 silly gunzTarPerm extractEntry fonts/Horizontal Right.flf
+512 silly gunzTarPerm extractEntry fonts/ICL-1900.flf
+513 silly gunzTarPerm extractEntry fonts/Impossible.flf
+514 silly gunzTarPerm extractEntry fonts/Invita.flf
+515 silly gunzTarPerm extractEntry fonts/Isometric1.flf
+516 silly gunzTarPerm extractEntry fonts/Isometric2.flf
+517 silly gunzTarPerm extractEntry fonts/Isometric3.flf
+518 silly gunzTarPerm extractEntry fonts/Isometric4.flf
+519 silly gunzTarPerm extractEntry fonts/Italic.flf
+520 silly gunzTarPerm extractEntry fonts/Ivrit.flf
+521 silly gunzTarPerm extractEntry fonts/JS Block Letters.flf
+522 silly gunzTarPerm extractEntry fonts/3-D.flf
+523 silly gunzTarPerm extractEntry fonts/JS Capital Curves.flf
+524 silly gunzTarPerm extractEntry fonts/JS Cursive.flf
+525 silly gunzTarPerm extractEntry fonts/JS Stick Letters.flf
+526 silly gunzTarPerm extractEntry fonts/Jacky.flf
+527 silly gunzTarPerm extractEntry fonts/Jazmine.flf
+528 silly gunzTarPerm extractEntry fonts/Jerusalem.flf
+529 silly gunzTarPerm extractEntry fonts/Katakana.flf
+530 silly gunzTarPerm extractEntry fonts/Kban.flf
+531 silly gunzTarPerm extractEntry fonts/Keyboard.flf
+532 silly gunzTarPerm extractEntry fonts/Knob.flf
+533 silly gunzTarPerm extractEntry fonts/Konto Slant.flf
+534 silly gunzTarPerm extractEntry fonts/Konto.flf
+535 silly gunzTarPerm extractEntry fonts/LCD.flf
+536 silly gunzTarPerm extractEntry fonts/Larry 3D 2.flf
+537 silly gunzTarPerm extractEntry fonts/Larry 3D.flf
+538 silly gunzTarPerm extractEntry fonts/Lean.flf
+539 silly gunzTarPerm extractEntry fonts/Letters.flf
+540 silly gunzTarPerm extractEntry fonts/Lil Devil.flf
+541 silly gunzTarPerm extractEntry fonts/Line Blocks.flf
+542 silly gunzTarPerm extractEntry fonts/Linux.flf
+543 silly gunzTarPerm extractEntry fonts/Lockergnome.flf
+544 silly gunzTarPerm extractEntry fonts/Madrid.flf
+545 silly gunzTarPerm extractEntry fonts/Marquee.flf
+546 silly gunzTarPerm extractEntry fonts/Maxfour.flf
+547 silly gunzTarPerm extractEntry fonts/Merlin1.flf
+548 silly gunzTarPerm extractEntry fonts/Merlin2.flf
+549 silly gunzTarPerm extractEntry fonts/Mike.flf
+550 silly gunzTarPerm extractEntry fonts/Mini.flf
+551 silly gunzTarPerm extractEntry fonts/Mirror.flf
+552 silly gunzTarPerm extractEntry fonts/Mnemonic.flf
+553 silly gunzTarPerm extractEntry fonts/Modular.flf
+554 silly gunzTarPerm extractEntry fonts/Morse.flf
+555 silly gunzTarPerm extractEntry fonts/Morse2.flf
+556 silly gunzTarPerm extractEntry fonts/Moscow.flf
+557 silly gunzTarPerm extractEntry fonts/Mshebrew210.flf
+558 silly gunzTarPerm extractEntry fonts/Muzzle.flf
+559 silly gunzTarPerm extractEntry fonts/NScript.flf
+560 silly gunzTarPerm extractEntry fonts/NT Greek.flf
+561 silly gunzTarPerm extractEntry fonts/NV Script.flf
+562 silly gunzTarPerm extractEntry fonts/Nancyj-Fancy.flf
+563 silly gunzTarPerm extractEntry fonts/Nancyj-Improved.flf
+564 silly gunzTarPerm extractEntry fonts/Nancyj-Underlined.flf
+565 silly gunzTarPerm extractEntry fonts/Nancyj.flf
+566 silly gunzTarPerm extractEntry fonts/Nipples.flf
+567 silly gunzTarPerm extractEntry fonts/O8.flf
+568 silly gunzTarPerm extractEntry fonts/OS2.flf
+569 silly gunzTarPerm extractEntry fonts/Octal.flf
+570 silly gunzTarPerm extractEntry fonts/Ogre.flf
+571 silly gunzTarPerm extractEntry fonts/Old Banner.flf
+572 silly gunzTarPerm extractEntry fonts/Patorjk's Cheese.flf
+573 silly gunzTarPerm extractEntry fonts/Patorjk-HeX.flf
+574 silly gunzTarPerm extractEntry fonts/Pawp.flf
+575 silly gunzTarPerm extractEntry fonts/Peaks Slant.flf
+576 silly gunzTarPerm extractEntry fonts/Peaks.flf
+577 silly gunzTarPerm extractEntry fonts/Pebbles.flf
+578 silly gunzTarPerm extractEntry fonts/Pepper.flf
+579 silly gunzTarPerm extractEntry fonts/Poison.flf
+580 silly gunzTarPerm extractEntry fonts/Puffy.flf
+581 silly gunzTarPerm extractEntry fonts/Puzzle.flf
+582 silly gunzTarPerm extractEntry fonts/Pyramid.flf
+583 silly gunzTarPerm extractEntry fonts/Rammstein.flf
+584 silly gunzTarPerm extractEntry fonts/Rectangles.flf
+585 silly gunzTarPerm extractEntry fonts/Red Phoenix.flf
+586 silly gunzTarPerm extractEntry fonts/Relief.flf
+587 silly gunzTarPerm extractEntry fonts/Relief2.flf
+588 silly gunzTarPerm extractEntry fonts/Reverse.flf
+589 silly gunzTarPerm extractEntry fonts/Roman.flf
+590 silly gunzTarPerm extractEntry fonts/Rot13.flf
+591 silly gunzTarPerm extractEntry fonts/Rot13.php
+592 silly gunzTarPerm extractEntry fonts/Rotated.flf
+593 silly gunzTarPerm extractEntry fonts/Rounded.flf
+594 silly gunzTarPerm extractEntry fonts/Rowan Cap.flf
+595 silly gunzTarPerm extractEntry fonts/Rozzo.flf
+596 silly gunzTarPerm extractEntry fonts/Runic.flf
+597 silly gunzTarPerm extractEntry fonts/Runyc.flf
+598 silly gunzTarPerm extractEntry fonts/S Blood.flf
+599 silly gunzTarPerm extractEntry fonts/SL Script.flf
+600 silly gunzTarPerm extractEntry fonts/Santa Clara.flf
+601 silly gunzTarPerm extractEntry fonts/Script.flf
+602 silly gunzTarPerm extractEntry fonts/Serifcap.flf
+603 silly gunzTarPerm extractEntry fonts/Shadow.flf
+604 silly gunzTarPerm extractEntry fonts/Shimrod.flf
+605 silly gunzTarPerm extractEntry fonts/Short.flf
+606 silly gunzTarPerm extractEntry fonts/Slant Relief.flf
+607 silly gunzTarPerm extractEntry fonts/Slant.flf
+608 silly gunzTarPerm extractEntry fonts/Slide.flf
+609 silly gunzTarPerm extractEntry fonts/Small Caps.flf
+610 silly gunzTarPerm extractEntry fonts/Small Isometric1.flf
+611 silly gunzTarPerm extractEntry fonts/Small Keyboard.flf
+612 silly gunzTarPerm extractEntry fonts/Small Poison.flf
+613 silly gunzTarPerm extractEntry fonts/Small Script.flf
+614 silly gunzTarPerm extractEntry fonts/Small Shadow.flf
+615 silly gunzTarPerm extractEntry fonts/Small Slant.flf
+616 silly gunzTarPerm extractEntry fonts/Small Tengwar.flf
+617 silly gunzTarPerm extractEntry fonts/Small.flf
+618 silly gunzTarPerm extractEntry fonts/Soft.flf
+619 silly gunzTarPerm extractEntry fonts/Speed.flf
+620 silly gunzTarPerm extractEntry fonts/Spliff.flf
+621 silly gunzTarPerm extractEntry fonts/Stacey.flf
+622 silly gunzTarPerm extractEntry fonts/Stampate.flf
+623 silly gunzTarPerm extractEntry fonts/Stampatello.flf
+624 silly gunzTarPerm extractEntry fonts/Standard.flf
+625 silly gunzTarPerm extractEntry fonts/Star Strips.flf
+626 silly gunzTarPerm extractEntry fonts/Star Wars.flf
+627 silly gunzTarPerm extractEntry fonts/Stellar.flf
+628 silly gunzTarPerm extractEntry fonts/Stforek.flf
+629 silly gunzTarPerm extractEntry fonts/Stick Letters.flf
+630 silly gunzTarPerm extractEntry fonts/Stop.flf
+631 silly gunzTarPerm extractEntry fonts/Straight.flf
+632 silly gunzTarPerm extractEntry fonts/Stronger Than All.flf
+633 silly gunzTarPerm extractEntry fonts/Sub-Zero.flf
+634 silly gunzTarPerm extractEntry fonts/Swamp Land.flf
+635 silly gunzTarPerm extractEntry fonts/Swan.flf
+636 silly gunzTarPerm extractEntry fonts/Sweet.flf
+637 silly gunzTarPerm extractEntry fonts/THIS.flf
+638 silly gunzTarPerm extractEntry fonts/Tanja.flf
+639 silly gunzTarPerm extractEntry fonts/Tengwar.flf
+640 silly gunzTarPerm extractEntry fonts/Term.flf
+641 silly gunzTarPerm extractEntry fonts/Test1.flf
+642 silly gunzTarPerm extractEntry fonts/The Edge.flf
+643 silly gunzTarPerm extractEntry fonts/Thick.flf
+644 silly gunzTarPerm extractEntry fonts/Thin.flf
+645 silly gunzTarPerm extractEntry fonts/Thorned.flf
+646 silly gunzTarPerm extractEntry fonts/Three Point.flf
+647 silly gunzTarPerm extractEntry fonts/Ticks Slant.flf
+648 silly gunzTarPerm extractEntry fonts/Ticks.flf
+649 silly gunzTarPerm extractEntry fonts/Tiles.flf
+650 silly gunzTarPerm extractEntry fonts/Tinker-Toy.flf
+651 silly gunzTarPerm extractEntry fonts/Tombstone.flf
+652 silly gunzTarPerm extractEntry fonts/Train.flf
+653 silly gunzTarPerm extractEntry fonts/Trek.flf
+654 silly gunzTarPerm extractEntry fonts/Tsalagi.flf
+655 silly gunzTarPerm extractEntry fonts/Tubular.flf
+656 silly gunzTarPerm extractEntry fonts/Twisted.flf
+657 silly gunzTarPerm extractEntry fonts/Two Point.flf
+658 silly gunzTarPerm extractEntry fonts/USA Flag.flf
+659 silly gunzTarPerm extractEntry fonts/Univers.flf
+660 silly gunzTarPerm extractEntry fonts/Varsity.flf
+661 silly gunzTarPerm extractEntry fonts/Wavy.flf
+662 silly gunzTarPerm extractEntry fonts/Weird.flf
+663 silly gunzTarPerm extractEntry fonts/Wet Letter.flf
+664 silly gunzTarPerm extractEntry fonts/Whimsy.flf
+665 silly gunzTarPerm extractEntry fonts/Wow.flf
+666 silly gunzTarPerm extractEntry lib/figlet.js
+667 silly gunzTarPerm extractEntry lib/node-figlet.js
+668 silly gunzTarPerm extractEntry doc/figfont.txt
+669 silly gunzTarPerm extractEntry test/figlet_test.js
+670 silly gunzTarPerm extractEntry test/DONNOW.ASC
+671 silly gunzTarPerm extractEntry test/expected/dancingFont
+672 silly gunzTarPerm extractEntry test/expected/graffiti
+673 silly gunzTarPerm extractEntry test/expected/standard
+674 silly gunzTarPerm extractEntry examples/front-end/jquery-1.7.2.min.js
+675 silly gunzTarPerm extractEntry examples/front-end/index.htm
+676 silly gunzTarPerm extractEntry examples/node/app.js
+677 silly lockFile 4d41d66a-rs-Ash-npm-figlet-1-0-10-package tar:///Users/Ash/.npm/figlet/1.0.10/package
+678 silly lockFile 4d41d66a-rs-Ash-npm-figlet-1-0-10-package tar:///Users/Ash/.npm/figlet/1.0.10/package
+679 silly lockFile 4b84f82a-sh-npm-figlet-1-0-10-package-tgz tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz
+680 silly lockFile 4b84f82a-sh-npm-figlet-1-0-10-package-tgz tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz
+681 verbose chmod /Users/Ash/.npm/figlet/1.0.10/package.tgz 644
+682 verbose chown /Users/Ash/.npm/figlet/1.0.10/package.tgz [ 501, 20 ]
+683 silly lockFile dd9dba4c-mjs-org-figlet-figlet-1-0-10-tgz https://registry.npmjs.org/figlet/-/figlet-1.0.10.tgz
+684 silly lockFile dd9dba4c-mjs-org-figlet-figlet-1-0-10-tgz https://registry.npmjs.org/figlet/-/figlet-1.0.10.tgz
+685 silly lockFile c81a39ef-figlet-1-0-10 figlet@1.0.10
+686 silly lockFile c81a39ef-figlet-1-0-10 figlet@1.0.10
+687 silly lockFile a40df646-figlet figlet@
+688 silly lockFile a40df646-figlet figlet@
+689 silly resolved [ { name: 'figlet',
+689 silly resolved     version: '1.0.10',
+689 silly resolved     description: 'Creates ASCII Art from text. A full implementation of the FIGfont spec.',
+689 silly resolved     keywords: [ 'figlet', 'ascii', 'art', 'banner', 'ansi' ],
+689 silly resolved     repository: { type: 'git', url: 'https://github.com/patorjk/figlet.js.git' },
+689 silly resolved     bugs: { url: 'https://github.com/patorjk/figlet.js/issues' },
+689 silly resolved     author:
+689 silly resolved      { name: 'Patrick Gillespie',
+689 silly resolved        email: 'patorjk@gmail.com',
+689 silly resolved        url: 'http://patorjk.com/' },
+689 silly resolved     licenses: [ [Object] ],
+689 silly resolved     main: './lib/node-figlet.js',
+689 silly resolved     dependencies: {},
+689 silly resolved     devDependencies:
+689 silly resolved      { async: '~0.9.0',
+689 silly resolved        'grunt-contrib-jshint': '~0.6.0',
+689 silly resolved        'grunt-contrib-clean': '~0.4.0',
+689 silly resolved        'grunt-contrib-nodeunit': '~0.2.0',
+689 silly resolved        'grunt-contrib-uglify': '~0.2.0',
+689 silly resolved        grunt: '~0.4.2' },
+689 silly resolved     scripts: {},
+689 silly resolved     engines: { node: '>= 0.4.0' },
+689 silly resolved     readme: '```\n___________.___  ________.__          __          __        \n\\_   _____/|   |/  _____/|  |   _____/  |_       |__| ______\n |    __)  |   /   \\  ___|  | _/ __ \\   __\\      |  |/  ___/\n |     \\   |   \\    \\_\\  \\  |_\\  ___/|  |        |  |\\___ \\ \n \\___  /   |___|\\______  /____/\\___  >__| /\\ /\\__|  /____  >\n     \\/                \\/          \\/     \\/ \\______|    \\/ \n\n```\n\nThis project aims to fully implement the FIGfont spec in JavaScript. It works in the browser and with Node.js. You can see it in action here: http://patorjk.com/software/taag/ (the figlet.js file was written to power that application)\n\nQuick Start - Node.js\n-------------------------\n\nInstall:\n\n```\nnpm install figlet\n```\n\nSimple usage:\n\n```\nvar figlet = require(\'figlet\');\n\nfiglet(\'Hello World!!\', function(err, data) {\n    if (err) {\n        console.log(\'Something went wrong...\');\n        console.dir(err);\n        return;\n    }\n    console.log(data)\n});\n```\n\nThat should print out:\n\n```\n  _   _      _ _        __        __         _     _ _ _ \n | | | | ___| | | ___   \\ \\      / /__  _ __| | __| | | |\n | |_| |/ _ \\ | |/ _ \\   \\ \\ /\\ / / _ \\| \'__| |/ _` | | |\n |  _  |  __/ | | (_) |   \\ V  V / (_) | |  | | (_| |_|_|\n |_| |_|\\___|_|_|\\___/     \\_/\\_/ \\___/|_|  |_|\\__,_(_|_)\n```\n\nBasic Usage - Node.js\n-------------------------\n\nThere are 3 main functions on the figlet object.\n\n### text\n\nCalling the figlet object as a function is shorthand for calling the text function. This method allows you to create ASCII Art from text. It takes in 3 parameters:\n\n* Input Text - A string of text to turn into ASCII Art.\n* Font Options - Either a string indicating the font name or an options object (description below).\n* Callback - A function to execute with the generated ASCII Art.\n\nExample:\n\n```\nfiglet.text(\'Boo!\', {\n    font: \'Ghost\',\n    horizontalLayout: \'default\',\n    verticalLayout: \'default\'\n}, function(err, data) {\n    if (err) {\n        console.log(\'Something went wrong...\');\n        console.dir(err);\n        return;\n    }\n    console.log(data);\n});\n```\n\nThat will print out:\n\n```\n.-. .-\')                            ,---. \n\\  ( OO )                           |   | \n ;-----.\\  .-\'),-----.  .-\'),-----. |   | \n | .-.  | ( OO\'  .-.  \'( OO\'  .-.  \'|   | \n | \'-\' /_)/   |  | |  |/   |  | |  ||   | \n | .-. `. \\_) |  |\\|  |\\_) |  |\\|  ||  .\' \n | |  \\  |  \\ |  | |  |  \\ |  | |  |`--\'  \n | \'--\'  /   `\'  \'-\'  \'   `\'  \'-\'  \'.--.  \n `------\'      `-----\'      `-----\' \'--\' \n```\n\n#### Font Options\n\nThe font options object has 3 parameters which you can set:\n\n##### font\nType: `String`\nDefault value: `\'Standard\'`\n\nA string value that indicates the FIGlet font to use.\n\n##### horizontalLayout\nType: `String`\nDefault value: `\'default\'`\n\nA string value that indicates the horizontal layout to use. FIGlet fonts have 5 possible values for this: "default", full", "fitted", "controlled smushing", and "universal smushing". "default" does the kerning the way the font designer intended, "full" uses full letter spacing, "fitted" moves the letters together until they almost touch, and "controlled smushing" and "universal smushing" are common FIGlet kerning setups.\n\n##### verticalLayout\nType: `String`\nDefault value: `\'default\'`\n\nA string value that indicates the vertical layout to use. FIGlet fonts have 5 possible values for this: "default", full", "fitted", "controlled smushing", and "universal smushing". "default" does the kerning the way the font designer intended, "full" uses full letter spacing, "fitted" moves the letters together until they almost touch, and "controlled smushing" and "universal smushing" are common FIGlet kerning setups.\n\n#### kerning\n\nThe layout options allow you to override a font\'s default "kerning". Below you can see how this effects the text. The string "Kerning" was printed using the "Standard" font with horiontal layouts of "default", "fitted" and then "full".\n\n```\n  _  __               _             \n | |/ /___ _ __ _ __ (_)_ __   __ _ \n | \' // _ \\ \'__| \'_ \\| | \'_ \\ / _` |\n | . \\  __/ |  | | | | | | | | (_| |\n |_|\\_\\___|_|  |_| |_|_|_| |_|\\__, |\n                              |___/ \n  _  __                   _               \n | |/ / ___  _ __  _ __  (_) _ __    __ _ \n | \' / / _ \\| \'__|| \'_ \\ | || \'_ \\  / _` |\n | . \\|  __/| |   | | | || || | | || (_| |\n |_|\\_\\\\___||_|   |_| |_||_||_| |_| \\__, |\n                                    |___/ \n  _  __                        _                 \n | |/ /   ___   _ __   _ __   (_)  _ __     __ _ \n | \' /   / _ \\ | \'__| | \'_ \\  | | | \'_ \\   / _` |\n | . \\  |  __/ | |    | | | | | | | | | | | (_| |\n |_|\\_\\  \\___| |_|    |_| |_| |_| |_| |_|  \\__, |\n                                           |___/ \n```\n\nIn most cases you\'ll either use the default setting or the "fitted" setting. Most fonts don\'t support vertical kerning, but a hand full fo them do (like the "Standard" font).\n\n### metadata\n\nThe metadata function allows you to retrieve a font\'s default options and header comment. Example usage:\n\n```\nfiglet.metadata(\'Standard\', function(err, options, headerComment) {\n    if (err) {\n        console.log(\'something went wrong...\');\n        console.dir(err);\n        return;\n    }\n    console.dir(options);\n    console.log(headerComment);\n});\n```\n\n### fonts\n\nThe fonts function allows you to get a list of all of the available fonts. Example usage:\n\n```\nfiglet.fonts(function(err, fonts) {\n    if (err) {\n        console.log(\'something went wrong...\');\n        console.dir(err);\n        return;\n    }\n    console.dir(fonts);\n});\n```\n\n\nGetting Started - The Browser\n-------------------------\n\nThe browser API is the same as the Node API with the exception of the "fonts" method not being available. The browser version also requires jQuery (any version should work as it only utilizes the ajax method for its loadFont function).\n\nExample usage:\n\n```\n<script type="text/javascript" src="jquery-1.7.2.min.js"></script>\n<script type="text/javascript" src="figlet.js"></script>\n    \n<script>\n\n    figlet(inputText, \'Standard\', function(err, text) {\n        if (err) {\n            console.log(\'something went wrong...\');\n            console.dir(err);\n            return;\n        }\n        console.log(text);\n    });\n\n</script>\n```\n\nSee the examples folder for a more robust front-end example.\n\nGetting Started - Command Line\n-------------------------\n\nTo use figlet.js on the command line, install figlet-cli:\n\n```shell\nnpm install -g figlet-cli\n```\n\nAnd then you should be able run from the command line. Example:\n\n```shell\nfiglet -f "Dancing Font" "Hi"\n```\n\nFor more info see the [figlet-cli](https://github.com/patorjk/figlet-cli). \n\n## Release History\n* 2013.01.02 v1.0.8 Added tests and command line info.\n* 2013.12.28 v1.0.7 README update and minor tweaks.\n* 2013.12.28 v1.0.10 Bug fixes.\n',
+689 silly resolved     readmeFilename: 'README.md',
+689 silly resolved     homepage: 'https://github.com/patorjk/figlet.js',
+689 silly resolved     _id: 'figlet@1.0.10',
+689 silly resolved     dist: { shasum: 'fe636243f5ee61d1a5d078f99c72566105ca2f75' },
+689 silly resolved     _from: 'figlet@',
+689 silly resolved     _resolved: 'https://registry.npmjs.org/figlet/-/figlet-1.0.10.tgz' } ]
+690 info install figlet@1.0.10 into /usr/local/lib
+691 info installOne figlet@1.0.10
+692 info /usr/local/lib/node_modules/figlet unbuild
+693 verbose tar unpack /Users/Ash/.npm/figlet/1.0.10/package.tgz
+694 silly lockFile 646099e2-sr-local-lib-node-modules-figlet tar:///usr/local/lib/node_modules/figlet
+695 verbose lock tar:///usr/local/lib/node_modules/figlet /Users/Ash/.npm/646099e2-sr-local-lib-node-modules-figlet.lock
+696 silly lockFile 4b84f82a-sh-npm-figlet-1-0-10-package-tgz tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz
+697 verbose lock tar:///Users/Ash/.npm/figlet/1.0.10/package.tgz /Users/Ash/.npm/4b84f82a-sh-npm-figlet-1-0-10-package-tgz.lock
+698 silly gunzTarPerm modes [ '755', '644' ]
+699 error Error: EACCES, mkdir '/usr/local/lib/node_modules/figlet'
+699 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/figlet']
+699 error   errno: 3,
+699 error   code: 'EACCES',
+699 error   path: '/usr/local/lib/node_modules/figlet',
+699 error   fstream_type: 'Directory',
+699 error   fstream_path: '/usr/local/lib/node_modules/figlet',
+699 error   fstream_class: 'DirWriter',
+699 error   fstream_stack:
+699 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+699 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+699 error      'Object.oncomplete (fs.js:107:15)' ] }
+700 error Please try running this command again as root/Administrator.
+701 error System Darwin 13.3.0
+702 error command "node" "/usr/local/bin/npm" "install" "-g" "figlet"
+703 error cwd /Users/Ash/Dropbox/Uni/2014/Thesis
+704 error node -v v0.10.26
+705 error npm -v 1.4.3
+706 error path /usr/local/lib/node_modules/figlet
+707 error fstream_path /usr/local/lib/node_modules/figlet
+708 error fstream_type Directory
+709 error fstream_class DirWriter
+710 error code EACCES
+711 error errno 3
+712 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/figlet'
+713 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+713 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+713 error fstream_stack Object.oncomplete (fs.js:107:15)
+714 verbose exit [ 3, true ]

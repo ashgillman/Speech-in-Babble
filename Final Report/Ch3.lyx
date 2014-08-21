@@ -84,8 +84,14 @@ enumitem
 Methodology
 \end_layout
 
+\begin_layout Section
+Research Question 1
+\end_layout
+
 \begin_layout Standard
-dsgh
+The first research area in this thesis compares and contrasts the performance
+ differences of speech enhancement algorithms when evaluated on a human
+ listener versus a machine listener.
 \end_layout
 
 \end_body

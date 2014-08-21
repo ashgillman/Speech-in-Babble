@@ -16,9 +16,9 @@ VOICEBOX_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/voicebox';
 if isempty(strfind(path,VOICEBOX_LOC))
     path(VOICEBOX_LOC,path)
 end
-WSJTOOLS_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/wsjtools';
-if isempty(strfind(path,WSJTOOLS_LOC))
-    path(WSJTOOLS_LOC,path)
+MYTOOLS_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/mytools';
+if isempty(strfind(path,MYTOOLS_LOC))
+    path(MYTOOLS_LOC,path)
 end
 PESQ_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/pesq';
 if isempty(strfind(path,PESQ_LOC))
@@ -36,9 +36,6 @@ X_train = cell(size(SPKRS));
 V_train = cell(size(SPKRS));
 W_train = cell(size(SPKRS));
 testWav = cell(size(SPKRS));
-X_test = cell(size(SPKRS));
-V_test = cell(size(SPKRS));
-W_test = cell(size(SPKRS));
 figure()
 set(gca, 'LooseInset', get(gca,'TightInset'))
 for spkrI = 1:numel(SPKRS)
@@ -55,7 +52,7 @@ for spkrI = 1:numel(SPKRS)
         recNum = REC_VALS(recIndex);
         [rec,FsIn] = audioread(sprintf('%s%s/%sa010%s.wav',ROOT_LOC, ...
             speaker,speaker,recNum));
-        rec = resample(rec,FsIn,Fs);
+        rec = normalise(resample(rec,FsIn,Fs));
         fprintf('    %s%s/%sa010%s.wav |%7d|%7d|\n',ROOT_LOC, ...
             speaker,speaker,recNum,length(wav)+1, ...
             length(wav)+length(rec));
@@ -91,9 +88,10 @@ for spkrI = 1:numel(SPKRS)
     % Test Data
     recIndex = recIndex + 1;
     recNum = REC_VALS(recIndex);
-    [rec,FsIn] = audioread(sprintf('%s%s/%sa010%s.wav',ROOT_LOC, ...
-        speaker,speaker,recNum));
-    testWav{spkrI} = resample(rec,FsIn,Fs);
+    originalFile = sprintf('%s%s/%sa010%s.wav',ROOT_LOC,speaker, ...
+        speaker,recNum);
+    [rec,FsIn] = audioread(originalFile);
+    testWav{spkrI} = normalise(resample(rec,FsIn,Fs));
 end
 
 speech = testWav{1}; noise = testWav{2};
@@ -129,10 +127,13 @@ XspeechEst = Vspeech*Wall_est(1:nb,:);
 recovered = overlapadd(irfft((XspeechEst)',frameN,2),win,nf-1);
 soundsc(recovered,Fs);
 
-before = 'before.wav';
-after = 'after.wav';
-audiowrite(before,mixed,Fs)
-audiowrite(after,recovered,Fs)
+beforeFile = 'before.wav';
+afterFile = 'after.wav';
+audiowrite(beforeFile,mixed,Fs)
+audiowrite(afterFile,recovered,Fs)
 
-[pesq_mos] = pesq(Fs,after,before)
+warning('off','MATLAB:oldPfileVersion')
+[beforeMos] = pesq(Fs,originalFile,beforeFile)
+[afterMos] = pesq(Fs,originalFile,afterFile)
+warning('on','MATLAB:oldPfileVersion')
     
