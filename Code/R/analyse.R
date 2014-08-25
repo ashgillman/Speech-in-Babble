@@ -45,9 +45,10 @@ for (i in 1:length(tests)) {
          xpd=T, # allows displaying outside limits
          lty=c(1,1), # gives the legend appropriate symbols (lines)
          lwd=c(2.5,2.5),col=colours); # gives the legend lines color and width
-  Sys.sleep(1)
+  #Sys.sleep(1)
 }
-score.z <- scale(score.raw);
+score.z.trim = score.raw[,-grep("raw",colnames(score.raw))];
+score.z <- scale(score.z.trim);
 score.z.m <- melt(score.z,varnames=c("Algorithm","Test"),value.name="score")
 d <- ggplot(score.z.m, aes(x=Algorithm,y=Test));
 (d <- d + geom_tile(aes(fill=score))
