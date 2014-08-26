@@ -84,14 +84,181 @@ enumitem
 Methodology
 \end_layout
 
+\begin_layout Standard
+The algorithms outlined throughout the following chapter were implemented
+ in MATLAB.
+ This environment was selected due to its availability and ease-of-use.
+ MATLAB includes a number of tools useful in signal processing and statistical
+ analysis 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krauss1994,Jones1997"
+
+\end_inset
+
+, and other authors have provided tools in the MATLAB language 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hoyer2004,Brookes1997,Loizou2008"
+
+\end_inset
+
+, all of which may be implemented within this thesis.
+ A limitation of the MATLAB environment in signal processing is the comparative
+ performance with lower-level languages, however performance and speed were
+ not a primary focus in this thesis.
+\end_layout
+
+\begin_layout Standard
+Data analysis was conducted using R.
+\end_layout
+
+\begin_layout Standard
+Simulations were run on a MacBook Pro 64-bit system with an Intel Core i7
+ 2.3GHz 4- core processor with 16GB memory, running OSX 10.9.2, MATLAB R2013a
+ and R version 3.1.0 (2014-04-10).
+\end_layout
+
 \begin_layout Section
 Research Question 1
 \end_layout
 
 \begin_layout Standard
-The first research area in this thesis compares and contrasts the performance
- differences of speech enhancement algorithms when evaluated on a human
- listener versus a machine listener.
+The first research area sought to answer research question 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "enu:ResQ1"
+
+\end_inset
+
+.
+ The focus was to compare and contrast the performance differences of speech
+ enhancement algorithms when evaluated on a human listener versus a machine
+ listener.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Method-Existing-Data"
+
+\end_inset
+
+Investigating Existing Data
+\end_layout
+
+\begin_layout Standard
+Data was collected from a number of sources 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mohammadiha2013supervised,Wilson2008,Schmidt2006,Raj2005,Rennie2008,Weninger2011,Williamson2014,Paliwal2010,Plourde2007"
+
+\end_inset
+
+ and is presented in XX
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+TODO APPENDIX
+\end_layout
+
+\end_inset
+
+.
+ As noted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:Literature-Review"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Literature-Review"
+
+\end_inset
+
+, most literature takes preference to evaluation measures indicative of
+ either human performance or machine performance, but not both.
+ Thus, methods had to be developed in order to fairly compare the the results
+ between different sources.
+\end_layout
+
+\begin_layout Standard
+The first comparison method was 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{direct comparison}
+\end_layout
+
+\end_inset
+
+.
+ This method involved plotting human performance against machine performance,
+ and thus was only applicable to a small subset of the results where both
+ performances were measured, such as in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Paliwal2010"
+
+\end_inset
+
+.
+ This data was analysed separately for each type of algorithm investigated.
+ Each data set had a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LOESS}
+\end_layout
+
+\end_inset
+
+ model fitted, in order to quickly and visually judge the accuracy of applying
+ a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LM}
+\end_layout
+
+\end_inset
+
+ fit.
+ An 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LM}
+\end_layout
+
+\end_inset
+
+ model was then applied using R's 
+\end_layout
+
+\begin_layout Standard
+A limitation in this analysis is that the test conditions are not fair:
+ different noise types, subtle differences in algorithms
 \end_layout
 
 \end_body

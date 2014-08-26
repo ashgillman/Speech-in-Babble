@@ -1,3 +1,4 @@
+rm(list=ls());
 data = read.csv('litresults.csv',header=T);
 attach(data);
 
@@ -53,4 +54,3 @@ score.z.m <- melt(score.z,varnames=c("Algorithm","Test"),value.name="score")
 d <- ggplot(score.z.m, aes(x=Algorithm,y=Test));
 (d <- d + geom_tile(aes(fill=score))
   + scale_fill_gradient(low = "white", high = "steelblue"))
-print(d)

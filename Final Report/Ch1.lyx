@@ -233,6 +233,12 @@ The aim of this thesis is to address the following research questions:
 \end_layout
 
 \begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:ResQ1"
+
+\end_inset
+
 Are good enhancement algorithms effective for both human listeners and machine
  listeners? Can a generic and practical speech enhancement algorithm find
  application in signal enhancement and 
@@ -252,11 +258,23 @@ ac{ASR}
 \end_layout
 
 \begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:ResQ2"
+
+\end_inset
+
 Can the results be improved by modifying algorithms to concentrate the focus
  on recognition of the desired speakers voice?
 \end_layout
 
 \begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:ResQ3"
+
+\end_inset
+
 Can the practicality of existing algorithms be improved to allow applications
  in end- user hardware?
 \end_layout

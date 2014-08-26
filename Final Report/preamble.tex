@@ -1,7 +1,12 @@
-\usepackage{pdfsync}
+\usepackage[novbox]{pdfsync}
+
+\usepackage{csvsimple}
 
 % acronyms
 \usepackage{acronym}
+
+% a priori italics
+\newcommand\apriori{\textit{a priori}}
 
 % use instead of standard natbib to compress conecutive references
 \usepackage[numbers, sort&compress]{natbib}
@@ -9,9 +14,10 @@
 % capitalise references
 \renewcommand{\figref}{\Figref}
 \renewcommand{\tabref}{\Tabref}
+\renewcommand{\chapref}{\Chapref}
 \renewcommand{\secref}{\Secref}
 
-% automaticall number all display equations
+% automatically number all display equations
 \renewcommand\[{\begin{equation}}
 \renewcommand\]{\end{equation}}
 

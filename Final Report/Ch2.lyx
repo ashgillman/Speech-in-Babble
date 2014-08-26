@@ -77,6 +77,12 @@ customHeadersFooters
 \begin_body
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Literature-Review"
+
+\end_inset
+
 Literature Review
 \end_layout
 
@@ -183,11 +189,11 @@ name "tab:Speech-related-noise-types"
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features rotate="0" tabularvalignment="middle" tabularwidth="100text%">
-<column alignment="center" valignment="top" width="25text%">
-<column alignment="center" valignment="top" width="45text%">
-<column alignment="center" valignment="top" width="20text%">
+<column alignment="block" valignment="top" width="25text%">
+<column alignment="block" valignment="top" width="45text%">
+<column alignment="block" valignment="top" width="20text%">
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -198,7 +204,7 @@ Type of Speech-Related Noise
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -216,7 +222,7 @@ key "Krishnamurthy2009"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -229,7 +235,7 @@ Steady-State or Time-Varying
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -250,7 +256,7 @@ ac{SSN}
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -260,7 +266,7 @@ A diffused background rumble, where individual conversations or speakers
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -271,7 +277,7 @@ Steady-state
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -280,7 +286,7 @@ Babble Noise
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -290,7 +296,7 @@ Individual speakers can be heard and at times, individual words can also
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -301,7 +307,7 @@ Time-varying
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -310,7 +316,7 @@ Competing Speaker
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -319,7 +325,7 @@ There are two speakers present.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1303,7 +1309,7 @@ ac{SDR}
  and variations 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Loizou2008"
+key "Hu2008"
 
 \end_inset
 
@@ -2820,6 +2826,274 @@ description "Indicates an estimated value."
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Common algorithms form a component matrix for the desired speaker, and another
+ for the anticipated noise 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Schmidt2006,Raj2005,Wilson2008"
+
+\end_inset
+
+.
+ These are concatenated, and the appropriate 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithms performed.
+ Afterwards, the speech-specific components can be separated again and used
+ to estimate the clean speech.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+TODO DIAGRAM
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Common 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+ speech implementation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Limitations of these models mostly belong to the training, meaning required
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+apriori{}
+\end_layout
+
+\end_inset
+
+ knowledge.
+ One issue is the required resources for training, which can be upwards
+ of an hour worth of recordings 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mohammadiha2013a,Raj2005"
+
+\end_inset
+
+.
+ Another issue is that these algorithms are only effective for noise types
+ that 
+\begin_inset Formula $V_{noise}$
+\end_inset
+
+ has been trained on, and thus have reduced flexibility.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Raj2011"
+
+\end_inset
+
+ proposed a different solution whereby an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system identifies phonemes in speech, and an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithm is implemented using one of 40 component matrices, one for each
+ phoneme.
+ This model is somewhat limited in its application to babble, in the author’s
+ opinion, as the initial 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ algorithm’s performance is likely to be low on a noisy signal.
+ However, the algorithm did show that 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ performance is be improved by forming bases on phonemes.
+ A novel alternative model was recently proposed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Mohammadiha2013a"
+
+\end_inset
+
+, who used 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acp{HMM}
+\end_layout
+
+\end_inset
+
+ to form the basis of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithm separating speech from noise , and thus used a temporally probabilist
+ic method to form and estimate of clean speech.
+ By doing so, the algorithm accounts for an extra feature outlined in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Differentiating-Speech-Babble"
+
+\end_inset
+
+, being the transitional probability.
+\end_layout
+
+\begin_layout Section
+Summary
+\end_layout
+
+\begin_layout Standard
+The following three paragraphs outline the three proposed focuses for this
+ research.
+\end_layout
+
+\begin_layout Standard
+Much work has been done in literature on speech enhancement under noisy
+ conditions.
+ Systems are available to improve intelligibility in telecommunication systems,
+ or to improve the quality of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ systems for home technology.
+ However, most of the technologies outlined in this literature review have
+ not been implemented in end-user systems, such as hearing aids or mobile
+ technology.
+ This is due to practicality constraints within the algorithms, in particular
+ the training requirement, generally required to be specific to the end-user.
+\end_layout
+
+\begin_layout Standard
+Additionally, most of the algorithms are tested for human recognition improvemen
+ts, but rarely for improvements in machine recognition, highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Assessment-methods"
+
+\end_inset
+
+.
+ Little literature exists on the comparison of performance between these
+ two forms of recognition.
+ An area of research proposed is to investigate the relationship between
+ human and machine recognition improvement under speech enhancement algorithms,
+ to see if one implies the other.
+\end_layout
+
+\begin_layout Standard
+Finally, improvements have been made in focusing recognition by forcing
+ component matrices to represent phonemes.
+ However, current algorithms require complicated implementations.
+ It is proposed to attempt to simplify this process.
 \end_layout
 
 \end_body

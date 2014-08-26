@@ -106,7 +106,7 @@ bfseries}
 
 
 \backslash
-begin{acronym}[PESQ]
+begin{acronym}[LOESS]
 \end_layout
 
 \begin_layout Plain Layout
@@ -162,6 +162,20 @@ acro{ITU}{International Telecommunication Union}
 
   
 \backslash
+acro{LOESS}{Logical Regression}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{LM}{Linear Model}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{MOS}{Mean Opinion Score}
 \end_layout
 
@@ -177,6 +191,13 @@ acro{NMF}{Non-negative Matrix Factorisation}
   
 \backslash
 acro{PESQ}{Perceptual Evaluation of Speech Quality}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{PRR}{Phoneme Recognition Rate}
 \end_layout
 
 \begin_layout Plain Layout
