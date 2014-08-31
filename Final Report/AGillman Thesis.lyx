@@ -12,6 +12,21 @@ customHeadersFooters
 enumitem
 \end_modules
 \maintain_unincluded_children false
+\begin_local_layout
+Format 49
+Float
+        Type                  listing
+        GuiName               Listing
+        Placement             tbp
+        Extension             lol
+        NumberWithin          chapter
+        Style                 ruled
+        ListName              "List of Listings"
+        IsPredefined          false
+        UsesFloatPkg          true
+        RefPrefix             lst
+End
+\end_local_layout
 \language english
 \language_package default
 \inputencoding auto
@@ -173,6 +188,14 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
+\begin_inset FloatList listing
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
 set_width "auto"
@@ -260,10 +283,53 @@ filename "Ch4.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Ch5.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "IEEEabrv,bib/library"
 options "bib/IEEEtranN"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Footer
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}% no page no.
+ in appendices
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Appendices.lyx"
 
 \end_inset
 

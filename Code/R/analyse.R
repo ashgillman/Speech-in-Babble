@@ -1,5 +1,5 @@
 rm(list=ls());
-data = read.csv('litresults.csv',header=T);
+data <- read.csv('litresults.csv',header=T);
 attach(data);
 
 algorithms <- unique(Algorithm); # list of algorithms
@@ -48,9 +48,9 @@ for (i in 1:length(tests)) {
          lwd=c(2.5,2.5),col=colours); # gives the legend lines color and width
   #Sys.sleep(1)
 }
-score.z.trim = score.raw[,-grep("raw",colnames(score.raw))];
+score.z.trim <- score.raw[,-grep("raw",colnames(score.raw))];
 score.z <- scale(score.z.trim);
 score.z.m <- melt(score.z,varnames=c("Algorithm","Test"),value.name="score")
 d <- ggplot(score.z.m, aes(x=Algorithm,y=Test));
 (d <- d + geom_tile(aes(fill=score))
-  + scale_fill_gradient(low = "white", high = "steelblue"))
+  + scale_fill_gradient(low="white", high="steelblue"))

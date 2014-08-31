@@ -1,6 +1,22 @@
 \usepackage[novbox]{pdfsync}
 
+%\usepackage{subfloat}
+%\usepackage{subfig}
+%\usepackage{subfigure}
+
+% Load csv files for data
 \usepackage{csvsimple}
+
+% pretty text in listings
+\usepackage{color}
+\definecolor{dkgreen}{RGB}{50, 180, 50}
+\usepackage[scaled]{beramono}
+
+%\usepackage{pdflscape}
+
+% LOF, LOT, LOS, etc. to TOC
+\usepackage[nottoc]{tocbibind}
+\def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
 
 % acronyms
 \usepackage{acronym}
@@ -15,7 +31,9 @@
 \renewcommand{\figref}{\Figref}
 \renewcommand{\tabref}{\Tabref}
 \renewcommand{\chapref}{\Chapref}
-\renewcommand{\secref}{\Secref}
+\renewcommand{\secref}[1]{\S~\ref{sec:#1}} 
+\newcommand{\subsecref}[1]{\S~\ref{sub:#1}} 
+\newcommand{\lstref}[1]{Listing~\ref{#1}}
 
 % automatically number all display equations
 \renewcommand\[{\begin{equation}}
@@ -41,8 +59,10 @@
 
 % chapter title spacing
 \usepackage{titlesec}
-\titleformat{\chapter}[hang]{\normalfont\Huge\bfseries}{\chaptertitlename \enspace \thechapter :}{20pt}{}{}
+\titleformat{\chapter}[hang]{\normalfont\LARGE\bfseries}{\chaptertitlename \enspace \thechapter :}{20pt}{}{}
 \titlespacing*{\chapter}{0pt}{-1cm}{0.5cm}
 
 \clubpenalty=9999
 \widowpenalty=9999
+
+\makeatletter

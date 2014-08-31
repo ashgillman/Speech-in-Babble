@@ -12,6 +12,21 @@ customHeadersFooters
 enumitem
 \end_modules
 \maintain_unincluded_children false
+\begin_local_layout
+Format 49
+Float
+        Type		listing
+        GuiName	Listing
+        Placement	tbp
+        Extension	lol
+        NumberWithin	none
+        Style		ruled
+        ListName	"List of Listings"
+        IsPredefined	false
+        UsesFloatPkg	true
+        RefPrefix	lst
+End
+\end_local_layout
 \language australian
 \language_package default
 \inputencoding auto
@@ -95,15 +110,177 @@ Investigating Existing Data
 
 \begin_layout Standard
 The direct comparison method outlined in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "sub:Method-Existing-Data"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Method-Existing-Data}
+\end_layout
 
 \end_inset
 
- was carried out on the data given in XX.
- The R code used to perform this analysis is given in XX.
+ was carried out on the data given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:litresults"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:litresults"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ The R code used to perform this analysis is given in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstref{lst:directComp}
+\end_layout
+
+\end_inset
+
+.
  Shown in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-Comparison-PESQ-PRR"
+
+\end_inset
+
+ are the results, comparing the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement against the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ improvement.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-Comparison-PESQ-PRR-LOESS"
+
+\end_inset
+
+ shows the data fitted with an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LOESS}
+\end_layout
+
+\end_inset
+
+ model and 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-Comparison-PESQ-PRR-LM"
+
+\end_inset
+
+ shows the data fitted with an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LM}
+\end_layout
+
+\end_inset
+
+ method.
+\end_layout
+
+\begin_layout Standard
+Results outlined in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:LF-Fit-Direct-Compar-PESQ-PRR"
+
+\end_inset
+
+ are the coefficients relating to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LM}
+\end_layout
+
+\end_inset
+
+ fitted lines in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-Comparison-PESQ-PRR-LM"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -113,12 +290,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename fig/HumanMachincePaliwal.pdf
+	filename fig/HumanMachinePaliwalLOESS.pdf
 	width 100text%
 
 \end_inset
@@ -130,6 +309,97 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direct-Comparison-PESQ-PRR-LOESS"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{LOESS}
+\end_layout
+
+\end_inset
+
+ Fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/HumanMachinePaliwalLM.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direct-Comparison-PESQ-PRR-LM"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{LM}
+\end_layout
+
+\end_inset
+
+ Fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direct-Comparison-PESQ-PRR"
+
+\end_inset
+
 Direct Comparison of Human (
 \begin_inset ERT
 status open
@@ -165,7 +435,95 @@ acl{PRR}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement p
+wide false
+sideways false
+status open
+
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\backslash
+csvautotabular{dat/HumanMachinePaliwal.csv}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:LF-Fit-Direct-Compar-PESQ-PRR"
+
+\end_inset
+
+Summary of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{LM}
+\end_layout
+
+\end_inset
+
+ Fit (
+\begin_inset Formula $y=mx+c$
+\end_inset
+
+) of Direct Comparison of Human (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PESQ}
+\end_layout
+
+\end_inset
+
+) vs.
+ Machine (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PRR}
+\end_layout
+
+\end_inset
+
+) Quality Improvement
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

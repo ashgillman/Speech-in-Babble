@@ -120,7 +120,8 @@ Simulations were run on a MacBook Pro 64-bit system with an Intel Core i7
 \end_layout
 
 \begin_layout Section
-Research Question 1
+Humanly Perceived Improvement vs.
+ Machine Performance
 \end_layout
 
 \begin_layout Standard
@@ -254,6 +255,23 @@ ac{LM}
 \end_inset
 
  model was then applied using R's 
+\begin_inset listings
+lstparams "language=R"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+lm()
+\end_layout
+
+\end_inset
+
+ linear regression function.
+\end_layout
+
+\begin_layout Standard
+The second comparison method..
 \end_layout
 
 \begin_layout Standard
