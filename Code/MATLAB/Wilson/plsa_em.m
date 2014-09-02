@@ -10,6 +10,8 @@ function [W,H,p] = plsa_em(S,c,Winit,Hinit)
 %   p - weights of each marginal pair product
 %   Winit - initial value for W (optional, defaults to ones)
 %   Hinit - initial value for H (optional, defaults to ones)
+%
+% Written by Ashley Gillman
 
 % Initialise variables
 [F,T] = size(S);
