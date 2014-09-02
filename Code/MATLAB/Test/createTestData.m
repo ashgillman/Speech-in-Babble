@@ -12,8 +12,12 @@ if isempty(strfind(path,MYTOOLS_LOC))
     path(MYTOOLS_LOC,path)
 end
 
+% suppress warnings thrown by existing dirs lib
+warning('off','MATLAB:MKDIR:DirectoryExists')
+
+testID = '1';
 ROOT_LOC = '/users/ash/documents/thesisdata/wsjcam0/rawdat/si_dt/';
-OUT_LOC = '/Volumes/Gillman/Thesis/testdat/1/';
+OUT_LOC = ['/Volumes/Gillman/Thesis/testdat/' testID '/'];
 FS = 16000;
 
 SPKR = 'c3c'; % SoI ID used in this test
@@ -21,6 +25,7 @@ COMPSPKR = 'c3f'; % ComSpkr ID(s) used in this test
 
 testLen = 10; % 10 samples for testing
 trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
+mixes = [-6 -3 0 3]; % dB
 
 SoIWavFiles = getAllFiles([ROOT_LOC SPKR], '/*.wav');
 emptyWavs = ~cellfun(@isempty, regexp(SoIWavFiles, '101.wav'));
@@ -62,18 +67,27 @@ for i=1:testLen
     cPos = newCPos + 1;
     dPos = newDPos + 1;
 end
-test_dirtyWav = test_cleanWav + test_noiseWav;
 
 % normalise signals
-test_cleanWav = normalise(test_cleanWav);
-test_noiseWav = normalise(test_noiseWav);
-test_dirtyWav = normalise(test_dirtyWav);
+test_cleanWav = 0.9 * normalise(test_cleanWav);
+test_noiseWav = 0.9 * normalise(test_noiseWav);
 
 % save test wavs
 mkdir(OUT_LOC);
 wavwrite(test_cleanWav,FS,[OUT_LOC 'test_clean.wav']);
+disp([OUT_LOC 'test_clean.wav']);
 wavwrite(test_noiseWav,FS,[OUT_LOC 'test_noise.wav']);
-wavwrite(test_dirtyWav,FS,[OUT_LOC 'test_dirty.wav']);
+disp([OUT_LOC 'test_noise.wav']);
+
+% save each mix
+for i=1:numel(mixes)
+    mix = mixes(i);
+    test_dirtyWav = test_cleanWav + 10^(mix/20) * test_noiseWav;
+    test_dirtyWav = 0.9 * normalise(test_dirtyWav);
+    wavwrite(test_dirtyWav,FS,[OUT_LOC 'test_dirty' num2str(mix) ...
+        'dB.wav']);
+    disp([OUT_LOC 'test_dirty' num2str(mix) 'dB.wav']);
+end
 
 for i=1:numel(trainLens)
     trainLen = trainLens(i);
@@ -97,25 +111,29 @@ for i=1:numel(trainLens)
     end
     
     % normalise signals
-    train_SoIWav = normalise(train_SoIWav);
-    train_comSpkrWav = normalise(train_comSpkrWav);
+    train_SoIWav = 0.9 * normalise(train_SoIWav);
+    train_comSpkrWav = 0.9 * normalise(train_comSpkrWav);
 
     % save train wavs
-    mkdir([OUT_LOC '/' num2str(trainLen)]);
-    wavwrite(train_SoIWav,FS,[OUT_LOC '/' num2str(trainLen) '/' ...
+    mkdir([OUT_LOC num2str(trainLen) 'ut']);
+    wavwrite(train_SoIWav,FS,[OUT_LOC num2str(trainLen) 'ut/' ...
         'train_SoI.wav']);
-    wavwrite(train_comSpkrWav,FS,[OUT_LOC '/' num2str(trainLen) '/' ...
+    disp([OUT_LOC num2str(trainLen) 'ut/' 'train_SoI.wav']);
+    wavwrite(train_comSpkrWav,FS,[OUT_LOC num2str(trainLen) 'ut/' ...
         'train_compSpkr.wav']);
+    disp([OUT_LOC num2str(trainLen) 'ut/' 'train_compSpkr.wav']);
 end
+% unsuppress warnings
+warning('on','MATLAB:MKDIR:DirectoryExists')
 end
 
 function fileList = getAllFiles(dirName, type)
 
-  dirData = dir([dirName type]);      %# Get the data for the current directory
+  dirData = dir([dirName type]); % Get the data for the current directory
   dirIndex = [dirData.isdir];  %# Find the index for directories
   fileList = {dirData(~dirIndex).name}';  %'# Get a list of the files
   if ~isempty(fileList)
-    fileList = cellfun(@(x) fullfile(dirName,x),...  %# Prepend path to files
+    fileList = cellfun(@(x) fullfile(dirName,x),...  Prepend path to files
                        fileList,'UniformOutput',false);
   end
 end

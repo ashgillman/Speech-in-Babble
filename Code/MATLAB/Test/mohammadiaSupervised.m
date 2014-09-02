@@ -44,7 +44,6 @@ noiseTr_Spect=spec_scale*MySpectrogram(noise,alen,ulen);
 noise_nmf=NMF(noiseTr_Spect,num_noise_basis);
 setParameters(noise_nmf,'max_it',100,'update_boundFlag',1);
 noise_nmf.train;
-figure,plot(noise_nmf.LogEvidence),title('Lower bound for the loglikelihood for VB-Training speech basis.')
 noise_data=[];
 
 %nmf model for the mixed signal

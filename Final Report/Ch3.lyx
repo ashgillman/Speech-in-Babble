@@ -156,13 +156,17 @@ key "mohammadiha2013supervised,Wilson2008,Schmidt2006,Raj2005,Rennie2008,Weninge
 
 \end_inset
 
- and is presented in XX
-\begin_inset Note Note
-status collapsed
+ and is presented in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:Apx-Data"
 
-\begin_layout Plain Layout
-TODO APPENDIX
-\end_layout
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:litresults"
 
 \end_inset
 
@@ -175,9 +179,33 @@ reference "chap:Literature-Review"
 \end_inset
 
  
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "chap:Literature-Review"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -268,10 +296,22 @@ lm()
 \end_inset
 
  linear regression function.
+ The main limitation of the direct comparison method was the limited dataset
+ available.
 \end_layout
 
 \begin_layout Standard
 The second comparison method..
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
