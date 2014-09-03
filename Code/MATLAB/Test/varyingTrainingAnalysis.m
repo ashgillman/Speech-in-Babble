@@ -13,44 +13,76 @@ if isempty(strfind(path,MYTOOLS_LOC))
     path(MYTOOLS_LOC,path)
 end
 
+% tools for the program
+subindex = @(A,i) A(i); % An anonymous function to index a matrix
+subcindex = @(A,i) A{i}; % An anonymous function to index a cell
+
 % suppress warnings thrown by pesq lib
 warning('off','MATLAB:oldPfileVersion')
 
-% params
+% const params
 DAT_LOC = ['/Volumes/Gillman/Thesis/testdat/' testID '/'];
 ENH_LOC = [DAT_LOC 'enhanced/'];
 FS = 16000;
 
+% test params
+mixes = [-6 -3 0 3]; % dB
+
 % load non-varying data (clean/dirty test data)
 clean = [DAT_LOC 'test_clean.wav'];
-dirty = [DAT_LOC 'test_dirty.wav'];
-pesqBef = pesq(FS,clean,dirty);
 cleanWav = wavread(clean);
-dirtyWav = wavread(dirty);
-len = min(numel(cleanWav),numel(dirtyWav));
-[snr_dist, segsnr_dist]= snr(cleanWav(1:len),dirtyWav(1:len),FS);
-segSNRBef = mean(segsnr_dist);
+
+% calculate pre-enhanced improvements
+pesqDirty = zeros(size(mixes));
+segSNRDirty = zeros(size(mixes));
+for mixNo = 1:numel(mixes)
+    mix = mixes(mixNo);
+    
+    % PESQ before enhancement
+    dirty = [DAT_LOC 'test_dirty'  num2str(mix) 'dB.wav'];
+    pesqDirty(mixNo) = pesq(FS,clean,dirty);
+    
+    % SegSNR Before Enhancement
+    dirtyWav = wavread(dirty);
+    len = min(numel(cleanWav),numel(dirtyWav));
+    [snr_dist, segsnr_dist]= snr(cleanWav(1:len),dirtyWav(1:len),FS);
+    segSNRDirty(mixNo) = mean(segsnr_dist);
+end
 
 % Get cleaned wav files (exclude hidden files)
 fileList = getAllFiles(ENH_LOC,'*.wav');
 hiddenFiles = ~cellfun(@isempty, regexp(fileList, '/\.'));
 fileList = fileList(~hiddenFiles);
 
-% Calculations for each file
+% Calculations for each enhanced file
 pesqAft = zeros(size(fileList));
+pesqBef = zeros(size(fileList));
 segSNRAft = zeros(size(fileList));
+segSNRBef = zeros(size(fileList));
+inputSNR = zeros(size(fileList));
+alg = cell(size(fileList));
+utterances = zeros(size(fileList));
 for i = 1:numel(fileList)
     file = fileList{i};
     
+    % Get test info from filename
+    path = strsplit(subcindex(strsplit(file,'_'),1),'/');
+    alg(i) = path(end);
+    utterances(i) = str2num(subindex(subcindex(strsplit(file,'_'),2),1:3));
+    inputSNR(i) = str2num(subindex(subcindex(strsplit(file,'_'),2),6:7));
+
     % PESQ
     pesqAft(i) = pesq(FS,clean,file);
-    
+    pesqBef(i) = pesqDirty(mixes==inputSNR(i));
+
     % SegSNR
     fileWav = wavread(file);
     len = min(numel(cleanWav),numel(fileWav));
     [snr_dist, segsnr_dist]= snr(cleanWav(1:len),fileWav(1:len),FS);
     segSNRAft(i)= mean(segsnr_dist);
+    segSNRBef(i) = segSNRDirty(mixes==inputSNR(i));
 end
+
 pesqImp = pesqAft - pesqBef;
 SegSNRImp = segSNRAft - segSNRBef;
 warning('on','MATLAB:oldPfileVersion')
@@ -59,22 +91,21 @@ warning('on','MATLAB:oldPfileVersion')
 meta = loadjson([DAT_LOC 'testmeta.json']);
 
 % save to csv
-subindex = @(A,i) A(i); % An anonymous function to index a matrix
 names = cellfun(@(x) subindex(strsplit(x,'/'), ...
     length(strsplit(fileList{1},'/'))), fileList);
-dat = cat(1,{'cleanedname' 'Input SNR' 'No. in Babble' 'pesq' 'pesqImp' ...
-    'segSNR' 'segSNRImp'}, ...
-    cat(2, names, num2cell(repmat(meta.InputSNR,size(names))), ...
+dat = cat(1,{'algorithm' 'filename' 'Input SNR' 'utterances' ...
+    'No. in Babble' 'pesq' 'pesqImp' 'segSNR' 'segSNRImp'}, ...
+    cat(2, alg, names, num2cell(inputSNR), num2cell(utterances), ...
     num2cell(repmat(meta.NoInBabble,size(names))), num2cell(pesqAft), ...
     num2cell(pesqImp), num2cell(segSNRAft), num2cell(SegSNRImp)));
 %# write line-by-line
 if ~exist([DAT_LOC 'resultsd.csv'])
     fid = fopen([DAT_LOC 'results.csv'],'w+');
-    fprintf(fid, '%s,%s,%s,%s,%s\n', dat{1,:});
+    fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s\n', dat{1,:});
 else
     fid = fopen([DAT_LOC 'results.csv'],'a');
 end
 for i=2:size(dat,1)
-    fprintf(fid, '%s,%f,%f,%f,%f\n', dat{i,:});
+    fprintf(fid, '%s,%s,%i,%i,%i,%f,%f,%f,%f\n', dat{i,:});
 end
 fclose(fid);
