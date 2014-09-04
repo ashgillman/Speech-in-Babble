@@ -85,6 +85,22 @@ Methodology
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The algorithms outlined throughout the following chapter were implemented
  in MATLAB.
  This environment was selected due to its availability and ease-of-use.
@@ -217,18 +233,9 @@ status open
 
 \begin_layout Standard
 The first comparison method was 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{direct comparison}
-\end_layout
-
-\end_inset
-
+\series bold
+direct comparison
+\series default
 .
  This method involved plotting human performance against machine performance,
  and thus was only applicable to a small subset of the results where both
@@ -301,6 +308,16 @@ lm()
 \end_layout
 
 \begin_layout Standard
+A 
+\series bold
+grouped comparison
+\series default
+ was also conducted.
+ This was performed as above, however similar algorithms were grouped into
+ algorithm classes.
+\end_layout
+
+\begin_layout Standard
 The second comparison method..
 \begin_inset Note Note
 status open
@@ -316,7 +333,18 @@ TODO
 
 \begin_layout Standard
 A limitation in this analysis is that the test conditions are not fair:
- different noise types, subtle differences in algorithms
+ different noise types, subtle differences in algorithms BLURGH
+\end_layout
+
+\begin_layout Subsection
+Independent Investigation
+\end_layout
+
+\begin_layout Standard
+Due to the lack of existing data on which conclusions can be drawn on the
+ human vs.
+ machine success of various speech enhancement algorithms, independent test
+ were required to be run.
 \end_layout
 
 \end_body

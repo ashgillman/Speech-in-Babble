@@ -90,9 +90,9 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
-thispagestyle{empty}
+acresetall
 \end_layout
 
 \end_inset

@@ -85,6 +85,22 @@ enumitem
 Discussion
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Research Question 1
 \end_layout
@@ -94,10 +110,522 @@ Existing Data
 \end_layout
 
 \begin_layout Standard
-Results found using the direct comparison method, show in 
+The aim in conducting research into existing data was to determine, at a
+ basic level, the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+ Results from conducting a direct comparison between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ results were given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Direct-Comparison-PESQ-PRR-LOESS"
+reference "fig:Direct-PESQ-PRR"
+
+\end_inset
+
+.
+ These results show a general, positive correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+; and, by extension, between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+ The level of correlation appears to be relatively low, however comparison
+ with 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:litResCorr"
+
+\end_inset
+
+ indicates the such levels of correlation are expected.
+ Indeed, similar correlations are observed between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ results.
+\end_layout
+
+\begin_layout Standard
+Despite the acceptable correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ observed, there is still evidence to show that algorithms' performances
+ vary depending on the performance measure used.
+ For example, highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:direct-klt-mband"
+
+\end_inset
+
+ are two algorithms, 
+the 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ method and the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MBAND}
+\end_layout
+
+\end_inset
+
+ method, that exhibited similar performances when evaluated by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+, a machine measure.
+ However, when evaluated by a human perceptual method, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ method clearly performed better.
+ In fact, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ method exhibited one of the best performances seen on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale, whereas the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MBAND}
+\end_layout
+
+\end_inset
+
+ method was the worst performer on this scale, exhibiting loss in perceptual
+ quality, as indicated by the negative performance.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/KLT-MBAND/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:direct-klt-mband"
+
+\end_inset
+
+Direct comparison of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PESQ}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PRR}
+\end_layout
+
+\end_inset
+
+ highlighting 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ and multi-band spectral subtraction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:direct-klt-pklt"
+
+\end_inset
+
+ shows....
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/KLT-pKLT/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:direct-klt-pklt"
+
+\end_inset
+
+Direct comparison of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PESQ}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PRR}
+\end_layout
+
+\end_inset
+
+ highlighting 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{pKLT}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Results found using the grouped comparison method, shown in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Group-PESQ-PRR-LOESS"
 
 \end_inset
 

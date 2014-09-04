@@ -357,6 +357,7 @@ color{dkgreen},
 
 \begin_layout Standard
 \begin_inset Float listing
+placement H
 wide false
 sideways false
 status open
@@ -388,7 +389,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=41]{../Code/R/directComp.R}
+lstinputlisting[lastline=44]{../Code/R/directComp.R}
 \end_layout
 
 \end_inset
@@ -402,13 +403,6 @@ lstinputlisting[lastline=41]{../Code/R/directComp.R}
 \end_layout
 
 \begin_layout Standard
-
-\begin_inset Float listing
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -416,12 +410,7 @@ status open
 
 
 \backslash
-lstinputlisting[firstline=42,firstnumber=last]{../Code/R/directComp.R}
-\end_layout
-
-\end_inset
-
-
+lstinputlisting[firstline=45,firstnumber=last]{../Code/R/directComp.R}
 \end_layout
 
 \end_inset

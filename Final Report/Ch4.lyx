@@ -100,6 +100,22 @@ End
 Results
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Research Question 1
 \end_layout
@@ -175,14 +191,16 @@ lstref{lst:directComp}
 \end_inset
 
 .
- Shown in 
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Direct-Comparison-PESQ-PRR"
+reference "fig:Direct-PESQ-PRR"
 
 \end_inset
 
- are the results, comparing the 
+ shows the results obtained, comparing the 
 \begin_inset ERT
 status open
 
@@ -212,7 +230,7 @@ ac{PRR}
  
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Direct-Comparison-PESQ-PRR-LOESS"
+reference "fig:Direct-PESQ-PRR-LOESS"
 
 \end_inset
 
@@ -232,7 +250,7 @@ ac{LOESS}
  model and 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Direct-Comparison-PESQ-PRR-LM"
+reference "fig:Direct-PESQ-PRR-LM"
 
 \end_inset
 
@@ -250,6 +268,351 @@ ac{LM}
 \end_inset
 
  method.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/dir/HumanMachineAllLOESS.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direct-PESQ-PRR-LOESS"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{LOESS}
+\end_layout
+
+\end_inset
+
+ fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/dir/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direct-PESQ-PRR-LM"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{LM}
+\end_layout
+
+\end_inset
+
+ fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direct-PESQ-PRR"
+
+\end_inset
+
+Direct comparison of human (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PESQ}
+\end_layout
+
+\end_inset
+
+) vs.
+ machine (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PRR}
+\end_layout
+
+\end_inset
+
+) quality improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Shown in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Group-PESQ-PRR"
+
+\end_inset
+
+ are the results of the group comparison, a method also outlined in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Method-Existing-Data}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/dir/ HumanMachineGroupedLOESS.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Group-PESQ-PRR-LOESS"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{LOESS}
+\end_layout
+
+\end_inset
+
+ fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/dir/ HumanMachineGroupedLM.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Group-PESQ-PRR-LM"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{LM}
+\end_layout
+
+\end_inset
+
+ fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Group-PESQ-PRR"
+
+\end_inset
+
+Grouped comparison of human (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PESQ}
+\end_layout
+
+\end_inset
+
+) vs.
+ machine (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{PRR}
+\end_layout
+
+\end_inset
+
+) quality improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -276,168 +639,11 @@ ac{LM}
  fitted lines in 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Direct-Comparison-PESQ-PRR-LM"
+reference "fig:Group-PESQ-PRR-LM"
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename fig/HumanMachinePaliwalLOESS.pdf
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Direct-Comparison-PESQ-PRR-LOESS"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acl{LOESS}
-\end_layout
-
-\end_inset
-
- Fit
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename fig/HumanMachinePaliwalLM.pdf
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Direct-Comparison-PESQ-PRR-LM"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acl{LM}
-\end_layout
-
-\end_inset
-
- Fit
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Direct-Comparison-PESQ-PRR"
-
-\end_inset
-
-Direct Comparison of Human (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acl{PESQ}
-\end_layout
-
-\end_inset
-
-) vs.
- Machine (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acl{PRR}
-\end_layout
-
-\end_inset
-
-) Quality Improvement
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -488,11 +694,11 @@ acl{LM}
 
 \end_inset
 
- Fit (
+ fit (
 \begin_inset Formula $y=mx+c$
 \end_inset
 
-) of Direct Comparison of Human (
+) of direct comparison of 
 \begin_inset ERT
 status open
 
@@ -505,8 +711,8 @@ acl{PESQ}
 
 \end_inset
 
-) vs.
- Machine (
+ vs.
+ 
 \begin_inset ERT
 status open
 
@@ -519,11 +725,99 @@ acl{PRR}
 
 \end_inset
 
-) Quality Improvement
+ improvement
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Additionally, a Pearson's correlation table was formed over a number of
+ the evaluation measures, depicted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:litResCorr"
+
+\end_inset
+
+.
+ In this figure, the statistical evaluation methods are listed in blue,
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ methods are listed in red, and the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ methods are listed in green on the axes.
+ The sparsity in this figure is due to the limited amount of pre-existing
+ data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/cor/litResCorr.pdf
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:litResCorr"
+
+\end_inset
+
+Pearson's correlation over some of the evaluation measures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 

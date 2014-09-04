@@ -180,6 +180,13 @@ acro{ITU}{International Telecommunication Union}
 
   
 \backslash
+acro{KLT}{Karhunen-Loeve Transform}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{LOESS}{Logical Regression}
 \end_layout
 
@@ -194,7 +201,21 @@ acro{LM}{Linear Model}
 
   
 \backslash
+acro{MBAND}{Multi-band spectral subtraction}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{MOS}{Mean Opinion Score}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{MR}{Machine Recognition}
 \end_layout
 
 \begin_layout Plain Layout
@@ -209,6 +230,13 @@ acro{NMF}{Non-negative Matrix Factorisation}
   
 \backslash
 acro{PESQ}{Perceptual Evaluation of Speech Quality}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{pKLT}{Perceptual Karhunen-Loeve Transform}
 \end_layout
 
 \begin_layout Plain Layout
