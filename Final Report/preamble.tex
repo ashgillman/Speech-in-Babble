@@ -1,8 +1,7 @@
 \usepackage[novbox]{pdfsync}
 
-%\usepackage{subfloat}
-%\usepackage{subfig}
-%\usepackage{subfigure}
+\usepackage{cleveref}
+\usepackage{varioref}
 
 % Load csv files for data
 \usepackage{csvsimple}
@@ -20,6 +19,11 @@
 
 % acronyms
 \usepackage{acronym}
+% allow acronym breaks (for formatting)
+\makeatletter
+\renewcommand*\AC@acs[1]{%
+    \expandafter\AC@get\csname fn@#1\endcsname\@firstoftwo{#1}}
+\makeatother
 
 % a priori italics
 \newcommand\apriori{\textit{a priori}}
@@ -29,6 +33,7 @@
 
 % capitalise references
 \renewcommand{\figref}{\Figref}
+\renewcommand{\figref}[1]{\Vref{fig:#1}}
 \renewcommand{\tabref}{\Tabref}
 \renewcommand{\chapref}{\Chapref}
 \renewcommand{\secref}[1]{\S~\ref{sec:#1}} 

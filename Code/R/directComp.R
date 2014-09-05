@@ -22,7 +22,7 @@ cp <- "Algorithm"; # colour parameter
 sp <- "Name"; # shape parameter
 
 # set highlighting, leave blank if desired
-highlight <- c("MMSE-SPU","STSA-wcosh","STSA-weuclid","logMMSE-SPU-3")
+highlight <- c("pKLT","logMMSE-SPU-4")
 hname <- paste(highlight,collapse="-")
 
 # setup shapes

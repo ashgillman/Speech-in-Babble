@@ -310,7 +310,7 @@ status open
 
 
 \backslash
-acl{LOESS}
+acs{LOESS}
 \end_layout
 
 \end_inset
@@ -402,7 +402,7 @@ status open
 
 
 \backslash
-acl{PESQ}
+acs{PESQ}
 \end_layout
 
 \end_inset
@@ -416,7 +416,7 @@ status open
 
 
 \backslash
-acl{PRR}
+acs{PRR}
 \end_layout
 
 \end_inset
@@ -498,7 +498,7 @@ status open
 
 
 \backslash
-acl{LOESS}
+acs{LOESS}
 \end_layout
 
 \end_inset
@@ -550,7 +550,7 @@ status open
 
 
 \backslash
-acl{LM}
+acs{LM}
 \end_layout
 
 \end_inset
@@ -583,7 +583,7 @@ status open
 
 
 \backslash
-acl{PESQ}
+acs{PESQ}
 \end_layout
 
 \end_inset
@@ -597,7 +597,7 @@ status open
 
 
 \backslash
-acl{PRR}
+acs{PRR}
 \end_layout
 
 \end_inset
@@ -689,7 +689,7 @@ status open
 
 
 \backslash
-acl{LM}
+acs{LM}
 \end_layout
 
 \end_inset
@@ -706,7 +706,7 @@ status open
 
 
 \backslash
-acl{PESQ}
+acs{PESQ}
 \end_layout
 
 \end_inset
@@ -720,7 +720,7 @@ status open
 
 
 \backslash
-acl{PRR}
+acs{PRR}
 \end_layout
 
 \end_inset

@@ -260,7 +260,45 @@ ac{MOS}
 
 \end_inset
 
- results.
+ results, which are both 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ measures.
+\end_layout
+
+\begin_layout Standard
+A number of further observations were drawn from 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR"
+
+\end_inset
+
+, and are highlighted in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:direct-klt-mband,fig:direct-klt-pklt,fig:direct-pklt-logmmse-spu-4,fig:
+direct-highcorr}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -455,7 +493,7 @@ status open
 
 
 \backslash
-acl{PESQ}
+acs{PESQ}
 \end_layout
 
 \end_inset
@@ -469,7 +507,7 @@ status open
 
 
 \backslash
-acl{PRR}
+acs{PRR}
 \end_layout
 
 \end_inset
@@ -482,12 +520,25 @@ status open
 
 
 \backslash
-ac{KLT}
+acs{KLT}
 \end_layout
 
 \end_inset
 
- and multi-band spectral subtraction
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MBAND}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -507,17 +558,117 @@ reference "fig:direct-klt-pklt"
 
 \end_inset
 
- shows....
-\begin_inset Note Note
+ shows the 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-TODO
+
+
+\backslash
+ac{PESQ}
 \end_layout
 
 \end_inset
 
+ vs.
+ 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ improvement with the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{pKLT}
+\end_layout
+
+\end_inset
+
+ algorithm performances highlighted.
+ This was noted as an example of two very similar algorithms, with varying
+ performance between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ results.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ results exhibited better performance for a human listener, as the points
+ laid higher on the y-axis, whereas the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{pKLT}
+\end_layout
+
+\end_inset
+
+ results exhibited better performance for a machine recogniser, as the points
+ laid higher on the x-axis.
 \end_layout
 
 \begin_layout Standard
@@ -563,7 +714,7 @@ status open
 
 
 \backslash
-acl{PESQ}
+acs{PESQ}
 \end_layout
 
 \end_inset
@@ -577,12 +728,55 @@ status open
 
 
 \backslash
-acl{PRR}
+acs{PRR}
 \end_layout
 
 \end_inset
 
  highlighting 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{KLT}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{pKLT}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Such results support the proposition that some algorithms are inherently
+ suited either towards human or machine listeners.
+ However, this shows that such distinction is not necessarily related to
+ the algorithm class, since the 
 \begin_inset ERT
 status open
 
@@ -604,6 +798,417 @@ status open
 
 \backslash
 ac{pKLT}
+\end_layout
+
+\end_inset
+
+ algorithms belonged to the same 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ class, but produced different results.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{pKLT}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{logMMSE-SPU-4}
+\end_layout
+
+\end_inset
+
+ algorithms were observed to show reasonable improvement in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ as the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ increased, but little to no improvement in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+.
+ This is highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:direct-pklt-logmmse-spu-4"
+
+\end_inset
+
+, and is apparent by the near-zero gradient.
+ These algorithms likely introduce distortions into the signal in the process
+ of enhancement that the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ algorithm was immune to, however would be distracting to a human and therefore
+ performed badly under the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ evaluation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/pKLT-logMMSE-SPU-4/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:direct-pklt-logmmse-spu-4"
+
+\end_inset
+
+Direct comparison of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ highlighting 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{logMMSE}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SPU}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{pKLT}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The final observation drawn from 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR"
+
+\end_inset
+
+ is highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:direct-highcorr"
+
+\end_inset
+
+, which shows the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE-SPU}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{STSA-wcosh}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{STSA-weuclid}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{logMMSE-SPU-3}
+\end_layout
+
+\end_inset
+
+ algorithms.
+ These algorithms show a high, positive correlation with one another, as
+ well as exhibiting the best results measured for both 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+ The evidence suggests such a response is the ideal case, and that there
+ exists algorithms which are capable of performing well for both human and
+ machine recognisers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/MMSE-SPU-STSA-wcosh-STSA-weuclid-logMMSE-SPU-3/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:direct-highcorr"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{STSA-wcosh}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{STSA-weuclid}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{logMMSE-SPU-3}
 \end_layout
 
 \end_inset
@@ -644,8 +1249,51 @@ ac{LOESS}
 \end_inset
 
  fitted lines were, in most cases, approximately linear.
- However, the results for Wiener algorithms were a notable exception, with
- a considerable variation.
+ The results for Wiener algorithms were a notable exception, with a non-linear
+ variation, even when the outliers are ignored.
+ Overall, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LM}
+\end_layout
+
+\end_inset
+
+ fit in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Group-PESQ-PRR-LM"
+
+\end_inset
+
+ is accepted to be accurate.
+\end_layout
+
+\begin_layout Standard
+The grouped linear fittings also correlate well with the best performing
+ individual algorithms, those highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:direct-highcorr"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+**
+\shape italic
+Conclusion, at the moment, is looking to be that in general there is a good
+ correlation between human and machine listener improvement, and that, therefore
+, there will likely be many algorithms suited to both purposes.
+ However, still to warn that algorithms should be verified both ways, as
+ one does not imply the other.
 \end_layout
 
 \end_body

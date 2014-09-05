@@ -124,7 +124,7 @@ bfseries}
 
 
 \backslash
-begin{acronym}[LOESS]
+begin{acronym}[logMMSE-SPU-4]
 \end_layout
 
 \begin_layout Plain Layout
@@ -194,6 +194,59 @@ acro{LOESS}{Logical Regression}
 
   
 \backslash
+acro{logMMSE}{Log 
+\backslash
+acl{MMSE}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{logMMSE-SPU-1}{first 
+\backslash
+acl{logMMSE} 
+\backslash
+acl{SPU}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{logMMSE-SPU-2}{second 
+\backslash
+acl{logMMSE} 
+\backslash
+acl{SPU}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{logMMSE-SPU-3}{third 
+\backslash
+acl{logMMSE} 
+\backslash
+acl{SPU}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{logMMSE-SPU-4}{fourth 
+\backslash
+acl{logMMSE} 
+\backslash
+acl{SPU}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{LM}{Linear Model}
 \end_layout
 
@@ -202,6 +255,24 @@ acro{LM}{Linear Model}
   
 \backslash
 acro{MBAND}{Multi-band spectral subtraction}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{MMSE}{Minimum Mean Square Error}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{MMSE-SPU}{
+\backslash
+acl{MMSE} 
+\backslash
+acl{SPU}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -250,13 +321,6 @@ acro{PRR}{Phoneme Recognition Rate}
 
   
 \backslash
-acro{SNR}{Signal to Noise Ratio}
-\end_layout
-
-\begin_layout Plain Layout
-
-  
-\backslash
 acro{SD}{Spectral Distortion}
 \end_layout
 
@@ -271,6 +335,13 @@ acro{SDR}{Signal to Distortion Ratio}
 
   
 \backslash
+acro{SNR}{Signal to Noise Ratio}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{SoI}{Speaker of Interest}
 \end_layout
 
@@ -278,7 +349,39 @@ acro{SoI}{Speaker of Interest}
 
   
 \backslash
+acro{SPU}{Speech Presence Uncertainty}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{SSN}{Speech-Shaped Noise}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{STSA}{Short-Time Spectral Amplitude}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{STSA-wcosh}{
+\backslash
+acl{STSA} with weighted cosh estimator}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{STSA-weuclid}{
+\backslash
+acl{STSA} with weighted Euclidean estimator}
 \end_layout
 
 \begin_layout Plain Layout
