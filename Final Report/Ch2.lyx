@@ -1188,7 +1188,7 @@ ac{PESQ}
 
 \end_inset
 
-is the 
+ is the 
 \begin_inset ERT
 status open
 
@@ -1204,7 +1204,7 @@ ac{ITU}
  standard for evaluation of objective speech quality 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "InternationalTelecommunicationUnion2001"
+key "Rix2001,InternationalTelecommunicationUnion2001"
 
 \end_inset
 
@@ -1253,7 +1253,17 @@ key "Rix2003"
 \end_inset
 
 .
- Other methods for measuring perceptual quality include long-term 
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+These are actually statistical
+\end_layout
+
+\end_inset
+
+Other methods for measuring perceptual quality include long-term 
 \begin_inset ERT
 status open
 

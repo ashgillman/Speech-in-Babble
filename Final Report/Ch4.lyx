@@ -62,8 +62,8 @@ End
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type numerical
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -117,7 +117,8 @@ acresetall
 \end_layout
 
 \begin_layout Section
-Research Question 1
+Humanly Perceived Improvement vs.
+ Machine Performance
 \end_layout
 
 \begin_layout Subsection
@@ -178,15 +179,9 @@ status open
 
 .
  The R code used to perform this analysis is given in 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstref{lst:directComp}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:directComp"
 
 \end_inset
 
@@ -648,28 +643,9 @@ reference "fig:Group-PESQ-PRR-LM"
 
 \begin_layout Standard
 \begin_inset Float table
-placement p
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\backslash
-csvautotabular{dat/HumanMachinePaliwal.csv}
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -733,6 +709,24 @@ acs{PRR}
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\backslash
+csvautotabular{dat/HumanMachinePaliwal.csv}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -782,7 +776,6 @@ ac{MR}
 
 \begin_layout Standard
 \begin_inset Float figure
-placement p
 wide false
 sideways false
 status open
@@ -797,6 +790,31 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+Highlighted in 
+\color blue
+blue
+\color inherit
+ are the statistical measures, 
+\color red
+red
+\color inherit
+ the human perceptual measures and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{dkgreen}{green}
+\end_layout
+
+\end_inset
+
+ the machine recognition measures.
 \end_layout
 
 \begin_layout Plain Layout
@@ -817,7 +835,426 @@ Pearson's correlation over some of the evaluation measures
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Improving Practicality
+\end_layout
+
+\begin_layout Standard
+The following are the results of investigations attempting to answer Research
+ Question 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:ResQ2"
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
+
+
+\backslash
+textit{
+\backslash
+RQtwo{}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Investigating Current Training Requirements
+\end_layout
+
+\begin_layout Standard
+The results of the experiments proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Investigating-Training-Req}
+\end_layout
+
+\end_inset
+
+ are given in this section.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-moh-pesq"
+
+\end_inset
+
+ shows the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ results of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm developed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mohammadiha2013supervised"
+
+\end_inset
+
+.
+ Similarly, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-moh-segsnr"
+
+\end_inset
+
+ shows the segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ results of the same algorithm.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/mohSup/pesq.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Raw 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ performance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/mohSup/pesqImp.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement performance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-moh-pesq"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/mohSup/segSNR.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Raw segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ performance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/mohSup/segSNRImp.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ improvement performance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-moh-segsnr"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

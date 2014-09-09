@@ -229,6 +229,48 @@ Research Questions
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+RQone}{``Are good enhancement algorithms effective for both human listeners
+ and machine listeners? Can a generic and practical speech enhancement algorithm
+ find application in signal enhancement and 
+\backslash
+ac{ASR}?''}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+RQthree}{``Can the results be improved by modifying algorithms to concentrate
+ the focus on recognition of the desired speakers voice?''}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+RQtwo}{``Can the practicality of existing algorithms be improved to allow
+ applications in end-user hardware?''}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The aim of this thesis is to address the following research questions:
 \end_layout
 
@@ -239,9 +281,7 @@ name "enu:ResQ1"
 
 \end_inset
 
-Are good enhancement algorithms effective for both human listeners and machine
- listeners? Can a generic and practical speech enhancement algorithm find
- application in signal enhancement and 
+ 
 \begin_inset ERT
 status open
 
@@ -249,12 +289,12 @@ status open
 
 
 \backslash
-ac{ASR}
+RQone{}
 \end_layout
 
 \end_inset
 
-?
+
 \end_layout
 
 \begin_layout Enumerate
@@ -264,8 +304,20 @@ name "enu:ResQ2"
 
 \end_inset
 
-Can the results be improved by modifying algorithms to concentrate the focus
- on recognition of the desired speakers voice?
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RQtwo{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -275,8 +327,20 @@ name "enu:ResQ3"
 
 \end_inset
 
-Can the practicality of existing algorithms be improved to allow applications
- in end- user hardware?
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RQthree{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

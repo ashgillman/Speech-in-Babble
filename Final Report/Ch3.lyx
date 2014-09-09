@@ -46,8 +46,8 @@ enumitem
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type numerical
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -135,6 +135,46 @@ Simulations were run on a MacBook Pro 64-bit system with an Intel Core i7
  and R version 3.1.0 (2014-04-10).
 \end_layout
 
+\begin_layout Standard
+Test data to was drawn from the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WSJ}
+\end_layout
+
+\end_inset
+
+ corpus 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Robinson1995"
+
+\end_inset
+
+.
+ Different recordings were reserved for testing and training.
+ Babble noise was simulated by using recordings of speech, also drawn from
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WSJ}
+\end_layout
+
+\end_inset
+
+ corpus.
+\end_layout
+
 \begin_layout Section
 Humanly Perceived Improvement vs.
  Machine Performance
@@ -148,7 +188,21 @@ reference "enu:ResQ1"
 
 \end_inset
 
-.
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\backslash
+RQone{}}
+\end_layout
+
+\end_inset
+
  The focus was to compare and contrast the performance differences of speech
  enhancement algorithms when evaluated on a human listener versus a machine
  listener.
@@ -165,7 +219,8 @@ Investigating Existing Data
 \end_layout
 
 \begin_layout Standard
-Data was collected from a number of sources 
+Data on enhancement performance of various algorithms and under different
+ measures of enhancement was collected from a number of sources 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mohammadiha2013supervised,Wilson2008,Schmidt2006,Raj2005,Rennie2008,Weninger2011,Williamson2014,Paliwal2010,Plourde2007"
@@ -343,8 +398,421 @@ Independent Investigation
 \begin_layout Standard
 Due to the lack of existing data on which conclusions can be drawn on the
  human vs.
- machine success of various speech enhancement algorithms, independent test
+ machine success of various speech enhancement algorithms, independent tests
  were required to be run.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Improving Practicality
+\end_layout
+
+\begin_layout Standard
+The second research area sought to answer research question 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:ResQ2"
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\backslash
+RQtwo{}}
+\end_layout
+
+\end_inset
+
+ The focus was to investigate the training requirements of supervised speech
+ enhancement algorithms, and to investigate means of reducing them.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Investigating-Training-Req"
+
+\end_inset
+
+Investigating Training Requirements
+\end_layout
+
+\begin_layout Standard
+An experiment was conducted, investigating the effects of the performance
+ of enhancement.
+ Firstly, test data was generated, using the code given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:createTestData"
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lst:createTestData"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ The data was formed as 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+.wav
+\end_layout
+
+\end_inset
+
+ files consisting of:
+\end_layout
+
+\begin_layout Itemize
+training files, for use by supervised enhancement algorithms, for both 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+ and noise recordings;
+\end_layout
+
+\begin_layout Itemize
+test files, or dirty files, for the enhancement algorithms to operate on;
+\end_layout
+
+\begin_layout Itemize
+the clean file, for the evaluation algorithms to compare the enhancement
+ with; and
+\end_layout
+
+\begin_layout Itemize
+the clean noise file.
+\end_layout
+
+\begin_layout Standard
+A range of training files were created, varying the number of utterances
+ included.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WSJ}
+\end_layout
+
+\end_inset
+
+ corpus included 90 utterances per speaker
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+For the speakers reserved for training, which were used in this test.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Fransen1994"
+
+\end_inset
+
+, so 10 utterances were used for the test speech, and the number of utterances
+ used for training were varied between 1, 3, 5, 10, 15, 20, 30, 40, 50,
+ 60, 70 and 80.
+\end_layout
+
+\begin_layout Standard
+Similarly, a range of test files were created, varying the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ was varied between -6dB, -3dB, 0dB, 3dB and 6dB.
+ The speakers used in the test were ``c3c'' as the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+, a female speaker, and ``c3f'' as the competing speaker, a male speaker.
+\end_layout
+
+\begin_layout Standard
+The enhancement algorithm used was that proposed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mohammadiha2013supervised"
+
+\end_inset
+
+, a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HMM}
+\end_layout
+
+\end_inset
+
+ algorithm with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ output distributions.
+ The enhancement was conducted under all combinations of utterances and
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acp{SNR}
+\end_layout
+
+\end_inset
+
+.
+ The code used to conduct the test is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:varyingTrainingTest"
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lst:varyingTrainingTest"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The performance of the enhancement algorithm was then analysed, by determining
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score of the original, dirty mix, and comparing it with the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score of the enhanced recording, the difference was noted as the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement.
+ The segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ improvement was also calculated similarly.
+ The code used to perform this analysis is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:varyingTrainingAnalysis"
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lst:varyingTrainingAnalysis"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_body

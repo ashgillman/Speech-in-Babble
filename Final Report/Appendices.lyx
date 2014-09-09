@@ -172,8 +172,244 @@ end{landscape}
 
 \end_layout
 
+\begin_layout Standard
+Just file ref?
+\end_layout
+
 \begin_layout Chapter
 Code
+\end_layout
+
+\begin_layout Section
+MATLAB Test Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=Matlab-editor,basicstyle=
+\backslash
+mlttfamily
+\backslash
+small,title=
+\backslash
+lstname}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Create Test Data MATLAB Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:createTestData"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[lastline=46]{../Code/MATLAB/Test/createTestData.m}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[firstline=47,firstnumber=last]{../Code/MATLAB/Test/createTestData.m
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Varying Training
+\begin_inset Quotes erd
+\end_inset
+
+ Test MATLAB Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:varyingTrainingTest"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/varyingTrainingTest.m}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTraining
+Test.m}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Varying Training
+\begin_inset Quotes erd
+\end_inset
+
+ Analysis MATLAB Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:varyingTrainingAnalysis"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/varyingTrainingAnalysis.m}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTraining
+Analysis.m}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -389,7 +625,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=44]{../Code/R/directComp.R}
+lstinputlisting[lastline=50]{../Code/R/directComp.R}
 \end_layout
 
 \end_inset
@@ -410,7 +646,7 @@ status open
 
 
 \backslash
-lstinputlisting[firstline=45,firstnumber=last]{../Code/R/directComp.R}
+lstinputlisting[firstline=51,firstnumber=last]{../Code/R/directComp.R}
 \end_layout
 
 \end_inset

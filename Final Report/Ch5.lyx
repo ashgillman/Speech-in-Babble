@@ -102,15 +102,12 @@ acresetall
 \end_layout
 
 \begin_layout Section
-Research Question 1
-\end_layout
-
-\begin_layout Subsection
-Existing Data
+Humanly Perceived Improvement vs.
+ Machine Performance
 \end_layout
 
 \begin_layout Standard
-The aim in conducting research into existing data was to determine, at a
+The aim of conducting research into existing data was to determine, at a
  basic level, the correlation between 
 \begin_inset ERT
 status open
@@ -138,7 +135,14 @@ ac{MR}
 \end_inset
 
 .
- Results from conducting a direct comparison between 
+\end_layout
+
+\begin_layout Subsection
+Investigating Existing Data
+\end_layout
+
+\begin_layout Standard
+Results from conducting a direct comparison between 
 \begin_inset ERT
 status open
 
@@ -337,10 +341,7 @@ reference "fig:direct-klt-mband"
 
 \end_inset
 
- are two algorithms, 
-the 
-\lang australian
-
+ are two algorithms, the 
 \begin_inset ERT
 status open
 
@@ -1294,6 +1295,53 @@ Conclusion, at the moment, is looking to be that in general there is a good
 , there will likely be many algorithms suited to both purposes.
  However, still to warn that algorithms should be verified both ways, as
  one does not imply the other.
+\end_layout
+
+\begin_layout Section
+Improving Practicality
+\end_layout
+
+\begin_layout Subsection
+Investigating Current Training Requirements
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score results of enhancement by a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm with a varying length of training data supplied are given in
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-moh-pesq"
+
+\end_inset
+
+.
+ These results show an unexpected result.
+ The algorithms perform well 
 \end_layout
 
 \end_body

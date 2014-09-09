@@ -8,8 +8,11 @@
 
 % pretty text in listings
 \usepackage{color}
-\definecolor{dkgreen}{RGB}{50, 180, 50}
+\definecolor{dkgreen}{RGB}{28, 172, 0}
+\definecolor{lilas}{RGB}{170,55,241}
 \usepackage[scaled]{beramono}
+\usepackage[numbered]{sty/matlab-prettifier}
+\lstset{basicstyle=\ttfamily}
 
 %\usepackage{pdflscape}
 
@@ -38,7 +41,7 @@
 \renewcommand{\chapref}{\Chapref}
 \renewcommand{\secref}[1]{\S~\ref{sec:#1}} 
 \newcommand{\subsecref}[1]{\S~\ref{sub:#1}} 
-\newcommand{\lstref}[1]{Listing~\ref{#1}}
+\newcommand{\lstref}[1]{Listing~\ref{lst:#1}}
 
 % automatically number all display equations
 \renewcommand\[{\begin{equation}}

@@ -1,7 +1,7 @@
 close all
 clear all
 
-testID = '1';
+testID = '3';
 
 % Include Libraries
 PESQ_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/pesq';
@@ -21,12 +21,12 @@ subcindex = @(A,i) A{i}; % An anonymous function to index a cell
 warning('off','MATLAB:oldPfileVersion')
 
 % const params
-DAT_LOC = ['/Volumes/Gillman/Thesis/testdat/' testID '/'];
+DAT_LOC = ['/Volumes/Gillman 1/Thesis/testdat/' testID '/'];
 ENH_LOC = [DAT_LOC 'enhanced/'];
 FS = 16000;
 
 % test params
-mixes = [-6 -3 0 3]; % dB
+mixes = [-6 -3 0 3 6]; % dB
 
 % load non-varying data (clean/dirty test data)
 clean = [DAT_LOC 'test_clean.wav'];
@@ -88,24 +88,24 @@ SegSNRImp = segSNRAft - segSNRBef;
 warning('on','MATLAB:oldPfileVersion')
 
 % get extra test data
-meta = loadjson([DAT_LOC 'testmeta.json']);
+%meta = loadjson([DAT_LOC 'testmeta.json']);
 
 % save to csv
 names = cellfun(@(x) subindex(strsplit(x,'/'), ...
     length(strsplit(fileList{1},'/'))), fileList);
 dat = cat(1,{'algorithm' 'filename' 'Input SNR' 'utterances' ...
-    'No. in Babble' 'pesq' 'pesqImp' 'segSNR' 'segSNRImp'}, ...
+    'pesq' 'pesqImp' 'segSNR' 'segSNRImp'}, ...
     cat(2, alg, names, num2cell(inputSNR), num2cell(utterances), ...
-    num2cell(repmat(meta.NoInBabble,size(names))), num2cell(pesqAft), ...
+    num2cell(pesqAft), ...
     num2cell(pesqImp), num2cell(segSNRAft), num2cell(SegSNRImp)));
 %# write line-by-line
 if ~exist([DAT_LOC 'resultsd.csv'])
     fid = fopen([DAT_LOC 'results.csv'],'w+');
-    fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s\n', dat{1,:});
+    fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s\n', dat{1,:});
 else
     fid = fopen([DAT_LOC 'results.csv'],'a');
 end
 for i=2:size(dat,1)
-    fprintf(fid, '%s,%s,%i,%i,%i,%f,%f,%f,%f\n', dat{i,:});
+    fprintf(fid, '%s,%s,%i,%i,%f,%f,%f,%f\n', dat{i,:});
 end
 fclose(fid);

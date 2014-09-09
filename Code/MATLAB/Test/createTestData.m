@@ -1,12 +1,42 @@
+function createTestData()
 % Generates sound files for testing.
+% Generates a range of training data, varying by the number of utterances
+% (sentences) provided to train on.
+% Generates a range of test data, varying by the SNR.
+%
 % Will output files:
-%   - train_SoI.wav
-%   - train_compSpkr.wav
+%   - <x>ut/train_SoI.wav, where x is the number of utterances
+%   - <x>ut/train_compSpkr.wav, where x is the number of utterances
 %   - test_clean.wav
 %   - test_noise.wav
-%   - test_dirty.wav
+%   - test_dirty<x>dB.wav, where x is the SNR
 
-function createTestData()
+% test parameters
+%testID = '1';
+%SPKR = 'c3c'; % SoI ID used in this test
+%COMPSPKR = 'c3f'; % ComSpkr ID(s) used in this test
+%testLen = 10; % 10 samples for testing
+%trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
+%mixes = [-6 -3 0 3 6]; % dB
+%seed1 = 2; seed2 = 5;
+
+%testID = '2';
+%SPKR = 'c3l'; % SoI ID used in this test
+%COMPSPKR = 'c31'; % ComSpkr ID(s) used in this test
+%testLen = 10; % 10 samples for testing
+%trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
+%mixes = [-6 -3 0 3 6]; % dB
+%seed1 = 1; seed2 = 5;
+
+testID = '3';
+SPKR = 'c3s'; % SoI ID used in this test
+COMPSPKR = 'c31'; % ComSpkr ID(s) used in this test
+testLen = 10; % 10 samples for testing
+trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
+mixes = [-6 -3 0 3 6]; % dB
+seed1 = 1; seed2 = 2;
+
+% import libraries
 MYTOOLS_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/mytools';
 if isempty(strfind(path,MYTOOLS_LOC))
     path(MYTOOLS_LOC,path)
@@ -15,28 +45,26 @@ end
 % suppress warnings thrown by existing dirs lib
 warning('off','MATLAB:MKDIR:DirectoryExists')
 
-testID = '1';
 ROOT_LOC = '/users/ash/documents/thesisdata/wsjcam0/rawdat/si_dt/';
-OUT_LOC = ['/Volumes/Gillman/Thesis/testdat/' testID '/'];
+OUT_LOC = ['/Volumes/Gillman 1/Thesis/testdat/' testID '/'];
 FS = 16000;
 
-SPKR = 'c3c'; % SoI ID used in this test
-COMPSPKR = 'c3f'; % ComSpkr ID(s) used in this test
-
-testLen = 10; % 10 samples for testing
-trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
-mixes = [-6 -3 0 3]; % dB
-
+% load Soi Files
 SoIWavFiles = getAllFiles([ROOT_LOC SPKR], '/*.wav');
 emptyWavs = ~cellfun(@isempty, regexp(SoIWavFiles, '101.wav'));
 SoIWavFiles = SoIWavFiles(~emptyWavs);
+rng(seed1); % set seed and shuffle
+SoIWavFiles = SoIWavFiles(randperm(length(SoIWavFiles)));
 [SoIWavs,fs] = cellfun(@wavread,SoIWavFiles,'UniformOutput',false);
 fprintf('Loaded %f minutes of wav data.\n',...
     sum(cellfun(@numel,SoIWavs)./cell2mat(fs))/60);
 
+% Load ComSpkr files
 ComSpkrWavFiles = getAllFiles([ROOT_LOC COMPSPKR], '/*.wav');
 emptyWavs = ~cellfun(@isempty, regexp(ComSpkrWavFiles, '101.wav'));
 ComSpkrWavFiles = ComSpkrWavFiles(~emptyWavs);
+rng(seed2); % set seed and shuffle
+ComSpkrWavFiles = ComSpkrWavFiles(randperm(length(ComSpkrWavFiles)));
 [CompSpkrWavs,fs] = cellfun(@wavread,ComSpkrWavFiles,'UniformOutput',false);
 fprintf('Loaded %f minutes of wav data.\n',...
     sum(cellfun(@numel,CompSpkrWavs)./cell2mat(fs))/60);
@@ -82,13 +110,14 @@ disp([OUT_LOC 'test_noise.wav']);
 % save each mix
 for i=1:numel(mixes)
     mix = mixes(i);
-    test_dirtyWav = test_cleanWav + 10^(mix/20) * test_noiseWav;
+    test_dirtyWav = 10^(mix/20) * test_cleanWav + test_noiseWav;
     test_dirtyWav = 0.9 * normalise(test_dirtyWav);
     wavwrite(test_dirtyWav,FS,[OUT_LOC 'test_dirty' num2str(mix) ...
         'dB.wav']);
     disp([OUT_LOC 'test_dirty' num2str(mix) 'dB.wav']);
 end
 
+% training data
 for i=1:numel(trainLens)
     trainLen = trainLens(i);
     
@@ -128,12 +157,13 @@ warning('on','MATLAB:MKDIR:DirectoryExists')
 end
 
 function fileList = getAllFiles(dirName, type)
+% Get the contents of the given directory that are of the given type.
 
-  dirData = dir([dirName type]); % Get the data for the current directory
-  dirIndex = [dirData.isdir];  %# Find the index for directories
-  fileList = {dirData(~dirIndex).name}';  %'# Get a list of the files
-  if ~isempty(fileList)
-    fileList = cellfun(@(x) fullfile(dirName,x),...  Prepend path to files
-                       fileList,'UniformOutput',false);
-  end
+dirData = dir([dirName type]); % Get the data for the current directory
+dirIndex = [dirData.isdir];  %# Find the index for directories
+fileList = {dirData(~dirIndex).name}';  %'# Get a list of the files
+if ~isempty(fileList)
+fileList = cellfun(@(x) fullfile(dirName,x),...  Prepend path to files
+                   fileList,'UniformOutput',false);
+end
 end

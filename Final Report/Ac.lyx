@@ -145,6 +145,15 @@ acro{ASR}{Automated Speech Recognition}
 
   
 \backslash
+acro{BNMF}{Bayesian 
+\backslash
+acl{NMF}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{DSP}{Digital Signal Processing}
 \end_layout
 
@@ -187,14 +196,14 @@ acro{KLT}{Karhunen-Loeve Transform}
 
   
 \backslash
-acro{LOESS}{Logical Regression}
+acro{LOESS}{logical regression}
 \end_layout
 
 \begin_layout Plain Layout
 
   
 \backslash
-acro{logMMSE}{Log 
+acro{logMMSE}{log 
 \backslash
 acl{MMSE}}
 \end_layout
@@ -254,7 +263,7 @@ acro{LM}{Linear Model}
 
   
 \backslash
-acro{MBAND}{Multi-band spectral subtraction}
+acro{MBAND}{Multi-Band spectral subtraction}
 \end_layout
 
 \begin_layout Plain Layout
@@ -335,7 +344,7 @@ acro{SDR}{Signal to Distortion Ratio}
 
   
 \backslash
-acro{SNR}{Signal to Noise Ratio}
+acro{SNR}{Signal-to-Noise Ratio}
 \end_layout
 
 \begin_layout Plain Layout
