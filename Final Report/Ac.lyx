@@ -154,6 +154,13 @@ acl{NMF}}
 
   
 \backslash
+acro{CCR}{Comparison Category Rating}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{DSP}{Digital Signal Processing}
 \end_layout
 
@@ -176,6 +183,15 @@ acro{HMM}{Hidden Markov Model}
   
 \backslash
 acro{HR}{Human Recognition}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{HTK}{
+\backslash
+acl{HMM} Toolkit}
 \end_layout
 
 \begin_layout Plain Layout

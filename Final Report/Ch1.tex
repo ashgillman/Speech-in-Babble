@@ -1,0 +1,70 @@
+\selectlanguage{australian}%
+
+\chapter{Introduction}
+
+\acresetall
+
+The ``cocktail party problem'' was first posed in 1953 by \cite{Cherry1953},
+where the human ability, or often difficulty, to hear speech in the
+presence of multiple speakers was noted. After analysis into the complexity
+of the problem, it is amazing that humans have the ability to hear
+over one-another at all!
+
+The cocktail party problem refers to the problem of recognising speech
+in the presence of babble. A number of speakers are present, and each
+can be distinguished individually. This has been noted as an extremely
+difficult task in speech analysis and enhancement. With the rise of
+modern technology and the desire to incorporate alternative human-machine
+interfaces, the motivation to improve \ac{ASR} systems has increased.
+Additionally, the problem still exists of aiding human understanding
+in such situations, e.g. hearing aid systems or telecommunications
+systems.
+
+One method of subspace analysis that has shown promising results is
+that of \ac{NMF}. This is a relatively new method of decomposition
+proposed by \cite{Lee1999}, with applications to spectral analysis
+due to the non-negativity constraints of \ac{NMF} and the non-negative
+nature of spectral magnitude data. The components of a desired signal
+and be learned and extracted from a signal. Babble filtering systems
+are required to be trained to recognise the individual speaker, which
+is often a difficult process and a practical limitation in these systems.
+
+A number of different challenges have been held with the motivation
+of improving the performance of \ac{ASR} systems under difficult
+noise conditions \cite{Cooke2010,Barker2013,Vincent2013}. Entries
+into such competitions can be broadly categorised into two categories,
+those that perform recognition themselves, and those that clean the
+signal and supply a cleaned signal to a standardised recogniser. Algorithms
+that fall into the latter category have a possible additional application:
+improving intelligibility for human listeners. It is these algorithms
+that are of interest in this thesis.
+
+
+\section{Research Questions}
+
+\newcommand{\RQone}{``Are good enhancement algorithms effective for both human listeners and machine listeners? Can a generic and practical speech enhancement algorithm find application in signal enhancement and \ac{ASR}?''}
+\newcommand{\RQthree}{``Can the results be improved by modifying algorithms to concentrate the focus on recognition of the desired speakers voice?''}
+\newcommand{\RQtwo}{``Can the practicality of existing algorithms be improved to allow applications in end-user hardware?''}
+
+The aim of this thesis is to address the following research questions:
+\begin{enumerate}
+\item \label{enu:ResQ1} \RQone{}
+\item \label{enu:ResQ2}\RQtwo{}
+\item \label{enu:ResQ3}\RQthree{}
+\end{enumerate}
+
+\section{Scope}
+
+The scope of this thesis is to develop a general and practical speech
+enhancement algorithm with applications in a number of areas, including
+enhancement for human listeners and for \ac{ASR} systems. Such an
+algorithm should be efficient, have low requirements, and operate
+on monaural recordings.
+
+The scope does not encompass specific applications, and thus does
+not consider special requirements beyond normal hearing for hearing
+aid and cochlear implant listeners. It is assumed that the performance
+increases for normal hearing listeners will be applicable to impaired
+hearing listeners. Further studies would be required to ensure this
+is the case.\selectlanguage{english}%
+

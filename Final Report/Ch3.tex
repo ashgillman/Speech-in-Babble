@@ -1,0 +1,253 @@
+\selectlanguage{australian}%
+
+\chapter{Methodology}
+
+\acresetall
+
+The algorithms outlined throughout the following chapter were implemented
+in MATLAB. This environment was selected due to its availability and
+ease-of-use. MATLAB includes a number of tools useful in signal processing
+and statistical analysis \citep{Krauss1994,Jones1997}, and other
+authors have provided tools in the MATLAB language \citep{Hoyer2004,Brookes1997,Loizou2008},
+all of which may be implemented within this thesis. A limitation of
+the MATLAB environment in signal processing is the comparative performance
+with lower-level languages, however performance and speed were not
+a primary focus in this thesis.
+
+Data analysis was conducted using R.
+
+Simulations were run on a MacBook Pro 64-bit system with an Intel
+Core i7 2.3GHz 4- core processor with 16GB memory, running OSX 10.9.2,
+MATLAB R2013a and R version 3.1.0 (2014-04-10).
+
+Test data to was drawn from the \ac{WSJ} corpus \citep{Robinson1995}.
+Different recordings were reserved for testing and training. Babble
+noise was simulated by using recordings of speech, also drawn from
+the \ac{WSJ} corpus.
+
+
+\section{Humanly Perceived Improvement vs. Machine Performance}
+
+The first research area sought to answer research question \vref{enu:ResQ1},
+\textit{\RQone{}} The focus was to compare and contrast the performance
+differences of speech enhancement algorithms when evaluated on a human
+listener versus a machine listener.
+
+
+\subsection{\label{sub:Method-Existing-Data}Investigating Existing Data}
+
+Data on enhancement performance of various algorithms and under different
+measures of enhancement was collected from a number of sources \citep{mohammadiha2013supervised,Wilson2008,Schmidt2006,Raj2005,Rennie2008,Weninger2011,Williamson2014,Paliwal2010,Plourde2007}
+and is presented in \chapref{Apx-Data}, \secref{litresults}. As
+noted in \chapref{Literature-Review} \textit{\nameref{chap:Literature-Review}},
+most literature takes preference to evaluation measures indicative
+of either human performance or machine performance, but not both.
+Thus, methods had to be developed in order to fairly compare the the
+results between different sources.
+
+The first comparison method was \textbf{direct comparison}. This method
+involved plotting human performance against machine performance, and
+thus was only applicable to a small subset of the results where both
+performances were measured, such as in \citep{Paliwal2010}. This
+data was analysed separately for each type of algorithm investigated.
+Each data set had a \ac{LOESS} model fitted, in order to quickly
+and visually judge the accuracy of applying a \ac{LM} fit. An \ac{LM}
+model was then applied using R's \lstinline[language=R]!lm()! linear
+regression function. The main limitation of the direct comparison
+method was the limited dataset available.
+
+A \textbf{grouped comparison} was also conducted. This was performed
+as above, however similar algorithms were grouped into algorithm classes.
+
+The second comparison method..
+
+A limitation in this analysis is that the test conditions are not
+fair: different noise types, subtle differences in algorithms BLURGH
+
+
+\subsection{Independent Investigation}
+
+Due to the lack of existing data on which conclusions can be drawn
+on the human vs. machine success of various speech enhancement algorithms,
+independent tests were required to be run. In order to answer the
+research question, a number of enhancement algorithms were required
+to be used to enhance speech, and a number of evaluation measures,
+of both human perceptual and machine recognition types, were to be
+used to measure the performance.
+
+The Algorithms to be used were:
+\begin{itemize}
+\item Supervised \ac{HMM} with \ac{BNMF} output distributions \citep{mohammadiha2013supervised}.
+\item Online \ac{HMM} with \ac{BNMF} output distributions \citep{mohammadiha2013supervised}.
+\end{itemize}
+The performance measures to be used are \ac{PESQ} \citep{InternationalTelecommunicationUnion2001},
+\ac{MOS}, \ac{CCR} \citep{InternationalTelecommunicationUnion1996}
+and \ac{PRR}.
+
+\ac{PESQ} was selected as a performance measure due to its extensive
+usage in literature. Using the same evaluation measure allowed a certain
+degree of comparability with others' results. The \ac{PESQ} implementation
+used was a MATLAB implementation provided by \citet{Loizou2008}.
+
+\ac{MOS} and \ac{CCR} were selected due to their subjective qualities.
+Although subjective measures are generally avoided, they were decided
+to be useful in the experimental context, as human perception is itself
+subjective. \ac{MOS}, like \ac{PESQ}, had been used throughout literature.
+\ac{CCR} was included also since the scale used lent itself to measuring
+enhancement, and is in many ways more similar to \ac{PESQ} due to
+the fact it measures improvement or degradation from a reference.
+
+A MATLAB implementation of the \ac{MOS} test exists \citep{Ruzanski2009},
+however the implementation was not flexible and the script was not
+found to be suited to the required test. A new \ac{MOS} and \ac{CCR}
+script was created, in alignment with the requirements outlined by
+the \citet{InternationalTelecommunicationUnion1996}.
+
+The scales used are given in \tabref{MOS-CCR-Scales}. Two \ac{MOS}scales
+were used, one measuring quality opinion, and one measuring required
+effort opinion.
+
+\begin{table}
+\protect\caption{\label{tab:MOS-CCR-Scales}Scales used in subjective tests}
+
+
+\subfloat[\acs{MOS} listening quality scale]{
+
+\begin{centering}
+\begin{tabular}{|c|c|}
+\hline 
+Quality of the speech & Score\tabularnewline
+\hline 
+\hline 
+Excellent & 5\tabularnewline
+\hline 
+Good & 4\tabularnewline
+\hline 
+Fair & 3\tabularnewline
+\hline 
+Poor & 2\tabularnewline
+\hline 
+Bad & 1\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\selectlanguage{english}%
+\selectlanguage{english}%
+}
+
+\subfloat[\acs{MOS} listening effort scale]{
+
+\centering{}%
+\begin{tabular}{|c|c|}
+\hline 
+Effort required to understand the meanings of sentences & Score\tabularnewline
+\hline 
+\hline 
+Complete relaxation possible; no effort required & 5\tabularnewline
+\hline 
+Attention necessary; no appreciable effort required & 4\tabularnewline
+\hline 
+Moderate effort required & 3\tabularnewline
+\hline 
+Considerable effort required & 2\tabularnewline
+\hline 
+No meaning understood with any feasible effort & 1\tabularnewline
+\hline 
+\end{tabular}}
+
+\subfloat[\acs{CCR} scale]{
+
+\begin{centering}
+\begin{tabular}{|c|c|}
+\hline 
+The Quality of the Second Compared to the Quality of the First & Score\tabularnewline
+\hline 
+\hline 
+Much Better & 3\tabularnewline
+\hline 
+Better & 2\tabularnewline
+\hline 
+Slightly Better & 1\tabularnewline
+\hline 
+About the Same & 0\tabularnewline
+\hline 
+Slightly Worse & -1\tabularnewline
+\hline 
+Worse & -2\tabularnewline
+\hline 
+Much Worse & -3\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\selectlanguage{english}%
+\selectlanguage{english}%
+}
+\end{table}
+
+
+When performing the \ac{MOS} and \ac{CCR} tests, some of the recommendations
+could not be met. Soundproof rooms were not available, as recommended
+in \citep{InternationalTelecommunicationUnion1996} Annex A, and so
+environmental, room and vehicle noise were not able to be tightly
+controlled. This restriction is important when testing the quality
+of telecommunications systems as stationary as well as non-stationary
+noise needs to be tested. However, in the current experiments, non-stationary
+noise is of interest. Therefore it is important that non-stationary
+noise be removed, such as traffic, however some stationary noise within
+the testing environment is acceptable. These operating conditions
+were achievable.
+
+Both \ac{HTK} and 
+
+
+\section{Improving Practicality}
+
+The second research area sought to answer research question \ref{enu:ResQ2},
+\textit{\RQtwo{}} The focus was to investigate the training requirements
+of supervised speech enhancement algorithms, and to investigate means
+of reducing them.
+
+
+\subsection{\label{sub:Investigating-Training-Req}Investigating Training Requirements}
+
+An experiment was conducted, investigating the effects of the performance
+of enhancement. Firstly, test data was generated, using the code given
+in \lstref{createTestData}, \textit{\nameref{lst:createTestData}}.
+The data was formed as \lstinline[language=bash]!.wav! files consisting
+of:
+\begin{itemize}
+\item training files, for use by supervised enhancement algorithms, for
+both \ac{SoI} and noise recordings;
+\item test files, or dirty files, for the enhancement algorithms to operate
+on;
+\item the clean file, for the evaluation algorithms to compare the enhancement
+with; and
+\item the clean noise file.
+\end{itemize}
+A range of training files were created, varying the number of utterances
+included. The \ac{WSJ} corpus included 90 utterances per speaker%
+\footnote{For the speakers reserved for training, which were used in this test.%
+} \citep{Fransen1994}, so 10 utterances were used for the test speech,
+and the number of utterances used for training were varied between
+1, 3, 5, 10, 15, 20, 30, 40, 50, 60, 70 and 80.
+
+Similarly, a range of test files were created, varying the \ac{SNR}.
+The \ac{SNR} was varied between -6dB, -3dB, 0dB, 3dB and 6dB. The
+speakers used in the test were ``c3c'' as the \ac{SoI}, a female
+speaker, and ``c3f'' as the competing speaker, a male speaker.
+
+The enhancement algorithm used was that proposed by \citet{mohammadiha2013supervised},
+a \ac{HMM} algorithm with \ac{BNMF} output distributions. The enhancement
+was conducted under all combinations of utterances and \acp{SNR}.
+The code used to conduct the test is given in \lstref{varyingTrainingTest},
+\textit{\nameref{lst:varyingTrainingTest}}.
+
+The performance of the enhancement algorithm was then analysed, by
+determining the \ac{PESQ} score of the original, dirty mix, and comparing
+it with the \ac{PESQ} score of the enhanced recording, the difference
+was noted as the \ac{PESQ} improvement. The segmental \ac{SNR} improvement
+was also calculated similarly. The code used to perform this analysis
+is given in \lstref{varyingTrainingAnalysis}, \textit{\nameref{lst:varyingTrainingAnalysis}}.\selectlanguage{english}%
+

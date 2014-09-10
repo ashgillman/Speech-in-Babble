@@ -1,0 +1,146 @@
+%% LyX 2.1.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,australian,english]{report}
+\usepackage{mathptmx}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=25mm,bmargin=25mm,lmargin=40mm,rmargin=25mm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage[active]{srcltx}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{array}
+\usepackage{varioref}
+\usepackage{refstyle}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{nomencl}
+% the following is useful when we have the old nomencl.sty package
+\providecommand{\printnomenclature}{\printglossary}
+\providecommand{\makenomenclature}{\makeglossary}
+\makenomenclature
+\onehalfspacing
+\usepackage{nameref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+
+\AtBeginDocument{\providecommand\tabref[1]{\ref{tab:#1}}}
+\AtBeginDocument{\providecommand\figref[1]{\ref{fig:#1}}}
+\AtBeginDocument{\providecommand\chapref[1]{\ref{chap:#1}}}
+\AtBeginDocument{\providecommand\secref[1]{\ref{sec:#1}}}
+\AtBeginDocument{\providecommand\lstref[1]{\ref{lst:#1}}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+\floatstyle{ruled}
+\newfloat{listing}{tbp}{lol}[chapter]
+\providecommand{\listingname}{Listing}
+\floatname{listing}{\protect\listingname}
+\RS@ifundefined{subref}
+  {\def\RSsubtxt{section~}\newref{sub}{name = \RSsubtxt}}
+  {}
+\RS@ifundefined{thmref}
+  {\def\RSthmtxt{theorem~}\newref{thm}{name = \RSthmtxt}}
+  {}
+\RS@ifundefined{lemref}
+  {\def\RSlemtxt{lemma~}\newref{lem}{name = \RSlemtxt}}
+  {}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\usepackage{enumitem}		% customizable list environments
+\newlength{\lyxlabelwidth}      % auxiliary length 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\include{preamble}
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+\makeatother
+
+\usepackage{listings}
+\addto\captionsaustralian{\renewcommand{\listingname}{Listing}}
+\addto\captionsaustralian{\renewcommand{\lstlistingname}{Listing}}
+\addto\captionsenglish{\renewcommand{\lstlistingname}{Listing}}
+\renewcommand{\lstlistingname}{Listing}
+
+\begin{document}
+
+\title{Practical Speech Enhancement in Babble Using Non-negative Matrix
+Factorisation}
+
+
+\author{Ashley Gillman}
+
+\maketitle
+
+\lhead{Gillman}
+
+
+\rhead{Practical Speech Enhancement in Babble using NMF}
+
+
+\cfoot{}% remove centered page no.}
+
+
+\rfoot{\fancyplain{\thepage}{\thepage}}
+
+\pagenumbering{roman}
+
+\tableofcontents{}
+
+\listoffigures
+
+
+\listoftables
+
+
+\listof{listing}{List of Listings}
+
+
+\settowidth{\nomlabelwidth}{ Matrix notation}
+\printnomenclature{}
+
+\nomenclature{ Matrix notation}{In this thesis, matrices are denoted by capitalised letters. Subscript notation on matrices using commas denotes indexation (i.e. $A_{ij}$ represents the $i$th row and $j$th column) whereas using the multiplication symbol, $\times$, denotes a size definition (i.e. $A_{i\times j}$ defines an $i$-by-$j$ matrix).}
+
+\include{Ac}
+
+\pagenumbering{arabic}
+
+\include{Ch1}
+
+\include{Ch2}
+
+\include{Ch3}
+
+\include{Ch4}
+
+\include{Ch5}
+
+\bibliographystyle{bib/IEEEtranN}
+\bibliography{IEEEabrv,bib/library}
+
+
+\appendix
+\pagebreak{}
+
+
+\rfoot{}% no page no. in appendices}
+
+\include{Appendices}
+\end{document}

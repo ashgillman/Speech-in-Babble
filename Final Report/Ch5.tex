@@ -1,0 +1,139 @@
+\selectlanguage{australian}%
+
+\chapter{Discussion}
+
+\acresetall
+
+
+\section{Humanly Perceived Improvement vs. Machine Performance}
+
+The aim of conducting research into existing data was to determine,
+at a basic level, the correlation between \ac{HR} and \ac{MR}.
+
+
+\subsection{Investigating Existing Data}
+
+Results from conducting a direct comparison between \ac{PESQ} and
+\ac{PRR} results were given in \figref{Direct-PESQ-PRR}. These results
+show a general, positive correlation between \ac{PESQ} and \ac{PRR};
+and, by extension, between \ac{HR} and \ac{MR}. The level of correlation
+appears to be relatively low, however comparison with \figref{litResCorr}
+indicates the such levels of correlation are expected. Indeed, similar
+correlations are observed between \ac{PESQ} and \ac{MOS} results,
+which are both \ac{HR} measures.
+
+A number of further observations were drawn from \figref{Direct-PESQ-PRR},
+and are highlighted in \Cref{fig:direct-klt-mband,fig:direct-klt-pklt,fig:direct-pklt-logmmse-spu-4,fig:direct-highcorr}.
+
+Despite the acceptable correlation between \ac{PESQ} and \ac{PRR}
+observed, there is still evidence to show that algorithms' performances
+vary depending on the performance measure used. For example, highlighted
+in \figref{direct-klt-mband} are two algorithms, the \ac{KLT} method
+and the \ac{MBAND} method, that exhibited similar performances when
+evaluated by \ac{PRR}, a machine measure. However, when evaluated
+by a human perceptual method, \ac{PESQ}, the \ac{KLT} method clearly
+performed better. In fact, the \ac{KLT} method exhibited one of the
+best performances seen on the \ac{PESQ} scale, whereas the \ac{MBAND}
+method was the worst performer on this scale, exhibiting loss in perceptual
+quality, as indicated by the negative performance.
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.8\textwidth]{fig/R/dir/KLT-MBAND/HumanMachineAllLM}\includegraphics[width=0.2\textwidth]{fig/R/dir/HumanMachineAllLegend}
+\par\end{centering}
+
+\protect\caption{\label{fig:direct-klt-mband}Direct comparison of \acs{PESQ} vs.
+\acs{PRR} highlighting \acs{KLT} and \acs{MBAND}}
+\end{figure}
+
+
+\figref{direct-klt-pklt} shows the \ac{PESQ} vs. \ac{PRR} improvement
+with the \ac{KLT} and \ac{pKLT} algorithm performances highlighted.
+This was noted as an example of two very similar algorithms, with
+varying performance between \ac{HR} and \ac{MR} results. The \ac{KLT}
+results exhibited better performance for a human listener, as the
+points laid higher on the y-axis, whereas the \ac{pKLT} results exhibited
+better performance for a machine recogniser, as the points laid higher
+on the x-axis.
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.8\textwidth]{fig/R/dir/KLT-pKLT/HumanMachineAllLM}\includegraphics[width=0.2\textwidth]{fig/R/dir/HumanMachineAllLegend}
+\par\end{centering}
+
+\protect\caption{\label{fig:direct-klt-pklt}Direct comparison of \acs{PESQ} vs. \acs{PRR}
+highlighting \acs{KLT} and \acs{pKLT}}
+\end{figure}
+
+
+Such results support the proposition that some algorithms are inherently
+suited either towards human or machine listeners. However, this shows
+that such distinction is not necessarily related to the algorithm
+class, since the \ac{KLT} and \ac{pKLT} algorithms belonged to the
+same \ac{KLT} class, but produced different results.
+
+The \ac{pKLT} and \ac{logMMSE-SPU-4} algorithms were observed to
+show reasonable improvement in \ac{PRR} as the \ac{SNR} increased,
+but little to no improvement in \ac{PESQ}. This is highlighted in
+\figref{direct-pklt-logmmse-spu-4}, and is apparent by the near-zero
+gradient. These algorithms likely introduce distortions into the signal
+in the process of enhancement that the \ac{ASR} algorithm was immune
+to, however would be distracting to a human and therefore performed
+badly under the \ac{PESQ} evaluation.
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.8\textwidth]{fig/R/dir/pKLT-logMMSE-SPU-4/HumanMachineAllLM}\includegraphics[width=0.2\textwidth]{fig/R/dir/HumanMachineAllLegend}
+\par\end{centering}
+
+\protect\caption{\label{fig:direct-pklt-logmmse-spu-4}Direct comparison of \acs{PESQ}
+vs. \acs{PRR} highlighting \acs{logMMSE} \acs{SPU} and \acs{pKLT}}
+\end{figure}
+
+
+The final observation drawn from \figref{Direct-PESQ-PRR} is highlighted
+in \figref{direct-highcorr}, which shows the \ac{MMSE-SPU}, \ac{STSA-wcosh},
+\ac{STSA-weuclid} and \ac{logMMSE-SPU-3} algorithms. These algorithms
+show a high, positive correlation with one another, as well as exhibiting
+the best results measured for both \ac{PESQ} and \ac{PRR}. The evidence
+suggests such a response is the ideal case, and that there exists
+algorithms which are capable of performing well for both human and
+machine recognisers.
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=0.8\textwidth]{fig/R/dir/MMSE-SPU-STSA-wcosh-STSA-weuclid-logMMSE-SPU-3/HumanMachineAllLM}\includegraphics[width=0.2\textwidth]{fig/R/dir/HumanMachineAllLegend}
+\par\end{centering}
+
+\protect\caption{\label{fig:direct-highcorr}\acs{STSA-wcosh}, \acs{STSA-weuclid}
+and \acs{logMMSE-SPU-3}}
+\end{figure}
+
+
+Results found using the grouped comparison method, shown in \figref{Group-PESQ-PRR-LOESS}
+indicated that the data could be approximated by a linear model. The
+\ac{LOESS} fitted lines were, in most cases, approximately linear.
+The results for Wiener algorithms were a notable exception, with a
+non-linear variation, even when the outliers are ignored. Overall,
+the \ac{LM} fit in \figref{Group-PESQ-PRR-LM} is accepted to be
+accurate.
+
+The grouped linear fittings also correlate well with the best performing
+individual algorithms, those highlighted in \figref{direct-highcorr}.
+
+{*}{*}\textit{Conclusion, at the moment, is looking to be that in
+general there is a good correlation between human and machine listener
+improvement, and that, therefore, there will likely be many algorithms
+suited to both purposes. However, still to warn that algorithms should
+be verified both ways, as one does not imply the other.}
+
+
+\section{Improving Practicality}
+
+
+\subsection{Investigating Current Training Requirements}
+
+\ac{PESQ} score results of enhancement by a \ac{BNMF} algorithm
+with a varying length of training data supplied are given in \figref{vary-train-moh-pesq}.
+These results show an unexpected result. The algorithms perform well \selectlanguage{english}%
+
