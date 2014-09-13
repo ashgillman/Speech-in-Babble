@@ -16,14 +16,13 @@ MYTOOLS_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/mytools';
 if isempty(strfind(path,MYTOOLS_LOC))
     path(MYTOOLS_LOC,path)
 end
+VOICEBOX_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/voicebox';
+if isempty(strfind(path,VOICEBOX_LOC))
+    path(VOICEBOX_LOC,path)
+end
 
 % suppress warnings thrown by existing dirs lib
 warning('off','MATLAB:MKDIR:DirectoryExists')
-
-ROOT_LOC = '/users/ash/documents/thesisdata/wsjcam0/rawdat/si_dt/';
-%OUT_LOC = ['/Volumes/Gillman 1/Thesis/testdat/' testID '/'];
-OUT_LOC = ['/users/ash/documents/thesisdata/testdat/' testID '/'];
-FS = 16000;
 
 %%% TEST PARAMS - Uncomment ONE of the following:
 
@@ -51,13 +50,42 @@ FS = 16000;
 %mixes = [-6 -3 0 3 6]; % dB
 %seed1 = 1; seed2 = 2;
 
-testID = '4';
+%testID = '4';
+%SPKR = 'c3s'; % SoI ID used in this test
+%COMPSPKRS = {'c31' 'c34' 'c35'}; % ComSpkr ID(s) used in this test
+%testLen = 10; % 10 samples for testing
+%trainLens = [1 10 50 80];
+%mixes = [-6 -3 0 3 6]; % dB
+%seed1 = 1; seed2 = 2;
+
+%testID = '5';
+%SPKR = 'c3s'; % SoI ID used in this test
+%COMPSPKRS = {'c3c' 'c3f' 'c35'}; % ComSpkr ID(s) used in this test
+%testLen = 10; % 10 samples for testing
+%trainLens = [1 5 10 50 80];
+%mixes = [-6 -3 0 3 6]; % dB
+%seed1 = 1; seed2 = 2;
+
+%testID = '6';
+%PKR = 'c3s'; % SoI ID used in this test
+%OMPSPKRS = {'c3c' 'c3f'}; % ComSpkr ID(s) used in this test
+%testLen = 10; % 10 samples for testing
+%trainLens = [1 5 10 50 80];
+%mixes = [-6 -3 0 3 6]; % dB
+%seed1 = 1; seed2 = 2;
+
+testID = '7';
 SPKR = 'c3s'; % SoI ID used in this test
-COMPSPKRS = {'c31' 'c34' 'c35'}; % ComSpkr ID(s) used in this test
+COMPSPKRS = {'c3f'}; % ComSpkr ID(s) used in this test
 testLen = 10; % 10 samples for testing
-trainLens = [1 10 50 80];
+trainLens = [1 5 10 50 80];
 mixes = [-6 -3 0 3 6]; % dB
-seed1 = 1; seed2 = 2;
+seed1 = 2; seed2 = 1;
+
+ROOT_LOC = '/users/ash/documents/thesisdata/wsjcam0/rawdat/si_dt/';
+%OUT_LOC = ['/Volumes/Gillman 1/Thesis/testdat/' testID '/'];
+OUT_LOC = ['/users/ash/documents/thesisdata/testdat/' testID '/'];
+FS = 16000;
 
 % load Soi Files
 files = getAllFiles([ROOT_LOC SPKR], '/*.wav');
@@ -95,7 +123,7 @@ cleanLen = sum(cellfun(@numel,SoIWavs(1:testLen)));
 noiseLen = min(sum(cellfun(@numel,CompSpkrWavs(1:testLen,:))));
 dirtyLen = min(cleanLen,noiseLen);
 test_cleanWav = zeros(dirtyLen,1);
-test_noiseWav = generateBabble(CompSpkrWavs,dirtyLen);
+test_noiseWav = generateBabble(CompSpkrWavs,dirtyLen,fs{1});
 
 % generate test data
 cPos = 1; % current position of clean wav
@@ -121,6 +149,8 @@ wavwrite(test_noiseWav,FS,[OUT_LOC 'test_noise.wav']);
 disp([OUT_LOC 'test_noise.wav']);
 
 % save each mix
+test_cleanWav = test_cleanWav / activlev(test_cleanWav,fs{1});
+test_noiseWav = test_noiseWav / activlev(test_noiseWav,fs{1});
 for i=1:numel(mixes)
     mix = mixes(i);
     test_dirtyWav = 10^(mix/20) * test_cleanWav + test_noiseWav;
@@ -136,21 +166,16 @@ for i=1:numel(trainLens)
     
     % preallocate train wavs
     SoILen = sum(cellfun(@numel,SoIWavs((1:trainLen) + testLen)));
-    compSpkrLen = sum(cellfun(@numel,CompSpkrWavs((1:trainLen) + testLen)));
     train_SoIWav = zeros(SoILen,1);
-    train_comSpkrWav = zeros(compSpkrLen,1);
     
     % generate train data
     sPos = 1; % current position of SoI wav
-    cPos = 1; % current position of compSpkr wav
     for j=(1:trainLen) + testLen
         newSPos = sPos + numel(SoIWavs{j}) - 1;
-        newCPos = cPos + numel(CompSpkrWavs{j}) - 1;
         train_SoIWav(sPos:newSPos) = SoIWavs{j};
-        train_comSpkrWav(cPos:newCPos) = CompSpkrWavs{j};
         sPos = newSPos + 1;
-        cPos = newCPos + 1;
     end
+    train_comSpkrWav = generateBabble(CompSpkrWavs,SoILen,fs{1});
     
     % normalise signals
     train_SoIWav = 0.9 * normalise(train_SoIWav);
@@ -169,7 +194,7 @@ end
 warning('on','MATLAB:MKDIR:DirectoryExists')
 end
 
-function wav = generateBabble(inwavs,len)
+function wav = generateBabble(inwavs,len,fs)
 % Generates babble from a give cell of speakers each of which is cell of
 % wavs.
 % i.e. inwav:{spkr1:{rec1:[],rec2:[]},spkr2:{rec1:[],rec2:[]}}
@@ -183,11 +208,18 @@ curSpkr = 1; % to alternate which speaker
 pos=1; % index in wav file
 i=1; % rec no
 while pos < len && i <= size(inwavs,1)
-    endpos = pos + numel(inwavs{i,curSpkr}) - 1;
+    speech = inwavs{i,curSpkr}; % new speech to add
+    endpos = pos + length(speech) - 1;
+    al = activlev(speech,fs); % power level
+    speech = speech / al; % normalise on power
     if endpos <= len
-        wav(pos:endpos) = wav(pos:endpos) + inwavs{i,curSpkr};
+        wav(pos:endpos) = wav(pos:endpos) + speech;
+        %wav(pos:endpos) = v_addnoise(wav(pos:endpos),fs,0,'', ...
+        %    inwavs{i,curSpkr},fs);
     else
-        wav(pos:end) = wav(pos:end) + inwavs{i,curSpkr}(endpos-len);
+        wav(pos:end) = wav(pos:end) + speech(endpos-len);
+        %wav(pos:end) = v_addnoise(wav(pos:end),fs,0,'', ...
+        %    inwavs{i,curSpkr}(endpos-len),fs);
     end
     if curSpkr == noSpkr
         i = i+1; % incr recording after used all speakers

@@ -1,7 +1,7 @@
 close all
 clear all
 
-testID = '3';
+testID = '7';
 
 % Include Libraries
 PESQ_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/pesq';
@@ -21,7 +21,8 @@ subcindex = @(A,i) A{i}; % An anonymous function to index a cell
 warning('off','MATLAB:oldPfileVersion')
 
 % const params
-DAT_LOC = ['/Volumes/Gillman 1/Thesis/testdat/' testID '/'];
+%DAT_LOC = ['/Volumes/Gillman 1/Thesis/testdat/' testID '/'];
+DAT_LOC = ['/users/ash/documents/thesisdata/testdat/' testID '/'];
 ENH_LOC = [DAT_LOC 'enhanced/'];
 FS = 16000;
 
@@ -99,7 +100,7 @@ dat = cat(1,{'algorithm' 'filename' 'Input SNR' 'utterances' ...
     num2cell(pesqAft), ...
     num2cell(pesqImp), num2cell(segSNRAft), num2cell(SegSNRImp)));
 %# write line-by-line
-if ~exist([DAT_LOC 'resultsd.csv'])
+if ~exist([DAT_LOC 'resultsd.csv'],'file')
     fid = fopen([DAT_LOC 'results.csv'],'w+');
     fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s\n', dat{1,:});
 else

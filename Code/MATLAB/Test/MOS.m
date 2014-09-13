@@ -1,4 +1,4 @@
-function results = MOS(testParams,varargin)
+function [results,testParams] = MOS(testParams,varargin)
 % MOS Perform a Mean Opinion Score, ITU P.800 [1] Annex B and Annex E
 % 
 % It is up to the user to ensure recording are in line line with B.1. This
@@ -48,10 +48,10 @@ runMins = 0;
 for tp=1:numTests
     TP = testParams{tp};
     % MOS time
-    runMins = runMins + TP.enhan / TP.FS / 60;
+    runMins = runMins + length(TP.enhan) / TP.FS / 60;
     % CCR extra time
     if doCCR
-        runMins = runMins + TP.dirty / TP.FS / 60;
+        runMins = runMins + length(TP.dirty) / TP.FS / 60;
     end
 end
 if runMins > 45
@@ -63,6 +63,7 @@ end
 % Shuffle, in alignment with [1] B.3
 order = randperm(numTests);
 testParams = testParams(order);
+results = cell(size(testParams,1),1);
 
 % Begin Test
 fprintf('Beginning test\nPress Enter to Begin\n');
@@ -70,13 +71,64 @@ pause
 for TP=1:numTests
     TP = testParams{tp};
     
+    enhanAP = audioplayer(TP.enhanWav,TP.FS);
     if doCCR
-        fprintf('Playing the unenhanced waveform...\nEnter to skip')
-        ap = audioplayer(TP.dirtyWav,TP.FS);
-        play(ap);
-        while isplaying(ap)
-            
+        dirtyAP = audioplayer(TP.dirtyWav,TP.FS);
+        CCR = NaN;
+        while ~any(CCR == -3:3)
+            play(dirtyAP);
+            fprintf('Playing the unenhanced waveform...\nEnter to skip')
+            pause;
+            stop(dirtyAP);
+            play(enhanAP);
+            fprintf('Playing the enhanced waveform...\n')
+            for i=3:-1:-3
+                fprintf('%2i: %s\n',i,CCRscale{10-i});
+            end
+            CCR = str2double(input('>','s'));
+        end
+        result.CCR = CCR;
+    else
+        result.CCR = '-';
     end
+    if doMOS
+        result.MOS = doTest(MOSscale,enhanAP);
+    else
+        result.MOS = '-';
+    end
+    if doMOSle
+        result.MOSle = doTest(MOSlescale,enhanAP);
+    else
+        result.MOSle = '-';
+    end
+    if doMOSlp
+        result.MOSlp = doTest(MOSlpscale,enhanAP);
+    else
+        result.MOSlp = '-';
+    end
+    results{i} = result;
+end
+fprintf('Test complete, thank you.\n');
+
+% Unshuffle
+testParams(order) = testParams;
+results(order) = results;
 end
 
-disp(MOSscale);
+function score = doTest(scale,ap)
+% Do MOS test
+%   scale: scale values (cell string array)
+%   ap: audioplayer with recording loaded
+%   returns score, user input
+score = NaN;
+while ~any(score == 1:5)
+    if ~isplaying(ap)
+        play(ap)
+        fprintf('Playing the waveform...\n')
+    end
+    for i=5:-1:1
+        fprintf('%2i: %s\n',i,scale{6-i});
+    end
+    score = str2double(input('>','s'));
+end
+end

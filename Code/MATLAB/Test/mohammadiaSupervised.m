@@ -1,4 +1,4 @@
-function enSpeech = mohammadiaSupervised(cleanTrain,noiseTrain,dirtyTest)
+function [enSpeech,fit] = mohammadiaSupervised(cleanTrain,noiseTrain,dirtyTest)
 % Performs Mohammadia's Supervised NMF speech enhancement on dirtyTest,
 % after using cleanTrain and noiseTrain to build a model.
 %
@@ -83,21 +83,21 @@ for n=1:floor(length(mixed)/ulen)-1
     % on waveform amplitude distribution analysis,” in Proc. Int. Conf. Spoken
     % Language Process. (Interspeech), 2008, pp. 2598–2601.
     %for the sake of demo
-    if n>50 %no estimate for first 5o frames. SNR is estimated based on past 50 frames
-        noisy_input=mixed((n-50)*ulen+1:n*ulen);
-        G=log(mean(abs(noisy_input)))-mean(log(abs(noisy_input)+eps));
-        ruts=roots([p(1) p(2) p(3)-G]);
-        [vv,ii]=min(abs(ruts));
-        estimatedSNR=.998*estimatedSNR+(1-.998)*ruts(ii);
-    else
-        G_values=[.423 .442 .642 .885];%taken from the above paper
-        snrss=[-5 0 10 20];
-        p=polyfit(snrss,G_values,2);
-        estimatedSNR=0;
-    end
-    
+%    if n>50 %no estimate for first 5o frames. SNR is estimated based on past 50 frames
+%        noisy_input=mixed((n-50)*ulen+1:n*ulen);
+%        G=log(mean(abs(noisy_input)))-mean(log(abs(noisy_input)+eps));
+%        ruts=roots([p(1) p(2) p(3)-G]);
+%        [vv,ii]=min(abs(ruts));
+%        estimatedSNR=.998*estimatedSNR+(1-.998)*ruts(ii);
+%    else
+%        G_values=[.423 .442 .642 .885];%taken from the above paper
+%        snrss=[-5 0 10 20];
+%        p=polyfit(snrss,G_values,2);
+%        estimatedSNR=0;
+%    end
 end
-%mixed=mixed(1:length(enSpeech));
-%speech=speech(1:length(enSpeech));
-%noise=noise(1:length(enSpeech));
-%snr_out=10*log10(var(speech)/var(speech-enSpeech))%how well did it go?
+
+fit.speechV = speech_nmf.Et;
+fit.speechW = speech_nmf.Ev;
+fit.noiseV = noise_nmf.Et;
+fit.noiseW = noise_nmf.Ev;

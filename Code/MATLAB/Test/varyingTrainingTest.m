@@ -2,29 +2,37 @@ close all
 clear all
 
 % variation params
-trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
-mixes = [-3 0 3];%[-6 -3 0 3 6];
-%numInBabble = [1 2 3];
-enhAlgs = {@mohammadiaSupervised};
-tests = [1 3];
+trainLens = [1 5 10 50 80];
+mixes = [-6 -3 0 3 6];
+enhAlgs = {@mohammadiaOnline @mohammadiaSupervised};
+tests = [6 7];
 
+numtests = length(trainLens) * length(mixes) * length(enhAlgs) + ...
+    length(tests);
+fits = cell(numtests,1);
+times = cell(numtests,1);
+testCount = 0;
 for testNo = 1:numel(tests)
     testname = num2str(tests(testNo));
+    fprintf('###Test %s###\n',testname);
 
     % const params
-    DAT_LOC = ['/Volumes/Gillman 1/Thesis/testdat/' testname '/'];
+    %DAT_LOC = ['/Volumes/Gillman 1/Thesis/testdat/' testname '/'];
+    DAT_LOC = ['/users/ash/documents/thesisdata/testdat/' testname '/'];
     OUT_LOC = [DAT_LOC 'enhanced/']; mkdir(OUT_LOC);
     FS = 16000;
 
     % logging
     logfile = [DAT_LOC 'enhPerf.csv'];
-    fid = fopen(logfile,'w+');
-    fprintf(fid,'Input SNR, Algorithm, Utterances, Time\n');
-    fclose(fid);
+    if exist(logfile,'file') ~= 0
+        fid = fopen(logfile,'w+');
+        fprintf(fid,'Input SNR, Algorithm, Utterances, Time\n');
+        fclose(fid);
+    end
 
     for mixNo = 1:numel(mixes)
         mix = mixes(mixNo);
-        fprintf('===%idB Mix Test===\n',mix);
+        fprintf('==%idB Mix Test==\n',mix);
 
         % read dirty to be cleaned
         dirtyWav = wavread([DAT_LOC 'test_dirty' num2str(mix) 'dB.wav']);
@@ -32,7 +40,7 @@ for testNo = 1:numel(tests)
         for algNo = 1:numel(enhAlgs)
             enhAlg = enhAlgs{algNo};
             enhAlgName = func2str(enhAlg);
-            fprintf('--Testing %s algorithm--\n',enhAlgName);
+            fprintf('-Testing %s algorithm-\n',enhAlgName);
 
             for i=1:numel(trainLens)
                 trainLen = trainLens(i);
@@ -48,9 +56,15 @@ for testNo = 1:numel(tests)
 
                 % enhance
                 fprintf('extracting for %i utterances...  ',trainLen); tic;
-                MSenhWav = enhAlg(SoIWav,CompSpkrWav,dirtyWav);
+                [MSenhWav data] = enhAlg(SoIWav,CompSpkrWav,dirtyWav);
+                testCount = testCount+1;
                 enhTime = toc;
                 disp(enhTime);
+                
+                % save fit
+                fits{testCount} = data;
+                times{testCount} = enhTime;
+                save([OUT_LOC 'fitted.mat'],'fits','times');
 
                 % norm and save
                 MSenhWav = 0.9 * normalise(MSenhWav);

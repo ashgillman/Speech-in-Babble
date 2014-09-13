@@ -6,21 +6,31 @@ clear all; close all;
 
 %%% USER DEFINED - CHANGE THESE VARIABLES TO SUIT TEST
 
-% Define test variation params
-aVals = {'1' '2' '3'}; % test numbers
-bVals = {'00'}; % SNRs
-cVals = {'mohammadiaSupervised'}; % enhancement Algorithms
-dVals = {'001' '003' '005' '010' '020' '030' '050' '080'}; % utterances
+% Define test variation params (strings)
+aName = 'testNo'; aVals = {'4'};
+bName = 'Input.SNR'; bVals = {'-3' '00' '03'};
+cName = 'algorithm'; cVals = {'mohammadiaSupervised' 'mohammadiaOnline'};
+dName = 'utterances'; dVals = {'001' '010' '050' '080'};
 
 % Set format such that this function will return the wav file to test
+%enhanfile = @(a,b,c,d) sprintf( ...
+%    '/Volumes/Gillman 1/Thesis/testdat/%s/enhanced/%s_%sut%sdB.wav', ...
+%    a,c,d,b);
 enhanfile = @(a,b,c,d) sprintf( ...
-    '/Volumes/Gillman 1/Thesis/testdat/%s/enhanced/%s_%sut%sdB.wav', ...
+    '/users/ash/documents/thesisdata/testdat/%s/enhanced/%s_%sut%sdB.wav', ...
     a,c,d,b);
 % Set format such that this function will return the unenhanced version of
 % the sound
 dirtyfile = @(a,b,c,d) sprintf( ...
-    '/Volumes/Gillman 1/Thesis/testdat/%s/test_dirty%sdB.wav', ...
-    a,num2str(str2num(b)));
+    '/users/ash/documents/thesisdata/testdat/%s/test_dirty%sdB.wav', ...
+    a,num2str(str2double(b)));
+outcsv = '/users/ash/documents/thesisdata/testdat/MOSscores.csv';
+
+% Tests to run
+MOS = true;
+MOSle = true;
+MOSlp = false;
+CCR = true;
 
 %%% SCRIPT
 
@@ -44,8 +54,8 @@ for tp=1:testLength
     enhan = enhanfile(a,b,c,d);
     
     % read files
-    [dirtyWav FS1] = audioread(dirty);
-    [enhanWav FS2] = audioread(enhan);
+    [dirtyWav,FS1] = wavread(dirty);
+    [enhanWav,FS2] = wavread(enhan);
     
     if (FS1 ~= FS2)
         warning('Files have different sampling frequencies')
@@ -61,18 +71,20 @@ for tp=1:testLength
     TPs{tp} = TP;
 end
 
-results = MOS(TPs);
-%
+% Start test
+id = input('Welcome. Please enter your id given by examiner: ');
+results = MOS(TPs,'doMOS',MOS,'doMOSle',MOSle,'doMOClp',MOSlp,'doCCR',CCR);
 
-N = 10 ;
-A = rand(1,N) ;
-B = randperm(N) ;
-C = A(B) ;
-
-% reverse randperm
-[usused,R] = sort(B) ;
-D = C(R) ;
-
-A2 = []; A2(B) = C;
-
-all(A2==A)
+% Save results to file. Appends, so that multiple users can be tested
+needsHeader = exist(outcsv,'file');
+fid = open(outcsv,'a+');
+if needsHeader
+    fprintf(fid,'ID,%s,%s,%s,%s,MOS,MOSle,MOSlp,CCR\n', ...
+        aName,bName,cName,dName);
+end
+for i=1:testLength
+    fprintf(fid,'%s,%s,%s,%s,%s,%f,%f,%f,%f\n', ...
+        id,TPs{i}.a,TPs{i}.b,TPs{i}.c,TPs{i}.d, ...
+        results{i}.MOS,results{i}.MOSle,results{i}.MOSlp,results{i}.CCR);
+end
+fclose(fid);

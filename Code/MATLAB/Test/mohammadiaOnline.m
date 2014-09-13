@@ -1,4 +1,4 @@
-function enSpeech = mohammadiaOnline(cleanTrain,noiseTrain,dirtyTest)
+function [enSpeech,fit] = mohammadiaOnline(cleanTrain,noiseTrain,dirtyTest)
 % Performs Mohammadia's Supervised NMF speech enhancement on dirtyTest,
 % after using cleanTrain and noiseTrain to build a model.
 %
@@ -22,7 +22,7 @@ if isempty(strfind(path,BNMF_LOC))
 end
 
 speech = cleanTrain/std(cleanTrain);
-noise = noiseTrain/std(noiseTrain);
+%noise = noiseTrain/std(noiseTrain);
 mixed = dirtyTest/std(dirtyTest);
 
 %learn speech model, use separate training data for test and train.
@@ -45,14 +45,14 @@ a_noise=100;% shape parameter for prior of noise activations
 input=mixed(1:15*ulen)/sqrt(var(mixed(1:15*ulen)));%make scale comparable with offline methods
 NoS=spec_scale*MySpectrogram(input, alen, ulen);
 
-%noise_data=zeros(ulen+1,50); %buffer n in section III.B in the paper
-%if size(NoS,2)>size(noise_data,2)
-%    noise_data=NoS(:,end-size(noise_data,2)+1:end);
-%    newNoiseInBuffer=0;
-%else
-%    noise_data(:,end-size(NoS,2)+1:end)=NoS;
-%    newNoiseInBuffer=size(NoS,2)-size(noise_data,2)+10;
-%end
+noise_data=zeros(ulen+1,50); %buffer n in section III.B in the paper
+if size(NoS,2)>size(noise_data,2)
+    noise_data=NoS(:,end-size(noise_data,2)+1:end);
+    newNoiseInBuffer=0;
+else
+    noise_data(:,end-size(NoS,2)+1:end)=NoS;
+    newNoiseInBuffer=size(NoS,2)-size(noise_data,2)+10;
+end
 noise_nmf=NMF(NoS,num_noise_basis_online);
 setParameters(noise_nmf,'max_it',1000,'update_boundFlag',0);
 noise_nmf.train;
@@ -110,7 +110,6 @@ for n=1:floor(length(mixed)/ulen)-1
     end
     
 end
-%mixed=mixed(1:length(enSpeech));
-%speech=speech(1:length(enSpeech));
-%noise=noise(1:length(enSpeech));
-%snr_out=10*log10(var(speech)/var(speech-enSpeech))%how well did it go?
+
+fit.speechV = speech_nmf.Et;
+fit.speechW = speech_nmf.Ev;
