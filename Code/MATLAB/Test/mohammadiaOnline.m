@@ -1,4 +1,4 @@
-function [enSpeech,fit] = mohammadiaOnline(cleanTrain,noiseTrain,dirtyTest)
+function [enSpeech,stats] = mohammadiaOnline(cleanTrain,noiseTrain,dirtyTest)
 % Performs Mohammadia's Supervised NMF speech enhancement on dirtyTest,
 % after using cleanTrain and noiseTrain to build a model.
 %
@@ -34,7 +34,9 @@ num_speech_basis=60; %number of basis for speech nmf model
 speechTr_Spect=spec_scale*MySpectrogram(speech,alen,ulen); %magnitude spectrogram
 speech_nmf=NMF(speechTr_Spect,num_speech_basis);%construct nmf object for speech model
 setParameters(speech_nmf,'max_it',100,'update_boundFlag',1);
+tic;
 speech_nmf.train;%train the speech model
+speechTrainTime = toc;
 
 %learn noise model online
 noise_name='online';
@@ -55,7 +57,9 @@ else
 end
 noise_nmf=NMF(NoS,num_noise_basis_online);
 setParameters(noise_nmf,'max_it',1000,'update_boundFlag',0);
+tic;
 noise_nmf.train;
+noiseTrainTime = toc;
 noise_nmf.adjust_ShapeparamBasis(200);%set minimum shape param
 noise_nmf.X=[];
 
@@ -65,7 +69,7 @@ mixed_nmf.UserData{1,1}=[0 a_noise]; %\phi^(s) and \phi^(n) in the paper in sect
 mixed_nmf.UserData{1,2}=noise_name;
 
 %-----------------------------Enahancement---------------------------------
-
+tic;
 estimatedSNR=0;%initial value
 win=hann(alen,'periodic');
 norm_coef=sqrt(sum(win.^2));
@@ -96,20 +100,24 @@ for n=1:floor(length(mixed)/ulen)-1
     % on waveform amplitude distribution analysis,” in Proc. Int. Conf. Spoken
     % Language Process. (Interspeech), 2008, pp. 2598–2601.
     %for the sake of demo
-    if n>50 %no estimate for first 5o frames. SNR is estimated based on past 50 frames
-        noisy_input=mixed((n-50)*ulen+1:n*ulen);
-        G=log(mean(abs(noisy_input)))-mean(log(abs(noisy_input)+eps));
-        ruts=roots([p(1) p(2) p(3)-G]);
-        [vv,ii]=min(abs(ruts));
-        estimatedSNR=.998*estimatedSNR+(1-.998)*ruts(ii);
-    else
-        G_values=[.423 .442 .642 .885];%taken from the above paper
-        snrss=[-5 0 10 20];
-        p=polyfit(snrss,G_values,2);
-        estimatedSNR=0;
-    end
+%    if n>50 %no estimate for first 5o frames. SNR is estimated based on past 50 frames
+%        noisy_input=mixed((n-50)*ulen+1:n*ulen);
+%        G=log(mean(abs(noisy_input)))-mean(log(abs(noisy_input)+eps));
+%        ruts=roots([p(1) p(2) p(3)-G]);
+%        [vv,ii]=min(abs(ruts));
+%        estimatedSNR=.998*estimatedSNR+(1-.998)*ruts(ii);
+%    else
+%        G_values=[.423 .442 .642 .885];%taken from the above paper
+%        snrss=[-5 0 10 20];
+%        p=polyfit(snrss,G_values,2);
+%        estimatedSNR=0;
+%    end
     
 end
+enhTime = toc;
 
-fit.speechV = speech_nmf.Et;
-fit.speechW = speech_nmf.Ev;
+stats.speechV = speech_nmf.Et;
+stats.speechW = speech_nmf.Ev;
+stats.speechTrainTime = speechTrainTime;
+stats.noiseTrainTime = noiseTrainTime;
+stats.enhTime = enhTime;

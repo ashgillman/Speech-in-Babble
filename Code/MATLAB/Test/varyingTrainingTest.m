@@ -4,13 +4,14 @@ clear all
 % variation params
 trainLens = [1 5 10 50 80];
 mixes = [-6 -3 0 3 6];
-enhAlgs = {@mohammadiaOnline @mohammadiaSupervised};
-tests = [6 7];
+enhAlgs = {@mohammadiaOnline};% @mohammadiaSupervised};
+tests = [2 3 6];
 
 numtests = length(trainLens) * length(mixes) * length(enhAlgs) + ...
     length(tests);
 fits = cell(numtests,1);
 times = cell(numtests,1);
+testParms = cell(numtests,1);
 testCount = 0;
 for testNo = 1:numel(tests)
     testname = num2str(tests(testNo));
@@ -26,7 +27,7 @@ for testNo = 1:numel(tests)
     logfile = [DAT_LOC 'enhPerf.csv'];
     if exist(logfile,'file') ~= 0
         fid = fopen(logfile,'w+');
-        fprintf(fid,'Input SNR, Algorithm, Utterances, Time\n');
+        fprintf(fid,'Input SNR, Algorithm, Utterances, Total Time, Speech Time, Noise Time, Enhance Time\n');
         fclose(fid);
     end
 
@@ -48,10 +49,10 @@ for testNo = 1:numel(tests)
 
                 % load train data
                 fprintf('loading training data...  '); tic;
-                SoIWav = wavread([DAT_LOC '/' num2str(trainLen) 'ut/' ...
-                    'train_SoI.wav']);
-                CompSpkrWav = wavread([DAT_LOC '/' num2str(trainLen) 'ut/' ...
-                    'train_compSpkr.wav']);
+                SoIWav = wavread([DAT_LOC '/' num2str(trainLen) ...
+                    'ut/train_SoI.wav']);
+                CompSpkrWav = wavread([DAT_LOC '/' num2str(trainLen) ...
+                    'ut/train_compSpkr.wav']);
                 disp(toc)
 
                 % enhance
@@ -64,7 +65,11 @@ for testNo = 1:numel(tests)
                 % save fit
                 fits{testCount} = data;
                 times{testCount} = enhTime;
-                save([OUT_LOC 'fitted.mat'],'fits','times');
+                testParms{testCount}.testNo = testname;
+                testParms{testCount}.mix = mix;
+                testParms{testCount}.alg = enhAlgName;
+                testParms{testCount}.trainLen = trainLen;
+                save([OUT_LOC 'fitted.mat'],'fits','times','testParms');
 
                 % norm and save
                 MSenhWav = 0.9 * normalise(MSenhWav);
@@ -76,9 +81,17 @@ for testNo = 1:numel(tests)
 
                 %log
                 fid = fopen(logfile,'a');
-                fprintf(fid,'%i,%s,%i,%f\n',mix,enhAlgName,trainLen,enhTime);
+                fprintf(fid,'%i,%s,%i,%f,%f,%f,%f\n',mix,enhAlgName, ...
+                    trainLen,enhTime,data.speechTrainTime, ...
+                    data.noiseTrainTime,data.enhTime);
                 fclose(fid);
             end
         end
     end
+end
+
+% notify
+for i=1:5
+    beep
+    pause(0.5)
 end

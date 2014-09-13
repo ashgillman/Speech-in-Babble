@@ -28,7 +28,7 @@ warning('off','MATLAB:MKDIR:DirectoryExists')
 
 %testID = '1';
 %SPKR = 'c3c'; % SoI ID used in this test
-%COMPSPKR = 'c3f'; % ComSpkr ID(s) used in this test
+%COMPSPKR = {'c3f'}; % ComSpkr ID(s) used in this test
 %testLen = 10; % 10 samples for testing
 %trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
 %mixes = [-6 -3 0 3 6]; % dB
@@ -36,7 +36,7 @@ warning('off','MATLAB:MKDIR:DirectoryExists')
 
 %testID = '2';
 %SPKR = 'c3l'; % SoI ID used in this test
-%COMPSPKR = 'c31'; % ComSpkr ID(s) used in this test
+%COMPSPKR = {'c31'}; % ComSpkr ID(s) used in this test
 %testLen = 10; % 10 samples for testing
 %trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
 %mixes = [-6 -3 0 3 6]; % dB
@@ -44,7 +44,7 @@ warning('off','MATLAB:MKDIR:DirectoryExists')
 
 %testID = '3';
 %SPKR = 'c3s'; % SoI ID used in this test
-%COMPSPKR = 'c31'; % ComSpkr ID(s) used in this test
+%COMPSPKR = {'c31'}; % ComSpkr ID(s) used in this test
 %testLen = 10; % 10 samples for testing
 %trainLens = [1 10 50 80];
 %mixes = [-6 -3 0 3 6]; % dB
@@ -67,8 +67,8 @@ warning('off','MATLAB:MKDIR:DirectoryExists')
 %seed1 = 1; seed2 = 2;
 
 %testID = '6';
-%PKR = 'c3s'; % SoI ID used in this test
-%OMPSPKRS = {'c3c' 'c3f'}; % ComSpkr ID(s) used in this test
+%SPKR = 'c3s'; % SoI ID used in this test
+%COMPSPKRS = {'c3c' 'c3f'}; % ComSpkr ID(s) used in this test
 %testLen = 10; % 10 samples for testing
 %trainLens = [1 5 10 50 80];
 %mixes = [-6 -3 0 3 6]; % dB

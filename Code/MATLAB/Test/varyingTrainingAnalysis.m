@@ -1,7 +1,7 @@
 close all
 clear all
 
-testID = '7';
+testID = '6';
 
 % Include Libraries
 PESQ_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/pesq';
