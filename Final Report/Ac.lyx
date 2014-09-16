@@ -80,8 +80,6 @@ customHeadersFooters
 \begin_body
 
 \begin_layout Chapter*
-
-\lang english
 List of Acronyms
 \end_layout
 
@@ -162,6 +160,13 @@ acro{CCR}{Comparison Category Rating}
   
 \backslash
 acro{DSP}{Digital Signal Processing}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{FFT}{Fast Fourier Transform}
 \end_layout
 
 \begin_layout Plain Layout

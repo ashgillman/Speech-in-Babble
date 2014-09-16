@@ -569,6 +569,68 @@ lstinputlisting[lastline=53]{../Code/MATLAB/phonemeDependent/getPhnData.m}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modifications to NMF train MATLAB Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:NMF-train"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The following code is a modified version of code supplied in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mohammadiha2013supervised"
+
+\end_inset
+
+.
+ Modifications are the dummyTrain function, to replace train, eliminating
+ the training process such that the spectral component matrix may be directly
+ supplied.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[firstline=240,firstnumber=240,lastline=264]{../Code/MATLAB/BNMF/@N
+MF/NMF.m}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 R Analysis Code
 \end_layout

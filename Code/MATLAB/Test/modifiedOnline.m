@@ -12,8 +12,7 @@ function [enSpeech,stats] = modifiedOnline(cleanTrain,noiseTrain,dirtyTest)
 %
 % Written by Ashley Gillman
 
-alen=512;ulen=256;%analysis and update length
-fs=16000;%sampling frequency
+alen=512;ulen=256;
 
 % Include Libraries
 BNMF_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/BNMF';
@@ -22,7 +21,6 @@ if isempty(strfind(path,BNMF_LOC))
 end
 
 speech = cleanTrain/std(cleanTrain);
-%noise = noiseTrain/std(noiseTrain);
 mixed = dirtyTest/std(dirtyTest);
 
 %learn speech model, use separate training data for test and train.
@@ -30,12 +28,12 @@ mixed = dirtyTest/std(dirtyTest);
 spec_scale=5; %scale spectrograms to reduce rounding effect. Setting of this parameter is done experimentally.
 %For normalized training data, and normalized analysis window (which is
 %done here) spec_scale=5 is suitable.
-num_speech_basis=60; %number of basis for speech nmf model
-speechTr_Spect=spec_scale*MySpectrogram(speech,alen,ulen); %magnitude spectrogram
+num_speech_basis=floor(length(cleanTrain)/alen); %number of basis for speech nmf model
+speechTr_Spect=spec_scale*MySpectrogram(speech,alen,alen); %magnitude spectrogram
 speech_nmf=NMF(speechTr_Spect,num_speech_basis);%construct nmf object for speech model
-setParameters(speech_nmf,'max_it',100,'update_boundFlag',1);
+setParameters(speech_nmf,'max_it',1,'update_boundFlag',1);
 tic;
-speech_nmf.train;%train the speech model
+speech_nmf.dummyTrain;%train the speech model
 speechTrainTime = toc;
 
 %learn noise model online
@@ -80,6 +78,7 @@ for n=1:floor(length(mixed)/ulen)-1
     Y=fft(mixed(n1:n2).*win);Y=Y(1:alen/2+1);
     MagIn=spec_scale*abs(Y);
     
+    nmfmf = mixed_nmf.OutputDistr(1);
     %run the main estimation function
     if n==1
         [mixed_nmf,Est_MagOut]=BNMF_Factorization_oneFrame(mixed_nmf,MagIn,n,estimatedSNR,spec_scale,noise_data);

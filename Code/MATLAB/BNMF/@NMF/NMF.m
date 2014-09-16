@@ -255,6 +255,12 @@ classdef NMF<handle
                 nmf.LogEvidence=LogEvidence;
             end
         end
+        %-------------------------------------------------------------
+        function nmf=dummyTrain(nmf)
+            %learn NMF basis and activations by Variational Bayes
+            nmf.Et = nmf.X;
+            nmf.Ev = eye(nmf.order);
+        end
         %-----------------------------------------------------------------
         function updateNoiseBasis(nmf,noise_data,max_it,shapes_basis,scale)
             %online learning of noise basis

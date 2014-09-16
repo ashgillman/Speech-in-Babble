@@ -823,6 +823,21 @@ acs{MOS}
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features rotate="0" tabularvalignment="middle">
@@ -955,6 +970,11 @@ Bad
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
 \end_layout
@@ -994,6 +1014,21 @@ acs{MOS}
 
 
 \end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1134,6 +1169,11 @@ No meaning understood with any feasible effort
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 \align center
 \begin_inset Float table
@@ -1165,6 +1205,21 @@ acs{CCR}
 
 
 \end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1334,6 +1389,11 @@ Much Worse
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1806,7 +1866,7 @@ Noise
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3c (f)
+C3C (f)
 \end_layout
 
 \end_inset
@@ -1815,7 +1875,7 @@ c3c (f)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Competing speaker: c3f (m)
+Competing speaker: C3F (m)
 \end_layout
 
 \end_inset
@@ -1835,7 +1895,7 @@ Competing speaker: c3f (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3l (f)
+C3L (f)
 \end_layout
 
 \end_inset
@@ -1844,7 +1904,7 @@ c3l (f)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Competing speaker: c31 (m)
+Competing speaker: C31 (m)
 \end_layout
 
 \end_inset
@@ -1864,7 +1924,7 @@ Competing speaker: c31 (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3s (m)
+C3S (m)
 \end_layout
 
 \end_inset
@@ -1873,7 +1933,7 @@ c3s (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Competing speaker: c31 (m)
+Competing speaker: C31 (m)
 \end_layout
 
 \end_inset
@@ -1893,7 +1953,7 @@ Competing speaker: c31 (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3s (m)
+C3S (m)
 \end_layout
 
 \end_inset
@@ -1902,7 +1962,7 @@ c3s (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Synthetic babble: c31 (m) + c34 (m) + c35 (m)
+Synthetic babble: C31 (m) + C34 (m) + C35 (m)
 \end_layout
 
 \end_inset
@@ -1922,7 +1982,7 @@ Synthetic babble: c31 (m) + c34 (m) + c35 (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3s (m)
+C3S (m)
 \end_layout
 
 \end_inset
@@ -1931,7 +1991,7 @@ c3s (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Synthetic babble: c3f (m) + c3c (f) + c35(m)
+Synthetic babble: C3F (m) + C3C (f) + C35(m)
 \end_layout
 
 \end_inset
@@ -1951,7 +2011,7 @@ Synthetic babble: c3f (m) + c3c (f) + c35(m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3s (m)
+C3S (m)
 \end_layout
 
 \end_inset
@@ -1960,7 +2020,7 @@ c3s (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Synthetic babble: c3f (m) + c3c (f)
+Synthetic babble: C3F (m) + C3C (f)
 \end_layout
 
 \end_inset
@@ -1980,7 +2040,7 @@ Synthetic babble: c3f (m) + c3c (f)
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3s (m)
+C3S (m)
 \end_layout
 
 \end_inset
@@ -1989,7 +2049,7 @@ c3s (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Competing speaker: c3f(m)
+Competing speaker: C3F(m)
 \end_layout
 
 \end_inset
@@ -2009,7 +2069,7 @@ Competing speaker: c3f(m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3s (m)
+C3S (m)
 \end_layout
 
 \end_inset
@@ -2038,7 +2098,7 @@ NOIZEUS car
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3s (m)
+C3S (m)
 \end_layout
 
 \end_inset
@@ -2067,7 +2127,7 @@ NOIZEUS babble
 \begin_inset Text
 
 \begin_layout Plain Layout
-c3s (m)
+C3S (m)
 \end_layout
 
 \end_inset
@@ -2452,7 +2512,70 @@ Phoneme Dependent Base Matrix
 \end_layout
 
 \begin_layout Standard
-The second method
+The second method proposes to use a completely phoneme dependent spectral
+ component matrix.
+ This was achieved by removing the training stage of both the online and
+ supervised methods, and instead allowing the basis matrix to be directly
+ specified.
+ This was achieved by modifying the 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+NMF.m
+\end_layout
+
+\end_inset
+
+ class supplied by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mohammadiha2013supervised"
+
+\end_inset
+
+, as given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:NMF-train"
+
+\end_inset
+
+.
+ In order to verify that the spectral component matrix, 
+in the code 
+\lang australian
+
+\begin_inset listings
+lstparams "language=Matlab"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Et
+\end_layout
+
+\end_inset
+
+, was not further modified a simple test plotting the spectral component
+ matrix of the supplied test data, and the spectral component matrix 
+\begin_inset listings
+lstparams "language=Matlab"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+speech_nmf.Et
+\end_layout
+
+\end_inset
+
+ was conducted.
 \end_layout
 
 \end_body

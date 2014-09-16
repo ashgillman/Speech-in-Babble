@@ -1419,6 +1419,45 @@ acl{BNMF}
 \end_layout
 
 \begin_layout Standard
+In order to force phoneme dependence in the algorithms to be modified, phoneme
+ samples first had to be formed.
+ The phoneme sample recordings were formed using the script in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:createTestData"
+
+\end_inset
+
+, with the maximum number of samples drawn per phoneme varied.
+ The length of each sample drawn was 
+\begin_inset Formula $512/FS$
+\end_inset
+
+, such that 256 frequency bins were formed after taking the real 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{FFT}
+\end_layout
+
+\end_inset
+
+.
+ The typical spectrograms of the drawn phonemes are given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:drawn-phoneme-spectrogram"
+
+\end_inset
+
+, showing the frequency characteristics of each phoneme.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1654,6 +1693,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:drawn-phoneme-spectrogram"
+
+\end_inset
+
 Typical spectrogram of randomly drawn phoneme samples for speaker C3S
 \end_layout
 
@@ -1686,6 +1731,54 @@ subsecref{Phoneme-Training}
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Phoneme Dependent Base Matrix
+\end_layout
+
+\begin_layout Standard
+The first test conducted was to ensure the modifications to the code indeed
+ forced the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ spectral component matrix, 
+\begin_inset listings
+lstparams "language=Matlab"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Et
+\end_layout
+
+\end_inset
+
+ in the 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+NMF
+\end_layout
+
+\end_inset
+
+ class, to be the drawn phoneme bases supplied.
 \end_layout
 
 \end_body
