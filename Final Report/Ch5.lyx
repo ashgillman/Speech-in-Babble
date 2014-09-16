@@ -1298,14 +1298,7 @@ Conclusion, at the moment, is looking to be that in general there is a good
 \end_layout
 
 \begin_layout Section
-Improving Practicality
-\end_layout
-
-\begin_layout Subsection
-Investigating Current Training Requirements
-\end_layout
-
-\begin_layout Standard
+Assessing 
 \begin_inset ERT
 status open
 
@@ -1313,12 +1306,34 @@ status open
 
 
 \backslash
-ac{PESQ}
+acl{NMF}
 \end_layout
 
 \end_inset
 
- score results of enhancement by a 
+ Algorithm Training
+\end_layout
+
+\begin_layout Subsection
+Investigating Training Requirements
+\end_layout
+
+\begin_layout Standard
+The investigation to investigate training was conducted on two recently
+ proposed 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithms of interest, an online 
 \begin_inset ERT
 status open
 
@@ -1331,17 +1346,105 @@ ac{BNMF}
 
 \end_inset
 
- algorithm with a varying length of training data supplied are given in
- 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:vary-train-moh-pesq"
+ and a supervised 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
 
 \end_inset
 
 .
- These results show an unexpected result.
- The algorithms perform well 
+\end_layout
+
+\begin_layout Subsubsection*
+General Performance
+\end_layout
+
+\begin_layout Standard
+The algorithm performance was poor on the supplied test data.
+ It can be seen in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-pesq-imp"
+
+\end_inset
+
+ that in general the enhanced algorithm performed worse than the dirty recording
+, by the fact that the improvement scores are predominantly negative.
+ The algorithms produced similar patterns consistently across tests, indicating
+ it is unlikely results are randomised outliers.
+\end_layout
+
+\begin_layout Subsubsection*
+Online 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{BNMF}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Before tests were performed, it was hypothesised that increasing the number
+ of utterances provided as training would allow the algorithm to produce
+ a better model, with more data to learn from.
+ However, the number of utterances provided for training of the online 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-pesq"
+
+\end_inset
+
+ had no significant impact on 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ performance.
+ In fact, a slight negative correlation may be noted, which is supported
+ by results in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:train-req-corr"
+
+\end_inset
+
+.
 \end_layout
 
 \end_body

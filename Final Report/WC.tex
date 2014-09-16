@@ -1,0 +1,15 @@
+\selectlanguage{australian}%
+
+\chapter*{Word Count}
+
+\selectlanguage{english}%
+\addcontentsline{toc}{chapter}{Word Count}
+
+\begin{lstlisting}[language=bash]
+$ perl texcount.pl -merge -sub=chapter AGillman\ Thesis.tex
+\end{lstlisting}
+
+
+\selectlanguage{australian}%
+\lstinputlisting[language=bash]{count.txt}\selectlanguage{english}%
+

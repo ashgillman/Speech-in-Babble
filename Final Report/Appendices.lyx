@@ -196,7 +196,9 @@ lstset{style=Matlab-editor,basicstyle=
 \backslash
 mlttfamily
 \backslash
-small,title=
+small
+\backslash
+singlespacing,title=
 \backslash
 lstname}
 \end_layout
@@ -240,7 +242,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=46]{../Code/MATLAB/Test/createTestData.m}
+lstinputlisting[lastline=46]{../Code/MATLAB/Test/createTestDataBabble.m}
 \end_layout
 
 \end_inset
@@ -261,8 +263,8 @@ status open
 
 
 \backslash
-lstinputlisting[firstline=47,firstnumber=last]{../Code/MATLAB/Test/createTestData.m
-}
+lstinputlisting[firstline=47,firstnumber=last]{../Code/MATLAB/Test/createTestDataB
+abble.m}
 \end_layout
 
 \end_inset
@@ -412,6 +414,161 @@ Analysis.m}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Draw Phone Samples MATLAB Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:drawPhnSamples"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[lastline=53]{../Code/MATLAB/phonemeDependent/drawPhnSamples.m}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/phonemeDependent/dra
+wPhnSamples.m}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Get Speaker Files MATLAB Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:getSpeakerFiles"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[lastline=53]{../Code/MATLAB/phonemeDependent/getSpeakerFiles.m}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Get Phone Data MATLAB Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:getPhnData"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[lastline=53]{../Code/MATLAB/phonemeDependent/getPhnData.m}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 R Analysis Code
 \end_layout
@@ -438,9 +595,11 @@ lstname,
 
          basicstyle=
 \backslash
-small
+footnotesize
 \backslash
-ttfamily,% basic font style
+ttfamily
+\backslash
+singlespacing,% basic font style
 \end_layout
 
 \begin_layout Plain Layout
@@ -625,7 +784,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=50]{../Code/R/directComp.R}
+lstinputlisting[lastline=54]{../Code/R/directComp.R}
 \end_layout
 
 \end_inset
@@ -646,7 +805,7 @@ status open
 
 
 \backslash
-lstinputlisting[firstline=51,firstnumber=last]{../Code/R/directComp.R}
+lstinputlisting[firstline=55,firstnumber=last]{../Code/R/directComp.R}
 \end_layout
 
 \end_inset
@@ -656,6 +815,7 @@ lstinputlisting[firstline=51,firstnumber=last]{../Code/R/directComp.R}
 
 \begin_layout Standard
 \begin_inset Float listing
+placement H
 wide false
 sideways false
 status open
@@ -687,7 +847,38 @@ status open
 
 
 \backslash
-lstinputlisting[language=R]{../Code/R/indirectComp.R}
+lstinputlisting{../Code/R/indirectComp.R}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Training Requirement Comparison R Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:trainReq"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -696,7 +887,35 @@ lstinputlisting[language=R]{../Code/R/indirectComp.R}
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[lastline=60]{../Code/R/trainReq.R}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReq.R}
 \end_layout
 
 \end_inset

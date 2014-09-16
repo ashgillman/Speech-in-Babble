@@ -267,6 +267,7 @@ ac{LM}
 
 \begin_layout Standard
 \begin_inset Float figure
+placement p
 wide false
 sideways false
 status open
@@ -275,7 +276,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -327,7 +328,7 @@ acs{LOESS}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -455,6 +456,7 @@ subsecref{Method-Existing-Data}
 
 \begin_layout Standard
 \begin_inset Float figure
+placement p
 wide false
 sideways false
 status open
@@ -463,7 +465,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -515,7 +517,7 @@ acs{LOESS}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -827,7 +829,8 @@ name "fig:litResCorr"
 
 \end_inset
 
-Pearson's correlation over some of the evaluation measures
+Pearson's correlation over some of the evaluation measures assessed in existing
+ data
 \end_layout
 
 \end_inset
@@ -841,7 +844,20 @@ Pearson's correlation over some of the evaluation measures
 \end_layout
 
 \begin_layout Section
-Improving Practicality
+Assessing 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+ Algorithm Training
 \end_layout
 
 \begin_layout Standard
@@ -872,7 +888,7 @@ RQtwo{}}
 \end_layout
 
 \begin_layout Subsection
-Investigating Current Training Requirements
+Investigating Training Requirements
 \end_layout
 
 \begin_layout Standard
@@ -893,7 +909,7 @@ subsecref{Investigating-Training-Req}
  
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:vary-train-moh-pesq"
+reference "fig:vary-train-pesq"
 
 \end_inset
 
@@ -931,10 +947,31 @@ key "mohammadiha2013supervised"
 \end_inset
 
 .
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-pesq-imp"
+
+\end_inset
+
+ shows the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement as compared to the dirty signal before enhancement.
  Similarly, 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:vary-train-moh-segsnr"
+reference "fig:vary-train-segsnr"
 
 \end_inset
 
@@ -951,69 +988,93 @@ ac{SNR}
 
 \end_inset
 
- results of the same algorithm.
+ results of the same algorithm, and 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-segsnr-imp"
+
+\end_inset
+
+ shows the segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ improvement compared against the signal before enhancement.
+\end_layout
+
+\begin_layout Standard
+Plots in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:vary-train-pesq,fig:vary-train-pesq-imp,fig:vary-train-segsnr,fig:vary-
+train-segsnr-imp}
+\end_layout
+
+\end_inset
+
+ each are arranged with the number of trained utterances on the x-axis and
+ test score on the y-axis.
+ Furthermore, the plots are arranged in a grid with rows corresponding to
+ the enhancement algorithm and columns corresponding to the test.
+ Test labels give information on the speaker ID and in brackets the sex
+ of both the SoI, and the speakers used to form the noise babble.
+ Finally, series colour represents the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ used for the test data, and the line type is dashed when representing the
+ score of the dirty signal before enhancement.
+ The R script used to form these plots is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:trainReq"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:train-req-corr"
+
+\end_inset
+
+ shows a correlogram, an alternate view of the same data.
+ In the upper panels are scatter plots of each variable pair.
+ The lower panels are a heatmap of the Pearson's correlation between the
+ variables.
+ Blue indicates a positive correlation, red a negative, and the colour intensity
+ indicates the magnitude.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename fig/R/train/mohSup/pesq.pdf
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Raw 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PESQ}
-\end_layout
-
-\end_inset
-
- performance
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Float figure
+placement p
 wide false
 sideways false
 status open
@@ -1022,37 +1083,10 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename fig/R/train/mohSup/pesqImp.pdf
+	filename fig/R/train/pesq.pdf
 	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PESQ}
-\end_layout
-
-\end_inset
-
- improvement performance
-\end_layout
-
-\end_inset
-
-
-\end_layout
+	height 95theight%
+	rotateAngle 90
 
 \end_inset
 
@@ -1065,7 +1099,7 @@ ac{PESQ}
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:vary-train-moh-pesq"
+name "fig:vary-train-pesq"
 
 \end_inset
 
@@ -1110,64 +1144,7 @@ acs{BNMF}
 
 \begin_layout Standard
 \begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename fig/R/train/mohSup/segSNR.pdf
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Raw segmental 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SNR}
-\end_layout
-
-\end_inset
-
- performance
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Float figure
+placement p
 wide false
 sideways false
 status open
@@ -1176,38 +1153,10 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename fig/R/train/mohSup/segSNRImp.pdf
+	filename fig/R/train/pesqImp.pdf
 	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Segmental 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SNR}
-\end_layout
-
-\end_inset
-
- improvement performance
-\end_layout
-
-\end_inset
-
-
-\end_layout
+	height 95theight%
+	rotateAngle 90
 
 \end_inset
 
@@ -1220,7 +1169,81 @@ ac{SNR}
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:vary-train-moh-segsnr"
+name "fig:vary-train-pesq-imp"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/segSNR.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-segsnr"
 
 \end_inset
 
@@ -1261,6 +1284,408 @@ acs{BNMF}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/segSNRImp.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-segsnr-imp"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ improvement results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/corr.pdf
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:train-req-corr"
+
+\end_inset
+
+Correlogram of results of training requirement investigations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Phoneme-Dependent Variation for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{BNMF}
+\end_layout
+
+\end_inset
+
+ Algorithm
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-1phnSpectrogram.eps
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+One sample per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-5phnSpectrogram.eps
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Five samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-10phnSpectrogram.eps
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ten samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-50phnSpectrogram.eps
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+50 samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-100phnSpectrogram.eps
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+100 samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-500phnSpectrogram.eps
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+500 samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-999phnSpectrogram.eps
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+999 samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Typical spectrogram of randomly drawn phoneme samples for speaker C3S
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Phoneme Dependent Training Data
+\end_layout
+
+\begin_layout Standard
+The following results relate to the proposed method outlined in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Training}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_body

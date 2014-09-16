@@ -13,7 +13,7 @@
 \setcounter{tocdepth}{3}
 \setlength{\parskip}{\smallskipamount}
 \setlength{\parindent}{0pt}
-\usepackage[active]{srcltx}
+\synctex=-1
 \usepackage{color}
 \usepackage{babel}
 \usepackage{array}
@@ -41,6 +41,7 @@
 \AtBeginDocument{\providecommand\chapref[1]{\ref{chap:#1}}}
 \AtBeginDocument{\providecommand\secref[1]{\ref{sec:#1}}}
 \AtBeginDocument{\providecommand\lstref[1]{\ref{lst:#1}}}
+\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
 %% A simple dot to overcome graphicx limitations
@@ -119,6 +120,42 @@ Factorisation}
 \nomenclature{ Matrix notation}{In this thesis, matrices are denoted by capitalised letters. Subscript notation on matrices using commas denotes indexation (i.e. $A_{ij}$ represents the $i$th row and $j$th column) whereas using the multiplication symbol, $\times$, denotes a size definition (i.e. $A_{i\times j}$ defines an $i$-by-$j$ matrix).}
 
 \include{Ac}
+
+\include{WC}
+
+Word count was produced by exporting \LyX{} files to \TeX{}, and using
+texcount.
+
+\begin{lstlisting}[language=bash]
+$ perl texcount.pl -merge -sub=chapter AGillman\ Thesis.tex
+\end{lstlisting}
+
+
+\begin{lstlisting}[breaklines=true,language=bash]
+File: AGillman Thesis.tex
+Encoding: iso-8859-1
+Sum count: 5874
+Words in text: 5480
+Words in headers: 140
+Words outside text (captions, etc.): 174
+Number of headers: 46
+Number of floats/tables/figures: 20
+Number of math inlines: 66
+Number of math displayed: 14
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+0+0 (0/0/0/0) _top_
+  45+9+0 (1/0/7/0) Chapter
+  147+3+0 (1/0/0/0) Chapter: List of Acronyms
+  408+4+0 (3/0/0/0) Chapter: Introduction
+  2911+61+38 (20/8/58/14) Chapter: \label{chap:Literature-Review}Literature Review
+  1131+19+27 (6/2/0/0) Chapter: Methodology
+  200+16+59 (5/6/1/0) Chapter: Results
+  635+16+35 (5/4/0/0) Chapter: Discussion
+  3+5+0 (2/0/0/0) Chapter: \label{chap:Apx-Data}Data
+  0+7+15 (3/0/0/0) Chapter: Code 
+\end{lstlisting}
+
 
 \pagenumbering{arabic}
 

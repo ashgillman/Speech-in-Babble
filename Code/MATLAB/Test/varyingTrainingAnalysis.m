@@ -1,7 +1,7 @@
 close all
 clear all
 
-testID = '6';
+testID = '8';
 
 % Include Libraries
 PESQ_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/pesq';
@@ -63,14 +63,23 @@ segSNRBef = zeros(size(fileList));
 inputSNR = zeros(size(fileList));
 alg = cell(size(fileList));
 utterances = zeros(size(fileList));
+phonemes = zeros(size(fileList));
 for i = 1:numel(fileList)
     file = fileList{i};
     
     % Get test info from filename
     path = strsplit(subcindex(strsplit(file,'_'),1),'/');
     alg(i) = path(end);
-    utterances(i) = str2num(subindex(subcindex(strsplit(file,'_'),2),1:3));
-    inputSNR(i) = str2num(subindex(subcindex(strsplit(file,'_'),2),6:7));
+    if strncmp(subindex(subcindex(strsplit(file,'_'),2),4:5),'ut',2)
+        utterances(i) = ...
+            str2double(subindex(subcindex(strsplit(file,'_'),2),1:3));
+        phonemes(i) = -1;
+    else
+        phonemes(i) = ...
+            str2double(subindex(subcindex(strsplit(file,'_'),2),1:3));
+        utterances(i) = -1;
+    end
+    inputSNR(i) = str2double(subindex(subcindex(strsplit(file,'_'),2),6:7));
 
     % PESQ
     pesqAft(i) = pesq(FS,clean,file);
@@ -94,19 +103,19 @@ warning('on','MATLAB:oldPfileVersion')
 % save to csv
 names = cellfun(@(x) subindex(strsplit(x,'/'), ...
     length(strsplit(fileList{1},'/'))), fileList);
-dat = cat(1,{'algorithm' 'filename' 'Input SNR' 'utterances' ...
+dat = cat(1,{'algorithm' 'filename' 'Input SNR' 'utterances' 'phonemes' ...
     'pesq' 'pesqImp' 'segSNR' 'segSNRImp'}, ...
     cat(2, alg, names, num2cell(inputSNR), num2cell(utterances), ...
-    num2cell(pesqAft), ...
+    num2cell(phonemes), num2cell(pesqAft), ...
     num2cell(pesqImp), num2cell(segSNRAft), num2cell(SegSNRImp)));
 %# write line-by-line
 if ~exist([DAT_LOC 'resultsd.csv'],'file')
     fid = fopen([DAT_LOC 'results.csv'],'w+');
-    fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s\n', dat{1,:});
+    fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s\n', dat{1,:});
 else
     fid = fopen([DAT_LOC 'results.csv'],'a');
 end
 for i=2:size(dat,1)
-    fprintf(fid, '%s,%s,%i,%i,%f,%f,%f,%f\n', dat{i,:});
+    fprintf(fid, '%s,%s,%i,%i,%i,%f,%f,%f,%f\n', dat{i,:});
 end
 fclose(fid);

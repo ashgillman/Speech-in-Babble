@@ -103,11 +103,11 @@ found to be suited to the required test. A new \ac{MOS} and \ac{CCR}
 script was created, in alignment with the requirements outlined by
 the \citet{InternationalTelecommunicationUnion1996}.
 
-The scales used are given in \tabref{MOS-CCR-Scales}. Two \ac{MOS}scales
-were used, one measuring quality opinion, and one measuring required
-effort opinion.
+The scales used are given in \tabref{MOS-CCR-Scales}. Two \ac{MOS}
+scales were used, one measuring quality opinion, and one measuring
+required effort opinion.
 
-\begin{table}
+\begin{table}[h]
 \protect\caption{\label{tab:MOS-CCR-Scales}Scales used in subjective tests}
 
 
@@ -161,7 +161,7 @@ No meaning understood with any feasible effort & 1\tabularnewline
 \begin{centering}
 \begin{tabular}{|c|c|}
 \hline 
-The Quality of the Second Compared to the Quality of the First & Score\tabularnewline
+The quality of the second compared to the quality of the first & Score\tabularnewline
 \hline 
 \hline 
 Much Better & 3\tabularnewline
@@ -188,7 +188,7 @@ Much Worse & -3\tabularnewline
 
 
 When performing the \ac{MOS} and \ac{CCR} tests, some of the recommendations
-could not be met. Soundproof rooms were not available, as recommended
+could not be met. Sound-proof rooms were not available, as recommended
 in \citep{InternationalTelecommunicationUnion1996} Annex A, and so
 environmental, room and vehicle noise were not able to be tightly
 controlled. This restriction is important when testing the quality
@@ -199,15 +199,17 @@ noise be removed, such as traffic, however some stationary noise within
 the testing environment is acceptable. These operating conditions
 were achievable.
 
-Both \ac{HTK} and 
+Both \ac{HTK} and Sphinx were both considered for the \ac{ASR} system
+for the \ac{PRR} results. Both offer comparable performance in recognition
+and processing performance \citep{Vertanen2006}. \ac{HTK} was 
 
 
-\section{Improving Practicality}
+\section{Assessing \acl{NMF} Algorithm Training}
 
 The second research area sought to answer research question \ref{enu:ResQ2},
 \textit{\RQtwo{}} The focus was to investigate the training requirements
 of supervised speech enhancement algorithms, and to investigate means
-of reducing them.
+of improving the quality of training.
 
 
 \subsection{\label{sub:Investigating-Training-Req}Investigating Training Requirements}
@@ -228,26 +230,69 @@ with; and
 \end{itemize}
 A range of training files were created, varying the number of utterances
 included. The \ac{WSJ} corpus included 90 utterances per speaker%
-\footnote{For the speakers reserved for training, which were used in this test.%
+\footnote{There are 90 utterances for the speakers reserved for training, \lstinline[language=bash]!si_dt!,
+which were used in this test.%
 } \citep{Fransen1994}, so 10 utterances were used for the test speech,
 and the number of utterances used for training were varied between
-1, 3, 5, 10, 15, 20, 30, 40, 50, 60, 70 and 80.
+1, 3, 5, 10, 15, 20, 30, 40, 50, 60, 70 and 80. The specific 10 utterances
+used for testing were banned from being used for training to prevent
+bias results.
 
-Similarly, a range of test files were created, varying the \ac{SNR}.
-The \ac{SNR} was varied between -6dB, -3dB, 0dB, 3dB and 6dB. The
-speakers used in the test were ``c3c'' as the \ac{SoI}, a female
-speaker, and ``c3f'' as the competing speaker, a male speaker.
+Similarly, a range of test files were created by mixing a \ac{SoI}
+recording with noise, varying the \ac{SNR}. The \ac{SNR} was varied
+between -6dB, -3dB, 0dB, 3dB and 6dB. Additionally, a number of other
+prerecorded noise types were drawn from the NOIZEUS corpus presented
+in \citep{Hu2006}. The speakers used in each test are outlined in
+\tabref{test-params}.
 
-The enhancement algorithm used was that proposed by \citet{mohammadiha2013supervised},
-a \ac{HMM} algorithm with \ac{BNMF} output distributions. The enhancement
-was conducted under all combinations of utterances and \acp{SNR}.
-The code used to conduct the test is given in \lstref{varyingTrainingTest},
-\textit{\nameref{lst:varyingTrainingTest}}.
+\begin{table}
+\protect\caption{\label{tab:test-params}Simulations and associated parameters}
 
-The performance of the enhancement algorithm was then analysed, by
-determining the \ac{PESQ} score of the original, dirty mix, and comparing
-it with the \ac{PESQ} score of the enhanced recording, the difference
-was noted as the \ac{PESQ} improvement. The segmental \ac{SNR} improvement
-was also calculated similarly. The code used to perform this analysis
-is given in \lstref{varyingTrainingAnalysis}, \textit{\nameref{lst:varyingTrainingAnalysis}}.\selectlanguage{english}%
+
+\begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+Test Number & \ac{SoI} (sex) & Noise\tabularnewline
+\hline 
+\hline 
+1 & c3c (f) & Competing speaker: c3f (m)\tabularnewline
+\hline 
+2 & c3l (f) & Competing speaker: c31 (m)\tabularnewline
+\hline 
+3 & c3s (m) & Competing speaker: c31 (m)\tabularnewline
+\hline 
+4 & c3s (m) & Synthetic babble: c31 (m) + c34 (m) + c35 (m)\tabularnewline
+\hline 
+5 & c3s (m) & Synthetic babble: c3f (m) + c3c (f) + c35(m)\tabularnewline
+\hline 
+6 & c3s (m) & Synthetic babble: c3f (m) + c3c (f)\tabularnewline
+\hline 
+7 & c3s (m) & Competing speaker: c3f(m)\tabularnewline
+\hline 
+8 & c3s (m) & NOIZEUS car\tabularnewline
+\hline 
+9 & c3s (m) & NOIZEUS babble\tabularnewline
+\hline 
+10 & c3s (m) & NOIZEUS street\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\selectlanguage{english}%
+\selectlanguage{english}%
+\end{table}
+
+
+The enhancement algorithms used were those proposed by \citet{mohammadiha2013supervised},
+two \ac{HMM} algorithms with \ac{BNMF} output distributions. One
+uses a fully supervised method, and the other does not train for noise,
+but estimates it online. The enhancement was conducted under all combinations
+of utterances and \acp{SNR}. The code used to conduct the test is
+given in \lstref{varyingTrainingTest}, \textit{\nameref{lst:varyingTrainingTest}}.
+
+The performance of the enhancement algorithm was then analysed using
+the \ac{PESQ} score, the \ac{PESQ} score improvement compared with
+the dirty mixed signal, the segmental \ac{SNR}, and the segmental
+\ac{SNR} improvement. The code used to perform this analysis is given
+in \lstref{varyingTrainingAnalysis}, \textit{\nameref{lst:varyingTrainingAnalysis}}.\selectlanguage{english}%
 

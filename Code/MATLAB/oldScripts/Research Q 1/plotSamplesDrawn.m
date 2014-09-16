@@ -5,7 +5,7 @@ allPhonemes = {'p' 't' 'k' 'pcl' 'tcl' 'kcl' 'dx' 'm' 'n' 'ng' 'nx' 's'...
     'ah' 'uh' 'ux' 'oy' 'iy' 'ow' 'axr' 'ax-h' ... up to here from web
     'sil' 'oh' 'ia' 'ea' 'ua'}; % these last few from inspection
 timeslice = 4e-2; %40ms slices
-wavSamplesPerPhn = 10;
+wavSamplesPerPhn = 1000;
 
 %get all training speaker folders
 trainingDir = '/Users/Ash/Documents/ThesisData/wsjcam0/rawdat/si_tr/';

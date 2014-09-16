@@ -128,12 +128,33 @@ suited to both purposes. However, still to warn that algorithms should
 be verified both ways, as one does not imply the other.}
 
 
-\section{Improving Practicality}
+\section{Assessing \acl{NMF} Algorithm Training}
 
 
-\subsection{Investigating Current Training Requirements}
+\subsection{Investigating Training Requirements}
 
-\ac{PESQ} score results of enhancement by a \ac{BNMF} algorithm
-with a varying length of training data supplied are given in \figref{vary-train-moh-pesq}.
-These results show an unexpected result. The algorithms perform well \selectlanguage{english}%
+The investigation to investigate training was conducted on two recently
+proposed \ac{NMF} algorithms of interest, an online \ac{BNMF} and
+a supervised \ac{BNMF}.
+
+
+\subsubsection*{General Performance}
+
+The algorithm performance was poor on the supplied test data. It can
+be seen in \figref{vary-train-pesq-imp} that in general the enhanced
+algorithm performed worse than the dirty recording, by the fact that
+the improvement scores are predominantly negative. The algorithms
+produced similar patterns consistently across tests, indicating it
+is unlikely results are randomised outliers.
+
+
+\subsubsection*{Online \acl{BNMF}}
+
+Before tests were performed, it was hypothesised that increasing the
+number of utterances provided as training would allow the algorithm
+to produce a better model, with more data to learn from. However,
+the number of utterances provided for training of the online \ac{BNMF}
+algorithm in \figref{vary-train-pesq} had no significant impact on
+\ac{PESQ} performance. In fact, a slight negative correlation may
+be noted, which is supported by results in \figref{train-req-corr}.\selectlanguage{english}%
 

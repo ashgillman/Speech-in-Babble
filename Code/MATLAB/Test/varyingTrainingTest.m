@@ -1,14 +1,21 @@
 close all
 clear all
 
-% variation params
-trainLens = [1 5 10 50 80];
-mixes = [-6 -3 0 3 6];
-enhAlgs = {@mohammadiaOnline};% @mohammadiaSupervised};
-tests = [2 3 6];
+% import libraries
+MYTOOLS_LOC='/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/mytools';
+if isempty(strfind(path,MYTOOLS_LOC))
+    path(MYTOOLS_LOC,path)
+end
 
-numtests = length(trainLens) * length(mixes) * length(enhAlgs) + ...
-    length(tests);
+% variation params
+trainLens = [];
+mixes = [-6 -3 0 3 6];
+enhAlgs = {@mohammadiaOnline @mohammadiaSupervised};
+tests = [8];
+phnSampleCounts = [1 5 10 50 100 500 999];
+
+numtests = (length(trainLens)+length(phnSampleCounts)) * length(mixes) * ...
+    length(enhAlgs) + length(tests);
 fits = cell(numtests,1);
 times = cell(numtests,1);
 testParms = cell(numtests,1);
@@ -23,9 +30,9 @@ for testNo = 1:numel(tests)
     OUT_LOC = [DAT_LOC 'enhanced/']; mkdir(OUT_LOC);
     FS = 16000;
 
-    % logging
+    % create performance logginf file if non-existant
     logfile = [DAT_LOC 'enhPerf.csv'];
-    if exist(logfile,'file') ~= 0
+    if exist(logfile,'file') == 0
         fid = fopen(logfile,'w+');
         fprintf(fid,'Input SNR, Algorithm, Utterances, Total Time, Speech Time, Noise Time, Enhance Time\n');
         fclose(fid);
@@ -56,8 +63,8 @@ for testNo = 1:numel(tests)
                 disp(toc)
 
                 % enhance
-                fprintf('extracting for %i utterances...  ',trainLen); tic;
-                [MSenhWav data] = enhAlg(SoIWav,CompSpkrWav,dirtyWav);
+                fprintf('extracting...  '); tic;
+                [MSenhWav,data] = enhAlg(SoIWav,CompSpkrWav,dirtyWav);
                 testCount = testCount+1;
                 enhTime = toc;
                 disp(enhTime);
@@ -79,10 +86,52 @@ for testNo = 1:numel(tests)
                 fprintf('%s%s_%03iut%02idB.wav\n', ...
                     OUT_LOC, enhAlgName, trainLen, mix);
 
-                %log
+                % log performance
                 fid = fopen(logfile,'a');
                 fprintf(fid,'%i,%s,%i,%f,%f,%f,%f\n',mix,enhAlgName, ...
                     trainLen,enhTime,data.speechTrainTime, ...
+                    data.noiseTrainTime,data.enhTime);
+                fclose(fid);
+            end
+            enhAlgName = ['phoneme' enhAlgName];
+            for phnSampleCount=phnSampleCounts
+                fprintf('testing for %i phones\n',phnSampleCount);
+
+                % load train data
+                fprintf('loading training data...  '); tic;
+                SoIWav = wavread([DAT_LOC '/' num2str(phnSampleCount) ...
+                    'phntrain_SoI.wav']);
+                CompSpkrWav = wavread([DAT_LOC '/5ut/train_compSpkr.wav']);
+                disp(toc)
+
+                % enhance
+                fprintf('extracting...  '); tic;
+                [MSenhWav,data] = enhAlg(SoIWav,CompSpkrWav,dirtyWav);
+                testCount = testCount+1;
+                enhTime = toc;
+                disp(enhTime);
+                
+                % save fit
+                fits{testCount} = data;
+                times{testCount} = enhTime;
+                testParms{testCount}.testNo = testname;
+                testParms{testCount}.mix = mix;
+                testParms{testCount}.alg = enhAlgName;
+                testParms{testCount}.phnSampleCount = phnSampleCount;
+                save([OUT_LOC 'fitted.mat'],'fits','times','testParms');
+
+                % norm and save
+                MSenhWav = 0.9 * normalise(MSenhWav);
+                wavwrite(MSenhWav,FS, ...
+                    sprintf('%s%s_%03iph%02idB.wav', ...
+                    OUT_LOC, enhAlgName, phnSampleCount, mix));
+                fprintf('%s%s_%03iph%02idB.wav\n', ...
+                    OUT_LOC, enhAlgName, phnSampleCount, mix);
+
+                % log performance
+                fid = fopen(logfile,'a');
+                fprintf(fid,'%i,%s,%i,%f,%f,%f,%f\n',mix,enhAlgName, ...
+                    phnSampleCount,enhTime,data.speechTrainTime, ...
                     data.noiseTrainTime,data.enhTime);
                 fclose(fid);
             end

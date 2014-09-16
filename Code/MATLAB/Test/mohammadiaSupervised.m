@@ -34,7 +34,9 @@ num_speech_basis=60; %number of basis for speech nmf model
 speechTr_Spect=spec_scale*MySpectrogram(speech,alen,ulen); %magnitude spectrogram
 speech_nmf=NMF(speechTr_Spect,num_speech_basis);%construct nmf object for speech model
 setParameters(speech_nmf,'max_it',100,'update_boundFlag',1);
+tic;
 speech_nmf.train;%train the speech model
+speechTrainTime = toc;
 
 noise_name='my noise';%just give a name
 a_noise=10;%
@@ -43,7 +45,9 @@ num_noise_basis=100;%number of basis for noise nmf model
 noiseTr_Spect=spec_scale*MySpectrogram(noise,alen,ulen);
 noise_nmf=NMF(noiseTr_Spect,num_noise_basis);
 setParameters(noise_nmf,'max_it',100,'update_boundFlag',1);
+tic;
 noise_nmf.train;
+noiseTrainTime = toc;
 noise_data=[];
 
 %nmf model for the mixed signal
@@ -52,7 +56,7 @@ mixed_nmf.UserData{1,1}=[0 a_noise]; %\phi^(s) and \phi^(n) in the paper in sect
 mixed_nmf.UserData{1,2}=noise_name;
 
 %-----------------------------Enahancement---------------------------------
-
+tic;
 estimatedSNR=0;%initial value
 win=hann(alen,'periodic');
 norm_coef=sqrt(sum(win.^2));
@@ -96,8 +100,12 @@ for n=1:floor(length(mixed)/ulen)-1
 %        estimatedSNR=0;
 %    end
 end
+enhTime = toc;
 
 fit.speechV = speech_nmf.Et;
 fit.speechW = speech_nmf.Ev;
 fit.noiseV = noise_nmf.Et;
 fit.noiseW = noise_nmf.Ev;
+fit.speechTrainTime = speechTrainTime;
+fit.noiseTrainTime = noiseTrainTime;
+fit.enhTime = enhTime;

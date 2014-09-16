@@ -19,7 +19,7 @@ The R code used to perform this analysis is given in \lstref{directComp}.
 shows the data fitted with an \ac{LOESS} model and \figref{Direct-PESQ-PRR-LM}
 shows the data fitted with an \ac{LM} method.
 
-\begin{figure}[h]
+\begin{figure}[p]
 \subfloat[\label{fig:Direct-PESQ-PRR-LOESS}\acs{LOESS} fit]{\includegraphics[width=1\textwidth]{fig/R/dir/HumanMachineAllLOESS}
 
 }
@@ -34,12 +34,12 @@ vs. machine (\acs{PRR}) quality improvement}
 Shown in \figref{Group-PESQ-PRR} are the results of the group comparison,
 a method also outlined in \subsecref{Method-Existing-Data}.
 
-\begin{figure}[h]
-\subfloat[\label{fig:Group-PESQ-PRR-LOESS}\acs{LOESS} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/ HumanMachineGroupedLOESS\string".eps}
+\begin{figure}[p]
+\subfloat[\label{fig:Group-PESQ-PRR-LOESS}\acs{LOESS} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/ HumanMachineGroupedLOESS\string".pdf}
 
 }
 
-\subfloat[\label{fig:Group-PESQ-PRR-LM}\acs{LM} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/ HumanMachineGroupedLM\string".eps}
+\subfloat[\label{fig:Group-PESQ-PRR-LM}\acs{LM} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/ HumanMachineGroupedLM\string".pdf}
 
 }\protect\caption{\label{fig:Group-PESQ-PRR}Grouped comparison of human (\acs{PESQ})
 vs. machine (\acs{PRR}) quality improvement}
@@ -75,66 +75,102 @@ Highlighted in \textcolor{blue}{blue} are the statistical measures,
 the machine recognition measures.
 
 \protect\caption{\label{fig:litResCorr}Pearson's correlation over some of the evaluation
-measures}
+measures assessed in existing data}
 \end{figure}
 
 
 
-\section{Improving Practicality}
+\section{Assessing \acl{NMF} Algorithm Training}
 
 The following are the results of investigations attempting to answer
 Research Question \ref{enu:ResQ2}, \textit{\RQtwo{}}
 
 
-\subsection{Investigating Current Training Requirements}
+\subsection{Investigating Training Requirements}
 
 The results of the experiments proposed in \subsecref{Investigating-Training-Req}
-are given in this section. \figref{vary-train-moh-pesq} shows the
-\ac{PESQ} results of the \ac{BNMF} algorithm developed by \citet{mohammadiha2013supervised}.
-Similarly, \figref{vary-train-moh-segsnr} shows the segmental \ac{SNR}
-results of the same algorithm.
+are given in this section. \figref{vary-train-pesq} shows the \ac{PESQ}
+results of the \ac{BNMF} algorithm developed by \citet{mohammadiha2013supervised}.
+\figref{vary-train-pesq-imp} shows the \ac{PESQ} improvement as
+compared to the dirty signal before enhancement. Similarly, \figref{vary-train-segsnr}
+shows the segmental \ac{SNR} results of the same algorithm, and \figref{vary-train-segsnr-imp}
+shows the segmental \ac{SNR} improvement compared against the signal
+before enhancement.
 
-\begin{figure}[h]
+Plots in \Cref{fig:vary-train-pesq,fig:vary-train-pesq-imp,fig:vary-train-segsnr,fig:vary-train-segsnr-imp}
+each are arranged with the number of trained utterances on the x-axis
+and test score on the y-axis. Furthermore, the plots are arranged
+in a grid with rows corresponding to the enhancement algorithm and
+columns corresponding to the test. Test labels give information on
+the speaker ID and in brackets the sex of both the SoI, and the speakers
+used to form the noise babble. Finally, series colour represents the
+\ac{SNR} used for the test data, and the line type is dashed when
+representing the score of the dirty signal before enhancement. The
+R script used to form these plots is given in \lstref{trainReq}.
+
+\figref{train-req-corr} shows a correlogram, an alternate view of
+the same data. In the upper panels are scatter plots of each variable
+pair. The lower panels are a heatmap of the Pearson's correlation
+between the variables. Blue indicates a positive correlation, red
+a negative, and the colour intensity indicates the magnitude.
+
+\begin{figure}[p]
 \noindent \begin{centering}
-\subfloat[Raw \ac{PESQ} performance]{\noindent \begin{centering}
-\includegraphics[width=1\textwidth]{fig/R/train/mohSup/pesq}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/train/pesq}
 \par\end{centering}
 
-}
-\par\end{centering}
+\protect\caption{\label{fig:vary-train-pesq}\acs{PESQ} results of \acs{BNMF} algorithm
+as training is increased}
+\end{figure}
 
+
+\begin{figure}[p]
 \noindent \begin{centering}
-\subfloat[\ac{PESQ} improvement performance]{\noindent \begin{centering}
-\includegraphics[width=1\textwidth]{fig/R/train/mohSup/pesqImp}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/train/pesqImp}
 \par\end{centering}
 
-}
+\protect\caption{\label{fig:vary-train-pesq-imp}\acs{PESQ} improvement results of
+\acs{BNMF} algorithm as training is increased}
+
+
+\selectlanguage{english}%
+\selectlanguage{english}%
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/train/segSNR}
 \par\end{centering}
 
-\protect\caption{\label{fig:vary-train-moh-pesq}\acs{PESQ} results of \acs{BNMF}
+\protect\caption{\label{fig:vary-train-segsnr}Segmental \acs{SNR} results of \acs{BNMF}
 algorithm as training is increased}
 \end{figure}
 
 
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/train/segSNRImp}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-segsnr-imp}Segmental \acs{SNR} improvement
+results of \acs{BNMF} algorithm as training is increased}
+\end{figure}
+
+
 \begin{figure}[h]
-\noindent \begin{centering}
-\subfloat[Raw segmental \ac{SNR} performance]{\noindent \begin{centering}
-\includegraphics[width=1\textwidth]{fig/R/train/mohSup/segSNR}
-\par\end{centering}
+\selectlanguage{english}%
 
-}
-\par\end{centering}
 
-\noindent \begin{centering}
-\subfloat[Segmental \ac{SNR} improvement performance]{\noindent \begin{centering}
-\includegraphics[width=1\textwidth]{fig/R/train/mohSup/segSNRImp}
-\par\end{centering}
+\selectlanguage{australian}%
+\includegraphics[width=1\textwidth]{fig/R/train/corr}
 
-}
-\par\end{centering}
+\protect\caption{\label{fig:train-req-corr}Correlogram of results of training requirement
+investigations}
 
-\protect\caption{\label{fig:vary-train-moh-segsnr}Segmental \acs{SNR} results of
-\acs{BNMF} algorithm as training is increased}
+
+\selectlanguage{english}%
+\selectlanguage{english}%
 \end{figure}
 \selectlanguage{english}%
 

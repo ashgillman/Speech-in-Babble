@@ -19,17 +19,17 @@ Just file ref?
 
 \section{MATLAB Test Code}
 
-\lstset{style=Matlab-editor,basicstyle=\mlttfamily\small,title=\lstname}
+\lstset{style=Matlab-editor,basicstyle=\mlttfamily\small\singlespacing,title=\lstname}
 
 \begin{listing}[H]
 \protect\caption{Create Test Data MATLAB Code\label{lst:createTestData}}
 
 
-\lstinputlisting[lastline=46]{../Code/MATLAB/Test/createTestData.m}
+\lstinputlisting[lastline=46]{../Code/MATLAB/Test/createTestDataBabble.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=47,firstnumber=last]{../Code/MATLAB/Test/createTestData.m}
+\lstinputlisting[firstline=47,firstnumber=last]{../Code/MATLAB/Test/createTestDataBabble.m}
 
 \begin{listing}[H]
 \protect\caption{``Varying Training'' Test MATLAB Code\label{lst:varyingTrainingTest}}
@@ -56,7 +56,7 @@ Just file ref?
 
 \lstset{ language=R,% set programming language
          title=\lstname,
-         basicstyle=\small\ttfamily,% basic font style
+         basicstyle=\footnotesize\ttfamily\singlespacing,% basic font style
          keywordstyle=\color{blue},% keyword style
          commentstyle=\ttfamily\itshape\color{gray},% comment style
          numbers=left,% display line numbers on the left side
@@ -82,20 +82,27 @@ Just file ref?
 \protect\caption{Direct Comparison R Code\label{lst:directComp}}
 
 
-\lstinputlisting[lastline=50]{../Code/R/directComp.R}
+\lstinputlisting[lastline=54]{../Code/R/directComp.R}
 \end{listing}
 
 
-\lstinputlisting[firstline=51,firstnumber=last]{../Code/R/directComp.R}
+\lstinputlisting[firstline=55,firstnumber=last]{../Code/R/directComp.R}
 
-\begin{listing}[h]
+\begin{listing}[H]
 \protect\caption{Indirect Comparison R Code\label{lst:indirectComp}}
 
 
-\lstinputlisting[language=R]{../Code/R/indirectComp.R}
-
-\selectlanguage{english}%
-\selectlanguage{english}%
+\lstinputlisting{../Code/R/indirectComp.R}
 \end{listing}
-\selectlanguage{english}%
+
+
+\begin{listing}[H]
+\protect\caption{Training Requirement Comparison R Code\label{lst:trainReq}}
+
+
+\lstinputlisting[lastline=60]{../Code/R/trainReq.R}
+\end{listing}
+
+
+\lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReq.R}\selectlanguage{english}%
 

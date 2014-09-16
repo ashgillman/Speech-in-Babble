@@ -227,6 +227,16 @@ filename "Ac.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "WC.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -235,6 +245,17 @@ status open
 
 \backslash
 pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% start of thesis here
 \end_layout
 
 \end_inset
