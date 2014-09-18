@@ -106,9 +106,17 @@ fprintf('%s: Found %i files, using %i... ',SPKR,length(files), ...
     max(trainLens) + testLen);
 rng(seed1); % set seed and shuffle
 SoIWavFiles = files(randperm(length(files),max(trainLens) + testLen));
+SoIPhnFiles = cellfun(@(x) [x(1:end-3) 'phn'],SoIWavFiles,...
+    'UniformOutput',false);
+SoIWrdFiles = cellfun(@(x) [x(1:end-3) 'wrd'],SoIWavFiles,...
+    'UniformOutput',false);
 [SoIWavs,fs] = cellfun(@wavread,SoIWavFiles,'UniformOutput',false);
-fprintf('Loaded %f minutes of wav data.\n',...
-    sum(cellfun(@numel,SoIWavs)./cell2mat(fs))/60);
+SoIPhns = cellfun(@loadtrans,SoIPhnFiles,'UniformOutput',false);
+SoIWrds = cellfun(@loadtrans,SoIWrdFiles,'UniformOutput',false);
+fprintf('Loaded %f minutes of wav data, with %i words and %i phones.\n',...
+    sum(cellfun(@numel,SoIWavs)./cell2mat(fs))/60, ...
+    sum(cellfun(@(x) numel(x{3}),SoIWrds)),...
+    sum(cellfun(@(x) numel(x{3}),SoIPhns)));
 
 % Load ComSpkr files
 rng(seed2); % set seed
@@ -135,6 +143,9 @@ noiseLen = min(sum(cellfun(@numel,CompSpkrWavs(1:testLen,:))));
 dirtyLen = min(cleanLen,noiseLen);
 test_cleanWav = zeros(dirtyLen,1);
 test_noiseWav = generateBabble(CompSpkrWavs,dirtyLen,fs{1});
+test_phns = cell(1,3);
+test_wrds = cell(1,3);
+
 
 % generate test data
 cPos = 1; % current position of clean wav
@@ -145,6 +156,12 @@ for i=1:testLen
     else
         test_cleanWav(cPos:end) = SoIWavs{i}(newCPos-dirtyLen);
     end
+    test_phns{1} = [test_phns{1};SoIPhns{i}{1}+cPos-1];
+    test_phns{2} = [test_phns{2};SoIPhns{i}{2}+cPos-1];
+    test_phns{3} = [test_phns{3};SoIPhns{i}{3}];
+    test_wrds{1} = [test_wrds{1};SoIWrds{i}{1}+cPos-1];
+    test_wrds{2} = [test_wrds{2};SoIWrds{i}{2}+cPos-1];
+    test_wrds{3} = [test_wrds{3};SoIWrds{i}{3}];
     cPos = newCPos + 1;
 end
 
@@ -155,6 +172,8 @@ test_noiseWav = 0.9 * normalise(test_noiseWav);
 % save test wavs
 mkdir(OUT_LOC);
 wavwrite(test_cleanWav,FS,[OUT_LOC 'test_clean.wav']);
+writetrans(test_phns,[OUT_LOC 'test_clean.phn']);
+writetrans(test_wrds,[OUT_LOC 'test_clean.wrd']);
 disp([OUT_LOC 'test_clean.wav']);
 wavwrite(test_noiseWav,FS,[OUT_LOC 'test_noise.wav']);
 disp([OUT_LOC 'test_noise.wav']);
@@ -168,6 +187,10 @@ for i=1:numel(mixes)
     test_dirtyWav = 0.9 * normalise(test_dirtyWav);
     wavwrite(test_dirtyWav,FS,[OUT_LOC 'test_dirty' num2str(mix) ...
         'dB.wav']);
+    writetrans(test_phns,[OUT_LOC 'test_dirty' num2str(mix) ...
+        'dB.phn']);
+    writetrans(test_wrds,[OUT_LOC 'test_dirty' num2str(mix) ...
+        'dB.wrd']);
     disp([OUT_LOC 'test_dirty' num2str(mix) 'dB.wav']);
 end
 
@@ -293,4 +316,25 @@ if ~isempty(fileList)
 fileList = cellfun(@(x) fullfile(dirName,x),...  Prepend path to files
                    fileList,'UniformOutput',false);
 end
+end
+
+function transcription = loadtrans(fname)
+% loads phn or wrd data
+currentRecPhnFID = fopen(fname);
+transcription = textscan(currentRecPhnFID,'%u %u %s','delimiter','\t');
+fclose(currentRecPhnFID);
+end
+
+function writetrans(transcription,fname)
+% loads phn or wrd data
+start = cellfun(@num2str,num2cell(transcription{1}),'UniformOutput',false);
+stop = cellfun(@num2str,num2cell(transcription{2}),'UniformOutput',false);
+tran = transcription{3};
+start = strcat(start,'\t');
+stop = strcat(stop,'\t');
+lines = strcat(cellfun(@strcat,start,stop,tran,'UniformOutput',false),'\n');
+text = strcat(lines{:});
+fid = fopen(fname,'w+');
+fprintf(fid,text);
+fclose(fid);
 end

@@ -2514,9 +2514,8 @@ Phoneme Dependent Base Matrix
 \begin_layout Standard
 The second method proposes to use a completely phoneme dependent spectral
  component matrix.
- This was achieved by removing the training stage of both the online and
- supervised methods, and instead allowing the basis matrix to be directly
- specified.
+ The proposed solution was to remove the training stage of both the online
+ and supervised methods, and allow the basis matrix to be directly specified.
  This was achieved by modifying the 
 \begin_inset listings
 lstparams "language=bash"
@@ -2525,7 +2524,7 @@ status open
 
 \begin_layout Plain Layout
 
-NMF.m
+NMF
 \end_layout
 
 \end_inset
@@ -2545,7 +2544,39 @@ reference "lst:NMF-train"
 \end_inset
 
 .
- In order to verify that the spectral component matrix, 
+ With the simplified 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+dummyTrain
+\end_layout
+
+\end_inset
+
+ in the 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+NMF
+\end_layout
+
+\end_inset
+
+ class, the drawn phoneme recording could be composed into a spectrogram
+ and was then directly applied to the basis matrix.
+ The number of bases was specified as the number of columns in this spectrogram.
+\end_layout
+
+\begin_layout Standard
+In order to verify that the spectral component matrix, 
 in the code 
 \lang australian
 

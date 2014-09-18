@@ -109,7 +109,7 @@ Word count was produced by exporting LyX files to TeX, and using texcount.
 
 \lang english
 \begin_inset listings
-lstparams "breaklines=true,language=bash"
+lstparams "basicstyle={\ttfamily},breaklines=true,language=bash"
 inline false
 status open
 
@@ -128,7 +128,7 @@ $ perl texcount.pl -merge -sub=chapter -sum -nc -q -out=count.txt "AGillman
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "count.txt"
-lstparams "breaklines=true,language=bash,nolol=true"
+lstparams "basicstyle={\\ttfamily},breaklines=true,language=bash,nolol=true"
 
 \end_inset
 
