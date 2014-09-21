@@ -1,6 +1,8 @@
 library(ggplot2)
 library(corrgram)
 
+source("gatherData.R") # update data file
+
 rm(list=ls());
 
 figdir <- "fig/phn/numDrawn/"
@@ -8,7 +10,7 @@ dir.create(file.path(figdir),recursive=T,showWarnings=F)
 
 d <- read.csv("dat/testResults.csv",header=T)
 d <- d[d[,"utterances"] %in% c(NA),]
-d <- d[d[,"testNo"] %in% c(7,8,9,10),]
+d <- d[d[,"testNo"] %in% c(5,7,8,9,10),]
 d <- d[,c("testName","algorithm","phonemes","Input.SNR","pesq","pesqImp","segSNR","segSNRImp","testNo")]
 
 d$algorithm <- factor(d$algorithm)

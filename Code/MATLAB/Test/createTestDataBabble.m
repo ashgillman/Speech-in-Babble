@@ -14,60 +14,66 @@ function createTestData()
 %%% TEST PARAMS - Uncomment ONE of the following:
 %testID = '1';
 %SPKR = 'c3c'; % SoI ID used in this test
-%COMPSPKR = {'c3f'}; % ComSpkr ID(s) used in this test
+%COMPSPKRS = {'c3f'}; % ComSpkr ID(s) used in this test
 %testLen = 10; % 10 samples for testing
 %trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
 %mixes = [-6 -3 0 3 6]; % dB
+%phnSampleCounts = [1 5 10 50 100 500 999];
 %seed1 = 2; seed2 = 5;
 
 %testID = '2';
 %SPKR = 'c3l'; % SoI ID used in this test
-%COMPSPKR = {'c31'}; % ComSpkr ID(s) used in this test
+%COMPSPKRS = {'c31'}; % ComSpkr ID(s) used in this test
 %testLen = 10; % 10 samples for testing
 %trainLens = [1 3 5 10 15 20 30 40 50 60 70 80];
 %mixes = [-6 -3 0 3 6]; % dB
+%phnSampleCounts = [1 5 10 50 100 500 999];
 %seed1 = 1; seed2 = 5;
 
-%testID = '3';
-%SPKR = 'c3s'; % SoI ID used in this test
-%COMPSPKR = {'c31'}; % ComSpkr ID(s) used in this test
-%testLen = 10; % 10 samples for testing
-%trainLens = [1 10 50 80];
-%mixes = [-6 -3 0 3 6]; % dB
-%seed1 = 1; seed2 = 2;
+% testID = '3';
+% SPKR = 'c3s'; % SoI ID used in this test
+% COMPSPKRS = {'c31'}; % ComSpkr ID(s) used in this test
+% testLen = 10; % 10 samples for testing
+% trainLens = [1 10 50 80];
+% mixes = [-6 -3 0 3 6]; % dB
+% phnSampleCounts = [1 5 10 50 100 500 999];
+% seed1 = 1; seed2 = 2;
 
-%testID = '4';
-%SPKR = 'c3s'; % SoI ID used in this test
-%COMPSPKRS = {'c31' 'c34' 'c35'}; % ComSpkr ID(s) used in this test
-%testLen = 10; % 10 samples for testing
-%trainLens = [1 10 50 80];
-%mixes = [-6 -3 0 3 6]; % dB
-%seed1 = 1; seed2 = 2;
+% testID = '4';
+% SPKR = 'c3s'; % SoI ID used in this test
+% COMPSPKRS = {'c31' 'c34' 'c35'}; % ComSpkr ID(s) used in this test
+% testLen = 10; % 10 samples for testing
+% trainLens = [1 10 50 80];
+% mixes = [-6 -3 0 3 6]; % dB
+% phnSampleCounts = [1 5 10 50 100 500 999];
+% seed1 = 1; seed2 = 2;
 
-%testID = '5';
+% testID = '5';
+% SPKR = 'c3s'; % SoI ID used in this test
+% COMPSPKRS = {'c3c' 'c3f' 'c35'}; % ComSpkr ID(s) used in this test
+% testLen = 10; % 10 samples for testing
+% trainLens = [1 5 10 50 80];
+% mixes = [-6 -3 0 3 6]; % dB
+% phnSampleCounts = [1 5 10 50 100 500 999];
+% seed1 = 1; seed2 = 2;
+
+% testID = '6';
+% SPKR = 'c3s'; % SoI ID used in this test
+% COMPSPKRS = {'c3c' 'c3f'}; % ComSpkr ID(s) used in this test
+% testLen = 10; % 10 samples for testing
+% trainLens = [1 5 10 50 80];
+% mixes = [-6 -3 0 3 6]; % dB
+% phnSampleCounts = [1 5 10 50 100 500 999];
+% seed1 = 1; seed2 = 2;
+
+%testID = '7';
 %SPKR = 'c3s'; % SoI ID used in this test
-%COMPSPKRS = {'c3c' 'c3f' 'c35'}; % ComSpkr ID(s) used in this test
+%COMPSPKRS = {'c3f'}; % ComSpkr ID(s) used in this test
 %testLen = 10; % 10 samples for testing
 %trainLens = [1 5 10 50 80];
 %mixes = [-6 -3 0 3 6]; % dB
-%seed1 = 1; seed2 = 2;
-
-%testID = '6';
-%SPKR = 'c3s'; % SoI ID used in this test
-%COMPSPKRS = {'c3c' 'c3f'}; % ComSpkr ID(s) used in this test
-%testLen = 10; % 10 samples for testing
-%trainLens = [1 5 10 50 80];
-%mixes = [-6 -3 0 3 6]; % dB
-%seed1 = 1; seed2 = 2;
-
-testID = '7';
-SPKR = 'c3s'; % SoI ID used in this test
-COMPSPKRS = {'c3f'}; % ComSpkr ID(s) used in this test
-testLen = 10; % 10 samples for testing
-trainLens = [1 5 10 50 80];
-mixes = [-6 -3 0 3 6]; % dB
-phnSampleCounts = [1 5 10 50 100 500 999];
-seed1 = 2; seed2 = 1;
+%phnSampleCounts = [1 5 10 50 100 500 999];
+%seed1 = 2; seed2 = 1;
 
 % import libraries
 MYTOOLS_LOC='/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/mytools';

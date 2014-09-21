@@ -9,10 +9,10 @@ end
 
 % variation params
 trainLens = [];
-mixes = [-6 -3 0 3 6];
-enhAlgs = {@modifiedOnline @modifiedSupervised};%{@mohammadiaOnline @mohammadiaSupervised};
-tests = [10];
-phnSampleCounts = [1 5 10 50];%[1 5 10 50 100 500 999];
+mixes = [0];
+enhAlgs = {@mohammadiaOnline @mohammadiaSupervised};%{@IDBM @MMSE @modifiedOnline @modifiedSupervised @mohammadiaOnline @mohammadiaSupervised};
+tests = [5];
+phnSampleCounts = [1 5 10];%[1 5 10 50 100 500 999];
 
 numtests = (length(trainLens)+length(phnSampleCounts)) * length(mixes) * ...
     length(enhAlgs) + length(tests);
