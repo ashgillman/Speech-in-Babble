@@ -1570,6 +1570,7 @@ status open
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-50phnSpectrogram.eps
 	width 50text%
+	draft
 
 \end_inset
 
@@ -1603,6 +1604,7 @@ status open
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-100phnSpectrogram.eps
 	width 50text%
+	draft
 
 \end_inset
 
@@ -1633,6 +1635,7 @@ status open
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-500phnSpectrogram.eps
 	width 50text%
+	draft
 
 \end_inset
 
@@ -1666,6 +1669,7 @@ status open
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-999phnSpectrogram.eps
 	width 50text%
+	draft
 
 \end_inset
 

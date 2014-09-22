@@ -8,11 +8,11 @@ if isempty(strfind(path,MYTOOLS_LOC))
 end
 
 % variation params
-trainLens = [];
+trainLens = [5];
 mixes = [0];
 enhAlgs = {@mohammadiaOnline @mohammadiaSupervised};%{@IDBM @MMSE @modifiedOnline @modifiedSupervised @mohammadiaOnline @mohammadiaSupervised};
-tests = [5];
-phnSampleCounts = [1 5 10];%[1 5 10 50 100 500 999];
+tests = [8 9 10];
+phnSampleCounts = [];%[1 5 10 50 100 500 999];
 
 numtests = (length(trainLens)+length(phnSampleCounts)) * length(mixes) * ...
     length(enhAlgs) + length(tests);

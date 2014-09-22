@@ -291,6 +291,13 @@ acro{MBAND}{Multi-Band spectral subtraction}
 
   
 \backslash
+acro{MFCC}{Mel-Frequency Cepstral Coefficient}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{MMSE}{Minimum Mean Square Error}
 \end_layout
 

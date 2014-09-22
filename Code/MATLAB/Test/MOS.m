@@ -77,32 +77,35 @@ results = cell(size(testParams,1),1);
 pause(1);
 fprintf(repmat('\n',1,10))
 fprintf('Est. runtime: %f mins\n',runMins);
-fprintf('About to start test\nPress Enter to Begin\n');
+fprintf('About to start test the test\n');
+fprintf('Simply listen to the recording and answer the questions\n');
+fprintf('To hear any recording again, simply press enter without typing a response\n');
+fprintf('Press Enter to Begin\n');
 pause
 
 % milestones and jokes
 milestones = [0.25 0.33 0.5 0.67 0.9];
 milestonemsgs = {'You''re a quarter way there already!'...
     'That''s a third down.' 'Half down, half to go.' 'Getting Close!'...
-    '90% through, you''re nearly there'};
+    '90%% through, you''re nearly there'};
 milestoneflgs = [0 0 0 0 0];
 jokes = {'What''s the opposite of understand? Derstand?'...
     'Better to understand a little than to misunderstand a lot.'...
-    '''One of the best hearing aids a man can have is an attentive wife.'' \n- GrouchoMarx'...
+    '''One of the best hearing aids a man can have is an attentive wife.'' - GrouchoMarx'...
     'Dark humor is like food, some people dont have any'...
     'Words cannot express how limited my vocabulary is.'...
     'I''m not addicted to brake fluid, I can stop any time'...
     'War does not determine who is right - only who is left.'...
-    'If 4 out of 5 people SUFFER from diarrhea? does that mean that one \nenjoys it?'...
-    'A computer once beat me at chess, but it was no match for me at kick \nboxing.'...
-    'The sole purpose of a child?s middle name, is so he can tell when he?s \nreally in trouble.'...
-    '- What did the buffalo say to his son as he left for college?\n- Bison'...
+    'If 4 out of 5 people SUFFER from diarrhea... does that mean that one enjoys it?'...
+    'A computer once beat me at chess, but it was no match for me at kick boxing.'...
+    'The sole purpose of a child''s middle name, is so he can tell when he''s really in trouble.'...
+    '- What did the buffalo say to his son as he left for college?\n    - Bison'...
     '- What do you call an alligator in a vast?\n- An investigator.'...
-    'Algebra, stop asking us to find your x. She''s not coming back, so \ndon''t ask y'...
-    'I changed my iPod?s name to Titanic. It?s syncing now.'...
+    'Algebra, stop asking us to find your x. She''s not coming back, so don''t ask y'...
+    'I changed my iPod''s name to Titanic. It''s syncing now.'...
     'Jokes about German sausage are the wurst.'...
     'They told me I had type-A blood, but it was a Type-O.'...
-    'Did you hear about the cross-eyed teacher who lost her job because she\ncouldn?t control her pupils?'};
+    'Did you hear about the cross-eyed teacher?\n    She lost her job because she couldn?t control her pupils'};
 times = zeros(size(testParams));
 try
     for tp=1:numTests
@@ -111,12 +114,12 @@ try
         progress = tp/numTests;
 
         % Progress Report
-        fprintf('\n\n%i of %i (%.2f%%) at %s\n',tp,numTests,progress, ...
-            datestr(sum(times),'MM:SS'));
+        fprintf('\n\n%i of %i (%.1f%%) at %s\n',tp,numTests,progress*100, ...
+            datestr(sum(times)/3600/24,'MM:SS'));
         % Motivating message if reached milestone
-        milestone = find(progress>milestones,1,'last');
+        milestone = find(progress>=milestones,1,'last');
         if ~milestoneflgs(milestone)
-            disp(milestonemsgs{milestone});
+            cprintf('comment',[milestonemsgs{milestone} '\n\n']);
             milestoneflgs(milestone) = true;
         end
 
@@ -156,11 +159,12 @@ try
             CCR = NaN;
             while ~any(CCR == -3:3)
                 play(dirtyAP);
-                fprintf('Playing the unenhanced waveform...\nEnter to skip')
+                fprintf('Playing the unenhanced waveform (Enter to continue)...\n')
                 pause;
                 stop(dirtyAP);
                 play(enhanAP);
-                fprintf('Playing the enhanced waveform...\n')
+                fprintf('Playing the enhanced waveform...\n');
+                fprintf('Rate the quality of the second compared to the quality of the first\n')
                 for i=3:-1:-3
                     fprintf('%2i: %s\n',i,CCRscale{4-i});
                 end
@@ -174,13 +178,13 @@ try
             result.CCR = '-';
         end
         if doMOS
-            disp('Rate the quality of this sound.')
+            disp('Rate the quality of the speech.')
             result.MOS = doTest(MOSscale,enhanAP);
         else
             result.MOS = '-';
         end
         if doMOSle
-            disp('Rate the required listening effort for this sound.')
+            disp('Rate the Effort required to understand the meanings of sentences.')
             result.MOSle = doTest(MOSlescale,enhanAP);
         else
             result.MOSle = '-';
@@ -195,11 +199,12 @@ try
 
         % Entertainment to keep subject from frustration
         if randi(5,1)==1
-            fprintf('   <ahref="">%s</a>\n',jokes{randi(numel(jokes),1)});
+            cprintf('k',['   ' jokes{randi(numel(jokes),1)} '\n']);
         end
         times(tp) = toc;
     end
-    fprintf('Test complete, thank you.\n');
+    fprintf('Test complete, you did it!\n');
+    cprintf('comment','Thank you very much\n');
 catch err
     error('An error occurred, attempting to save results');
 end

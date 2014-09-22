@@ -114,8 +114,8 @@ key "Krauss1994,Jones1997"
 
 , and other authors have provided tools in the MATLAB language 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Hoyer2004,Brookes1997,Loizou2008"
+LatexCommand citep
+key "Hoyer2004,Brookes1997,Loizou2008,Wojcicki2011"
 
 \end_inset
 
@@ -351,7 +351,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 lm()
 \end_layout
 
@@ -370,25 +369,16 @@ grouped comparison
  was also conducted.
  This was performed as above, however similar algorithms were grouped into
  algorithm classes.
+ This allowed comparison of algorithm classes, to investigate whether certain
+ classes of algorithms are suitable for different purposes.
 \end_layout
 
 \begin_layout Standard
-The second comparison method..
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-TODO
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A limitation in this analysis is that the test conditions are not fair:
- different noise types, subtle differences in algorithms BLURGH
+A limitation in these analyses is that the test conditions are not fair:
+ different noise types, subtle differences in algorithms, and other differences
+ could not be completely accounted for in the analysis.
+ As such, it was important to conduct further tests, where these conditions
+ can be controlled such that the comparisons be completely fair.
 \end_layout
 
 \begin_layout Subsection
@@ -407,77 +397,10 @@ Due to the lack of existing data on which conclusions can be drawn on the
 \end_layout
 
 \begin_layout Standard
-The Algorithms to be used were:
-\end_layout
-
-\begin_layout Itemize
-Supervised 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{HMM}
-\end_layout
-
-\end_inset
-
- with 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{BNMF}
-\end_layout
-
-\end_inset
-
- output distributions 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "mohammadiha2013supervised"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Online 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{HMM}
-\end_layout
-
-\end_inset
-
- with 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{BNMF}
-\end_layout
-
-\end_inset
-
- output distributions 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "mohammadiha2013supervised"
+The Algorithms used in testing are given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Algorithms"
 
 \end_inset
 
@@ -485,7 +408,832 @@ key "mohammadiha2013supervised"
 \end_layout
 
 \begin_layout Standard
-The performance measures to be used are 
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Algorithms"
+
+\end_inset
+
+Algorithms used in testing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="3">
+<features rotate="0" tabularvalignment="middle" tabularwidth="100text%">
+<column alignment="left" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="60text%">
+<column alignment="left" valignment="top" width="13text%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Code
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mohammadia Supervised
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A supervised 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm proposed in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mohammadiha2013supervised"
+
+\end_inset
+
+, trained on simple utterances of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:mohammadiaSupervised"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Phoneme Mohammadia Supervised
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A supervised 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm proposed in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mohammadiha2013supervised"
+
+\end_inset
+
+, trained on drawn phoneme samples of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+.
+ See 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Training}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:mohammadiaSupervised"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mohammadia Online
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+An online 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm proposed in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mohammadiha2013supervised"
+
+\end_inset
+
+, trained on simple utterances of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:mohammadiaOnline"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Phoneme Mohammadia Online
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+An online 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm proposed in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mohammadiha2013supervised"
+
+\end_inset
+
+, trained on drawn phoneme samples of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+.
+ See 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Training}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:mohammadiaOnline"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modified Supervised
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A modified supervised 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ method using explicitly phoneme 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ bases.
+ See 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Base}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:modifiedSupervised"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modified Online
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A modified online 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ method using explicitly phoneme 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ bases.
+ See 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Base}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:modifiedOnline"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MMSE}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A spectral subtraction algorithm with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE}
+\end_layout
+
+\end_inset
+
+ error estimation, 
+\begin_inset listings
+lstparams "language=Matlab"
+inline true
+status open
+
+\begin_layout Plain Layout
+ssubmmse()
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Brookes1997"
+
+\end_inset
+
+, trained on simple utterances of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:MMSE"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Phoneme 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MMSE}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A spectral subtraction algorithm with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE}
+\end_layout
+
+\end_inset
+
+ error estimation, 
+\begin_inset listings
+lstparams "language=Matlab"
+inline true
+status open
+
+\begin_layout Plain Layout
+ssubmmse()
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Brookes1997"
+
+\end_inset
+
+, trained on simple drawn phoneme samples of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:MMSE"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ideal Binary Mask
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A ideal binary mask algorithm 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wojcicki2011"
+
+\end_inset
+
+, trained on simple utterances of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:IDBM"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Phoneme Ideal Binary Mask
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A ideal binary mask algorithm 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wojcicki2011"
+
+\end_inset
+
+, trained on simple drawn phoneme samples of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:IDBM"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The performance measures used were 
 \begin_inset ERT
 status open
 
@@ -538,7 +1286,7 @@ key "InternationalTelecommunicationUnion1996"
 
 \end_inset
 
- and 
+, 
 \begin_inset ERT
 status open
 
@@ -551,7 +1299,24 @@ ac{PRR}
 
 \end_inset
 
+ and segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
 .
+\end_layout
+
+\begin_layout Subsubsection*
+Objective measures of quality
 \end_layout
 
 \begin_layout Standard
@@ -591,6 +1356,36 @@ key "Loizou2008"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ was also selected as a performance measure in order to incorporate a statistica
+l measure.
+ A MATLAB implementation was also supplied with 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Loizou2008"
+
+\end_inset
+
+, so implementation was straightforward.
+\end_layout
+
+\begin_layout Subsubsection*
+Testing on human subjects
 \end_layout
 
 \begin_layout Standard
@@ -648,7 +1443,8 @@ ac{PESQ}
 
 \end_inset
 
-, had been used throughout literature.
+, had been used throughout literature, and so was included as a test measure
+ for comparability.
  
 \begin_inset ERT
 status open
@@ -733,6 +1529,28 @@ ac{CCR}
 \begin_inset CommandInset citation
 LatexCommand citet
 key "InternationalTelecommunicationUnion1996"
+
+\end_inset
+
+.
+ The resulting code is given in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{lst:MOSScript,lst:MOS}
+\end_layout
+
+\end_inset
+
+, and has been submitted to MATLAB Central and GitHub to share with the
+ community 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gillman2014"
 
 \end_inset
 
@@ -972,10 +1790,6 @@ Bad
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1447,13 +2261,172 @@ key "InternationalTelecommunicationUnion1996"
 
  Annex A, and so environmental, room and vehicle noise were not able to
  be tightly controlled.
- This restriction is important when testing the quality of telecommunications
- systems as stationary as well as non-stationary noise needs to be tested.
- However, in the current experiments, non-stationary noise is of interest.
- Therefore it is important that non-stationary noise be removed, such as
- traffic, however some stationary noise within the testing environment is
- acceptable.
- These operating conditions were achievable.
+ However, an internal room, i.e., with no exterior walls, was available.
+ Measurements taken on a Samson Meteor condenser microphone showed the environme
+ntal noise to be at an acceptable level, as seen in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Typical-noise-level"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/environment.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Typical-noise-level"
+
+\end_inset
+
+Typical noise level during tests
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The test setup is depicted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:MOS-Test-setup"
+
+\end_inset
+
+.
+ The setup was located in the aforementioned interior room.
+ The test was performed on a laptop running the MATLAB code (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:MOSScript"
+
+\end_inset
+
+), and the test subject listened using a pair of over-ear headphones.
+ Studio quality headphones were not available, so Pioneer SE-MJ711 headphones
+ were used.
+ The test procedure went as follows:
+\end_layout
+
+\begin_layout Enumerate
+The subject was shown a recording of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+ so that they could identify which speaker was the intended speaker in competing
+ speaker noise situations.
+\end_layout
+
+\begin_layout Enumerate
+The test procedure was described to the subject, noting that three separate
+ tests were to be performed, meaning the subject would be asked three types
+ of questions.
+\end_layout
+
+\begin_layout Enumerate
+With the laptop playing audio through the speakers, the test was begun and
+ the test coordinator showed the subject how to use the program, running
+ through approximately two iterations of the test.
+\end_layout
+
+\begin_layout Enumerate
+The subject was then given headphones and instructed to start the test.
+\end_layout
+
+\begin_layout Enumerate
+The test coordinator was required to remain with the subject for the duration
+ of the test to answer any questions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/test setup.jpg
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MOS-Test-setup"
+
+\end_inset
+
+MOS Test setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{ASR}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1519,7 +2492,36 @@ ac{HTK}
 
 \end_inset
 
- was 
+ was used due to an availability of experience within the university.
+ The chosen method was a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MFCC}
+\end_layout
+
+\end_inset
+
+ was selected.
+ The selected training data was the full recording set for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1626,7 +2628,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 .wav
 \end_layout
 
@@ -1693,7 +2694,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 si_dt
 \end_layout
 
@@ -2523,7 +3523,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 NMF
 \end_layout
 
@@ -2551,7 +3550,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 dummyTrain
 \end_layout
 
@@ -2564,7 +3562,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 NMF
 \end_layout
 
@@ -2576,17 +3573,13 @@ NMF
 \end_layout
 
 \begin_layout Standard
-In order to verify that the spectral component matrix, 
-in the code 
-\lang australian
-
+In order to verify that the spectral component matrix, in the code 
 \begin_inset listings
 lstparams "language=Matlab"
 inline true
 status open
 
 \begin_layout Plain Layout
-
 Et
 \end_layout
 
@@ -2600,7 +3593,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 speech_nmf.Et
 \end_layout
 

@@ -1,7 +1,7 @@
 close all
 clear all
 
-tests = {'7' '8' '9' '10'};
+tests = {'5'};
 
 % Include Libraries
 PESQ_LOC = '/Users/Ash/Dropbox/Uni/2014/Thesis/Code/MATLAB/pesq';

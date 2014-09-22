@@ -6,9 +6,10 @@ function [enSpeech,stats] = modifiedOnline(cleanTrain,noiseTrain,dirtyTest)
 % noiseTrain - noise wav to train on
 % dirtyTest - mixed signal to enhance
 %
-% N. Mohammadiha, P. Smaragdis and A. Leijon, “Supervised and Unsupervised Speech 
-% Enhancement Using Nonnegative Matrix Factorization,” IEEE Trans. Audio, Speech, and Language Pro-
-% cess., vol. 21, no. 10, pp. 2140–2151, oct. 2013.
+% N. Mohammadiha, P. Smaragdis and A. Leijon, Supervised and Unsupervised 
+% Speech Enhancement Using Nonnegative Matrix Factorization, IEEE Trans. 
+% Audio, Speech, and Language Process., vol. 21, no. 10, pp. 2140-2151,
+% oct. 2013.
 %
 % Written by Ashley Gillman
 
@@ -25,12 +26,13 @@ mixed = dirtyTest/std(dirtyTest);
 
 %learn speech model, use separate training data for test and train.
 
-spec_scale=5; %scale spectrograms to reduce rounding effect. Setting of this parameter is done experimentally.
+spec_scale=5; %scale spectrograms to reduce rounding effect. Setting of
+%this parameter is done experimentally.
 %For normalized training data, and normalized analysis window (which is
 %done here) spec_scale=5 is suitable.
-num_speech_basis=floor(length(cleanTrain)/alen); %number of basis for speech nmf model
-speechTr_Spect=spec_scale*MySpectrogram(speech,alen,alen); %magnitude spectrogram
-speech_nmf=NMF(speechTr_Spect,num_speech_basis);%construct nmf object for speech model
+num_speech_basis=floor(length(cleanTrain)/alen); %no basis for speech nmf 
+speechTr_Spect=spec_scale*MySpectrogram(speech,alen,alen); %mag spectrogram
+speech_nmf=NMF(speechTr_Spect,num_speech_basis);% nmf for speech model
 setParameters(speech_nmf,'max_it',1,'update_boundFlag',1);
 tic;
 speech_nmf.dummyTrain;%train the speech model
@@ -63,7 +65,7 @@ noise_nmf.X=[];
 
 %nmf model for the mixed signal
 mixed_nmf.OutputDistr(1)=NMF(speech_nmf,noise_nmf,[]);%combine two nmf models
-mixed_nmf.UserData{1,1}=[0 a_noise]; %\phi^(s) and \phi^(n) in the paper in section III.C. Should be set emprically for each noise
+mixed_nmf.UserData{1,1}=[0 a_noise]; %\phi^(s) and \phi^(n)
 mixed_nmf.UserData{1,2}=noise_name;
 
 %-----------------------------Enahancement---------------------------------
@@ -93,25 +95,6 @@ for n=1:floor(length(mixed)/ulen)-1
     enSpeech(n1:n2)=enSpeech(n1:n2)+ifft(norm_coef*X);
     
     n1 = n1 + ulen;        n2 = n2 + ulen;
-    
-    %-----------estimate long term SNR--------------
-    % ref:   C. Kim and R. M. Stern, “Robust signal-to-noise ratio estimation based
-    % on waveform amplitude distribution analysis,” in Proc. Int. Conf. Spoken
-    % Language Process. (Interspeech), 2008, pp. 2598–2601.
-    %for the sake of demo
-%    if n>50 %no estimate for first 5o frames. SNR is estimated based on past 50 frames
-%        noisy_input=mixed((n-50)*ulen+1:n*ulen);
-%        G=log(mean(abs(noisy_input)))-mean(log(abs(noisy_input)+eps));
-%        ruts=roots([p(1) p(2) p(3)-G]);
-%        [vv,ii]=min(abs(ruts));
-%        estimatedSNR=.998*estimatedSNR+(1-.998)*ruts(ii);
-%    else
-%        G_values=[.423 .442 .642 .885];%taken from the above paper
-%        snrss=[-5 0 10 20];
-%        p=polyfit(snrss,G_values,2);
-%        estimatedSNR=0;
-%    end
-    
 end
 enhTime = toc;
 
