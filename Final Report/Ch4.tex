@@ -1,4 +1,3 @@
-\selectlanguage{australian}%
 
 \chapter{Results}
 
@@ -133,8 +132,6 @@ as training is increased}
 \acs{BNMF} algorithm as training is increased}
 
 
-\selectlanguage{english}%
-\selectlanguage{english}%
 \end{figure}
 
 
@@ -159,18 +156,68 @@ results of \acs{BNMF} algorithm as training is increased}
 
 
 \begin{figure}[h]
-\selectlanguage{english}%
 
 
-\selectlanguage{australian}%
-\includegraphics[width=1\textwidth]{fig/R/train/corr}
+\noindent \begin{centering}
+\includegraphics[width=0.9\textwidth]{fig/R/train/corr}
+\par\end{centering}
 
 \protect\caption{\label{fig:train-req-corr}Correlogram of results of training requirement
 investigations}
-
-
-\selectlanguage{english}%
-\selectlanguage{english}%
 \end{figure}
-\selectlanguage{english}%
 
+
+
+\section{Phoneme-Dependent Variation for the \acl{BNMF} Algorithm}
+
+In order to force phoneme dependence in the algorithms to be modified,
+phoneme samples first had to be formed. The phoneme sample recordings
+were formed using the script in \lstref{createTestData}, with the
+maximum number of samples drawn per phoneme varied. The length of
+each sample drawn was $512/FS$, such that 256 frequency bins were
+formed after taking the real \ac{FFT}. The typical spectrograms of
+the drawn phonemes are given in \figref{drawn-phoneme-spectrogram},
+showing the frequency characteristics of each phoneme.
+
+\begin{figure}[h]
+\subfloat[One sample per phoneme]{\includegraphics[width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-1phnSpectrogram}
+
+}\subfloat[Five samples per phoneme]{
+
+\includegraphics[width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-5phnSpectrogram}
+
+}
+
+\subfloat[Ten samples per phoneme]{\includegraphics[width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-10phnSpectrogram}
+
+}\subfloat[50 samples per phoneme]{\includegraphics[draft,width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-50phnSpectrogram}
+
+}
+
+\subfloat[100 samples per phoneme]{\includegraphics[draft,width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-100phnSpectrogram}
+
+}\subfloat[500 samples per phoneme]{\includegraphics[draft,width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-500phnSpectrogram}
+
+}
+
+\subfloat[999 samples per phoneme]{\includegraphics[draft,width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-999phnSpectrogram}
+
+}
+
+\protect\caption{\label{fig:drawn-phoneme-spectrogram}Typical spectrogram of randomly
+drawn phoneme samples for speaker C3S}
+\end{figure}
+
+
+
+\subsection{Phoneme Dependent Training Data}
+
+The following results relate to the proposed method outlined in \subsecref{Phoneme-Training}.
+
+
+\subsection{Phoneme Dependent Base Matrix}
+
+The first test conducted was to ensure the modifications to the code
+indeed forced the \ac{NMF} spectral component matrix, \lstinline[language=Matlab]!Et!
+in the \lstinline[language=bash]!NMF! class, to be the drawn phoneme
+bases supplied.

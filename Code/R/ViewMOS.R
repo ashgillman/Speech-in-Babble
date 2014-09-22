@@ -39,10 +39,10 @@ d$utterances.phns <- factor(d$utterances.phns)
 # plotting results
 for (meas in c("MOS","MOSle","CCR")) {
   d$y <- d[,meas]
-  d <- ddply(d, c("testName","algorithm","training","utterances.phns","y","ID"),
+  d.this <- ddply(d, c("testName","algorithm","training","utterances.phns","y"),
              "nrow", .drop = T)
-  p <- ggplot(d,aes(x=algorithm, y=y,
-                    color=ID,size=nrow)) +
+  p <- ggplot(d.this,aes(x=algorithm, y=y,
+                    color=utterances.phns,size=nrow)) +
     geom_point(position = position_jitter(width = .15,height=0.1)) +
     scale_colour_brewer(name="Algorithm", type="seq", palette="Spectral") +
     scale_size("Count",range=c(2,5)) +

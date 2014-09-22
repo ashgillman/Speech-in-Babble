@@ -354,10 +354,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 Online 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -434,10 +431,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 Supervised 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -514,10 +508,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 Online 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -594,10 +585,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 Supervised 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -674,10 +662,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 Spectral Subtraction 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -1180,6 +1165,146 @@ status open
 
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/MOS.m}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Python Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{
+\end_layout
+
+\begin_layout Plain Layout
+
+language=Python,
+\end_layout
+
+\begin_layout Plain Layout
+
+basicstyle=
+\backslash
+mlttfamily
+\backslash
+footnotesize
+\backslash
+singlespacing,
+\end_layout
+
+\begin_layout Plain Layout
+
+otherkeywords={self},
+\end_layout
+
+\begin_layout Plain Layout
+
+keywordstyle=
+\backslash
+color{deepblue},
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={MyClass,__init__},
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle=
+\backslash
+color{deepred},
+\end_layout
+
+\begin_layout Plain Layout
+
+stringstyle=
+\backslash
+color{deepgreen},
+\end_layout
+
+\begin_layout Plain Layout
+
+showstringspaces=false
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ASR Python Script
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:ASR"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[lastline=53]{../Code/python/ASR.py}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[firstline=54,firstnumber=last]{../Code/python/ASR.py}
 \end_layout
 
 \end_inset

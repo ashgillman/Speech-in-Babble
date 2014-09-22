@@ -351,6 +351,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 lm()
 \end_layout
 
@@ -967,6 +968,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 ssubmmse()
 \end_layout
 
@@ -1060,6 +1062,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 ssubmmse()
 \end_layout
 
@@ -2280,9 +2283,10 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename fig/environment.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -2305,6 +2309,19 @@ Typical noise level during tests
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Will these two figures look better on a page of floats together?
 \end_layout
 
 \end_inset
@@ -2381,6 +2398,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename fig/test setup.jpg
 	width 80text%
@@ -2493,7 +2511,20 @@ ac{HTK}
 \end_inset
 
  was used due to an availability of experience within the university.
- The chosen method was a 
+ The chosen 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ method was a 
 \begin_inset ERT
 status open
 
@@ -2506,7 +2537,7 @@ ac{MFCC}
 
 \end_inset
 
- was selected.
+ feature vector.
  The selected training data was the full recording set for the 
 \begin_inset ERT
 status open
@@ -2521,7 +2552,622 @@ ac{SoI}
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+The script to implement the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTK}
+\end_layout
+
+\end_inset
+
+ setup, training, extraction and evaluation steps was based on that developed
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Quill2014"
+
+\end_inset
+
+, and is given in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:ASR"
+
+\end_inset
+
+.
+ A basic overview of the script's function is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:ASR"
+
+\end_inset
+
+.
+ The parameters used in performing the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MFCC}
+\end_layout
+
+\end_inset
+
+ domain 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ are given in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{lst:MFC-config,lst:MFC-proto}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Enumerate
+Setup
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Collate all test data into one folder, with a standard naming convention.
+\end_layout
+
+\begin_layout Enumerate
+Produce required metadata on training data, including phoneme lists, grammar
+ rules, file lists, transcription summaries, etc.
+\end_layout
+
+\begin_layout Enumerate
+Initialise empty initial 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acp{HMM}
+\end_layout
+
+\end_inset
+
+ using 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTK}
+\end_layout
+
+\end_inset
+
+'s 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HVITE
+\end_layout
+
+\end_inset
+
+, based on a user defined configuration and prototype for the desired feature
+ vectors.
+ In this case, these were those given in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{lst:MFC-config,lst:MFC-proto}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Training
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Convert training data to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MFCC}
+\end_layout
+
+\end_inset
+
+ domain using 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTK}
+\end_layout
+
+\end_inset
+
+'s 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HCOPY
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HMM}
+\end_layout
+
+\end_inset
+
+ model is then re-estimated twice, using 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTK}
+\end_layout
+
+\end_inset
+
+'s 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HEREST
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HMM}
+\end_layout
+
+\end_inset
+
+ model is then re-estimated a further three times, this time incorporating
+ a short pause model but still using 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HEREST
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The phoneme transcriptions are realigned using the current model and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTK}
+\end_layout
+
+\end_inset
+
+'s 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HVITE
+\end_layout
+
+\end_inset
+
+.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HMM}
+\end_layout
+
+\end_inset
+
+ model is then re-estimated yet another three times still using 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HEREST
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Extraction
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Convert test data to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MFCC}
+\end_layout
+
+\end_inset
+
+ domain using 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTK}
+\end_layout
+
+\end_inset
+
+'s 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HCOPY
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Perform recognition and generate an estimated phoneme transcription using
  
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTK}
+\end_layout
+
+\end_inset
+
+'s 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HVITE
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Evaluation
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Use 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HTK}
+\end_layout
+
+\end_inset
+
+'s 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+HRESULTS
+\end_layout
+
+\end_inset
+
+ to compare the estimated phoneme transcription with the original phoneme
+ transcription.
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:ASR"
+
+\end_inset
+
+
+\lang australian
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{HTK}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{MFCC}
+\end_layout
+
+\end_inset
+
+ configuration file
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:MFC-config"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "../Code/python/MFC_HCompV_Config.ini"
+lstparams "nolol=true,style=myBash"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{MFCC}
+\end_layout
+
+\end_inset
+
+ prototype file
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:MFC-proto"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "../Code/python/MFCProto"
+lstparams "nolol=true,style=myBash"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2628,6 +3274,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 .wav
 \end_layout
 
@@ -2694,6 +3341,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 si_dt
 \end_layout
 
@@ -3388,8 +4036,76 @@ key "mohammadiha2013supervised"
  was to be investigated when trained under a phoneme dependent context.
  Two methods were proposed to achieve the phoneme dependence: firstly leaving
  the training algorithm unmodified, but simply supplying training data consistin
-g of drawn phonemes; and secondly modifying the training algorithm itself
- to be phoneme dependent.
+g of drawn phonemes, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{
+\end_layout
+
+\end_inset
+
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Phoneme-Training"
+
+\end_inset
+
+
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+; and secondly modifying the training algorithm itself to be phoneme dependent,
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{
+\end_layout
+
+\end_inset
+
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Phoneme-Base"
+
+\end_inset
+
+
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -3405,7 +4121,64 @@ Phoneme Dependent Training Data
 \begin_layout Standard
 The first method of introducing phoneme dependence simply replaced the typical
  recorded training data with a series of drawn phonemes.
- The drawn phonemes recordings were produced in 
+\end_layout
+
+\begin_layout Subsubsection*
+Theory
+\end_layout
+
+\begin_layout Standard
+Typically, a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithm is trained using utterances, either from the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+ or from a range of speakers, depending on the application.
+ However, it was noted that in a typical utterance is not an efficient method
+ of transferring the information relating to a voice.
+ The proposed method here intended to increase the information density,
+ such that the supplied training may be reduced whilst still containing
+ enough information to develop an adequate model.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Written whilst quite tired
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Implementation
+\end_layout
+
+\begin_layout Standard
+The drawn phonemes recordings were produced in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "lst:createTestData"
@@ -3444,10 +4217,7 @@ status open
 \end_inset
 
 , alongside the normal training data.
-\end_layout
-
-\begin_layout Standard
-Phonemes were drawn randomly from the speaker recordings, and the position
+ Phonemes were drawn randomly from the speaker recordings, and the position
  in the phoneme is also randomly selected, i.e., drawn phoneme samples are
  not always the beginning of the phoneme.
  The code used to produce drawn phoneme recordings is given in 
@@ -3464,6 +4234,17 @@ Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}
 \end_inset
 
 .
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Maybe explain using algorithm or list type thing?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3512,9 +4293,207 @@ Phoneme Dependent Base Matrix
 \end_layout
 
 \begin_layout Standard
-The second method proposes to use a completely phoneme dependent spectral
+The second method proposed to use a completely phoneme dependent spectral
  component matrix.
- The proposed solution was to remove the training stage of both the online
+\end_layout
+
+\begin_layout Subsubsection*
+Theory
+\end_layout
+
+\begin_layout Standard
+In order to improve the previous algorithm, adaptations were proposed to
+ develop a phoneme-dependent method.
+ It was assumed that speech can be expressed as a sequence of phonemes,
+ and that phonemes are constant throughout their duration, such that a single
+ speaker speech signal may be expressed as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\left\{ p\left(1\right),p\left(2\right),p\left(3\right),...,p\left(T\right)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$S$"
+description "\\ac{STFT} of a signal or recording of a single speaker."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$p$"
+description "The Fourier transform of a short recording of a single phoneme."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $S$
+\end_inset
+
+ is the x
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{STFT}
+\end_layout
+
+\end_inset
+
+ of length 
+\begin_inset Formula $T$
+\end_inset
+
+ and 
+\begin_inset Formula $p\left(t\right)$
+\end_inset
+
+ is a single-frame 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{STFT}
+\end_layout
+
+\end_inset
+
+ of a single phoneme.
+ Speech within babble noise is of the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X\left(t\right)=S_{1}\left(t\right)+S_{2}\left(t\right)+...+S_{N}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $S_{1}\left(t\right)$
+\end_inset
+
+ is the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+ and other speakers 
+\begin_inset Formula $S\left(t\right)$
+\end_inset
+
+ are competing speakers.
+ It was assumed that, under this representation, if 
+\begin_inset Formula $X$
+\end_inset
+
+ were factorised using 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ and the spectral component matrix consisted of the phonemes present, that
+ the activation matrix would be a sparse matrix indicating which phonemes
+ were present at various times.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Raj2011"
+
+\end_inset
+
+ demonstrated an increased separation of speech from music when using phoneme-de
+pendent separation, however the algorithm used was more complex, involving
+ online 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ systems to segregate phonemes before 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ could occur during enhancement.
+ Here the segregation of phonemes is left as part of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithm.
+\end_layout
+
+\begin_layout Subsubsection*
+Implementation
+\end_layout
+
+\begin_layout Standard
+The proposed solution was to remove the training stage of both the online
  and supervised methods, and allow the basis matrix to be directly specified.
  This was achieved by modifying the 
 \begin_inset listings
@@ -3523,6 +4502,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 NMF
 \end_layout
 
@@ -3550,6 +4530,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 dummyTrain
 \end_layout
 
@@ -3562,6 +4543,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 NMF
 \end_layout
 
@@ -3580,6 +4562,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 Et
 \end_layout
 
@@ -3593,6 +4576,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 speech_nmf.Et
 \end_layout
 

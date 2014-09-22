@@ -819,7 +819,7 @@ X_{Babble}=\sum X_{Speakers}\label{eq:babble-sum-speakers}
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "$X$"
-description "Short-time Fourier transform of a signal or recording, either with or without noise present. Rows represent frequency bins and columns represent time frames."
+description "\\ac{STFT} of a signal or recording, either with or without noise present. Rows represent frequency bins and columns represent time frames."
 
 \end_inset
 

@@ -400,6 +400,13 @@ acro{SSN}{Speech-Shaped Noise}
 
   
 \backslash
+acro{STFT}{Short-Time Fourier Transform}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{STSA}{Short-Time Spectral Amplitude}
 \end_layout
 

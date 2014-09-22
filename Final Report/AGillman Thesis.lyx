@@ -97,7 +97,8 @@ End
 \begin_body
 
 \begin_layout Title
-Practical Speech Enhancement in Babble Using Non-negative Matrix Factorisation
+Practical Speech Enhancement in Babble Using Phoneme-Dependent Non-negative
+ Matrix Factorisation
 \end_layout
 
 \begin_layout Author
@@ -109,7 +110,7 @@ Gillman
 \end_layout
 
 \begin_layout Right Header
-Practical Speech Enhancement in Babble using NMF
+Practical Speech Enhancement in Babble using Phoneme NMF
 \end_layout
 
 \begin_layout Center Footer

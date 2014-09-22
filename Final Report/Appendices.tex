@@ -1,4 +1,3 @@
-\selectlanguage{australian}%
 %\begin{landscape}
 
 
@@ -42,6 +41,62 @@ Just file ref?
 \lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTrainingTest.m}
 
 \begin{listing}[H]
+\protect\caption{Online \acs{BNMF} MATLAB Code\label{lst:mohammadiaOnline}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/Test/mohammadiaOnline.m}
+\end{listing}
+
+
+\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/mohammadiaOnline.m}
+
+\begin{listing}[H]
+\protect\caption{Supervised \acs{BNMF} MATLAB Code\label{lst:mohammadiaSupervised}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/Test/mohammadiaSupervised.m}
+\end{listing}
+
+
+\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/mohammadiaSupervised.m}
+
+\begin{listing}[H]
+\protect\caption{Online \acs{BNMF} with Phoneme-Dependent Bases MATLAB Code\label{lst:modifiedOnline}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/Test/modifiedOnline.m}
+\end{listing}
+
+
+\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/modifiedOnline.m}
+
+\begin{listing}[H]
+\protect\caption{Supervised \acs{BNMF} with Phoneme-Dependent Bases MATLAB Code\label{lst:modifiedSupervised}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/Test/modifiedSupervised.m}
+\end{listing}
+
+
+\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/modifiedSupervised.m}
+
+\begin{listing}[H]
+\protect\caption{Spectral Subtraction \acs{MMSE} MATLAB Code\label{lst:MMSE}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/Test/MMSE.m}
+\end{listing}
+
+
+\begin{listing}[H]
+\protect\caption{Ideal Binary Mask MATLAB Code\label{lst:IDBM}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/Test/IDBM.m}
+\end{listing}
+
+
+\begin{listing}[H]
 \protect\caption{``Varying Training'' Analysis MATLAB Code\label{lst:varyingTrainingAnalysis}}
 
 
@@ -50,6 +105,88 @@ Just file ref?
 
 
 \lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTrainingAnalysis.m}
+
+\begin{listing}[H]
+\protect\caption{Draw Phone Samples MATLAB Code\label{lst:drawPhnSamples}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/phonemeDependent/drawPhnSamples.m}
+\end{listing}
+
+
+\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/phonemeDependent/drawPhnSamples.m}
+\begin{listing}[H]
+\protect\caption{Get Speaker Files MATLAB Code\label{lst:getSpeakerFiles}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/phonemeDependent/getSpeakerFiles.m}
+\end{listing}
+
+
+\begin{listing}[H]
+\protect\caption{Get Phone Data MATLAB Code\label{lst:getPhnData}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/phonemeDependent/getPhnData.m}
+\end{listing}
+
+
+\begin{listing}[H]
+\protect\caption{Modifications to NMF train MATLAB Code\label{lst:NMF-train}}
+
+
+The following code is a modified version of code supplied in \cite{mohammadiha2013supervised}.
+Modifications are the dummyTrain function, to replace train, eliminating
+the training process such that the spectral component matrix may be
+directly supplied.
+
+\lstinputlisting[firstline=240,firstnumber=240,lastline=264]{../Code/MATLAB/BNMF/@NMF/NMF.m}
+\end{listing}
+
+
+\begin{listing}[H]
+\protect\caption{Full MOS Test MATLAB Code\label{lst:MOSScript}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/Test/MOSScript.m}
+\end{listing}
+
+
+\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/MOSScript.m}
+
+\begin{listing}[H]
+\protect\caption{MOS Test Function MATLAB Code\label{lst:MOS}}
+
+
+\lstinputlisting[lastline=53]{../Code/MATLAB/Test/MOS.m}
+\end{listing}
+
+
+\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/MOS.m}
+
+
+\section{Python Code}
+
+\lstset{
+language=Python,
+basicstyle=\mlttfamily\footnotesize\singlespacing,
+otherkeywords={self},
+keywordstyle=\color{deepblue},
+emph={MyClass,__init__},
+emphstyle=\color{deepred},
+stringstyle=\color{deepgreen},
+showstringspaces=false
+}
+
+\begin{listing}[H]
+\protect\caption{ASR Python Script\label{lst:ASR}}
+
+
+\lstinputlisting[lastline=53]{../Code/python/ASR.py}
+\end{listing}
+
+
+\lstinputlisting[firstline=54,firstnumber=last]{../Code/python/ASR.py}
 
 
 \section{R Analysis Code}
@@ -104,5 +241,4 @@ Just file ref?
 \end{listing}
 
 
-\lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReq.R}\selectlanguage{english}%
-
+\lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReq.R}

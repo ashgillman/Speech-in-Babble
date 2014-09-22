@@ -1,4 +1,3 @@
-\selectlanguage{australian}%
 
 \chapter{Methodology}
 
@@ -8,7 +7,7 @@ The algorithms outlined throughout the following chapter were implemented
 in MATLAB. This environment was selected due to its availability and
 ease-of-use. MATLAB includes a number of tools useful in signal processing
 and statistical analysis \citep{Krauss1994,Jones1997}, and other
-authors have provided tools in the MATLAB language \citep{Hoyer2004,Brookes1997,Loizou2008},
+authors have provided tools in the MATLAB language \citep{Hoyer2004,Brookes1997,Loizou2008,Wojcicki2011},
 all of which may be implemented within this thesis. A limitation of
 the MATLAB environment in signal processing is the comparative performance
 with lower-level languages, however performance and speed were not
@@ -58,11 +57,14 @@ method was the limited dataset available.
 
 A \textbf{grouped comparison} was also conducted. This was performed
 as above, however similar algorithms were grouped into algorithm classes.
+This allowed comparison of algorithm classes, to investigate whether
+certain classes of algorithms are suitable for different purposes.
 
-The second comparison method..
-
-A limitation in this analysis is that the test conditions are not
-fair: different noise types, subtle differences in algorithms BLURGH
+A limitation in these analyses is that the test conditions are not
+fair: different noise types, subtle differences in algorithms, and
+other differences could not be completely accounted for in the analysis.
+As such, it was important to conduct further tests, where these conditions
+can be controlled such that the comparisons be completely fair.
 
 
 \subsection{Independent Investigation}
@@ -75,33 +77,92 @@ to be used to enhance speech, and a number of evaluation measures,
 of both human perceptual and machine recognition types, were to be
 used to measure the performance.
 
-The Algorithms to be used were:
-\begin{itemize}
-\item Supervised \ac{HMM} with \ac{BNMF} output distributions \citep{mohammadiha2013supervised}.
-\item Online \ac{HMM} with \ac{BNMF} output distributions \citep{mohammadiha2013supervised}.
-\end{itemize}
-The performance measures to be used are \ac{PESQ} \citep{InternationalTelecommunicationUnion2001},
-\ac{MOS}, \ac{CCR} \citep{InternationalTelecommunicationUnion1996}
-and \ac{PRR}.
+The Algorithms used in testing are given in \tabref{Algorithms}.
+
+\begin{table}
+
+
+\protect\caption{\label{tab:Algorithms}Algorithms used in testing}
+
+
+\begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}|>{\raggedright}p{0.15\textwidth}|>{\raggedright}p{0.6\textwidth}|>{\raggedright}p{0.13\textwidth}|}
+\hline 
+Name & Description & Code\tabularnewline
+\hline 
+\hline 
+Mohammadia Supervised & A supervised \ac{BNMF} algorithm proposed in \citep{mohammadiha2013supervised},
+trained on simple utterances of the \ac{SoI}. & \lstref{mohammadiaSupervised}\tabularnewline
+\hline 
+Phoneme Mohammadia Supervised & A supervised \ac{BNMF} algorithm proposed in \citep{mohammadiha2013supervised},
+trained on drawn phoneme samples of the \ac{SoI}. See \subsecref{Phoneme-Training}. & \lstref{mohammadiaSupervised}\tabularnewline
+\hline 
+Mohammadia Online & An online \ac{BNMF} algorithm proposed in \citep{mohammadiha2013supervised},
+trained on simple utterances of the \ac{SoI}. & \lstref{mohammadiaOnline}\tabularnewline
+\hline 
+Phoneme Mohammadia Online & An online \ac{BNMF} algorithm proposed in \citep{mohammadiha2013supervised},
+trained on drawn phoneme samples of the \ac{SoI}. See \subsecref{Phoneme-Training}. & \lstref{mohammadiaOnline}\tabularnewline
+\hline 
+Modified Supervised & A modified supervised \ac{BNMF} method using explicitly phoneme \ac{NMF}
+bases. See \subsecref{Phoneme-Base}. & \lstref{modifiedSupervised}\tabularnewline
+\hline 
+Modified Online & A modified online \ac{BNMF} method using explicitly phoneme \ac{NMF}
+bases. See \subsecref{Phoneme-Base}. & \lstref{modifiedOnline}\tabularnewline
+\hline 
+\acs{MMSE} & A spectral subtraction algorithm with \ac{MMSE} error estimation,
+\lstinline[language=Matlab]!ssubmmse()! in \citep{Brookes1997},
+trained on simple utterances of the \ac{SoI}. & \lstref{MMSE}\tabularnewline
+\hline 
+Phoneme \acs{MMSE} & A spectral subtraction algorithm with \ac{MMSE} error estimation,
+\lstinline[language=Matlab]!ssubmmse()! in \citep{Brookes1997},
+trained on simple drawn phoneme samples of the \ac{SoI}. & \lstref{MMSE}\tabularnewline
+\hline 
+Ideal Binary Mask & A ideal binary mask algorithm \citep{Wojcicki2011}, trained on simple
+utterances of the \ac{SoI}. & \lstref{IDBM}\tabularnewline
+\hline 
+Phoneme Ideal Binary Mask & A ideal binary mask algorithm \citep{Wojcicki2011}, trained on simple
+drawn phoneme samples of the \ac{SoI}. & \lstref{IDBM}\tabularnewline
+\hline 
+\end{tabular*}
+
+\end{table}
+
+
+The performance measures used were \ac{PESQ} \citep{InternationalTelecommunicationUnion2001},
+\ac{MOS}, \ac{CCR} \citep{InternationalTelecommunicationUnion1996},
+\ac{PRR} and segmental \ac{SNR}.
+
+
+\subsubsection*{Objective measures of quality}
 
 \ac{PESQ} was selected as a performance measure due to its extensive
 usage in literature. Using the same evaluation measure allowed a certain
 degree of comparability with others' results. The \ac{PESQ} implementation
 used was a MATLAB implementation provided by \citet{Loizou2008}.
 
+Segmental \ac{SNR} was also selected as a performance measure in
+order to incorporate a statistical measure. A MATLAB implementation
+was also supplied with \citep{Loizou2008}, so implementation was
+straightforward.
+
+
+\subsubsection*{Testing on human subjects}
+
 \ac{MOS} and \ac{CCR} were selected due to their subjective qualities.
 Although subjective measures are generally avoided, they were decided
 to be useful in the experimental context, as human perception is itself
-subjective. \ac{MOS}, like \ac{PESQ}, had been used throughout literature.
-\ac{CCR} was included also since the scale used lent itself to measuring
-enhancement, and is in many ways more similar to \ac{PESQ} due to
-the fact it measures improvement or degradation from a reference.
+subjective. \ac{MOS}, like \ac{PESQ}, had been used throughout literature,
+and so was included as a test measure for comparability. \ac{CCR}
+was included also since the scale used lent itself to measuring enhancement,
+and is in many ways more similar to \ac{PESQ} due to the fact it
+measures improvement or degradation from a reference.
 
 A MATLAB implementation of the \ac{MOS} test exists \citep{Ruzanski2009},
 however the implementation was not flexible and the script was not
 found to be suited to the required test. A new \ac{MOS} and \ac{CCR}
 script was created, in alignment with the requirements outlined by
-the \citet{InternationalTelecommunicationUnion1996}.
+the \citet{InternationalTelecommunicationUnion1996}. The resulting
+code is given in \Cref{lst:MOSScript,lst:MOS}, and has been submitted
+to MATLAB Central and GitHub to share with the community \citep{Gillman2014}.
 
 The scales used are given in \tabref{MOS-CCR-Scales}. Two \ac{MOS}
 scales were used, one measuring quality opinion, and one measuring
@@ -111,9 +172,12 @@ required effort opinion.
 \protect\caption{\label{tab:MOS-CCR-Scales}Scales used in subjective tests}
 
 
+\begin{centering}
 \subfloat[\acs{MOS} listening quality scale]{
 
-\begin{centering}
+\centering{}%
+\begin{minipage}[t]{1\columnwidth}%
+\begin{center}
 \begin{tabular}{|c|c|}
 \hline 
 Quality of the speech & Score\tabularnewline
@@ -130,15 +194,16 @@ Poor & 2\tabularnewline
 Bad & 1\tabularnewline
 \hline 
 \end{tabular}
+\par\end{center}%
+\end{minipage}}
 \par\end{centering}
 
-\selectlanguage{english}%
-\selectlanguage{english}%
-}
-
+\begin{centering}
 \subfloat[\acs{MOS} listening effort scale]{
 
 \centering{}%
+\begin{minipage}[t]{1\columnwidth}%
+\begin{center}
 \begin{tabular}{|c|c|}
 \hline 
 Effort required to understand the meanings of sentences & Score\tabularnewline
@@ -154,11 +219,18 @@ Considerable effort required & 2\tabularnewline
 \hline 
 No meaning understood with any feasible effort & 1\tabularnewline
 \hline 
-\end{tabular}}
+\end{tabular}
+\par\end{center}%
+\end{minipage}}
+\par\end{centering}
 
-\subfloat[\acs{CCR} scale]{
+\centering{}\subfloat[\acs{CCR} scale]{\begin{centering}
 
-\begin{centering}
+\par\end{centering}
+
+\centering{}%
+\begin{minipage}[t]{1\columnwidth}%
+\begin{center}
 \begin{tabular}{|c|c|}
 \hline 
 The quality of the second compared to the quality of the first & Score\tabularnewline
@@ -179,11 +251,8 @@ Worse & -2\tabularnewline
 Much Worse & -3\tabularnewline
 \hline 
 \end{tabular}
-\par\end{centering}
-
-\selectlanguage{english}%
-\selectlanguage{english}%
-}
+\par\end{center}%
+\end{minipage}}
 \end{table}
 
 
@@ -191,17 +260,97 @@ When performing the \ac{MOS} and \ac{CCR} tests, some of the recommendations
 could not be met. Sound-proof rooms were not available, as recommended
 in \citep{InternationalTelecommunicationUnion1996} Annex A, and so
 environmental, room and vehicle noise were not able to be tightly
-controlled. This restriction is important when testing the quality
-of telecommunications systems as stationary as well as non-stationary
-noise needs to be tested. However, in the current experiments, non-stationary
-noise is of interest. Therefore it is important that non-stationary
-noise be removed, such as traffic, however some stationary noise within
-the testing environment is acceptable. These operating conditions
-were achievable.
+controlled. However, an internal room, i.e., with no exterior walls,
+was available. Measurements taken on a Samson Meteor condenser microphone
+showed the environmental noise to be at an acceptable level, as seen
+in \figref{Typical-noise-level}.
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width=1\textwidth]{fig/environment}
+\par\end{centering}
+
+\protect\caption{\label{fig:Typical-noise-level}Typical noise level during tests}
+\end{figure}
+
+
+The test setup is depicted in \figref{MOS-Test-setup}. The setup
+was located in the aforementioned interior room. The test was performed
+on a laptop running the MATLAB code (\lstref{MOSScript}), and the
+test subject listened using a pair of over-ear headphones. Studio
+quality headphones were not available, so Pioneer SE-MJ711 headphones
+were used. The test procedure went as follows:
+\begin{enumerate}
+\item The subject was shown a recording of the \ac{SoI} so that they could
+identify which speaker was the intended speaker in competing speaker
+noise situations.
+\item The test procedure was described to the subject, noting that three
+separate tests were to be performed, meaning the subject would be
+asked three types of questions.
+\item With the laptop playing audio through the speakers, the test was begun
+and the test coordinator showed the subject how to use the program,
+running through approximately two iterations of the test.
+\item The subject was then given headphones and instructed to start the
+test.
+\item The test coordinator was required to remain with the subject for the
+duration of the test to answer any questions.
+\end{enumerate}
+\begin{figure}
+\begin{centering}
+\includegraphics[width=0.8\textwidth]{\string"fig/test setup\string".jpg}
+\par\end{centering}
+
+\protect\caption{\label{fig:MOS-Test-setup}MOS Test setup}
+\end{figure}
+
+
+
+\subsubsection*{\acl{ASR}}
 
 Both \ac{HTK} and Sphinx were both considered for the \ac{ASR} system
 for the \ac{PRR} results. Both offer comparable performance in recognition
-and processing performance \citep{Vertanen2006}. \ac{HTK} was 
+and processing performance \citep{Vertanen2006}. \ac{HTK} was used
+due to an availability of experience within the university. The chosen
+\ac{ASR} method was a \ac{MFCC} feature vector. The selected training
+data was the full recording set for the \ac{SoI}.
+
+The script to implement the \ac{HTK} setup, training, extraction
+and evaluation steps was based on that developed by \citet{Quill2014},
+and is given in \ref{lst:ASR}. A basic overview of the script's function
+is as follows:
+\begin{enumerate}
+\item Setup
+
+\begin{enumerate}
+\item Collate all test data into one folder, with a standard naming convention.
+\item Produce required metadata on training data, including phoneme lists,
+grammar rules, file lists, transcription summaries, etc.
+\item Initialise empty initial \acp{HMM} using \ac{HTK}'s \lstinline[language=bash]!HVITE!,
+based on a user defined configuration and prototype for the desired
+feature vectors. In this case, these were those given in \ref{lst:MFC-config}
+and \ref{lst:MFC-proto}.
+\end{enumerate}
+\item Training
+
+\begin{enumerate}
+\item Convert training data to \ac{MFCC} domain using \ac{HTK}'s \lstinline[language=bash]!HCOPY!.
+\end{enumerate}
+\end{enumerate}
+\begin{listing}[H]
+\protect\caption{\acl{MFCC} configuration file\label{lst:MFC-config}}
+
+
+\lstinputlisting[style=myBash]{../Code/python/MFC_HCompV_Config.ini}
+\end{listing}
+
+
+\begin{listing}[H]
+\protect\caption{\acl{MFCC} prototype file\label{lst:MFC-proto}}
+
+
+\lstinputlisting[style=myBash]{../Code/python/MFCProto}
+\end{listing}
+
 
 
 \section{Assessing \acl{NMF} Algorithm Training}
@@ -255,31 +404,29 @@ in \citep{Hu2006}. The speakers used in each test are outlined in
 Test Number & \ac{SoI} (sex) & Noise\tabularnewline
 \hline 
 \hline 
-1 & c3c (f) & Competing speaker: c3f (m)\tabularnewline
+1 & C3C (f) & Competing speaker: C3F (m)\tabularnewline
 \hline 
-2 & c3l (f) & Competing speaker: c31 (m)\tabularnewline
+2 & C3L (f) & Competing speaker: C31 (m)\tabularnewline
 \hline 
-3 & c3s (m) & Competing speaker: c31 (m)\tabularnewline
+3 & C3S (m) & Competing speaker: C31 (m)\tabularnewline
 \hline 
-4 & c3s (m) & Synthetic babble: c31 (m) + c34 (m) + c35 (m)\tabularnewline
+4 & C3S (m) & Synthetic babble: C31 (m) + C34 (m) + C35 (m)\tabularnewline
 \hline 
-5 & c3s (m) & Synthetic babble: c3f (m) + c3c (f) + c35(m)\tabularnewline
+5 & C3S (m) & Synthetic babble: C3F (m) + C3C (f) + C35(m)\tabularnewline
 \hline 
-6 & c3s (m) & Synthetic babble: c3f (m) + c3c (f)\tabularnewline
+6 & C3S (m) & Synthetic babble: C3F (m) + C3C (f)\tabularnewline
 \hline 
-7 & c3s (m) & Competing speaker: c3f(m)\tabularnewline
+7 & C3S (m) & Competing speaker: C3F(m)\tabularnewline
 \hline 
-8 & c3s (m) & NOIZEUS car\tabularnewline
+8 & C3S (m) & NOIZEUS car\tabularnewline
 \hline 
-9 & c3s (m) & NOIZEUS babble\tabularnewline
+9 & C3S (m) & NOIZEUS babble\tabularnewline
 \hline 
-10 & c3s (m) & NOIZEUS street\tabularnewline
+10 & C3S (m) & NOIZEUS street\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
 
-\selectlanguage{english}%
-\selectlanguage{english}%
 \end{table}
 
 
@@ -294,5 +441,55 @@ The performance of the enhancement algorithm was then analysed using
 the \ac{PESQ} score, the \ac{PESQ} score improvement compared with
 the dirty mixed signal, the segmental \ac{SNR}, and the segmental
 \ac{SNR} improvement. The code used to perform this analysis is given
-in \lstref{varyingTrainingAnalysis}, \textit{\nameref{lst:varyingTrainingAnalysis}}.\selectlanguage{english}%
+in \lstref{varyingTrainingAnalysis}, \textit{\nameref{lst:varyingTrainingAnalysis}}.
 
+
+\section{Developing a Phoneme-Dependent Variation for the \acl{BNMF} Algorithm}
+
+The performance of the \ac{BNMF} algorithm proposed by \citet{mohammadiha2013supervised}
+was to be investigated when trained under a phoneme dependent context.
+Two methods were proposed to achieve the phoneme dependence: firstly
+leaving the training algorithm unmodified, but simply supplying training
+data consisting of drawn phonemes; and secondly modifying the training
+algorithm itself to be phoneme dependent.
+
+
+\subsection{\label{sub:Phoneme-Training}Phoneme Dependent Training Data}
+
+The first method of introducing phoneme dependence simply replaced
+the typical recorded training data with a series of drawn phonemes.
+The drawn phonemes recordings were produced in \lstref{createTestData},
+\textit{\nameref{lst:createTestData}}, alongside the normal training
+data.
+
+Phonemes were drawn randomly from the speaker recordings, and the
+position in the phoneme is also randomly selected, i.e., drawn phoneme
+samples are not always the beginning of the phoneme. The code used
+to produce drawn phoneme recordings is given in \Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}.
+
+Analysis was then performed similar to as described in \subsecref{Investigating-Training-Req}.
+The \ac{SNR} was varied as before, and both the online and supervised
+algorithm variations were tested. Instead of varying the number of
+test utterances provided, the maximum number of samples per phoneme
+was varied. This number was varied between 1, 5, 10, 50, 100, 500
+and 999.
+
+
+\subsection{\label{sub:Phoneme-Base}Phoneme Dependent Base Matrix}
+
+The second method proposes to use a completely phoneme dependent spectral
+component matrix. The proposed solution was to remove the training
+stage of both the online and supervised methods, and allow the basis
+matrix to be directly specified. This was achieved by modifying the
+\lstinline[language=bash]!NMF! class supplied by \citet{mohammadiha2013supervised},
+as given in \lstref{NMF-train}. With the simplified \lstinline[language=bash]!dummyTrain!
+in the \lstinline[language=bash]!NMF! class, the drawn phoneme recording
+could be composed into a spectrogram and was then directly applied
+to the basis matrix. The number of bases was specified as the number
+of columns in this spectrogram.
+
+In order to verify that the spectral component matrix, in the code
+\lstinline[language=Matlab]!Et!, was not further modified a simple
+test plotting the spectral component matrix of the supplied test data,
+and the spectral component matrix \lstinline[language=Matlab]!speech_nmf.Et!
+was conducted.
