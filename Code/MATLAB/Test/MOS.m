@@ -154,26 +154,37 @@ try
                 > 0.01
                 warning('More than 1% clipping!');
             end
-            disp('Rate the improvement from the unenhanced to the enhanced sound.');
+            disp('Rate the improvement from the first to the second sound.');
             dirtyAP = audioplayer(dirtyWav(startPos:end),TP.FS);
+            
+            % randomise play order
+            if randi(2,1) == 1
+                reverse = false;
+                AP1 = dirtyAP; AP2 = enhanAP;
+            else
+                reverse = true;
+                AP1 = enhanAP; AP2 = dirtyAP;
+            end
+            
             CCR = NaN;
             while ~any(CCR == -3:3)
-                play(dirtyAP);
-                fprintf('Playing the unenhanced waveform (Enter to continue)...\n')
+                play(AP1);
+                fprintf('Playing the first sound (Enter to continue)...\n')
                 pause;
-                stop(dirtyAP);
-                play(enhanAP);
-                fprintf('Playing the enhanced waveform...\n');
+                stop(AP1);
+                play(AP2);
+                fprintf('Playing the second sound...\n');
                 fprintf('Rate the quality of the second compared to the quality of the first\n')
                 for i=3:-1:-3
                     fprintf('%2i: %s\n',i,CCRscale{4-i});
                 end
                 CCR = str2double(input('>','s'));
-                if ~any(CCR == -3:3)
-                    stop(enhanAP);
+                if reverse % if play order reversed, CCR = -CCR
+                    CCR = -CCR;
                 end
             end
             result.CCR = CCR;
+            disp(CCR);
         else
             result.CCR = '-';
         end
