@@ -58,24 +58,18 @@ coefficients relating to the \ac{LM} fitted lines in \figref{Group-PESQ-PRR-LM}.
 
 
 Additionally, a Pearson's correlation table was formed over a number
-of the evaluation measures, depicted in \figref{litResCorr}. In this
-figure, the statistical evaluation methods are listed in blue, the
-\ac{HR} methods are listed in red, and the \ac{MR} methods are listed
-in green on the axes. The sparsity in this figure is due to the limited
-amount of pre-existing data.
+of the evaluation measures, depicted in the correlogram in \figref{litResCorr}.
+The correlogram shows the Pearson correlation with confidence intervals
+in the lower panels and a scatterplot in the upper panels. The sparsity
+in this figure is due to the limited amount of pre-existing data.
 
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[width=1\textwidth]{fig/R/cor/litResCorr}
+\includegraphics[width=1\textwidth]{fig/R/cor/litResCorrgram}
 \par\end{centering}
 
 \protect\caption{\label{fig:litResCorr}Pearson's correlation over some of the evaluation
 measures assessed in existing data}
-
-
-Highlighted in \textcolor{blue}{blue} are the statistical measures,
-\textcolor{red}{red} the human perceptual measures and \textcolor{dkgreen}{green}
-the machine recognition measures.
 \end{figure}
 
 
@@ -88,16 +82,47 @@ The algorithms listed in \nameref{tab:Algorithms} were implemented,
 as were the the evaluation measured outline in \subsecref{Independent-Investigation-Meth}.
 A correlogram of the results was formed in \figref{my-Corr} to give
 an overview of the results and how measures correlated with one another.
-The results of the \ac{PESQ} evaluation are given in \Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp}.
-
-These results were also used to assess the performance of the proposed
-changes to the enhancement algorithms outlined in \secref{Develop-Phoneme-Dependent}.
+In this figure:
+\begin{itemize}
+\item the utterances and phonemes rows/columns correspond to the training
+given to the enhancement algorithm;
+\item ``Imp'' refers to improvement comparatively with the signal before
+enhancement, i.e., pesqImp refers to the \ac{PESQ} score after enhancement
+minus the \ac{PESQ} score before enhancement;
+\item MOSle refers to the \ac{MOS} listening effort scale \citep{InternationalTelecommunicationUnion1996};
+\item CMOS refers to the comparative \ac{MOS};
+\item PRRcorr refers to the \ac{PRR} measured as the percentage correct;
+and
+\item PRRacc refers the the \ac{PRR} measures as the accuracy, defined
+as the number of correct phonemes minus the number of insersions divided
+by the number of phonemes.
+\end{itemize}
+The results of the \ac{PESQ} evaluation are given in \Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp}.
+These plots also show box plots of the five-point summaries of the
+results. These results were used in investigating the correlation
+between \ac{HR} and \ac{MR} and also to assess the performance of
+the proposed changes to the enhancement algorithms outlined in \secref{Develop-Phoneme-Dependent}.
 The changes proposed in \subsecref{Phoneme-Training} are implemented
 in the algorithms \lstinline[breaklines=true]!phonemeIDBM!, \lstinline[breaklines=true]!phonemeMMSE!,
-\lstinline[breaklines=true]!phonemeMohammadiaOnline! and \inputencoding{latin1}{\linebreak}\inputencoding{latin9}\lstinline[breaklines=true]!phonemeMohammadiaSupervised!.
+\lstinline[breaklines=true]!phonemeMohammadiaOnline! and \lstinline[breaklines=true]!phonemeMohammadiaSupervised!.
 The changes proposed in \subsecref{Phoneme-Base} are implemented
 in the algorithms \lstinline[breaklines=true]!phonemeModifiedOnline!
 and \lstinline[breaklines=true]!phonemeModifiedSupervised!.
+
+
+\subsubsection*{Observations}
+
+In performing these tests a number of observations were also made.
+
+It was noted that the ideal binary mask algorithms often caused the
+the signals to be reduced to near silence. Especially during the \ac{MOS}
+tests, where it was noted that most participants complained that occasionally
+a signal would not play. Upon further investigation it was determined
+the signal was in fact playing, and that the signal consisted of silence.
+Subjects were instructed to continue answering the questions as they
+were worded, and thus these signals were given the minimum scores.
+This is reflected in \Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS},
+where the ideal binary mask algorithms scored poorly.
 
 \begin{figure}[h]
 \noindent \begin{centering}

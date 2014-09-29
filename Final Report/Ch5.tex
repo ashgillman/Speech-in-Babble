@@ -14,19 +14,22 @@ at a basic level, the correlation between \ac{HR} and \ac{MR}.
 
 Results from conducting a direct comparison between \ac{PESQ} and
 \ac{PRR} results were given in \figref{Direct-PESQ-PRR}. These results
-show a general, positive correlation between \ac{PESQ} and \ac{PRR};
-and, by extension, between \ac{HR} and \ac{MR}. The level of correlation
-appears to be relatively low, however comparison with \figref{litResCorr}
-indicates the such levels of correlation are expected. Indeed, similar
-correlations are observed between \ac{PESQ} and \ac{MOS} results,
-which are both \ac{HR} measures.
+show a general, positive correlation between \ac{PESQ} improvement
+and \ac{PRR} improvement, and by extension between \ac{HR} and \ac{MR}.
+The level of correlation appears to be relatively low, however comparison
+with \figref{litResCorr} indicates the such levels of correlation
+are expected. Indeed, similar correlations are observed between \ac{PESQ}
+and \ac{MOS} results, which are both \ac{HR} measures.
+
+\figref{litResCorr} Also indicates a very high correlation between
+the raw \ac{PESQ} result and \ac{PRR}.
 
 A number of further observations were drawn from \figref{Direct-PESQ-PRR},
 and are highlighted in \Cref{fig:direct-klt-mband,fig:direct-klt-pklt,fig:direct-pklt-logmmse-spu-4,fig:direct-highcorr}.
 
-Despite the acceptable correlation between \ac{PESQ} and \ac{PRR}
-observed, there is still evidence to show that algorithms' performances
-vary depending on the performance measure used. For example, highlighted
+Despite the high correlation between \ac{PESQ} and \ac{PRR} observed,
+there is still evidence to show that algorithms' performances vary
+depending on the performance measure used. For example, highlighted
 in \figref{direct-klt-mband} are two algorithms, the \ac{KLT} method
 and the \ac{MBAND} method, that exhibited similar performances when
 evaluated by \ac{PRR}, a machine measure. However, when evaluated
@@ -55,9 +58,9 @@ points laid higher on the y-axis, whereas the \ac{pKLT} results exhibited
 better performance for a machine recogniser, as the points laid higher
 on the x-axis.
 
-\begin{figure}[h]
+\begin{figure}[p]
 \noindent \begin{centering}
-\includegraphics[width=0.8\textwidth]{fig/R/dir/lit/KLT-pKLT/HumanMachineAllLM}\includegraphics[width=0.2\textwidth]{fig/R/dir/lit/HumanMachineAllLegend}
+\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{fig/R/dir/lit/KLT-pKLT/HumanMachineAllLM}\includegraphics[width=0.2\textwidth,height=0.25\textheight,keepaspectratio]{fig/R/dir/lit/HumanMachineAllLegend}
 \par\end{centering}
 
 \protect\caption{\label{fig:direct-klt-pklt}Direct comparison of \acs{PESQ} vs. \acs{PRR}
@@ -80,9 +83,9 @@ in the process of enhancement that the \ac{ASR} algorithm was immune
 to, however would be distracting to a human and therefore performed
 badly under the \ac{PESQ} evaluation.
 
-\begin{figure}[h]
+\begin{figure}[p]
 \noindent \begin{centering}
-\includegraphics[width=0.8\textwidth]{fig/R/dir/lit/pKLT-logMMSE-SPU-4/HumanMachineAllLM}\includegraphics[width=0.2\textwidth]{fig/R/dir/lit/HumanMachineAllLegend}
+\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{fig/R/dir/lit/pKLT-logMMSE-SPU-4/HumanMachineAllLM}
 \par\end{centering}
 
 \protect\caption{\label{fig:direct-pklt-logmmse-spu-4}Direct comparison of \acs{PESQ}
@@ -99,9 +102,9 @@ suggests such a response is the ideal case, and that there exists
 algorithms which are capable of performing well for both human and
 machine recognisers.
 
-\begin{figure}[h]
+\begin{figure}[p]
 \noindent \begin{centering}
-\includegraphics[width=0.8\textwidth]{fig/R/dir/lit/MMSE-SPU-STSA-wcosh-STSA-weuclid-logMMSE-SPU-3/HumanMachineAllLM}\includegraphics[width=0.2\textwidth]{fig/R/dir/lit/HumanMachineAllLegend}
+\includegraphics[width=0.8\textwidth,height=0.25\textheight,keepaspectratio]{fig/R/dir/lit/MMSE-SPU-STSA-wcosh-STSA-weuclid-logMMSE-SPU-3/HumanMachineAllLM}
 \par\end{centering}
 
 \protect\caption{\label{fig:direct-highcorr}\acs{STSA-wcosh}, \acs{STSA-weuclid}
@@ -130,9 +133,56 @@ be verified both ways, as one does not imply the other.}
 \subsection{Independent Investigation into \acl{HR} and \acl{MR}}
 
 An independent investigation was conducted in which a number of enhancement
-algorithms were implemented. The enhanced waveform were then analysed
+algorithms were implemented. The enhanced waveforms were then analysed
 using a number of enhancement methods, covering both \ac{HR} and
-\ac{MR}.
+\ac{MR}. The goal was to determine the correlation between evaluation
+measures.
+
+A summary of the correlation between all measurements made is given
+in \figref{my-Corr}. A number of interesting observations were drawn
+from this summary to be further investigated.
+
+Firstly, it was noted that in \figref{my-Corr}, the correlation between
+\ac{PESQ} and the various \ac{MOS} measures was low. This was a
+surprising results as it has generally been determined in literature
+that the two correlate well \cite{Kitawaki2007,Rix2003,Rix2001},
+albeit with some exceptions \cite{Liu2006}. It was also noted that
+the ideal binary mask algorithms performed very poorly overall on
+the subjective scales in \Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}.
+Furthermore, ideal binary mask algorithms had a very high variation
+in \ac{PESQ} performance in \figref{my-PESQ}. Therefore, it was
+suspected these results may be adversely affecting the overall correlation
+between \ac{PESQ} and \ac{MOS}.
+
+It was found that when the ideal binary mask algorithm data was omitted
+the correlation between the \ac{PESQ} and \ac{MOS} increased, as
+demonstrated in \figref{my-pesq-mos}. This indicated there were specific
+occurrences for which the relationship between \ac{PESQ} and \ac{MOS}
+demonstrated in literature do not hold.
+
+\begin{figure}[h]
+
+
+\subfloat[With the ideal binary mask]{
+
+\includegraphics[width=0.4\textwidth]{fig/R/pair/my/pesq-mos}
+
+}\subfloat[Without the ideal binary mask]{
+
+\includegraphics[width=0.4\textwidth]{fig/R/pair/my/pesq-mos_no-IDBM}
+
+}\includegraphics[width=0.2\textwidth]{fig/R/pair/my/pesq-mos_leg}
+
+\protect\caption{\label{fig:my-pesq-mos}Scatterplot of \acs{PESQ} vs. \ac{MOS} results}
+\end{figure}
+
+
+The \ac{MOS} evaluation measures had a strong correlation with one-another
+in \figref{my-Corr}, all at approximately 90\%. This was expected
+between similar measures. However, it was noted that the same was
+not true for the \ac{PRR} measures, where the correlation between
+the correctness and the accuracy was found to be in general significantly
+negative.
 
 
 \section{Assessing \acl{NMF} Algorithm Training}

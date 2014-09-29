@@ -41,10 +41,10 @@ dev.off()
 # correlogram where there is improvement (omit terrible algorithms)
 d.imp <- d[(d$pesqImp > 0) | (d$CMOS > 0) | (d$PRRaccImp > 0) |
              (d$PRRcorrImp > 0),]
-corrgram(d.imp[corrField], upper.panel=panel.ptsAlpha(a=0.25),
+corrgram(d.imp[corrField], upper.panel=panel.ptsAlpha,
          lower.panel=panel.shadeConf)
 pdf(paste0(figdir, "impCorr.pdf"), width=20, height=20)
-corrgram(d.imp[corrField], upper.panel=panel.ptsAlpha(a=0.25),
+corrgram(d.imp[corrField], upper.panel=panel.ptsAlpha,
          lower.panel=panel.shadeConf)
 dev.off()
 
@@ -156,3 +156,47 @@ myBoxPlot(d, "MOSle", "MOS Listening Effort", fig)
 myBoxPlot(d, "CMOS", "Comparative MOS", fig)
 myBoxPlot(d, "PRRcorr", "ASR Phoneme Correctness", fig, T)
 myBoxPlot(d, "PRRacc", "ASR Phoneme Accuracy", fig, T)
+
+##### Some further scatterplots where interesting #####
+saveP <- function(dir, name, p, w, h) {
+  dir.create(dir, showWarnings=F, recursive=T)
+  pdf(paste0(dir, "/", name, ".pdf"), width=w, height=h)
+  print(p)
+  dev.off()
+}
+saveLeg <- function(dir, name, p, w, h) {
+  dir.create(dir, showWarnings=F, recursive=T)
+  pdf(paste0(dir, "/", name, ".pdf"), width=w, height=h)
+  grid.draw(p)
+  dev.off()
+}
+
+# PESQ vs. MOS, no IDBM
+corVal1 <- cor(d[, c("pesq", "MOS")], use="complete.obs")[2]
+corVal2 <- cor(d[!grepl("IDBM", d$algorithm), c("pesq", "MOS")],
+               use="complete.obs")[2]
+p1 <- ggplot(d, aes(x=MOS, y=pesq, color=factor(algorithm))) +
+  geom_point() +
+  geom_abline(aes(color="Expected (PESQ=MOS)"), intercept=0, slope=1) +
+  scale_shape_discrete() +
+  scale_color_manual(name="Algorithm", values=c("black", rainbow(10))) +
+  ggtitle(paste0("With IDBM (cor = ", as.character(round(corVal1, 3)), ")")) +
+  theme_bw() + ylab("PESQ")
+p2 <- ggplot(d[!grepl("IDBM", d$algorithm),], aes(x=MOS, y=pesq,
+                                                  color=factor(algorithm))) +
+  geom_point() +
+  geom_abline(aes(color="Expected (PESQ=MOS)"), intercept=0, slope=1) +
+  scale_shape_discrete() +
+  scale_color_manual(name="Algorithm", values=c("black", rainbow(10))) +
+  ggtitle(paste0("Without IDBM (cor = ", as.character(round(corVal2, 3)), ")")) +
+  theme_bw() + ylab("PESQ")
+print(p1)
+print(p2)
+#saveLeg("fig/pair/my", "pesq-mos_leg",  g_legend(p1), w=2.5, h=3)
+#p1 <- p1 + theme(legend.position="none")
+#p2 <- p2 + theme(legend.position="none")
+saveP("fig/pair/my", "pesq-mos", p1, w=7, h=6)
+saveP("fig/pair/my", "pesq-mos_no-IDBM", p2, w=7, h=6)
+# look at cor after and before
+cor(d[!grepl("IDBM", d$algorithm), c("pesq", "MOS")], use="complete.obs")
+cor(d[, c("pesq", "MOS")], use="complete.obs")

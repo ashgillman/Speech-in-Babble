@@ -1123,6 +1123,52 @@ phonemeModifiedSupervised
 .
 \end_layout
 
+\begin_layout Subsubsection*
+Observations
+\end_layout
+
+\begin_layout Standard
+In performing these tests a number of observations were also made.
+\end_layout
+
+\begin_layout Standard
+It was noted that the ideal binary mask algorithms often caused the the
+ signals to be reduced to near silence.
+ Especially during the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ tests, where it was noted that most participants complained that occasionally
+ a signal would not play.
+ Upon further investigation it was determined the signal was in fact playing,
+ and that the signal consisted of silence.
+ Subjects were instructed to continue answering the questions as they were
+ worded, and thus these signals were given the minimum scores.
+ This is reflected in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
+\end_layout
+
+\end_inset
+
+, where the ideal binary mask algorithms scored poorly.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 wide false

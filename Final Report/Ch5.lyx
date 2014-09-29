@@ -489,6 +489,7 @@ ac{MBAND}
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -710,6 +711,7 @@ ac{pKLT}
 
 \begin_layout Standard
 \begin_inset Float figure
+placement p
 wide false
 sideways false
 status open
@@ -720,6 +722,8 @@ status open
 \begin_inset Graphics
 	filename fig/R/dir/lit/KLT-pKLT/HumanMachineAllLM.pdf
 	width 80text%
+	height 25theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -727,6 +731,8 @@ status open
 \begin_inset Graphics
 	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
 	width 20text%
+	height 25theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -963,6 +969,7 @@ ac{PESQ}
 
 \begin_layout Standard
 \begin_inset Float figure
+placement p
 wide false
 sideways false
 status open
@@ -973,13 +980,8 @@ status open
 \begin_inset Graphics
 	filename fig/R/dir/lit/pKLT-logMMSE-SPU-4/HumanMachineAllLM.pdf
 	width 80text%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
-	width 20text%
+	height 25theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -1178,6 +1180,7 @@ ac{PRR}
 
 \begin_layout Standard
 \begin_inset Float figure
+placement p
 wide false
 sideways false
 status open
@@ -1188,13 +1191,8 @@ status open
 \begin_inset Graphics
 	filename fig/R/dir/lit/MMSE-SPU-STSA-wcosh-STSA-weuclid-logMMSE-SPU-3/HumanMachineAllLM.pdf
 	width 80text%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
-	width 20text%
+	height 25theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -1471,6 +1469,327 @@ Put into lit rev
 \end_inset
 
 .
+ It was also noted that the ideal binary mask algorithms performed very
+ poorly overall on the subjective scales in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
+\end_layout
+
+\end_inset
+
+.
+ Furthermore, ideal binary mask algorithms had a very high variation in
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ performance in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-PESQ"
+
+\end_inset
+
+.
+ Therefore, it was suspected these results may be adversely affecting the
+ overall correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It was found that when the ideal binary mask algorithm data was omitted
+ the correlation between the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ increased, as demonstrated in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesq-mos"
+
+\end_inset
+
+.
+ This indicated there were specific occurrences for which the relationship
+ between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ demonstrated in literature do not hold.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Should probably do cor to y=x
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesq-mos.pdf
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+With the ideal binary mask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesq-mos_no-IDBM.pdf
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Without the ideal binary mask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/pair/my/pesq-mos_leg.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesq-mos"
+
+\end_inset
+
+Scatterplot of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ evaluation measures had a strong correlation with one-another in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+, all at approximately 90%.
+ This was expected between similar measures.
+ However, it was noted that the same was not true for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measures, where the correlation between the correctness and the accuracy
+ was found to be in general significantly negative.
 \end_layout
 
 \begin_layout Section

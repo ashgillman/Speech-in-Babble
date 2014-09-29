@@ -1,12 +1,12 @@
 
 File:  AGillman Thesis.tex
 Encoding: iso-8859-1
-Sum count: 7852
-Words in text: 7180
-Words in headers: 202
-Words outside text (captions, etc.): 379
-Number of headers: 65
-Number of floats/tables/figures: 39
+Sum count: 8521
+Words in text: 7835
+Words in headers: 210
+Words outside text (captions, etc.): 385
+Number of headers: 68
+Number of floats/tables/figures: 40
 Number of math inlines: 75
 Number of math displayed: 16
 Subcounts:
@@ -18,8 +18,9 @@ Subcounts:
   408+4+0 (3/0/0/0) Chapter: Introduction
   2909+61+38 (20/8/58/14) Chapter: \label{chap:Literature-Review}Literature Review
   2209+48+48 (16/5/8/2) Chapter: Methodology
-  622+33+177 (9/22/2/0) Chapter: Results
-  780+27+35 (8/4/0/0) Chapter: Discussion
+  848+34+177 (10/22/2/0) Chapter: Results
+  1028+27+41 (8/5/0/0) Chapter: Discussion
+  181+7+0 (2/0/0/0) Chapter: Conclusions
   3+5+0 (2/0/0/0) Chapter: \label{chap:Apx-Data}Data
   33+9+81 (4/0/0/0) Chapter: Code
 
