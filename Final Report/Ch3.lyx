@@ -119,10 +119,10 @@ key "Hoyer2004,Brookes1997,Loizou2008,Wojcicki2011"
 
 \end_inset
 
-, all of which may be implemented within this thesis.
+.
  A limitation of the MATLAB environment in signal processing is the comparative
  performance with lower-level languages, however performance and speed were
- not a primary focus in this thesis.
+ not a primary focus in this thesis, so this was deemed acceptable.
 \end_layout
 
 \begin_layout Standard
@@ -131,7 +131,7 @@ Data analysis was conducted using R.
 
 \begin_layout Standard
 Simulations were run on a MacBook Pro 64-bit system with an Intel Core i7
- 2.3GHz 4- core processor with 16GB memory, running OSX 10.9.2, MATLAB R2013a
+ 2.3GHz 4-core processor with 16GB memory, running OSX 10.9.2, MATLAB R2013a
  and R version 3.1.0 (2014-04-10).
 \end_layout
 
@@ -383,6 +383,12 @@ A limitation in these analyses is that the test conditions are not fair:
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Independent-Investigation-Meth"
+
+\end_inset
+
 Independent Investigation
 \end_layout
 
@@ -1319,7 +1325,7 @@ ac{SNR}
 \end_layout
 
 \begin_layout Subsubsection*
-Objective measures of quality
+Objective Measures of Quality
 \end_layout
 
 \begin_layout Standard
@@ -1388,7 +1394,7 @@ key "Loizou2008"
 \end_layout
 
 \begin_layout Subsubsection*
-Testing on human subjects
+Testing on Human Subjects
 \end_layout
 
 \begin_layout Standard
@@ -3996,6 +4002,12 @@ status open
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Develop-Phoneme-Dependent"
+
+\end_inset
+
 Developing a Phoneme-Dependent Variation for the 
 \begin_inset ERT
 status open

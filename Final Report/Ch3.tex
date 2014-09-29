@@ -7,16 +7,16 @@ The algorithms outlined throughout the following chapter were implemented
 in MATLAB. This environment was selected due to its availability and
 ease-of-use. MATLAB includes a number of tools useful in signal processing
 and statistical analysis \citep{Krauss1994,Jones1997}, and other
-authors have provided tools in the MATLAB language \citep{Hoyer2004,Brookes1997,Loizou2008,Wojcicki2011},
-all of which may be implemented within this thesis. A limitation of
-the MATLAB environment in signal processing is the comparative performance
-with lower-level languages, however performance and speed were not
-a primary focus in this thesis.
+authors have provided tools in the MATLAB language \citep{Hoyer2004,Brookes1997,Loizou2008,Wojcicki2011}.
+A limitation of the MATLAB environment in signal processing is the
+comparative performance with lower-level languages, however performance
+and speed were not a primary focus in this thesis, so this was deemed
+acceptable.
 
 Data analysis was conducted using R.
 
 Simulations were run on a MacBook Pro 64-bit system with an Intel
-Core i7 2.3GHz 4- core processor with 16GB memory, running OSX 10.9.2,
+Core i7 2.3GHz 4-core processor with 16GB memory, running OSX 10.9.2,
 MATLAB R2013a and R version 3.1.0 (2014-04-10).
 
 Test data to was drawn from the \ac{WSJ} corpus \citep{Robinson1995}.
@@ -67,7 +67,7 @@ As such, it was important to conduct further tests, where these conditions
 can be controlled such that the comparisons be completely fair.
 
 
-\subsection{Independent Investigation}
+\subsection{\label{sub:Independent-Investigation-Meth}Independent Investigation}
 
 Due to the lack of existing data on which conclusions can be drawn
 on the human vs. machine success of various speech enhancement algorithms,
@@ -132,7 +132,7 @@ The performance measures used were \ac{PESQ} \citep{InternationalTelecommunicati
 \ac{PRR} and segmental \ac{SNR}.
 
 
-\subsubsection*{Objective measures of quality}
+\subsubsection*{Objective Measures of Quality}
 
 \ac{PESQ} was selected as a performance measure due to its extensive
 usage in literature. Using the same evaluation measure allowed a certain
@@ -145,7 +145,7 @@ was also supplied with \citep{Loizou2008}, so implementation was
 straightforward.
 
 
-\subsubsection*{Testing on human subjects}
+\subsubsection*{Testing on Human Subjects}
 
 \ac{MOS} and \ac{CCR} were selected due to their subjective qualities.
 Although subjective measures are generally avoided, they were decided
@@ -267,11 +267,13 @@ in \figref{Typical-noise-level}.
 
 \begin{figure}
 \begin{centering}
-\includegraphics[width=1\textwidth]{fig/environment}
+\includegraphics[width=0.8\textwidth]{fig/environment}
 \par\end{centering}
 
 \protect\caption{\label{fig:Typical-noise-level}Typical noise level during tests}
 \end{figure}
+
+
 
 
 The test setup is depicted in \figref{MOS-Test-setup}. The setup
@@ -317,7 +319,10 @@ data was the full recording set for the \ac{SoI}.
 The script to implement the \ac{HTK} setup, training, extraction
 and evaluation steps was based on that developed by \citet{Quill2014},
 and is given in \ref{lst:ASR}. A basic overview of the script's function
-is as follows:
+is given in \algref{ASR}. The parameters used in performing the \ac{MFCC}
+domain \ac{ASR} are given in \Cref{lst:MFC-config,lst:MFC-proto}.
+
+\begin{algorithm}
 \begin{enumerate}
 \item Setup
 
@@ -327,20 +332,44 @@ is as follows:
 grammar rules, file lists, transcription summaries, etc.
 \item Initialise empty initial \acp{HMM} using \ac{HTK}'s \lstinline[language=bash]!HVITE!,
 based on a user defined configuration and prototype for the desired
-feature vectors. In this case, these were those given in \ref{lst:MFC-config}
-and \ref{lst:MFC-proto}.
+feature vectors. In this case, these were those given in \Cref{lst:MFC-config,lst:MFC-proto}.
 \end{enumerate}
 \item Training
 
 \begin{enumerate}
 \item Convert training data to \ac{MFCC} domain using \ac{HTK}'s \lstinline[language=bash]!HCOPY!.
+\item The \ac{HMM} model is then re-estimated twice, using \ac{HTK}'s
+\lstinline[language=bash]!HEREST!.
+\item The \ac{HMM} model is then re-estimated a further three times, this
+time incorporating a short pause model but still using \lstinline[language=bash]!HEREST!.
+\item The phoneme transcriptions are realigned using the current model and
+\ac{HTK}'s \lstinline[language=bash]!HVITE!. The \ac{HMM} model
+is then re-estimated yet another three times still using \lstinline[language=bash]!HEREST!.
+\end{enumerate}
+\item Extraction
+
+\begin{enumerate}
+\item Convert test data to \ac{MFCC} domain using \ac{HTK}'s \lstinline[language=bash]!HCOPY!.
+\item Perform recognition and generate an estimated phoneme transcription
+using \ac{HTK}'s \lstinline[language=bash]!HVITE!.
+\end{enumerate}
+\item Evaluation
+
+\begin{enumerate}
+\item Use \ac{HTK}'s \lstinline[language=bash]!HRESULTS! to compare the
+estimated phoneme transcription with the original phoneme transcription.
 \end{enumerate}
 \end{enumerate}
+\protect\caption{\label{alg:ASR}\foreignlanguage{australian}{ \acs{ASR} with \acs{HTK}}\selectlanguage{australian}%
+}
+\end{algorithm}
+
+
 \begin{listing}[H]
 \protect\caption{\acl{MFCC} configuration file\label{lst:MFC-config}}
 
 
-\lstinputlisting[style=myBash]{../Code/python/MFC_HCompV_Config.ini}
+\lstinputlisting[nolol=true,style=myBash]{../Code/python/MFC_HCompV_Config.ini}
 \end{listing}
 
 
@@ -348,7 +377,7 @@ and \ref{lst:MFC-proto}.
 \protect\caption{\acl{MFCC} prototype file\label{lst:MFC-proto}}
 
 
-\lstinputlisting[style=myBash]{../Code/python/MFCProto}
+\lstinputlisting[nolol=true,style=myBash]{../Code/python/MFCProto}
 \end{listing}
 
 
@@ -444,28 +473,44 @@ the dirty mixed signal, the segmental \ac{SNR}, and the segmental
 in \lstref{varyingTrainingAnalysis}, \textit{\nameref{lst:varyingTrainingAnalysis}}.
 
 
-\section{Developing a Phoneme-Dependent Variation for the \acl{BNMF} Algorithm}
+\section{\label{sec:Develop-Phoneme-Dependent}Developing a Phoneme-Dependent
+Variation for the \acl{BNMF} Algorithm}
 
 The performance of the \ac{BNMF} algorithm proposed by \citet{mohammadiha2013supervised}
 was to be investigated when trained under a phoneme dependent context.
 Two methods were proposed to achieve the phoneme dependence: firstly
 leaving the training algorithm unmodified, but simply supplying training
-data consisting of drawn phonemes; and secondly modifying the training
-algorithm itself to be phoneme dependent.
+data consisting of drawn phonemes, \textbf{\inputencoding{latin1}{\nameref{sub:Phoneme-Training}}\inputencoding{latin9}};
+and secondly modifying the training algorithm itself to be phoneme
+dependent, \textbf{\inputencoding{latin1}{\nameref{sub:Phoneme-Base}}\inputencoding{latin9}}.
 
 
 \subsection{\label{sub:Phoneme-Training}Phoneme Dependent Training Data}
 
 The first method of introducing phoneme dependence simply replaced
 the typical recorded training data with a series of drawn phonemes.
+
+
+\subsubsection*{Theory}
+
+Typically, a \ac{NMF} algorithm is trained using utterances, either
+from the \ac{SoI} or from a range of speakers, depending on the application.
+However, it was noted that in a typical utterance is not an efficient
+method of transferring the information relating to a voice. The proposed
+method here intended to increase the information density, such that
+the supplied training may be reduced whilst still containing enough
+information to develop an adequate model. 
+
+
+\subsubsection*{Implementation}
+
 The drawn phonemes recordings were produced in \lstref{createTestData},
 \textit{\nameref{lst:createTestData}}, alongside the normal training
-data.
+data. Phonemes were drawn randomly from the speaker recordings, and
+the position in the phoneme is also randomly selected, i.e., drawn
+phoneme samples are not always the beginning of the phoneme. The code
+used to produce drawn phoneme recordings is given in \Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}.
 
-Phonemes were drawn randomly from the speaker recordings, and the
-position in the phoneme is also randomly selected, i.e., drawn phoneme
-samples are not always the beginning of the phoneme. The code used
-to produce drawn phoneme recordings is given in \Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}.
 
 Analysis was then performed similar to as described in \subsecref{Investigating-Training-Req}.
 The \ac{SNR} was varied as before, and both the online and supervised
@@ -477,12 +522,54 @@ and 999.
 
 \subsection{\label{sub:Phoneme-Base}Phoneme Dependent Base Matrix}
 
-The second method proposes to use a completely phoneme dependent spectral
-component matrix. The proposed solution was to remove the training
-stage of both the online and supervised methods, and allow the basis
-matrix to be directly specified. This was achieved by modifying the
-\lstinline[language=bash]!NMF! class supplied by \citet{mohammadiha2013supervised},
-as given in \lstref{NMF-train}. With the simplified \lstinline[language=bash]!dummyTrain!
+The second method proposed to use a completely phoneme dependent spectral
+component matrix.
+
+
+\subsubsection*{Theory}
+
+In order to improve the previous algorithm, adaptations were proposed
+to develop a phoneme-dependent method. It was assumed that speech
+can be expressed as a sequence of phonemes, and that phonemes are
+constant throughout their duration, such that a single speaker speech
+signal may be expressed as:
+
+\[
+S=\left\{ p\left(1\right),p\left(2\right),p\left(3\right),...,p\left(T\right)\right\} 
+\]
+
+
+\nomenclature{$S$}{\ac{STFT} of a signal or recording of a single speaker.}\nomenclature{$p$}{The Fourier transform of a short recording of a single phoneme.}
+
+where $S$ is the x\ac{STFT} of length $T$ and $p\left(t\right)$
+is a single-frame \ac{STFT} of a single phoneme. Speech within babble
+noise is of the form:
+
+\[
+X\left(t\right)=S_{1}\left(t\right)+S_{2}\left(t\right)+...+S_{N}\left(t\right)
+\]
+
+
+where $S_{1}\left(t\right)$ is the \ac{SoI} and other speakers $S\left(t\right)$
+are competing speakers. It was assumed that, under this representation,
+if $X$ were factorised using \ac{NMF} and the spectral component
+matrix consisted of the phonemes present, that the activation matrix
+would be a sparse matrix indicating which phonemes were present at
+various times. \citet{Raj2011} demonstrated an increased separation
+of speech from music when using phoneme-dependent separation, however
+the algorithm used was more complex, involving online \ac{ASR} systems
+to segregate phonemes before \ac{NMF} could occur during enhancement.
+Here the segregation of phonemes is left as part of the \ac{NMF}
+algorithm.
+
+
+\subsubsection*{Implementation}
+
+The proposed solution was to remove the training stage of both the
+online and supervised methods, and allow the basis matrix to be directly
+specified. This was achieved by modifying the \lstinline[language=bash]!NMF!
+class supplied by \citet{mohammadiha2013supervised}, as given in
+\lstref{NMF-train}. With the simplified \lstinline[language=bash]!dummyTrain!
 in the \lstinline[language=bash]!NMF! class, the drawn phoneme recording
 could be composed into a spectrogram and was then directly applied
 to the basis matrix. The number of bases was specified as the number

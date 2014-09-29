@@ -120,7 +120,7 @@ X_{Babble}=\sum X_{Speakers}\label{eq:babble-sum-speakers}
 \end{equation}
 
 
-\nomenclature{$X$}{Short-time Fourier transform of a signal or recording, either with or without noise present. Rows represent frequency bins and columns represent time frames.}
+\nomenclature{$X$}{\ac{STFT} of a signal or recording, either with or without noise present. Rows represent frequency bins and columns represent time frames.}
 
 (\ref{eq:babble-sum-speakers}) follows directly from the definition
 of babble. The number of speaker signals used may vary, but to align
@@ -570,7 +570,7 @@ performance is likely to be low on a noisy signal. However, the algorithm
 did show that \ac{NMF} performance is be improved by forming bases
 on phonemes. A novel alternative model was recently proposed by \citet{Mohammadiha2013a},
 who used \acp{HMM} to form the basis of the \ac{NMF} algorithm separating
-speech from noise , and thus used a temporally probabilistic method
+speech from noise, and thus used a temporally probabilistic method
 to form and estimate of clean speech. By doing so, the algorithm accounts
 for an extra feature outlined in \figref{Differentiating-Speech-Babble},
 being the transitional probability.

@@ -41,3 +41,12 @@ dir.create(file.path(figdir), showWarnings = FALSE)
 pdf(paste(figdir,"litResCorr.pdf",sep=""),width=6,height=4)
 print(p)
 dev.off()
+
+d <- read.csv('litresults.csv', header=T);
+source("myCorrgramPanels.R")
+fields <- c("SDR", "SIR", "SAR", "SegSNR", "PESQraw", "PESQimp", "MOSraw",
+            "MOSimp", "PRRraw", "PRRimp")
+corrgram(d[,fields], upper.panel=panel.ptsAlpha, lower.panel=panel.shadeConf)
+pdf(paste(figdir,"litResCorrgram.pdf",sep=""),width=6,height=6)
+corrgram(d[,fields], upper.panel=panel.ptsAlpha, lower.panel=panel.shadeConf)
+dev.off()

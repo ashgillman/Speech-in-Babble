@@ -179,6 +179,7 @@ try
                     fprintf('%2i: %s\n',i,CCRscale{4-i});
                 end
                 CCR = str2double(input('>','s'));
+                stop(AP2);
                 if reverse % if play order reversed, CCR = -CCR
                     CCR = -CCR;
                 end

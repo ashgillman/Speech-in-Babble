@@ -280,7 +280,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename fig/R/dir/HumanMachineAllLOESS.pdf
+	filename fig/R/dir/lit/HumanMachineAllLOESS.pdf
 	width 100text%
 
 \end_inset
@@ -332,14 +332,14 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename fig/R/dir/HumanMachineAllLM.pdf
+	filename fig/R/dir/lit/HumanMachineAllLM.pdf
 	width 80text%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename fig/R/dir/HumanMachineAllLegend.pdf
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
 	width 20text%
 
 \end_inset
@@ -469,7 +469,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename fig/R/dir/ HumanMachineGroupedLOESS.pdf
+	filename fig/R/dir/lit/ HumanMachineGroupedLOESS.pdf
 	width 100text%
 
 \end_inset
@@ -521,7 +521,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename fig/R/dir/ HumanMachineGroupedLM.pdf
+	filename fig/R/dir/lit/ HumanMachineGroupedLM.pdf
 	width 100text%
 
 \end_inset
@@ -736,7 +736,7 @@ csvautotabular{dat/HumanMachinePaliwal.csv}
 
 \begin_layout Standard
 Additionally, a Pearson's correlation table was formed over a number of
- the evaluation measures, depicted in 
+ the evaluation measures, depicted in the correlogram in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:litResCorr"
@@ -744,34 +744,8 @@ reference "fig:litResCorr"
 \end_inset
 
 .
- In this figure, the statistical evaluation methods are listed in blue,
- the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{HR}
-\end_layout
-
-\end_inset
-
- methods are listed in red, and the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{MR}
-\end_layout
-
-\end_inset
-
- methods are listed in green on the axes.
+ The correlogram shows the Pearson correlation with confidence intervals
+ in the lower panels and a scatterplot in the upper panels.
  The sparsity in this figure is due to the limited amount of pre-existing
  data.
 \end_layout
@@ -786,37 +760,12 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename fig/R/cor/litResCorr.pdf
-	width 70text%
+	filename fig/R/cor/litResCorrgram.pdf
+	width 100text%
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-Highlighted in 
-\color blue
-blue
-\color inherit
- are the statistical measures, 
-\color red
-red
-\color inherit
- the human perceptual measures and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textcolor{dkgreen}{green}
-\end_layout
-
-\end_inset
-
- the machine recognition measures.
 \end_layout
 
 \begin_layout Plain Layout
@@ -838,6 +787,1046 @@ Pearson's correlation over some of the evaluation measures assessed in existing
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Independent Investigation
+\end_layout
+
+\begin_layout Standard
+The algorithms listed in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "tab:Algorithms"
+
+\end_inset
+
+ were implemented, as were the the evaluation measured outline in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Independent-Investigation-Meth}
+\end_layout
+
+\end_inset
+
+.
+ A correlogram of the results was formed in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+ to give an overview of the results and how measures correlated with one
+ another.
+ In this figure:
+\end_layout
+
+\begin_layout Itemize
+the utterances and phonemes rows/columns correspond to the training given
+ to the enhancement algorithm;
+\end_layout
+
+\begin_layout Itemize
+``Imp'' refers to improvement comparatively with the signal before enhancement,
+ i.e., pesqImp refers to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score after enhancement minus the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score before enhancement;
+\end_layout
+
+\begin_layout Itemize
+MOSle refers to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort scale 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "InternationalTelecommunicationUnion1996"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+CMOS refers to the comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+PRRcorr refers to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measured as the percentage correct; and
+\end_layout
+
+\begin_layout Itemize
+PRRacc refers the the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measures as the accuracy, defined as the number of correct phonemes minus
+ the number of insersions divided by the number of phonemes.
+\end_layout
+
+\begin_layout Standard
+The results of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ evaluation are given in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
+cc-imp}
+\end_layout
+
+\end_inset
+
+.
+ These plots also show box plots of the five-point summaries of the results.
+ These results were used in investigating the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ and also to assess the performance of the proposed changes to the enhancement
+ algorithms outlined in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Develop-Phoneme-Dependent"
+
+\end_inset
+
+.
+ The changes proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Training}
+\end_layout
+
+\end_inset
+
+ are implemented in the algorithms 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMMSE
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMohammadiaOnline
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMohammadiaSupervised
+\end_layout
+
+\end_inset
+
+.
+ The changes proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Base}
+\end_layout
+
+\end_inset
+
+ are implemented in the algorithms 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeModifiedOnline
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeModifiedSupervised
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/my/corr.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-Corr"
+
+\end_inset
+
+
+\lang australian
+Correlogram of results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/pesq.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PESQ"
+
+\end_inset
+
+
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/pesqImp.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PESQ-imp"
+
+\end_inset
+
+Improvement in 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ score due to enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/segSNR.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-segSNR"
+
+\end_inset
+
+Segmental 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/segSNRImp.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-segSNR-imp"
+
+\end_inset
+
+Improvement in segmental 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ score due to enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/MOS.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-MOS"
+
+\end_inset
+
+
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/MOSle.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-MOSle"
+
+\end_inset
+
+Listening effort 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/CMOS.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-CMOS"
+
+\end_inset
+
+Comparative 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/PRRcorr.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PRRcorr"
+
+\end_inset
+
+
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/PRRcorrImp.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PRRcorr-imp"
+
+\end_inset
+
+Improvement in 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness due to enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/PRRacc.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PRRacc"
+
+\end_inset
+
+
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/PRRaccImp.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PRRacc-imp"
+
+\end_inset
+
+Improvement in 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy due to enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
 \end_inset
 
 

@@ -3036,8 +3036,8 @@ ac{NMF}
 
 \end_inset
 
- algorithm separating speech from noise , and thus used a temporally probabilist
-ic method to form and estimate of clean speech.
+ algorithm separating speech from noise, and thus used a temporally probabilisti
+c method to form and estimate of clean speech.
  By doing so, the algorithm accounts for an extra feature outlined in 
 \begin_inset CommandInset ref
 LatexCommand formatted

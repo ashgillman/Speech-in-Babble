@@ -189,7 +189,7 @@ ac{PESQ}
 
 \end_inset
 
- and 
+ improvement and 
 \begin_inset ERT
 status open
 
@@ -202,7 +202,7 @@ ac{PRR}
 
 \end_inset
 
-; and, by extension, between 
+ improvement, and by extension between 
 \begin_inset ERT
 status open
 
@@ -281,6 +281,42 @@ ac{HR}
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:litResCorr"
+
+\end_inset
+
+ Also indicates a very high correlation between the raw 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ result and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 A number of further observations were drawn from 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -306,7 +342,7 @@ direct-highcorr}
 \end_layout
 
 \begin_layout Standard
-Despite the acceptable correlation between 
+Despite the high correlation between 
 \begin_inset ERT
 status open
 
@@ -461,14 +497,14 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename fig/R/dir/KLT-MBAND/HumanMachineAllLM.pdf
+	filename fig/R/dir/lit/KLT-MBAND/HumanMachineAllLM.pdf
 	width 80text%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename fig/R/dir/HumanMachineAllLegend.pdf
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
 	width 20text%
 
 \end_inset
@@ -682,14 +718,14 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename fig/R/dir/KLT-pKLT/HumanMachineAllLM.pdf
+	filename fig/R/dir/lit/KLT-pKLT/HumanMachineAllLM.pdf
 	width 80text%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename fig/R/dir/HumanMachineAllLegend.pdf
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
 	width 20text%
 
 \end_inset
@@ -935,14 +971,14 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename fig/R/dir/pKLT-logMMSE-SPU-4/HumanMachineAllLM.pdf
+	filename fig/R/dir/lit/pKLT-logMMSE-SPU-4/HumanMachineAllLM.pdf
 	width 80text%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename fig/R/dir/HumanMachineAllLegend.pdf
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
 	width 20text%
 
 \end_inset
@@ -1150,14 +1186,14 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename fig/R/dir/MMSE-SPU-STSA-wcosh-STSA-weuclid-logMMSE-SPU-3/HumanMachineAllLM.pdf
+	filename fig/R/dir/lit/MMSE-SPU-STSA-wcosh-STSA-weuclid-logMMSE-SPU-3/HumanMachineAllLM.pdf
 	width 80text%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename fig/R/dir/HumanMachineAllLegend.pdf
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
 	width 20text%
 
 \end_inset
@@ -1295,6 +1331,146 @@ Conclusion, at the moment, is looking to be that in general there is a good
 , there will likely be many algorithms suited to both purposes.
  However, still to warn that algorithms should be verified both ways, as
  one does not imply the other.
+\end_layout
+
+\begin_layout Subsection
+Independent Investigation into 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{MR}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An independent investigation was conducted in which a number of enhancement
+ algorithms were implemented.
+ The enhanced waveforms were then analysed using a number of enhancement
+ methods, covering both 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+ The goal was to determine the correlation between evaluation measures.
+\end_layout
+
+\begin_layout Standard
+A summary of the correlation between all measurements made is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+.
+ A number of interesting observations were drawn from this summary to be
+ further investigated.
+\end_layout
+
+\begin_layout Standard
+Firstly, it was noted that in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+, the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and the various 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ measures was low.
+ This was a surprising results as it has generally been determined in literature
+ that the two correlate well 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kitawaki2007,Rix2003,Rix2001"
+
+\end_inset
+
+, albeit with some exceptions 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Liu2006"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Put into lit rev
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section

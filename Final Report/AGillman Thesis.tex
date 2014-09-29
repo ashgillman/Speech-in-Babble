@@ -41,12 +41,17 @@
 \AtBeginDocument{\providecommand\chapref[1]{\ref{chap:#1}}}
 \AtBeginDocument{\providecommand\secref[1]{\ref{sec:#1}}}
 \AtBeginDocument{\providecommand\lstref[1]{\ref{lst:#1}}}
+\AtBeginDocument{\providecommand\algref[1]{\ref{alg:#1}}}
 \providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
 %% A simple dot to overcome graphicx limitations
 \newcommand{\lyxdot}{.}
 
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}[chapter]
+\providecommand{\algorithmname}{Algorithm}
+\floatname{algorithm}{\protect\algorithmname}
 \floatstyle{ruled}
 \newfloat{listing}{tbp}{lol}[chapter]
 \providecommand{\listingname}{Listing}
@@ -76,6 +81,7 @@
 
 \usepackage{listings}
 \addto\captionsaustralian{\renewcommand{\lstlistingname}{Listing}}
+\addto\captionsenglish{\renewcommand{\algorithmname}{Algorithm}}
 \addto\captionsenglish{\renewcommand{\listingname}{Listing}}
 \addto\captionsenglish{\renewcommand{\lstlistingname}{Listing}}
 \renewcommand{\lstlistingname}{Listing}

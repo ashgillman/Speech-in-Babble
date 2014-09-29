@@ -1504,7 +1504,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Direct Comparison R Code
+Literature Direct Comparison R Code
 \begin_inset CommandInset label
 LatexCommand label
 name "lst:directComp"
@@ -1527,7 +1527,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=54]{../Code/R/directComp.R}
+lstinputlisting[lastline=54]{../Code/R/litdirectComp.R}
 \end_layout
 
 \end_inset
@@ -1548,7 +1548,7 @@ status open
 
 
 \backslash
-lstinputlisting[firstline=55,firstnumber=last]{../Code/R/directComp.R}
+lstinputlisting[firstline=55,firstnumber=last]{../Code/R/litdirectComp.R}
 \end_layout
 
 \end_inset

@@ -19,11 +19,11 @@ shows the data fitted with an \ac{LOESS} model and \figref{Direct-PESQ-PRR-LM}
 shows the data fitted with an \ac{LM} method.
 
 \begin{figure}[p]
-\subfloat[\label{fig:Direct-PESQ-PRR-LOESS}\acs{LOESS} fit]{\includegraphics[width=1\textwidth]{fig/R/dir/HumanMachineAllLOESS}
+\subfloat[\label{fig:Direct-PESQ-PRR-LOESS}\acs{LOESS} fit]{\includegraphics[width=1\textwidth]{fig/R/dir/lit/HumanMachineAllLOESS}
 
 }
 
-\subfloat[\label{fig:Direct-PESQ-PRR-LM}\acl{LM} fit]{\includegraphics[width=0.8\textwidth]{fig/R/dir/HumanMachineAllLM}\includegraphics[width=0.2\textwidth]{fig/R/dir/HumanMachineAllLegend}
+\subfloat[\label{fig:Direct-PESQ-PRR-LM}\acl{LM} fit]{\includegraphics[width=0.8\textwidth]{fig/R/dir/lit/HumanMachineAllLM}\includegraphics[width=0.2\textwidth]{fig/R/dir/lit/HumanMachineAllLegend}
 
 }\protect\caption{\label{fig:Direct-PESQ-PRR}Direct comparison of human (\acs{PESQ})
 vs. machine (\acs{PRR}) quality improvement}
@@ -34,11 +34,11 @@ Shown in \figref{Group-PESQ-PRR} are the results of the group comparison,
 a method also outlined in \subsecref{Method-Existing-Data}.
 
 \begin{figure}[p]
-\subfloat[\label{fig:Group-PESQ-PRR-LOESS}\acs{LOESS} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/ HumanMachineGroupedLOESS\string".pdf}
+\subfloat[\label{fig:Group-PESQ-PRR-LOESS}\acs{LOESS} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/lit/ HumanMachineGroupedLOESS\string".pdf}
 
 }
 
-\subfloat[\label{fig:Group-PESQ-PRR-LM}\acs{LM} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/ HumanMachineGroupedLM\string".pdf}
+\subfloat[\label{fig:Group-PESQ-PRR-LM}\acs{LM} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/lit/ HumanMachineGroupedLM\string".pdf}
 
 }\protect\caption{\label{fig:Group-PESQ-PRR}Grouped comparison of human (\acs{PESQ})
 vs. machine (\acs{PRR}) quality improvement}
@@ -66,17 +66,172 @@ amount of pre-existing data.
 
 \begin{figure}[h]
 \noindent \begin{centering}
-\includegraphics[width=0.7\textwidth]{fig/R/cor/litResCorr}
+\includegraphics[width=1\textwidth]{fig/R/cor/litResCorr}
 \par\end{centering}
+
+\protect\caption{\label{fig:litResCorr}Pearson's correlation over some of the evaluation
+measures assessed in existing data}
+
 
 Highlighted in \textcolor{blue}{blue} are the statistical measures,
 \textcolor{red}{red} the human perceptual measures and \textcolor{dkgreen}{green}
 the machine recognition measures.
-
-\protect\caption{\label{fig:litResCorr}Pearson's correlation over some of the evaluation
-measures assessed in existing data}
 \end{figure}
 
+
+\clearpage{}
+
+
+\subsection{Independent Investigation}
+
+The algorithms listed in \nameref{tab:Algorithms} were implemented,
+as were the the evaluation measured outline in \subsecref{Independent-Investigation-Meth}.
+A correlogram of the results was formed in \figref{my-Corr} to give
+an overview of the results and how measures correlated with one another.
+The results of the \ac{PESQ} evaluation are given in \Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp}.
+
+These results were also used to assess the performance of the proposed
+changes to the enhancement algorithms outlined in \secref{Develop-Phoneme-Dependent}.
+The changes proposed in \subsecref{Phoneme-Training} are implemented
+in the algorithms \lstinline[breaklines=true]!phonemeIDBM!, \lstinline[breaklines=true]!phonemeMMSE!,
+\lstinline[breaklines=true]!phonemeMohammadiaOnline! and \inputencoding{latin1}{\linebreak}\inputencoding{latin9}\lstinline[breaklines=true]!phonemeMohammadiaSupervised!.
+The changes proposed in \subsecref{Phoneme-Base} are implemented
+in the algorithms \lstinline[breaklines=true]!phonemeModifiedOnline!
+and \lstinline[breaklines=true]!phonemeModifiedSupervised!.
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[width=1\textwidth]{fig/R/dir/my/corr}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-Corr}\foreignlanguage{australian}{Correlogram of results
+of independent investigation}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/my/pesq}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-PESQ}\foreignlanguage{australian}{\acs{PESQ} results
+of independent investigation}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/my/pesqImp}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-PESQ-imp}Improvement in \foreignlanguage{australian}{\acs{PESQ}
+score due to enhancement}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/my/segSNR}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-segSNR}Segmental \foreignlanguage{australian}{\acs{SNR}
+results of independent investigation}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/my/segSNRImp}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-segSNR-imp}Improvement in segmental \foreignlanguage{australian}{\acs{SNR}
+score due to enhancement}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/my/MOS}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-MOS}\foreignlanguage{australian}{\acs{MOS} results
+of independent investigation}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/my/MOSle}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-MOSle}Listening effort \foreignlanguage{australian}{\acs{MOS}
+results of independent investigation}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/my/CMOS}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-CMOS}Comparative \foreignlanguage{australian}{\acs{MOS}
+results of independent investigation}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/my/PRRcorr}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-PRRcorr}\foreignlanguage{australian}{\acs{PRR} correctness
+results of independent investigation}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/my/PRRcorrImp}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-PRRcorr-imp}Improvement in \foreignlanguage{australian}{\acs{PRR}
+correctness due to enhancement}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/my/PRRacc}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-PRRacc}\foreignlanguage{australian}{\acs{PRR} accuracy
+results of independent investigation}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/my/PRRaccImp}
+\par\end{centering}
+
+\protect\caption{\label{fig:my-PRRacc-imp}Improvement in \foreignlanguage{australian}{\acs{PRR}
+accuracy due to enhancement}\selectlanguage{australian}%
+}
+\end{figure}
+
+
+\clearpage{}
 
 
 \section{Assessing \acl{NMF} Algorithm Training}

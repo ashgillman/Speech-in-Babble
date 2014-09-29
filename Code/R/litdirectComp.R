@@ -4,7 +4,7 @@ library(gridExtra)
 rm(list=ls());
 data <- read.csv('litresults.csv',header=T);
 
-figdir <- "fig/dir/"
+figdir <- "fig/dir/lit/"
 
 # Function to Extract Legend 
 g_legend<-function(a.gplot){ 
@@ -21,8 +21,8 @@ yp <- "PESQimp"; # y parameter
 cp <- "Algorithm"; # colour parameter
 sp <- "Name"; # shape parameter
 
-# set highlighting, leave blank if desired
-highlight <- c("pKLT","logMMSE-SPU-4")
+# set highlighting ("Name" field), leave blank for no highlighting
+highlight <- c()
 hname <- paste(highlight,collapse="-")
 
 # setup shapes
@@ -58,16 +58,16 @@ print(grid.arrange(p1, p2))
 
 # Save
 dir.create(file.path(figdir, hname), showWarnings = FALSE)
-pdf(paste(figdir,hname,"/HumanMachineAllLOESS.pdf",sep=""),width=7,height=5)
+pdf(paste0(figdir,hname,"/HumanMachineAllLOESS.pdf"),width=7,height=5)
 print(p1)
 dev.off()
-pdf(paste(figdir,hname,"/HumanMachineAllLM.pdf",sep=""),width=7,height=5)
+pdf(paste0(figdir,hname,"/HumanMachineAllLM.pdf"),width=7,height=5)
 print(p2)
 dev.off()
-pdf(paste(figdir,hname,"/HumanMachineAll.pdf",sep=""),width=7,height=10)
+pdf(paste0(figdir,hname,"/HumanMachineAll.pdf"),width=7,height=10)
 print(grid.arrange(p1, p2))
 dev.off()
-pdf(paste(figdir,hname,"/HumanMachineAllLegend.pdf",sep=""),width=2,height=6)
+pdf(paste0(figdir,hname,"/HumanMachineAllLegend.pdf"),width=2,height=6)
 grid.draw(g_legend(p))
 dev.off()
 
@@ -91,13 +91,13 @@ p2 <- p + stat_smooth(method=lm, se=F, level=0.5) +
   ggtitle("Human vs. Machine Improvement (LM fit)");
 print(grid.arrange(p1, p2))
 
-pdf(paste(figdir,"HumanMachineGroupedLOESS.pdf"),width=7,height=5)
+pdf(paste0(figdir,"HumanMachineGroupedLOESS.pdf"),width=7,height=5)
 print(p1)
 dev.off()
-pdf(paste(figdir,"HumanMachineGroupedLM.pdf"),width=7,height=5)
+pdf(paste0(figdir,"HumanMachineGroupedLM.pdf"),width=7,height=5)
 print(p2)
 dev.off()
-pdf(paste(figdir,"HumanMachineGrouped.pdf"),width=7,height=10)
+pdf(paste0(figdir,"HumanMachineGrouped.pdf"),width=7,height=10)
 print(grid.arrange(p1, p2))
 dev.off()
 
