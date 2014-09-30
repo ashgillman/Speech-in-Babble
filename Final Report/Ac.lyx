@@ -455,9 +455,7 @@ end{acronym}
 \backslash
 renewcommand{
 \backslash
-acsfont}{
-\backslash
-normalfont}
+acsfont}{}
 \end_layout
 
 \end_inset

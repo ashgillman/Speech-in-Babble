@@ -1408,6 +1408,36 @@ reference "fig:my-Corr"
  further investigated.
 \end_layout
 
+\begin_layout Subsubsection*
+On the relationship between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Firstly, it was noted that in 
 \begin_inset CommandInset ref
@@ -1621,10 +1651,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -1752,6 +1778,10 @@ ac{MOS}
 
 \end_layout
 
+\begin_layout Subsubsection*
+On the relationship between similar measures
+\end_layout
+
 \begin_layout Standard
 The 
 \begin_inset ERT
@@ -1790,6 +1820,110 @@ ac{PRR}
 
  measures, where the correlation between the correctness and the accuracy
  was found to be in general significantly negative.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+More here?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+On the relationship between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{MR}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+ shows a significant positive correlation between the various 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ measures and the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measured as correctness.
+ However, the figure also shows an almost as significant negative correlation
+ between the various 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ measures and the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measured as accuracy.
 \end_layout
 
 \begin_layout Section

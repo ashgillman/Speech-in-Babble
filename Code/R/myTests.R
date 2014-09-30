@@ -170,24 +170,29 @@ saveLeg <- function(dir, name, p, w, h) {
   grid.draw(p)
   dev.off()
 }
+algOrder <- unique(d[order(grepl("modified", d$algorithm) +
+                             2 * grepl("MMSE", d$algorithm) +
+                             3 * grepl("IDBM", d$algorithm)),
+                     "algorithm"])=
+d$algorithm <- factor(d$algorithm, levels=algOrder)
 
 # PESQ vs. MOS, no IDBM
 corVal1 <- cor(d[, c("pesq", "MOS")], use="complete.obs")[2]
 corVal2 <- cor(d[!grepl("IDBM", d$algorithm), c("pesq", "MOS")],
                use="complete.obs")[2]
-p1 <- ggplot(d, aes(x=MOS, y=pesq, color=factor(algorithm))) +
+p1 <- ggplot(d, aes(x=MOS, y=pesq, color=algorithm)) +
   geom_point() +
-  geom_abline(aes(color="Expected (PESQ=MOS)"), intercept=0, slope=1) +
+  geom_abline(aes(linetype="Expected (PESQ=MOS)"), intercept=0, slope=1) +
   scale_shape_discrete() +
-  scale_color_manual(name="Algorithm", values=c("black", rainbow(10))) +
+  scale_color_manual(name="Algorithm", rainbow(10)) +
   ggtitle(paste0("With IDBM (cor = ", as.character(round(corVal1, 3)), ")")) +
   theme_bw() + ylab("PESQ")
 p2 <- ggplot(d[!grepl("IDBM", d$algorithm),], aes(x=MOS, y=pesq,
                                                   color=factor(algorithm))) +
   geom_point() +
-  geom_abline(aes(color="Expected (PESQ=MOS)"), intercept=0, slope=1) +
+  geom_abline(aes(linetype="Expected (PESQ=MOS)"), intercept=0, slope=1) +
   scale_shape_discrete() +
-  scale_color_manual(name="Algorithm", values=c("black", rainbow(10))) +
+  scale_color_manual(name="Algorithm", rainbow(10)) +
   ggtitle(paste0("Without IDBM (cor = ", as.character(round(corVal2, 3)), ")")) +
   theme_bw() + ylab("PESQ")
 print(p1)
@@ -197,6 +202,56 @@ print(p2)
 #p2 <- p2 + theme(legend.position="none")
 saveP("fig/pair/my", "pesq-mos", p1, w=7, h=6)
 saveP("fig/pair/my", "pesq-mos_no-IDBM", p2, w=7, h=6)
-# look at cor after and before
-cor(d[!grepl("IDBM", d$algorithm), c("pesq", "MOS")], use="complete.obs")
-cor(d[, c("pesq", "MOS")], use="complete.obs")
+
+# PRRacc vs. MOS
+corMosCorr <- cor(d[, c("MOS", "PRRcorr")], use="complete.obs")[2]
+corMosAcc <- cor(d[, c("MOS", "PRRacc")], use="complete.obs")[2]
+corMosCorrImp <- cor(d[, c("CMOS", "PRRcorrImp")], use="complete.obs")[2]
+corMosAccImp <- cor(d[, c("CMOS", "PRRaccImp")], use="complete.obs")[2]
+pMosCorr <- ggplot(d[!is.na(d$MOS) & !is.na(d$PRRcorr),],
+                   aes(x=PRRcorr, y=MOS, color=testName)) +
+  geom_point() + geom_point(color="black", size=0.75) +
+  geom_density2d(alpha=0.2, show_guide=F) +
+  geom_point(size=50, alpha=0.02, show_guide=F) +
+  scale_color_discrete(name="Test Name", drop=T) +
+  theme_bw() + xlab("Correctness (PRR)") +
+  ggtitle("MOS vs. ASR Correctness, Grouping Highlighted")
+pMosAcc <- ggplot(d[!is.na(d$MOS) & !is.na(d$PRRacc),],
+                  aes(x=PRRacc, y=MOS, color=testName)) +
+  geom_point() +
+  scale_color_discrete(name="Test Name", drop=T) +
+  theme_bw() + xlab("Accuracy (PRR)") +
+  ggtitle("MOS vs. ASR Accuracy")
+pMosCorrImp <- ggplot(d[!is.na(d$CMOS) & !is.na(d$PRRcorrImp),],
+                  aes(x=PRRcorrImp, y=CMOS, color=testName)) +
+  geom_point() +
+  scale_color_discrete(name="Test Name", drop=T) +
+  theme_bw() + xlab("Correctness (PRR) Improvement") + ylab("Comparative MOS") +
+  ggtitle("Comparative MOS vs. ASR Correctness Improvement, Grouping Highlighted")
+pMosAccImp <- ggplot(d[!is.na(d$CMOS) & !is.na(d$PRRaccImp),],
+                  aes(x=PRRaccImp, y=CMOS, color=testName)) +
+  geom_point() +
+  scale_color_discrete(name="Test Name", drop=T) +
+  theme_bw() + xlab("Accuracy (PRR) Improvement") + ylab("Comparative MOS") +
+  ggtitle("Comparative MOS vs. ASR Accuracy Improvement")
+print(pMosCorr)
+print(pMosAcc)
+print(pMosCorrImp)
+print(pMosAccImp)
+saveP("fig/pair/my", "mos-prrcorr",
+      pMosCorr + theme(legend.position="none"), w=7, h=6)
+saveP("fig/pair/my", "mos-prracc",
+      pMosAcc + theme(legend.position="none"), w=7, h=6)
+saveP("fig/pair/my", "cmos-prrcorrimp",
+      pMosCorrImp + theme(legend.position="none"), w=7, h=6)
+saveP("fig/pair/my", "cmos-prraccimp",
+      pMosAccImp + theme(legend.position="none"), w=7, h=6)
+saveLeg("fig/pair/my", "cmos-prr-leg",
+        g_legend(pMosCorr +
+                   geom_point(size=3) +
+                   theme(legend.position="bottom") +
+                   scale_color_discrete(name="Test Name",
+                                        guide=guide_legend(nrow=2,
+                                                           keyheight=1.5,
+                                                           keywidth=1.5))),
+        w=7, h=1)
