@@ -1663,7 +1663,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/R/pair/my/pesq-mos.pdf
-	width 40text%
+	width 50text%
 
 \end_inset
 
@@ -1697,7 +1697,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/R/pair/my/pesq-mos_no-IDBM.pdf
-	width 40text%
+	width 50text%
 
 \end_inset
 
@@ -1719,9 +1719,12 @@ Without the ideal binary mask
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/R/pair/my/pesq-mos_leg.pdf
-	width 20text%
+	width 100text%
 
 \end_inset
 
@@ -1760,7 +1763,7 @@ status open
 
 
 \backslash
-ac{MOS}
+acs{MOS}
 \end_layout
 
 \end_inset
@@ -1924,6 +1927,772 @@ ac{PRR}
 \end_inset
 
  measured as accuracy.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:mos-prrcorr,fig:cmos-prrcorrimp}
+\end_layout
+
+\end_inset
+
+ highlight the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measured as correctness.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:mos-prrcorr"
+
+\end_inset
+
+ further highlights the relative density, revealing that certain test conditions
+ are outliers and that the correlation might otherwise have been higher.
+ It was seen that tests where there was one competing speaker of the same
+ sex, highlighted in red, were characterised by a mid-range 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ result, but a high correctness 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+ This indicated the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system was able to still detect the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+'s voice, however a human listener scored the signal as average.
+\end_layout
+
+\begin_layout Standard
+However, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:cmos-prraccimp"
+
+\end_inset
+
+ shows that in terms of improvement, and regardless of algorithm, the enhancemen
+t in competing speaker noise was non-existent.
+ NOIZEUS babble noise results tended also to be poor.
+ Interestingly, the synthetic babble formed from three speakers tended to
+ be improved by most algorithms under the accuracy 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measure.
+ This had almost no correlation with the performance rated by human listeners,
+ which ranged from a fair improvement to significantly worse.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byTest/mos-prrcorr.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-prrcorr"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ correctness
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byTest/mos-prracc.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-prracc"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ accuracy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byTest/cmos-prrcorrimp.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-prrcorrimp"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ correctness improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byTest/cmos-prraccimp.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-prraccimp"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ accuracy improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/pair/byTest/mos-prr-leg.pdf
+	width 60line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:hr-mr"
+
+\end_inset
+
+Scatterplot of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MR}
+\end_layout
+
+\end_inset
+
+ measures, highlighting test conditions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:hr-mr-alg"
+
+\end_inset
+
+ shows the same data as 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:hr-mr"
+
+\end_inset
+
+, but with colour highlighting the enhancement algorithm as opposed to the
+ test conditions.
+ A very interesting observation made was the performance of the ideal binary
+ mask and phoneme-dependent ideal binary mask, especially under accuracy
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+ These results were also noted by observing the ideal binary mask algorithms
+ performance in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:my-PRRacc,fig:my-PRRacc-imp}
+\end_layout
+
+\end_inset
+
+.
+ These algorithms achieved the highest scores of any algorithm, despite
+ performing poorly on all 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and statistical measures.
+\end_layout
+
+\begin_layout Standard
+The explanation given for this behaviour was that the ideal binary mask
+ algorithms are effective in eliminating the competing noise, and thus reducing
+ false insertions.
+ However, in the process these algorithms distort the signal severely, thereby
+ drastically reducing human intelligibility, and also causing the loss in
+ correctness 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ exhibited in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-PRRcorr-imp"
+
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Maybe correlogram or something with the PRR deletions insertions etc.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byAlg/cmos-prrcorrimp.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-prrcorrimp-alg"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ correctness improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byAlg/cmos-prraccimp.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-prraccimp-alg"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ accuracy improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/pair/byAlg/mos-prr-leg.pdf
+	width 90line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:hr-mr-alg"
+
+\end_inset
+
+Scatterplot of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MR}
+\end_layout
+
+\end_inset
+
+ measures, highlighting enhancement algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

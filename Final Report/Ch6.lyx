@@ -291,18 +291,95 @@ ac{PRR}
 \end_layout
 
 \begin_layout Standard
-Furthermore, many situations were discovered where the general correlation
- was untrue, and where an algorithm that may well be perfectly suited to
- an application in ...
+Furthermore, the ideal binary mask algorithm considered exhibited a direct
+ contrast with the general trend.
+ The algorithm gave significant improvements in reducing the noise, and
+ therefore gave improvements in the accuracy 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+, indicating improvement for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+ However, the algorithm distorted the signal significantly, causing deterioratio
+n in quality of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Thus it was determined that an algorithm's performance in enhancement cannot
- be generalised.
- It is recommended that in future work on enhancement algorithms be performed
- and analysed, that as many evaluation measures be used as possible.
+ be generalised over 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Recommendation
+\end_layout
+
+\begin_layout Standard
+It is recommended that when enhancement algorithms are analysed, as many
+ evaluation measures be used as possible.
  Many of the evaluation measures are relatively simple to use once implemented,
- an exception being 
+ and so the cost associated with increasing the range of enhancement measures
+ is not large in the long term.
+ An exception is the 
 \begin_inset ERT
 status open
 
@@ -315,7 +392,78 @@ ac{MOS}
 
 \end_inset
 
- which requires a considerable level of human time.
+ test, which requires a considerable level of human time.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score may be used as a replacement, but the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ in not certain.
+\end_layout
+
+\begin_layout Standard
+In future work, it is recommended that the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ be investigated under the context of speech enhancement as opposed to measuring
+ the quality of a telecommunications medium.
 \end_layout
 
 \begin_layout Section
@@ -333,10 +481,6 @@ acl{NMF}
 \end_inset
 
  Algorithm Training
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \end_body

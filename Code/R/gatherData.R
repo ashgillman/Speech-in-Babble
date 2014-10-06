@@ -59,7 +59,7 @@ mos[grepl("phoneme", mos$algorithm), "phonemes"] <-
   mos[grepl("phoneme", mos$algorithm), "utterances.phns"]
 
 # average MOS scores
-by <- c("testNo", "algorithm", "Input.SNR", "utterances", "phonemes");
+by <- c("testNo", "algorithm", "Input.SNR", "utterances", "phonemes")
 mos.MOS <- ddply(mos, by,
                  function(x) {
                    mean(x$MOS)
@@ -145,6 +145,11 @@ prr <- subset(prr, select=-c(PRRcorrBef,PRRaccBef))
 
 # combine PRR scores
 d <- merge(d, prr, by=by, all=T)
+
+# Catch any missing test names
+missing <- d[is.na(d$testName) & !is.na(d$testNo), ]
+missing$testName <- testDesc[missing$testNo]
+d[is.na(d$testName) & !is.na(d$testNo), ] <- missing
 
 ##### Save to File #####
 

@@ -1233,7 +1233,8 @@ Noise = NOIZEUS car",NA,NA,NA,34.22,-17.47,65,304,290,561,2.49,-6.95
 Noise = NOIZEUS car",NA,NA,NA,34.76,-13.9,48,318,273,561,-0.890000000000001,-3.56
 8,"mohammadiaOnline",0,3,NA,"mohammadiaOnline_003ut00dB.wav",2.118995,0.036081,4.234488,2.168183,"SoI = c3s(m)
 Noise = NOIZEUS car",NA,NA,NA,37.61,-11.05,47,303,273,561,0.359999999999999,-3.39
-8,"mohammadiaOnline",0,5,NA,NA,NA,NA,NA,NA,NA,3.42857142857143,4,1.14285714285714,35.83,-5.53,43,317,232,561,-1.42,2.13
+8,"mohammadiaOnline",0,5,NA,NA,NA,NA,NA,NA,"SoI = c3s(m)
+Noise = NOIZEUS car",3.42857142857143,4,1.14285714285714,35.83,-5.53,43,317,232,561,-1.42,2.13
 8,"mohammadiaOnline",3,3,NA,"mohammadiaOnline_003ut03dB.wav",2.31426,0.103967,5.964193,0.179892,"SoI = c3s(m)
 Noise = NOIZEUS car",NA,NA,NA,37.61,-1.96,57,293,222,561,-0.359999999999999,-1.25
 8,"mohammadiaOnline",6,3,NA,"mohammadiaOnline_003ut06dB.wav",2.526401,0.158183,8.819594,2.048592,"SoI = c3s(m)
@@ -1244,7 +1245,8 @@ Noise = NOIZEUS car",NA,NA,NA,29.95,-6.42,48,345,204,561,-1.78,4.1
 Noise = NOIZEUS car",NA,NA,NA,34.58,-6.77,71,296,232,561,-1.07,3.57
 8,"mohammadiaSupervised",0,3,NA,"mohammadiaSupervised_003ut00dB.wav",2.038068,-0.044846,8.042793,5.976488,"SoI = c3s(m)
 Noise = NOIZEUS car",NA,NA,NA,35.83,-3.74,73,287,222,561,-1.42,3.92
-8,"mohammadiaSupervised",0,5,NA,NA,NA,NA,NA,NA,NA,2.42857142857143,3,-0.285714285714286,34.22,-10.34,47,322,250,561,-3.03,-2.68
+8,"mohammadiaSupervised",0,5,NA,NA,NA,NA,NA,NA,"SoI = c3s(m)
+Noise = NOIZEUS car",2.42857142857143,3,-0.285714285714286,34.22,-10.34,47,322,250,561,-3.03,-2.68
 8,"mohammadiaSupervised",3,3,NA,"mohammadiaSupervised_003ut03dB.wav",2.123027,-0.087266,8.82179,3.03749,"SoI = c3s(m)
 Noise = NOIZEUS car",NA,NA,NA,35.47,2.67,68,294,184,561,-2.5,3.38
 8,"mohammadiaSupervised",6,3,NA,"mohammadiaSupervised_003ut06dB.wav",2.291031,-0.077186,10.407495,3.636494,"SoI = c3s(m)
@@ -1535,7 +1537,8 @@ Noise = NOIZEUS babble",NA,NA,NA,34.22,-25.13,39,330,333,561,-1.07,-5.7
 Noise = NOIZEUS babble",NA,NA,NA,35.65,-19.79,38,323,311,561,0,-2.86
 9,"mohammadiaOnline",0,3,NA,"mohammadiaOnline_003ut00dB.wav",2.208914,0.019822,4.756576,-0.320023,"SoI = c3s(m)
 Noise = NOIZEUS babble",NA,NA,NA,37.08,-16.22,40,313,299,561,-1.07,-6.77
-9,"mohammadiaOnline",0,5,NA,NA,NA,NA,NA,NA,NA,3.85714285714286,4.14285714285714,1,36.9,-13.37,47,307,282,561,-1.25,-3.92
+9,"mohammadiaOnline",0,5,NA,NA,NA,NA,NA,NA,"SoI = c3s(m)
+Noise = NOIZEUS babble",3.85714285714286,4.14285714285714,1,36.9,-13.37,47,307,282,561,-1.25,-3.92
 9,"mohammadiaOnline",3,3,NA,"mohammadiaOnline_003ut03dB.wav",2.439477,0.099171,7.543934,-0.077971,"SoI = c3s(m)
 Noise = NOIZEUS babble",NA,NA,NA,41.35,-9.45,53,276,285,561,-1.25,-10.52
 9,"mohammadiaOnline",6,3,NA,"mohammadiaOnline_003ut06dB.wav",2.64937,0.142345,9.290501,-1.318963,"SoI = c3s(m)
@@ -1546,7 +1549,8 @@ Noise = NOIZEUS babble",NA,NA,NA,34.94,-11.23,61,304,259,561,-0.350000000000001,
 Noise = NOIZEUS babble",NA,NA,NA,33.33,-8.38,55,319,234,561,-2.32,8.55
 9,"mohammadiaSupervised",0,3,NA,"mohammadiaSupervised_003ut00dB.wav",2.030407,-0.158686,11.091285,6.014686,"SoI = c3s(m)
 Noise = NOIZEUS babble",NA,NA,NA,38.32,-5.35,46,300,245,561,0.170000000000002,4.1
-9,"mohammadiaSupervised",0,5,NA,NA,NA,NA,NA,NA,NA,4,4.42857142857143,1.28571428571429,34.22,-2.85,50,319,208,561,-3.93,6.6
+9,"mohammadiaSupervised",0,5,NA,NA,NA,NA,NA,NA,"SoI = c3s(m)
+Noise = NOIZEUS babble",4,4.42857142857143,1.28571428571429,34.22,-2.85,50,319,208,561,-3.93,6.6
 9,"mohammadiaSupervised",3,3,NA,"mohammadiaSupervised_003ut03dB.wav",2.228944,-0.111362,7.069979,-0.551926,"SoI = c3s(m)
 Noise = NOIZEUS babble",NA,NA,NA,40.29,3.39,63,272,207,561,-2.31,2.32
 9,"mohammadiaSupervised",6,3,NA,"mohammadiaSupervised_003ut06dB.wav",2.352397,-0.154628,10.209771,-0.399693,"SoI = c3s(m)
@@ -1813,7 +1817,8 @@ Noise = NOIZEUS street",NA,NA,NA,33.33,-22.64,42,332,314,561,0.170000000000002,-
 Noise = NOIZEUS street",NA,NA,NA,33.51,-18.54,49,324,292,561,-0.539999999999999,-8.02
 10,"mohammadiaOnline",0,3,NA,"mohammadiaOnline_003ut00dB.wav",2.019694,0.117329,7.587526,8.522372,"SoI = c3s(m)
 Noise = NOIZEUS street",NA,NA,NA,34.58,-10.87,55,312,255,561,3.56,-5.88
-10,"mohammadiaOnline",0,5,NA,NA,NA,NA,NA,NA,NA,3.14285714285714,3.14285714285714,1.14285714285714,33.87,-13.73,49,322,267,561,2.85,-8.74
+10,"mohammadiaOnline",0,5,NA,NA,NA,NA,NA,NA,"SoI = c3s(m)
+Noise = NOIZEUS street",3.14285714285714,3.14285714285714,1.14285714285714,33.87,-13.73,49,322,267,561,2.85,-8.74
 10,"mohammadiaOnline",3,3,NA,"mohammadiaOnline_003ut03dB.wav",2.235355,0.188284,6.013894,5.53061,"SoI = c3s(m)
 Noise = NOIZEUS street",NA,NA,NA,38.68,-9.8,59,285,272,561,3.92,-7.84
 10,"mohammadiaOnline",6,3,NA,"mohammadiaOnline_003ut06dB.wav",2.453709,0.249272,8.549452,5.468617,"SoI = c3s(m)
@@ -1824,7 +1829,8 @@ Noise = NOIZEUS street",NA,NA,NA,29.41,-8.02,62,334,210,561,-3.75,1.43
 Noise = NOIZEUS street",NA,NA,NA,30.66,-8.2,61,328,218,561,-3.39,2.32
 10,"mohammadiaSupervised",0,3,NA,"mohammadiaSupervised_003ut00dB.wav",1.948155,0.04579,11.286106,12.220951,"SoI = c3s(m)
 Noise = NOIZEUS street",NA,NA,NA,31.55,-3.03,58,326,194,561,0.530000000000001,1.96
-10,"mohammadiaSupervised",0,5,NA,NA,NA,NA,NA,NA,NA,3.42857142857143,3.42857142857143,0.714285714285714,33.33,-4.81,71,303,214,561,2.31,0.180000000000001
+10,"mohammadiaSupervised",0,5,NA,NA,NA,NA,NA,NA,"SoI = c3s(m)
+Noise = NOIZEUS street",3.42857142857143,3.42857142857143,0.714285714285714,33.33,-4.81,71,303,214,561,2.31,0.180000000000001
 10,"mohammadiaSupervised",3,3,NA,"mohammadiaSupervised_003ut03dB.wav",2.154037,0.106966,13.25287,12.769586,"SoI = c3s(m)
 Noise = NOIZEUS street",NA,NA,NA,34.22,0.71,64,305,188,561,-0.539999999999999,2.67
 10,"mohammadiaSupervised",6,3,NA,"mohammadiaSupervised_003ut06dB.wav",2.36166,0.157223,10.46217,7.381335,"SoI = c3s(m)

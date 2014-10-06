@@ -1,100 +1,117 @@
 library(ggplot2)
 library(corrgram)
+library(plyr)
 
 rm(list=ls());
 
 figdir <- "fig/train/"
 dir.create(file.path(figdir),recursive=T,showWarnings=F)
 
-testDesc <- c("SoI = c3c(f)\nNoise = c3f(m)",
-              "SoI = c3l(f)\nNoise = c31(m)",
-              "SoI = c3s(m)\nNoise = c31(m)",
-              "SoI = c3s(m)\nNoise = c31(m)+c34(m)+c35(m)",
-              "SoI = c3s(m)\nNoise = c3f(m)+c3c(f)+c35(m)",
-              "SoI = c3s(m)\nNoise = c3f(m)+c3c(f)",
-              "SoI = c3s(m)\nNoise = c3f(m)")
-
-# tests to use
-test <- c(1,2,3,4,5,6,7);
-
-# load data
-file <- paste0("dat/PESQ-SegSNR",test[1],".csv")
-d <- read.csv(file,header=T);
-d$testNo <- rep(1,nrow(d))
-d$testName <- rep(testDesc[1],nrow(d))
-if (length(test) > 1) {
-  for (i in 2:length(test)) {
-    file <- paste0("dat/PESQ-SegSNR", i, ".csv")
-    dnew <- read.csv(file,header=T);
-    dnew$testNo <- rep(i,nrow(dnew))
-    dnew$testName <- rep(testDesc[i],nrow(dnew))
-    d <- rbind(d,dnew)
-  }
-}
-
-# correlogram
-corrgram(d[-c(1,2,9,10)],upper.panel=panel.pts)
-pdf(paste(figdir,"corr.pdf",sep=""),width=15,height=15)
-corrgram(d[-c(1,2,9,10)],upper.panel=panel.pts)
-dev.off()
-d.corr <- cor(d[-c(1,2,9,10)])
-heatmap(d.corr)
+file = "dat/testResults.csv"
+d <- read.csv(file, header=T);
 
 d$Input.SNR <- factor(d$Input.SNR)
 d$testNo <- factor(d$testNo)
 
-## PESQ
+# filter
+d <- d[(d$testNo %in% 1:7) & 
+         (d$algorithm %in% c("mohammadiaOnline", "mohammadiaSupervised")), ]
 
-p <- ggplot(d,aes(x=utterances,y=pesq,group=Input.SNR,colour=Input.SNR,
-                  linetype="enhanced")) +
-  geom_line(aes(linetype="enhanced")) +
-  geom_line(aes(x=utterances,y=pesq-pesqImp,linetype="dirty")) +
-  scale_color_discrete("Input SNR") +
-  scale_linetype_manual("Enhanced?",
-                        values=c("enhanced"="solid","dirty"="dashed")) +
-  facet_grid(algorithm~testName) +
-  theme_bw() + ggtitle("PESQ Score") + xlab("Utterances") + ylab("PESQ Score")
+## plot funcs
+plotBefAft <- function(d, xp, xName, yp, yName, cp, cName, xwp, ywp, title) {
+  d <- d[!is.na(d[, xp]) & !is.na(d[, yp]), ]
+  d$bef <- d[, yp] - d[, paste0(yp, "Imp")]
+  p <- ggplot(d, aes_string(x=xp, y=yp, group=cp, colour=cp)) +
+    geom_line(aes(linetype="enhanced")) +
+    geom_line(aes(y=bef, linetype="dirty")) +
+    scale_color_discrete(cName) +
+    scale_linetype_manual("Enhanced?",
+                          values=c("enhanced"="solid","dirty"="dashed")) +
+    facet_grid(paste0(ywp, "~", xwp)) +
+    theme_bw() + ggtitle(title) + xlab(xName) + ylab(yName)
+  return(p)
+}
+plotSimple <- function(d, xp, xName, yp, yName, cp, cName, xwp, ywp, title) {
+  d <- d[!is.na(d[, xp]) & !is.na(d[, yp]), ]
+  p <- ggplot(d, aes_string(x=xp, y=yp, group=cp, colour=cp)) +
+    geom_line() +
+    scale_color_discrete(cName) +
+    facet_grid(paste0(ywp, "~", xwp)) +
+    theme_bw() + ggtitle(title) + xlab(xName) + ylab(yName)
+  return(p)
+}
+
+## PESQ
+p <- plotBefAft(d, "utterances", "Utterances", "pesq", "PESQ", "Input.SNR",
+                "Input SNR", "testName", "algorithm", "PESQ Score")
 print(p)
 pdf(paste(figdir,"pesq.pdf",sep=""),width=18,height=10)
 print(p)
 dev.off()
 
-p <- ggplot(d,aes(x=utterances,y=pesqImp,group=Input.SNR,colour=Input.SNR,
-                  group=testNo)) +
-  geom_line() +
-  scale_color_discrete("Input SNR") +
-  facet_grid(algorithm~testName) +
-  theme_bw() + ggtitle("PESQ Improvement") + xlab("Utterances") +
-  ylab("PESQ Improvement")
+p <- plotSimple(d, "utterances", "Utterances", "pesqImp", "PESQ Improvement",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "PESQ Improvement")
 print(p)
 pdf(paste(figdir,"pesqImp.pdf",sep=""),width=18,height=10)
 print(p)
 dev.off()
 
 ## SegSNR
-
-p <- ggplot(d,aes(x=utterances,y=segSNR,group=Input.SNR,colour=Input.SNR,
-                  group=testNo)) +
-  geom_line(aes(linetype="enhanced")) +
-  geom_line(aes(x=utterances,y=segSNR-segSNRImp,linetype="dirty")) +
-  scale_color_discrete("Input SNR") +
-  scale_linetype_manual("Enhanced?",
-                        values=c("enhanced"="solid","dirty"="dashed")) +
-  facet_grid(algorithm~testName) +
-  theme_bw() + ggtitle("Segmental SNR Score") + xlab("Utterances") +
-  ylab("SegSNR Score")
+p <- plotBefAft(d, "utterances", "Utterances", "segSNR", "Segmental SNR",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "Segmental SNR Score")
 print(p)
 pdf(paste(figdir,"segSNR.pdf",sep=""),width=18,height=10)
 print(p)
 dev.off()
 
-p <- ggplot(d,aes(x=utterances,y=segSNRImp,group=Input.SNR,colour=Input.SNR)) +
-  geom_line() +
-  scale_color_discrete("Input SNR") +
-  facet_grid(algorithm~testName) +
-  theme_bw() + ggtitle("Segmental SNR Improvement") + xlab("Utterances") +
-  ylab("SegSNR Improvement")
+p <- plotSimple(d, "utterances", "Utterances", "segSNRImp",
+                "Segmental SNR Improvement", "Input.SNR", "Input SNR",
+                "testName", "algorithm", "Segmental SNR Improvement")
 print(p)
 pdf(paste(figdir,"segSNRImp.pdf",sep=""),width=18,height=10)
+print(p)
+dev.off()
+
+## MOS
+p <- plotSimple(d, "utterances", "Utterances", "MOS", "MOS",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "MOS")
+print(p)
+pdf(paste(figdir,"MOS.pdf",sep=""),width=18,height=10)
+print(p)
+dev.off()
+
+p <- plotSimple(d, "utterances", "Utterances", "MOSle", "MOS Listening Effort",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "MOS Listening Effort")
+print(p)
+pdf(paste(figdir,"MOSle.pdf",sep=""),width=18,height=10)
+print(p)
+dev.off()
+
+p <- plotSimple(d, "utterances", "Utterances", "CMOS", "Comparative MOS",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "Comparative MOS")
+print(p)
+pdf(paste(figdir,"CMOS.pdf",sep=""),width=18,height=10)
+print(p)
+dev.off()
+
+## PRR
+p <- plotBefAft(d, "utterances", "Utterances", "PRRcorr", "Correctness PRR",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "Correctness PRR")
+print(p)
+pdf(paste(figdir,"PRRcorr.pdf",sep=""),width=18,height=10)
+print(p)
+dev.off()
+
+p <- plotBefAft(d, "utterances", "Utterances", "PRRacc", "Accuracy PRR",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "Accuracy PRR")
+print(p)
+pdf(paste(figdir,"PRRacc.pdf",sep=""),width=18,height=10)
 print(p)
 dev.off()

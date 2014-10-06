@@ -19,13 +19,31 @@ when the \ac{PRR} measure was an \ac{ASR} system's correctness.
 However, a negative correlation was found when false insertions were
 accounted for under the \ac{PRR}.
 
-Furthermore, many situations were discovered where the general correlation
-was untrue, and where an algorithm that may well be perfectly suited
-to an application in ...
+Furthermore, the ideal binary mask algorithm considered exhibited
+a direct contrast with the general trend. The algorithm gave significant
+improvements in reducing the noise, and therefore gave improvements
+in the accuracy \ac{PRR}, indicating improvement for \ac{MR}. However,
+the algorithm distorted the signal significantly, causing deterioration
+in quality of \ac{HR}.
 
 Thus it was determined that an algorithm's performance in enhancement
-cannot be generalised. It is recommended that in future work on enhancement
-algorithms be performed and analysed, that as many evaluation measures
-be used as possible. Many of the evaluation measures are relatively
-simple to use once implemented, an exception being \ac{MOS} which
-requires a considerable level of human time.
+cannot be generalised over \ac{HR} and \ac{MR}.
+
+
+\subsubsection*{Recommendation}
+
+It is recommended that when enhancement algorithms are analysed, as
+many evaluation measures be used as possible. Many of the evaluation
+measures are relatively simple to use once implemented, and so the
+cost associated with increasing the range of enhancement measures
+is not large in the long term. An exception is the \ac{MOS} test,
+which requires a considerable level of human time. The \ac{PESQ}
+score may be used as a replacement, but the correlation between \ac{PESQ}
+and \ac{MOS} in not certain.
+
+In future work, it is recommended that the correlation between \ac{PESQ}
+and \ac{MOS} be investigated under the context of speech enhancement
+as opposed to measuring the quality of a telecommunications medium.
+
+
+\section{Assessing \acl{NMF} Algorithm Training}

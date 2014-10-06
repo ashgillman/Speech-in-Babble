@@ -173,7 +173,7 @@ saveLeg <- function(dir, name, p, w, h) {
 algOrder <- unique(d[order(grepl("modified", d$algorithm) +
                              2 * grepl("MMSE", d$algorithm) +
                              3 * grepl("IDBM", d$algorithm)),
-                     "algorithm"])=
+                     "algorithm"])
 d$algorithm <- factor(d$algorithm, levels=algOrder)
 
 # PESQ vs. MOS, no IDBM
@@ -184,30 +184,32 @@ p1 <- ggplot(d, aes(x=MOS, y=pesq, color=algorithm)) +
   geom_point() +
   geom_abline(aes(linetype="Expected (PESQ=MOS)"), intercept=0, slope=1) +
   scale_shape_discrete() +
-  scale_color_manual(name="Algorithm", rainbow(10)) +
+  scale_color_manual(name="Algorithm", values=rainbow(10)) +
   ggtitle(paste0("With IDBM (cor = ", as.character(round(corVal1, 3)), ")")) +
-  theme_bw() + ylab("PESQ")
+  theme_bw() + ylab("PESQ") + theme(legend.position="none")
 p2 <- ggplot(d[!grepl("IDBM", d$algorithm),], aes(x=MOS, y=pesq,
                                                   color=factor(algorithm))) +
   geom_point() +
   geom_abline(aes(linetype="Expected (PESQ=MOS)"), intercept=0, slope=1) +
   scale_shape_discrete() +
-  scale_color_manual(name="Algorithm", rainbow(10)) +
-  ggtitle(paste0("Without IDBM (cor = ", as.character(round(corVal2, 3)), ")")) +
-  theme_bw() + ylab("PESQ")
+  scale_color_manual(name="Algorithm", values=rainbow(10)) +
+  ggtitle(paste0("Without IDBM (cor = ", as.character(round(corVal2, 3)),
+                 ")")) +
+  theme_bw() + ylab("PESQ") + theme(legend.position="none")
 print(p1)
 print(p2)
-#saveLeg("fig/pair/my", "pesq-mos_leg",  g_legend(p1), w=2.5, h=3)
-#p1 <- p1 + theme(legend.position="none")
-#p2 <- p2 + theme(legend.position="none")
+saveLeg("fig/pair/my", "pesq-mos_leg",
+        g_legend(p1 +
+                 theme(legend.position="bottom") +
+                   scale_color_discrete(name="Algorithm",
+                                        guide=guide_legend(nrow=2,
+                                                           keyheight=1.5,
+                                                           keywidth=1.5))),
+        w=10, h=1)
 saveP("fig/pair/my", "pesq-mos", p1, w=7, h=6)
 saveP("fig/pair/my", "pesq-mos_no-IDBM", p2, w=7, h=6)
 
-# PRRacc vs. MOS
-corMosCorr <- cor(d[, c("MOS", "PRRcorr")], use="complete.obs")[2]
-corMosAcc <- cor(d[, c("MOS", "PRRacc")], use="complete.obs")[2]
-corMosCorrImp <- cor(d[, c("CMOS", "PRRcorrImp")], use="complete.obs")[2]
-corMosAccImp <- cor(d[, c("CMOS", "PRRaccImp")], use="complete.obs")[2]
+# PRRacc vs. MOS by Test Cond.
 pMosCorr <- ggplot(d[!is.na(d$MOS) & !is.na(d$PRRcorr),],
                    aes(x=PRRcorr, y=MOS, color=testName)) +
   geom_point() + geom_point(color="black", size=0.75) +
@@ -215,38 +217,38 @@ pMosCorr <- ggplot(d[!is.na(d$MOS) & !is.na(d$PRRcorr),],
   geom_point(size=50, alpha=0.02, show_guide=F) +
   scale_color_discrete(name="Test Name", drop=T) +
   theme_bw() + xlab("Correctness (PRR)") +
-  ggtitle("MOS vs. ASR Correctness, Grouping Highlighted")
+  ggtitle("MOS vs. ASR Correctness by Test Conditions, Grouping Highlighted")
 pMosAcc <- ggplot(d[!is.na(d$MOS) & !is.na(d$PRRacc),],
                   aes(x=PRRacc, y=MOS, color=testName)) +
   geom_point() +
   scale_color_discrete(name="Test Name", drop=T) +
   theme_bw() + xlab("Accuracy (PRR)") +
-  ggtitle("MOS vs. ASR Accuracy")
+  ggtitle("MOS vs. ASR Accuracy by Test Conditions")
 pMosCorrImp <- ggplot(d[!is.na(d$CMOS) & !is.na(d$PRRcorrImp),],
                   aes(x=PRRcorrImp, y=CMOS, color=testName)) +
   geom_point() +
   scale_color_discrete(name="Test Name", drop=T) +
   theme_bw() + xlab("Correctness (PRR) Improvement") + ylab("Comparative MOS") +
-  ggtitle("Comparative MOS vs. ASR Correctness Improvement, Grouping Highlighted")
+  ggtitle("Comparative MOS vs. ASR Correctness Improvement by Test Conditions")
 pMosAccImp <- ggplot(d[!is.na(d$CMOS) & !is.na(d$PRRaccImp),],
                   aes(x=PRRaccImp, y=CMOS, color=testName)) +
   geom_point() +
   scale_color_discrete(name="Test Name", drop=T) +
   theme_bw() + xlab("Accuracy (PRR) Improvement") + ylab("Comparative MOS") +
-  ggtitle("Comparative MOS vs. ASR Accuracy Improvement")
+  ggtitle("Comparative MOS vs. ASR Accuracy Improvement by Test Conditions")
 print(pMosCorr)
 print(pMosAcc)
 print(pMosCorrImp)
 print(pMosAccImp)
-saveP("fig/pair/my", "mos-prrcorr",
+saveP("fig/pair/byTest", "mos-prrcorr",
       pMosCorr + theme(legend.position="none"), w=7, h=6)
-saveP("fig/pair/my", "mos-prracc",
+saveP("fig/pair/byTest", "mos-prracc",
       pMosAcc + theme(legend.position="none"), w=7, h=6)
-saveP("fig/pair/my", "cmos-prrcorrimp",
+saveP("fig/pair/byTest", "cmos-prrcorrimp",
       pMosCorrImp + theme(legend.position="none"), w=7, h=6)
-saveP("fig/pair/my", "cmos-prraccimp",
+saveP("fig/pair/byTest", "cmos-prraccimp",
       pMosAccImp + theme(legend.position="none"), w=7, h=6)
-saveLeg("fig/pair/my", "cmos-prr-leg",
+saveLeg("fig/pair/byTest", "mos-prr-leg",
         g_legend(pMosCorr +
                    geom_point(size=3) +
                    theme(legend.position="bottom") +
@@ -255,3 +257,173 @@ saveLeg("fig/pair/my", "cmos-prr-leg",
                                                            keyheight=1.5,
                                                            keywidth=1.5))),
         w=7, h=1)
+
+# PRRacc vs. MOS by Alg.
+pMosCorr <- ggplot(d[!is.na(d$MOS) & !is.na(d$PRRcorr),],
+                   aes(x=PRRcorr, y=MOS, color=algorithm)) +
+  geom_point() + geom_point(color="black", size=0.75) +
+  geom_density2d(alpha=0.2, show_guide=F) +
+  geom_point(size=50, alpha=0.02, show_guide=F) +
+  scale_color_discrete(name="Test Name", drop=T) +
+  theme_bw() + xlab("Correctness (PRR)") +
+  ggtitle("MOS vs. ASR Correctness by Algorithm")
+pMosAcc <- ggplot(d[!is.na(d$MOS) & !is.na(d$PRRacc),],
+                  aes(x=PRRacc, y=MOS, color=algorithm)) +
+  geom_point() + geom_point(color="black", size=0.75) +
+  geom_density2d(alpha=0.2, show_guide=F) +
+  geom_point(size=50, alpha=0.02, show_guide=F) +
+  scale_color_discrete(name="Test Name", drop=T) +
+  theme_bw() + xlab("Accuracy (PRR)") +
+  ggtitle("MOS vs. ASR Accuracy by Algorithm")
+pMosCorrImp <- ggplot(d[!is.na(d$CMOS) & !is.na(d$PRRcorrImp),],
+                      aes(x=PRRcorrImp, y=CMOS, color=algorithm)) +
+  geom_point() + geom_point(color="black", size=0.75) +
+  geom_density2d(alpha=0.2, show_guide=F) +
+  geom_point(size=50, alpha=0.02, show_guide=F) +
+  scale_color_discrete(name="Test Name", drop=T) +
+  theme_bw() + xlab("Correctness (PRR) Improvement") + ylab("Comparative MOS") +
+  ggtitle("Comparative MOS vs. ASR Correctness Improvement by Algorithm")
+pMosAccImp <- ggplot(d[!is.na(d$CMOS) & !is.na(d$PRRaccImp),],
+                     aes(x=PRRaccImp, y=CMOS, color=algorithm)) +
+  geom_point() + geom_point(color="black", size=0.75) +
+  geom_density2d(alpha=0.2, show_guide=F) +
+  geom_point(size=50, alpha=0.02, show_guide=F) +
+  scale_color_discrete(name="Test Name", drop=T) +
+  theme_bw() + xlab("Accuracy (PRR) Improvement") + ylab("Comparative MOS") +
+  ggtitle("Comparative MOS vs. ASR Accuracy Improvement by Algorithm")
+print(pMosCorr)
+print(pMosAcc)
+print(pMosCorrImp)
+print(pMosAccImp)
+saveP("fig/pair/byAlg", "mos-prrcorr",
+      pMosCorr + theme(legend.position="none"), w=7, h=6)
+saveP("fig/pair/byAlg", "mos-prracc",
+      pMosAcc + theme(legend.position="none"), w=7, h=6)
+saveP("fig/pair/byAlg", "cmos-prrcorrimp",
+      pMosCorrImp + theme(legend.position="none"), w=7, h=6)
+saveP("fig/pair/byAlg", "cmos-prraccimp",
+      pMosAccImp + theme(legend.position="none"), w=7, h=6)
+saveLeg("fig/pair/byAlg", "mos-prr-leg",
+        g_legend(pMosCorr +
+                   geom_point(size=3) +
+                   theme(legend.position="bottom") +
+                   scale_color_discrete(name="Algorithm",
+                                        guide=guide_legend(nrow=2,
+                                                           keyheight=1.5,
+                                                           keywidth=1.5))),
+        w=10, h=1)
+saveLeg("fig/pair/byAlg", "mos-prr-legV",
+        g_legend(pMosCorr +
+                   geom_point(size=3) +
+                   theme(legend.position="right") +
+                   scale_color_discrete(name="Algorithm",
+                                        guide=guide_legend(ncol=1,
+                                                           keyheight=1.5,
+                                                           keywidth=1.5))),
+        w=2.5, h=3.5)
+
+##### Box of moh and mod, phoneme comparison #####
+## Results, eval method specific
+myBoxPlot <- function (d, yParam, yName, savedir, doImprovement=F) {
+  p <- ggplot(d, aes_string(x="algorithm", y=yParam, colour="testName")) +
+    geom_boxplot() +
+    geom_point(position=position_jitter(width=0.1), alpha=0.5) +
+    scale_colour_discrete(name="Test", guide=guide_legend(nrow=2)) +
+    theme_bw() + xlab("Algorithms") + ylab(paste(yName, "Score")) +
+    theme(legend.position="none",
+          axis.text.x=element_text(angle=15, hjust=0.8)) +
+    ggtitle(paste(yName, "Results of Implemented Algorithms"))
+  print(p)
+  pdf(paste0(savedir, "/", yParam, ".pdf", sep=""), width=15, height=10)
+  print(p)
+  dev.off()
+  saveLeg(savedir, paste0(yParam, "_leg.pdf"),
+          g_legend(p +
+                     theme(legend.position="right") +
+                     scale_color_discrete(name="Algorithm",
+                                          guide=guide_legend(ncol=1,
+                                                             keyheight=1.5,
+                                                             keywidth=1.5))),
+          w=2.5, h=3.5)
+  if (doImprovement) {
+    p <- ggplot(d, aes_string(x="algorithm", y=paste0(yParam, "Imp"),
+                              colour="testName")) +
+      geom_boxplot() +
+      geom_point(position=position_jitter(width=0.1), alpha=0.5) +
+      scale_colour_discrete(name="Test", guide=guide_legend(nrow=2)) +
+      theme_bw() + xlab("Algorithms") + ylab(paste(yName, "Improvement")) +
+      theme(legend.position="bottom",
+            axis.text.x=element_text(angle=15, hjust=0.8)) +
+      ggtitle(paste("Relative", yName,
+                    "Results of Implemented Algorithms"))
+    print(p)
+    pdf(paste0(savedir, "/", yParam, "Imp.pdf", sep=""), width=15, height=10)
+    print(p)
+    dev.off()
+  }
+}
+
+algs <- c("mohammadiaOnline", "phonememohammadiaOnline",
+          "phonememodifiedOnline",
+          "mohammadiaSupervised", "phonememohammadiaSupervised",
+          "phonememodifiedSupervised")
+newLab <- c("Mohammadia (Online)", "Phn Train Mohammadia (Online)",
+          "Phoneme Base (Online)",
+          "Mohammadia (Supervised)", "Phn Train Mohammadia (Supervised)",
+          "Phoneme Base (Supervised)")
+d.plot <- d[(d$algorithm %in% algs) & (d$testNo %in% c(5, 7, 8, 9, 10)), ]
+d.plot$algorithm <- factor(d.plot$algorithm, levels=algs)
+for (i in 1:length(algs)) {
+  d.plot$algLab[d.plot$algorithm == algs[i]] <- newLab[i]
+}
+d.plot$algLab <- factor(d.plot$algLab, levels=newLab)
+d.plot$algorithm <- d.plot$algLab
+
+folder <- paste0(fig, "phnComp")
+dir.create(folder, showWarnings=F)
+myBoxPlot(d.plot, "pesq", "PESQ", folder, T)
+myBoxPlot(d.plot, "segSNR", "Segmental SNR", folder, T)
+myBoxPlot(d.plot, "PRRcorr", "ASR Phoneme Correctness", folder, T)
+myBoxPlot(d.plot, "PRRacc", "ASR Phoneme Accuracy", folder, T)
+
+myBoxPlot(d.plot, "MOS", "MOS", folder)
+myBoxPlot(d.plot, "MOSle", "MOS Listening Effort", folder)
+myBoxPlot(d.plot, "CMOS", "Comparative MOS", folder)
+
+##### Phoneme Comparison x-y #####
+evalMethods <- c("PRRcorrImp", "PRRaccImp", "MOS", "CMOS", "pesq")
+by <- c("testNo", "algorithm", "Input.SNR")
+for (evalMethod in evalMethods) {
+  d.plot <- d[(d$algorithm %in% algs) & (d$testNo %in% c(5, 7, 8, 9, 10)) &
+                !is.na(d[, evalMethod]),
+              c(evalMethod, by)]
+  d.plot$val <- d.plot[, evalMethod]
+  
+  # before phn mod
+  d.bef <- d.plot[!grepl("phoneme", d.plot$algorithm), ]
+  d.bef$algorithm <- sub("mohammadia", "", d.bef$algorithm)
+  d.bef <- ddply(d.bef, by, summarise, val=mean(val))
+  
+  # train phn mod
+  d.trn <- d.plot[grepl("phonememoh", d.plot$algorithm), ]
+  d.trn$algorithm <- sub("phonememohammadia", "", d.trn$algorithm)
+  d.trn <- ddply(d.trn, by, summarise, val=mean(val))
+  d.trn$Type <- "Phoneme Trained"
+  
+  # base phn mod
+  d.bas <- d.plot[grepl("phonememod", d.plot$algorithm), ]
+  d.bas$algorithm <- sub("phonememodified", "", d.bas$algorithm)
+  d.bas <- ddply(d.bas, by, summarise, val=mean(val))
+  d.bas$Type <- "Phoneme Base"
+  
+  d.trn <- merge(d.bef, d.trn, by=by)
+  d.bas <- merge(d.bef, d.bas, by=by)
+  
+  d.plot <- rbind(d.trn,d.bas)
+  
+  p <- ggplot(d.plot, aes(x=val.x, y=val.y, color=Type)) +
+    geom_point() +
+    theme_bw() + xlab("Before Modifications") +
+    ylab("With Phoneme Modifications")
+  print(p)
+}

@@ -142,6 +142,9 @@ A summary of the correlation between all measurements made is given
 in \figref{my-Corr}. A number of interesting observations were drawn
 from this summary to be further investigated.
 
+
+\subsubsection*{On the relationship between \acs{PESQ} and \acs{MOS}}
+
 Firstly, it was noted that in \figref{my-Corr}, the correlation between
 \ac{PESQ} and the various \ac{MOS} measures was low. This was a
 surprising results as it has generally been determined in literature
@@ -158,24 +161,28 @@ It was found that when the ideal binary mask algorithm data was omitted
 the correlation between the \ac{PESQ} and \ac{MOS} increased, as
 demonstrated in \figref{my-pesq-mos}. This indicated there were specific
 occurrences for which the relationship between \ac{PESQ} and \ac{MOS}
-demonstrated in literature do not hold.
+demonstrated in literature do not hold. 
 
 \begin{figure}[h]
-
-
 \subfloat[With the ideal binary mask]{
 
-\includegraphics[width=0.4\textwidth]{fig/R/pair/my/pesq-mos}
+\includegraphics[width=0.5\textwidth]{fig/R/pair/my/pesq-mos}
 
 }\subfloat[Without the ideal binary mask]{
 
-\includegraphics[width=0.4\textwidth]{fig/R/pair/my/pesq-mos_no-IDBM}
+\includegraphics[width=0.5\textwidth]{fig/R/pair/my/pesq-mos_no-IDBM}
 
-}\includegraphics[width=0.2\textwidth]{fig/R/pair/my/pesq-mos_leg}
+}
 
-\protect\caption{\label{fig:my-pesq-mos}Scatterplot of \acs{PESQ} vs. \ac{MOS} results}
+\includegraphics[width=1\textwidth]{fig/R/pair/my/pesq-mos_leg}
+
+\protect\caption{\label{fig:my-pesq-mos}Scatterplot of \acs{PESQ} vs. \acs{MOS}
+results}
 \end{figure}
 
+
+
+\subsubsection*{On the relationship between similar measures}
 
 The \ac{MOS} evaluation measures had a strong correlation with one-another
 in \figref{my-Corr}, all at approximately 90\%. This was expected
@@ -183,6 +190,93 @@ between similar measures. However, it was noted that the same was
 not true for the \ac{PRR} measures, where the correlation between
 the correctness and the accuracy was found to be in general significantly
 negative.
+
+
+\subsubsection*{On the relationship between \acl{HR} and \acl{MR}}
+
+\figref{my-Corr} shows a significant positive correlation between
+the various \ac{MOS} measures and the \ac{PRR} measured as correctness.
+However, the figure also shows an almost as significant negative correlation
+between the various \ac{MOS} measures and the \ac{PRR} measured
+as accuracy. \Cref{fig:mos-prrcorr,fig:cmos-prrcorrimp} highlight
+the correlation between \ac{MOS} and \ac{PRR} measured as correctness.
+\figref{mos-prrcorr} further highlights the relative density, revealing
+that certain test conditions are outliers and that the correlation
+might otherwise have been higher. It was seen that tests where there
+was one competing speaker of the same sex, highlighted in red, were
+characterised by a mid-range \ac{MOS} result, but a high correctness
+\ac{PRR}. This indicated the \ac{ASR} system was able to still detect
+the \ac{SoI}'s voice, however a human listener scored the signal
+as average.
+
+However, \figref{cmos-prraccimp} shows that in terms of improvement,
+and regardless of algorithm, the enhancement in competing speaker
+noise was non-existent. NOIZEUS babble noise results tended also to
+be poor. Interestingly, the synthetic babble formed from three speakers
+tended to be improved by most algorithms under the accuracy \ac{PRR}
+measure. This had almost no correlation with the performance rated
+by human listeners, which ranged from a fair improvement to significantly
+worse.
+
+\begin{figure}[h]
+\subfloat[\label{fig:mos-prrcorr}\acs{MOS} vs. \acs{ASR} correctness]{\includegraphics[width=0.5\textwidth]{fig/R/pair/byTest/mos-prrcorr}
+
+}\subfloat[\label{fig:mos-prracc}\acs{MOS} vs. \acs{ASR} accuracy]{\includegraphics[width=0.5\textwidth]{fig/R/pair/byTest/mos-prracc}
+
+}
+
+\subfloat[\label{fig:cmos-prrcorrimp}Comparative \acs{MOS} vs. \acs{ASR}
+correctness improvement]{\includegraphics[width=0.5\textwidth]{fig/R/pair/byTest/cmos-prrcorrimp}
+
+}\subfloat[\label{fig:cmos-prraccimp}Comparative \acs{MOS} vs. \acs{ASR} accuracy
+improvement]{\includegraphics[width=0.5\textwidth]{fig/R/pair/byTest/cmos-prraccimp}
+
+}
+
+\noindent \begin{centering}
+\includegraphics[width=0.6\linewidth]{fig/R/pair/byTest/mos-prr-leg}
+\par\end{centering}
+
+\protect\caption{\label{fig:hr-mr}Scatterplot of \acs{HR} and \acs{MR} measures,
+highlighting test conditions}
+\end{figure}
+
+
+\figref{hr-mr-alg} shows the same data as \figref{hr-mr}, but with
+colour highlighting the enhancement algorithm as opposed to the test
+conditions. A very interesting observation made was the performance
+of the ideal binary mask and phoneme-dependent ideal binary mask,
+especially under accuracy \ac{PRR}. These results were also noted
+by observing the ideal binary mask algorithms performance in \Cref{fig:my-PRRacc,fig:my-PRRacc-imp}.
+These algorithms achieved the highest scores of any algorithm, despite
+performing poorly on all \ac{HR} and statistical measures.
+
+The explanation given for this behaviour was that the ideal binary
+mask algorithms are effective in eliminating the competing noise,
+and thus reducing false insertions. However, in the process these
+algorithms distort the signal severely, thereby drastically reducing
+human intelligibility, and also causing the loss in correctness \ac{PRR}
+exhibited in \figref{my-PRRcorr-imp}. 
+
+\begin{figure}[h]
+\subfloat[\label{fig:cmos-prrcorrimp-alg}Comparative \acs{MOS} vs. \acs{ASR}
+correctness improvement]{\includegraphics[width=0.5\textwidth]{fig/R/pair/byAlg/cmos-prrcorrimp}
+
+}\subfloat[\label{fig:cmos-prraccimp-alg}Comparative \acs{MOS} vs. \acs{ASR}
+accuracy improvement]{\includegraphics[width=0.5\textwidth]{fig/R/pair/byAlg/cmos-prraccimp}
+
+}
+
+\noindent \begin{centering}
+\includegraphics[width=0.9\linewidth]{fig/R/pair/byAlg/mos-prr-leg}
+\par\end{centering}
+
+\protect\caption{\label{fig:hr-mr-alg}Scatterplot of \acs{HR} and \acs{MR} measures,
+highlighting enhancement algorithm}
+\end{figure}
+
+
+\clearpage{}
 
 
 \section{Assessing \acl{NMF} Algorithm Training}

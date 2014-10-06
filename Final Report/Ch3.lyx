@@ -126,7 +126,14 @@ key "Hoyer2004,Brookes1997,Loizou2008,Wojcicki2011"
 \end_layout
 
 \begin_layout Standard
-Data analysis was conducted using R.
+Data analysis was conducted using R 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "RCoreTeam2014"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
