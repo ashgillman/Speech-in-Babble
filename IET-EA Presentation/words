@@ -1,0 +1,96 @@
+Welcome?
+
+I'm here today/tonight to present to you the findings of my thesis project, titled ``Speech Enhancement and Evaluation using Phoneme Non-negative Matrix Factorisation.''
+
+Speech enhancement is, obviously, the process of enhancing speech. But why do we need to enhance speech? There are a number of applications.
+The greatest problem for the hearing impaired is hearing a voice where there are a number of competing voices around. This is known as babble noise.
+
+The same problems are present, but worse, for cochlear implant users. These are for people who are classed as severely or profoundly deaf, and consist of an implant within the cochlear itself to directly stimulate nerves.
+Imagine a system where a hearing aid or cochlear implant user could train their device to recognise specific people they closely interact with. So a boy could set his cochlear implant to pick up only his mother's voice at the busy shopping center, or an elderly lady can tune her hearing aid into her husband's voice while at a busy cafe (bingo?).
+
+Speech enhancement is useful for the normal hearing population as well, for example over our mobile phone connections.
+
+And not all situations require real-time processing. Speech enhancement can be used to improve the quality of prerecorded material as well.
+
+The other side, then, are the applications for machines. Voice recognition has become much more popular in mobile phones. But anyone who has used these technologies before will know they aren't perfect, and should be used in a noise free environment.
+
+The newest generation of televisions come with voice control features, as do many other consumer technologies.
+
+It can be important for humans to be able to interact with computers in non-traditional methods. This is called Human Computer Interaction, or HCI. For example, while driving, a computer cannot be safely interacted with in the usual way, but a voice control system is appropriate.
+
+So we can see many uses for speech enhancement, and that they generally fall into two categories, those for human and those for machines.
+
+My research aims were twofold. The first area sought to answer the question, if I have an algorithm that enhances speech for a human, will it be just as good for a machine? And vice versa.
+---The second research aim was to then develop some modifications to existing algorithms, and to evaluate their performance using the methods found to be required in the first part.
+
+The reason we should consider human and machine enhancement separately is that the way humans and machines listen is fundamentally different. Machines break segments of a waveform down into a small number of features. It then uses these features to identify what is being spoken.
+However, a human listener listens to the entire waveform, over about 20Hz to 20kHz, which is a lot more information.
+So humans should be more sensitive to distortions in the signal.
+On the other hand, humans have an amazing brain to do some complex filtering, thereby enhancing speech on-the-fly.
+
+As I looked into reports in literature, I noticed that when presenting novel enhancement algorithms, authors were very unlikely to consider enhancement and performance under different contexts.
+Here those highlighted in orange used only machine recognition methods, in this case the word recognition rate, and those highlighted in blue considered only human recognition. I will run through what MOS and PESQ mean shortly.
+What this means is that when I look through literature to decide which enhancement algorithm to use I am not getting the full picture, and can't be certain which algorithm is indeed the most appropriate.
+
+The test measures I considered were MOS, Mean Opinion Score, PESQ, Perceptual Evaluation of Speech Quality and PRR, Phoneme Recognition Rate.
+
+MOS is a subjective test, where human subjects are asked to listen to a number of recordings in a random order and rate their perceived quality. The score is then taken as the mean of the recorded scores.
+
+PESQ is an algorithm that attempts to be equivalent to if a MOS test was completed. This is a lot quicker, easier, cheaper and gives an objective score. In general, the correlation with MOS scores has shown to be quite high when analysing telecommunication systems.
+The method I have used to measure machine recognition is the phoneme-level accuracy of an automated speech recognition system. I use the phoneme recognition as the phoneme is the building block of speech.
+
+If we split a sentence or phrase up, we get individual words. Splitting those words we get syllables. But splitting those down we get phonemes, the building blocks of speech.
+
+So I first conducted an investigation into some existing data, by pulling results from a number of different investigations and comparing similar algorithms under similar conditions.
+What we saw was in general, some correlation between the human and machine listeners.
+
+There were some obvious exceptions, such as when algorithms B and K were contrasted. Here we saw these algorithms had similar enhancement performance for machines, but the K algorithm clearly performed much better for humans. In fact, it appears to have given some of the best enhancement of all the algorithms considered.
+
+Highlighted here are the best performing algorithms. We can see that for these well-performing algorithms the correlation is much higher.
+
+So next I implemented a number of enhancement algorithms, and tested them using speech mixed with different types of noise.
+Here are what are known as the comparative MOS results, so those above 0 were rated as an improvement, and those below 0 were distorted.
+Along the x axis we have groupings of each algorithm tested, the shapes we see are box plots of the score, in this case the comparative MOS, and the colours indicate the type of noise.
+
+There are a number of observations we can make here, but I would like to highlight here Wojcicki's Ideal binary mask algorithm's results. This algorithm is seen to perform extremely poorly for human listeners. The test subjects complained when these were played of extremely quiet but distorted results.
+
+Here we have a similar set of results, this time we are looking at the accuracy of a phoneme recogniser.
+
+We can now see that the same ideal binary mask algorithm of Wojcicki's performs extremely well, the best of the algorithms I tested.
+
+And here I have a graph similar to the ones I showed before, where I have machine improvement on the x-axis and human improvement on the y-axis.
+Here we can see no correlation between the two.
+
+So, in terms of contrasting enhancement for humans and machines, it looks like the correlation between improvement for humans and machines is quite insignificant.
+A specific example has been seen where a large improvement for machines is seen, however the same enhancement renders the signal unrecognisable to a human.
+Therefore, it is recommended that in future, authors proposing novel enhancement algorithms should use both human measures, in the form of PESQ, and where possible, MOS also. Even if this is only conducted on a small test sample. And the algorithm should also be tested for improvement for machine recognisers.
+
+I next looked at implementing an enhancement algorithm of my own. The I decided to base the algorithm off a state-of-the-art NMF algorithm developed by Nasser Mohammadia.
+This algorithm used hidden markov models to model the noise, giving it the ability to be trained to different noise types and adapt in real time.
+
+I have tested two methods of introducing this phoneme dependence. The first of these is instead of training the algorithm to the desired voice using recordings of sentences, to draw samples of each phoneme and using this as the training data.
+The idea was to provide higher density information to the training algorithm. The columns in the image here show the Fourier transform of the phoneme slices.
+
+The second proposed change bypasses the training all together. These NMF algorithms have a dictionary they use to identify speech and extract it. This modification replaces the dictionary with the drawn phoneme slices directly.
+
+Here are the comparative MOS results for each of my proposed methods, phoneme training and phoneme dictionary.
+Here the x-axis shows the original performance, and the y-axis shows the new performance. So those points below the line were worse, and those above the line were improved.
+As we can see, some points are better, some points are worse, but overall there is no significant trend of improvement for the human listeners.
+
+Here we have the same results, but for a machine recogniser.
+Here we see something interesting: in general, the phoneme training, on the left, does indeed improve the results. Especially note the car noise tests, indicated by the plus signs, which previously were negative or distorting, but are now positive, so enhanced.
+However, we can see that phoneme training performs much more poorly when the noise was a single competing speaker of the same sex, indicated by the circles.
+We can also see that the phoneme dictionary modification seems to squeese all the results into a smaller vertical area. This modification improves the previously poor performers, but distorts the good performers.
+
+So we can conclude that using phoneme training in general gives better enhancement for machines. The exception was where our noise is extremely similar to the voice, in which case we have a poorer performance.
+We also saw that using the phoneme dictionary improved some of the previously bad performing results. This could be exploited by a smart algorithm that knows which enhancement algorithm to use depending on the context.
+We noted no significant improvements for humans.
+
+One important thing to note here is the importance of using different evaluation measures. Had I have implemented my algorithm and only tested the enhancement for human listeners I may never have seen the potential of these phoneme-dependent algorithms.
+Conversely, had I have tested them only against machines, others may have used my algorithms and wasted a lot of time trying to use them for human speech enhancement.
+
+The phoneme dependent algorithms I have created performed very well against noise recordings from within a car. So such algorithms could easily find application for in-car electronics such as car radios, GPS systems and hands-free systems.
+
+In terms of future work, there are a number of investigations that could stem from this work. The most prominent I believe to be investigations into the accuracy of using PESQ under a speech enhancement context. Lots of investigations have been done into PESQ vs MOS for telecommunications, but few when looking at evaluating enhacemement algorithms for noise. I have barely scratched the surface here.
+Similar studies to mine could be conducted using the machine word recognition rate, which would give further insight into the machine understanding and the effect of false positive phoneme recognitions.
+And investigations could be done into using different enhancement algorithms depending on the type of noise present to get the most efficient enhancement, rather than a one size fits all approach.

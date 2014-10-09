@@ -8,7 +8,7 @@
 \usepackage[font=scriptsize,labelformat=empty]{caption}
 \usepackage[absolute,overlay]{textpos}
 
-\setbeameroption{show notes on second screen}
+%\setbeameroption{show notes on second screen}
     %   OR
 %\pgfpagesuselayout{8 on 1}[a4paper,border shrink=5mm]
 %\setbeameroption{show notes}
@@ -22,6 +22,18 @@
 
 \usetheme{Szeged}
 \usecolortheme{crane}
+\setbeamertemplate{headline}{%
+	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+	\end{beamercolorbox}
+	\begin{beamercolorbox}{section in head/foot}
+	    \vskip2pt\insertsectionnavigationhorizontal{\paperwidth}{}{\hfill}\vskip2pt
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[ht=10pt]{subsection in head/foot}%
+	    \vskip2pt\insertsubsectionnavigationhorizontal{\paperwidth}{}{\hfill}\vskip2pt
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+	\end{beamercolorbox}
+}
 
 \begin{document}
 

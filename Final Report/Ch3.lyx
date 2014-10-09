@@ -3027,15 +3027,12 @@ HRESULTS
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "alg:ASR"
 
 \end_inset
 
-
-\lang australian
  
 \begin_inset ERT
 status open
@@ -4069,15 +4066,12 @@ textbf{
 \end_inset
 
 
-
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "sub:Phoneme-Training"
 
 \end_inset
 
-
-\lang australian
 
 \begin_inset ERT
 status open
@@ -4104,15 +4098,12 @@ textbf{
 \end_inset
 
 
-
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "sub:Phoneme-Base"
 
 \end_inset
 
-
-\lang australian
 
 \begin_inset ERT
 status open
@@ -4147,7 +4138,7 @@ Theory
 \end_layout
 
 \begin_layout Standard
-Typically, a 
+Typically, an 
 \begin_inset ERT
 status open
 
@@ -4174,22 +4165,20 @@ ac{SoI}
 \end_inset
 
  or from a range of speakers, depending on the application.
- However, it was noted that in a typical utterance is not an efficient method
- of transferring the information relating to a voice.
- The proposed method here intended to increase the information density,
- such that the supplied training may be reduced whilst still containing
- enough information to develop an adequate model.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Written whilst quite tired
-\end_layout
-
-\end_inset
-
-
+ However, it was noted that utterances were not an efficient method of encapsula
+ting the information relating to a voice.
+ This conclusion was drawn due to the fact that utterances contain redundant
+ information, as well as containing pauses that contain no information on
+ speech.
+ It was also hypothesised that the training algorithms may be affected by
+ the inclusion of non-speech sections.
+ The proposed method here, of 
+\series bold
+phoneme dependent training data
+\series default
+, is intended to increase the information density, such that the supplied
+ training may be reduced whilst still containing enough information to develop
+ an adequate model.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4197,7 +4186,8 @@ Implementation
 \end_layout
 
 \begin_layout Standard
-The drawn phonemes recordings were produced in 
+The drawn phonemes recordings were produced, the code for which is included
+ in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "lst:createTestData"
@@ -4235,11 +4225,18 @@ status open
 
 \end_inset
 
-, alongside the normal training data.
+.
  Phonemes were drawn randomly from the speaker recordings, and the position
  in the phoneme is also randomly selected, i.e., drawn phoneme samples are
  not always the beginning of the phoneme.
- The code used to produce drawn phoneme recordings is given in 
+ The algorithm used to produce drawn phoneme recordings is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:Producing-phoneme-training"
+
+\end_inset
+
+, and the code in 
 \begin_inset ERT
 status open
 
@@ -4264,6 +4261,158 @@ Maybe explain using algorithm or list type thing?
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Enumerate
+Draw Phoneme Samples 
+(
+\lang australian
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+drawPhnSamples.m
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Read phoneme alignment 
+(
+\lang australian
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+.phn
+\end_layout
+
+\end_inset
+
+) file 
+(
+\lang australian
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+getPhnData.m
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Enumerate
+For each possible phoneme
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Shuffle the order of the phoneme occurrences in the alignment file
+\end_layout
+
+\begin_layout Enumerate
+For each required sample (i.e.
+ the number of samples being used for each phoneme)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Select a random position within the occurrence of the phoneme
+\end_layout
+
+\begin_layout Enumerate
+Record a sample of the required length
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Concatenate the samples and save 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+.wav
+\end_layout
+
+\end_inset
+
+ file
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Producing-phoneme-training"
+
+\end_inset
+
+Producing phoneme training data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The number of phoneme samples drawn and used was varied between 1, 5, 10,
+ 50, 100, 500 and 999.
+ The length of each sample drawn was 
+\begin_inset Formula $512/FS$
+\end_inset
+
+, so that 256 frequency bins were formed after taking the real 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{FFT}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4294,11 +4443,113 @@ ac{SNR}
 
 \end_inset
 
- was varied as before, and both the online and supervised algorithm variations
- were tested.
- Instead of varying the number of test utterances provided, the maximum
- number of samples per phoneme was varied.
- This number was varied between 1, 5, 10, 50, 100, 500 and 999.
+ was varied as before, and the online and supervised algorithm variations
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mohammadiha2013supervised"
+
+\end_inset
+
+, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE}
+\end_layout
+
+\end_inset
+
+ algorithm 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Brookes1997"
+
+\end_inset
+
+, and the ideal binary mask algorithm 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wojcicki2011"
+
+\end_inset
+
+ were tested using drawn phoneme training data.
+ The 
+\series bold
+phoneme dependent training data
+\series default
+ enhancement algorithms were tested against a all measures considered within
+ this thesis: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+; 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, including listening effort and comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+; 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+, including correctness and accuracy; and segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -4541,8 +4792,65 @@ reference "lst:NMF-train"
 
 \end_inset
 
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "lst:NMF-train"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Can I get it to auto say 
+\begin_inset Quotes eld
+\end_inset
+
+In section ...
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+In chapter ...
+\begin_inset Quotes erd
+\end_inset
+
+?
+\end_layout
+
+\end_inset
+
 .
- With the simplified 
+ An alternative to the existing 
 \begin_inset listings
 lstparams "language=bash"
 inline true
@@ -4550,12 +4858,12 @@ status open
 
 \begin_layout Plain Layout
 
-dummyTrain
+train
 \end_layout
 
 \end_inset
 
- in the 
+ function in the 
 \begin_inset listings
 lstparams "language=bash"
 inline true
@@ -4568,13 +4876,52 @@ NMF
 
 \end_inset
 
- class, the drawn phoneme recording could be composed into a spectrogram
- and was then directly applied to the basis matrix.
- The number of bases was specified as the number of columns in this spectrogram.
+ class was implemented, 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+dummyTrain
 \end_layout
 
-\begin_layout Standard
-In order to verify that the spectral component matrix, in the code 
+\end_inset
+
+.
+ The simplified 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+dummyTrain
+\end_layout
+
+\end_inset
+
+ allowed the spectral component matrix
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Variable name of the spectral component matrix in the in the 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+NMF.m
+\end_layout
+
+\end_inset
+
+ code is 
 \begin_inset listings
 lstparams "language=Matlab"
 inline true
@@ -4587,8 +4934,62 @@ Et
 
 \end_inset
 
-, was not further modified a simple test plotting the spectral component
- matrix of the supplied test data, and the spectral component matrix 
+
+\end_layout
+
+\end_inset
+
+ to be directly specified as opposed to trained.
+\end_layout
+
+\begin_layout Standard
+This change was then utilised in both the online and supervised algorithms.
+ The phoneme training data (produced in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:Producing-phoneme-training"
+
+\end_inset
+
+), which was used also for the 
+\series bold
+phoneme dependent training data
+\series default
+ enhancement algorithms, was then read, made into a spectrogram, and passed
+ to 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+dummyTrain
+\end_layout
+
+\end_inset
+
+.
+ The new algorithms were called the modified online (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:modifiedOnline"
+
+\end_inset
+
+) and modified supervised (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:modifiedSupervised"
+
+\end_inset
+
+) algorithms respectively.
+\end_layout
+
+\begin_layout Standard
+In order to verify that the spectral component matrix was correctly applied,
+ the spectral component matrix 
 \begin_inset listings
 lstparams "language=Matlab"
 inline true
@@ -4601,7 +5002,81 @@ speech_nmf.Et
 
 \end_inset
 
- was conducted.
+ was returned and plotted.
+\end_layout
+
+\begin_layout Standard
+Again, the 
+\series bold
+phoneme dependent base matrix
+\series default
+ enhancement algorithms were tested against a all measures considered within
+ this thesis: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+; 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, including listening effort and comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+; 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+, including correctness and accuracy; and segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_body

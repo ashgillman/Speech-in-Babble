@@ -5,12 +5,13 @@
 \begin{frame}
 \titlepage
 \centering\emph{Supervisor:} Dr.~Owen~Kenny
-\note{I'm here today/tonight to present to you the findings of my thesis project, titled ``Speech Enhancement and Evaluation using Phoneme Non-negative Matrix Factorisation.'' \par I would also like to acknowledge my supervisor in his absence, Dr. Owen Kenny}
+\note{Good evening ladies and gentlement, and thank you for having me. I'd especially like to thank the IET and EA for the opportunity. I'm here today/tonight to present to you the findings of my thesis project, titled ``Speech Enhancement and Evaluation using Phoneme Non-negative Matrix Factorisation.''}
 \end{frame}
 
 \section{Introduction}
 
 \subsection{Introduction}
+{\nologo
 \begin{frame}{Why?}
 	\begin{columns}[c]
 	\begin{column}{0.55\textwidth}
@@ -23,21 +24,14 @@
 			\caption{J. Bergsten (2008) \textit{Hearing Aid}. Wikimedia Commons}
 			\end{figure}
 		}
+%		\only<2> {
+%			\begin{figure}
+%			\centering
+%			\includegraphics[width=\textwidth,height=0.55\textheight,keepaspectratio]{fig/Cochlear_implant.jpg}
+%			\caption{United States Department of Health and Human Services (2005) \textit{Cochlear Implant}. Wikimedia Commons}
+%			\end{figure}
+%		}
 		\only<2> {
-			\begin{figure}
-			\centering
-			\includegraphics[width=\textwidth,height=0.55\textheight,keepaspectratio]{fig/Cochlear_implant.jpg}
-			\caption{United States Department of Health and Human Services (2005) \textit{Cochlear Implant}. Wikimedia Commons}
-			\end{figure}
-		}
-		\only<3> {
-			\begin{figure}
-			\centering
-			\includegraphics[width=\textwidth,height=0.55\textheight,keepaspectratio]{fig/talk_on_phone.jpg}
-			\caption{United States Department of Health and Human Services (2005) \textit{Cochlear Implant}. Wikimedia Commons}
-			\end{figure}
-		}
-		\only<4> {
 			\begin{figure}
 			\centering
 			\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{fig/ABC_News_reporter,_Naomi_Woodley,_waiting_to_do_a_live_report.jpg}
@@ -50,28 +44,29 @@
 			\begin{itemize}
 				\small
 				\item<1-> Hearing Aids
-				\note<1>{Speech enhancement is, obviously, the process of enhancing speech. But why do we need to enhance speech? There are a number of applications.\par The greatest problem for the hearing impaired is hearing a voice where there are a number of competing voices around. This is known as babble noise.}
-				\item<2-> Cochlear Implants
-				\note<2>{The same problems are present, but worse, for cochlear implant users. These are for people who are classed as severely or profoundly deaf, and consist of an implant within the cochlear itself to directly stimulate nerves.\par Imagine a system where a hearing aid or cochlear implant user could train their device to recognise specific people they closely interact with. So a boy could set his cochlear implant to pick up only his mother's voice at the busy shopping center, or an elderly lady can tune her hearing aid into her husband's voice while at a busy cafe (bingo?).\par In fact, Cochlear Ltd. have an office here in Brisbane.}
+				\note<1>{Speech enhancement is, obviously, the process of enhancing speech.\par But why do we need to enhance speech? There are a number of applications.\par The greatest problem for the hearing impaired is hearing a voice where there are a number of competing voices around. This is known as babble noise.\par}
+				\item<1-> Cochlear Implants
+				\note<1>{Imagine a system where a hearing aid or cochlear implant user could train their device to recognise specific people they closely interact with. So a boy could set his cochlear implant to pick up only his mother's voice at the busy shopping center, or an elderly lady can tune her hearing aid into her husband's voice while at a busy cafe (bingo?).}
 			\end{itemize}
 		\end{block}
-		\begin{block}<3->{For Telecommunications}
+		\begin{block}<2->{For Telecommunications}
 			\begin{itemize}
 				\small
-				\item<3-> Phone lines
-				\note<3>{Speech enhancement is useful for the normal hearing population as well, for example over our mobile phone connections.\par Especially for use in extremely noisy environments.}
+				\item Phone lines
+				\note<2>{Speech enhancement is useful for the normal hearing population as well, for example over our mobile phone connections.\par Especially for use in extremely noisy environments.\par}
 			\end{itemize}
 		\end{block}
-		\begin{block}<4->{For Recording}
+		\begin{block}<2->{For Recording}
 			\begin{itemize}
 				\small
-				\item<4-> Cleaning sound in videos
-				\note<4>{And not all speech enhancement cases require real-time processing. Speech enhancement can be used to improve the quality of prerecorded material as well.}
+				\item Cleaning sound in videos
+				\note<2>{And not all speech enhancement cases require real-time processing. Speech enhancement can be used to improve the quality of prerecorded material as well.}
 			\end{itemize}
 		\end{block}
 	\end{column}
 	\end{columns}
 \end{frame}
+}
 \begin{frame}{Why?}
 	\begin{columns}[c]
 	\begin{column}{0.5\textwidth}
@@ -84,16 +79,16 @@
 			\note{The other side, then, are the applications for machines. Voice recognition has become much more popular in mobile phones. But anyone who has used these technologies before will know they aren't perfect, and should be used in a noise free environment.}
 			%{https://www.flickr.com/photos/henningtillmann/6246291025/in/photolist-avXSGR-hygLb8-66a1zC-dPtqzW-fQjwAs-eSsC3H-hygHdp-aTLr7-7RgKY-azPRkn-6AeM92-8ywd2y-7E2DtG-8h9g9p-8sR7C8-qb8xC-8ygeYq-7cmKrL-p1sSPL-8tZAtV-4up52M-5ZtdN4-9iWWBk-6MvzVh-9PSefL-nHCmvx-8ygeYA-5ZxqBE-8YEp4-9PUDV3-bnkVy4-5A1EFv-di9TVx-gMhEGo-8Sq3ii-58Mqmy-d5agm-aKzpT4-dUm239-joZqKW-jp1aLA-7KRHqF-3b6w9n-aJuH3z-dNobZW-dsh41j-5jkQa1-8gUBxt-5ZtdQK-jRf19W}
 		}
-		\only<2> {
-			\begin{figure}
-			\centering
-			\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{fig/Samsung_TV.jpg}
-			\caption{samsungtomorrow (2013) \textit{Samsung to Step up its Efforts to Enter Southwest Asia with Smart TV and Home Appliances}. Flickr}
-			\end{figure}
-			\note{The newest generation of televisions come with voice control features, as do many other consumer technologies.}
+%		\only<2> {
+%			\begin{figure}
+%			\centering
+%			\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{fig/Samsung_TV.jpg}
+%			\caption{samsungtomorrow (2013) \textit{Samsung to Step up its Efforts to Enter Southwest Asia with Smart TV and Home Appliances}. Flickr}
+%			\end{figure}
+%			\note{The newest generation of televisions come with voice control features, as do many other consumer technologies.}
 			%{https://www.flickr.com/photos/samsungtomorrow/8527481802/in/pool-1901913@N24/}
-		}
-		\only<3> {
+%		}
+		\only<2> {
 			\begin{figure}
 			\centering
 			\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{fig/driving.jpg}
@@ -106,8 +101,8 @@
 		\begin{block}{For Machines}
 			\begin{itemize}
 				\item<1-> Mobile Phones
-				\item<2-> Consumer Electronics
-				\item<3-> To ease HCI
+				\item<1-> Consumer Electronics
+				\item<2-> To ease human-computer interaction
 			\end{itemize}
 		\end{block}
 	\end{column}
@@ -128,10 +123,10 @@
 	\begin{block}{Aims}
 		\begin{itemize}
 			\item To investigate and contrast evaluation measures for human listening and machine listening
-			\begin{itemize}
-				\item Are human and machine listeners fundamentally different?
-				\item Does an algorithm that provides enhancement for a human listener provide enhancement for a machine listener, and vice-versa?
-			\end{itemize}
+			%\begin{itemize}
+			%	\item Are human and machine listeners fundamentally different?
+			%	\item Does an algorithm that provides enhancement for a human listener provide enhancement for a machine listener, and vice-versa?
+			%\end{itemize}
 			\item To develop phoneme-dependent modifications to Non-negative Matrix Factorisation (NMF) speech enhancement algorithms
 		\end{itemize}
 	\end{block}
@@ -142,7 +137,7 @@
 
 \subsection{Intro}
 {\nologo
-\begin{frame}
+\begin{frame}{Human vs. Machine Hearing}
 	\begin{block}{How does a machine ``hear''?}
 		\begin{itemize}
 			\item Machine breaks the waveform into a relatively low number of features.
@@ -159,28 +154,28 @@
 \end{frame}
 }
 
-{\nologo
-\begin{frame}{Why does it matter?}
-	\hspace*{-9mm}
-	\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{fig/assessmentMethods.eps}
-	\begin{textblock*}{0.3\paperwidth}(0.65\paperwidth,0.65\paperheight)
-	\begin{block}{Why?}
-	  Authors rarely measure both human and machine improvement.
-	\end{block}
-	\end{textblock*}
-	\note{As I looked into reports in literature, I noticed that when presenting novel enhancement algorithms, authors were very unlikely to consider enhancement and performance under different contexts.\par Here those highlighted in orange used only machine recognition methods, in this case the word recognition rate, and those highlighted in blue considered only human recognition. I will run through what MOS and PESQ mean shortly.\par What this means is that when I look through literature to decide which enhancement algorithm to use I am not getting the full picture, and can't be certain which algorithm is indeed the most appropriate.}
-\end{frame}
-}
+%{\nologo
+%\begin{frame}{Why does it matter?}
+%	\hspace*{-9mm}
+%	\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{fig/assessmentMethods.eps}
+%	\begin{textblock*}{0.3\paperwidth}(0.65\paperwidth,0.65\paperheight)
+%	\begin{block}{Why?}
+%	  Authors rarely measure both human and machine improvement.
+%	\end{block}
+%	\end{textblock*}
+%	\note{As I looked into reports in literature, I noticed that when presenting novel enhancement algorithms, authors were very unlikely to consider enhancement and performance under different contexts.\par Here those highlighted in orange used only machine recognition methods, in this case the word recognition rate, and those highlighted in blue considered only human recognition. I will run through what MOS and PESQ mean shortly.\par What this means is that when I look through literature to decide which enhancement algorithm to use I am not getting the full picture, and can't be certain which algorithm is indeed the most appropriate.}
+%\end{frame}
+%}
 
 \subsection{Methodology}
-\begin{frame}{Test Measures}
-	\begin{itemize}
-		\item MOS - Mean Opinion Score
-		\item PESQ - Perceptual Evaluation of Speech Quality
-		\item PRR - Phoneme Recognition Rate
-	\end{itemize}
-	\note{The test measures I considered were MOS, Mean Opinion Score, PESQ, Perceptual Evaluation of Speech Quality and PRR, Phoneme Recognition Rate.}
-\end{frame}
+%\begin{frame}{Test Measures}
+%	\begin{itemize}
+%		\item MOS - Mean Opinion Score
+%		\item PESQ - Perceptual Evaluation of Speech Quality
+%		\item PRR - Phoneme Recognition Rate
+%	\end{itemize}
+%	\note{The test measures I considered were MOS, Mean Opinion Score, PESQ, Perceptual Evaluation of Speech Quality and PRR, Phoneme Recognition Rate.}
+%\end{frame}
 {\nologo
 \begin{frame}{Test Measures}
 	\begin{block}{MOS (Human)}
@@ -236,8 +231,7 @@
 	\note{If we split a sentence or phrase up, we get individual words. Splitting those words we get syllables. But splitting those down we get phonemes, the building blocks of speech.}
 \end{frame}
 
-\subsection{Results and Conclusions}
-{\nologo
+\subsection{Results}
 \begin{frame}{What does existing data indicate?}
 	\hspace*{-9mm}
 	\includegraphics[width=0.6\paperwidth,height=0.8\textheight,keepaspectratio]{fig/HumanMachineAllLM.pdf}
@@ -263,17 +257,16 @@
 %	\end{exampleblock}
 %	\end{textblock*}
 %\end{frame}
-\begin{frame}{What does existing data indicate?}
-	\hspace*{-9mm}
-	\includegraphics[width=0.6\paperwidth,height=0.8\textheight,keepaspectratio]{fig/HumanMachineAllLM3.pdf}
-	\begin{textblock*}{0.3\paperwidth}(0.65\paperwidth,0.4\paperheight)
-	\begin{block}{Algorithms c, e and P}
-	  Displayed correlation between human and machine. Performed well for both.
-	\end{block}
-	\end{textblock*}
-	\note{Highlighted here are the best performing algorithms. We can see that for these well-performing algorithms the correlation is much higher.}
-\end{frame}
-}
+%\begin{frame}{What does existing data indicate?}
+%	\hspace*{-9mm}
+%	\includegraphics[width=0.6\paperwidth,height=0.8\textheight,keepaspectratio]{fig/HumanMachineAllLM3.pdf}
+%	\begin{textblock*}{0.3\paperwidth}(0.65\paperwidth,0.4\paperheight)
+%	\begin{block}{Algorithms c, e and P}
+%	  Displayed correlation between human and machine. Performed well for both.
+%	\end{block}
+%	\end{textblock*}
+%	\note{Highlighted here are the best performing algorithms. We can see that for these well-performing algorithms the correlation is much higher.}
+%\end{frame}
 %{\nologo
 %\begin{frame}{Human Results (My Tests)}
 %	\only<1>{
@@ -300,49 +293,55 @@
 %	}
 %\end{frame}
 %}
+%\begin{frame}{Human vs. Machine Results (My Tests)}
+%	\centering
+%	\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{fig/cmos-prrcorrimp.pdf}
+%	\raisebox{0.5\height}{
+%		\includegraphics[width=0.2\textwidth,keepaspectratio]{fig/mos-prr-legV.pdf}
+%	}
+%	\note{So next I implemented a number of enhancement algorithms, and tested them using speech mixed with different types of noise.\par Here the the x-axis shows our machine improvement, the percentage of correctly identified phonemes, and the human measure on the y-axis is what's known as the comparative MOS result, so those above 0 were rated as an improvement, and those below 0 were distorted.\par We see here a significant correlation between the two measures.}
+%\end{frame}
 \begin{frame}{Human vs. Machine Results (My Tests)}
-	\centering
-	\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{fig/cmos-prrcorrimp.pdf}
-	\raisebox{0.5\height}{
-		\includegraphics[width=0.2\textwidth,keepaspectratio]{fig/mos-prr-legV.pdf}
+	\only<1> {
+		\centering
+		\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{fig/cmos-prraccimp1.pdf}
+		\hspace*{-10mm}
+		\raisebox{0.5\height}{
+			\includegraphics[width=0.2\textwidth,keepaspectratio]{fig/mos-prr-legV.pdf}
+		}
 	}
-	\note{So next I implemented a number of enhancement algorithms, and tested them using speech mixed with different types of noise.\par Here the the x-axis shows our machine improvement, the percentage of correctly identified phonemes, and the human measure on the y-axis is what's known as the comparative MOS result, so those above 0 were rated as an improvement, and those below 0 were distorted.\par We see here a significant correlation between the two measures.}
-\end{frame}
-\begin{frame}{Human vs. Machine Results (My Tests)}
-	\centering
-	\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{fig/cmos-prraccimp.pdf}
-	\raisebox{0.5\height}{
-		\includegraphics[width=0.2\textwidth,keepaspectratio]{fig/mos-prr-legV.pdf}
+	\only<2> {
+		\centering
+		\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{fig/cmos-prraccimp2.pdf}
+		\hspace*{-10mm}
+		\raisebox{0.5\height}{
+			\includegraphics[width=0.2\textwidth,keepaspectratio]{fig/mos-prr-legV.pdf}
+		}
 	}
 	\note{However, here we have changed the measure for machines to penalise false positives. This is important as false positives will cause problems when the machine then tries to recognise words and meaning. \par It can be seen that there is no longer correlation between the two.\par Noted here is the case of Wojcicki's Ideal binary mask algorithm's, seen in green and red in the lower right corner. These particular algorithms completely distorted recordings according to human listeners, however performed very well in the machine's accuracy improvement.}
 \end{frame}
-\begin{frame}
-	Enhancement methods -- Humans vs. Machines
-	\begin{block}{Conclusions}
-		\begin{itemize}
-			\item Very little correlation between human perception and accuracy of machine recogniser.
-			\item The ideal binary mask improves accuracy of machine recogniser, however completely distorts the signal for a human listener.
-		\end{itemize}
-	\end{block}
-	\begin{block}{Recommended Measures}
-		\begin{itemize}
-			\item PESQ
-			\item MOS, using a small population
-			\item Word recognition rate of machine
-		\end{itemize}
-	\end{block}
-	\note{So, in terms of contrasting enhancement for humans and machines, it looks like the correlation between improvement for humans and machines is quite insignificant.\par A specific example has been seen where a large improvement for machines is seen, however the same enhancement renders the signal unrecognisable to a human.\par Therefore, it is recommended that in future, authors proposing novel enhancement algorithms should use both human measures, in the form of PESQ, and where possible, MOS also. Even if this is only conducted on a small test sample. And the algorithm should also be tested for improvement for machine recognisers.}
-\end{frame}
+
+%\subsection{Findings}
+%\begin{frame}{Research Question 1 Findings}
+%	Contrasting Human and Machine Enhancement
+%	\begin{block}{Findings}
+%		\begin{itemize}
+%			\item Very little correlation between human perception and accuracy of machine recogniser.
+%			\item The ideal binary mask improves accuracy of machine recogniser, however completely distorts the signal for a human listener.
+%		\end{itemize}
+%	\end{block}
+%	\note{So, in terms of contrasting enhancement for humans and machines, it looks like the correlation between improvement for humans and machines is quite insignificant.\par A specific example has been seen where a large improvement for machines is seen, however the same enhancement renders the signal unrecognisable to a human.}
+%\end{frame}
 
 \section{Phoneme-Dependent NMF}
 
 \subsection{Introduction}
-\begin{frame}{Mohammadia's NHMM}
+\begin{frame}{Mohammadia's Algorithm}
 	\begin{columns}[c]
 	\begin{column}{0.5\textwidth}
 		\begin{itemize}
 			\item State-of-the-art Algorithm
-			\item HMM formulated as NMF
+			\item Based on Hidden Markov Models
 			\item Ability to be trained for different noise types and adapt in real-time 
 			\item Two algorithms, online and supervised.
 		\end{itemize}
@@ -379,46 +378,128 @@
 	\end{column}
 	\end{columns}
 \end{frame}
-\begin{frame}{Modified Algorithm}
-	\begin{columns}[c]
-	\begin{column}{0.45\textwidth}
-		\begin{block}{Drawn-Phoneme Base}
-			\begin{itemize}
-				\item NMF algorithms have a dictionary they use to identify speech and extract it.
-				\item Here we will replace the dictionary with drawn phoneme slices.
-			\end{itemize}
-		\end{block}
-	\end{column}
-	\begin{column}{0.55\textwidth}
-		\hspace*{-7mm}
-		\includegraphics[width=1.15\textwidth,height=0.8\textheight,keepaspectratio]{fig/c3s-1phnSpectrogram.eps}
-		\note{The second proposed change bypasses the training all together. These NMF algorithms have a dictionary they use to identify speech and extract it. This modification replaces the dictionary with the drawn phoneme slices directly.}
-	\end{column}
-	\end{columns}
-\end{frame}
+%\begin{frame}{Modified Algorithm}
+%	\begin{columns}[c]
+%	\begin{column}{0.45\textwidth}
+%		\begin{block}{Drawn-Phoneme Base}
+%			\begin{itemize}
+%				\item NMF algorithms have a dictionary they use to identify speech and extract it.
+%				\item Here we will replace the dictionary with drawn phoneme slices.
+%			\end{itemize}
+%		\end{block}
+%	\end{column}
+%	\begin{column}{0.55\textwidth}
+%		\hspace*{-7mm}
+%		\includegraphics[width=1.15\textwidth,height=0.8\textheight,keepaspectratio]{fig/c3s-1phnSpectrogram.eps}
+%		\note{The second proposed change bypasses the training all together. These NMF algorithms have a dictionary they use to identify speech and extract it. This modification replaces the dictionary with the drawn phoneme slices directly.}
+%	\end{column}
+%	\end{columns}
+%\end{frame}
 
-\subsection{Results and Conclusion}
+\subsection{Results}
 {\nologo
-\begin{frame}{PRR Accuracy Results}
+\begin{frame}{Comparative MOS Accuracy Results}
+	\vspace*{-5mm}
 	\centering
-	\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{fig/PRRaccImp.pdf}
+	\includegraphics[height=0.9\textheight,keepaspectratio]{fig/CMOS_phnComp1.pdf}
+	\note{Here are the comparative MOS results for each of my proposed methods, phoneme training and phoneme dictionary.\par Here the x-axis shows the original performance, and the y-axis shows the new performance. So those points below the line were worse, and those above the line were improved.
+As we can see, some points are better, some points are worse, but overall there is no significant trend of improvement for the human listeners.}
 \end{frame}
-\begin{frame}{MOS Accuracy Results}
-	\centering
-	\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{fig/MOSphoneme.pdf}
+\begin{frame}{PRR Accuracy Results}
+	\only<1>{
+		\vspace*{-5mm}
+		\centering
+		\includegraphics[height=0.9\textheight,keepaspectratio]{fig/PRRaccImp_phnComp1.pdf}
+		\note{Here we have the same results, but for a machine recogniser.
+Here we see something interesting: in general, the phoneme training, on the left, does indeed improve the results.}
+	}
+	\only<2>{
+		\vspace*{-5mm}
+		\centering
+		\includegraphics[height=0.9\textheight,keepaspectratio]{fig/PRRaccImp_phnComp2.pdf}
+		\note{Especially note the car noise tests, indicated by the plus signs, which previously were negative or distorting, but are now positive, so enhanced.}
+	}
+%	\only<3>{
+%		\vspace*{-5mm}
+%		\centering
+%		\includegraphics[height=0.9\textheight,keepaspectratio]{fig/PRRaccImp_phnComp3.pdf}
+%		\note{However, we can see that phoneme training performs much more poorly when the noise was a single competing speaker of the same sex, indicated by the circles.}
+%	}
+%	\only<4>{
+%		\vspace*{-20mm}
+%		\hspace*{-15mm}
+%		\includegraphics[width=1.3\textwidth,keepaspectratio]{fig/PRRaccImp_phnComp4.pdf}
+%		\note{We can also see that the phoneme dictionary modification seems to squeeze all the results into a smaller vertical area. This modification improves the previously poor performers, but distorts the good performers.}
+%	}
 \end{frame}
 }
-\begin{frame}{Research Question 2 Conclusions}
-	\begin{itemize}
-		\item Phoneme-dependence improves online algorithm for machine recognisers
-		\item No significant improvements for human listeners
-	\end{itemize}
-\end{frame}
 
 \section{Conclusion}
 
-\begin{frame}{Further Studies}
+\subsection{Research Question 1}
+\begin{frame}{Research Question 1 Conclusions}
+	\begin{block}{Recommended Measures}
+		\begin{itemize}
+			\item PESQ
+			\item MOS, using a small population
+			\item Word recognition rate of machine
+		\end{itemize}
+	\end{block}
+	\note{Therefore, it is recommended that in future, authors proposing novel enhancement algorithms should use both human measures, in the form of PESQ, and where possible, MOS also. Even if this is only conducted on a small test sample. And the algorithm should also be tested for improvement for machine recognisers.}
+\end{frame}
+\begin{frame}{What does this mean?}
+	\fontsize{5cm}{1em}\rmfamily\centering ``Context''
+	\note{It is important to note the importance of context and considering the application.\par Had I have implemented my algorithm and only tested the enhancement for human listeners I may never have seen the potential of these phoneme-dependent algorithms.\par Conversely, had I have tested them only against machines, others may have used my algorithms and wasted a lot of time trying to use them for human speech enhancement.}
 \end{frame}
 
-\begin{frame}{What does this mean?}
+\subsection{Research Question 2}
+\begin{frame}{Research Question 2 Conclusions}
+	Phoneme-Dependence for NMF Algorithms
+	\begin{block}{Conclusions}
+		\begin{itemize}
+			\item Phoneme training generally improves algorithm for machine recognisers
+			\begin{itemize}
+				\item Although not where noise is very similar to voice, such as same sex competing speaker
+			\end{itemize}
+			\item No significant improvements for human listeners
+		\end{itemize}
+	\end{block}
+	\note{So we can conclude that using phoneme training in general gives better enhancement for machines. The exception was where our noise is extremely similar to the voice, in which case we have a poorer performance.\par We also saw that using the phoneme dictionary improved some of the previously bad performing results. This could be exploited by a smart algorithm that knows which enhancement algorithm to use depending on the context.\par We noted no significant improvements for humans.}
 \end{frame}
+{\nologo\usebackgroundtemplate{\includegraphics[width=\paperwidth]{fig/driving.jpg}}%
+\begin{frame}{What does this mean?}
+	\note{The phoneme dependent algorithms I have created performed very well against noise recordings from within a car. So such algorithms could easily find application for in-car electronics such as car radios, GPS systems and hands-free systems.}
+\end{frame}
+}
+\begin{frame}{Further Studies}{Where to from here?}
+	\begin{block}{}
+		\begin{itemize}
+			\item Investigate machine word recognition rate
+			\item Noise context dependent enhancement
+		\end{itemize}
+	\end{block}
+	\note{In terms of future work, there are a number of investigations that could stem from this work.\par Similar studies to mine could be conducted using the machine word recognition rate, which would give further insight into the machine's ability to recognise meaning.\par And investigations could be done into using different enhancement algorithms depending on the type of noise present to get the most efficient enhancement, rather than a one size fits all approach.}
+\end{frame}
+
+
+\begin{frame}
+	\fontsize{5cm}{1em}\rmfamily\centering Questions?
+\end{frame}
+
+\appendix
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+
+
+{\nologo
+\begin{frame}
+	\centering
+	\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{fig/NMF.eps}
+\end{frame}
+\begin{frame}
+	\centering
+	\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{fig/assessmentMethods.eps}
+\end{frame}
+}
+
+\setcounter{framenumber}{\value{finalframe}}

@@ -950,20 +950,7 @@ ac{PRR}
 \end_layout
 
 \begin_layout Standard
-The results of the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PESQ}
-\end_layout
-
-\end_inset
-
- evaluation are given in 
+The results for the various evaluation measures are given in 
 \begin_inset ERT
 status open
 
@@ -1191,15 +1178,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-Corr"
 
 \end_inset
 
-
-\lang australian
 Correlogram of results of independent investigation
 \end_layout
 
@@ -1238,15 +1222,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-PESQ"
 
 \end_inset
 
-
-\lang australian
 
 \begin_inset ERT
 status open
@@ -1298,7 +1279,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-PESQ-imp"
@@ -1306,8 +1286,6 @@ name "fig:my-PESQ-imp"
 \end_inset
 
 Improvement in 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -1357,7 +1335,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-segSNR"
@@ -1365,8 +1342,6 @@ name "fig:my-segSNR"
 \end_inset
 
 Segmental 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -1416,7 +1391,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-segSNR-imp"
@@ -1424,8 +1398,6 @@ name "fig:my-segSNR-imp"
 \end_inset
 
 Improvement in segmental 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -1476,15 +1448,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-MOS"
 
 \end_inset
 
-
-\lang australian
 
 \begin_inset ERT
 status open
@@ -1536,7 +1505,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-MOSle"
@@ -1544,8 +1512,6 @@ name "fig:my-MOSle"
 \end_inset
 
 Listening effort 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -1596,7 +1562,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-CMOS"
@@ -1604,8 +1569,6 @@ name "fig:my-CMOS"
 \end_inset
 
 Comparative 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -1656,15 +1619,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-PRRcorr"
 
 \end_inset
 
-
-\lang australian
 
 \begin_inset ERT
 status open
@@ -1716,7 +1676,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-PRRcorr-imp"
@@ -1724,8 +1683,6 @@ name "fig:my-PRRcorr-imp"
 \end_inset
 
 Improvement in 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -1776,15 +1733,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-PRRacc"
 
 \end_inset
 
-
-\lang australian
 
 \begin_inset ERT
 status open
@@ -1836,7 +1790,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:my-PRRacc-imp"
@@ -1844,8 +1797,6 @@ name "fig:my-PRRacc-imp"
 \end_inset
 
 Improvement in 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -2461,35 +2412,7 @@ acl{BNMF}
 \end_layout
 
 \begin_layout Standard
-In order to force phoneme dependence in the algorithms to be modified, phoneme
- samples first had to be formed.
- The phoneme sample recordings were formed using the script in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "lst:createTestData"
-
-\end_inset
-
-, with the maximum number of samples drawn per phoneme varied.
- The length of each sample drawn was 
-\begin_inset Formula $512/FS$
-\end_inset
-
-, such that 256 frequency bins were formed after taking the real 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{FFT}
-\end_layout
-
-\end_inset
-
-.
- The typical spectrograms of the drawn phonemes are given in 
+The typical spectrograms of the drawn phonemes are given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:drawn-phoneme-spectrogram"
@@ -2758,12 +2681,32 @@ Typical spectrogram of randomly drawn phoneme samples for speaker C3S
 
 \end_layout
 
+\begin_layout Standard
+The performance of the phoneme-dependant algorithms have already been given
+ in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
+cc-imp}
+\end_layout
+
+\end_inset
+
+, since these algorithms were also considered in the previous investigation.
+\end_layout
+
 \begin_layout Subsection
 Phoneme Dependent Training Data
 \end_layout
 
 \begin_layout Standard
-The following results relate to the proposed method outlined in 
+The changes proposed in 
 \begin_inset ERT
 status open
 
@@ -2776,11 +2719,140 @@ subsecref{Phoneme-Training}
 
 \end_inset
 
+ are implemented in the algorithms 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+,
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMMSE
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMohammadiaOnline
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMohammadiaSupervised
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
+cc-imp}
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
 \begin_layout Subsection
 Phoneme Dependent Base Matrix
+\end_layout
+
+\begin_layout Standard
+The changes proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Base}
+\end_layout
+
+\end_inset
+
+ are implemented in the algorithms 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeModifiedOnline
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeModifiedSupervised
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
+cc-imp}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard

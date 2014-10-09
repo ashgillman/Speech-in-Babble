@@ -2,6 +2,7 @@ library(ggplot2)
 library(gridExtra)
 library(RColorBrewer)
 library(corrgram)
+library(plyr)
 
 rm(list=ls());
 file = "dat/testResults.csv"
@@ -391,9 +392,15 @@ myBoxPlot(d.plot, "MOSle", "MOS Listening Effort", folder)
 myBoxPlot(d.plot, "CMOS", "Comparative MOS", folder)
 
 ##### Phoneme Comparison x-y #####
-evalMethods <- c("PRRcorrImp", "PRRaccImp", "MOS", "CMOS", "pesq")
-by <- c("testNo", "algorithm", "Input.SNR")
-for (evalMethod in evalMethods) {
+evalMethods <- list("PRRcorrImp"="Machine Correctness Improvement",
+                    "PRRaccImp"="Machine Accuracy Improvement",
+                    "MOS"="MOS", "CMOS"="CMOS", "pesq"="PESQ")
+by <- c("testName", "algorithm", "Input.SNR")
+
+folder <- paste0(fig, "phnCompXY/")
+dir.create(folder, showWarnings=F)
+
+for (evalMethod in names(evalMethods)) {
   d.plot <- d[(d$algorithm %in% algs) & (d$testNo %in% c(5, 7, 8, 9, 10)) &
                 !is.na(d[, evalMethod]),
               c(evalMethod, by)]
@@ -414,16 +421,28 @@ for (evalMethod in evalMethods) {
   d.bas <- d.plot[grepl("phonememod", d.plot$algorithm), ]
   d.bas$algorithm <- sub("phonememodified", "", d.bas$algorithm)
   d.bas <- ddply(d.bas, by, summarise, val=mean(val))
-  d.bas$Type <- "Phoneme Base"
+  d.bas$Type <- "Phoneme Dictionary"
   
   d.trn <- merge(d.bef, d.trn, by=by)
   d.bas <- merge(d.bef, d.bas, by=by)
   
   d.plot <- rbind(d.trn,d.bas)
+  d.plot$Type <- factor(d.plot$Type,
+                        levels=c("Phoneme Trained", "Phoneme Dictionary"))
+  d.min <- min(d.plot$val.x, d.plot$val.y)
+  d.max <- max(d.plot$val.x, d.plot$val.y)
   
-  p <- ggplot(d.plot, aes(x=val.x, y=val.y, color=Type)) +
+  p <- ggplot(d.plot, aes(x=val.x, y=val.y, color=algorithm,
+                          shape=factor(testName))) +
     geom_point() +
+    geom_abline(intercept=0,slope=1) +
+    facet_grid(~Type) +
+    scale_x_continuous(limits=c(d.min, d.max)) +
+    scale_y_continuous(limits=c(d.min, d.max)) +
     theme_bw() + xlab("Before Modifications") +
-    ylab("With Phoneme Modifications")
+    ylab("With Phoneme Modifications") + ggtitle(evalMethods[[evalMethod]])
   print(p)
+  pdf(paste0(folder, evalMethod, ".pdf", sep=""), width=12, height=5)
+  print(p)
+  dev.off()
 }

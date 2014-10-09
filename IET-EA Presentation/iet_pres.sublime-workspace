@@ -367,13 +367,59 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "content.tex",
+			"settings":
+			{
+				"buffer_size": 25884,
+				"line_ending": "Unix",
+				"name": "%!TEX root = presentation.tex"
+			}
+		},
+		{
+			"file": "/Users/Ash/Dropbox/Uni/2014/EE4000/Assignment/report.tex",
+			"settings":
+			{
+				"buffer_size": 28441,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "presentation.tex",
+			"settings":
+			{
+				"buffer_size": 1426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Ash/Dropbox/Uni/2014/Thesis/Proposal Presentation/Proposal.tex",
+			"settings":
+			{
+				"buffer_size": 16410,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "words",
+			"settings":
+			{
+				"buffer_size": 11229,
+				"line_ending": "Unix",
+				"name": "Welcome?"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 347.0,
+		"height": 287.0,
 		"selected_items":
 		[
+			[
+				"latex",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
 			[
 				"ins",
 				"Package Control: Install Package"
@@ -400,6 +446,14 @@
 	},
 	"file_history":
 	[
+		"/var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/lyx_tmpdir.jHsdIvZqg173/lyx_tmpbuf0/21_Users_Ash_Dropbox_Uni_2014_Thesis_Final_Report_Ch3.tex",
+		"/Users/Ash/Downloads/Beamer-example.tex",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/2.json",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/4.json",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/3.json",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/1.json",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/IET-EA Presentation/bib/image.bib",
+		"/Users/Ash/LaTeXTools.sublime-settings",
 		"/Users/Ash/Dropbox/Uni/2014/Thesis/IET-EA Presentation/presentation.tex",
 		"/Users/Ash/Dropbox/Uni/2014/Thesis/Proposal Presentation/Proposal.tex",
 		"/Users/Ash/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
@@ -424,9 +478,7 @@
 		"/Users/Ash/Dropbox/Uni/2014/Thesis/C++.gitignore",
 		"/Users/Ash/Documents/workspace/Project-Mario/Pi/Game.py",
 		"/Users/Ash/Documents/workspace/Project-Mario/Pi/CLI.py",
-		"/Users/Ash/Documents/workspace/Project-Mario/Pi/3.json",
 		"/Users/Ash/Documents/workspace/Project-Mario/Pi/InputDevice.py",
-		"/Users/Ash/Documents/workspace/Project-Mario/Pi/2.json",
 		"/Users/Ash/Documents/workspace/Project-Mario/Pi/readme.md",
 		"/Users/Ash/Documents/workspace/Project-Mario/README.md",
 		"/Users/Ash/Dropbox/Uni/2014/Thesis/Final Report/bib/library.bib",
@@ -521,13 +573,7 @@
 		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/routes/register.js",
 		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/routes/index.js",
 		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/routes/status.js",
-		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/views/status.jad",
-		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/routes/data.js",
-		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/views/error.jade",
-		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/bin/www",
-		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/Procfile",
-		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/app.js",
-		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/app/scripts/main.js"
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/views/status.jad"
 	],
 	"find":
 	{
@@ -617,13 +663,147 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
-			]
-		},
-		{
-			"sheets":
-			[
+				{
+					"buffer": 0,
+					"file": "content.tex",
+					"settings":
+					{
+						"buffer_size": 25884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23353,
+								23353
+							]
+						],
+						"settings":
+						{
+							"auto_name": "%!TEX root = presentation.tex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 9108.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/Ash/Dropbox/Uni/2014/EE4000/Assignment/report.tex",
+					"settings":
+					{
+						"buffer_size": 28441,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 12156.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "presentation.tex",
+					"settings":
+					{
+						"buffer_size": 1426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								359,
+								359
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/Ash/Dropbox/Uni/2014/Thesis/Proposal Presentation/Proposal.tex",
+					"settings":
+					{
+						"buffer_size": 16410,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7240,
+								7240
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "words",
+					"settings":
+					{
+						"buffer_size": 11229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9762,
+								9285
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Welcome?",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2303.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -644,18 +824,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -667,7 +840,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 157.0
 	},
 	"replace":
 	{
