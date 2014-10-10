@@ -96,13 +96,111 @@ End
 
 \begin_body
 
-\begin_layout Title
-Practical Speech Enhancement in Babble Using Phoneme-Dependent Non-negative
- Matrix Factorisation
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
 \end_layout
 
-\begin_layout Author
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+\begin_inset Graphics
+	filename fig/JCU_Logo&CampusStack_CMYK.eps
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size giant
+College of Science, Technology and Engineering
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size largest
+EG4012
+\begin_inset Newline newline
+\end_inset
+
+Electrical and Electronic Engineering
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size giant
+Evaluation of Speech Enhancement and Practical Speech Enhancement in Babble
+ Using Phoneme-Dependent Non-negative Matrix Factorisation
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size huge
 Ashley Gillman
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\noindent
+\align center
+
+\size larger
+Thesis submitted to the School of Engineering & Physical Sciences in partial
+ fulfilment of the requirements for the degree of
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size huge
+Bachelor of Engineering with Honours (Electrical and Electronic Engineering)
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size larger
+10 October 2014
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Left Header
@@ -110,7 +208,7 @@ Gillman
 \end_layout
 
 \begin_layout Right Header
-Practical Speech Enhancement in Babble using Phoneme NMF
+Speech Enhancement and Evaluation
 \end_layout
 
 \begin_layout Center Footer
@@ -183,6 +281,17 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
+
 \begin_inset FloatList figure
 
 \end_inset
@@ -192,6 +301,65 @@ LatexCommand tableofcontents
 
 \begin_layout Standard
 \begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+makeatletter
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+section*{Algorithms}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+@starttoc{loa} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+section*{Program Listings}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+@starttoc{lol} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+makeatother
+\end_layout
 
 \end_inset
 
@@ -212,6 +380,9 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -387,6 +558,17 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset include
 LatexCommand include
 filename "Appendices.lyx"

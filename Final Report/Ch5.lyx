@@ -1321,16 +1321,6 @@ reference "fig:direct-highcorr"
 .
 \end_layout
 
-\begin_layout Standard
-**
-\shape italic
-Conclusion, at the moment, is looking to be that in general there is a good
- correlation between human and machine listener improvement, and that, therefore
-, there will likely be many algorithms suited to both purposes.
- However, still to warn that algorithms should be verified both ways, as
- one does not imply the other.
-\end_layout
-
 \begin_layout Subsection
 Independent Investigation into 
 \begin_inset ERT
@@ -1698,6 +1688,16 @@ status open
 \begin_inset Graphics
 	filename fig/R/pair/my/pesq-mos_no-IDBM.pdf
 	width 50text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Colours look to be wrong
+\end_layout
 
 \end_inset
 
@@ -2843,6 +2843,325 @@ reference "fig:train-req-corr"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Phoneme-Dependent Variation Performance
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:drawn-phoneme-spectrogram"
+
+\end_inset
+
+ shows a typical example of the drawn phonemes that were used for training
+ data.
+ The differences in phonemes is clear and identifiable, indicating that
+ the method worked as intended.
+ One issue noted was that voiceless stops, were too short and were occasionally
+ missed.
+ An example is noted in the first two phoneme samples in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:mos-comparison-phn-1"
+
+\end_inset
+
+, which are /p/ and /t/.
+ For such phonemes, high frequency components would have been expected,
+ but were not present.
+ The same phonemes in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:mos-comparison-phn-5"
+
+\end_inset
+
+ revealed that only 2 out of the 10 phoneme slices contained the expected
+ high frequency components.
+ However, these kind of errors were expected and is one of the reasons that
+ the number of slices per phoneme was varied.
+\end_layout
+
+\begin_layout Standard
+Also noted was the fact that there was little to no visual difference after
+ 50 to 100 phoneme samples were drawn.
+ Additionally noted was the fact that the length of recordings stopped increasin
+g around this point.
+ After this point the saturation point for the recordings used was reached,
+ where there were not enough phoneme occurrences to support having more
+ samples.
+ So the tests done for more samples per phoneme than 100 were redundant.
+\end_layout
+
+\begin_layout Subsection
+Performance for Humans
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:pesq-comparison-phn"
+
+\end_inset
+
+ indicated that the phoneme dependent 
+\series bold
+training
+\series default
+ modifications caused, in general, a decline in performance measured with
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+.
+ The opposite was true, however, for the phoneme 
+\series bold
+base
+\series default
+ modification algorithms.
+ These algorithms mostly scored higher, with the exceptions mostly belonging
+ the the NOIZEUS street noise tests.
+\end_layout
+
+\begin_layout Standard
+This is in contrast, however, to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ results presented in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+\end_layout
+
+\end_inset
+
+.
+ These results did not show any specific pattern of improvement across different
+ noise types.
+ This indicated that the phoneme dependence modifications to these algorithms
+ did not present any significant improvement for human listeners.
+\end_layout
+
+\begin_layout Standard
+It was noted, however, that the points that did show better enhancement
+ on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ scales were more likely to be of the synthetic babble noise types, c3f(m)
+ and c3f(m)+c3c(f)+c35(m).
+ These are also associated with the more ``difficult'' forms of noise.
+ Therefore, it is possible that using phoneme dependence in algorithms may
+ be useful in source separation applications.
+ This highlights the ability of phoneme dependence to distinguish between
+ voices, but not as an efficient method of extracting speech from other
+ noise.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Note: application for second stage enhancement?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Performance for Machines
+\end_layout
+
+\begin_layout Standard
+The phoneme-dependent 
+\series bold
+training
+\series default
+ modifications failed to improve machine correctness almost completely,
+ as indicated in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn}
+\end_layout
+
+\end_inset
+
+.
+ However, with the exception of the ideal binary mask algorithms and the
+ c3f(m) noise type, the phoneme-dependent 
+\series bold
+training
+\series default
+ modifications tended to improve the machine correctness.
+ This suggests that using phoneme dependence tends to both increase the
+ algorithm's ability to remove noise, but also increases the distortion.
+ This observation makes sense, as using phoneme-dependent 
+\series bold
+training
+\series default
+ is in some ways a means to prevent over-training, so some under-trained
+ characteristics like this were to be expected.
+\end_layout
+
+\begin_layout Standard
+Interestingly, the increased correctness suggests that the noise reduction
+ outweighs the distortion for a machine recogniser.
+ The poor performance for the c3f(m) noise type is attributed to the fact
+ that both the
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+ and the noise are a similar male voice.
+ The poor performance indicated that phoneme-dependent 
+\series bold
+training
+\series default
+ did not particularly aid in separating similar voices.
+ The poor accuracy was likely due to a high number of false positive phoneme
+ detections, detected from the second voice.
+\end_layout
+
+\begin_layout Standard
+The phoneme-dependent 
+\series bold
+base
+\series default
+ modifications showed improvement in correctness, unlike the phoneme-dependent
+ 
+\series bold
+training
+\series default
+ modifications, as best observed in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:prrcorr-comparison-phn"
+
+\end_inset
+
+.
+ However, in terms of accuracy, no significant pattern was noted between
+ those performing better and worse than the original algorithms.
+\end_layout
+
+\begin_layout Subsection
+Other Observations
+\end_layout
+
+\begin_layout Standard
+The performance for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE}
+\end_layout
+
+\end_inset
+
+ algorithm is unchanged by the introduction of phoneme-dependence across
+ the objective measures.
+ This indicated that using phoneme dependence did not affect the operation
+ of this particular algorithm.
+ This also highlighted the level of subjectivity involved in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ tests, since the scores for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE}
+\end_layout
+
+\end_inset
+
+ algorithm in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+\end_layout
+
+\end_inset
+
+ deviated quite significantly from the diagonal line.
 \end_layout
 
 \end_body

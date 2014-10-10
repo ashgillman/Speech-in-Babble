@@ -360,13 +360,12 @@ using \ac{HTK}'s \lstinline[language=bash]!HVITE!.
 estimated phoneme transcription with the original phoneme transcription.
 \end{enumerate}
 \end{enumerate}
-\protect\caption{\label{alg:ASR}\foreignlanguage{australian}{ \acs{ASR} with \acs{HTK}}\selectlanguage{australian}%
-}
+\protect\caption{\label{alg:ASR} \acs{ASR} with \acs{HTK}}
 \end{algorithm}
 
 
 \begin{listing}[H]
-\protect\caption{\acl{MFCC} configuration file\label{lst:MFC-config}}
+\protect\caption{\acs{MFCC} configuration file\label{lst:MFC-config}}
 
 
 \lstinputlisting[nolol=true,style=myBash]{../Code/python/MFC_HCompV_Config.ini}
@@ -374,7 +373,7 @@ estimated phoneme transcription with the original phoneme transcription.
 
 
 \begin{listing}[H]
-\protect\caption{\acl{MFCC} prototype file\label{lst:MFC-proto}}
+\protect\caption{\acs{MFCC} prototype file\label{lst:MFC-proto}}
 
 
 \lstinputlisting[nolol=true,style=myBash]{../Code/python/MFCProto}
@@ -480,9 +479,9 @@ The performance of the \ac{BNMF} algorithm proposed by \citet{mohammadiha2013sup
 was to be investigated when trained under a phoneme dependent context.
 Two methods were proposed to achieve the phoneme dependence: firstly
 leaving the training algorithm unmodified, but simply supplying training
-data consisting of drawn phonemes, \textbf{\inputencoding{latin1}{\nameref{sub:Phoneme-Training}}\inputencoding{latin9}};
+data consisting of drawn phonemes, \textbf{\nameref{sub:Phoneme-Training}};
 and secondly modifying the training algorithm itself to be phoneme
-dependent, \textbf{\inputencoding{latin1}{\nameref{sub:Phoneme-Base}}\inputencoding{latin9}}.
+dependent, \textbf{\nameref{sub:Phoneme-Base}}.
 
 
 \subsection{\label{sub:Phoneme-Training}Phoneme Dependent Training Data}
@@ -493,31 +492,73 @@ the typical recorded training data with a series of drawn phonemes.
 
 \subsubsection*{Theory}
 
-Typically, a \ac{NMF} algorithm is trained using utterances, either
+Typically, an \ac{NMF} algorithm is trained using utterances, either
 from the \ac{SoI} or from a range of speakers, depending on the application.
-However, it was noted that in a typical utterance is not an efficient
-method of transferring the information relating to a voice. The proposed
-method here intended to increase the information density, such that
-the supplied training may be reduced whilst still containing enough
-information to develop an adequate model. 
+However, it was noted that utterances were not an efficient method
+of encapsulating the information relating to a voice. This conclusion
+was drawn due to the fact that utterances contain redundant information,
+as well as containing pauses that contain no information on speech.
+It was also hypothesised that the training algorithms may be affected
+by the inclusion of non-speech sections. The proposed method here,
+of \textbf{phoneme dependent training data}, is intended to increase
+the information density, such that the supplied training may be reduced
+whilst still containing enough information to develop an adequate
+model.
 
 
 \subsubsection*{Implementation}
 
-The drawn phonemes recordings were produced in \lstref{createTestData},
-\textit{\nameref{lst:createTestData}}, alongside the normal training
-data. Phonemes were drawn randomly from the speaker recordings, and
-the position in the phoneme is also randomly selected, i.e., drawn
-phoneme samples are not always the beginning of the phoneme. The code
-used to produce drawn phoneme recordings is given in \Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}.
+The drawn phonemes recordings were produced, the code for which is
+included in \lstref{createTestData}, \textit{\nameref{lst:createTestData}}.
+Phonemes were drawn randomly from the speaker recordings, and the
+position in the phoneme is also randomly selected, i.e., drawn phoneme
+samples are not always the beginning of the phoneme. The algorithm
+used to produce drawn phoneme recordings is given in \algref{Producing-phoneme-training},
+and the code in \Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}.
 
+
+\begin{algorithm}
+\begin{enumerate}
+\item Draw Phoneme Samples (\lstinline!drawPhnSamples.m!)
+
+\begin{enumerate}
+\item Read phoneme alignment (\lstinline!.phn!) file (\lstinline!getPhnData.m!)
+\item For each possible phoneme
+
+\begin{enumerate}
+\item Shuffle the order of the phoneme occurrences in the alignment file
+\item For each required sample (i.e. the number of samples being used for
+each phoneme)
+
+\begin{enumerate}
+\item Select a random position within the occurrence of the phoneme
+\item Record a sample of the required length
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\item Concatenate the samples and save \lstinline!.wav! file
+\end{enumerate}
+\protect\caption{\label{alg:Producing-phoneme-training}Producing phoneme training
+data}
+
+
+\end{algorithm}
+
+
+The number of phoneme samples drawn and used was varied between 1,
+5, 10, 50, 100, 500 and 999. The length of each sample drawn was $512/FS$,
+so that 256 frequency bins were formed after taking the real \ac{FFT}.
 
 Analysis was then performed similar to as described in \subsecref{Investigating-Training-Req}.
-The \ac{SNR} was varied as before, and both the online and supervised
-algorithm variations were tested. Instead of varying the number of
-test utterances provided, the maximum number of samples per phoneme
-was varied. This number was varied between 1, 5, 10, 50, 100, 500
-and 999.
+The \ac{SNR} was varied as before, and the online and supervised
+algorithm variations \citep{mohammadiha2013supervised}, the \ac{MMSE}
+algorithm \citep{Brookes1997}, and the ideal binary mask algorithm
+\citep{Wojcicki2011} were tested using drawn phoneme training data.
+The \textbf{phoneme dependent training data} enhancement algorithms
+were tested against a all measures considered within this thesis:
+\ac{PESQ}; \ac{MOS}, including listening effort and comparative
+\ac{MOS}; \ac{PRR}, including correctness and accuracy; and segmental
+\ac{SNR}.
 
 
 \subsection{\label{sub:Phoneme-Base}Phoneme Dependent Base Matrix}
@@ -569,14 +610,29 @@ The proposed solution was to remove the training stage of both the
 online and supervised methods, and allow the basis matrix to be directly
 specified. This was achieved by modifying the \lstinline[language=bash]!NMF!
 class supplied by \citet{mohammadiha2013supervised}, as given in
-\lstref{NMF-train}. With the simplified \lstinline[language=bash]!dummyTrain!
-in the \lstinline[language=bash]!NMF! class, the drawn phoneme recording
-could be composed into a spectrogram and was then directly applied
-to the basis matrix. The number of bases was specified as the number
-of columns in this spectrogram.
+\lstref{NMF-train}, \textit{\nameref{lst:NMF-train}}. An alternative
+to the existing \lstinline[language=bash]!train! function in the
+\lstinline[language=bash]!NMF! class was implemented, \lstinline[language=bash]!dummyTrain!.
+The simplified \lstinline[language=bash]!dummyTrain! allowed the
+spectral component matrix%
+\footnote{Variable name of the spectral component matrix in the in the \lstinline[language=bash]!NMF.m!
+code is \lstinline[language=Matlab]!Et!%
+} to be directly specified as opposed to trained.
 
-In order to verify that the spectral component matrix, in the code
-\lstinline[language=Matlab]!Et!, was not further modified a simple
-test plotting the spectral component matrix of the supplied test data,
-and the spectral component matrix \lstinline[language=Matlab]!speech_nmf.Et!
-was conducted.
+This change was then utilised in both the online and supervised algorithms.
+The phoneme training data (produced in \algref{Producing-phoneme-training}),
+which was used also for the \textbf{phoneme dependent training data}
+enhancement algorithms, was then read, made into a spectrogram, and
+passed to \lstinline[language=bash]!dummyTrain!. The new algorithms
+were called the modified online (\lstref{modifiedOnline}) and modified
+supervised (\lstref{modifiedSupervised}) algorithms respectively.
+
+In order to verify that the spectral component matrix was correctly
+applied, the spectral component matrix \lstinline[language=Matlab]!speech_nmf.Et!
+was returned and plotted.
+
+Again, the \textbf{phoneme dependent base matrix} enhancement algorithms
+were tested against a all measures considered within this thesis:
+\ac{PESQ}; \ac{MOS}, including listening effort and comparative
+\ac{MOS}; \ac{PRR}, including correctness and accuracy; and segmental
+\ac{SNR}.

@@ -4270,16 +4270,12 @@ sideways false
 status open
 
 \begin_layout Enumerate
-Draw Phoneme Samples 
-(
-\lang australian
-
+Draw Phoneme Samples (
 \begin_inset listings
 inline true
 status open
 
 \begin_layout Plain Layout
-
 drawPhnSamples.m
 \end_layout
 
@@ -4290,31 +4286,23 @@ drawPhnSamples.m
 
 \begin_deeper
 \begin_layout Enumerate
-Read phoneme alignment 
-(
-\lang australian
-
+Read phoneme alignment (
 \begin_inset listings
 inline true
 status open
 
 \begin_layout Plain Layout
-
 .phn
 \end_layout
 
 \end_inset
 
-) file 
-(
-\lang australian
-
+) file (
 \begin_inset listings
 inline true
 status open
 
 \begin_layout Plain Layout
-
 getPhnData.m
 \end_layout
 
@@ -4356,7 +4344,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 .wav
 \end_layout
 

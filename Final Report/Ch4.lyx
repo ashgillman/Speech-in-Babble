@@ -748,6 +748,16 @@ reference "fig:litResCorr"
  in the lower panels and a scatterplot in the upper panels.
  The sparsity in this figure is due to the limited amount of pre-existing
  data.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+How to read a correlogram!
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2193,10 +2203,6 @@ acs{BNMF}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2395,20 +2401,7 @@ Correlogram of results of training requirement investigations
 \end_layout
 
 \begin_layout Section
-Phoneme-Dependent Variation for the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acl{BNMF}
-\end_layout
-
-\end_inset
-
- Algorithm
+Phoneme-Dependent Variation Performance
 \end_layout
 
 \begin_layout Standard
@@ -2437,6 +2430,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-1phnSpectrogram.eps
+	lyxscale 50
 	width 50text%
 
 \end_inset
@@ -2448,6 +2442,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-comparison-phn-1"
+
+\end_inset
+
 One sample per phoneme
 \end_layout
 
@@ -2471,6 +2471,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-5phnSpectrogram.eps
+	lyxscale 50
 	width 50text%
 
 \end_inset
@@ -2482,6 +2483,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-comparison-phn-5"
+
+\end_inset
+
 Five samples per phoneme
 \end_layout
 
@@ -2504,7 +2511,9 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-10phnSpectrogram.eps
+	lyxscale 50
 	width 50text%
+	draft
 
 \end_inset
 
@@ -2534,6 +2543,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-50phnSpectrogram.eps
+	lyxscale 50
 	width 50text%
 	draft
 
@@ -2568,6 +2578,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-100phnSpectrogram.eps
+	lyxscale 50
 	width 50text%
 	draft
 
@@ -2599,6 +2610,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-500phnSpectrogram.eps
+	lyxscale 50
 	width 50text%
 	draft
 
@@ -2633,6 +2645,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-999phnSpectrogram.eps
+	lyxscale 50
 	width 50text%
 	draft
 
@@ -2701,12 +2714,35 @@ cc-imp}
 , since these algorithms were also considered in the previous investigation.
 \end_layout
 
-\begin_layout Subsection
-Phoneme Dependent Training Data
+\begin_layout Standard
+Additionally given are plots comparing performance of algorithms without
+ modification against those with phoneme-dependent modification.
+ These are given in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
+:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fi
+g:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,f
+ig:segsnrimp-comparison-phn}
+\end_layout
+
+\end_inset
+
+.
+ In these plots, the x-axis measures the performance of the original algorithm,
+ and the y-axis measures performance of the modified algorithm.
+ Therefore, any points lying above the diagonal line show better performance
+ for the modified algorithm, and below the line show better performance
+ for the original algorithm.
 \end_layout
 
 \begin_layout Standard
-The changes proposed in 
+The phoneme dependent training data changes proposed in 
 \begin_inset ERT
 status open
 
@@ -2732,11 +2768,7 @@ phonemeIDBM
 
 \end_inset
 
-,
-\begin_inset Newline linebreak
-\end_inset
-
-
+, 
 \begin_inset listings
 lstparams "breaklines=true"
 inline true
@@ -2762,7 +2794,11 @@ phonemeMohammadiaOnline
 
 \end_inset
 
- and 
+ and
+\begin_inset Newline linebreak
+\end_inset
+
+
 \begin_inset listings
 lstparams "breaklines=true"
 inline true
@@ -2790,15 +2826,27 @@ cc-imp}
 
 \end_inset
 
+, and are labelled ``Phoneme Training'' in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
+:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fi
+g:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,f
+ig:segsnrimp-comparison-phn}
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
-\begin_layout Subsection
-Phoneme Dependent Base Matrix
-\end_layout
-
 \begin_layout Standard
-The changes proposed in 
+The phoneme dependent base matrix changes proposed in 
 \begin_inset ERT
 status open
 
@@ -2852,6 +2900,22 @@ cc-imp}
 
 \end_inset
 
+, and are labelled ``Phoneme Dictionary (Modified)'' in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
+:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fi
+g:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,f
+ig:segsnrimp-comparison-phn}
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
@@ -2897,6 +2961,568 @@ NMF
 \end_inset
 
  class, to be the drawn phoneme bases supplied.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/pesq.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pesq-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/MOS.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-comparison-phn"
+
+\end_inset
+
+
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/MOSle.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mosle-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/CMOS.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-comparison-phn"
+
+\end_inset
+
+Comparative 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/PRRcorr.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prrcorr-comparison-phn"
+
+\end_inset
+
+
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/PRRcorrimp.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prrcorrimp-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness improvement comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/PRRacc.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prracc-comparison-phn"
+
+\end_inset
+
+
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/PRRaccimp.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prraccimp-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy improvement comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/segSNR.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:segsnr-comparison-phn"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/segSNRImp.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:segsnrimp-comparison-phn"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ improvement comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

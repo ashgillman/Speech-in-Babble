@@ -79,29 +79,7 @@ customHeadersFooters
 
 \begin_body
 
-\begin_layout Chapter*
-Abstract
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{chapter}{Abstract}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Abstract
 Speech enhancement is an important field in modern electronics, finding
  many applications from hearing aids to enhancing audio/visual recordings
  and automated speech recognisers in commercial products.
@@ -125,7 +103,7 @@ Speech enhancement is an important field in modern electronics, finding
  such as segmental SNR and where possible, MOS.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Abstract
 In addition, a phoneme dependent modification to existing non-negative matrix
  factorisation algorithms was proposed and implemented.
  This algorithm was found to provide better accuracy for machine recognisers.

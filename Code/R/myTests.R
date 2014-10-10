@@ -394,55 +394,81 @@ myBoxPlot(d.plot, "CMOS", "Comparative MOS", folder)
 ##### Phoneme Comparison x-y #####
 evalMethods <- list("PRRcorrImp"="Machine Correctness Improvement",
                     "PRRaccImp"="Machine Accuracy Improvement",
-                    "MOS"="MOS", "CMOS"="CMOS", "pesq"="PESQ")
+                    "PRRcorr"="Machine Correctness",
+                    "PRRacc"="Machine Accuracy",
+                    "segSNR"="Segmental SNR",
+                    "segSNRImp"="Segmental SNR Improvement",
+                    "MOS"="MOS", "MOSle"="MOS Listening Effort",
+                    "CMOS"="CMOS", "pesq"="PESQ")
 by <- c("testName", "algorithm", "Input.SNR")
 
 folder <- paste0(fig, "phnCompXY/")
 dir.create(folder, showWarnings=F)
 
 for (evalMethod in names(evalMethods)) {
-  d.plot <- d[(d$algorithm %in% algs) & (d$testNo %in% c(5, 7, 8, 9, 10)) &
+  d.plot <- d[(d$testNo %in% c(5, 7, 8, 9, 10)) &
                 !is.na(d[, evalMethod]),
               c(evalMethod, by)]
   d.plot$val <- d.plot[, evalMethod]
   
   # before phn mod
   d.bef <- d.plot[!grepl("phoneme", d.plot$algorithm), ]
-  d.bef$algorithm <- sub("mohammadia", "", d.bef$algorithm)
+  #d.bef$algorithm <- sub("mohammadia", "", d.bef$algorithm)
   d.bef <- ddply(d.bef, by, summarise, val=mean(val))
   
   # train phn mod
-  d.trn <- d.plot[grepl("phonememoh", d.plot$algorithm), ]
-  d.trn$algorithm <- sub("phonememohammadia", "", d.trn$algorithm)
+  d.trn <- d.plot[grepl("phoneme", d.plot$algorithm) &
+                    !grepl("modified", d.plot$algorithm), ]
+  d.trn$algorithm <- sub("phoneme", "", d.trn$algorithm)
   d.trn <- ddply(d.trn, by, summarise, val=mean(val))
   d.trn$Type <- "Phoneme Trained"
   
   # base phn mod
-  d.bas <- d.plot[grepl("phonememod", d.plot$algorithm), ]
-  d.bas$algorithm <- sub("phonememodified", "", d.bas$algorithm)
+  d.bas <- d.plot[grepl("modified", d.plot$algorithm), ]
+  d.bas$algorithm <- sub("phonememodified", "mohammadia", d.bas$algorithm)
   d.bas <- ddply(d.bas, by, summarise, val=mean(val))
-  d.bas$Type <- "Phoneme Dictionary"
+  d.bas$Type <- "Phoneme Dictionary (Modified)"
   
   d.trn <- merge(d.bef, d.trn, by=by)
   d.bas <- merge(d.bef, d.bas, by=by)
-  
+
   d.plot <- rbind(d.trn,d.bas)
   d.plot$Type <- factor(d.plot$Type,
-                        levels=c("Phoneme Trained", "Phoneme Dictionary"))
+                        levels=c(unique(d.trn$Type), unique(d.bas$Type)))
   d.min <- min(d.plot$val.x, d.plot$val.y)
   d.max <- max(d.plot$val.x, d.plot$val.y)
+  d.minmax <- c(d.min, d.max)
   
-  p <- ggplot(d.plot, aes(x=val.x, y=val.y, color=algorithm,
-                          shape=factor(testName))) +
-    geom_point() +
+  p <- ggplot(data=d.plot) +
+    geom_ribbon(data=data.frame(x=d.minmax, y=d.minmax),
+                aes(x=x, ymax=y), ymin=d.min, fill="red", alpha=0.05) +
+    geom_ribbon(data=data.frame(x=d.minmax, y=d.minmax),
+                aes(x=x, ymin=y), ymax=d.max, fill="green", alpha=0.05) +
+    geom_ribbon(data=data.frame(x=c(0, d.max), y=d.minmax),
+                aes(x=x), ymin=d.min, ymax=0, fill="red", alpha=0.05) +
+    geom_ribbon(data=data.frame(x=c(d.min, 0), y=d.minmax),
+                aes(x=x), ymin=0, ymax=d.max, fill="green", alpha=0.05) +
+    geom_point(aes(x=val.x, y=val.y, color=algorithm,
+                   shape=factor(testName), linetype=factor(testName))) +
+    stat_smooth(aes(x=val.x, y=val.y, color=algorithm,
+                    shape=factor(testName), linetype=factor(testName)), method=lm, se=F) +
     geom_abline(intercept=0,slope=1) +
     facet_grid(~Type) +
-    scale_x_continuous(limits=c(d.min, d.max)) +
-    scale_y_continuous(limits=c(d.min, d.max)) +
-    theme_bw() + xlab("Before Modifications") +
-    ylab("With Phoneme Modifications") + ggtitle(evalMethods[[evalMethod]])
+    scale_x_continuous(limits=d.minmax) +
+    scale_y_continuous(limits=d.minmax) +
+    scale_linetype_discrete(name="Noise Type",
+                            guide=guide_legend(keyheight=2,
+                                               keywidth=2)) +
+    scale_color_discrete(name="Algorithm",
+                         guide=guide_legend(keyheight=2,
+                                            keywidth=2)) +
+    scale_shape(name="Noise Type",
+                guide=guide_legend(keyheight=2,
+                                   keywidth=2)) +
+    theme_bw() + xlab("Score Before Modifications") +
+    ylab("Score With Phoneme Modifications") + ggtitle(evalMethods[[evalMethod]])
   print(p)
-  pdf(paste0(folder, evalMethod, ".pdf", sep=""), width=12, height=5)
+  pdf(paste0(folder, evalMethod, ".pdf", sep=""), width=12.5, height=5)
   print(p)
   dev.off()
 }

@@ -86,19 +86,54 @@
 \renewcommand{\lstlistingname}{Listing}
 
 \begin{document}
+\begin{titlepage}
 
-\title{Practical Speech Enhancement in Babble Using Phoneme-Dependent Non-negative
-Matrix Factorisation}
+\noindent \begin{flushright}
+\includegraphics[height=2cm]{fig/JCU_Logo&CampusStack_CMYK}
+\par\end{flushright}
 
+\noindent \begin{center}
+{\Huge{}College of Science, Technology and Engineering}
+\par\end{center}{\Huge \par}
 
-\author{Ashley Gillman}
+\noindent \begin{center}
+{\LARGE{}EG4012}\\
+{\LARGE{}Electrical and Electronic Engineering}
+\par\end{center}{\LARGE \par}
 
-\maketitle
+\noindent \begin{center}
+{\Huge{}Evaluation of Speech Enhancement and Practical Speech Enhancement
+in Babble Using Phoneme-Dependent Non-negative Matrix Factorisation}
+\par\end{center}{\Huge \par}
+
+\noindent \begin{center}
+{\huge{}Ashley Gillman}
+\par\end{center}{\huge \par}
+
+\begin{doublespace}
+\noindent \begin{center}
+{\Large{}Thesis submitted to the School of Engineering \& Physical
+Sciences in partial fulfilment of the requirements for the degree
+of}
+\par\end{center}{\Large \par}
+\end{doublespace}
+
+\noindent \begin{center}
+{\huge{}Bachelor of Engineering with Honours (Electrical and Electronic
+Engineering)}
+\par\end{center}{\huge \par}
+
+\noindent \begin{center}
+{\Large{}10 October 2014}
+\par\end{center}{\Large \par}
+
+\end{titlepage}
+
 
 \lhead{Gillman}
 
 
-\rhead{Practical Speech Enhancement in Babble using Phoneme NMF}
+\rhead{Speech Enhancement and Evaluation}
 
 
 \cfoot{}% remove centered page no.}
@@ -118,7 +153,19 @@ Matrix Factorisation}
 \listoftables
 
 
-\listof{listing}{List of Listings}
+\makeatletter
+\@starttoc{lot}
+\@starttoc{lof}
+\makeatother
+
+%\listof{algorithm}{List of Algorithms}
+
+
+%\listof{listing}{List of Listings}
+
+
+\lstlistoflistings
+
 
 
 \settowidth{\nomlabelwidth}{ Matrix notation}
@@ -154,5 +201,5 @@ Matrix Factorisation}
 
 \rfoot{}% no page no. in appendices}
 
-\include{Appendices}
+%\include{Appendices}
 \end{document}
