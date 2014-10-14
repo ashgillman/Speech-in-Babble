@@ -134,7 +134,7 @@ ac{MR}
 
 \end_inset
 
-.
+ in the context of speech enhancement.
 \end_layout
 
 \begin_layout Subsection
@@ -176,7 +176,7 @@ reference "fig:Direct-PESQ-PRR"
 \end_inset
 
 .
- These results show a general, positive correlation between 
+ These results showed a general, positive correlation between 
 \begin_inset ERT
 status open
 
@@ -229,7 +229,7 @@ ac{MR}
 \end_inset
 
 .
- The level of correlation appears to be relatively low, however comparison
+ The level of correlation appeared to be somewhat low, however comparison
  with 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -237,8 +237,65 @@ reference "fig:litResCorr"
 
 \end_inset
 
- indicates the such levels of correlation are expected.
- Indeed, similar correlations are observed between 
+ indicated a correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PESQimp
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRimp
+\end_layout
+
+\end_inset
+
+ of approximately 0.58.
+ The same figure indicated a correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PESQraw
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSraw
+\end_layout
+
+\end_inset
+
+ of approximately 0.65, which were measures that have been shown to be correlated
+ in literature 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kitawaki2007,Rix2003,Rix2001"
+
+\end_inset
+
+.
+ Therefore, the correlation of 0.58 between 
 \begin_inset ERT
 status open
 
@@ -251,7 +308,7 @@ ac{PESQ}
 
 \end_inset
 
- and 
+ improvement and 
 \begin_inset ERT
 status open
 
@@ -259,35 +316,20 @@ status open
 
 
 \backslash
-ac{MOS}
+ac{PRR}
 \end_layout
 
 \end_inset
 
- results, which are both 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{HR}
-\end_layout
-
-\end_inset
-
- measures.
-\end_layout
-
-\begin_layout Standard
+ improvement can be considered significant.
+ 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:litResCorr"
 
 \end_inset
 
- Also indicates a very high correlation between the raw 
+ Also indicated a very high correlation between the raw 
 \begin_inset ERT
 status open
 
@@ -317,6 +359,65 @@ ac{PRR}
 \end_layout
 
 \begin_layout Standard
+These observations indicated a good correlation between human recognition
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+) and human estimated recognition (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+); as well as a strong correlation between human estimated recognition (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+) and machine recognition (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness).
+ Therefore, it was inferred that there is likely a good correlation between
+ human recognition and machine recognition.
+\end_layout
+
+\begin_layout Standard
 A number of further observations were drawn from 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -339,6 +440,67 @@ direct-highcorr}
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Results found using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LOESS}
+\end_layout
+
+\end_inset
+
+ fitted method, shown in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR-LOESS"
+
+\end_inset
+
+ indicated that the data could be approximated by a linear model: the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LOESS}
+\end_layout
+
+\end_inset
+
+ fitted lines were, in most cases, approximately linear.
+ The results for Wiener algorithms were a notable exception, with a non-linear
+ variation, even when the outliers are ignored.
+ Overall, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LM}
+\end_layout
+
+\end_inset
+
+ fit in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR-LM"
+
+\end_inset
+
+ is accepted to be accurate.
+ The linear model was used in the following observations.
 \end_layout
 
 \begin_layout Standard
@@ -722,8 +884,6 @@ status open
 \begin_inset Graphics
 	filename fig/R/dir/lit/KLT-pKLT/HumanMachineAllLM.pdf
 	width 80text%
-	height 25theight%
-	keepAspectRatio
 
 \end_inset
 
@@ -731,8 +891,6 @@ status open
 \begin_inset Graphics
 	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
 	width 20text%
-	height 25theight%
-	keepAspectRatio
 
 \end_inset
 
@@ -980,8 +1138,13 @@ status open
 \begin_inset Graphics
 	filename fig/R/dir/lit/pKLT-logMMSE-SPU-4/HumanMachineAllLM.pdf
 	width 80text%
-	height 25theight%
-	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
+	width 20text%
 
 \end_inset
 
@@ -1180,7 +1343,7 @@ ac{PRR}
 
 \begin_layout Standard
 \begin_inset Float figure
-placement p
+placement h
 wide false
 sideways false
 status open
@@ -1191,8 +1354,13 @@ status open
 \begin_inset Graphics
 	filename fig/R/dir/lit/MMSE-SPU-STSA-wcosh-STSA-weuclid-logMMSE-SPU-3/HumanMachineAllLM.pdf
 	width 80text%
-	height 25theight%
-	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
+	width 20text%
 
 \end_inset
 
@@ -1262,15 +1430,8 @@ acs{logMMSE-SPU-3}
 \end_layout
 
 \begin_layout Standard
-Results found using the grouped comparison method, shown in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Group-PESQ-PRR-LOESS"
-
-\end_inset
-
- indicated that the data could be approximated by a linear model.
- The 
+Therefore, existing data showed that in general there was a correlation
+ between enhancement for 
 \begin_inset ERT
 status open
 
@@ -1278,15 +1439,12 @@ status open
 
 
 \backslash
-ac{LOESS}
+ac{HR}
 \end_layout
 
 \end_inset
 
- fitted lines were, in most cases, approximately linear.
- The results for Wiener algorithms were a notable exception, with a non-linear
- variation, even when the outliers are ignored.
- Overall, the 
+ and 
 \begin_inset ERT
 status open
 
@@ -1294,31 +1452,22 @@ status open
 
 
 \backslash
-ac{LM}
+ac{MR}
 \end_layout
-
-\end_inset
-
- fit in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Group-PESQ-PRR-LM"
-
-\end_inset
-
- is accepted to be accurate.
-\end_layout
-
-\begin_layout Standard
-The grouped linear fittings also correlate well with the best performing
- individual algorithms, those highlighted in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:direct-highcorr"
 
 \end_inset
 
 .
+ However, one cannot be used as a reliable measure of the other, as there
+ are notable exceptions where enhancement for one class did not show enhancement
+ for the other.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1382,11 +1531,38 @@ ac{MR}
 \end_inset
 
 .
- The goal was to determine the correlation between evaluation measures.
+ The goal was to determine the correlation between evaluation measures of
+ enhancement, specifically those for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ with those for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-A summary of the correlation between all measurements made is given in 
+A correlogram of all measurements made is given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:my-Corr"
@@ -1395,7 +1571,7 @@ reference "fig:my-Corr"
 
 .
  A number of interesting observations were drawn from this summary to be
- further investigated.
+ further investigated, and are presented in the subsequent sections.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1429,7 +1605,7 @@ acs{MOS}
 \end_layout
 
 \begin_layout Standard
-Firstly, it was noted that in 
+In 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:my-Corr"
@@ -1462,7 +1638,7 @@ ac{MOS}
 
 \end_inset
 
- measures was low.
+ measures was shown to be very low.
  This was a surprising results as it has generally been determined in literature
  that the two correlate well 
 \begin_inset CommandInset citation
@@ -1489,153 +1665,19 @@ Put into lit rev
 \end_inset
 
 .
- It was also noted that the ideal binary mask algorithms performed very
- poorly overall on the subjective scales in 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
-\end_layout
-
-\end_inset
-
-.
- Furthermore, ideal binary mask algorithms had a very high variation in
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PESQ}
-\end_layout
-
-\end_inset
-
- performance in 
+ This correlation is highlighted in 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:my-PESQ"
+reference "fig:my-pesq-mos-with-idbm"
 
 \end_inset
 
 .
- Therefore, it was suspected these results may be adversely affecting the
- overall correlation between 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PESQ}
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{MOS}
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-It was found that when the ideal binary mask algorithm data was omitted
- the correlation between the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PESQ}
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{MOS}
-\end_layout
-
-\end_inset
-
- increased, as demonstrated in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:my-pesq-mos"
-
-\end_inset
-
-.
- This indicated there were specific occurrences for which the relationship
- between 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PESQ}
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{MOS}
-\end_layout
-
-\end_inset
-
- demonstrated in literature do not hold.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Should probably do cor to y=x
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement bh
 wide false
 sideways false
 status open
@@ -1645,10 +1687,6 @@ status open
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1664,6 +1702,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesq-mos-with-idbm"
+
+\end_inset
+
 With the ideal binary mask
 \end_layout
 
@@ -1681,23 +1725,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/R/pair/my/pesq-mos_no-IDBM.pdf
 	width 50text%
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Colours look to be wrong
-\end_layout
 
 \end_inset
 
@@ -1708,6 +1738,12 @@ Colours look to be wrong
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesq-mos-without-idbm"
+
+\end_inset
+
 Without the ideal binary mask
 \end_layout
 
@@ -1781,6 +1817,710 @@ acs{MOS}
 
 \end_layout
 
+\begin_layout Standard
+The greatest deviation to the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ was due to the results of the ideal binary mask algorithms (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+IDBM
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+).
+ It was also noted that the ideal binary mask algorithms performed very
+ poorly overall on the subjective 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ scales in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
+\end_layout
+
+\end_inset
+
+.
+ Furthermore, ideal binary mask algorithms had a very high variation in
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ performance in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-PESQ"
+
+\end_inset
+
+, receiving both the highest and the lowest scores of all tests on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale.
+ Therefore, it was suspected that the ideal binary mask corrupted speech
+ in such a way that was not detected by the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ algorithm.
+\end_layout
+
+\begin_layout Standard
+It was found that when the ideal binary mask algorithm data was omitted
+ the correlation between the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ increased, as demonstrated in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesq-mos-without-idbm"
+
+\end_inset
+
+.
+ This indicated there were specific occurrences for which the relationship
+ between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ demonstrated in literature do not hold, i.e., distortions detectable by human
+ hearing but not by the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ algorithm.
+\end_layout
+
+\begin_layout Standard
+The correlation of 0.173 between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ is still low.
+ This was likely in part due to the low sample size used, with only ten
+ subjects.
+ Also, the standard 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ measure is highly subjective.
+ This was possibly due to listeners not having a reference for scoring.
+ Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ is therefore advantageous in that it asks the listener to rate the difference
+ between two recordings, so the listener has a reference.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesqimp-cmos"
+
+\end_inset
+
+ shows similar results to 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesq-mos"
+
+\end_inset
+
+, however instead considers the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement as opposed to the enhanced 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score, and considers the comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ instead of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement was used due to it being more similar to comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, as these both measure the differential improvement (or distortion).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesqimp-cmos.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesqimp-cmos-with-idbm"
+
+\end_inset
+
+With the ideal binary mask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesqimp-cmos_no-IDBM.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesqimp-cmos-without-idbm"
+
+\end_inset
+
+Without the ideal binary mask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesqimp-cmos_leg.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesqimp-cmos"
+
+\end_inset
+
+Scatterplot of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement vs.
+ comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When, for the same reason as stated above, the ideal binary mask results
+ were omitted (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesqimp-cmos-without-idbm"
+
+\end_inset
+
+) the correlation rose to 0.436, which represented a fair correlation and
+ was considered significant.
+ Also of note were the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonememohammadiaOnline
+\end_layout
+
+\end_inset
+
+ results in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesqimp-cmos-without-idbm"
+
+\end_inset
+
+ that scored between 1 and 2 on the comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ test, but between -0.5 and -1 on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement scale.
+ A difference of 1 on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale represents a significant distortion, however these particular results
+ were rated by human listeners to be somewhere between ``slightly better''
+ and ``better''.
+\end_layout
+
+\begin_layout Standard
+Results indicated that the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale may be better considered to be a rough indicator for human perception
+ of enhancement, rather than a direct measure of it.
+ Circumstances in which human hearing detected significant distortions have
+ not been evaluated as so on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale.
+ However, not enough 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ test subjects were included in testing to conclusively evaluate the reliability
+ of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Results also indicated that comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ may be a less subjective measure than regular 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, due to the inherent use of a reference.
+ Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ also was found to lend itself to measuring enhancement, so is a better
+ candidate than regular 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ for measuring enhancement.
+\end_layout
+
 \begin_layout Subsubsection*
 On the relationship between similar measures
 \end_layout
@@ -1799,7 +2539,46 @@ ac{MOS}
 
 \end_inset
 
- evaluation measures had a strong correlation with one-another in 
+ evaluation measures,
+ 
+\lang australian
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOS
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSle
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+CMOS
+\end_layout
+
+\end_inset
+
+, had a strong correlation with one-another in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:my-Corr"
@@ -1821,18 +2600,38 @@ ac{PRR}
 
 \end_inset
 
- measures, where the correlation between the correctness and the accuracy
- was found to be in general significantly negative.
-\begin_inset Note Note
+ measures, where the correlation between the correctness (
+\begin_inset listings
+inline true
 status open
 
 \begin_layout Plain Layout
-More here?
+
+PRRcorr
 \end_layout
 
 \end_inset
 
+) and the accuracy (
+\begin_inset listings
+inline true
+status open
 
+\begin_layout Plain Layout
+
+PRRacc
+\end_layout
+
+\end_inset
+
+) was found to be negative.
+ This highlighted the balance between an under-trained and under-discriminative
+ algorithm, which may detect a high number of correct phonemes (high correctness
+) but poorly reduce noise and therefore recognise extra incorrect phonemes
+ (low accuracy); and an over-trained and over-discriminative algorithm,
+ which may detect a lower number of correct phonemes (low correctness) but
+ effectively reduce noise and therefore have minimal false positiveness(increase
+d accuracy).
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1872,7 +2671,7 @@ reference "fig:my-Corr"
 
 \end_inset
 
- shows a significant positive correlation between the various 
+ showed a significant positive correlation between the various 
 \begin_inset ERT
 status open
 
@@ -1885,7 +2684,43 @@ ac{MOS}
 
 \end_inset
 
- measures and the 
+ measures (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOS
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSle
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+CMOS
+\end_layout
+
+\end_inset
+
+) and the 
 \begin_inset ERT
 status open
 
@@ -1898,7 +2733,19 @@ ac{PRR}
 
 \end_inset
 
- measured as correctness.
+ measured as correctness (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRcorr
+\end_layout
+
+\end_inset
+
+).
  However, the figure also shows an almost as significant negative correlation
  between the various 
 \begin_inset ERT
@@ -1926,145 +2773,35 @@ ac{PRR}
 
 \end_inset
 
- measured as accuracy.
- 
-\begin_inset ERT
+ measured as accuracy (
+\begin_inset listings
+inline true
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-Cref{fig:mos-prrcorr,fig:cmos-prrcorrimp}
+PRRacc
 \end_layout
 
 \end_inset
 
- highlight the correlation between 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{MOS}
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PRR}
-\end_layout
-
-\end_inset
-
- measured as correctness.
- 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:mos-prrcorr"
-
-\end_inset
-
- further highlights the relative density, revealing that certain test conditions
- are outliers and that the correlation might otherwise have been higher.
- It was seen that tests where there was one competing speaker of the same
- sex, highlighted in red, were characterised by a mid-range 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{MOS}
-\end_layout
-
-\end_inset
-
- result, but a high correctness 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PRR}
-\end_layout
-
-\end_inset
-
-.
- This indicated the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{ASR}
-\end_layout
-
-\end_inset
-
- system was able to still detect the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SoI}
-\end_layout
-
-\end_inset
-
-'s voice, however a human listener scored the signal as average.
+).
 \end_layout
 
 \begin_layout Standard
-However, 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:cmos-prraccimp"
+reference "fig:hr-mr"
 
 \end_inset
 
- shows that in terms of improvement, and regardless of algorithm, the enhancemen
-t in competing speaker noise was non-existent.
- NOIZEUS babble noise results tended also to be poor.
- Interestingly, the synthetic babble formed from three speakers tended to
- be improved by most algorithms under the accuracy 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PRR}
-\end_layout
-
-\end_inset
-
- measure.
- This had almost no correlation with the performance rated by human listeners,
- which ranged from a fair improvement to significantly worse.
+ show scatterplots measuring human performance on the y-axis and machine
+ improvement on the x-axis, and highlighting in colour the test conditions.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -2389,24 +3126,57 @@ acs{MR}
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:hr-mr-alg"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:mos-prrcorr,fig:cmos-prrcorrimp}
+\end_layout
 
 \end_inset
 
- shows the same data as 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:hr-mr"
+ measured the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
 
 \end_inset
 
-, but with colour highlighting the enhancement algorithm as opposed to the
- test conditions.
- A very interesting observation made was the performance of the ideal binary
- mask and phoneme-dependent ideal binary mask, especially under accuracy
+ correctness.
  
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:mos-prrcorr"
+
+\end_inset
+
+ also shows the relative density of points, revealing that certain test
+ conditions are clustered outliers and that the correlation might otherwise
+ have been higher.
+ It was seen that tests where there was one competing speaker of the same
+ sex, highlighted in red, were characterised by a mid-range 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ result, but a high correctness 
 \begin_inset ERT
 status open
 
@@ -2420,6 +3190,221 @@ ac{PRR}
 \end_inset
 
 .
+ This indicated the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system was able to still detect the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+'s voice, however a human listener scored the signal as average.
+ This also supported previous observations indicating certain systematic
+ conditions for which the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ deviate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:mos-prracc,fig:cmos-prraccimp}
+\end_layout
+
+\end_inset
+
+ measured the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy.
+ These figures showed that once the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ phoneme insertions are taken into account the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ no longer held.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:hr-mr-alg"
+
+\end_inset
+
+ shows the same data as 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:cmos-prrcorrimp,fig:cmos-prraccimp}
+\end_layout
+
+\end_inset
+
+, but with colour highlighting the enhancement algorithm as opposed to the
+ test conditions.
+ A very interesting observation made was the clustered performance of the
+ ideal binary mask (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+IDBM
+\end_layout
+
+\end_inset
+
+) and phoneme-dependent ideal binary mask (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+) in the lower right corner, especially under accuracy 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+ These algorithms achieved the highest 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy score of any algorithm, some approaching a 30% accuracy increase,
+ despite performing poorly on all 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and statistical measures.
  These results were also noted by observing the ideal binary mask algorithms
  performance in 
 \begin_inset ERT
@@ -2434,9 +3419,7 @@ Cref{fig:my-PRRacc,fig:my-PRRacc-imp}
 
 \end_inset
 
-.
- These algorithms achieved the highest scores of any algorithm, despite
- performing poorly on all 
+, and is reflected on by the observation made in 
 \begin_inset ERT
 status open
 
@@ -2444,52 +3427,12 @@ status open
 
 
 \backslash
-ac{HR}
+subsecref{Independent-Investigation-Res}
 \end_layout
-
-\end_inset
-
- and statistical measures.
-\end_layout
-
-\begin_layout Standard
-The explanation given for this behaviour was that the ideal binary mask
- algorithms are effective in eliminating the competing noise, and thus reducing
- false insertions.
- However, in the process these algorithms distort the signal severely, thereby
- drastically reducing human intelligibility, and also causing the loss in
- correctness 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PRR}
-\end_layout
-
-\end_inset
-
- exhibited in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:my-PRRcorr-imp"
 
 \end_inset
 
 .
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Maybe correlogram or something with the PRR deletions insertions etc.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2689,6 +3632,98 @@ acs{MR}
 \end_layout
 
 \begin_layout Standard
+The explanation given for this behaviour was that the ideal binary mask
+ algorithms were effective in eliminating the competing noise, and thus
+ reducing false insertions.
+ However, in the process these algorithms distort the signal, severely for
+ humans, thereby drastically reducing human intelligibility, and also causing
+ the loss in correctness 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ exhibited in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-PRRcorr-imp"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Therefore, the results of the independent investigation into 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ perception of speech enhancement agreed with the results of the investigation
+ into existing data.
+ It has been determined that that in general there was a correlation between
+ enhancement for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+ However, one cannot be used as a reliable measure of the other, as there
+ are notable exceptions where enhancement for one class did not show enhancement
+ for the other.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage clearpage
 \end_inset
 
@@ -2757,30 +3792,18 @@ ac{BNMF}
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Subsubsection*
-General Performance
-\end_layout
-
-\begin_layout Standard
-The algorithm performance was poor on the supplied test data.
- It can be seen in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:vary-train-pesq-imp"
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mohammadiha2013supervised"
 
 \end_inset
 
- that in general the enhanced algorithm performed worse than the dirty recording
-, by the fact that the improvement scores are predominantly negative.
- The algorithms produced similar patterns consistently across tests, indicating
- it is unlikely results are randomised outliers.
+, and aim to investigate the effect of varying the amount of training data
+ on the algorithm performance.
 \end_layout
 
-\begin_layout Subsubsection*
-Online 
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2788,12 +3811,15 @@ status open
 
 
 \backslash
-acl{BNMF}
+Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
 \end_layout
 
 \end_inset
 
-
+ give the results of investigations.
+ All measurements, for all enhancement methods, tended to agree that there
+ was no particular correlation between training and performance.
 \end_layout
 
 \begin_layout Standard
@@ -2834,15 +3860,143 @@ ac{PESQ}
 \end_inset
 
  performance.
- In fact, a slight negative correlation may be noted, which is supported
- by results in 
+ This conclusions is supported by 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:train-req-corr"
+reference "fig:my-PRRcorr-imp"
+
+\end_inset
+
+, showing no significant correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+utterances
+\end_layout
+
+\end_inset
+
+ and any of the test measures, with the exception of 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+prrCorr
+\end_layout
 
 \end_inset
 
 .
+ However, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-prrcorr"
+
+\end_inset
+
+ showed no evidence of a correlation between the 
+number of utterances for training and the 
+\lang australian
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness.
+\end_layout
+
+\begin_layout Standard
+A notable observation was that for the human and machine measures, those
+ in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+cmos,fig:vary-train-prrcorr,fig:vary-train-prracc}
+\end_layout
+
+\end_inset
+
+, there was a high variability in performance for ten or less utterances.
+ This indicated that the algorithms were under-trained when 10 or less utterance
+s were used.
+\end_layout
+
+\begin_layout Standard
+It was also noted that in some cases, the performance was better in the
+ under-trained case, for example in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-pesq"
+
+\end_inset
+
+ for 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+mohammadiaSupervised
+\end_layout
+
+\end_inset
+
+ with the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)+c3c(f)+c35(m)
+\end_layout
+
+\end_inset
+
+ noise type.
+ This indicated that the training method used was not optimal.
+ This provided further reason for implementing the phoneme-dependent algorithms,
+ in an attempt to optimise the training by reducing the training data size
+ whilst maximising the amount of voice information.
+\end_layout
+
+\begin_layout Standard
+Thus is was shown that approximately 10 to 20 utterances was required to
+ sufficiently train the online and supervised 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithms, but increasing beyond that level had little effect.
+ It has also been shown that this type of training is not optimal, showing
+ opportunity for phoneme-dependent training.
 \end_layout
 
 \begin_layout Standard
@@ -2865,20 +4019,30 @@ reference "fig:drawn-phoneme-spectrogram"
 
  shows a typical example of the drawn phonemes that were used for training
  data.
- The differences in phonemes is clear and identifiable, indicating that
+ The voiced phonemes were seen to contain lower frequency components and
+ the voiceless phonemes contained higher frequency components as expected.
+ The differences in phonemes was clear and identifiable, indicating that
  the method worked as intended.
  One issue noted was that voiceless stops, were too short and were occasionally
  missed.
- An example is noted in the first two phoneme samples in 
+ A noted example was in the first two phoneme samples in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:mos-comparison-phn-1"
 
 \end_inset
 
-, which are /p/ and /t/.
+, which were /
+\shape italic
+p
+\shape default
+/ and /
+\shape italic
+t
+\shape default
+/.
  For such phonemes, high frequency components would have been expected,
- but were not present.
+ but mostly silence present with some lower frequency components.
  The same phonemes in 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -2886,10 +4050,23 @@ reference "fig:mos-comparison-phn-5"
 
 \end_inset
 
- revealed that only 2 out of the 10 phoneme slices contained the expected
+ revealed that only two out of the ten phoneme slices contained the expected
  high frequency components.
  However, these kind of errors were expected and is one of the reasons that
- the number of slices per phoneme was varied.
+ the number of slices per phoneme was varied, which is discussed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Varying-Phns}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2900,7 +4077,8 @@ g around this point.
  After this point the saturation point for the recordings used was reached,
  where there were not enough phoneme occurrences to support having more
  samples.
- So the tests done for more samples per phoneme than 100 were redundant.
+ So the tests done for more samples per phoneme than 100 were, for the most
+ part, redundant.
 \end_layout
 
 \begin_layout Subsection
@@ -2914,7 +4092,7 @@ reference "fig:pesq-comparison-phn"
 
 \end_inset
 
- indicated that the phoneme dependent 
+ indicated that the phoneme-dependent 
 \series bold
 training
 \series default
@@ -2933,7 +4111,7 @@ ac{PESQ}
 \end_inset
 
 .
- The opposite was true, however, for the phoneme 
+ The opposite was true, however, for the phoneme-dependent 
 \series bold
 base
 \series default
@@ -2972,8 +4150,8 @@ Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
 .
  These results did not show any specific pattern of improvement across different
  noise types.
- This indicated that the phoneme dependence modifications to these algorithms
- did not present any significant improvement for human listeners.
+ Thus, results indicated that the phoneme dependence modifications to these
+ algorithms did not present any significant improvement for human listeners.
 \end_layout
 
 \begin_layout Standard
@@ -2991,24 +4169,59 @@ ac{MOS}
 
 \end_inset
 
- scales were more likely to be of the synthetic babble noise types, c3f(m)
- and c3f(m)+c3c(f)+c35(m).
+ scales were more likely to be of the synthetic babble noise types, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)+c3c(f)+c35(m)
+\end_layout
+
+\end_inset
+
+.
  These are also associated with the more ``difficult'' forms of noise.
  Therefore, it is possible that using phoneme dependence in algorithms may
  be useful in source separation applications.
  This highlights the ability of phoneme dependence to distinguish between
  voices, but not as an efficient method of extracting speech from other
  noise.
-\begin_inset Note Note
+\end_layout
+
+\begin_layout Standard
+A potential application for such an algorithm is as a second stage noise
+ cleaning algorithm specifically for competing speaker noise, or speaker
+ separation.
+ In such a system, another enhancement algorithm applicable to a broader
+ range of noise types but not for a specific voice, such as an 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Note: application for second stage enhancement?
+
+
+\backslash
+ac{MMSE}
 \end_layout
 
 \end_inset
 
-
+ algorithm, could be used to filter out non-speech noise, and the phoneme-depend
+ent algorithm then used to separate the intended voice.
 \end_layout
 
 \begin_layout Subsection
@@ -3036,26 +4249,57 @@ Cref{fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn}
 
 .
  However, with the exception of the ideal binary mask algorithms and the
- c3f(m) noise type, the phoneme-dependent 
+ 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)
+\end_layout
+
+\end_inset
+
+ noise type, the phoneme-dependent 
 \series bold
 training
 \series default
  modifications tended to improve the machine correctness.
- This suggests that using phoneme dependence tends to both increase the
- algorithm's ability to remove noise, but also increases the distortion.
- This observation makes sense, as using phoneme-dependent 
+ Especially good performance was noted for the NOIZEUS car noise.
+ This suggested that using phoneme dependence tended to both increase the
+ algorithm's ability to remove noise, but also increased the distortion.
+ This observation was logical, as using phoneme-dependent 
 \series bold
 training
 \series default
- is in some ways a means to prevent over-training, so some under-trained
- characteristics like this were to be expected.
+ was effectively a way to prevent over-training, so some under-trained character
+istics like this were to be expected.
 \end_layout
 
 \begin_layout Standard
-Interestingly, the increased correctness suggests that the noise reduction
- outweighs the distortion for a machine recogniser.
- The poor performance for the c3f(m) noise type is attributed to the fact
- that both the
+Potential application for the phoneme-dependent training algorithm lays
+ in in-car electronics.
+ The algorithms have been shown to improve for car noise.
+ The NOIZEUS car noise included muffled voices within the recording.
+\end_layout
+
+\begin_layout Standard
+Interestingly, the increased correctness suggested that the noise reduction
+ outweighed the distortion for a machine recogniser.
+ The poor performance for the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)
+\end_layout
+
+\end_inset
+
+ noise type was attributed to the fact that both the 
 \begin_inset ERT
 status open
 
@@ -3068,7 +4312,7 @@ ac{SoI}
 
 \end_inset
 
- and the noise are a similar male voice.
+ and the noise were a similar male voice.
  The poor performance indicated that phoneme-dependent 
 \series bold
 training
@@ -3100,6 +4344,300 @@ reference "fig:prrcorr-comparison-phn"
  those performing better and worse than the original algorithms.
 \end_layout
 
+\begin_layout Standard
+Results indicated, therefore, that the phoneme-dependent methods were effective
+ in reducing noise, but tended also to distort the speech.
+ For machines, the noise reduction outweighed the distortion, thereby increasing
+ the accuracy.
+ However, for humans the distortions may have been distracting, thereby
+ causing the mixed results.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Varying-Phns"
+
+\end_inset
+
+Varying the Number of Samples per Phoneme
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:vary-train-phn-pesq,fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig
+:vary-train-phn-cmos,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc,fig:va
+ry-train-phn-segsnr}
+\end_layout
+
+\end_inset
+
+ show the results of varying the number of phoneme samples drawn for training.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-phn-pesq"
+
+\end_inset
+
+ tended to show little correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ enhancement and the number of phonemes.
+ However, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig:vary-train-phn-cmos}
+\end_layout
+
+\end_inset
+
+ tended to show a slight increase in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ performance with the number of phonemes.
+ However, it was difficult to draw a clear conclusion, as a smaller number
+ of the tests instead showed a slight decrease.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+ agreed with the overall trend of improvement with increased phoneme samples;
+ showing a slight, yet significant, positive correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemes
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOS
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSle
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+CMOS
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc}
+\end_layout
+
+\end_inset
+
+ showed, for most algorithms, no improvement in correctness with increasing
+ phonemes.
+ However, there was in some cases an increase in accuracy, especially for
+ 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonememodifiedOnline
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+, but rarely a decrease.
+ As above, the significance of the improvement is low, however a slight
+ positive correlation is present.
+\end_layout
+
+\begin_layout Standard
+For the phoneme-dependent ideal binary mask algorithm (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+) there was a clear and significant positive correlation with the number
+ of phonemes used in training.
+ It was noted that the correctness was reduced near to zero for one sample
+ per phoneme.
+ For this algorithm, tests were only performed up to ten samples per phoneme,
+ but it is likely the performance of these algorithms could have been greatly
+ improved by using more phoneme samples.
+ 
+\end_layout
+
+\begin_layout Standard
+The correlogram in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+ showed little correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemes
+\end_layout
+
+\end_inset
+
+ and correctness (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRcorr
+\end_layout
+
+\end_inset
+
+), correctness improvement (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRcorrImp
+\end_layout
+
+\end_inset
+
+), accuracy (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRacc
+\end_layout
+
+\end_inset
+
+) and accuracy improvement (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRaccImp
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+In general, it was found that increasing the number of phonemes drawn had
+ a chance of improving the performance, for both human and machine listeners,
+ but had only a low change of decreasing performance and was very unlikely
+ to severely affect performance.
+ Thus, results indicated that it would be advantageous to use a higher number
+ samples per phoneme, an upper bound not having been found.
+\end_layout
+
 \begin_layout Subsection
 Other Observations
 \end_layout
@@ -3118,11 +4656,56 @@ ac{MMSE}
 
 \end_inset
 
- algorithm is unchanged by the introduction of phoneme-dependence across
- the objective measures.
+ algorithm is unchanged by the introduction of phoneme-dependence in all
+ of the objective measures, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:vary-train-phn-pesq,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prrac
+c,fig:vary-train-phn-segsnr}
+\end_layout
+
+\end_inset
+
+.
+ Only in the subjective tests, i.e.
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ tests in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+\end_layout
+
+\end_inset
+
+ showed variation.
  This indicated that using phoneme dependence did not affect the operation
  of this particular algorithm.
- This also highlighted the level of subjectivity involved in the 
+\end_layout
+
+\begin_layout Standard
+This also highlighted the level of subjectivity involved in the 
 \begin_inset ERT
 status open
 
@@ -3162,6 +4745,7 @@ Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
 \end_inset
 
  deviated quite significantly from the diagonal line.
+ Therefore, the phoneme-dependent variations of 
 \end_layout
 
 \end_body

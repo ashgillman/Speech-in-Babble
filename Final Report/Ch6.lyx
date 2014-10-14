@@ -47,8 +47,8 @@ enumitem
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type numerical
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -107,35 +107,8 @@ Humanly Perceived Improvement vs.
 \end_layout
 
 \begin_layout Standard
-In analysing the results gathered from literature, a strong correlation
- between 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{MOS}
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PESQ}
-\end_layout
-
-\end_inset
-
- was found.
- Furthermore, a strong correlation was found between 
+In analysing the results gathered from literature, a fair correlation was
+ found between 
 \begin_inset ERT
 status open
 
@@ -370,7 +343,7 @@ ac{MR}
 \end_layout
 
 \begin_layout Subsubsection*
-Recommendation
+Recommendations from Investigation
 \end_layout
 
 \begin_layout Standard
@@ -466,6 +439,140 @@ ac{MOS}
  the quality of a telecommunications medium.
 \end_layout
 
+\begin_layout Subsubsection*
+Opportunity for Future Work
+\end_layout
+
+\begin_layout Standard
+There are a number of opportunities for further work to extend on within
+ this research area.
+ In this thesis, machine recognition was considered purely through one 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system, utilising mel-frequency cepstral coefficients, and only considering
+ the phoneme-level recognition.
+ Studies should be further conducted using alternative methods of feature
+ extraction for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system.
+\end_layout
+
+\begin_layout Standard
+Additionally, the word recognition rate, and other higher level recognition
+ measures should be investigated.
+ This thesis did not take into consideration methods 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ systems can use to extract meaning that are robust to errors in the phoneme-lev
+el recognition.
+\end_layout
+
+\begin_layout Standard
+Furthermore, with a larger test population and therefore more reliable 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ results better conclusions could be drawn on both the relationship between
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ and on the relationship between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, both under the context of speech enhancement.
+\end_layout
+
+\begin_layout Standard
+Finally, such tests should also be conducted using a more diverse range
+ of noise types and algorithms in order to be able to generalise the conclusions.
+\end_layout
+
 \begin_layout Section
 Assessing 
 \begin_inset ERT
@@ -481,6 +588,102 @@ acl{NMF}
 \end_inset
 
  Algorithm Training
+\end_layout
+
+\begin_layout Standard
+The number of utterances supplied as training was found to have no correlation
+ with performance for the algorithms 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithms presented by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mohammadiha2013supervised"
+
+\end_inset
+
+.
+ It was however seen that 10 to 20 utterances should be used in order to
+ ensure adequate training for consistence in results.
+\end_layout
+
+\begin_layout Standard
+Furthermore, it was shown that in cases, under-training improved results,
+ indicating that a higher performance was achievable and showing that the
+ current training techniques were suboptimal.
+ Thus, promise was shown for the phoneme-dependent variations proposed to
+ these algorithms.
+\end_layout
+
+\begin_layout Section
+Phoneme-Dependent Variation Performance
+\end_layout
+
+\begin_layout Standard
+The method for randomly drawing phoneme samples and forming training data
+ was successfully implemented.
+ The only noted issue in implementation was the possibility of missing some
+ short phonemes, such as the voiceless stop phonemes.
+ This had been accounted for however, in increasing the number of samples
+ drawn per phoneme.
+\end_layout
+
+\begin_layout Standard
+Using phoneme-dependent modifications, both training and base modifications,
+ was not found to provide significant improvement for human listeners against
+ the recorded NOIZEUS noise types tested: babble, car and street.
+ However, slight improvements were noted against the synthetic babble.
+\end_layout
+
+\begin_layout Standard
+Thus these phoneme-dependent algorithms are more effective in competing
+ speaker applications for a human listener.
+ It was proposed such phoneme-dependent algorithms may be advantageous in
+ source-separation, where a specific voice is required to be extracted.
+\end_layout
+
+\begin_layout Standard
+Using phoneme-dependent training was found to improve the accuracy of the
+ mel-frequency cepstral coefficient automated speech recognition, by reducing
+ the number of phoneme insertions.
+ This was especially true for the NOIZEUS car noise recordings, but improvements
+ were shown in most noise types except competing speaker for machines.
+ Phoneme-dependent training has, therefore, been shown to be more discriminative
+ in removing noise for machine listeners.
+\end_layout
+
+\begin_layout Standard
+Potential application for the phoneme-dependent training algorithm lays
+ in in-car electronics.
+ The algorithms have been shown to improve for car recorded noise, including
+ muffled competing speaker voice which may potentially come from within
+ the car.
+\end_layout
+
+\begin_layout Standard
+For such phoneme-dependent algorithms, it was found, in general, to be advantage
+ous to increase the number of samples per phoneme used.
+ No upper bound on this trend was found, although it was suspected that
+ one would exist.
+\end_layout
+
+\begin_layout Subsubsection*
+Opportunity for Future Work
+\end_layout
+
+\begin_layout Standard
+The opportunity exists to conduct further research into using phoneme-dependence
+ for speaker separation.
 \end_layout
 
 \end_body

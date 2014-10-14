@@ -127,7 +127,7 @@ of babble. The number of speaker signals used may vary, but to align
 with with the definition for babble should be between three and six.
 
 
-\subsection{For Generation}
+\subsection{Generation of Babble}
 
 It is generally desirable in testing to be able to present noise at
 different \acp{SNR}. Rather than recording noise in a range of conditions
@@ -147,7 +147,7 @@ not take into effect environmental effects, such as reverberation,
 generally present alongside babble \citep{Krishnamurthy2009}.
 
 
-\subsection{For Analysis and Enhancement}
+\subsection{Babble Analysis and Enhancement}
 
 For analysis, it is generally preferable to model a signal as a sum
 consisting of a desired component and a noise component. The babble
@@ -162,11 +162,10 @@ same model may be applicable to other forms of noise.
 
 When the cocktail party problem was originally proposed, five factors
 were identified as to how the human brain may differentiate between
-the sources \citep{Cherry1953}, shown in \figref{Differentiating-Speech-Babble}
-\vpageref{fig:Differentiating-Speech-Babble}.
+the sources \citep{Cherry1953}, shown in \figref{Differentiating-Speech-Babble}.
 
 \begin{figure}[h]
-\centering{}\includegraphics[width=1\textwidth]{\string"fig/babble Separation\string".pdf}\protect\caption{Differentiating Speech from Babble\label{fig:Differentiating-Speech-Babble}}
+\centering{}\includegraphics[width=0.6\textwidth]{\string"fig/babble Separation\string".pdf}\protect\caption{Differentiating Speech from Babble\label{fig:Differentiating-Speech-Babble}}
 \end{figure}
 
 
@@ -202,39 +201,98 @@ The test is designed to give an indication of the quality of telecommunication
 transmission, but is applicable as a measure of speech intelligibility.
 The \ac{MOS} results are a score calculated by the mean of the listeners\textquoteright{}
 scores in the range one to five, with one representing the worst quality
-and five representing the highest quality of intelligibility.
+and five representing the highest quality of intelligibility. There
+are multiple \ac{MOS} tests outlined in \citep{InternationalTelecommunicationUnion1996},
+including: a standard scale, measuring overall subjective quality;
+a listening effort scale, measuring the effort required by a listener
+to understand the speech; a loudness preference scale, measuring the
+preferred loudness of the signal; and a comparative scale, measuring
+comparatively to a reference signal.
+
+Additionally, the \ac{ITU} outline a separate standard for measuring
+communication systems with noise suppression \citep{InternationalTelecommunicationUnion2003}.
+This standard recommends \ac{MOS} tests scoring on the quality of
+three separate areas, (1) the speech signal, (2) the background noise,
+and (3) the overall effect.
 
 \ac{PESQ} is the \ac{ITU} standard for evaluation of objective speech
 quality \citep{Rix2001,InternationalTelecommunicationUnion2001}.
 This method provides an algorithm which estimates the improvement
 quality by comparing a system\textquoteright s input and output \citep{Rix2001}.
 Results show \ac{PESQ} scores give consistent and reliable estimates
-on human perception, although are not directly comparable with \ac{MOS}
-scores \citep{Rix2003}. Other methods for measuring perceptual quality
-include long-term \ac{SNR}, segmental \ac{SNR}, weighted spectral
-slope, log-likelihood ratio, Itakura-Saito distance, cepstrum distance,
-\ac{SD}, \ac{SDR} and variations \citep{Hu2008}.
+on human perception, although are not necessarily directly comparable
+with \ac{MOS} scores \citep{Rix2003}.
 
 
 \subsection{Machine Recognition}
 
-The most common technique to evaluate machine recognition quality
-of speech is to run an \ac{ASR} algorithm on the signal and perform
-a comparison of the \ac{WRR}. It should be noted that this method
-is somewhat limited, in that different \ac{ASR} algorithms, which
-may implement different feature vectors, may perform differently.
-As such, results from different \ac{ASR} algorithms are not directly
-comparable.
+In order to measure machine recognition, an \ac{ASR} system is employed
+and a method is chosen to measure the performance of the \ac{ASR}
+system. The most common technique to evaluate machine recognition
+quality of speech is to perform a comparison of the \ac{WRR}. This
+method is advantageous as it gives a good indication on the \ac{ASR}
+system's ability to extract meaning.
+
+An alternative option is to use the \ac{PRR}. The advantage of this
+method is that it allows a lower-level view of recognition, and a
+more accurate representation of the raw enhancement. Additionally,
+a \ac{PRR} \ac{ASR} system requires one less step in recognition,
+so is slightly easier in implementation. However, the limitation of
+this method is that results do not account for the \ac{ASR} system's
+ability to account for errors in phoneme recognition when extracting
+meaning.
+
+Additionally, for each of the above measures, both the correctness
+and the accuracy may be measured. Correctness is given by
+\[
+Correctness=\frac{correct\ labels}{actual\ no.\ labels}
+\]
+
+
+and accuracy is given by 
+\[
+Accuracy=\frac{correct\ labels-insertions}{actual\ no.\ labels}
+\]
+
+
+where labels may be either phonemes or words \citep{Young1997}.
+
+It should be noted that this method is somewhat limited in terms of
+comparison between authors, as different \ac{ASR} algorithms, which
+may implement different feature vectors, perform differently. As such,
+results from different \ac{ASR} algorithms are not directly comparable.
+
+
+\subsection{Statistical Measures}
+
+Other methods for measuring speech enhancement include long-term \ac{SNR},
+segmental \ac{SNR}, log-likelihood ratio, Itakura-Saito distance,
+cepstrum distance, \ac{SD}, \ac{SDR} and variations \citep{Hu2008},
+visual analysis of the signal spectrogram, as well as others.
+
+Long-term \ac{SNR} is the involves calculating the \ac{SNR} over
+the entire signal. However, this method does not always correlate
+with subjective measures \citep{Hansen1998} and many variations exist.
+For example, \citet{Raj2005a} utilise a method incorporating the
+phase of the signal.
+
+Segmental \ac{SNR} uses the \ac{SNR} within small frames \citep{Hansen1998}.
+Since frames where speech in not present can have very negative \acp{SNR},
+even for relatively low noise levels, frames without speech activity
+are ignored. Segmental \ac{SNR} was used in the past as a test measure
+for measuring the quality of coding schemes \citep{Mermelstein1979},
+however, poor correlation with human subjective tests for measurement
+of speech enhancement has been shown \citep{Hu2008}.
 
 Algorithms in literature tend to limit evaluation methods to either
 human recognition or machine recognition methods, as seen in \figref{Assessment-methods},
 showing the evaluation measures used in various papers. This data
-was gathered from the following papers \citep{Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011}.
+was gathered from the following papers \citep{Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011,Paliwal2010,mohammadiha2013supervised,Plourde2007,Weninger2011,Williamson2014}.
 
 \begin{figure}[h]
 
 
-\centering{}\includegraphics[width=1\textwidth]{\string"fig/assessment Methods\string".pdf}\protect\caption{Assessment methods used in literature\label{fig:Assessment-methods}}
+\centering{}\includegraphics[width=1\textwidth]{fig/R/assessmentMethods}\protect\caption{Assessment methods used in literature\label{fig:Assessment-methods}}
 \end{figure}
 
 
@@ -602,3 +660,5 @@ Finally, improvements have been made in focusing recognition by forcing
 component matrices to represent phonemes. However, current algorithms
 require complicated implementations. It is proposed to attempt to
 simplify this process.
+
+

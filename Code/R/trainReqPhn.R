@@ -118,3 +118,27 @@ print(p)
 pdf(paste(figdir,"PRRacc.pdf",sep=""),width=11,height=16)
 print(p)
 dev.off()
+
+p <- plotSimple(d, "phonemes", "Phonemes", "PRRinss", "PRR Insertions",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "PRR Insertions")
+print(p)
+pdf(paste(figdir,"PRRinss.pdf",sep=""),width=11,height=16)
+print(p)
+dev.off()
+
+p <- plotSimple(d, "phonemes", "Phonemes", "PRRdels", "PRR Deletions",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "PRR Deletions")
+print(p)
+pdf(paste(figdir,"PRRdels.pdf",sep=""),width=11,height=16)
+print(p)
+dev.off()
+
+p <- plotSimple(d, "phonemes", "Phonemes", "PRRsubs", "PRR Substitutions",
+                "Input.SNR", "Input SNR", "testName", "algorithm",
+                "PRR Substitutions")
+print(p)
+pdf(paste(figdir,"PRRsubs.pdf",sep=""),width=11,height=16)
+print(p)
+dev.off()

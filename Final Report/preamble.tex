@@ -22,8 +22,8 @@
 %\usepackage{pdflscape}
 
 % LOF, LOT, LOS, etc. to TOC
-\usepackage[nottoc]{tocbibind}
-\def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
+%\usepackage[nottoc]{tocbibind}
+%\def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
 
 % acronyms
 \usepackage{acronym}
@@ -66,6 +66,39 @@
 
 % all headings same, (no difference for chapter beginnings)
 \let\ps@plain\ps@fancy
+
+% make Lists use section, not Chapter
+\renewcommand\listoffigures{%
+    \section*{\listfigurename}%
+      \@mkboth{\MakeUppercase\listfigurename}%
+              {\MakeUppercase\listfigurename}%
+    \@starttoc{lof}%
+}
+\renewcommand\listoftables{%
+    \section*{\listtablename}%
+      \@mkboth{\MakeUppercase\listtablename}%
+              {\MakeUppercase\listtablename}%
+    \@starttoc{lot}%
+}
+\renewcommand*{\listof}[2]{%
+  \@ifundefined{ext@#1}{\float@error{#1}}{%
+    \@namedef{l@#1}{\@dottedtocline{1}{1.5em}{2.3em}}%
+    \section*{#2}%
+    \begingroup\setlength{\parskip}{\z@}%
+      \@starttoc{\@nameuse{ext@#1}}%
+    \endgroup}}
+\def\thenomenclature{%
+  \section*{\nomname}
+  \if@intoc\addcontentsline{toc}{section}{\nomname}\fi%
+
+  \nompreamble
+  \list{}{%
+    \labelwidth\nom@tempdim
+    \leftmargin\labelwidth
+    \advance\leftmargin\labelsep
+    \itemsep\nomitemsep
+    \let\makelabel\nomlabel}}
+
 \makeatother
 
 % rename nomenclature

@@ -14,11 +14,14 @@
 \setlength{\parskip}{\smallskipamount}
 \setlength{\parindent}{0pt}
 \synctex=-1
+\usepackage{color}
+\definecolor{shadecolor}{rgb}{0.97265625, 0.9140625, 0.61328125}
 \usepackage{babel}
 \usepackage{array}
 \usepackage{varioref}
 \usepackage{refstyle}
 \usepackage{float}
+\usepackage{framed}
 \usepackage{textcomp}
 \usepackage{pdfpages}
 \usepackage{graphicx}
@@ -88,9 +91,9 @@
 \begin{document}
 \begin{titlepage}
 
-\noindent \begin{flushright}
-\includegraphics[height=2cm]{fig/JCU_Logo&CampusStack_CMYK}
-\par\end{flushright}
+\noindent \begin{center}
+\includegraphics[width=0.1\paperwidth+0.1\paperheight]{fig/JCU_Logo_RGB}
+\par\end{center}
 
 \noindent \begin{center}
 {\Huge{}College of Science, Technology and Engineering}
@@ -147,25 +150,28 @@ Engineering)}
 
 \tableofcontents{}
 
-%\listoffigures
+\include{stat_dec}
 
+\include{Acknowledgements}
+
+\clearpage{}
+
+\selectlanguage{english}%
+\addcontentsline{toc}{chapter}{Lists}
+
+\selectlanguage{australian}%
+\listoffigures
+
+
+\clearpage{}
 
 \listoftables
 
 
-\makeatletter
-\@starttoc{lot}
-\@starttoc{lof}
-\makeatother
-
-%\listof{algorithm}{List of Algorithms}
+\listof{algorithm}{List of Algorithms}
 
 
-%\listof{listing}{List of Listings}
-
-
-\lstlistoflistings
-
+\listof{listing}{List of Listings}
 
 
 \settowidth{\nomlabelwidth}{ Matrix notation}
@@ -195,11 +201,11 @@ Engineering)}
 \bibliography{IEEEabrv,bib/library}
 
 
-\appendix
-\pagebreak{}
+\newpage{}
 
+\appendix
 
 \rfoot{}% no page no. in appendices}
 
-%\include{Appendices}
+\include{Appendices}
 \end{document}

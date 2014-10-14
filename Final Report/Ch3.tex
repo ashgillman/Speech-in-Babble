@@ -13,7 +13,9 @@ comparative performance with lower-level languages, however performance
 and speed were not a primary focus in this thesis, so this was deemed
 acceptable.
 
-Data analysis was conducted using R \citep{RCoreTeam2014}.
+Data analysis was conducted using R \citep{RCoreTeam2014}. R was
+selected for data analysis for its simplicity in forming powerful
+plots and applying statistical methods.
 
 Simulations were run on a MacBook Pro 64-bit system with an Intel
 Core i7 2.3GHz 4-core processor with 16GB memory, running OSX 10.9.2,
@@ -22,7 +24,8 @@ MATLAB R2013a and R version 3.1.0 (2014-04-10).
 Test data to was drawn from the \ac{WSJ} corpus \citep{Robinson1995}.
 Different recordings were reserved for testing and training. Babble
 noise was simulated by using recordings of speech, also drawn from
-the \ac{WSJ} corpus.
+the \ac{WSJ} corpus. Additionally, recorded noise was used from the
+NOIZEUS corpus \citep{Hu2006}.
 
 
 \section{Humanly Perceived Improvement vs. Machine Performance}
@@ -41,30 +44,18 @@ and is presented in \chapref{Apx-Data}, \secref{litresults}. As
 noted in \chapref{Literature-Review} \textit{\nameref{chap:Literature-Review}},
 most literature takes preference to evaluation measures indicative
 of either human performance or machine performance, but not both.
-Thus, methods had to be developed in order to fairly compare the the
-results between different sources.
+Thus, a method had to be developed in order to fairly compare the
+the results between different sources.
 
-The first comparison method was \textbf{direct comparison}. This method
-involved plotting human performance against machine performance, and
-thus was only applicable to a small subset of the results where both
-performances were measured, such as in \citep{Paliwal2010}. This
-data was analysed separately for each type of algorithm investigated.
+This method involved plotting human performance against machine performance,
+and thus was only applicable to a small subset of available results
+where both performances were measured, such as in \citep{Paliwal2010}.
+This data was analysed separately for each type of algorithm investigated.
 Each data set had a \ac{LOESS} model fitted, in order to quickly
 and visually judge the accuracy of applying a \ac{LM} fit. An \ac{LM}
-model was then applied using R's \lstinline[language=R]!lm()! linear
-regression function. The main limitation of the direct comparison
+model fit was then applied using R's \lstinline[language=R]!lm()!
+linear regression function. The main limitation of the direct comparison
 method was the limited dataset available.
-
-A \textbf{grouped comparison} was also conducted. This was performed
-as above, however similar algorithms were grouped into algorithm classes.
-This allowed comparison of algorithm classes, to investigate whether
-certain classes of algorithms are suitable for different purposes.
-
-A limitation in these analyses is that the test conditions are not
-fair: different noise types, subtle differences in algorithms, and
-other differences could not be completely accounted for in the analysis.
-As such, it was important to conduct further tests, where these conditions
-can be controlled such that the comparisons be completely fair.
 
 
 \subsection{\label{sub:Independent-Investigation-Meth}Independent Investigation}
@@ -306,6 +297,21 @@ duration of the test to answer any questions.
 \end{figure}
 
 
+\tabref{MOS-Subject-summary} gives a summary of the ten test subjects
+that were used in gathering the \ac{MOS} results. Test subjects were
+selected to give a range in age and sex. Also included in the test
+subjects was a listener with a hearing disability, pulsative tinitis,
+who was a hearing aid user.
+
+\begin{table}
+\protect\caption{\label{tab:MOS-Subject-summary}Summary of test subjects use in \ac{MOS}
+test}
+
+
+\centering\csvautotabular{dat/TestSubjects.csv}
+\end{table}
+
+
 
 \subsubsection*{\acl{ASR}}
 
@@ -475,13 +481,16 @@ in \lstref{varyingTrainingAnalysis}, \textit{\nameref{lst:varyingTrainingAnalysi
 \section{\label{sec:Develop-Phoneme-Dependent}Developing a Phoneme-Dependent
 Variation for the \acl{BNMF} Algorithm}
 
-The performance of the \ac{BNMF} algorithm proposed by \citet{mohammadiha2013supervised}
+The performance of the \ac{BNMF} algorithms proposed by \citet{mohammadiha2013supervised}
 was to be investigated when trained under a phoneme dependent context.
 Two methods were proposed to achieve the phoneme dependence: firstly
 leaving the training algorithm unmodified, but simply supplying training
 data consisting of drawn phonemes, \textbf{\nameref{sub:Phoneme-Training}};
 and secondly modifying the training algorithm itself to be phoneme
-dependent, \textbf{\nameref{sub:Phoneme-Base}}.
+dependent, \textbf{\nameref{sub:Phoneme-Base}}. Although these
+modifications are being implemented and tested on \ac{BNMF} algorithms,
+they are applicable modifications to a wider range of algorithms.
+
 
 
 \subsection{\label{sub:Phoneme-Training}Phoneme Dependent Training Data}
@@ -500,10 +509,15 @@ was drawn due to the fact that utterances contain redundant information,
 as well as containing pauses that contain no information on speech.
 It was also hypothesised that the training algorithms may be affected
 by the inclusion of non-speech sections. The proposed method here,
-of \textbf{phoneme dependent training data}, is intended to increase
-the information density, such that the supplied training may be reduced
+of phoneme-dependent\textbf{ training}, is intended to increase the
+information density, such that the supplied training may be reduced
 whilst still containing enough information to develop an adequate
 model.
+
+The proposed phoneme-dependent\textbf{ training} modification here
+is applicable to all speech enhancement algorithms requiring training.
+This includes all voice-dependent enhancement algorithms and speaker
+separation algorithms.
 
 
 \subsubsection*{Implementation}
@@ -511,11 +525,11 @@ model.
 The drawn phonemes recordings were produced, the code for which is
 included in \lstref{createTestData}, \textit{\nameref{lst:createTestData}}.
 Phonemes were drawn randomly from the speaker recordings, and the
-position in the phoneme is also randomly selected, i.e., drawn phoneme
-samples are not always the beginning of the phoneme. The algorithm
-used to produce drawn phoneme recordings is given in \algref{Producing-phoneme-training},
-and the code in \Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}.
-
+position within the phoneme segment is also randomly selected, i.e.,
+drawn phoneme samples are not always the beginning or the end of the
+phoneme sound. The algorithm used to produce drawn phoneme recordings
+is given in \algref{Producing-phoneme-training}, and the code in
+\Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}.
 
 \begin{algorithm}
 \begin{enumerate}
@@ -550,15 +564,15 @@ The number of phoneme samples drawn and used was varied between 1,
 so that 256 frequency bins were formed after taking the real \ac{FFT}.
 
 Analysis was then performed similar to as described in \subsecref{Investigating-Training-Req}.
-The \ac{SNR} was varied as before, and the online and supervised
-algorithm variations \citep{mohammadiha2013supervised}, the \ac{MMSE}
-algorithm \citep{Brookes1997}, and the ideal binary mask algorithm
-\citep{Wojcicki2011} were tested using drawn phoneme training data.
-The \textbf{phoneme dependent training data} enhancement algorithms
-were tested against a all measures considered within this thesis:
-\ac{PESQ}; \ac{MOS}, including listening effort and comparative
-\ac{MOS}; \ac{PRR}, including correctness and accuracy; and segmental
-\ac{SNR}.
+The phoneme-dependent \textbf{training} modification was applied to
+the online and supervised \ac{BNMF} algorithm variations \citep{mohammadiha2013supervised},
+the \ac{MMSE} algorithm \citep{Brookes1997}, and the ideal binary
+mask algorithm \citep{Wojcicki2011}. The \ac{SNR} was varied as
+before, between -6dB, -3dB, 0dB, 3dB and 6dB. The phoneme-dependent\textbf{
+training} enhancement algorithms were tested against all measures
+considered within this thesis: \ac{PESQ}; \ac{MOS}, including listening
+effort and comparative \ac{MOS}; \ac{PRR}, including correctness
+and accuracy; and segmental \ac{SNR}.
 
 
 \subsection{\label{sub:Phoneme-Base}Phoneme Dependent Base Matrix}
@@ -569,11 +583,9 @@ component matrix.
 
 \subsubsection*{Theory}
 
-In order to improve the previous algorithm, adaptations were proposed
-to develop a phoneme-dependent method. It was assumed that speech
-can be expressed as a sequence of phonemes, and that phonemes are
-constant throughout their duration, such that a single speaker speech
-signal may be expressed as:
+It was assumed that speech can be expressed as a sequence of phonemes,
+and that phonemes are constant throughout their duration, such that
+a single speaker speech signal may be expressed as:
 
 \[
 S=\left\{ p\left(1\right),p\left(2\right),p\left(3\right),...,p\left(T\right)\right\} 
@@ -582,7 +594,7 @@ S=\left\{ p\left(1\right),p\left(2\right),p\left(3\right),...,p\left(T\right)\ri
 
 \nomenclature{$S$}{\ac{STFT} of a signal or recording of a single speaker.}\nomenclature{$p$}{The Fourier transform of a short recording of a single phoneme.}
 
-where $S$ is the x\ac{STFT} of length $T$ and $p\left(t\right)$
+where $S$ is the \ac{STFT} of length $T$ and $p\left(t\right)$
 is a single-frame \ac{STFT} of a single phoneme. Speech within babble
 noise is of the form:
 
@@ -603,6 +615,9 @@ to segregate phonemes before \ac{NMF} could occur during enhancement.
 Here the segregation of phonemes is left as part of the \ac{NMF}
 algorithm.
 
+The proposed phoneme-dependent\textbf{ base} modification here is
+applicable to all \ac{NMF} algorithms.
+
 
 \subsubsection*{Implementation}
 
@@ -617,21 +632,23 @@ The simplified \lstinline[language=bash]!dummyTrain! allowed the
 spectral component matrix%
 \footnote{Variable name of the spectral component matrix in the in the \lstinline[language=bash]!NMF.m!
 code is \lstinline[language=Matlab]!Et!%
-} to be directly specified as opposed to trained.
+} to be directly specified as opposed to using the regular training.
 
 This change was then utilised in both the online and supervised algorithms.
 The phoneme training data (produced in \algref{Producing-phoneme-training}),
-which was used also for the \textbf{phoneme dependent training data}
-enhancement algorithms, was then read, made into a spectrogram, and
-passed to \lstinline[language=bash]!dummyTrain!. The new algorithms
-were called the modified online (\lstref{modifiedOnline}) and modified
-supervised (\lstref{modifiedSupervised}) algorithms respectively.
+which was used also for the phoneme-dependent\textbf{ training} enhancement
+algorithms, was then read, made into a spectrogram, and passed to
+\lstinline[language=bash]!dummyTrain! to be used as the spectral
+component matrix. The new algorithms were called the modified online
+or \lstinline[language=bash]!phoenememodifiedOnline! (\lstref{modifiedOnline})
+and modified supervised or \lstinline[language=bash]!phoenememodifiedSupervised!
+(\lstref{modifiedSupervised}) algorithms respectively.
 
 In order to verify that the spectral component matrix was correctly
 applied, the spectral component matrix \lstinline[language=Matlab]!speech_nmf.Et!
 was returned and plotted.
 
-Again, the \textbf{phoneme dependent base matrix} enhancement algorithms
+Again, the phoneme-dependent\textbf{ base} enhancement algorithms
 were tested against a all measures considered within this thesis:
 \ac{PESQ}; \ac{MOS}, including listening effort and comparative
 \ac{MOS}; \ac{PRR}, including correctness and accuracy; and segmental

@@ -71,6 +71,7 @@ End
 \suppress_date false
 \justification true
 \use_refstyle 1
+\boxbgcolor #b2b2b2
 \index Index
 \shortcut idx
 \color #008000
@@ -431,310 +432,6 @@ acs{PRR}
 \end_layout
 
 \begin_layout Standard
-Shown in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Group-PESQ-PRR"
-
-\end_inset
-
- are the results of the group comparison, a method also outlined in 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsecref{Method-Existing-Data}
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename fig/R/dir/lit/ HumanMachineGroupedLOESS.pdf
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Group-PESQ-PRR-LOESS"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acs{LOESS}
-\end_layout
-
-\end_inset
-
- fit
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename fig/R/dir/lit/ HumanMachineGroupedLM.pdf
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Group-PESQ-PRR-LM"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acs{LM}
-\end_layout
-
-\end_inset
-
- fit
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Group-PESQ-PRR"
-
-\end_inset
-
-Grouped comparison of human (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acs{PESQ}
-\end_layout
-
-\end_inset
-
-) vs.
- machine (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acs{PRR}
-\end_layout
-
-\end_inset
-
-) quality improvement
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Results outlined in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "tab:LF-Fit-Direct-Compar-PESQ-PRR"
-
-\end_inset
-
- are the coefficients relating to the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{LM}
-\end_layout
-
-\end_inset
-
- fitted lines in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Group-PESQ-PRR-LM"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:LF-Fit-Direct-Compar-PESQ-PRR"
-
-\end_inset
-
-Summary of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acs{LM}
-\end_layout
-
-\end_inset
-
- fit (
-\begin_inset Formula $y=mx+c$
-\end_inset
-
-) of direct comparison of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acs{PESQ}
-\end_layout
-
-\end_inset
-
- vs.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acs{PRR}
-\end_layout
-
-\end_inset
-
- improvement
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\backslash
-csvautotabular{dat/HumanMachinePaliwal.csv}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Additionally, a Pearson's correlation table was formed over a number of
  the evaluation measures, depicted in the correlogram in 
 \begin_inset CommandInset ref
@@ -744,15 +441,50 @@ reference "fig:litResCorr"
 \end_inset
 
 .
- The correlogram shows the Pearson correlation with confidence intervals
- in the lower panels and a scatterplot in the upper panels.
  The sparsity in this figure is due to the limited amount of pre-existing
  data.
-\begin_inset Note Note
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
+\begin_layout Subsubsection*
+Correlograms
+\end_layout
+
 \begin_layout Plain Layout
-How to read a correlogram!
+A correlogram is a plot designed to allow the reader to quickly observe
+ the relationship between a number of variables.
+ In the correlograms included within this thesis, the leading diagonal shows
+ the variable name corresponding to that row and column.
+ The upper panels display a scatterplot where the y-axis represents the
+ the variable of the panel's row, and the x-axis represents the variable
+ of the panel's column.
+ The lower panels show the Pearson's correlation of the two variable the
+ panel intersects, the 95% confidence interval.
+ Additionally, lower panels are highlighted in red for negative correlations
+ and blue for positive correlations, with the darkness indicating magnitude.
+\end_layout
+
+\begin_layout Plain Layout
+So the darker shaded panels in the lower half indicate variables that are
+ strongly correlated, and allows the reader to quickly establish which relations
+hips are meaningful.
+ The relationship can be visually confirmed by checking the scatterplot
+ in the upper half.
+ The relationships can then be further investigated by forming further plots
+ of the variables of interest.
 \end_layout
 
 \end_inset
@@ -764,7 +496,7 @@ How to read a correlogram!
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -788,8 +520,7 @@ name "fig:litResCorr"
 
 \end_inset
 
-Pearson's correlation over some of the evaluation measures assessed in existing
- data
+Correlogram of some of the evaluation measures assessed in existing data
 \end_layout
 
 \end_inset
@@ -811,17 +542,55 @@ Pearson's correlation over some of the evaluation measures assessed in existing
 
 \begin_layout Subsection
 Independent Investigation
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Independent-Investigation-Res"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The algorithms listed in 
+The following results correspond to algorithms listed in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Algorithms"
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "tab:Algorithms"
 
 \end_inset
 
- were implemented, as were the the evaluation measured outline in 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ and the evaluation measures outlined in 
 \begin_inset ERT
 status open
 
@@ -830,6 +599,37 @@ status open
 
 \backslash
 subsecref{Independent-Investigation-Meth}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Independent-Investigation-Meth"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -848,13 +648,48 @@ reference "fig:my-Corr"
 \end_layout
 
 \begin_layout Itemize
-the utterances and phonemes rows/columns correspond to the training given
- to the enhancement algorithm;
+the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+utterances
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemes
+\end_layout
+
+\end_inset
+
+ rows/columns correspond to the training given to the enhancement algorithm;
 \end_layout
 
 \begin_layout Itemize
 ``Imp'' refers to improvement comparatively with the signal before enhancement,
- i.e., pesqImp refers to the 
+ i.e., 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+pesqImp
+\end_layout
+
+\end_inset
+
+ refers to the 
 \begin_inset ERT
 status open
 
@@ -884,7 +719,18 @@ ac{PESQ}
 \end_layout
 
 \begin_layout Itemize
-MOSle refers to the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSle
+\end_layout
+
+\end_inset
+
+ refers to the 
 \begin_inset ERT
 status open
 
@@ -908,7 +754,18 @@ key "InternationalTelecommunicationUnion1996"
 \end_layout
 
 \begin_layout Itemize
-CMOS refers to the comparative 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+CMOS
+\end_layout
+
+\end_inset
+
+ refers to the comparative 
 \begin_inset ERT
 status open
 
@@ -925,7 +782,18 @@ ac{MOS}
 \end_layout
 
 \begin_layout Itemize
-PRRcorr refers to the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRcorr
+\end_layout
+
+\end_inset
+
+ refers to the 
 \begin_inset ERT
 status open
 
@@ -938,11 +806,35 @@ ac{PRR}
 
 \end_inset
 
- measured as the percentage correct; and
+ measured as the percentage correct, or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness;
 \end_layout
 
 \begin_layout Itemize
-PRRacc refers the the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRacc
+\end_layout
+
+\end_inset
+
+ refers the the 
 \begin_inset ERT
 status open
 
@@ -956,7 +848,36 @@ ac{PRR}
 \end_inset
 
  measures as the accuracy, defined as the number of correct phonemes minus
- the number of insersions divided by the number of phonemes.
+ the number of deletions, substitutions and insertions, divided by the number
+ of phonemes; and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+segSNR
+\end_layout
+
+\end_inset
+
+ refers to the segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1125,13 +1046,7 @@ Observations
 \end_layout
 
 \begin_layout Standard
-In performing these tests a number of observations were also made.
-\end_layout
-
-\begin_layout Standard
-It was noted that the ideal binary mask algorithms often caused the the
- signals to be reduced to near silence.
- Especially during the 
+During the 
 \begin_inset ERT
 status open
 
@@ -1170,13 +1085,14 @@ Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/dir/my/corr.pdf
+	lyxscale 30
 	width 100text%
 
 \end_inset
@@ -1212,7 +1128,7 @@ Correlogram of results of independent investigation
 placement p
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1269,7 +1185,7 @@ acs{PESQ}
 placement p
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1325,7 +1241,7 @@ acs{PESQ}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1381,7 +1297,7 @@ acs{SNR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1437,7 +1353,7 @@ acs{SNR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1494,7 +1410,7 @@ acs{MOS}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1551,7 +1467,7 @@ acs{MOS}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1608,7 +1524,7 @@ acs{MOS}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1665,7 +1581,7 @@ acs{PRR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1722,7 +1638,7 @@ acs{PRR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1779,7 +1695,7 @@ acs{PRR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1903,13 +1819,20 @@ subsecref{Investigating-Training-Req}
 
  are given in this section.
  
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:vary-train-pesq"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
+\end_layout
 
 \end_inset
 
- shows the 
+ show the 
 \begin_inset ERT
 status open
 
@@ -1922,7 +1845,72 @@ ac{PESQ}
 
 \end_inset
 
- results of the 
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort, comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of the 
 \begin_inset ERT
 status open
 
@@ -1942,69 +1930,7 @@ key "mohammadiha2013supervised"
 
 \end_inset
 
-.
- 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:vary-train-pesq-imp"
-
-\end_inset
-
- shows the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{PESQ}
-\end_layout
-
-\end_inset
-
- improvement as compared to the dirty signal before enhancement.
- Similarly, 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:vary-train-segsnr"
-
-\end_inset
-
- shows the segmental 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SNR}
-\end_layout
-
-\end_inset
-
- results of the same algorithm, and 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:vary-train-segsnr-imp"
-
-\end_inset
-
- shows the segmental 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{SNR}
-\end_layout
-
-\end_inset
-
- improvement compared against the signal before enhancement.
+ as a function of the number of utterances used in training.
 \end_layout
 
 \begin_layout Standard
@@ -2016,8 +1942,8 @@ status open
 
 
 \backslash
-Cref{fig:vary-train-pesq,fig:vary-train-pesq-imp,fig:vary-train-segsnr,fig:vary-
-train-segsnr-imp}
+Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
 \end_layout
 
 \end_inset
@@ -2054,26 +1980,11 @@ reference "lst:trainReq"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:train-req-corr"
-
-\end_inset
-
- shows a correlogram, an alternate view of the same data.
- In the upper panels are scatter plots of each variable pair.
- The lower panels are a heatmap of the Pearson's correlation between the
- variables.
- Blue indicates a positive correlation, red a negative, and the colour intensity
- indicates the magnitude.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement p
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -2143,15 +2054,16 @@ acs{BNMF}
 placement p
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename fig/R/train/pesqImp.pdf
+	filename fig/R/train/MOS.pdf
 	width 100text%
 	height 95theight%
+	keepAspectRatio
 	rotateAngle 90
 
 \end_inset
@@ -2165,7 +2077,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:vary-train-pesq-imp"
+name "fig:vary-train-mos"
 
 \end_inset
 
@@ -2177,12 +2089,12 @@ status open
 
 
 \backslash
-acs{PESQ}
+acs{MOS}
 \end_layout
 
 \end_inset
 
- improvement results of 
+ results of 
 \begin_inset ERT
 status open
 
@@ -2213,7 +2125,291 @@ acs{BNMF}
 placement p
 wide false
 sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/mosle.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-mosle"
+
+\end_inset
+
+
+\begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/CMOS.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-cmos"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/prrcorr.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-prrcorr"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/prracc.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-prracc"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -2279,121 +2475,6 @@ acs{BNMF}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename fig/R/train/segSNRImp.pdf
-	width 100text%
-	height 95theight%
-	rotateAngle 90
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:vary-train-segsnr-imp"
-
-\end_inset
-
-Segmental 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acs{SNR}
-\end_layout
-
-\end_inset
-
- improvement results of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acs{BNMF}
-\end_layout
-
-\end_inset
-
- algorithm as training is increased
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename fig/R/train/corr.pdf
-	width 90text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:train-req-corr"
-
-\end_inset
-
-Correlogram of results of training requirement investigations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage clearpage
 \end_inset
 
@@ -2402,6 +2483,44 @@ Correlogram of results of training requirement investigations
 
 \begin_layout Section
 Phoneme-Dependent Variation Performance
+\end_layout
+
+\begin_layout Standard
+The results of the phoneme-dependent 
+\series bold
+training
+\series default
+ algorithm proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Training}
+\end_layout
+
+\end_inset
+
+ and the phoneme-dependent 
+\series bold
+base
+\series default
+ algorithm proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Base}
+\end_layout
+
+\end_inset
+
+ are given in this section.
 \end_layout
 
 \begin_layout Standard
@@ -2425,7 +2544,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -2462,7 +2581,7 @@ One sample per phoneme
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2506,14 +2625,13 @@ Five samples per phoneme
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-10phnSpectrogram.eps
 	lyxscale 50
 	width 50text%
-	draft
 
 \end_inset
 
@@ -2538,14 +2656,13 @@ Ten samples per phoneme
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-50phnSpectrogram.eps
 	lyxscale 50
 	width 50text%
-	draft
 
 \end_inset
 
@@ -2573,14 +2690,13 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-100phnSpectrogram.eps
 	lyxscale 50
 	width 50text%
-	draft
 
 \end_inset
 
@@ -2605,14 +2721,13 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-500phnSpectrogram.eps
 	lyxscale 50
 	width 50text%
-	draft
 
 \end_inset
 
@@ -2640,14 +2755,13 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename fig/spectrogram/drawPhn/c3s-999phnSpectrogram.eps
 	lyxscale 50
 	width 50text%
-	draft
 
 \end_inset
 
@@ -2920,60 +3034,17 @@ ig:segsnrimp-comparison-phn}
 \end_layout
 
 \begin_layout Standard
-The first test conducted was to ensure the modifications to the code indeed
- forced the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ac{NMF}
-\end_layout
-
-\end_inset
-
- spectral component matrix, 
-\begin_inset listings
-lstparams "language=Matlab"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-Et
-\end_layout
-
-\end_inset
-
- in the 
-\begin_inset listings
-lstparams "language=bash"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-NMF
-\end_layout
-
-\end_inset
-
- class, to be the drawn phoneme bases supplied.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/pesq.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3022,13 +3093,14 @@ acs{PESQ}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/MOS.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3040,15 +3112,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:mos-comparison-phn"
 
 \end_inset
 
-
-\lang australian
 
 \begin_inset ERT
 status open
@@ -3080,13 +3149,14 @@ acs{MOS}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/MOSle.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3135,13 +3205,14 @@ acs{MOS}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/CMOS.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3153,7 +3224,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:cmos-comparison-phn"
@@ -3161,8 +3231,6 @@ name "fig:cmos-comparison-phn"
 \end_inset
 
 Comparative 
-\lang australian
-
 \begin_inset ERT
 status open
 
@@ -3193,13 +3261,14 @@ acs{MOS}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/PRRcorr.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3211,15 +3280,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:prrcorr-comparison-phn"
 
 \end_inset
 
-
-\lang australian
 
 \begin_inset ERT
 status open
@@ -3251,13 +3317,14 @@ acs{PRR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/PRRcorrimp.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3306,13 +3373,14 @@ acs{PRR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/PRRacc.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3324,15 +3392,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:prracc-comparison-phn"
 
 \end_inset
 
-
-\lang australian
 
 \begin_inset ERT
 status open
@@ -3364,13 +3429,14 @@ acs{PRR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/PRRaccimp.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3419,13 +3485,14 @@ acs{PRR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/segSNR.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3474,13 +3541,14 @@ acs{SNR}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename fig/R/my/phnCompXY/segSNRImp.pdf
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3513,6 +3581,544 @@ acs{SNR}
 
  improvement comparison for phoneme-dependent vs.
  original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Cref{fig:vary-train-phn-pesq,fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig
+:vary-train-phn-cmos,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc,fig:va
+ry-train-phn-segsnr}
+\end_layout
+
+\end_inset
+
+ show the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort, comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of the phoneme-dependent enhancement algorithms as a function
+ of the number of phonemes used in training.
+ These plots are arranged with the number of trained utterances on the x-axis
+ and test score on the y-axis.
+ Furthermore, the plots are arranged in a grid with rows corresponding to
+ the enhancement algorithm used and columns corresponding to the noise type
+ used in the test.
+ The series colour represents the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ used for the test data, and dashed lines represent the score of the dirty
+ signal before enhancement.
+ The R script used to form these plots is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:trainReqPhn"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/pesq.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-pesq"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ results of phoneme-dependently modified algorithms as phoneme training
+ is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/MOS.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-mos"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of phoneme-dependently modified algorithms as phoneme training
+ is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/mosle.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-mosle"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort results of phoneme-dependently modified algorithms as
+ phoneme training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/CMOS.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-cmos"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of phoneme-dependently modified algorithms as phoneme training
+ is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/prrcorr.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-prrcorr"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness results of phoneme-dependently modified algorithms as phoneme
+ training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/prracc.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-prracc"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of phoneme-dependently modified algorithms as phoneme
+ training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/segSNR.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-segsnr"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ results of phoneme-dependently modified algorithms as phoneme training
+ is increased
 \end_layout
 
 \end_inset

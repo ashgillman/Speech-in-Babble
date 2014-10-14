@@ -177,31 +177,29 @@ algOrder <- unique(d[order(grepl("modified", d$algorithm) +
                      "algorithm"])
 d$algorithm <- factor(d$algorithm, levels=algOrder)
 
-# PESQ vs. MOS, no IDBM
+# PESQ vs. MOS, w/ and w/o IDBM
 corVal1 <- cor(d[, c("pesq", "MOS")], use="complete.obs")[2]
 corVal2 <- cor(d[!grepl("IDBM", d$algorithm), c("pesq", "MOS")],
                use="complete.obs")[2]
 p1 <- ggplot(d, aes(x=MOS, y=pesq, color=algorithm)) +
   geom_point() +
-  geom_abline(aes(linetype="Expected (PESQ=MOS)"), intercept=0, slope=1) +
   scale_shape_discrete() +
-  scale_color_manual(name="Algorithm", values=rainbow(10)) +
-  ggtitle(paste0("With IDBM (cor = ", as.character(round(corVal1, 3)), ")")) +
+  scale_color_manual(name="Algorithm", values=rainbow(10), drop=F) +
+  ggtitle(paste0("With IDBM (correlation = ", as.character(round(corVal1, 3)), ")")) +
   theme_bw() + ylab("PESQ") + theme(legend.position="none")
 p2 <- ggplot(d[!grepl("IDBM", d$algorithm),], aes(x=MOS, y=pesq,
                                                   color=factor(algorithm))) +
   geom_point() +
-  geom_abline(aes(linetype="Expected (PESQ=MOS)"), intercept=0, slope=1) +
   scale_shape_discrete() +
-  scale_color_manual(name="Algorithm", values=rainbow(10)) +
-  ggtitle(paste0("Without IDBM (cor = ", as.character(round(corVal2, 3)),
+  scale_color_manual(name="Algorithm", values=rainbow(10), drop=F) +
+  ggtitle(paste0("Without IDBM (correlation = ", as.character(round(corVal2, 3)),
                  ")")) +
   theme_bw() + ylab("PESQ") + theme(legend.position="none")
 print(p1)
 print(p2)
 saveLeg("fig/pair/my", "pesq-mos_leg",
         g_legend(p1 +
-                 theme(legend.position="bottom") +
+                   theme(legend.position="bottom") +
                    scale_color_discrete(name="Algorithm",
                                         guide=guide_legend(nrow=2,
                                                            keyheight=1.5,
@@ -209,6 +207,37 @@ saveLeg("fig/pair/my", "pesq-mos_leg",
         w=10, h=1)
 saveP("fig/pair/my", "pesq-mos", p1, w=7, h=6)
 saveP("fig/pair/my", "pesq-mos_no-IDBM", p2, w=7, h=6)
+
+# PESQimp vs. CMOS, w/ and w/o IDBM
+corVal1 <- cor(d[, c("pesqImp", "CMOS")], use="complete.obs")[2]
+corVal2 <- cor(d[!grepl("IDBM", d$algorithm), c("pesqImp", "CMOS")],
+               use="complete.obs")[2]
+p1 <- ggplot(d, aes(x=CMOS, y=pesqImp, color=algorithm)) +
+  geom_point() +
+  scale_shape_discrete() +
+  scale_color_manual(name="Algorithm", values=rainbow(10), drop=F) +
+  ggtitle(paste0("With IDBM (correlation = ", as.character(round(corVal1, 3)), ")")) +
+  theme_bw() + ylab("PESQ Improvement") + theme(legend.position="none")
+p2 <- ggplot(d[!grepl("IDBM", d$algorithm),], aes(x=CMOS, y=pesqImp,
+                                                  color=factor(algorithm))) +
+  geom_point() +
+  scale_shape_discrete() +
+  scale_color_manual(name="Algorithm", values=rainbow(10), drop=F) +
+  ggtitle(paste0("Without IDBM (correlation = ", as.character(round(corVal2, 3)),
+                 ")")) +
+  theme_bw() + ylab("PESQ Imporvement") + theme(legend.position="none")
+print(p1)
+print(p2)
+saveLeg("fig/pair/my", "pesqimp-cmos_leg",
+        g_legend(p1 +
+                   theme(legend.position="bottom") +
+                   scale_color_discrete(name="Algorithm",
+                                        guide=guide_legend(nrow=2,
+                                                           keyheight=1.5,
+                                                           keywidth=1.5))),
+        w=10, h=1)
+saveP("fig/pair/my", "pesqimp-cmos", p1, w=7, h=6)
+saveP("fig/pair/my", "pesqimp-cmos_no-IDBM", p2, w=7, h=6)
 
 # PRRacc vs. MOS by Test Cond.
 pMosCorr <- ggplot(d[!is.na(d$MOS) & !is.na(d$PRRcorr),],

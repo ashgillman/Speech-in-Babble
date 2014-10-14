@@ -134,6 +134,8 @@ key "RCoreTeam2014"
 \end_inset
 
 .
+ R was selected for data analysis for its simplicity in forming powerful
+ plots and applying statistical methods.
 \end_layout
 
 \begin_layout Standard
@@ -180,6 +182,14 @@ ac{WSJ}
 \end_inset
 
  corpus.
+ Additionally, recorded noise was used from the NOIZEUS corpus 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hu2006"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -289,19 +299,14 @@ status open
 
 , most literature takes preference to evaluation measures indicative of
  either human performance or machine performance, but not both.
- Thus, methods had to be developed in order to fairly compare the the results
+ Thus, a method had to be developed in order to fairly compare the the results
  between different sources.
 \end_layout
 
 \begin_layout Standard
-The first comparison method was 
-\series bold
-direct comparison
-\series default
-.
- This method involved plotting human performance against machine performance,
- and thus was only applicable to a small subset of the results where both
- performances were measured, such as in 
+This method involved plotting human performance against machine performance,
+ and thus was only applicable to a small subset of available results where
+ both performances were measured, such as in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Paliwal2010"
@@ -351,7 +356,7 @@ ac{LM}
 
 \end_inset
 
- model was then applied using R's 
+ model fit was then applied using R's 
 \begin_inset listings
 lstparams "language=R"
 inline true
@@ -367,26 +372,6 @@ lm()
  linear regression function.
  The main limitation of the direct comparison method was the limited dataset
  available.
-\end_layout
-
-\begin_layout Standard
-A 
-\series bold
-grouped comparison
-\series default
- was also conducted.
- This was performed as above, however similar algorithms were grouped into
- algorithm classes.
- This allowed comparison of algorithm classes, to investigate whether certain
- classes of algorithms are suitable for different purposes.
-\end_layout
-
-\begin_layout Standard
-A limitation in these analyses is that the test conditions are not fair:
- different noise types, subtle differences in algorithms, and other differences
- could not be completely accounted for in the analysis.
- As such, it was important to conduct further tests, where these conditions
- can be controlled such that the comparisons be completely fair.
 \end_layout
 
 \begin_layout Subsection
@@ -2299,6 +2284,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename fig/environment.png
+	lyxscale 50
 	width 80text%
 
 \end_inset
@@ -2414,6 +2400,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename fig/test setup.jpg
+	lyxscale 30
 	width 80text%
 
 \end_inset
@@ -2432,6 +2419,93 @@ name "fig:MOS-Test-setup"
 \end_inset
 
 MOS Test setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:MOS-Subject-summary"
+
+\end_inset
+
+ gives a summary of the ten test subjects that were used in gathering the
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ results.
+ Test subjects were selected to give a range in age and sex.
+ Also included in the test subjects was a listener with a hearing disability,
+ pulsative tinitis, who was a hearing aid user.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:MOS-Subject-summary"
+
+\end_inset
+
+Summary of test subjects use in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\backslash
+csvautotabular{dat/TestSubjects.csv}
 \end_layout
 
 \end_inset
@@ -3090,7 +3164,7 @@ status open
 
 
 \backslash
-acl{MFCC}
+acs{MFCC}
 \end_layout
 
 \end_inset
@@ -3144,7 +3218,7 @@ status open
 
 
 \backslash
-acl{MFCC}
+acs{MFCC}
 \end_layout
 
 \end_inset
@@ -4042,7 +4116,7 @@ ac{BNMF}
 
 \end_inset
 
- algorithm proposed by 
+ algorithms proposed by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "mohammadiha2013supervised"
@@ -4116,6 +4190,31 @@ status open
 \end_inset
 
 .
+ Although these modifications are being implemented and tested on 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithms, they are applicable modifications to a wider range of algorithms.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Talk about under training over training?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -4172,13 +4271,24 @@ ting the information relating to a voice.
  speech.
  It was also hypothesised that the training algorithms may be affected by
  the inclusion of non-speech sections.
- The proposed method here, of 
+ The proposed method here, of phoneme-dependent
 \series bold
-phoneme dependent training data
+ training
 \series default
 , is intended to increase the information density, such that the supplied
  training may be reduced whilst still containing enough information to develop
  an adequate model.
+\end_layout
+
+\begin_layout Standard
+The proposed phoneme-dependent
+\series bold
+ training
+\series default
+ modification here is applicable to all speech enhancement algorithms requiring
+ training.
+ This includes all voice-dependent enhancement algorithms and speaker separation
+ algorithms.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4227,8 +4337,8 @@ status open
 
 .
  Phonemes were drawn randomly from the speaker recordings, and the position
- in the phoneme is also randomly selected, i.e., drawn phoneme samples are
- not always the beginning of the phoneme.
+ within the phoneme segment is also randomly selected, i.e., drawn phoneme
+ samples are not always the beginning or the end of the phoneme sound.
  The algorithm used to produce drawn phoneme recordings is given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -4250,17 +4360,6 @@ Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}
 \end_inset
 
 .
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Maybe explain using algorithm or list type thing?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4276,6 +4375,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 drawPhnSamples.m
 \end_layout
 
@@ -4292,6 +4392,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 .phn
 \end_layout
 
@@ -4303,6 +4404,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 getPhnData.m
 \end_layout
 
@@ -4344,6 +4446,7 @@ inline true
 status open
 
 \begin_layout Plain Layout
+
 .wav
 \end_layout
 
@@ -4417,7 +4520,11 @@ subsecref{Investigating-Training-Req}
 \end_inset
 
 .
- The 
+ The phoneme-dependent 
+\series bold
+training
+\series default
+ modification was applied to the online and supervised 
 \begin_inset ERT
 status open
 
@@ -4425,13 +4532,12 @@ status open
 
 
 \backslash
-ac{SNR}
+ac{BNMF}
 \end_layout
 
 \end_inset
 
- was varied as before, and the online and supervised algorithm variations
- 
+ algorithm variations 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "mohammadiha2013supervised"
@@ -4465,12 +4571,26 @@ key "Wojcicki2011"
 
 \end_inset
 
- were tested using drawn phoneme training data.
+.
  The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ was varied as before, between -6dB, -3dB, 0dB, 3dB and 6dB.
+ The phoneme-dependent
 \series bold
-phoneme dependent training data
+ training
 \series default
- enhancement algorithms were tested against a all measures considered within
+ enhancement algorithms were tested against all measures considered within
  this thesis: 
 \begin_inset ERT
 status open
@@ -4559,10 +4679,8 @@ Theory
 \end_layout
 
 \begin_layout Standard
-In order to improve the previous algorithm, adaptations were proposed to
- develop a phoneme-dependent method.
- It was assumed that speech can be expressed as a sequence of phonemes,
- and that phonemes are constant throughout their duration, such that a single
+It was assumed that speech can be expressed as a sequence of phonemes, and
+ that phonemes are constant throughout their duration, such that a single
  speaker speech signal may be expressed as:
 \end_layout
 
@@ -4601,7 +4719,7 @@ where
 \begin_inset Formula $S$
 \end_inset
 
- is the x
+ is the 
 \begin_inset ERT
 status open
 
@@ -4743,6 +4861,27 @@ ac{NMF}
 \end_inset
 
  algorithm.
+\end_layout
+
+\begin_layout Standard
+The proposed phoneme-dependent
+\series bold
+ base
+\series default
+ modification here is applicable to all 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithms.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4926,7 +5065,7 @@ Et
 
 \end_inset
 
- to be directly specified as opposed to trained.
+ to be directly specified as opposed to using the regular training.
 \end_layout
 
 \begin_layout Standard
@@ -4938,9 +5077,9 @@ reference "alg:Producing-phoneme-training"
 
 \end_inset
 
-), which was used also for the 
+), which was used also for the phoneme-dependent
 \series bold
-phoneme dependent training data
+ training
 \series default
  enhancement algorithms, was then read, made into a spectrogram, and passed
  to 
@@ -4956,15 +5095,41 @@ dummyTrain
 
 \end_inset
 
-.
- The new algorithms were called the modified online (
+ to be used as the spectral component matrix.
+ The new algorithms were called the modified online or 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phoenememodifiedOnline
+\end_layout
+
+\end_inset
+
+ (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "lst:modifiedOnline"
 
 \end_inset
 
-) and modified supervised (
+) and modified supervised or 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phoenememodifiedSupervised
+\end_layout
+
+\end_inset
+
+ (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "lst:modifiedSupervised"
@@ -4993,9 +5158,9 @@ speech_nmf.Et
 \end_layout
 
 \begin_layout Standard
-Again, the 
+Again, the phoneme-dependent
 \series bold
-phoneme dependent base matrix
+ base
 \series default
  enhancement algorithms were tested against a all measures considered within
  this thesis: 

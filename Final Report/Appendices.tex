@@ -1,16 +1,21 @@
-%\begin{landscape}
 
+\chapter{Risk Assessment}
 
-\chapter{\label{chap:Apx-Data}Data}
+add Risk Assessment Here
 
+%Data\label{chap:Apx-Data}
 
-\section{Data Congregated from Literature\label{sec:litresults}}
+%Data Congregated from Literature\label{sec:litresults}
 
-%\includepdf[pages=-,angle=90]{dat/litresults}
+\includepdf[pages=1,pagecommand=\chapter{Data\label{chap:Apx-Data}} \section{Data Congregated from Literature\label{sec:litresults}},angle=90,width=1\paperwidth,height=0.9\textheight,keepaspectratio]{dat/litresults}
 
-%\end{landscape}
+\includepdf[pages=2-last,angle=90,width=0.9\paperwidth,height=1\paperheight,keepaspectratio]{dat/litresults}
 
-Just file ref?
+%Test Data\label{sec:testresults}
+
+\includepdf[pages=1,pagecommand=\section{Test Data\label{sec:testresults}},angle=90,width=1\paperwidth,height=1\textheight,keepaspectratio]{dat/testResults}
+
+\includepdf[pages=2-last,angle=90,width=0.9\paperwidth,height=1\paperheight,keepaspectratio]{dat/testResults}
 
 
 \chapter{Code}
@@ -242,3 +247,14 @@ showstringspaces=false
 
 
 \lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReq.R}
+
+\begin{listing}[H]
+\protect\caption{Training Requirement of Phoneme-dependent algorithms Comparison R
+Code\label{lst:trainReqPhn}}
+
+
+\lstinputlisting[lastline=60]{../Code/R/trainReqPhn.R}
+\end{listing}
+
+
+\lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReqPhn.R}

@@ -839,7 +839,7 @@ reference "eq:babble-sum-speakers"
 \end_layout
 
 \begin_layout Subsection
-For Generation
+Generation of Babble
 \end_layout
 
 \begin_layout Standard
@@ -900,7 +900,7 @@ key "Krishnamurthy2009"
 \end_layout
 
 \begin_layout Subsection
-For Analysis and Enhancement
+Babble Analysis and Enhancement
 \end_layout
 
 \begin_layout Standard
@@ -955,13 +955,6 @@ reference "fig:Differentiating-Speech-Babble"
 
 \end_inset
 
- 
-\begin_inset CommandInset ref
-LatexCommand vpageref
-reference "fig:Differentiating-Speech-Babble"
-
-\end_inset
-
 .
 \end_layout
 
@@ -976,7 +969,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename fig/babble Separation.eps
-	width 100text%
+	width 60text%
 
 \end_inset
 
@@ -1173,6 +1166,71 @@ ac{MOS}
  results are a score calculated by the mean of the listeners’ scores in
  the range one to five, with one representing the worst quality and five
  representing the highest quality of intelligibility.
+ There are multiple 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ tests outlined in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "InternationalTelecommunicationUnion1996"
+
+\end_inset
+
+, including: a standard scale, measuring overall subjective quality; a listening
+ effort scale, measuring the effort required by a listener to understand
+ the speech; a loudness preference scale, measuring the preferred loudness
+ of the signal; and a comparative scale, measuring comparatively to a reference
+ signal.
+\end_layout
+
+\begin_layout Standard
+Additionally, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ITU}
+\end_layout
+
+\end_inset
+
+ outline a separate standard for measuring communication systems with noise
+ suppression 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "InternationalTelecommunicationUnion2003"
+
+\end_inset
+
+.
+ This standard recommends 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ tests scoring on the quality of three separate areas, (1) the speech signal,
+ (2) the background noise, and (3) the overall effect.
 \end_layout
 
 \begin_layout Standard
@@ -1232,7 +1290,7 @@ ac{PESQ}
 \end_inset
 
  scores give consistent and reliable estimates on human perception, although
- are not directly comparable with 
+ are not necessarily directly comparable with 
 \begin_inset ERT
 status open
 
@@ -1253,17 +1311,220 @@ key "Rix2003"
 \end_inset
 
 .
- 
-\begin_inset Note Note
+\end_layout
+
+\begin_layout Subsection
+Machine Recognition
+\end_layout
+
+\begin_layout Standard
+In order to measure machine recognition, an 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-These are actually statistical
+
+
+\backslash
+ac{ASR}
 \end_layout
 
 \end_inset
 
-Other methods for measuring perceptual quality include long-term 
+ system is employed and a method is chosen to measure the performance of
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system.
+ The most common technique to evaluate machine recognition quality of speech
+ is to perform a comparison of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WRR}
+\end_layout
+
+\end_inset
+
+.
+ This method is advantageous as it gives a good indication on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system's ability to extract meaning.
+\end_layout
+
+\begin_layout Standard
+An alternative option is to use the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+ The advantage of this method is that it allows a lower-level view of recognitio
+n, and a more accurate representation of the raw enhancement.
+ Additionally, a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system requires one less step in recognition, so is slightly easier in
+ implementation.
+ However, the limitation of this method is that results do not account for
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system's ability to account for errors in phoneme recognition when extracting
+ meaning.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+References
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Additionally, for each of the above measures, both the correctness and the
+ accuracy may be measured.
+ Correctness is given by
+\begin_inset Formula 
+\[
+Correctness=\frac{correct\ labels}{actual\ no.\ labels}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and accuracy is given by 
+\begin_inset Formula 
+\[
+Accuracy=\frac{correct\ labels-insertions}{actual\ no.\ labels}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where labels may be either phonemes or words 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Young1997"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It should be noted that this method is somewhat limited in terms of comparison
+ between authors, as different 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ algorithms, which may implement different feature vectors, perform differently.
+ As such, results from different 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ algorithms are not directly comparable.
+\end_layout
+
+\begin_layout Subsection
+Statistical Measures
+\end_layout
+
+\begin_layout Standard
+Other methods for measuring speech enhancement include long-term 
 \begin_inset ERT
 status open
 
@@ -1289,8 +1550,7 @@ ac{SNR}
 
 \end_inset
 
-, weighted spectral slope, log-likelihood ratio, Itakura-Saito distance,
- cepstrum distance, 
+, log-likelihood ratio, Itakura-Saito distance, cepstrum distance, 
 \begin_inset ERT
 status open
 
@@ -1323,16 +1583,11 @@ key "Hu2008"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Subsection
-Machine Recognition
+, visual analysis of the signal spectrogram, as well as others.
 \end_layout
 
 \begin_layout Standard
-The most common technique to evaluate machine recognition quality of speech
- is to run an 
+Long-term 
 \begin_inset ERT
 status open
 
@@ -1340,12 +1595,12 @@ status open
 
 
 \backslash
-ac{ASR}
+ac{SNR}
 \end_layout
 
 \end_inset
 
- algorithm on the signal and perform a comparison of the 
+ is the involves calculating the 
 \begin_inset ERT
 status open
 
@@ -1353,14 +1608,67 @@ status open
 
 
 \backslash
-ac{WRR}
+ac{SNR}
 \end_layout
+
+\end_inset
+
+ over the entire signal.
+ However, this method does not always correlate with subjective measures
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hansen1998"
+
+\end_inset
+
+ and many variations exist.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Raj2005a"
+
+\end_inset
+
+ utilise a method incorporating the phase of the signal.
+\end_layout
+
+\begin_layout Standard
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ uses the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ within small frames 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hansen1998"
 
 \end_inset
 
 .
- It should be noted that this method is somewhat limited, in that different
- 
+ Since frames where speech in not present can have very negative 
 \begin_inset ERT
 status open
 
@@ -1368,14 +1676,14 @@ status open
 
 
 \backslash
-ac{ASR}
+acp{SNR}
 \end_layout
 
 \end_inset
 
- algorithms, which may implement different feature vectors, may perform
- differently.
- As such, results from different 
+, even for relatively low noise levels, frames without speech activity are
+ ignored.
+ Segmental 
 \begin_inset ERT
 status open
 
@@ -1383,12 +1691,28 @@ status open
 
 
 \backslash
-ac{ASR}
+ac{SNR}
 \end_layout
 
 \end_inset
 
- algorithms are not directly comparable.
+ was used in the past as a test measure for measuring the quality of coding
+ schemes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mermelstein1979"
+
+\end_inset
+
+, however, poor correlation with human subjective tests for measurement
+ of speech enhancement has been shown 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hu2008"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1404,7 +1728,7 @@ reference "fig:Assessment-methods"
  This data was gathered from the following papers 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011"
+key "Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011,Paliwal2010,mohammadiha2013supervised,Plourde2007,Weninger2011,Williamson2014"
 
 \end_inset
 
@@ -1425,7 +1749,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename fig/assessment Methods.eps
+	filename fig/R/assessmentMethods.pdf
 	width 100text%
 
 \end_inset
@@ -3104,6 +3428,24 @@ Finally, improvements have been made in focusing recognition by forcing
  component matrices to represent phonemes.
  However, current algorithms require complicated implementations.
  It is proposed to attempt to simplify this process.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ASR Systems, PRR, Human recog, Machine recog, PRR Corr, PRR Acc, MOS, PESQ,
+ Stat methods, such as Seg SNR, 
+\end_layout
+
+\begin_layout Plain Layout
+how and why cmos related to pesqimp? or maybe thats methodology?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

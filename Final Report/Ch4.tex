@@ -30,72 +30,71 @@ vs. machine (\acs{PRR}) quality improvement}
 \end{figure}
 
 
-Shown in \figref{Group-PESQ-PRR} are the results of the group comparison,
-a method also outlined in \subsecref{Method-Existing-Data}.
-
-\begin{figure}[p]
-\subfloat[\label{fig:Group-PESQ-PRR-LOESS}\acs{LOESS} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/lit/ HumanMachineGroupedLOESS\string".pdf}
-
-}
-
-\subfloat[\label{fig:Group-PESQ-PRR-LM}\acs{LM} fit]{\includegraphics[width=1\textwidth]{\string"fig/R/dir/lit/ HumanMachineGroupedLM\string".pdf}
-
-}\protect\caption{\label{fig:Group-PESQ-PRR}Grouped comparison of human (\acs{PESQ})
-vs. machine (\acs{PRR}) quality improvement}
-\end{figure}
-
-
-Results outlined in \tabref{LF-Fit-Direct-Compar-PESQ-PRR} are the
-coefficients relating to the \ac{LM} fitted lines in \figref{Group-PESQ-PRR-LM}.
-
-\begin{table}[h]
-\protect\caption{\label{tab:LF-Fit-Direct-Compar-PESQ-PRR}Summary of \acs{LM} fit
-($y=mx+c$) of direct comparison of \acs{PESQ} vs. \acs{PRR} improvement}
-
-
-\centering\csvautotabular{dat/HumanMachinePaliwal.csv}
-\end{table}
-
-
 Additionally, a Pearson's correlation table was formed over a number
 of the evaluation measures, depicted in the correlogram in \figref{litResCorr}.
-The correlogram shows the Pearson correlation with confidence intervals
-in the lower panels and a scatterplot in the upper panels. The sparsity
-in this figure is due to the limited amount of pre-existing data.
+The sparsity in this figure is due to the limited amount of pre-existing
+data.
+
+\begin{minipage}[t]{1\columnwidth}%
+\begin{shaded}%
+
+\subsubsection*{Correlograms}
+
+A correlogram is a plot designed to allow the reader to quickly observe
+the relationship between a number of variables. In the correlograms
+included within this thesis, the leading diagonal shows the variable
+name corresponding to that row and column. The upper panels display
+a scatterplot where the y-axis represents the the variable of the
+panel's row, and the x-axis represents the variable of the panel's
+column. The lower panels show the Pearson's correlation of the two
+variable the panel intersects, the 95\% confidence interval. Additionally,
+lower panels are highlighted in red for negative correlations and
+blue for positive correlations, with the darkness indicating magnitude.
+
+So the darker shaded panels in the lower half indicate variables that
+are strongly correlated, and allows the reader to quickly establish
+which relationships are meaningful. The relationship can be visually
+confirmed by checking the scatterplot in the upper half. The relationships
+can then be further investigated by forming further plots of the variables
+of interest.\end{shaded}%
+\end{minipage}
 
 \begin{figure}[h]
 \noindent \begin{centering}
 \includegraphics[width=1\textwidth]{fig/R/cor/litResCorrgram}
 \par\end{centering}
 
-\protect\caption{\label{fig:litResCorr}Pearson's correlation over some of the evaluation
-measures assessed in existing data}
+\protect\caption{\label{fig:litResCorr}Correlogram of some of the evaluation measures
+assessed in existing data}
 \end{figure}
 
 
 \clearpage{}
 
 
-\subsection{Independent Investigation}
+\subsection{Independent Investigation\label{sub:Independent-Investigation-Res}}
 
-The algorithms listed in \nameref{tab:Algorithms} were implemented,
-as were the the evaluation measured outline in \subsecref{Independent-Investigation-Meth}.
+The following results correspond to algorithms listed in \tabref{Algorithms},
+\textit{\nameref{tab:Algorithms}} and the evaluation measures outlined
+in \subsecref{Independent-Investigation-Meth}, \textit{\nameref{sub:Independent-Investigation-Meth}}.
 A correlogram of the results was formed in \figref{my-Corr} to give
 an overview of the results and how measures correlated with one another.
 In this figure:
 \begin{itemize}
-\item the utterances and phonemes rows/columns correspond to the training
-given to the enhancement algorithm;
+\item the \lstinline!utterances! and \lstinline!phonemes! rows/columns
+correspond to the training given to the enhancement algorithm;
 \item ``Imp'' refers to improvement comparatively with the signal before
-enhancement, i.e., pesqImp refers to the \ac{PESQ} score after enhancement
-minus the \ac{PESQ} score before enhancement;
-\item MOSle refers to the \ac{MOS} listening effort scale \citep{InternationalTelecommunicationUnion1996};
-\item CMOS refers to the comparative \ac{MOS};
-\item PRRcorr refers to the \ac{PRR} measured as the percentage correct;
-and
-\item PRRacc refers the the \ac{PRR} measures as the accuracy, defined
-as the number of correct phonemes minus the number of insersions divided
-by the number of phonemes.
+enhancement, i.e., \lstinline!pesqImp! refers to the \ac{PESQ} score
+after enhancement minus the \ac{PESQ} score before enhancement;
+\item \lstinline!MOSle! refers to the \ac{MOS} listening effort scale
+\citep{InternationalTelecommunicationUnion1996};
+\item \lstinline!CMOS! refers to the comparative \ac{MOS};
+\item \lstinline!PRRcorr! refers to the \ac{PRR} measured as the percentage
+correct, or \ac{PRR} correctness;
+\item \lstinline!PRRacc! refers the the \ac{PRR} measures as the accuracy,
+defined as the number of correct phonemes minus the number of deletions,
+substitutions and insertions, divided by the number of phonemes; and
+\item \lstinline!segSNR! refers to the segmental \ac{SNR}.
 \end{itemize}
 The results for the various evaluation measures are given in \Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp}.
 These plots also show box plots of the five-point summaries of the
@@ -112,16 +111,12 @@ and \lstinline[breaklines=true]!phonemeModifiedSupervised!.
 
 \subsubsection*{Observations}
 
-In performing these tests a number of observations were also made.
-
-It was noted that the ideal binary mask algorithms often caused the
-the signals to be reduced to near silence. Especially during the \ac{MOS}
-tests, where it was noted that most participants complained that occasionally
-a signal would not play. Upon further investigation it was determined
-the signal was in fact playing, and that the signal consisted of silence.
-Subjects were instructed to continue answering the questions as they
-were worded, and thus these signals were given the minimum scores.
-This is reflected in \Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS},
+During the \ac{MOS} tests, where it was noted that most participants
+complained that occasionally a signal would not play. Upon further
+investigation it was determined the signal was in fact playing, and
+that the signal consisted of silence. Subjects were instructed to
+continue answering the questions as they were worded, and thus these
+signals were given the minimum scores. This is reflected in \Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS},
 where the ideal binary mask algorithms scored poorly.
 
 \begin{figure}[h]
@@ -251,15 +246,13 @@ Research Question \ref{enu:ResQ2}, \textit{\RQtwo{}}
 \subsection{Investigating Training Requirements}
 
 The results of the experiments proposed in \subsecref{Investigating-Training-Req}
-are given in this section. \figref{vary-train-pesq} shows the \ac{PESQ}
-results of the \ac{BNMF} algorithm developed by \citet{mohammadiha2013supervised}.
-\figref{vary-train-pesq-imp} shows the \ac{PESQ} improvement as
-compared to the dirty signal before enhancement. Similarly, \figref{vary-train-segsnr}
-shows the segmental \ac{SNR} results of the same algorithm, and \figref{vary-train-segsnr-imp}
-shows the segmental \ac{SNR} improvement compared against the signal
-before enhancement.
+are given in this section. \Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
+show the \ac{PESQ}, \ac{MOS}, \ac{MOS} listening effort, comparative
+\ac{MOS}, \ac{PRR} correctness and \ac{PRR} accuracy results of
+the \ac{BNMF} algorithm developed by \citet{mohammadiha2013supervised}
+as a function of the number of utterances used in training.
 
-Plots in \Cref{fig:vary-train-pesq,fig:vary-train-pesq-imp,fig:vary-train-segsnr,fig:vary-train-segsnr-imp}
+Plots in \Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
 each are arranged with the number of trained utterances on the x-axis
 and test score on the y-axis. Furthermore, the plots are arranged
 in a grid with rows corresponding to the enhancement algorithm and
@@ -269,12 +262,6 @@ used to form the noise babble. Finally, series colour represents the
 \ac{SNR} used for the test data, and the line type is dashed when
 representing the score of the dirty signal before enhancement. The
 R script used to form these plots is given in \lstref{trainReq}.
-
-\figref{train-req-corr} shows a correlogram, an alternate view of
-the same data. In the upper panels are scatter plots of each variable
-pair. The lower panels are a heatmap of the Pearson's correlation
-between the variables. Blue indicates a positive correlation, red
-a negative, and the colour intensity indicates the magnitude.
 
 \begin{figure}[p]
 \noindent \begin{centering}
@@ -288,11 +275,51 @@ as training is increased}
 
 \begin{figure}[p]
 \noindent \begin{centering}
-\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/train/pesqImp}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/train/MOS}
 \par\end{centering}
 
-\protect\caption{\label{fig:vary-train-pesq-imp}\acs{PESQ} improvement results of
+\protect\caption{\label{fig:vary-train-mos}\acs{MOS} results of \acs{BNMF} algorithm
+as training is increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/train/mosle}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-mosle}\acs{MOS} listening effort results of
 \acs{BNMF} algorithm as training is increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/train/CMOS}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-cmos}Comparative \acs{MOS} results of \acs{BNMF}
+algorithm as training is increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/train/prrcorr}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-prrcorr} \acs{PRR} correctness results of
+\acs{BNMF} algorithm as training is increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/train/prracc}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-prracc} \acs{PRR} accuracy results of \acs{BNMF}
+algorithm as training is increased}
 \end{figure}
 
 
@@ -306,32 +333,15 @@ algorithm as training is increased}
 \end{figure}
 
 
-\begin{figure}[p]
-\noindent \begin{centering}
-\includegraphics[angle=90,width=1\textwidth,height=0.95\textheight]{fig/R/train/segSNRImp}
-\par\end{centering}
-
-\protect\caption{\label{fig:vary-train-segsnr-imp}Segmental \acs{SNR} improvement
-results of \acs{BNMF} algorithm as training is increased}
-\end{figure}
-
-
-\begin{figure}[h]
-
-
-\noindent \begin{centering}
-\includegraphics[width=0.9\textwidth]{fig/R/train/corr}
-\par\end{centering}
-
-\protect\caption{\label{fig:train-req-corr}Correlogram of results of training requirement
-investigations}
-\end{figure}
-
-
 \clearpage{}
 
 
 \section{Phoneme-Dependent Variation Performance}
+
+The results of the phoneme-dependent \textbf{training} algorithm proposed
+in \subsecref{Phoneme-Training} and the phoneme-dependent \textbf{base}
+algorithm proposed in \subsecref{Phoneme-Base} are given in this
+section.
 
 The typical spectrograms of the drawn phonemes are given in \figref{drawn-phoneme-spectrogram},
 showing the frequency characteristics of each phoneme.
@@ -345,19 +355,19 @@ showing the frequency characteristics of each phoneme.
 
 }
 
-\subfloat[Ten samples per phoneme]{\includegraphics[draft,width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-10phnSpectrogram}
+\subfloat[Ten samples per phoneme]{\includegraphics[width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-10phnSpectrogram}
 
-}\subfloat[50 samples per phoneme]{\includegraphics[draft,width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-50phnSpectrogram}
-
-}
-
-\subfloat[100 samples per phoneme]{\includegraphics[draft,width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-100phnSpectrogram}
-
-}\subfloat[500 samples per phoneme]{\includegraphics[draft,width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-500phnSpectrogram}
+}\subfloat[50 samples per phoneme]{\includegraphics[width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-50phnSpectrogram}
 
 }
 
-\subfloat[999 samples per phoneme]{\includegraphics[draft,width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-999phnSpectrogram}
+\subfloat[100 samples per phoneme]{\includegraphics[width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-100phnSpectrogram}
+
+}\subfloat[500 samples per phoneme]{\includegraphics[width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-500phnSpectrogram}
+
+}
+
+\subfloat[999 samples per phoneme]{\includegraphics[width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-999phnSpectrogram}
 
 }
 
@@ -391,11 +401,6 @@ are implemented in the algorithms \lstinline[breaklines=true]!phonemeModifiedOnl
 and \lstinline[breaklines=true]!phonemeModifiedSupervised! in \Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp},
 and are labelled ``Phoneme Dictionary (Modified)'' in \Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fig:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,fig:segsnrimp-comparison-phn}.
 
-The first test conducted was to ensure the modifications to the code
-indeed forced the \ac{NMF} spectral component matrix, \lstinline[language=Matlab]!Et!
-in the \lstinline[language=bash]!NMF! class, to be the drawn phoneme
-bases supplied.
-
 \begin{figure}[h]
 \noindent \begin{centering}
 \includegraphics[width=1\textwidth]{fig/R/my/phnCompXY/pesq}
@@ -411,9 +416,8 @@ vs. original enhancement}
 \includegraphics[width=1\textwidth]{fig/R/my/phnCompXY/MOS}
 \par\end{centering}
 
-\protect\caption{\label{fig:mos-comparison-phn}\foreignlanguage{australian}{\acs{MOS}
-comparison for phoneme-dependent vs. original enhancement}\selectlanguage{australian}%
-}
+\protect\caption{\label{fig:mos-comparison-phn}\acs{MOS} comparison for phoneme-dependent
+vs. original enhancement}
 \end{figure}
 
 
@@ -432,9 +436,8 @@ for phoneme-dependent vs. original enhancement}
 \includegraphics[width=1\textwidth]{fig/R/my/phnCompXY/CMOS}
 \par\end{centering}
 
-\protect\caption{\label{fig:cmos-comparison-phn}Comparative \foreignlanguage{australian}{\acs{MOS}
-comparison for phoneme-dependent vs. original enhancement}\selectlanguage{australian}%
-}
+\protect\caption{\label{fig:cmos-comparison-phn}Comparative \acs{MOS} comparison
+for phoneme-dependent vs. original enhancement}
 \end{figure}
 
 
@@ -443,9 +446,8 @@ comparison for phoneme-dependent vs. original enhancement}\selectlanguage{austra
 \includegraphics[width=1\textwidth]{fig/R/my/phnCompXY/PRRcorr}
 \par\end{centering}
 
-\protect\caption{\label{fig:prrcorr-comparison-phn}\foreignlanguage{australian}{\acs{PRR}
-correctness comparison for phoneme-dependent vs. original enhancement}\selectlanguage{australian}%
-}
+\protect\caption{\label{fig:prrcorr-comparison-phn}\acs{PRR} correctness comparison
+for phoneme-dependent vs. original enhancement}
 \end{figure}
 
 
@@ -464,9 +466,8 @@ comparison for phoneme-dependent vs. original enhancement}
 \includegraphics[width=1\textwidth]{fig/R/my/phnCompXY/PRRacc}
 \par\end{centering}
 
-\protect\caption{\label{fig:prracc-comparison-phn}\foreignlanguage{australian}{\acs{PRR}
-accuracy comparison for phoneme-dependent vs. original enhancement}\selectlanguage{australian}%
-}
+\protect\caption{\label{fig:prracc-comparison-phn}\acs{PRR} accuracy comparison for
+phoneme-dependent vs. original enhancement}
 \end{figure}
 
 
@@ -497,5 +498,90 @@ for phoneme-dependent vs. original enhancement}
 
 \protect\caption{\label{fig:segsnrimp-comparison-phn}Segmental \acs{SNR} improvement
 comparison for phoneme-dependent vs. original enhancement}
+\end{figure}
+
+
+\Cref{fig:vary-train-phn-pesq,fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig:vary-train-phn-cmos,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc,fig:vary-train-phn-segsnr}
+show the \ac{PESQ}, \ac{MOS}, \ac{MOS} listening effort, comparative
+\ac{MOS}, \ac{PRR} correctness and \ac{PRR} accuracy results of
+the phoneme-dependent enhancement algorithms as a function of the
+number of phonemes used in training. These plots are arranged with
+the number of trained utterances on the x-axis and test score on the
+y-axis. Furthermore, the plots are arranged in a grid with rows corresponding
+to the enhancement algorithm used and columns corresponding to the
+noise type used in the test. The series colour represents the \ac{SNR}
+used for the test data, and dashed lines represent the score of the
+dirty signal before enhancement. The R script used to form these plots
+is given in \lstref{trainReqPhn}.
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/trainPh/pesq}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-phn-pesq}\acs{PESQ} results of phoneme-dependently
+modified algorithms as phoneme training is increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/trainPh/MOS}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-phn-mos}\acs{MOS} results of phoneme-dependently
+modified algorithms as phoneme training is increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/trainPh/mosle}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-phn-mosle}\acs{MOS} listening effort results
+of phoneme-dependently modified algorithms as phoneme training is
+increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/trainPh/CMOS}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-phn-cmos}Comparative \acs{MOS} results of
+phoneme-dependently modified algorithms as phoneme training is increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/trainPh/prrcorr}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-phn-prrcorr} \acs{PRR} correctness results
+of phoneme-dependently modified algorithms as phoneme training is
+increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/trainPh/prracc}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-phn-prracc} \acs{PRR} accuracy results of
+phoneme-dependently modified algorithms as phoneme training is increased}
+\end{figure}
+
+
+\begin{figure}[p]
+\noindent \begin{centering}
+\includegraphics[width=1\textwidth,height=0.95\textheight,keepaspectratio]{fig/R/trainPh/segSNR}
+\par\end{centering}
+
+\protect\caption{\label{fig:vary-train-phn-segsnr}Segmental \acs{SNR} results of
+phoneme-dependently modified algorithms as phoneme training is increased}
 \end{figure}
 

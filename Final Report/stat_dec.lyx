@@ -1,0 +1,293 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\include{preamble}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language australian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 40mm
+\topmargin 25mm
+\rightmargin 25mm
+\bottommargin 25mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+Statement of Access
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Statement of Access}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I, the undersigned, author of this work, understand that James Cook University
+ may make this thesis available for use within the University Library and,
+ via the Australian Digital Theses network, for use elsewhere.
+\end_layout
+
+\begin_layout Standard
+I understand that, as an unpublished work, a thesis has significant protection
+ under the Copyright Act.
+\end_layout
+
+\begin_layout Standard
+I do not wish to place any further restriction on access to this work.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+par
+\backslash
+noindent
+\backslash
+makebox[2.5in]{
+\backslash
+hrulefill} 
+\backslash
+hfill
+\backslash
+makebox[2.0in]{
+\backslash
+hrulefill}%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+par
+\backslash
+noindent
+\backslash
+makebox[2.5in][l]{Signature}      
+\backslash
+hfill
+\backslash
+makebox[2.0in][l]{Date}%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Declaration of Sources
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Declaration of Sources}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I declare that this thesis is my own work and has not been submitted in
+ any form for another degree or diploma at any university or other institution
+ of tertiary education.
+ Information derived from the published or unpublished work of others has
+ been acknowledged in the text and a list of references is given.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+par
+\backslash
+noindent
+\backslash
+makebox[2.5in]{
+\backslash
+hrulefill} 
+\backslash
+hfill
+\backslash
+makebox[2.0in]{
+\backslash
+hrulefill}%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+par
+\backslash
+noindent
+\backslash
+makebox[2.5in][l]{Signature}      
+\backslash
+hfill
+\backslash
+makebox[2.0in][l]{Date}%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

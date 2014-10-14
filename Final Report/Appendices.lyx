@@ -96,6 +96,14 @@ End
 
 \begin_body
 
+\begin_layout Chapter
+Risk Assessment
+\end_layout
+
+\begin_layout Standard
+add Risk Assessment Here
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -103,26 +111,31 @@ status open
 \begin_layout Plain Layout
 
 %
-\backslash
-begin{landscape}
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Chapter
+Data
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Apx-Data"
 
 \end_inset
 
-Data
+
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
 Data Congregated from Literature
 \begin_inset CommandInset label
 LatexCommand label
@@ -134,22 +147,29 @@ name "sec:litresults"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\end_inset
-
-
 \begin_inset External
 	template PDFPages
 	filename dat/litresults.pdf
-	extra LaTeX "pages=-"
+	extra LaTeX "pages=1,pagecommand=\chapter{Data\label{chap:Apx-Data}} \section{Data Congregated from Literature\label{sec:litresults}}"
 	rotateAngle 90
+	width 100page%
+	height 90theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename dat/litresults.pdf
+	extra LaTeX "pages=2-last"
+	rotateAngle 90
+	width 90page%
+	height 100pheight%
+	keepAspectRatio
 
 \end_inset
 
@@ -163,9 +183,14 @@ status open
 \begin_layout Plain Layout
 
 %
-\backslash
-end{landscape}
 \end_layout
+
+\end_inset
+
+Test Data
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:testresults"
 
 \end_inset
 
@@ -173,7 +198,33 @@ end{landscape}
 \end_layout
 
 \begin_layout Standard
-Just file ref?
+\begin_inset External
+	template PDFPages
+	filename dat/testResults.pdf
+	extra LaTeX "pages=1,pagecommand=\section{Test Data\label{sec:testresults}}"
+	rotateAngle 90
+	width 100page%
+	height 100theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename dat/testResults.pdf
+	extra LaTeX "pages=2-last"
+	rotateAngle 90
+	width 90page%
+	height 100pheight%
+	keepAspectRatio
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -1659,6 +1710,69 @@ status open
 
 \backslash
 lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReq.R}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Training Requirement of Phoneme-dependent algorithms Comparison R Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:trainReqPhn"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[lastline=60]{../Code/R/trainReqPhn.R}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReqPhn.R}
 \end_layout
 
 \end_inset

@@ -71,6 +71,7 @@ End
 \suppress_date false
 \justification true
 \use_refstyle 1
+\boxbgcolor #f8e99c
 \index Index
 \shortcut idx
 \color #008000
@@ -114,10 +115,10 @@ begin{titlepage}
 
 \begin_layout Standard
 \noindent
-\align right
+\align center
 \begin_inset Graphics
-	filename fig/JCU_Logo&CampusStack_CMYK.eps
-	height 2cm
+	filename fig/JCU_Logo_RGB.eps
+	special width=0.08\paperwidth+0.08\paperheight
 
 \end_inset
 
@@ -281,6 +282,51 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "stat_dec.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Acknowledgements.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Lists}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -300,66 +346,14 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset FloatList table
-
+\begin_inset Newpage clearpage
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\backslash
-makeatletter
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-section*{Algorithms}
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-@starttoc{loa} 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-section*{Program Listings}
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-@starttoc{lol} 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-makeatother
-\end_layout
+\begin_inset FloatList table
 
 \end_inset
 
@@ -376,19 +370,6 @@ makeatother
 
 \begin_layout Standard
 \begin_inset FloatList listing
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Combine Alg, listings?
-\end_layout
 
 \end_inset
 
@@ -535,14 +516,14 @@ options "bib/IEEEtranN"
 \end_layout
 
 \begin_layout Standard
-\start_of_appendix
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
 \end_layout
 
 \begin_layout Right Footer
+\start_of_appendix
 \begin_inset ERT
 status open
 
@@ -558,17 +539,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\end_inset
-
-
 \begin_inset CommandInset include
 LatexCommand include
 filename "Appendices.lyx"

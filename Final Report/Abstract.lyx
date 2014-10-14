@@ -109,6 +109,16 @@ In addition, a phoneme dependent modification to existing non-negative matrix
  This algorithm was found to provide better accuracy for machine recognisers.
  The changes did not improve human intelligibility on average, but did perform
  more consistently, being less likely to distort speech.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Needs work
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
