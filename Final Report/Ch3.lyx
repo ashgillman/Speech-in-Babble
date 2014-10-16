@@ -1932,7 +1932,7 @@ status open
 
 
 \backslash
-cref{lst:MOSScript,lst:MOS}
+Cref{lst:MOSScript,lst:MOS}
 \end_layout
 
 \end_inset
@@ -3103,7 +3103,7 @@ status open
 
 
 \backslash
-cref{lst:MFC-config,lst:MFC-proto}
+Cref{lst:MFC-config,lst:MFC-proto}
 \end_layout
 
 \end_inset
@@ -3181,7 +3181,7 @@ status open
 
 
 \backslash
-cref{lst:MFC-config,lst:MFC-proto}
+Cref{lst:MFC-config,lst:MFC-proto}
 \end_layout
 
 \end_inset
@@ -4365,7 +4365,7 @@ status open
 
 
 \backslash
-cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}
+Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}
 \end_layout
 
 \end_inset

@@ -823,7 +823,7 @@ status open
 
 
 \backslash
-cref{fig:direct-klt-mband,fig:direct-klt-pklt,fig:direct-pklt-logmmse-spu-4,fig:
+Cref{fig:direct-klt-mband,fig:direct-klt-pklt,fig:direct-pklt-logmmse-spu-4,fig:
 direct-highcorr}
 \end_layout
 
@@ -2296,7 +2296,7 @@ status open
 
 
 \backslash
-cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
 fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
 cc-imp}
 \end_layout
@@ -2488,7 +2488,7 @@ status open
 
 
 \backslash
-cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
+Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
 \end_layout
 
 \end_inset
@@ -3487,7 +3487,7 @@ status open
 
 
 \backslash
-cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
+Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
 \end_layout
 
 \end_inset
@@ -4726,7 +4726,7 @@ status open
 
 
 \backslash
-cref{fig:mos-prrcorr,fig:cmos-prrcorrimp}
+Cref{fig:mos-prrcorr,fig:cmos-prrcorrimp}
 \end_layout
 
 \end_inset
@@ -4848,7 +4848,7 @@ status open
 
 
 \backslash
-cref{fig:mos-prracc,fig:cmos-prraccimp}
+Cref{fig:mos-prracc,fig:cmos-prraccimp}
 \end_layout
 
 \end_inset
@@ -4924,7 +4924,7 @@ status open
 
 
 \backslash
-cref{fig:cmos-prrcorrimp,fig:cmos-prraccimp}
+Cref{fig:cmos-prrcorrimp,fig:cmos-prraccimp}
 \end_layout
 
 \end_inset
@@ -5007,7 +5007,7 @@ status open
 
 
 \backslash
-cref{fig:my-PRRacc,fig:my-PRRacc-imp}
+Cref{fig:my-PRRacc,fig:my-PRRacc-imp}
 \end_layout
 
 \end_inset
@@ -5387,7 +5387,7 @@ status open
 
 
 \backslash
-cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
 cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
 \end_layout
 
@@ -5503,7 +5503,7 @@ status open
 
 
 \backslash
-cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
 cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
 \end_layout
 
@@ -6150,7 +6150,7 @@ status open
 
 
 \backslash
-cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
 cmos,fig:vary-train-prrcorr,fig:vary-train-prracc}
 \end_layout
 
@@ -6356,7 +6356,7 @@ status open
 
 
 \backslash
-cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
 fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
 cc-imp}
 \end_layout
@@ -6377,7 +6377,7 @@ status open
 
 
 \backslash
-cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
+Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
 :cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fi
 g:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,f
 ig:segsnrimp-comparison-phn}
@@ -6471,7 +6471,7 @@ status open
 
 
 \backslash
-cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
 fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
 cc-imp}
 \end_layout
@@ -6486,7 +6486,7 @@ status open
 
 
 \backslash
-cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
+Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
 :cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fi
 g:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,f
 ig:segsnrimp-comparison-phn}
@@ -6545,7 +6545,7 @@ status open
 
 
 \backslash
-cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
 fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
 cc-imp}
 \end_layout
@@ -6560,7 +6560,7 @@ status open
 
 
 \backslash
-cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
+Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
 :cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fi
 g:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,f
 ig:segsnrimp-comparison-phn}
@@ -7473,7 +7473,7 @@ status open
 
 
 \backslash
-cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
 \end_layout
 
 \end_inset
@@ -7573,7 +7573,7 @@ status open
 
 
 \backslash
-cref{fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn}
+Cref{fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn}
 \end_layout
 
 \end_inset
@@ -7702,7 +7702,7 @@ status open
 
 
 \backslash
-cref{fig:vary-train-phn-pesq,fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig
+Cref{fig:vary-train-phn-pesq,fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig
 :vary-train-phn-cmos,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc,fig:va
 ry-train-phn-segsnr}
 \end_layout
@@ -8268,7 +8268,7 @@ status open
 
 
 \backslash
-cref{fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig:vary-train-phn-cmos}
+Cref{fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig:vary-train-phn-cmos}
 \end_layout
 
 \end_inset
@@ -8356,7 +8356,7 @@ status open
 
 
 \backslash
-cref{fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc}
+Cref{fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc}
 \end_layout
 
 \end_inset
@@ -8523,7 +8523,7 @@ status open
 
 
 \backslash
-cref{fig:vary-train-phn-pesq,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prrac
+Cref{fig:vary-train-phn-pesq,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prrac
 c,fig:vary-train-phn-segsnr}
 \end_layout
 
@@ -8552,7 +8552,7 @@ status open
 
 
 \backslash
-cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
 \end_layout
 
 \end_inset
@@ -8597,7 +8597,7 @@ status open
 
 
 \backslash
-cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
 \end_layout
 
 \end_inset
