@@ -396,7 +396,7 @@ Due to the lack of existing data on which conclusions can be drawn on the
 \end_layout
 
 \begin_layout Standard
-The Algorithms used in testing are given in 
+The algorithms used in testing are given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "tab:Algorithms"
@@ -1806,8 +1806,9 @@ ac{CCR}
 \end_inset
 
  were selected due to their subjective qualities.
- Although subjective measures are generally avoided, they were decided to
- be useful in the experimental context, as human perception is itself subjective.
+ Although subjective measures are generally avoided, they were deemed to
+ be useful in this experimental context, as human perception is itself subjectiv
+e.
  
 \begin_inset ERT
 status open
@@ -2750,7 +2751,7 @@ status open
 
 
 \backslash
-ac{SoI}
+acf{SoI}
 \end_layout
 
 \end_inset
@@ -2816,6 +2817,13 @@ MOS Test setup
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
 \end_inset
 
 
@@ -3881,7 +3889,7 @@ ac{SNR}
 
 \end_inset
 
- was varied between -6dB, -3dB, 0dB, 3dB and 6dB.
+ was varied between -6 dB, -3 dB, 0 dB, 3 dB and 6 dB.
  Additionally, a number of other prerecorded noise types were drawn from
  the NOIZEUS corpus presented in 
 \begin_inset CommandInset citation
@@ -4228,6 +4236,13 @@ Talk about under training over training?
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 \begin_inset CommandInset label
 LatexCommand label
@@ -4375,6 +4390,7 @@ Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}
 
 \begin_layout Standard
 \begin_inset Float algorithm
+placement H
 wide false
 sideways false
 status open
@@ -4596,7 +4612,7 @@ ac{SNR}
 
 \end_inset
 
- was varied as before, between -6dB, -3dB, 0dB, 3dB and 6dB.
+ was varied as before, between -6 dB, -3 dB, 0 dB, 3 dB and 6 dB.
  The phoneme-dependent
 \series bold
  training
@@ -4681,7 +4697,7 @@ Phoneme Dependent Base Matrix
 \end_layout
 
 \begin_layout Standard
-The second method proposed to use a completely phoneme dependent spectral
+The second method was proposed to use a completely phoneme dependent spectral
  component matrix.
 \end_layout
 
@@ -4802,7 +4818,10 @@ ac{SoI}
 \end_inset
 
  are competing speakers.
- It was assumed that, under this representation, if 
+\end_layout
+
+\begin_layout Standard
+It was assumed that, under this representation, if 
 \begin_inset Formula $X$
 \end_inset
 
@@ -4987,7 +5006,20 @@ In chapter ...
 \end_inset
 
 .
- An alternative to the existing 
+ A training function, 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+dummyTrain
+\end_layout
+
+\end_inset
+
+, was implemented as an alternative to the existing 
 \begin_inset listings
 lstparams "language=bash"
 inline true
@@ -5013,20 +5045,7 @@ NMF
 
 \end_inset
 
- class was implemented, 
-\begin_inset listings
-lstparams "language=bash"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-dummyTrain
-\end_layout
-
-\end_inset
-
-.
+ class.
  The simplified 
 \begin_inset listings
 lstparams "language=bash"
@@ -5040,25 +5059,7 @@ dummyTrain
 
 \end_inset
 
- allowed the spectral component matrix
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Variable name of the spectral component matrix in the in the 
-\begin_inset listings
-lstparams "language=bash"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-NMF.m
-\end_layout
-
-\end_inset
-
- code is 
+ allowed the spectral component matrix (
 \begin_inset listings
 lstparams "language=Matlab"
 inline true
@@ -5071,12 +5072,20 @@ Et
 
 \end_inset
 
+ in 
+\begin_inset listings
+lstparams "language=bash"
+inline true
+status open
 
+\begin_layout Plain Layout
+
+NMF.m
 \end_layout
 
 \end_inset
 
- to be directly specified as opposed to using the regular training.
+) to be directly specified as opposed to using the regular training.
 \end_layout
 
 \begin_layout Standard
@@ -5173,7 +5182,7 @@ Again, the phoneme-dependent
 \series bold
  base
 \series default
- enhancement algorithms were tested against a all measures considered within
+ enhancement algorithms were tested against all measures considered within
  this thesis: 
 \begin_inset ERT
 status open

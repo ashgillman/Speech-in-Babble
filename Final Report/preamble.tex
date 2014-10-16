@@ -4,6 +4,9 @@
 \usepackage{cleveref}
 \usepackage{varioref}
 
+% Document Tree
+\usepackage{tikz}
+
 % Load csv files for data
 \usepackage{csvsimple}
 
@@ -100,6 +103,36 @@
     \itemsep\nomitemsep
     \let\makelabel\nomlabel}}
 
+% Document Tree
+\newcount\dirtree@lvl
+\newcount\dirtree@plvl
+\newcount\dirtree@clvl
+\def\dirtree@growth{%
+  \ifnum\tikznumberofcurrentchild=1\relax
+  \global\advance\dirtree@plvl by 1
+  \expandafter\xdef\csname dirtree@p@\the\dirtree@plvl\endcsname{\the\dirtree@lvl}
+  \fi
+  \global\advance\dirtree@lvl by 1\relax
+  \dirtree@clvl=\dirtree@lvl
+  \advance\dirtree@clvl by -\csname dirtree@p@\the\dirtree@plvl\endcsname
+  \pgf@xa=1cm\relax
+  \pgf@ya=-0.7cm\relax
+  \pgf@ya=\dirtree@clvl\pgf@ya
+  \pgftransformshift{\pgfqpoint{\the\pgf@xa}{\the\pgf@ya}}%
+  \ifnum\tikznumberofcurrentchild=\tikznumberofchildren
+  \global\advance\dirtree@plvl by -1
+  \fi
+}
+\tikzset{
+  dirtree/.style={
+    growth function=\dirtree@growth,
+    growth parent anchor=south west,
+    parent anchor=south west,
+    every child node/.style={anchor=west},
+    edge from parent path={([xshift=2ex] \tikzparentnode\tikzparentanchor) 
+                           |- (\tikzchildnode\tikzchildanchor)}
+  }
+}
 \makeatother
 
 % rename nomenclature

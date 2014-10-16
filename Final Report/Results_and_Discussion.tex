@@ -19,8 +19,8 @@ The R code used to perform this analysis is given in \lstref{directComp}.
 
 \figref{Direct-PESQ-PRR} shows the results obtained, comparing the
 \ac{PESQ} improvement against the \ac{PRR} improvement. \figref{Direct-PESQ-PRR-LOESS}
-shows the data fitted with an \ac{LOESS} model and \figref{Direct-PESQ-PRR-LM}
-shows the data fitted with an \ac{LM} method.
+shows the data fitted with a \acf{LOESS} model and \figref{Direct-PESQ-PRR-LM}
+shows the data fitted with a \acf{LM} method.
 
 \begin{figure}[p]
 \subfloat[\label{fig:Direct-PESQ-PRR-LOESS}\acs{LOESS} fit]{\includegraphics[width=1\textwidth]{fig/R/dir/lit/HumanMachineAllLOESS}
@@ -83,7 +83,7 @@ and \lstinline!MOSraw! of approximately 0.65, which were measures
 that have been shown to be correlated in literature \citep{Kitawaki2007,Rix2003,Rix2001}.
 Therefore, the correlation of 0.58 between \ac{PESQ} improvement
 and \ac{PRR} improvement can be considered significant. \figref{litResCorr}
-Also indicated a very high correlation between the raw \ac{PESQ}
+also indicated a very high correlation between the raw \ac{PESQ}
 result and \ac{PRR}.
 
 These observations indicated a good correlation between human recognition
@@ -94,7 +94,7 @@ inferred that there is likely a good correlation between human recognition
 and machine recognition.
 
 A number of further observations were drawn from \figref{Direct-PESQ-PRR},
-and are highlighted in \cref{fig:direct-klt-mband,fig:direct-klt-pklt,fig:direct-pklt-logmmse-spu-4,fig:direct-highcorr}.
+and are highlighted in \Cref{fig:direct-klt-mband,fig:direct-klt-pklt,fig:direct-pklt-logmmse-spu-4,fig:direct-highcorr}.
 
 Results found using the \ac{LOESS} fitted method, shown in \figref{Direct-PESQ-PRR-LOESS}
 indicated that the data could be approximated by a linear model: the
@@ -228,7 +228,7 @@ defined as the number of correct phonemes minus the number of deletions,
 substitutions and insertions, divided by the number of phonemes; and
 \item \lstinline!segSNR! refers to the segmental \ac{SNR}.
 \end{itemize}
-The results for the various evaluation measures are given in \cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp}.
+The results for the various evaluation measures are given in \Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp}.
 These plots also show box plots of the five-point summaries of the
 results. These results were obtained to be used in investigating the
 correlation between \ac{HR} and \ac{MR} and also to assess the performance
@@ -249,7 +249,7 @@ that occasionally a signal would not play. Upon further investigation
 it was determined that the signal was in fact playing, but consisted
 of silence. Subjects were instructed to continue answering the questions
 as they were worded, and thus these signals were given the minimum
-scores. This is reflected in \cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS},
+scores. This is reflected in \Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS},
 where the ideal binary mask algorithms scored poorly.
 
 \begin{figure}[h]
@@ -397,7 +397,7 @@ The greatest deviation to the correlation between \ac{PESQ} and \ac{MOS}
 was due to the results of the ideal binary mask algorithms (\lstinline!IDBM!
 and \lstinline!phonemeIDBM!). It was also noted that the ideal binary
 mask algorithms performed very poorly overall on the subjective \ac{MOS}
-scales in \cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}. Furthermore,
+scales in \Cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}. Furthermore,
 ideal binary mask algorithms had a very high variation in \ac{PESQ}
 performance in \figref{my-PESQ}, receiving both the highest and the
 lowest scores of all tests on the \ac{PESQ} scale. Therefore, it
@@ -473,14 +473,16 @@ and \lstinline!CMOS!, had a strong correlation with one-another in
 similar measures. However, it was noted that the same was not true
 for the \ac{PRR} measures, where the correlation between the correctness
 (\lstinline!PRRcorr!) and the accuracy (\lstinline!PRRacc!) was
-found to be negative. This highlighted the balance between an under-trained
-and under-discriminative algorithm, which may detect a high number
-of correct phonemes (high correctness) but poorly reduce noise and
-therefore recognise extra incorrect phonemes (low accuracy); and an
-over-trained and over-discriminative algorithm, which may detect a
-lower number of correct phonemes (low correctness) but effectively
-reduce noise and therefore have minimal false positiveness(increased
-accuracy).
+found to be negative.
+
+This highlighted the balance between an under-trained and under-discriminative
+algorithm and an over-trained and over-discriminative algorithm. An
+under-trained and under-discriminative algorithm may detect a high
+number of correct phonemes (high correctness) but poorly reduce noise
+and therefore recognise extra incorrect phonemes (low accuracy). Whereas
+an over-trained and over-discriminative algorithm may detect a lower
+number of correct phonemes (low correctness) but effectively reduce
+noise and therefore have minimal false positiveness(increased accuracy).
 
 
 \subsubsection*{On the relationship between \acl{HR} and \acl{MR}}
@@ -520,7 +522,7 @@ highlighting test conditions}
 y-axis and machine improvement on the x-axis, and highlighting in
 colour the test conditions.
 
-\cref{fig:mos-prrcorr,fig:cmos-prrcorrimp} measured the \ac{PRR}
+\Cref{fig:mos-prrcorr,fig:cmos-prrcorrimp} measured the \ac{PRR}
 correctness. \figref{mos-prrcorr} also shows the relative density
 of points, revealing that certain test conditions are clustered outliers
 and that the correlation might otherwise have been higher. It was
@@ -532,12 +534,12 @@ listener scored the signal as average. This also supported previous
 observations indicating certain systematic conditions for which the
 correlation between \ac{HR} and \ac{MR} deviate.
 
-\cref{fig:mos-prracc,fig:cmos-prraccimp} measured the \ac{PRR} accuracy.
+\Cref{fig:mos-prracc,fig:cmos-prraccimp} measured the \ac{PRR} accuracy.
 These figures showed that once the \ac{ASR} phoneme insertions are
 taken into account the correlation between \ac{HR} and \ac{MR} no
 longer held.
 
-\figref{hr-mr-alg} shows the same data as \cref{fig:cmos-prrcorrimp,fig:cmos-prraccimp},
+\figref{hr-mr-alg} shows the same data as \Cref{fig:cmos-prrcorrimp,fig:cmos-prraccimp},
 but with colour highlighting the enhancement algorithm as opposed
 to the test conditions. A very interesting observation made was the
 clustered performance of the ideal binary mask (\lstinline!IDBM!)
@@ -547,7 +549,7 @@ algorithms achieved the highest \ac{PRR} accuracy score of any algorithm,
 some approaching a 30\% accuracy increase, despite performing poorly
 on all \ac{HR} and statistical measures. These results were also
 noted by observing the ideal binary mask algorithms performance in
-\cref{fig:my-PRRacc,fig:my-PRRacc-imp}, and is reflected on by the
+\Cref{fig:my-PRRacc,fig:my-PRRacc-imp}, and is reflected on by the
 observation made in \subsecref{Independent-Investigation-Res}.
 
 \begin{figure}[h]
@@ -593,13 +595,13 @@ Research Question \ref{enu:ResQ2}, \textit{\RQtwo{}}
 \subsection{Investigating Training Requirements}
 
 The results of the experiments proposed in \subsecref{Investigating-Training-Req}
-are given in this section. \cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
+are given in this section. \Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
 show the \ac{PESQ}, \ac{MOS}, \ac{MOS} listening effort, comparative
 \ac{MOS}, \ac{PRR} correctness and \ac{PRR} accuracy results of
 the \ac{BNMF} algorithm developed by \citet{mohammadiha2013supervised}
 as a function of the number of utterances used in training.
 
-Plots in \cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
+Plots in \Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
 each are arranged with the number of trained utterances on the x-axis
 and test score on the y-axis. Furthermore, the plots are arranged
 in a grid with rows corresponding to the enhancement algorithm and
@@ -696,7 +698,7 @@ However, \figref{vary-train-prrcorr} showed no evidence of a correlation
 between the number of utterances for training and the \ac{PRR} correctness.
 
 A notable observation was that for the human and machine measures,
-those in \cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-cmos,fig:vary-train-prrcorr,fig:vary-train-prracc},
+those in \Cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-cmos,fig:vary-train-prrcorr,fig:vary-train-prracc},
 there was a high variability in performance for ten or less utterances.
 This indicated that the algorithms were under-trained when 10 or less
 utterances were used.
@@ -730,13 +732,13 @@ The typical spectrograms of the drawn phonemes are given in \figref{drawn-phonem
 showing the frequency characteristics of each phoneme. The voiced
 phonemes were seen to contain lower frequency components and the voiceless
 phonemes contained higher frequency components as expected. The differences
-in phonemes was clear and identifiable, indicating that the method
-worked as intended. One issue noted was that voiceless stops, were
+in phonemes were clear and identifiable, indicating that the method
+worked as intended. One issue noted was that voiceless stops were
 too short and were occasionally missed. A noted example was in the
-first two phoneme samples in \figref{mos-comparison-phn-1}, which
-were /\textit{p}/ and /\textit{t}/. For such phonemes, high frequency
-components would have been expected, but mostly silence present with
-some lower frequency components. The same phonemes in \figref{mos-comparison-phn-5}
+first two columns in \figref{mos-comparison-phn-1}, which were the
+phonemes /\textit{p}/ and /\textit{t}/. For such phonemes, high frequency
+components would have been expected; but mostly silence was present,
+with some lower frequency components. The same phonemes in \figref{mos-comparison-phn-5}
 revealed that only two out of the ten phoneme slices contained the
 expected high frequency components. However, these kind of errors
 were expected and is one of the reasons that the number of slices
@@ -750,12 +752,12 @@ to support having more samples. So the tests done for more samples
 per phoneme than 100 were, for the most part, redundant.
 
 The performance of the phoneme-dependant algorithms have already been
-given in \cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp},
+given in \Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp},
 since these algorithms were also considered in the previous investigation.
 
 Additionally given are plots comparing the performance of algorithms
 without modification against those with phoneme-dependent modification.
-These are given in \cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fig:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,fig:segsnrimp-comparison-phn}.
+These are given in \Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fig:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,fig:segsnrimp-comparison-phn}.
 In these plots, the x-axis measures the performance of the original
 algorithm, and the y-axis measures performance of the modified algorithm.
 Therefore, any points lying above the diagonal line show better performance
@@ -766,13 +768,13 @@ The phoneme dependent training data changes proposed in \subsecref{Phoneme-Train
 are implemented in the algorithms \lstinline[breaklines=true]!phonemeIDBM!,
 \lstinline[breaklines=true]!phonemeMMSE!, \lstinline[breaklines=true]!phonemeMohammadiaOnline!
 and\linebreak{}
-\lstinline[breaklines=true]!phonemeMohammadiaSupervised! in \cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp},
-and are labelled ``Phoneme Training'' in \cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fig:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,fig:segsnrimp-comparison-phn}.
+\lstinline[breaklines=true]!phonemeMohammadiaSupervised! in \Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp},
+and are labelled ``Phoneme Training'' in \Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fig:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,fig:segsnrimp-comparison-phn}.
 
 The phoneme dependent base matrix changes proposed in \subsecref{Phoneme-Base}
 are implemented in the algorithms \lstinline[breaklines=true]!phonemeModifiedOnline!
-and \lstinline[breaklines=true]!phonemeModifiedSupervised! in \cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp},
-and are labelled ``Phoneme Dictionary (Modified)'' in \cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fig:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,fig:segsnrimp-comparison-phn}.
+and \lstinline[breaklines=true]!phonemeModifiedSupervised! in \Cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRacc-imp},
+and are labelled ``Phoneme Dictionary (Modified)'' in \Cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fig:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,fig:segsnrimp-comparison-phn}.
 
 \begin{figure}[H]
 \subfloat[\label{fig:mos-comparison-phn-1}One sample per phoneme]{\includegraphics[width=0.5\textwidth]{fig/spectrogram/drawPhn/c3s-1phnSpectrogram}
@@ -913,7 +915,7 @@ mostly scored higher, with the exceptions mostly belonging the the
 NOIZEUS street noise tests.
 
 This is in contrast, however, to the \ac{MOS} results presented in
-\cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}.
+\Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}.
 These results did not show any specific pattern of improvement across
 different noise types. Thus, results indicated that the phoneme dependence
 modifications to these algorithms did not present any significant
@@ -940,7 +942,7 @@ separate the intended voice.
 \subsection{Performance for Machines}
 
 The phoneme-dependent \textbf{training} modifications failed to improve
-machine correctness almost completely, as indicated in \cref{fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn}.
+machine correctness almost completely, as indicated in \Cref{fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn}.
 However, with the exception of the ideal binary mask algorithms and
 the \lstinline!c3f(m)! noise type, the phoneme-dependent \textbf{training}
 modifications tended to improve the machine correctness. Especially
@@ -967,8 +969,8 @@ detected from the second voice.
 
 The phoneme-dependent \textbf{base} modifications showed improvement
 in correctness, unlike the phoneme-dependent \textbf{training} modifications,
-as best observed in \figref{prrcorr-comparison-phn}. However, in
-terms of accuracy, no significant pattern was noted between those
+as best observed in \figref{prrcorr-comparison-phn}. In terms of
+accuracy, however, no significant pattern was noted between those
 performing better and worse than the original algorithms.
 
 Results indicated, therefore, that the phoneme-dependent methods were
@@ -980,7 +982,7 @@ been distracting, thereby causing the mixed results.
 
 \subsection{\label{sub:Varying-Phns}Varying the Number of Samples per Phoneme}
 
-\cref{fig:vary-train-phn-pesq,fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig:vary-train-phn-cmos,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc,fig:vary-train-phn-segsnr}
+\Cref{fig:vary-train-phn-pesq,fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig:vary-train-phn-cmos,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc,fig:vary-train-phn-segsnr}
 show the \ac{PESQ}, \ac{MOS}, \ac{MOS} listening effort, comparative
 \ac{MOS}, \ac{PRR} correctness and \ac{PRR} accuracy results of
 the phoneme-dependent enhancement algorithms as a function of the
@@ -1068,21 +1070,22 @@ phoneme-dependently modified algorithms as phoneme training is increased}
 \clearpage{}
 
 \figref{vary-train-phn-pesq} tended to show little correlation between
-\ac{PESQ} enhancement and the number of phonemes. However, \cref{fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig:vary-train-phn-cmos}
+\ac{PESQ} enhancement and the number of phonemes. However, \Cref{fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig:vary-train-phn-cmos}
 tended to show a slight increase in \ac{MOS} performance with the
-number of phonemes. However, it was difficult to draw a clear conclusion,
-as a smaller number of the tests instead showed a slight decrease.
-\figref{my-Corr} agreed with the overall trend of improvement with
-increased phoneme samples; showing a slight, yet significant, positive
-correlation between \lstinline!phonemes! and \lstinline!MOS!, \lstinline!MOSle!
-and \lstinline!CMOS!.
+number of phonemes. It was difficult to draw a clear conclusion, as
+a smaller number of the tests instead showed a slight decrease. \figref{my-Corr}
+agreed with the overall trend of improvement with increased phoneme
+samples; showing a slight, yet significant, positive correlation between
+\lstinline!phonemes! and \lstinline!MOS!, \lstinline!MOSle! and
+\lstinline!CMOS!.
 
-\cref{fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc} showed,
-for most algorithms, no improvement in correctness with increasing
-phonemes. However, there was in some cases an increase in accuracy,
-especially for \lstinline!phonememodifiedOnline! and \lstinline!phonemeIDBM!,
-but rarely a decrease. As above, the significance of the improvement
-is low, however a slight positive correlation is present.
+\Cref{fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc} showed
+that, for most algorithms, there was no improvement in correctness
+with increasing phonemes. There was, however, in some cases an increase
+in accuracy, especially for \lstinline!phonememodifiedOnline! and
+\lstinline!phonemeIDBM!, and rarely a decrease. As above, the significance
+of the improvement is low, however a slight positive correlation is
+present.
 
 For the phoneme-dependent ideal binary mask algorithm (\lstinline!phonemeIDBM!)
 there was a clear and significant positive correlation with the number
@@ -1108,11 +1111,11 @@ an upper bound not having been found.
 \subsection{Other Observations}
 
 The performance for the \ac{MMSE} algorithm is unchanged by the introduction
-of phoneme-dependence in all of the objective measures, \cref{fig:vary-train-phn-pesq,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc,fig:vary-train-phn-segsnr}.
-Only in the subjective tests, i.e. the \ac{MOS} tests in \cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+of phoneme-dependence in all of the objective measures, \Cref{fig:vary-train-phn-pesq,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc,fig:vary-train-phn-segsnr}.
+Only in the subjective tests, i.e. the \ac{MOS} tests in \Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
 showed variation. This indicated that using phoneme dependence did
 not affect the operation of this particular algorithm.
 
 This also highlighted the level of subjectivity involved in the \ac{MOS}
-tests, since the scores for the \ac{MMSE} algorithm in \cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+tests, since the scores for the \ac{MMSE} algorithm in \Cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
 deviated quite significantly from the diagonal line.

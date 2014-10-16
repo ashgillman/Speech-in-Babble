@@ -134,7 +134,8 @@ ac{PRR}
 
 \end_inset
 
-, indicating a correlation between 
+.
+ This indicated a correlation between 
 \begin_inset ERT
 status open
 
@@ -160,8 +161,9 @@ ac{PRR}
 
 \end_inset
 
-, thereby indicating that in general, algorithms that are successful in
- 
+.
+ Therefore it was concluded that in general and according to these results,
+ algorithms that are successful in 
 \begin_inset ERT
 status open
 
@@ -309,6 +311,20 @@ ac{HR}
 \end_inset
 
 .
+ Therefore, the correlation depended on the requirements of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system, which are difficult to predict at the phoneme level.
 \end_layout
 
 \begin_layout Standard
@@ -340,6 +356,8 @@ ac{MR}
 \end_inset
 
 .
+ Although a ``good'' enhancement algorithm is likely successful in both
+ applications, this is not guaranteed and therefore must be verified.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -479,8 +497,8 @@ ac{ASR}
 \end_layout
 
 \begin_layout Standard
-Additionally, the word recognition rate, and other higher level recognition
- measures should be investigated.
+The word recognition rate, and other higher level recognition measures should
+ be investigated.
  This thesis did not take into consideration methods 
 \begin_inset ERT
 status open
@@ -499,7 +517,8 @@ el recognition.
 \end_layout
 
 \begin_layout Standard
-Furthermore, with a larger test population and therefore more reliable 
+Additionally, with a larger test population and therefore more reliable
+ 
 \begin_inset ERT
 status open
 
@@ -618,7 +637,7 @@ key "mohammadiha2013supervised"
 \end_layout
 
 \begin_layout Standard
-Furthermore, it was shown that in cases, under-training improved results,
+Additionally, it was shown that in cases, under-training improved results,
  indicating that a higher performance was achievable and showing that the
  current training techniques were suboptimal.
  Thus, promise was shown for the phoneme-dependent variations proposed to
@@ -634,7 +653,7 @@ The method for randomly drawing phoneme samples and forming training data
  was successfully implemented.
  The only noted issue in implementation was the possibility of missing some
  short phonemes, such as the voiceless stop phonemes.
- This had been accounted for however, in increasing the number of samples
+ This had been accounted for however, by increasing the number of samples
  drawn per phoneme.
 \end_layout
 
@@ -683,7 +702,24 @@ Opportunity for Future Work
 
 \begin_layout Standard
 The opportunity exists to conduct further research into using phoneme-dependence
- for speaker separation.
+ for human listeners.
+ It has been shown that training using utterances is suboptimal, and additionall
+y that phonemic training can improve the performance for machine recognisers.
+ A great number of variations within the training stage of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithms have been proposed, that should be investigated with phoneme-depende
+nt modifications.
 \end_layout
 
 \end_body

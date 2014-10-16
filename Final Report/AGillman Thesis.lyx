@@ -283,13 +283,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "WC.lyx"
-
-\end_inset
-
-
+Word Count: 13035
 \end_layout
 
 \begin_layout Standard

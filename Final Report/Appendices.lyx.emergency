@@ -104,7 +104,17 @@ Risk Assessment
 add Risk Assessment Here
 \end_layout
 
-\begin_layout Chapter
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
 Data
 \begin_inset CommandInset label
 LatexCommand label
@@ -121,68 +131,11 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-begin{tikzpicture}[dirtree]
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-node {Data (CD)}
-\end_layout
-
-\begin_layout Plain Layout
-
-  child {
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {litresults.csv and litresults.xls - Results gathered from
- literature} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {MFCOutput.txt - Results of ASR system} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {MOSscores.csv - Results of MOS tests} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {testResults.csv - Congregated data of all tests performed}
- }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {TestSubjects.csv - Data on the MOS test subjects} }
-\end_layout
-
-\begin_layout Plain Layout
-
-  };
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tikzpicture}
+%
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Section
 Data Congregated from Literature
 \begin_inset CommandInset label
 LatexCommand label
@@ -194,23 +147,46 @@ name "sec:litresults"
 \end_layout
 
 \begin_layout Standard
-See 
-\begin_inset listings
-lstparams "style=myInline"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-CD:/Data/litresults.csv
-\end_layout
+\begin_inset External
+	template PDFPages
+	filename dat/litresults.pdf
+	extra LaTeX "pages=1,pagecommand=\chapter{Data\label{chap:Apx-Data}} \section{Data Congregated from Literature\label{sec:litresults}}"
+	rotateAngle 90
+	width 100page%
+	height 90theight%
+	keepAspectRatio
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename dat/litresults.pdf
+	extra LaTeX "pages=2-last"
+	rotateAngle 90
+	width 90page%
+	height 100pheight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
 Test Data
 \begin_inset CommandInset label
 LatexCommand label
@@ -222,16 +198,29 @@ name "sec:testresults"
 \end_layout
 
 \begin_layout Standard
-See 
-\begin_inset listings
-lstparams "style=myInline"
-inline true
-status open
+\begin_inset External
+	template PDFPages
+	filename dat/testResults.pdf
+	extra LaTeX "pages=1,pagecommand=\section{Test Data\label{sec:testresults}}"
+	rotateAngle 90
+	width 100page%
+	height 100theight%
+	keepAspectRatio
 
-\begin_layout Plain Layout
+\end_inset
 
-CD:/Data/testResults.csv
+
 \end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename dat/testResults.pdf
+	extra LaTeX "pages=2-last"
+	rotateAngle 90
+	width 90page%
+	height 100pheight%
+	keepAspectRatio
 
 \end_inset
 
@@ -262,12 +251,22 @@ node {Code (CD)}
 
 \begin_layout Plain Layout
 
-  child { node {MATLAB}
+  child {
 \end_layout
 
 \begin_layout Plain Layout
 
-    child { node {BNMF}
+    node {MATLAB}
+\end_layout
+
+\begin_layout Plain Layout
+
+    child {
+\end_layout
+
+\begin_layout Plain Layout
+
+      node {BNMF}
 \end_layout
 
 \begin_layout Plain Layout
@@ -287,7 +286,12 @@ node {Code (CD)}
 
 \begin_layout Plain Layout
 
-    child { node {mytools}
+    child {
+\end_layout
+
+\begin_layout Plain Layout
+
+      node {mytools}
 \end_layout
 
 \begin_layout Plain Layout
@@ -318,7 +322,12 @@ node {Code (CD)}
 
 \begin_layout Plain Layout
 
-    child { node {phonemeDependent}
+    child {
+\end_layout
+
+\begin_layout Plain Layout
+
+      node {phonemeDependent}
 \end_layout
 
 \begin_layout Plain Layout
@@ -352,7 +361,12 @@ node {Code (CD)}
 
 \begin_layout Plain Layout
 
-    child { node {Test}
+    child {
+\end_layout
+
+\begin_layout Plain Layout
+
+      node {Test}
 \end_layout
 
 \begin_layout Plain Layout
@@ -432,7 +446,12 @@ node {Code (CD)}
 
 \begin_layout Plain Layout
 
-  child { node {Python}
+  child {
+\end_layout
+
+\begin_layout Plain Layout
+
+    node {Python}
 \end_layout
 
 \begin_layout Plain Layout
@@ -442,116 +461,12 @@ node {Code (CD)}
 
 \begin_layout Plain Layout
 
-    child { node {MFC HComp VConfig.ini - MFCC config} }
+    child { node {MFC_HCompV_Config.ini - MFCC config} }
 \end_layout
 
 \begin_layout Plain Layout
 
     child { node {MFCProto - MFCC prototype} }
-\end_layout
-
-\begin_layout Plain Layout
-
-  };
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tikzpicture}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[dirtree]
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-node {Code (CD)}
-\end_layout
-
-\begin_layout Plain Layout
-
-  child {
-\end_layout
-
-\begin_layout Plain Layout
-
-    node {R}
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {dat - Data for plotting} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {fig - Output dir for figures} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {gatherData.R - Gather data from various locations and congregat
-e} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {litdirectComp.R - Direct comparison of data from literature}
- }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {litResCorr.R - Correlogram of literature results} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {litresults.csv and litresults.xlsx - Literature results}
- }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {myCorrgramPanels.R - Panels for custom correlogram} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {myTests.R - Analyse test results} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {statFunctions.R - Calculate confidence intervals} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {trainReq.R - Analyse Utterance Training Requirements} }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {trainReqPhn.R - Analyse Phoneme Training Requirements}
- }
-\end_layout
-
-\begin_layout Plain Layout
-
-    child { node {viewMOS.R - View MOS results} }
 \end_layout
 
 \begin_layout Plain Layout
@@ -633,7 +548,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=12]{../Code/MATLAB/Test/createTestDataBabble.m}
+lstinputlisting[lastline=46]{../Code/MATLAB/Test/createTestDataBabble.m}
 \end_layout
 
 \end_inset
@@ -652,7 +567,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=47,firstnumber=last]{../Code/MATLAB/Test/createTestDataB
 abble.m}
@@ -697,32 +612,12 @@ name "lst:varyingTrainingTest"
 \end_layout
 
 \begin_layout Plain Layout
-
-See 
-\lang australian
-
-\begin_inset listings
-lstparams "style=myInline"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-CD:/Code/MATLAB/Test/varyingTrainingTest.m
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[lastline=53]{../Code/MATLAB/Test/varyingTrainingTest.m}
 \end_layout
@@ -743,7 +638,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTraining
 Test.m}
@@ -801,7 +696,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=14]{../Code/MATLAB/Test/mohammadiaOnline.m}
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/mohammadiaOnline.m}
 \end_layout
 
 \end_inset
@@ -820,7 +715,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/mohammadiaOnlin
 e.m}
@@ -878,7 +773,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=14]{../Code/MATLAB/Test/mohammadiaSupervised.m}
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/mohammadiaSupervised.m}
 \end_layout
 
 \end_inset
@@ -897,7 +792,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/mohammadiaSuper
 vised.m}
@@ -955,7 +850,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=14]{../Code/MATLAB/Test/modifiedOnline.m}
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/modifiedOnline.m}
 \end_layout
 
 \end_inset
@@ -974,7 +869,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/modifiedOnline.m
 }
@@ -1032,7 +927,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=14]{../Code/MATLAB/Test/modifiedSupervised.m}
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/modifiedSupervised.m}
 \end_layout
 
 \end_inset
@@ -1051,7 +946,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/modifiedSupervi
 sed.m}
@@ -1109,7 +1004,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=4]{../Code/MATLAB/Test/MMSE.m}
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/MMSE.m}
 \end_layout
 
 \end_inset
@@ -1156,7 +1051,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=4]{../Code/MATLAB/Test/IDBM.m}
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/IDBM.m}
 \end_layout
 
 \end_inset
@@ -1203,33 +1098,12 @@ name "lst:varyingTrainingAnalysis"
 \end_layout
 
 \begin_layout Plain Layout
-
-See 
-\lang australian
-
-\begin_inset listings
-lstparams "style=myInline"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-CD:/Code/MATLAB/Test/varyingTrainingAnalysis.m
-\end_layout
-
-\end_inset
-
-
- 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[lastline=53]{../Code/MATLAB/Test/varyingTrainingAnalysis.m}
 \end_layout
@@ -1250,7 +1124,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTraining
 Analysis.m}
@@ -1295,7 +1169,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=9]{../Code/MATLAB/phonemeDependent/drawPhnSamples.m}
+lstinputlisting[lastline=53]{../Code/MATLAB/phonemeDependent/drawPhnSamples.m}
 \end_layout
 
 \end_inset
@@ -1314,7 +1188,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/phonemeDependent/dra
 wPhnSamples.m}
@@ -1512,7 +1386,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=3]{../Code/MATLAB/Test/MOSScript.m}
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/MOSScript.m}
 \end_layout
 
 \end_inset
@@ -1531,7 +1405,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/MOSScript.m}
 \end_layout
@@ -1575,7 +1449,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=8]{../Code/MATLAB/Test/MOS.m}
+lstinputlisting[lastline=53]{../Code/MATLAB/Test/MOS.m}
 \end_layout
 
 \end_inset
@@ -1594,7 +1468,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/MOS.m}
 \end_layout
@@ -1715,7 +1589,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=10]{../Code/python/ASR.py}
+lstinputlisting[lastline=53]{../Code/python/ASR.py}
 \end_layout
 
 \end_inset
@@ -1734,7 +1608,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=54,firstnumber=last]{../Code/python/ASR.py}
 \end_layout
@@ -1959,7 +1833,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=2]{../Code/R/litdirectComp.R}
+lstinputlisting[lastline=54]{../Code/R/litdirectComp.R}
 \end_layout
 
 \end_inset
@@ -1978,9 +1852,56 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=55,firstnumber=last]{../Code/R/litdirectComp.R}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float listing
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Indirect Comparison R Code
+\begin_inset CommandInset label
+LatexCommand label
+name "lst:indirectComp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{../Code/R/indirectComp.R}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2022,7 +1943,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=2]{../Code/R/trainReq.R}
+lstinputlisting[lastline=60]{../Code/R/trainReq.R}
 \end_layout
 
 \end_inset
@@ -2041,7 +1962,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReq.R}
 \end_layout
@@ -2085,7 +2006,7 @@ status open
 
 
 \backslash
-lstinputlisting[lastline=2]{../Code/R/trainReqPhn.R}
+lstinputlisting[lastline=60]{../Code/R/trainReqPhn.R}
 \end_layout
 
 \end_inset
@@ -2104,7 +2025,7 @@ status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReqPhn.R}
 \end_layout

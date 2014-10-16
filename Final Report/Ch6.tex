@@ -7,10 +7,11 @@
 \section{Humanly Perceived Improvement vs. Machine Performance}
 
 In analysing the results gathered from literature, a fair correlation
-was found between \ac{PESQ} and \ac{PRR}, indicating a correlation
-between \ac{MOS} and \ac{PRR}, thereby indicating that in general,
-algorithms that are successful in \ac{HR} applications are likely
-to be successful in \ac{MR} applications, and vice-versa.
+was found between \ac{PESQ} and \ac{PRR}. This indicated a correlation
+between \ac{MOS} and \ac{PRR}. Therefore it was concluded that in
+general and according to these results, algorithms that are successful
+in \ac{HR} applications are likely to be successful in \ac{MR} applications,
+and vice-versa.
 
 Independent investigations supported the findings by directly comparing
 \ac{MOS} results with \ac{PRR} results. A correlation was found
@@ -23,10 +24,14 @@ a direct contrast with the general trend. The algorithm gave significant
 improvements in reducing the noise, and therefore gave improvements
 in the accuracy \ac{PRR}, indicating improvement for \ac{MR}. However,
 the algorithm distorted the signal significantly, causing deterioration
-in quality of \ac{HR}.
+in quality of \ac{HR}. Therefore, the correlation depended on the
+requirements of the \ac{ASR} system, which are difficult to predict
+at the phoneme level.
 
 Thus it was determined that an algorithm's performance in enhancement
-cannot be generalised over \ac{HR} and \ac{MR}.
+cannot be generalised over \ac{HR} and \ac{MR}. Although a ``good''
+enhancement algorithm is likely successful in both applications, this
+is not guaranteed and therefore must be verified.
 
 
 \subsubsection*{Recommendations from Investigation}
@@ -54,12 +59,12 @@ cepstral coefficients, and only considering the phoneme-level recognition.
 Studies should be further conducted using alternative methods of feature
 extraction for the \ac{ASR} system.
 
-Additionally, the word recognition rate, and other higher level recognition
-measures should be investigated. This thesis did not take into consideration
+The word recognition rate, and other higher level recognition measures
+should be investigated. This thesis did not take into consideration
 methods \ac{ASR} systems can use to extract meaning that are robust
 to errors in the phoneme-level recognition.
 
-Furthermore, with a larger test population and therefore more reliable
+Additionally, with a larger test population and therefore more reliable
 \ac{MOS} results better conclusions could be drawn on both the relationship
 between \ac{HR} and \ac{MR} and on the relationship between \ac{PESQ}
 and \ac{MOS}, both under the context of speech enhancement.
@@ -77,10 +82,10 @@ presented by \citet{mohammadiha2013supervised}. It was however seen
 that 10 to 20 utterances should be used in order to ensure adequate
 training for consistence in results.
 
-Furthermore, it was shown that in cases, under-training improved results,
-indicating that a higher performance was achievable and showing that
-the current training techniques were suboptimal. Thus, promise was
-shown for the phoneme-dependent variations proposed to these algorithms.
+Additionally, it was shown that in cases, under-training improved
+results, indicating that a higher performance was achievable and showing
+that the current training techniques were suboptimal. Thus, promise
+was shown for the phoneme-dependent variations proposed to these algorithms.
 
 
 \section{Phoneme-Dependent Variation Performance}
@@ -88,7 +93,7 @@ shown for the phoneme-dependent variations proposed to these algorithms.
 The method for randomly drawing phoneme samples and forming training
 data was successfully implemented. The only noted issue in implementation
 was the possibility of missing some short phonemes, such as the voiceless
-stop phonemes. This had been accounted for however, in increasing
+stop phonemes. This had been accounted for however, by increasing
 the number of samples drawn per phoneme.
 
 Using phoneme-dependent modifications, both training and base modifications,
@@ -123,4 +128,8 @@ that one would exist.
 \subsubsection*{Opportunity for Future Work}
 
 The opportunity exists to conduct further research into using phoneme-dependence
-for speaker separation.
+for human listeners. It has been shown that training using utterances
+is suboptimal, and additionally that phonemic training can improve
+the performance for machine recognisers. A great number of variations
+within the training stage of \ac{NMF} algorithms have been proposed,
+that should be investigated with phoneme-dependent modifications.

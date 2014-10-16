@@ -261,7 +261,7 @@ reference "fig:Direct-PESQ-PRR-LOESS"
 
 \end_inset
 
- shows the data fitted with an 
+ shows the data fitted with a 
 \begin_inset ERT
 status open
 
@@ -269,7 +269,7 @@ status open
 
 
 \backslash
-ac{LOESS}
+acf{LOESS}
 \end_layout
 
 \end_inset
@@ -281,7 +281,7 @@ reference "fig:Direct-PESQ-PRR-LM"
 
 \end_inset
 
- shows the data fitted with an 
+ shows the data fitted with a 
 \begin_inset ERT
 status open
 
@@ -289,7 +289,7 @@ status open
 
 
 \backslash
-ac{LM}
+acf{LM}
 \end_layout
 
 \end_inset
@@ -719,7 +719,7 @@ reference "fig:litResCorr"
 
 \end_inset
 
- Also indicated a very high correlation between the raw 
+ also indicated a very high correlation between the raw 
 \begin_inset ERT
 status open
 
@@ -4218,13 +4218,17 @@ PRRacc
 \end_inset
 
 ) was found to be negative.
- This highlighted the balance between an under-trained and under-discriminative
- algorithm, which may detect a high number of correct phonemes (high correctness
-) but poorly reduce noise and therefore recognise extra incorrect phonemes
- (low accuracy); and an over-trained and over-discriminative algorithm,
- which may detect a lower number of correct phonemes (low correctness) but
- effectively reduce noise and therefore have minimal false positiveness(increase
-d accuracy).
+\end_layout
+
+\begin_layout Standard
+This highlighted the balance between an under-trained and under-discriminative
+ algorithm and an over-trained and over-discriminative algorithm.
+ An under-trained and under-discriminative algorithm may detect a high number
+ of correct phonemes (high correctness) but poorly reduce noise and therefore
+ recognise extra incorrect phonemes (low accuracy).
+ Whereas an over-trained and over-discriminative algorithm may detect a
+ lower number of correct phonemes (low correctness) but effectively reduce
+ noise and therefore have minimal false positiveness(increased accuracy).
 \end_layout
 
 \begin_layout Subsubsection*
@@ -6288,18 +6292,18 @@ reference "fig:drawn-phoneme-spectrogram"
 , showing the frequency characteristics of each phoneme.
  The voiced phonemes were seen to contain lower frequency components and
  the voiceless phonemes contained higher frequency components as expected.
- The differences in phonemes was clear and identifiable, indicating that
+ The differences in phonemes were clear and identifiable, indicating that
  the method worked as intended.
- One issue noted was that voiceless stops, were too short and were occasionally
+ One issue noted was that voiceless stops were too short and were occasionally
  missed.
- A noted example was in the first two phoneme samples in 
+ A noted example was in the first two columns in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:mos-comparison-phn-1"
 
 \end_inset
 
-, which were /
+, which were the phonemes /
 \shape italic
 p
 \shape default
@@ -6308,8 +6312,8 @@ p
 t
 \shape default
 /.
- For such phonemes, high frequency components would have been expected,
- but mostly silence present with some lower frequency components.
+ For such phonemes, high frequency components would have been expected;
+ but mostly silence was present, with some lower frequency components.
  The same phonemes in 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -7671,7 +7675,7 @@ reference "fig:prrcorr-comparison-phn"
 \end_inset
 
 .
- However, in terms of accuracy, no significant pattern was noted between
+ In terms of accuracy, however, no significant pattern was noted between
  those performing better and worse than the original algorithms.
 \end_layout
 
@@ -8287,8 +8291,8 @@ ac{MOS}
 \end_inset
 
  performance with the number of phonemes.
- However, it was difficult to draw a clear conclusion, as a smaller number
- of the tests instead showed a slight decrease.
+ It was difficult to draw a clear conclusion, as a smaller number of the
+ tests instead showed a slight decrease.
  
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -8361,9 +8365,9 @@ Cref{fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc}
 
 \end_inset
 
- showed, for most algorithms, no improvement in correctness with increasing
- phonemes.
- However, there was in some cases an increase in accuracy, especially for
+ showed that, for most algorithms, there was no improvement in correctness
+ with increasing phonemes.
+ There was, however, in some cases an increase in accuracy, especially for
  
 \begin_inset listings
 inline true
@@ -8388,7 +8392,7 @@ phonemeIDBM
 
 \end_inset
 
-, but rarely a decrease.
+, and rarely a decrease.
  As above, the significance of the improvement is low, however a slight
  positive correlation is present.
 \end_layout
