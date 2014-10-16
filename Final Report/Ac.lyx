@@ -185,6 +185,13 @@ acl{HMM} Toolkit}
 
   
 \backslash
+acro{ICA}{Independent Component Analysis}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
 acro{ITU}{International Telecommunication Union}
 \end_layout
 
@@ -327,6 +334,13 @@ acro{PESQ}{Perceptual Evaluation of Speech Quality}
   
 \backslash
 acro{pKLT}{Perceptual Karhunen-Loeve Transform}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+acro{PCA}{Principal Component Analysis}
 \end_layout
 
 \begin_layout Plain Layout

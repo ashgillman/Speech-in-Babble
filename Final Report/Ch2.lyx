@@ -104,8 +104,7 @@ acresetall
 
 \begin_layout Standard
 This literature review aims to outline some of the key concepts involved
- in this thesis, and to summarise progress on similar endeavours made thus
- far.
+ in this thesis, and to summarise progress on similar endeavours in literature.
 \end_layout
 
 \begin_layout Section
@@ -1779,7 +1778,132 @@ name "fig:Assessment-methods"
 \end_layout
 
 \begin_layout Section
-Subspace Methods by Decomposition
+Methods for Speech Enhancement
+\end_layout
+
+\begin_layout Standard
+There exists a large number of methods for enhancing speech.
+ In general, they operate using similar principals: use statistical measures
+ to estimate which parts are speech and/or which parts are noise, then either
+ extract the speech or remove the noise.
+ Spectral subtraction and ideal binary masks each do this in the time-frequency
+ domain, whereas subspace methods operate in a lower dimensional subspace.
+\end_layout
+
+\begin_layout Subsection
+Spectral Subtraction
+\end_layout
+
+\begin_layout Standard
+Spectral subtractive methods for speech enhancement aim to estimate the
+ spectrum of the noise 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Martin1994"
+
+\end_inset
+
+.
+ This is often done using an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE-SPU}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{logMMSE}
+\end_layout
+
+\end_inset
+
+, or Bayesian estimator 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Brookes1997,Martin1994"
+
+\end_inset
+
+.
+ Such algorithms have proven to be extremely flexible across noise types,
+ including babble 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Paliwal2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Ideal Binary Mask
+\end_layout
+
+\begin_layout Standard
+Ideal binary mask algorithms operate on the time-frequency representation
+ of a signal, often called the spectrogram.
+ This representation can be formulated by taking the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{STFT}
+\end_layout
+
+\end_inset
+
+ of the signal, and allows a signal to be represented by time-frequency
+ units, i.e.
+ frequencies present at a given time.
+ The ideal binary mask is a mask, the same size as the input spectrogram,
+ with a 1 in time-frequency unit if the desired signal is stronger than
+ the noise in that unit, and a 0 otherwise.
+ The mask is then multiplied by the spectrogram, leaving only time-frequency
+ units where the desired signal is strongest.
+ This requires estimation of the signal and noise: which may be done through
+ any of the estimators outlined above.
+ Alternatively, this may be done using a voice activity detector 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hu2008a"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Subspace Methods
 \end_layout
 
 \begin_layout Standard
@@ -1840,7 +1964,28 @@ name "fig:subspace-decomposition"
 \end_layout
 
 \begin_layout Standard
-These techniques factorise a matrix into two matrix factors of the form:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acf{NMF}
+\end_layout
+
+\end_inset
+
+, previously known as positive matrix factorisation, was popularised by
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lee1999"
+
+\end_inset
+
+.
+ This technique factorises a matrix into two matrix factors of the form:
 \end_layout
 
 \begin_layout Standard
@@ -1878,28 +2023,7 @@ Often
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-acf{NMF}
-\end_layout
-
-\end_inset
-
-, previously known as positive matrix factorisation, was popularised by
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Lee1999"
-
-\end_inset
-
- as a method lending itself to breaking objects into their composing parts
- The distinguishing characteristic of 
+The distinguishing characteristic of 
 \begin_inset ERT
 status open
 
@@ -1932,8 +2056,9 @@ ac{NMF}
 
 \end_inset
 
- has been demonstrated to be an effective method in dividing images into
- parts 
+ is notable for its decompositions tending to separate into a parts-based
+ decomposition, and has been demonstrated to be an effective method in dividing
+ images into parts 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Lee1999,Donoho2003"
@@ -1963,6 +2088,101 @@ key "Mohammadiha2013a,Wilson2008,Mohammadiha2013"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PCA}
+\end_layout
+
+\end_inset
+
+ the dimensionality is reduced to an orthogonal lower dimension by aiming
+ to maximise the variance of the new dimension being transformed into 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kambhatla1997"
+
+\end_inset
+
+.
+ Thus, by maximising the variance, the amount of information of the original,
+ higher-dimensional representation captured is also maximised.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ICA}
+\end_layout
+
+\end_inset
+
+ is similar to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PCA}
+\end_layout
+
+\end_inset
+
+, but is useful where components are independent, such as independent voices
+ in multi-speaker babble 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Loizou2013b"
+
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ICA}
+\end_layout
+
+\end_inset
+
+ is useful in spacial filtering, especially a stationary signal, an application
+ requiring a microphone array .
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ has shown significant and impressive results in recent literature, and
+ for this reason has been chosen to be further investigated within this
+ thesis.
 \end_layout
 
 \begin_layout Subsection
@@ -2184,7 +2404,20 @@ name "fig:nmf-on-speech"
 \end_layout
 
 \begin_layout Section
-Assessment of Methods of Factorisation
+Methods of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -3142,9 +3375,9 @@ reference "eq:nmf-approx"
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\hat{X}_{Desired}=V_{Desired}\times\hat{W}_{Desired}
-\]
+\begin{equation}
+\hat{X}_{Desired}=V_{Desired}\times\hat{W}_{Desired}\label{eq:nmf-clean-estimate}
+\end{equation}
 
 \end_inset
 
@@ -3171,7 +3404,20 @@ key "Schmidt2006,Raj2005,Wilson2008"
 
 \end_inset
 
-.
+, which may be done with any of the multiplicative update rules or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ALS}
+\end_layout
+
+\end_inset
+
+ algorithms.
  These are concatenated, and the appropriate 
 \begin_inset ERT
 status open
@@ -3185,9 +3431,29 @@ ac{NMF}
 
 \end_inset
 
- algorithms performed.
- Afterwards, the speech-specific components can be separated again and used
- to estimate the clean speech.
+ algorithms performed again for extraction, this time only applying the
+ appropriate equations to update 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ This process is depicted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:nmf-speech-enhancement"
+
+\end_inset
+
+.
+ Afterwards, the speech-specific components can be separated and used to
+ estimate the clean speech using 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:nmf-clean-estimate"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3197,7 +3463,13 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-TODO DIAGRAM
+\begin_inset Graphics
+	filename fig/nmf_enhancement.eps
+	width 100text%
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3217,7 +3489,14 @@ acl{NMF}
 
 \end_inset
 
- speech implementation
+ speech extraction process
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:nmf-speech-enhancement"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3382,8 +3661,25 @@ The following three paragraphs outline the three proposed focuses for this
 \end_layout
 
 \begin_layout Standard
-Much work has been done in literature on speech enhancement under noisy
- conditions.
+Most of the algorithms are tested for human recognition improvements, but
+ rarely for improvements in machine recognition, highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Assessment-methods"
+
+\end_inset
+
+.
+ Little literature exists on the comparison of performance between these
+ two forms of recognition.
+ An area of research proposed is to investigate the relationship between
+ human and machine recognition improvement under speech enhancement algorithms,
+ to see if one implies the other.
+\end_layout
+
+\begin_layout Standard
+Additionally, much work has been done in literature on speech enhancement
+ under noisy conditions.
  Systems are available to improve intelligibility in telecommunication systems,
  or to improve the quality of 
 \begin_inset ERT
@@ -3407,45 +3703,11 @@ ac{ASR}
 \end_layout
 
 \begin_layout Standard
-Additionally, most of the algorithms are tested for human recognition improvemen
-ts, but rarely for improvements in machine recognition, highlighted in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Assessment-methods"
-
-\end_inset
-
-.
- Little literature exists on the comparison of performance between these
- two forms of recognition.
- An area of research proposed is to investigate the relationship between
- human and machine recognition improvement under speech enhancement algorithms,
- to see if one implies the other.
-\end_layout
-
-\begin_layout Standard
 Finally, improvements have been made in focusing recognition by forcing
  component matrices to represent phonemes.
  However, current algorithms require complicated implementations.
- It is proposed to attempt to simplify this process.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ASR Systems, PRR, Human recog, Machine recog, PRR Corr, PRR Acc, MOS, PESQ,
- Stat methods, such as Seg SNR, 
-\end_layout
-
-\begin_layout Plain Layout
-how and why cmos related to pesqimp? or maybe thats methodology?
-\end_layout
-
-\end_inset
-
-
+ It is proposed to attempt to simplify the process of introducing phoneme-depend
+ence into algorithms.
 \end_layout
 
 \end_body

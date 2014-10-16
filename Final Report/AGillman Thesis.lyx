@@ -118,7 +118,7 @@ begin{titlepage}
 \align center
 \begin_inset Graphics
 	filename fig/JCU_Logo_RGB.eps
-	special width=0.08\paperwidth+0.08\paperheight
+	special width=0.12\paperwidth+0.12\paperheight
 
 \end_inset
 
@@ -163,7 +163,7 @@ Ashley Gillman
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing single
 \noindent
 \align center
 
@@ -173,6 +173,7 @@ Thesis submitted to the School of Engineering & Physical Sciences in partial
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing single
 \noindent
 \align center
 

@@ -2539,10 +2539,7 @@ ac{MOS}
 
 \end_inset
 
- evaluation measures,
- 
-\lang australian
-
+ evaluation measures, 
 \begin_inset listings
 inline true
 status open
@@ -3899,10 +3896,8 @@ reference "fig:vary-train-prrcorr"
 
 \end_inset
 
- showed no evidence of a correlation between the 
-number of utterances for training and the 
-\lang australian
-
+ showed no evidence of a correlation between the number of utterances for
+ training and the 
 \begin_inset ERT
 status open
 
@@ -3960,7 +3955,14 @@ mohammadiaSupervised
 
 \end_inset
 
- with the 
+ with the
+
+\begin_inset Newline linebreak
+\end_inset
+
+
+\lang australian
+
 \begin_inset listings
 inline true
 status open

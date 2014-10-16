@@ -118,8 +118,8 @@ key "Cherry1953"
 
 , where the human ability, or often difficulty, to hear speech in the presence
  of multiple speakers was noted.
- After analysis into the complexity of the problem, it is amazing that humans
- have the ability to hear over one-another at all!
+ After analysis into the complexity of the problem, the human ability to
+ hear voices presented simultaneously is noted as incredible.
 \end_layout
 
 \begin_layout Standard
@@ -145,7 +145,7 @@ ac{ASR}
  systems has increased.
  Additionally, the problem still exists of aiding human understanding in
  such situations, e.g.
- hearing aid systems or telecommunications systems.
+ hearing aids, cochlear implants or telecommunications systems.
 \end_layout
 
 \begin_layout Standard
@@ -224,6 +224,34 @@ key "Cooke2010,Barker2013,Vincent2013"
  It is these algorithms that are of interest in this thesis.
 \end_layout
 
+\begin_layout Standard
+There are many methods by which the successfulness of an enhancement algorithm
+ may be measured.
+ However, the true performance of an enhancement algorithm is dependent
+ upon the application.
+ Already mentioned have been two broad classifications of application, those
+ for human listening such as hearing aids and telecommunications systems,
+ and those for machines, or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ systems.
+ The means by which hearing is performed is drastically different for humans
+ and machines, and thus perceived enhancement may also be.
+ However, this is rarely taken into consideration.
+ Nor is there a standard by which enhancement should be measured across
+ literature, leading to difficulty in comparing different enhancement algorithms.
+\end_layout
+
 \begin_layout Section
 Research Questions
 \end_layout
@@ -251,8 +279,10 @@ ac{ASR}?''}
 \backslash
 newcommand{
 \backslash
-RQthree}{``Can the results be improved by modifying algorithms to concentrate
- the focus on recognition of the desired speakers voice?''}
+RQtwo}{``What is the optimum amount of training data for state-of-the-art
+ 
+\backslash
+ac{NMF} algorithms?''}
 \end_layout
 
 \begin_layout Plain Layout
@@ -261,8 +291,8 @@ RQthree}{``Can the results be improved by modifying algorithms to concentrate
 \backslash
 newcommand{
 \backslash
-RQtwo}{``Can the practicality of existing algorithms be improved to allow
- applications in end-user hardware?''}
+RQthree}{``Can the results be improved by modifying algorithms to be phoneme-dep
+endent?''}
 \end_layout
 
 \end_inset
@@ -374,7 +404,6 @@ The scope does not encompass specific applications, and thus does not consider
  implant listeners.
  It is assumed that the performance increases for normal hearing listeners
  will be applicable to impaired hearing listeners.
- Further studies would be required to ensure this is the case.
 \end_layout
 
 \end_body
