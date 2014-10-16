@@ -4,8 +4,8 @@
 \acresetall
 
 This literature review aims to outline some of the key concepts involved
-in this thesis, and to summarise progress on similar endeavours made
-thus far.
+in this thesis, and to summarise progress on similar endeavours in
+literature.
 
 
 \section{Babble and other Speech-Related Noise}
@@ -97,15 +97,15 @@ Speech enhancement has various practical applications, including:
 Due to the many application areas, various algorithms may be used
 under different contexts in order to balance the condition-specific
 performance, calculation efficiency, flexibility and ease of implementation.
-\figref{Speech-Enhance-Classifications} \vpageref{fig:Speech-Enhance-Classifications}
-illustrates some of the many variations in methods for speech enhancement,
-with data extracted from \citep{Yang2005,Pollack1958,Loizou2013b,Kamath2002}.
-Some methods provide better performance than others, but at the expense
-of practicality. For example, recognition can be improved under non-stationary
-noise by using a microphone array, however such a set up is more expensive.
+\figref{Speech-Enhance-Classifications} illustrates some of the many
+variations in methods for speech enhancement, with data extracted
+from \citep{Yang2005,Pollack1958,Loizou2013b,Kamath2002}. Some methods
+provide better performance than others, but at the expense of practicality.
+For example, recognition can be improved under non-stationary noise
+by using a microphone array, however such a set up is more expensive.
 
 \begin{figure}[p]
-\centering{}\includegraphics[angle=90,height=0.9\textheight]{fig/speech-enhancement-methods}\protect\caption{Some classifications of Speech Enhancement Methods\label{fig:Speech-Enhance-Classifications}}
+\centering{}\includegraphics[angle=90,height=0.9\textheight]{fig/speech-enhancement-methods}\protect\caption{Some classifications of speech enhancement methods\label{fig:Speech-Enhance-Classifications}}
 \end{figure}
 
 
@@ -121,10 +121,11 @@ X_{Babble}=\sum X_{Speakers}\label{eq:babble-sum-speakers}
 
 
 \nomenclature{$X$}{\ac{STFT} of a signal or recording, either with or without noise present. Rows represent frequency bins and columns represent time frames.}
-
-(\ref{eq:babble-sum-speakers}) follows directly from the definition
-of babble. The number of speaker signals used may vary, but to align
-with with the definition for babble should be between three and six.
+where $X$ represents the \ac{STFT} of a signal, either babble or
+an individual speaker. (\ref{eq:babble-sum-speakers}) follows directly
+from the definition of babble. The number of speaker signals used
+may vary, but to align with with the definition for babble should
+be between three and six.
 
 
 \subsection{Generation of Babble}
@@ -138,7 +139,7 @@ can be classed as synthetic babble, and may or may not accurately
 represent real babble \citep{Krishnamurthy2009}.
 
 The most common method of creating synthetic babble is to use a number
-of speech recordings, adding them together to form babble. This presents
+of speech recordings and add them together to form babble. This presents
 a number of issues. Firstly, real conversations are not simply a number
 of voices speaking simultaneously. Rather, conversations are dynamic,
 where there is generally one speaker but occasionally more or none
@@ -164,7 +165,7 @@ When the cocktail party problem was originally proposed, five factors
 were identified as to how the human brain may differentiate between
 the sources \citep{Cherry1953}, shown in \figref{Differentiating-Speech-Babble}.
 
-\begin{figure}[h]
+\begin{figure}[!b]
 \centering{}\includegraphics[width=0.6\textwidth]{\string"fig/babble Separation\string".pdf}\protect\caption{Differentiating Speech from Babble\label{fig:Differentiating-Speech-Babble}}
 \end{figure}
 
@@ -172,8 +173,10 @@ the sources \citep{Cherry1953}, shown in \figref{Differentiating-Speech-Babble}.
 Algorithms taking advantage of spatial differences and visual cues,
 although effective \citep{Dupont2000}, require multiple channels
 and visual data. Subspace methods take advantage of differences in
-voices and differences in pronunciation. \ac{HMM} models for speech
-recognition also take advantage of transitional probabilities \citep{Mohammadiha2013}.
+voices and differences in pronunciation. \acp{HMM} are able to model
+hidden states, that vary temporally \citep{Young1997}. Therefore,
+\ac{HMM} models for speech recognition also take advantage of transitional
+probabilities \citep{Mohammadiha2013}.
 
 
 \section{Methods for Evaluation of Speech Enhancement}
@@ -187,14 +190,25 @@ algorithm for enhancement may indeed improve the intelligibility for
 an \ac{ASR} system, but side effects may be distracting or distortive
 to a human listener.
 
+Algorithms in literature tend to limit evaluation methods to either
+human recognition or machine recognition methods, as seen in \figref{Assessment-methods},
+showing the evaluation measures used in various papers. This data
+was gathered from the following papers \citep{Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011,Paliwal2010,mohammadiha2013supervised,Plourde2007,Weninger2011,Williamson2014}.
+
+\begin{figure}[!b]
+\centering{}\includegraphics[width=1\textwidth]{fig/R/assessmentMethods}\protect\caption{Assessment methods used in literature\label{fig:Assessment-methods}}
+\end{figure}
+
+
 
 \subsection{Human Recognition}
 
-Intelligibility of a speech signal by humans is difficult to accurately
-and quantitatively measure. The most obvious measure is to have human
-test subjects listen to signals and judge which are more intelligible.
-In order to achieve reputable, repeatable and accurate results a large
-test is required with a large number of test subjects and recordings.
+The intelligibility of a speech signal to a human is difficult to
+accurately and quantitatively measure. The most obvious measure is
+to have human test subjects listen to signals and judge which are
+more intelligible. In order to achieve reputable, repeatable and accurate
+results a large test is required with a large number of test subjects
+and recordings.
 
 The \ac{ITU} standard for such tests is the \ac{MOS} \citep{InternationalTelecommunicationUnion1996}.
 The test is designed to give an indication of the quality of telecommunication
@@ -270,11 +284,11 @@ segmental \ac{SNR}, log-likelihood ratio, Itakura-Saito distance,
 cepstrum distance, \ac{SD}, \ac{SDR} and variations \citep{Hu2008},
 visual analysis of the signal spectrogram, as well as others.
 
-Long-term \ac{SNR} is the involves calculating the \ac{SNR} over
-the entire signal. However, this method does not always correlate
-with subjective measures \citep{Hansen1998} and many variations exist.
-For example, \citet{Raj2005a} utilise a method incorporating the
-phase of the signal.
+Long-term \ac{SNR} involves calculating the \ac{SNR} over the entire
+signal. However, this method does not always correlate with subjective
+measures \citep{Hansen1998} and many variations exist. For example,
+\citet{Raj2005a} utilise a method incorporating the phase of the
+signal.
 
 Segmental \ac{SNR} uses the \ac{SNR} within small frames \citep{Hansen1998}.
 Since frames where speech in not present can have very negative \acp{SNR},
@@ -284,20 +298,43 @@ for measuring the quality of coding schemes \citep{Mermelstein1979},
 however, poor correlation with human subjective tests for measurement
 of speech enhancement has been shown \citep{Hu2008}.
 
-Algorithms in literature tend to limit evaluation methods to either
-human recognition or machine recognition methods, as seen in \figref{Assessment-methods},
-showing the evaluation measures used in various papers. This data
-was gathered from the following papers \citep{Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011,Paliwal2010,mohammadiha2013supervised,Plourde2007,Weninger2011,Williamson2014}.
 
-\begin{figure}[h]
+\section{Methods for Speech Enhancement}
 
-
-\centering{}\includegraphics[width=1\textwidth]{fig/R/assessmentMethods}\protect\caption{Assessment methods used in literature\label{fig:Assessment-methods}}
-\end{figure}
-
+There exists a large number of methods for enhancing speech. In general,
+they operate using similar principals: use statistical measures to
+estimate which parts are speech and/or which parts are noise, then
+either extract the speech or remove the noise. Spectral subtraction
+and ideal binary masks each do this in the time-frequency domain,
+whereas subspace methods operate in a lower dimensional subspace.
 
 
-\section{Subspace Methods by Decomposition}
+\subsection{Spectral Subtraction}
+
+Spectral subtractive methods for speech enhancement aim to estimate
+the spectrum of the noise \citep{Martin1994}. This is often done
+using an \ac{MMSE}, \ac{MMSE-SPU}, \ac{logMMSE}, or Bayesian estimator
+\citep{Brookes1997,Martin1994}. Such algorithms have proven to be
+extremely flexible across noise types, including babble \citep{Paliwal2010}.
+
+
+\subsection{Ideal Binary Mask}
+
+Ideal binary mask algorithms operate on the time-frequency representation
+of a signal, often called the spectrogram. This representation can
+be formulated by taking the \ac{STFT} of the signal, and allows a
+signal to be represented by time-frequency units, i.e. frequencies
+present at a given time. The ideal binary mask is a mask, the same
+size as the input spectrogram, with a 1 in time-frequency unit if
+the desired signal is stronger than the noise in that unit, and a
+0 otherwise. The mask is then multiplied by the spectrogram, leaving
+only time-frequency units where the desired signal is strongest. This
+requires estimation of the signal and noise: which may be done through
+any of the estimators outlined above. Alternatively, this may be done
+using a voice activity detector \citep{Hu2008a}.
+
+
+\subsection{Subspace Methods}
 
 Subspace methods focus on reducing the dimensionality of a system.
 This is done by decomposition or factorisation of a signal into lower
@@ -311,28 +348,42 @@ some of which are outlined in \figref{subspace-decomposition}.
 \end{figure}
 
 
-These techniques factorise a matrix into two matrix factors of the
-form:
+\acf{NMF}, previously known as positive matrix factorisation, was
+popularised by \citet{Lee1999}. This technique factorises a matrix
+into two matrix factors of the form:
 
 \[
 C_{i\times j}\approx B_{i\times k}A_{k\times j}
 \]
 
 
-\nomenclature{$i$, $j$, $k$}{Matrix indexing placeholders.}
+\nomenclature{$i$, $j$, $k$}{Matrix indexing placeholders.} where
+$C$ is the non-negative matrix to be decomposed, $B$ and $A$ are
+the non-negative decompositions, and subscripts $i$, $j$, and $k$
+are the arbitrary matrix sizes. Often $k\ll i$ and $k\ll j$, meaning
+the factorised form may be considered a more compact form.
 
-Often $k\ll i$ and $k\ll j$, meaning the factorised form may be
-considered a more compact form.
+The distinguishing characteristic of \ac{NMF} is that the product
+matrix, along with both its factors, are non-negative, i.e. $A_{ij}\ge0,\, B_{ij}\ge0,\, C_{ij}\ge0\quad\forall\, i,\, j$.
+\ac{NMF} is notable for its decompositions tending to separate into
+a parts-based decomposition, and has been demonstrated to be an effective
+method in dividing images into parts \citep{Lee1999,Donoho2003}.
+Furthermore, \ac{NMF} also has been shown to be useful on signals,
+specifically as a source-separation algorithm \citep{Mohammadiha2013a,Wilson2008,Mohammadiha2013}.
 
-\acf{NMF}, previously known as positive matrix factorisation, was
-popularised by \citet{Lee1999} as a method lending itself to breaking
-objects into their composing parts The distinguishing characteristic
-of \ac{NMF} is that the product matrix, along with both its factors,
-are non-negative, i.e. $A_{ij}\ge0,\, B_{ij}\ge0,\, C_{ij}\ge0\quad\forall\, i,\, j$.
-\ac{NMF} has been demonstrated to be an effective method in dividing
-images into parts \citep{Lee1999,Donoho2003}. Furthermore, \ac{NMF}
-also has been shown to be useful on signals, specifically as a source-
-separation algorithm \citep{Mohammadiha2013a,Wilson2008,Mohammadiha2013}.
+In \ac{PCA} the dimensionality is reduced to an orthogonal lower
+dimension by aiming to maximise the variance of the new dimension
+being transformed into \citep{Kambhatla1997}. Thus, by maximising
+the variance, the amount of information of the original, higher-dimensional
+representation captured is also maximised. \ac{ICA} is similar to
+\ac{PCA}, but is useful where components are independent, such as
+independent voices in multi-speaker babble \citep{Loizou2013b}. \ac{ICA}
+is useful in spacial filtering, especially a stationary signal, an
+application requiring a microphone array .
+
+\ac{NMF} has shown significant and impressive results in recent literature,
+and for this reason has been chosen to be further investigated within
+this thesis.
 
 
 \subsection{\acl{NMF} and Speech}
@@ -352,7 +403,7 @@ a Fourier transform and columns of time segments;
 spectral vectors;
 \item $W$ is the activation matrix, where each row represents the activation
 levels of components at given times;
-\item $n_{f}$ is the number of Frequency bins;
+\item $n_{f}$ is the number of frequency bins;
 \item $n_{s}$ is the number of samples; and
 \item $n_{c}$ is the number of components.
 \end{itemize}
@@ -368,8 +419,10 @@ and that the activation matrix, $W$, is sparse.
 \end{figure}
 
 
+\clearpage{}
 
-\section{Assessment of Methods of Factorisation}
+
+\section{Methods of \acl{NMF}}
 
 
 \subsection{Objective Functions}
@@ -482,7 +535,7 @@ allow flexibility in this respect.
 by \citet{Paatero1994}. These algorithms are based on the alternating
 variables method (or coordinate descent method) \citep{Wright1999}.
 In these algorithms, first $V$ is fixed and $W$ is calculated using
-a least squares method, then $W$ is fixed and $V$ is calculated
+a least squares method, and then $W$ is fixed and $V$ is calculated
 in a similar manner. These two steps are repeated until an adequate
 approximation is achieved \citep{Albright2006}.
 
@@ -570,45 +623,52 @@ in \citep{Hoyer2004} where the explicit control of sparseness was
 introduced. This was achieved by defining the sparseness measure \citep{Hoyer2004}:
 
 \[
-sparssness(x)=\frac{\sqrt{n}-\left(\sum\left|x_{i}\right|\right)/\sqrt{\sum x_{i}^{2}}}{\sqrt{n}-1}
+sparseness(x)=\frac{\sqrt{n}-\left(\sum\left|x_{i}\right|\right)/\sqrt{\sum x_{i}^{2}}}{\sqrt{n}-1}
 \]
 
 
-Where $n$ is the length of vector $x$. The developed algorithm is
-then based on the Euclidean distance objective function, employing
-a combination of multiplicative update functions (§\ref{sub:Multiplicative-Update-Algorithms})
-and gradient descent functions. However, the theory developed is applicable
-to many types of objective functions and implementation algorithms
-\citep{Cichocki2006}. Similarly, the cost functions introduced need
-not be specific to sparsity, but can be applied to many auxiliary
-constraints, such as enforcing smoothness \citep{Fevotte2011}.
+Where $n$ is the length of vector $x$.
+
+The developed algorithm is then based on the Euclidean distance objective
+function, employing a combination of multiplicative update functions
+(§\ref{sub:Multiplicative-Update-Algorithms}) and gradient descent
+functions. However, the theory developed is applicable to many types
+of objective functions and implementation algorithms \citep{Cichocki2006}.
+Similarly, the cost functions introduced need not be specific to sparsity,
+but can be applied to many auxiliary constraints, such as enforcing
+smoothness \citep{Fevotte2011}.
 
 
 \subsection{General \acl{NMF} approaches to Source Separation}
 
 There are a number of methods to construct a clean-speech estimation
-using \ac{NMF}. The particular methods used largely depend on the
-specifics of the model used. However, the general concept is the same.
-It is known that $X$ is approximated as $V\times W$ (\ref{eq:nmf-approx})
-and therefore we can we can reconstruct a desired signal as:
+using \ac{NMF}. The method used depends on the formulation of the
+problem, but the general concept is the same. It is known that $X$
+is approximated as $V\times W$ (\ref{eq:nmf-approx}) and therefore
+we can we can reconstruct a desired signal as:
 
-\[
-\hat{X}_{Desired}=V_{Desired}\times\hat{W}_{Desired}
-\]
+\begin{equation}
+\hat{X}_{Desired}=V_{Desired}\times\hat{W}_{Desired}\label{eq:nmf-clean-estimate}
+\end{equation}
 
 
-\nomenclature{$\hat{.}$}{Indicates an estimated value.}
+\nomenclature{$\hat{.}$}{Indicates an estimated value.} where the
+hat $\hat{.}$ represents an estimated value.
 
 Common algorithms form a component matrix for the desired speaker,
-and another for the anticipated noise \citep{Schmidt2006,Raj2005,Wilson2008}.
-These are concatenated, and the appropriate \ac{NMF} algorithms performed.
-Afterwards, the speech-specific components can be separated again
-and used to estimate the clean speech.
+and another for the anticipated noise \citep{Schmidt2006,Raj2005,Wilson2008},
+which may be done with any of the multiplicative update rules or \ac{ALS}
+algorithms. These are concatenated, and the appropriate \ac{NMF}
+algorithms performed again for extraction, this time only applying
+the appropriate equations to update $W$. This process is depicted
+in \figref{nmf-speech-enhancement}. Afterwards, the speech-specific
+components can be separated and used to estimate the clean speech
+using (\ref{eq:nmf-clean-estimate}).
 
-\begin{figure}
-TODO DIAGRAM
+\begin{figure}[!b]
+\includegraphics[width=1\textwidth]{fig/nmf_enhancement}
 
-\protect\caption{Common \acl{NMF} speech implementation}
+\protect\caption{Common \acl{NMF} speech extraction process\label{fig:nmf-speech-enhancement}}
 \end{figure}
 
 
@@ -619,19 +679,21 @@ for training, which can be upwards of an hour worth of recordings
 are only effective for noise types that $V_{noise}$ has been trained
 on, and thus have reduced flexibility.
 
+
+\subsection{Phoneme-dependent \acl{NMF}}
+
 \citet{Raj2011} proposed a different solution whereby an \ac{ASR}
 system identifies phonemes in speech, and an \ac{NMF} algorithm is
 implemented using one of 40 component matrices, one for each phoneme.
 This model is somewhat limited in its application to babble, in the
 author\textquoteright s opinion, as the initial \ac{ASR} algorithm\textquoteright s
 performance is likely to be low on a noisy signal. However, the algorithm
-did show that \ac{NMF} performance is be improved by forming bases
+did show that \ac{NMF} performance may be improved by forming bases
 on phonemes. A novel alternative model was recently proposed by \citet{Mohammadiha2013a},
 who used \acp{HMM} to form the basis of the \ac{NMF} algorithm separating
 speech from noise, and thus used a temporally probabilistic method
 to form and estimate of clean speech. By doing so, the algorithm accounts
-for an extra feature outlined in \figref{Differentiating-Speech-Babble},
-being the transitional probability.
+for the transitional probability, an extra feature outlined in \figref{Differentiating-Speech-Babble}.
 
 
 \section{Summary}
@@ -639,8 +701,16 @@ being the transitional probability.
 The following three paragraphs outline the three proposed focuses
 for this research.
 
-Much work has been done in literature on speech enhancement under
-noisy conditions. Systems are available to improve intelligibility
+Most of the algorithms are tested for human recognition improvements,
+but rarely for improvements in machine recognition, highlighted in
+\figref{Assessment-methods}. Little literature exists on the comparison
+of performance between these two forms of recognition. An area of
+research proposed is to investigate the relationship between human
+and machine recognition improvement under speech enhancement algorithms,
+to determine if success in one implies the other.
+
+Additionally, much work has been done in literature on speech enhancement
+under noisy conditions. Systems are available to improve intelligibility
 in telecommunication systems, or to improve the quality of \ac{ASR}
 systems for home technology. However, most of the technologies outlined
 in this literature review have not been implemented in end-user systems,
@@ -648,17 +718,7 @@ such as hearing aids or mobile technology. This is due to practicality
 constraints within the algorithms, in particular the training requirement,
 generally required to be specific to the end-user.
 
-Additionally, most of the algorithms are tested for human recognition
-improvements, but rarely for improvements in machine recognition,
-highlighted in \figref{Assessment-methods}. Little literature exists
-on the comparison of performance between these two forms of recognition.
-An area of research proposed is to investigate the relationship between
-human and machine recognition improvement under speech enhancement
-algorithms, to see if one implies the other.
-
 Finally, improvements have been made in focusing recognition by forcing
 component matrices to represent phonemes. However, current algorithms
 require complicated implementations. It is proposed to attempt to
-simplify this process.
-
-
+simplify the process of introducing phoneme-dependence into algorithms.

@@ -13,15 +13,15 @@ comparative performance with lower-level languages, however performance
 and speed were not a primary focus in this thesis, so this was deemed
 acceptable.
 
-Data analysis was conducted using R \citep{RCoreTeam2014}. R was
-selected for data analysis for its simplicity in forming powerful
+Data analysis was conducted using the R programming language \citep{RCoreTeam2014}.
+R was selected for data analysis for its simplicity in forming powerful
 plots and applying statistical methods.
 
 Simulations were run on a MacBook Pro 64-bit system with an Intel
 Core i7 2.3GHz 4-core processor with 16GB memory, running OSX 10.9.2,
 MATLAB R2013a and R version 3.1.0 (2014-04-10).
 
-Test data to was drawn from the \ac{WSJ} corpus \citep{Robinson1995}.
+Test data was drawn from the \ac{WSJ} corpus \citep{Robinson1995}.
 Different recordings were reserved for testing and training. Babble
 noise was simulated by using recordings of speech, also drawn from
 the \ac{WSJ} corpus. Additionally, recorded noise was used from the
@@ -30,7 +30,7 @@ NOIZEUS corpus \citep{Hu2006}.
 
 \section{Humanly Perceived Improvement vs. Machine Performance}
 
-The first research area sought to answer research question \vref{enu:ResQ1},
+The first research area sought to answer the research question \ref{enu:ResQ1},
 \textit{\RQone{}} The focus was to compare and contrast the performance
 differences of speech enhancement algorithms when evaluated on a human
 listener versus a machine listener.
@@ -68,7 +68,13 @@ to be used to enhance speech, and a number of evaluation measures,
 of both human perceptual and machine recognition types, were to be
 used to measure the performance.
 
-The Algorithms used in testing are given in \tabref{Algorithms}.
+The Algorithms used in testing are given in \tabref{Algorithms},
+and the noise types used are given in \ref{tab:test-params}. The
+first seven tests consisted of synthetic babble, test nine was a recorded
+babble, and tests seven and ten were recordings of mixed noise types
+which included speech type noise along with other noise types. The
+last three noise types were drawn from the NOIZEUS corpus presented
+in \citep{Hu2006}.
 
 \begin{table}
 
@@ -114,7 +120,40 @@ Phoneme Ideal Binary Mask & A ideal binary mask algorithm \citep{Wojcicki2011}, 
 drawn phoneme samples of the \ac{SoI}. & \lstref{IDBM}\tabularnewline
 \hline 
 \end{tabular*}
+\end{table}
 
+
+\begin{table}
+\protect\caption{\label{tab:test-params}Simulations and associated parameters}
+
+
+\centering{}%
+\begin{tabular}{|c|c|c|}
+\hline 
+Test Number & \ac{SoI} (sex) & Noise\tabularnewline
+\hline 
+\hline 
+1 & C3C (f) & Competing speaker: C3F (m)\tabularnewline
+\hline 
+2 & C3L (f) & Competing speaker: C31 (m)\tabularnewline
+\hline 
+3 & C3S (m) & Competing speaker: C31 (m)\tabularnewline
+\hline 
+4 & C3S (m) & Synthetic babble: C31 (m) + C34 (m) + C35 (m)\tabularnewline
+\hline 
+5 & C3S (m) & Synthetic babble: C3F (m) + C3C (f) + C35(m)\tabularnewline
+\hline 
+6 & C3S (m) & Synthetic babble: C3F (m) + C3C (f)\tabularnewline
+\hline 
+7 & C3S (m) & Competing speaker: C3F(m)\tabularnewline
+\hline 
+8 & C3S (m) & NOIZEUS car\tabularnewline
+\hline 
+9 & C3S (m) & NOIZEUS babble\tabularnewline
+\hline 
+10 & C3S (m) & NOIZEUS street\tabularnewline
+\hline 
+\end{tabular}
 \end{table}
 
 
@@ -152,7 +191,7 @@ however the implementation was not flexible and the script was not
 found to be suited to the required test. A new \ac{MOS} and \ac{CCR}
 script was created, in alignment with the requirements outlined by
 the \citet{InternationalTelecommunicationUnion1996}. The resulting
-code is given in \Cref{lst:MOSScript,lst:MOS}, and has been submitted
+code is given in \cref{lst:MOSScript,lst:MOS}, and has been submitted
 to MATLAB Central and GitHub to share with the community \citep{Gillman2014}.
 
 The scales used are given in \tabref{MOS-CCR-Scales}. Two \ac{MOS}
@@ -326,7 +365,7 @@ The script to implement the \ac{HTK} setup, training, extraction
 and evaluation steps was based on that developed by \citet{Quill2014},
 and is given in \ref{lst:ASR}. A basic overview of the script's function
 is given in \algref{ASR}. The parameters used in performing the \ac{MFCC}
-domain \ac{ASR} are given in \Cref{lst:MFC-config,lst:MFC-proto}.
+domain \ac{ASR} are given in \cref{lst:MFC-config,lst:MFC-proto}.
 
 \begin{algorithm}
 \begin{enumerate}
@@ -338,7 +377,7 @@ domain \ac{ASR} are given in \Cref{lst:MFC-config,lst:MFC-proto}.
 grammar rules, file lists, transcription summaries, etc.
 \item Initialise empty initial \acp{HMM} using \ac{HTK}'s \lstinline[language=bash]!HVITE!,
 based on a user defined configuration and prototype for the desired
-feature vectors. In this case, these were those given in \Cref{lst:MFC-config,lst:MFC-proto}.
+feature vectors. In this case, these were those given in \cref{lst:MFC-config,lst:MFC-proto}.
 \end{enumerate}
 \item Training
 
@@ -428,42 +467,6 @@ prerecorded noise types were drawn from the NOIZEUS corpus presented
 in \citep{Hu2006}. The speakers used in each test are outlined in
 \tabref{test-params}.
 
-\begin{table}
-\protect\caption{\label{tab:test-params}Simulations and associated parameters}
-
-
-\begin{centering}
-\begin{tabular}{|c|c|c|}
-\hline 
-Test Number & \ac{SoI} (sex) & Noise\tabularnewline
-\hline 
-\hline 
-1 & C3C (f) & Competing speaker: C3F (m)\tabularnewline
-\hline 
-2 & C3L (f) & Competing speaker: C31 (m)\tabularnewline
-\hline 
-3 & C3S (m) & Competing speaker: C31 (m)\tabularnewline
-\hline 
-4 & C3S (m) & Synthetic babble: C31 (m) + C34 (m) + C35 (m)\tabularnewline
-\hline 
-5 & C3S (m) & Synthetic babble: C3F (m) + C3C (f) + C35(m)\tabularnewline
-\hline 
-6 & C3S (m) & Synthetic babble: C3F (m) + C3C (f)\tabularnewline
-\hline 
-7 & C3S (m) & Competing speaker: C3F(m)\tabularnewline
-\hline 
-8 & C3S (m) & NOIZEUS car\tabularnewline
-\hline 
-9 & C3S (m) & NOIZEUS babble\tabularnewline
-\hline 
-10 & C3S (m) & NOIZEUS street\tabularnewline
-\hline 
-\end{tabular}
-\par\end{centering}
-
-\end{table}
-
-
 The enhancement algorithms used were those proposed by \citet{mohammadiha2013supervised},
 two \ac{HMM} algorithms with \ac{BNMF} output distributions. One
 uses a fully supervised method, and the other does not train for noise,
@@ -529,7 +532,7 @@ position within the phoneme segment is also randomly selected, i.e.,
 drawn phoneme samples are not always the beginning or the end of the
 phoneme sound. The algorithm used to produce drawn phoneme recordings
 is given in \algref{Producing-phoneme-training}, and the code in
-\Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}.
+\cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}.
 
 \begin{algorithm}
 \begin{enumerate}

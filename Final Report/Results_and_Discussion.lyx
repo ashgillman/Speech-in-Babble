@@ -1,0 +1,8609 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\include{preamble}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 49
+Float
+        Type		listing
+        GuiName	Listing
+        Placement	tbp
+        Extension	lol
+        NumberWithin	none
+        Style		ruled
+        ListName	"List of Listings"
+        IsPredefined	false
+        UsesFloatPkg	true
+        RefPrefix	lst
+End
+\end_local_layout
+\language australian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\boxbgcolor #b2b2b2
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 40mm
+\topmargin 25mm
+\rightmargin 25mm
+\bottommargin 25mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Results and Discussion
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acresetall
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Humanly Perceived Improvement vs.
+ Machine Performance
+\end_layout
+
+\begin_layout Standard
+The aim of conducting research into existing data was to determine, at a
+ basic level, the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ in the context of speech enhancement.
+\end_layout
+
+\begin_layout Subsection
+Investigating Existing Data
+\end_layout
+
+\begin_layout Standard
+The direct comparison method outlined in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Method-Existing-Data}
+\end_layout
+
+\end_inset
+
+ was carried out on the data given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:litresults"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:litresults"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ The R code used to perform this analysis is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:directComp"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR"
+
+\end_inset
+
+ shows the results obtained, comparing the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement against the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ improvement.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR-LOESS"
+
+\end_inset
+
+ shows the data fitted with an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LOESS}
+\end_layout
+
+\end_inset
+
+ model and 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR-LM"
+
+\end_inset
+
+ shows the data fitted with an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LM}
+\end_layout
+
+\end_inset
+
+ method.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/dir/lit/HumanMachineAllLOESS.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direct-PESQ-PRR-LOESS"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{LOESS}
+\end_layout
+
+\end_inset
+
+ fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/dir/lit/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direct-PESQ-PRR-LM"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{LM}
+\end_layout
+
+\end_inset
+
+ fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direct-PESQ-PRR"
+
+\end_inset
+
+Direct comparison of human (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+) vs.
+ machine (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+) quality improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Additionally, a Pearson's correlation table was formed over a number of
+ the evaluation measures, depicted in the correlogram in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:litResCorr"
+
+\end_inset
+
+.
+ The sparsity in this figure is due to the limited amount of pre-existing
+ data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Subsubsection*
+Correlograms
+\end_layout
+
+\begin_layout Plain Layout
+A correlogram is a plot designed to allow the reader to quickly observe
+ the relationship between a number of variables.
+ In the correlograms included within this thesis, the leading diagonal shows
+ the variable name corresponding to that row and column.
+ The upper panels display a scatterplot where the y-axis represents the
+ the variable of the panel's row, and the x-axis represents the variable
+ of the panel's column.
+ The lower panels show the Pearson's correlation of the two variable the
+ panel intersects, the 95% confidence interval.
+ Additionally, lower panels are highlighted in red for negative correlations
+ and blue for positive correlations, with the darkness indicating magnitude.
+\end_layout
+
+\begin_layout Plain Layout
+So the darker shaded panels in the lower half indicate variables that are
+ strongly correlated, and allows the reader to quickly establish which relations
+hips are meaningful.
+ The relationship can be visually confirmed by checking the scatterplot
+ in the upper half.
+ The relationships can then be further investigated by forming further plots
+ of the variables of interest.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/cor/litResCorrgram.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:litResCorr"
+
+\end_inset
+
+Correlogram of some of the evaluation measures assessed in existing data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These results showed a general, positive correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ improvement, and by extension between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+ The level of correlation appeared to be somewhat low, however comparison
+ with 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:litResCorr"
+
+\end_inset
+
+ indicated a correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PESQimp
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRimp
+\end_layout
+
+\end_inset
+
+ of approximately 0.58.
+ The same figure indicated a correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PESQraw
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSraw
+\end_layout
+
+\end_inset
+
+ of approximately 0.65, which were measures that have been shown to be correlated
+ in literature 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kitawaki2007,Rix2003,Rix2001"
+
+\end_inset
+
+.
+ Therefore, the correlation of 0.58 between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ improvement can be considered significant.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:litResCorr"
+
+\end_inset
+
+ Also indicated a very high correlation between the raw 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ result and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+These observations indicated a good correlation between human recognition
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+) and human estimated recognition (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+); as well as a strong correlation between human estimated recognition (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+) and machine recognition (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness).
+ Therefore, it was inferred that there is likely a good correlation between
+ human recognition and machine recognition.
+\end_layout
+
+\begin_layout Standard
+A number of further observations were drawn from 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR"
+
+\end_inset
+
+, and are highlighted in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:direct-klt-mband,fig:direct-klt-pklt,fig:direct-pklt-logmmse-spu-4,fig:
+direct-highcorr}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Results found using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LOESS}
+\end_layout
+
+\end_inset
+
+ fitted method, shown in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR-LOESS"
+
+\end_inset
+
+ indicated that the data could be approximated by a linear model: the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LOESS}
+\end_layout
+
+\end_inset
+
+ fitted lines were, in most cases, approximately linear.
+ The results for Wiener algorithms were a notable exception, with a non-linear
+ variation, even when the outliers are ignored.
+ Overall, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{LM}
+\end_layout
+
+\end_inset
+
+ fit in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR-LM"
+
+\end_inset
+
+ is accepted to be accurate.
+ The linear model was used in the following observations.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/lit/KLT-MBAND/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:direct-klt-mband"
+
+\end_inset
+
+Direct comparison of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ highlighting 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{KLT}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MBAND}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Despite the high correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ observed, there is still evidence to show that algorithms' performances
+ vary depending on the performance measure used.
+ For example, highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:direct-klt-mband"
+
+\end_inset
+
+ are two algorithms, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ method and the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MBAND}
+\end_layout
+
+\end_inset
+
+ method, that exhibited similar performances when evaluated by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+, a machine measure.
+ However, when evaluated by a human perceptual method, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ method clearly performed better.
+ In fact, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ method exhibited one of the best performances seen on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale, whereas the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MBAND}
+\end_layout
+
+\end_inset
+
+ method was the worst performer on this scale, exhibiting loss in perceptual
+ quality, as indicated by the negative performance.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/lit/KLT-pKLT/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:direct-klt-pklt"
+
+\end_inset
+
+Direct comparison of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ highlighting 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{KLT}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{pKLT}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:direct-klt-pklt"
+
+\end_inset
+
+ shows the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ improvement with the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{pKLT}
+\end_layout
+
+\end_inset
+
+ algorithm performances highlighted.
+ This was noted as an example of two very similar algorithms, with varying
+ performance between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ results.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ results exhibited better performance for a human listener, as the points
+ laid higher on the y-axis, whereas the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{pKLT}
+\end_layout
+
+\end_inset
+
+ results exhibited better performance for a machine recogniser, as the points
+ laid higher on the x-axis.
+\end_layout
+
+\begin_layout Standard
+Such results support the proposition that some algorithms are inherently
+ suited either towards human or machine listeners.
+ However, this shows that such distinction is not necessarily related to
+ the algorithm class, since the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{pKLT}
+\end_layout
+
+\end_inset
+
+ algorithms belonged to the same 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{KLT}
+\end_layout
+
+\end_inset
+
+ class, but produced different results.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/lit/pKLT-logMMSE-SPU-4/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:direct-pklt-logmmse-spu-4"
+
+\end_inset
+
+Direct comparison of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ highlighting 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{logMMSE}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SPU}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{pKLT}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{pKLT}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{logMMSE-SPU-4}
+\end_layout
+
+\end_inset
+
+ algorithms were observed to show reasonable improvement in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ as the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ increased, but little to no improvement in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+.
+ This is highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:direct-pklt-logmmse-spu-4"
+
+\end_inset
+
+, and is apparent by the near-zero gradient.
+ These algorithms likely introduce distortions into the signal in the process
+ of enhancement that the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ algorithm was immune to, however would be distracting to a human and therefore
+ performed badly under the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ evaluation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/lit/MMSE-SPU-STSA-wcosh-STSA-weuclid-logMMSE-SPU-3/HumanMachineAllLM.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig/R/dir/lit/HumanMachineAllLegend.pdf
+	width 20text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:direct-highcorr"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{STSA-wcosh}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{STSA-weuclid}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{logMMSE-SPU-3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The final observation drawn from 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Direct-PESQ-PRR"
+
+\end_inset
+
+ is highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:direct-highcorr"
+
+\end_inset
+
+, which shows the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE-SPU}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{STSA-wcosh}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{STSA-weuclid}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{logMMSE-SPU-3}
+\end_layout
+
+\end_inset
+
+ algorithms.
+ These algorithms show a high, positive correlation with one another, as
+ well as exhibiting the best results measured for both 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+ The evidence suggests such a response is the ideal case, and that there
+ exists algorithms which are capable of performing well for both human and
+ machine recognisers.
+\end_layout
+
+\begin_layout Standard
+Therefore, existing data showed that in general there was a correlation
+ between enhancement for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+ However, one cannot be used as a reliable measure of the other, as there
+ are notable exceptions where enhancement for one class did not show enhancement
+ for the other.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Independent Investigation into 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{MR}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Independent-Investigation-Res"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An independent investigation was conducted in which a number of enhancement
+ algorithms were implemented.
+ The enhanced waveforms were then analysed using a number of enhancement
+ methods, covering both 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+ The goal was to determine the correlation between evaluation measures of
+ enhancement, specifically those for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ with those for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+These results corresponded to algorithms listed in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Algorithms"
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "tab:Algorithms"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ and the evaluation measures outlined in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Independent-Investigation-Meth}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:Independent-Investigation-Meth"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ A correlogram of the results was formed in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+ to give an overview of the results and how measures correlated with one
+ another.
+ In this figure:
+\end_layout
+
+\begin_layout Itemize
+the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+utterances
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemes
+\end_layout
+
+\end_inset
+
+ rows/columns correspond to the training given to the enhancement algorithm;
+\end_layout
+
+\begin_layout Itemize
+``Imp'' refers to improvement comparatively with the signal before enhancement,
+ i.e., 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+pesqImp
+\end_layout
+
+\end_inset
+
+ refers to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score after enhancement minus the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score before enhancement;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSle
+\end_layout
+
+\end_inset
+
+ refers to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort scale 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "InternationalTelecommunicationUnion1996"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+CMOS
+\end_layout
+
+\end_inset
+
+ refers to the comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRcorr
+\end_layout
+
+\end_inset
+
+ refers to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measured as the percentage correct, or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRacc
+\end_layout
+
+\end_inset
+
+ refers the the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measures as the accuracy, defined as the number of correct phonemes minus
+ the number of deletions, substitutions and insertions, divided by the number
+ of phonemes; and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+segSNR
+\end_layout
+
+\end_inset
+
+ refers to the segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The results for the various evaluation measures are given in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
+cc-imp}
+\end_layout
+
+\end_inset
+
+.
+ These plots also show box plots of the five-point summaries of the results.
+ These results were obtained to be used in investigating the correlation
+ between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ and also to assess the performance of the proposed changes to the enhancement
+ algorithms outlined in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Develop-Phoneme-Dependent"
+
+\end_inset
+
+.
+ The changes proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Training}
+\end_layout
+
+\end_inset
+
+ are implemented in the algorithms 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMMSE
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMohammadiaOnline
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMohammadiaSupervised
+\end_layout
+
+\end_inset
+
+.
+ The changes proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Base}
+\end_layout
+
+\end_inset
+
+ are implemented in the algorithms 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeModifiedOnline
+\end_layout
+
+\end_inset
+
+ and
+
+\begin_inset Newline linebreak
+\end_inset
+
+
+\lang australian
+
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeModifiedSupervised
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Observations
+\end_layout
+
+\begin_layout Standard
+During the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ tests it was noted that most participants complained that occasionally
+ a signal would not play.
+ Upon further investigation it was determined that the signal was in fact
+ playing, but consisted of silence.
+ Subjects were instructed to continue answering the questions as they were
+ worded, and thus these signals were given the minimum scores.
+ This is reflected in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
+\end_layout
+
+\end_inset
+
+, where the ideal binary mask algorithms scored poorly.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/dir/my/corr.pdf
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-Corr"
+
+\end_inset
+
+Correlogram of results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/pesq.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PESQ"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/pesqImp.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PESQ-imp"
+
+\end_inset
+
+Improvement in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ score due to enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/segSNR.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-segSNR"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/segSNRImp.pdf
+	width 100text%
+	height 95theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-segSNR-imp"
+
+\end_inset
+
+Improvement in segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ score due to enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/MOS.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-MOS"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/MOSle.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-MOSle"
+
+\end_inset
+
+Listening effort 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/CMOS.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-CMOS"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/PRRcorr.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PRRcorr"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/PRRcorrImp.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PRRcorr-imp"
+
+\end_inset
+
+Improvement in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness due to enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/PRRacc.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PRRacc"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of independent investigation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/PRRaccImp.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-PRRacc-imp"
+
+\end_inset
+
+Improvement in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy due to enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+On the relationship between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+, the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and the various 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ measures was shown to be very low.
+ This was a surprising results as it has generally been determined in literature
+ that the two correlate well 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kitawaki2007,Rix2003,Rix2001"
+
+\end_inset
+
+, albeit with some exceptions 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Liu2006"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Put into lit rev
+\end_layout
+
+\end_inset
+
+.
+ This correlation is highlighted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesq-mos-with-idbm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement bh
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesq-mos.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesq-mos-with-idbm"
+
+\end_inset
+
+With the ideal binary mask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesq-mos_no-IDBM.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesq-mos-without-idbm"
+
+\end_inset
+
+Without the ideal binary mask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesq-mos_leg.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesq-mos"
+
+\end_inset
+
+Scatterplot of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The greatest deviation to the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ was due to the results of the ideal binary mask algorithms (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+IDBM
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+).
+ It was also noted that the ideal binary mask algorithms performed very
+ poorly overall on the subjective 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ scales in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:my-MOS,fig:my-MOSle,fig:my-CMOS}
+\end_layout
+
+\end_inset
+
+.
+ Furthermore, ideal binary mask algorithms had a very high variation in
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ performance in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-PESQ"
+
+\end_inset
+
+, receiving both the highest and the lowest scores of all tests on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale.
+ Therefore, it was suspected that the ideal binary mask corrupted speech
+ in such a way that was not detected by the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ algorithm.
+\end_layout
+
+\begin_layout Standard
+It was found that when the ideal binary mask algorithm data was omitted
+ the correlation between the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ increased, as demonstrated in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesq-mos-without-idbm"
+
+\end_inset
+
+.
+ This indicated there were specific occurrences for which the relationship
+ between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ demonstrated in literature do not hold, i.e., distortions detectable by human
+ hearing but not by the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ algorithm.
+\end_layout
+
+\begin_layout Standard
+The correlation of 0.173 between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ is still low.
+ This was likely in part due to the low sample size used, with only ten
+ subjects.
+ Also, the standard 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ measure is highly subjective.
+ This was possibly due to listeners not having a reference for scoring.
+ Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ is therefore advantageous in that it asks the listener to rate the difference
+ between two recordings, so the listener has a reference.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesqimp-cmos"
+
+\end_inset
+
+ shows similar results to 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesq-mos"
+
+\end_inset
+
+, however instead considers the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement as opposed to the enhanced 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ score, and considers the comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ instead of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement was used due to it being more similar to comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, as these both measure the differential improvement (or distortion).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesqimp-cmos.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesqimp-cmos-with-idbm"
+
+\end_inset
+
+With the ideal binary mask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesqimp-cmos_no-IDBM.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesqimp-cmos-without-idbm"
+
+\end_inset
+
+Without the ideal binary mask
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/my/pesqimp-cmos_leg.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-pesqimp-cmos"
+
+\end_inset
+
+Scatterplot of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement vs.
+ comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When, for the same reason as stated above, the ideal binary mask results
+ were omitted (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesqimp-cmos-without-idbm"
+
+\end_inset
+
+) the correlation rose to 0.436, which represented a fair correlation and
+ was considered significant.
+ Also of note were the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonememohammadiaOnline
+\end_layout
+
+\end_inset
+
+ results in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-pesqimp-cmos-without-idbm"
+
+\end_inset
+
+ that scored between 1 and 2 on the comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ test, but between -0.5 and -1 on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ improvement scale.
+ A difference of 1 on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale represents a significant distortion, however these particular results
+ were rated by human listeners to be somewhere between ``slightly better''
+ and ``better''.
+\end_layout
+
+\begin_layout Standard
+Results indicated that the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale may be better considered to be a rough indicator for human perception
+ of enhancement, rather than a direct measure of it.
+ Circumstances in which human hearing detected significant distortions have
+ not been evaluated as so on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scale.
+ However, not enough 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ test subjects were included in testing to conclusively evaluate the reliability
+ of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Results also indicated that comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ may be a less subjective measure than regular 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, due to the inherent use of a reference.
+ Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ also was found to lend itself to measuring enhancement, so is a better
+ candidate than regular 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ for measuring enhancement.
+\end_layout
+
+\begin_layout Subsubsection*
+On the relationship between similar measures
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ evaluation measures, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOS
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSle
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+CMOS
+\end_layout
+
+\end_inset
+
+, had a strong correlation with one-another in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+, all at approximately 90%.
+ This was expected between similar measures.
+ However, it was noted that the same was not true for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measures, where the correlation between the correctness (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRcorr
+\end_layout
+
+\end_inset
+
+) and the accuracy (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRacc
+\end_layout
+
+\end_inset
+
+) was found to be negative.
+ This highlighted the balance between an under-trained and under-discriminative
+ algorithm, which may detect a high number of correct phonemes (high correctness
+) but poorly reduce noise and therefore recognise extra incorrect phonemes
+ (low accuracy); and an over-trained and over-discriminative algorithm,
+ which may detect a lower number of correct phonemes (low correctness) but
+ effectively reduce noise and therefore have minimal false positiveness(increase
+d accuracy).
+\end_layout
+
+\begin_layout Subsubsection*
+On the relationship between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{MR}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+ showed a significant positive correlation between the various 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ measures (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOS
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSle
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+CMOS
+\end_layout
+
+\end_inset
+
+) and the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measured as correctness (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRcorr
+\end_layout
+
+\end_inset
+
+).
+ However, the figure also shows an almost as significant negative correlation
+ between the various 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ measures and the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ measured as accuracy (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRacc
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byTest/mos-prrcorr.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-prrcorr"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ correctness
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byTest/mos-prracc.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-prracc"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ accuracy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byTest/cmos-prrcorrimp.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-prrcorrimp"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ correctness improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byTest/cmos-prraccimp.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-prraccimp"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ accuracy improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/pair/byTest/mos-prr-leg.pdf
+	width 60line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:hr-mr"
+
+\end_inset
+
+Scatterplot of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MR}
+\end_layout
+
+\end_inset
+
+ measures, highlighting test conditions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:hr-mr"
+
+\end_inset
+
+ show scatterplots measuring human performance on the y-axis and machine
+ improvement on the x-axis, and highlighting in colour the test conditions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:mos-prrcorr,fig:cmos-prrcorrimp}
+\end_layout
+
+\end_inset
+
+ measured the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:mos-prrcorr"
+
+\end_inset
+
+ also shows the relative density of points, revealing that certain test
+ conditions are clustered outliers and that the correlation might otherwise
+ have been higher.
+ It was seen that tests where there was one competing speaker of the same
+ sex, highlighted in red, were characterised by a mid-range 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ result, but a high correctness 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+ This indicated the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system was able to still detect the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+'s voice, however a human listener scored the signal as average.
+ This also supported previous observations indicating certain systematic
+ conditions for which the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ deviate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:mos-prracc,fig:cmos-prraccimp}
+\end_layout
+
+\end_inset
+
+ measured the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy.
+ These figures showed that once the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ phoneme insertions are taken into account the correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ no longer held.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:hr-mr-alg"
+
+\end_inset
+
+ shows the same data as 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:cmos-prrcorrimp,fig:cmos-prraccimp}
+\end_layout
+
+\end_inset
+
+, but with colour highlighting the enhancement algorithm as opposed to the
+ test conditions.
+ A very interesting observation made was the clustered performance of the
+ ideal binary mask (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+IDBM
+\end_layout
+
+\end_inset
+
+) and phoneme-dependent ideal binary mask (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+) in the lower right corner, especially under accuracy 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+ These algorithms achieved the highest 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy score of any algorithm, some approaching a 30% accuracy increase,
+ despite performing poorly on all 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and statistical measures.
+ These results were also noted by observing the ideal binary mask algorithms
+ performance in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:my-PRRacc,fig:my-PRRacc-imp}
+\end_layout
+
+\end_inset
+
+, and is reflected on by the observation made in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Independent-Investigation-Res}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byAlg/cmos-prrcorrimp.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-prrcorrimp-alg"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ correctness improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/R/pair/byAlg/cmos-prraccimp.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-prraccimp-alg"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{ASR}
+\end_layout
+
+\end_inset
+
+ accuracy improvement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/pair/byAlg/mos-prr-leg.pdf
+	width 90line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:hr-mr-alg"
+
+\end_inset
+
+Scatterplot of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MR}
+\end_layout
+
+\end_inset
+
+ measures, highlighting enhancement algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The explanation given for this behaviour was that the ideal binary mask
+ algorithms were effective in eliminating the competing noise, and thus
+ reducing false insertions.
+ However, in the process these algorithms distort the signal, severely for
+ humans, thereby drastically reducing human intelligibility, and also causing
+ the loss in correctness 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ exhibited in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-PRRcorr-imp"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Therefore, the results of the independent investigation into 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+ perception of speech enhancement agreed with the results of the investigation
+ into existing data.
+ It has been determined that that in general there was a correlation between
+ enhancement for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MR}
+\end_layout
+
+\end_inset
+
+.
+ However, one cannot be used as a reliable measure of the other, as there
+ are notable exceptions where enhancement for one class did not show enhancement
+ for the other.
+\end_layout
+
+\begin_layout Section
+Assessing 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+ Algorithm Training
+\end_layout
+
+\begin_layout Standard
+The following are the results of investigations attempting to answer Research
+ Question 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:ResQ2"
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\backslash
+RQtwo{}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Investigating Training Requirements
+\end_layout
+
+\begin_layout Standard
+The results of the experiments proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Investigating-Training-Req}
+\end_layout
+
+\end_inset
+
+ are given in this section.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
+\end_layout
+
+\end_inset
+
+ show the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort, comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm developed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mohammadiha2013supervised"
+
+\end_inset
+
+ as a function of the number of utterances used in training.
+\end_layout
+
+\begin_layout Standard
+Plots in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+cmos,fig:vary-train-prrcorr,fig:vary-train-prracc,fig:vary-train-segsnr}
+\end_layout
+
+\end_inset
+
+ each are arranged with the number of trained utterances on the x-axis and
+ test score on the y-axis.
+ Furthermore, the plots are arranged in a grid with rows corresponding to
+ the enhancement algorithm and columns corresponding to the test.
+ Test labels give information on the speaker ID and in brackets the sex
+ of both the SoI, and the speakers used to form the noise babble.
+ Finally, series colour represents the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ used for the test data, and the line type is dashed when representing the
+ score of the dirty signal before enhancement.
+ The R script used to form these plots is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:trainReq"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/pesq.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-pesq"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/MOS.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-mos"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/mosle.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-mosle"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/CMOS.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-cmos"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/prrcorr.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-prrcorr"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/prracc.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-prracc"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/train/segSNR.pdf
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-segsnr"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ results of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm as training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All measurements, for all enhancement methods, tended to agree that there
+ was no particular correlation between training and performance.
+ Before tests were performed, it was hypothesised that increasing the number
+ of utterances provided as training would allow the algorithm to produce
+ a better model, with more data to learn from.
+ However, the number of utterances provided for training of the online 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithm in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-pesq"
+
+\end_inset
+
+ had no significant impact on 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ performance.
+ This conclusions is supported by 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-PRRcorr-imp"
+
+\end_inset
+
+, showing no significant correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+utterances
+\end_layout
+
+\end_inset
+
+ and any of the test measures, with the exception of 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+prrCorr
+\end_layout
+
+\end_inset
+
+.
+ However, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-prrcorr"
+
+\end_inset
+
+ showed no evidence of a correlation between the number of utterances for
+ training and the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness.
+\end_layout
+
+\begin_layout Standard
+A notable observation was that for the human and machine measures, those
+ in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:vary-train-pesq,fig:vary-train-mos,fig:vary-train-mosle,fig:vary-train-
+cmos,fig:vary-train-prrcorr,fig:vary-train-prracc}
+\end_layout
+
+\end_inset
+
+, there was a high variability in performance for ten or less utterances.
+ This indicated that the algorithms were under-trained when 10 or less utterance
+s were used.
+\end_layout
+
+\begin_layout Standard
+It was also noted that in some cases, the performance was better in the
+ under-trained case, for example in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-pesq"
+
+\end_inset
+
+ for 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+mohammadiaSupervised
+\end_layout
+
+\end_inset
+
+ with the
+
+\begin_inset Newline linebreak
+\end_inset
+
+
+\lang australian
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)+c3c(f)+c35(m)
+\end_layout
+
+\end_inset
+
+ noise type.
+ This indicated that the training method used was not optimal.
+ This provided further reason for implementing the phoneme-dependent algorithms,
+ in an attempt to optimise the training by reducing the training data size
+ whilst maximising the amount of voice information.
+\end_layout
+
+\begin_layout Standard
+Thus is was shown that approximately 10 to 20 utterances was required to
+ sufficiently train the online and supervised 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{BNMF}
+\end_layout
+
+\end_inset
+
+ algorithms, but increasing beyond that level had little effect.
+ It has also been shown that this type of training is not optimal, showing
+ opportunity for phoneme-dependent training.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Phoneme-Dependent Variation Performance
+\end_layout
+
+\begin_layout Standard
+The results of the phoneme-dependent 
+\series bold
+training
+\series default
+ algorithm proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Training}
+\end_layout
+
+\end_inset
+
+ and the phoneme-dependent 
+\series bold
+base
+\series default
+ algorithm proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Base}
+\end_layout
+
+\end_inset
+
+ are given in this section.
+\end_layout
+
+\begin_layout Standard
+The typical spectrograms of the drawn phonemes are given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:drawn-phoneme-spectrogram"
+
+\end_inset
+
+, showing the frequency characteristics of each phoneme.
+ The voiced phonemes were seen to contain lower frequency components and
+ the voiceless phonemes contained higher frequency components as expected.
+ The differences in phonemes was clear and identifiable, indicating that
+ the method worked as intended.
+ One issue noted was that voiceless stops, were too short and were occasionally
+ missed.
+ A noted example was in the first two phoneme samples in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:mos-comparison-phn-1"
+
+\end_inset
+
+, which were /
+\shape italic
+p
+\shape default
+/ and /
+\shape italic
+t
+\shape default
+/.
+ For such phonemes, high frequency components would have been expected,
+ but mostly silence present with some lower frequency components.
+ The same phonemes in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:mos-comparison-phn-5"
+
+\end_inset
+
+ revealed that only two out of the ten phoneme slices contained the expected
+ high frequency components.
+ However, these kind of errors were expected and is one of the reasons that
+ the number of slices per phoneme was varied, which is discussed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Varying-Phns}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There was little to no visual difference after 50 to 100 phoneme samples
+ were drawn.
+ Additionally, the length of recordings stopped increasing around this point.
+ After this the saturation point for the recordings used was reached, where
+ there were not enough phoneme occurrences to support having more samples.
+ So the tests done for more samples per phoneme than 100 were, for the most
+ part, redundant.
+\end_layout
+
+\begin_layout Standard
+The performance of the phoneme-dependant algorithms have already been given
+ in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
+cc-imp}
+\end_layout
+
+\end_inset
+
+, since these algorithms were also considered in the previous investigation.
+\end_layout
+
+\begin_layout Standard
+Additionally given are plots comparing the performance of algorithms without
+ modification against those with phoneme-dependent modification.
+ These are given in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
+:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fi
+g:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,f
+ig:segsnrimp-comparison-phn}
+\end_layout
+
+\end_inset
+
+.
+ In these plots, the x-axis measures the performance of the original algorithm,
+ and the y-axis measures performance of the modified algorithm.
+ Therefore, any points lying above the diagonal line show better performance
+ for the modified algorithm, and below the line show better performance
+ for the original algorithm.
+\end_layout
+
+\begin_layout Standard
+The phoneme dependent training data changes proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Training}
+\end_layout
+
+\end_inset
+
+ are implemented in the algorithms 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMMSE
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMohammadiaOnline
+\end_layout
+
+\end_inset
+
+ and
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeMohammadiaSupervised
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
+cc-imp}
+\end_layout
+
+\end_inset
+
+, and are labelled ``Phoneme Training'' in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
+:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fi
+g:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,f
+ig:segsnrimp-comparison-phn}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The phoneme dependent base matrix changes proposed in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsecref{Phoneme-Base}
+\end_layout
+
+\end_inset
+
+ are implemented in the algorithms 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeModifiedOnline
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeModifiedSupervised
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:my-PESQ,fig:my-PESQ-imp,fig:my-segSNR,fig:my-segSNR-imp,fig:my-PRRcorr,
+fig:my-MOS,fig:my-MOSle,fig:my-CMOS,fig:my-PRRcorr-imp,fig:my-PRRacc,fig:my-PRRa
+cc-imp}
+\end_layout
+
+\end_inset
+
+, and are labelled ``Phoneme Dictionary (Modified)'' in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:pesq-comparison-phn,fig:mos-comparison-phn,fig:mosle-comparison-phn,fig
+:cmos-comparison-phn,fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn,fi
+g:prracc-comparison-phn,fig:prraccimp-comparison-phn,fig:segsnr-comparison-phn,f
+ig:segsnrimp-comparison-phn}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-1phnSpectrogram.eps
+	lyxscale 50
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-comparison-phn-1"
+
+\end_inset
+
+One sample per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-5phnSpectrogram.eps
+	lyxscale 50
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-comparison-phn-5"
+
+\end_inset
+
+Five samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-10phnSpectrogram.eps
+	lyxscale 50
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ten samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-50phnSpectrogram.eps
+	lyxscale 50
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+50 samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-100phnSpectrogram.eps
+	lyxscale 50
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+100 samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-500phnSpectrogram.eps
+	lyxscale 50
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+500 samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fig/spectrogram/drawPhn/c3s-999phnSpectrogram.eps
+	lyxscale 50
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+999 samples per phoneme
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:drawn-phoneme-spectrogram"
+
+\end_inset
+
+Typical spectrogram of randomly drawn phoneme samples for speaker C3S
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/pesq.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pesq-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/MOS.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mos-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/MOSle.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mosle-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/CMOS.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cmos-comparison-phn"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/PRRcorr.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prrcorr-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/PRRcorrimp.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prrcorrimp-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness improvement comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/PRRacc.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prracc-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/PRRaccimp.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prraccimp-comparison-phn"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy improvement comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/segSNR.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:segsnr-comparison-phn"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/my/phnCompXY/segSNRImp.pdf
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:segsnrimp-comparison-phn"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ improvement comparison for phoneme-dependent vs.
+ original enhancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Performance for Humans
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:pesq-comparison-phn"
+
+\end_inset
+
+ indicated that the phoneme-dependent 
+\series bold
+training
+\series default
+ modifications caused, in general, a decline in performance measured with
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+.
+ The opposite was true, however, for the phoneme-dependent 
+\series bold
+base
+\series default
+ modification algorithms.
+ These algorithms mostly scored higher, with the exceptions mostly belonging
+ the the NOIZEUS street noise tests.
+\end_layout
+
+\begin_layout Standard
+This is in contrast, however, to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ results presented in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+\end_layout
+
+\end_inset
+
+.
+ These results did not show any specific pattern of improvement across different
+ noise types.
+ Thus, results indicated that the phoneme dependence modifications to these
+ algorithms did not present any significant improvement for human listeners.
+\end_layout
+
+\begin_layout Standard
+It was noted, however, that the points that did show better enhancement
+ on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ scales were more likely to be of the synthetic babble noise types, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)+c3c(f)+c35(m)
+\end_layout
+
+\end_inset
+
+.
+ These are also associated with the more ``difficult'' forms of noise.
+ Therefore, it is possible that using phoneme dependence in algorithms may
+ be useful in source separation applications.
+ This highlights the ability of phoneme dependence to distinguish between
+ voices, but not as an efficient method of extracting speech from other
+ noise.
+\end_layout
+
+\begin_layout Standard
+A potential application for such an algorithm is as a second stage noise
+ cleaning algorithm specifically for competing speaker noise, or speaker
+ separation.
+ In such a system, another enhancement algorithm applicable to a broader
+ range of noise types but not for a specific voice, such as an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE}
+\end_layout
+
+\end_inset
+
+ algorithm, could be used to filter out non-speech noise, and the phoneme-depend
+ent algorithm then used to separate the intended voice.
+\end_layout
+
+\begin_layout Subsection
+Performance for Machines
+\end_layout
+
+\begin_layout Standard
+The phoneme-dependent 
+\series bold
+training
+\series default
+ modifications failed to improve machine correctness almost completely,
+ as indicated in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:prrcorr-comparison-phn,fig:prrcorrimp-comparison-phn}
+\end_layout
+
+\end_inset
+
+.
+ However, with the exception of the ideal binary mask algorithms and the
+ 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)
+\end_layout
+
+\end_inset
+
+ noise type, the phoneme-dependent 
+\series bold
+training
+\series default
+ modifications tended to improve the machine correctness.
+ Especially good performance was noted for the NOIZEUS car noise.
+ This suggested that using phoneme dependence tended to both increase the
+ algorithm's ability to remove noise, but also increased the distortion.
+ This observation was logical, as using phoneme-dependent 
+\series bold
+training
+\series default
+ was effectively a way to prevent over-training, so some under-trained character
+istics like this were to be expected.
+\end_layout
+
+\begin_layout Standard
+Potential application for the phoneme-dependent training algorithm lays
+ in in-car electronics.
+ The algorithms have been shown to improve for car noise.
+ The NOIZEUS car noise included muffled voices within the recording.
+\end_layout
+
+\begin_layout Standard
+Interestingly, the increased correctness suggested that the noise reduction
+ outweighed the distortion for a machine recogniser.
+ The poor performance for the 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+c3f(m)
+\end_layout
+
+\end_inset
+
+ noise type was attributed to the fact that both the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SoI}
+\end_layout
+
+\end_inset
+
+ and the noise were a similar male voice.
+ The poor performance indicated that phoneme-dependent 
+\series bold
+training
+\series default
+ did not particularly aid in separating similar voices.
+ The poor accuracy was likely due to a high number of false positive phoneme
+ detections, detected from the second voice.
+\end_layout
+
+\begin_layout Standard
+The phoneme-dependent 
+\series bold
+base
+\series default
+ modifications showed improvement in correctness, unlike the phoneme-dependent
+ 
+\series bold
+training
+\series default
+ modifications, as best observed in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:prrcorr-comparison-phn"
+
+\end_inset
+
+.
+ However, in terms of accuracy, no significant pattern was noted between
+ those performing better and worse than the original algorithms.
+\end_layout
+
+\begin_layout Standard
+Results indicated, therefore, that the phoneme-dependent methods were effective
+ in reducing noise, but tended also to distort the speech.
+ For machines, the noise reduction outweighed the distortion, thereby increasing
+ the accuracy.
+ However, for humans the distortions may have been distracting, thereby
+ causing the mixed results.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Varying-Phns"
+
+\end_inset
+
+Varying the Number of Samples per Phoneme
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:vary-train-phn-pesq,fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig
+:vary-train-phn-cmos,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc,fig:va
+ry-train-phn-segsnr}
+\end_layout
+
+\end_inset
+
+ show the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort, comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ correctness and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of the phoneme-dependent enhancement algorithms as a function
+ of the number of phonemes used in training.
+ These plots are arranged with the number of trained utterances on the x-axis
+ and test score on the y-axis.
+ Furthermore, the plots are arranged in a grid with rows corresponding to
+ the enhancement algorithm used and columns corresponding to the noise type
+ used in the test.
+ The series colour represents the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+ used for the test data, and dashed lines represent the score of the dirty
+ signal before enhancement.
+ The R script used to form these plots is given in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:trainReqPhn"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/pesq.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-pesq"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PESQ}
+\end_layout
+
+\end_inset
+
+ results of phoneme-dependently modified algorithms as phoneme training
+ is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/MOS.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-mos"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of phoneme-dependently modified algorithms as phoneme training
+ is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/mosle.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-mosle"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ listening effort results of phoneme-dependently modified algorithms as
+ phoneme training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/CMOS.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-cmos"
+
+\end_inset
+
+Comparative 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{MOS}
+\end_layout
+
+\end_inset
+
+ results of phoneme-dependently modified algorithms as phoneme training
+ is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/prrcorr.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-prrcorr"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ correctness results of phoneme-dependently modified algorithms as phoneme
+ training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/prracc.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-prracc"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{PRR}
+\end_layout
+
+\end_inset
+
+ accuracy results of phoneme-dependently modified algorithms as phoneme
+ training is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fig/R/trainPh/segSNR.pdf
+	lyxscale 50
+	width 100text%
+	height 95theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary-train-phn-segsnr"
+
+\end_inset
+
+Segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acs{SNR}
+\end_layout
+
+\end_inset
+
+ results of phoneme-dependently modified algorithms as phoneme training
+ is increased
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:vary-train-phn-pesq"
+
+\end_inset
+
+ tended to show little correlation between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ enhancement and the number of phonemes.
+ However, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:vary-train-phn-mos,fig:vary-train-phn-mosle,fig:vary-train-phn-cmos}
+\end_layout
+
+\end_inset
+
+ tended to show a slight increase in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ performance with the number of phonemes.
+ However, it was difficult to draw a clear conclusion, as a smaller number
+ of the tests instead showed a slight decrease.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+ agreed with the overall trend of improvement with increased phoneme samples;
+ showing a slight, yet significant, positive correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemes
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOS
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+MOSle
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+CMOS
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:vary-train-phn-prrcorr,fig:vary-train-phn-prracc}
+\end_layout
+
+\end_inset
+
+ showed, for most algorithms, no improvement in correctness with increasing
+ phonemes.
+ However, there was in some cases an increase in accuracy, especially for
+ 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonememodifiedOnline
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+, but rarely a decrease.
+ As above, the significance of the improvement is low, however a slight
+ positive correlation is present.
+\end_layout
+
+\begin_layout Standard
+For the phoneme-dependent ideal binary mask algorithm (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemeIDBM
+\end_layout
+
+\end_inset
+
+) there was a clear and significant positive correlation with the number
+ of phonemes used in training.
+ It was noted that the correctness was reduced near to zero for one sample
+ per phoneme.
+ For this algorithm, tests were only performed up to ten samples per phoneme,
+ but it is likely the performance of these algorithms could have been greatly
+ improved by using more phoneme samples.
+ 
+\end_layout
+
+\begin_layout Standard
+The correlogram in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:my-Corr"
+
+\end_inset
+
+ showed little correlation between 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+phonemes
+\end_layout
+
+\end_inset
+
+ and correctness (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRcorr
+\end_layout
+
+\end_inset
+
+), correctness improvement (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRcorrImp
+\end_layout
+
+\end_inset
+
+), accuracy (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRacc
+\end_layout
+
+\end_inset
+
+) and accuracy improvement (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRRaccImp
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+In general, it was found that increasing the number of phonemes drawn had
+ a chance of improving the performance, for both human and machine listeners,
+ but had only a low change of decreasing performance and was very unlikely
+ to severely affect performance.
+ Thus, results indicated that it would be advantageous to use a higher number
+ samples per phoneme, an upper bound not having been found.
+\end_layout
+
+\begin_layout Subsection
+Other Observations
+\end_layout
+
+\begin_layout Standard
+The performance for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE}
+\end_layout
+
+\end_inset
+
+ algorithm is unchanged by the introduction of phoneme-dependence in all
+ of the objective measures, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:vary-train-phn-pesq,fig:vary-train-phn-prrcorr,fig:vary-train-phn-prrac
+c,fig:vary-train-phn-segsnr}
+\end_layout
+
+\end_inset
+
+.
+ Only in the subjective tests, i.e.
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ tests in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+\end_layout
+
+\end_inset
+
+ showed variation.
+ This indicated that using phoneme dependence did not affect the operation
+ of this particular algorithm.
+\end_layout
+
+\begin_layout Standard
+This also highlighted the level of subjectivity involved in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ tests, since the scores for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MMSE}
+\end_layout
+
+\end_inset
+
+ algorithm in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{fig:mos-comparison-phn,fig:mosle-comparison-phn,fig:cmos-comparison-phn}
+\end_layout
+
+\end_inset
+
+ deviated quite significantly from the diagonal line.
+\end_layout
+
+\end_body
+\end_document

@@ -104,7 +104,8 @@ Speech enhancement is an important field in modern electronics, finding
 \end_layout
 
 \begin_layout Abstract
-Investigations were also performed into the effects of varying training.
+Investigations were also performed into the effects of varying the number
+ of sentences used for training.
  It was found that there was no correlation, and that varying training did
  not effect the average results, however it did effect the variance and
  therefore reliability of results, if undertrained.

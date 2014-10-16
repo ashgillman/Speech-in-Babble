@@ -14,15 +14,27 @@ listener to a machine listener, it is hypothesised that the use of
 a variety of enhancement measures is necessary to properly measure
 the performance of an enhancement algorithm. Results indicated that
 the hypothesis was true, and that it is possible for a speech enhancement
-method that performs well for a machine recogniser to not perform
-well for a human recogniser, and vice-versa. Therefore, it is important
+method that performs well for a machine recogniser to perform poorly
+for a human recogniser, and vice-versa. Therefore, it is important
 to encapsulate a variety of measures in testing. The recommended tests
 include PESQ, ASR performance, statistical measures such as segmental
 SNR and where possible, MOS.
 
-In addition, a phoneme dependent modification to existing non-negative
-matrix factorisation algorithms was proposed and implemented. This
-algorithm was found to provide better accuracy for machine recognisers.
-The changes did not improve human intelligibility on average, but
-did perform more consistently, being less likely to distort speech.\end{abstract}
+Investigations were also performed into the effects of varying the
+number of sentences used for training. It was found that there was
+no correlation, and that varying training did not effect the average
+results, however it did effect the variance and therefore reliability
+of results, if undertrained. Adequate training was found to be 10
+to 20 utterances. Additionally, it was found that training using utterances
+was suboptimal. This showed promise for the third research area, which
+investigated an alternative training to utterances.
+
+The proposed algorithm training modification was a phoneme-dependent
+modification to existing non-negative matrix factorisation algorithms.
+This algorithm was found to provide better accuracy for machine recognisers,
+especially so under in-car noise conditions. The changes did not improve
+human intelligibility on average, but did perform more consistently,
+being less likely to distort speech. The system showed capability
+of performing well for in-car electronics, such as for voice-controlled
+navigational electronics or car radios.\end{abstract}
 

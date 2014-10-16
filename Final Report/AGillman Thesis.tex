@@ -16,9 +16,7 @@
 \synctex=-1
 \usepackage{color}
 \definecolor{shadecolor}{rgb}{0.97265625, 0.9140625, 0.61328125}
-\usepackage{babel}
 \usepackage{array}
-\usepackage{varioref}
 \usepackage{refstyle}
 \usepackage{float}
 \usepackage{framed}
@@ -44,7 +42,6 @@
 \AtBeginDocument{\providecommand\secref[1]{\ref{sec:#1}}}
 \AtBeginDocument{\providecommand\lstref[1]{\ref{lst:#1}}}
 \AtBeginDocument{\providecommand\algref[1]{\ref{alg:#1}}}
-\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
 %% A simple dot to overcome graphicx limitations
@@ -81,6 +78,7 @@
 \usepackage{subfig}
 \makeatother
 
+\usepackage{babel}
 \usepackage{listings}
 \addto\captionsaustralian{\renewcommand{\lstlistingname}{Listing}}
 \addto\captionsenglish{\renewcommand{\algorithmname}{Algorithm}}
@@ -92,7 +90,7 @@
 \begin{titlepage}
 
 \noindent \begin{center}
-\includegraphics[width=0.1\paperwidth+0.1\paperheight]{fig/JCU_Logo_RGB}
+\includegraphics[width=0.12\paperwidth+0.12\paperheight]{fig/JCU_Logo_RGB}
 \par\end{center}
 
 \noindent \begin{center}
@@ -113,21 +111,21 @@ in Babble Using Phoneme-Dependent Non-negative Matrix Factorisation}
 {\huge{}Ashley Gillman}
 \par\end{center}{\huge \par}
 
-\begin{doublespace}
+\begin{singlespace}
 \noindent \begin{center}
 {\Large{}Thesis submitted to the School of Engineering \& Physical
 Sciences in partial fulfilment of the requirements for the degree
 of}
 \par\end{center}{\Large \par}
-\end{doublespace}
 
 \noindent \begin{center}
 {\huge{}Bachelor of Engineering with Honours (Electrical and Electronic
 Engineering)}
 \par\end{center}{\huge \par}
+\end{singlespace}
 
 \noindent \begin{center}
-{\Large{}10 October 2014}
+{\Large{}16 October 2014}
 \par\end{center}{\Large \par}
 
 \end{titlepage}
@@ -150,6 +148,8 @@ Engineering)}
 
 \tableofcontents{}
 
+\include{WC}
+
 \include{stat_dec}
 
 \include{Acknowledgements}
@@ -160,7 +160,7 @@ Engineering)}
 \addcontentsline{toc}{chapter}{Lists}
 
 \selectlanguage{australian}%
-\listoffigures
+%\listoffigures
 
 
 \clearpage{}
@@ -181,19 +181,15 @@ Engineering)}
 
 \include{Ac}
 
-\include{WC}
-
 \pagenumbering{arabic}% start of thesis here
 
 \include{Ch1}
 
-\include{Ch2}
+%\include{Ch2}
 
 \include{Ch3}
 
-\include{Ch4}
-
-\include{Ch5}
+\include{Results_and_Discussion}
 
 \include{Ch6}
 

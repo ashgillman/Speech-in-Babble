@@ -732,13 +732,6 @@ reference "fig:Speech-Enhance-Classifications"
 
 \end_inset
 
- 
-\begin_inset CommandInset ref
-LatexCommand vpageref
-reference "fig:Speech-Enhance-Classifications"
-
-\end_inset
-
  illustrates some of the many variations in methods for speech enhancement,
  with data extracted from 
 \begin_inset CommandInset citation
@@ -774,7 +767,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Some classifications of Speech Enhancement Methods
+Some classifications of speech enhancement methods
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Speech-Enhance-Classifications"
@@ -822,10 +815,25 @@ description "\\ac{STFT} of a signal or recording, either with or without noise p
 
 \end_inset
 
+ where 
+\begin_inset Formula $X$
+\end_inset
 
+ represents the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{STFT}
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ of a signal, either babble or an individual speaker.
+ 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:babble-sum-speakers"
@@ -874,7 +882,7 @@ key "Krishnamurthy2009"
 
 \begin_layout Standard
 The most common method of creating synthetic babble is to use a number of
- speech recordings, adding them together to form babble.
+ speech recordings and add them together to form babble.
  This presents a number of issues.
  Firstly, real conversations are not simply a number of voices speaking
  simultaneously.
@@ -959,7 +967,7 @@ reference "fig:Differentiating-Speech-Babble"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement !b
 wide false
 sideways false
 status open
@@ -1009,6 +1017,27 @@ key "Dupont2000"
  Subspace methods take advantage of differences in voices and differences
  in pronunciation.
  
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acp{HMM}
+\end_layout
+
+\end_inset
+
+ are able to model hidden states, that vary temporally 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Young1997"
+
+\end_inset
+
+.
+ Therefore, 
 \begin_inset ERT
 status open
 
@@ -1099,12 +1128,71 @@ ac{ASR}
  system, but side effects may be distracting or distortive to a human listener.
 \end_layout
 
+\begin_layout Standard
+Algorithms in literature tend to limit evaluation methods to either human
+ recognition or machine recognition methods, as seen in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Assessment-methods"
+
+\end_inset
+
+, showing the evaluation measures used in various papers.
+ This data was gathered from the following papers 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011,Paliwal2010,mohammadiha2013supervised,Plourde2007,Weninger2011,Williamson2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement !b
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fig/R/assessmentMethods.pdf
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Assessment methods used in literature
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Assessment-methods"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Human Recognition
 \end_layout
 
 \begin_layout Standard
-Intelligibility of a speech signal by humans is difficult to accurately
+The intelligibility of a speech signal to a human is difficult to accurately
  and quantitatively measure.
  The most obvious measure is to have human test subjects listen to signals
  and judge which are more intelligible.
@@ -1599,7 +1687,7 @@ ac{SNR}
 
 \end_inset
 
- is the involves calculating the 
+ involves calculating the 
 \begin_inset ERT
 status open
 
@@ -1712,69 +1800,6 @@ key "Hu2008"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Algorithms in literature tend to limit evaluation methods to either human
- recognition or machine recognition methods, as seen in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Assessment-methods"
-
-\end_inset
-
-, showing the evaluation measures used in various papers.
- This data was gathered from the following papers 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011,Paliwal2010,mohammadiha2013supervised,Plourde2007,Weninger2011,Williamson2014"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename fig/R/assessmentMethods.pdf
-	width 100text%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Assessment methods used in literature
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Assessment-methods"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -2007,11 +2032,32 @@ description "Matrix indexing placeholders."
 
 \end_inset
 
+ where 
+\begin_inset Formula $C$
+\end_inset
 
-\end_layout
+ is the non-negative matrix to be decomposed, 
+\begin_inset Formula $B$
+\end_inset
 
-\begin_layout Standard
-Often 
+ and 
+\begin_inset Formula $A$
+\end_inset
+
+ are the non-negative decompositions, and subscripts 
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $j$
+\end_inset
+
+, and 
+\begin_inset Formula $k$
+\end_inset
+
+ are the arbitrary matrix sizes.
+ Often 
 \begin_inset Formula $k\ll i$
 \end_inset
 
@@ -2079,8 +2125,8 @@ ac{NMF}
 
 \end_inset
 
- also has been shown to be useful on signals, specifically as a source-
- separation algorithm 
+ also has been shown to be useful on signals, specifically as a source-separatio
+n algorithm 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Mohammadiha2013a,Wilson2008,Mohammadiha2013"
@@ -2266,7 +2312,7 @@ where:
 \begin_inset Formula $n_{f}$
 \end_inset
 
- is the number of Frequency bins;
+ is the number of frequency bins;
 \end_layout
 
 \begin_layout Itemize
@@ -2398,6 +2444,13 @@ name "fig:nmf-on-speech"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
 \end_inset
 
 
@@ -2931,7 +2984,7 @@ key "Wright1999"
 \begin_inset Formula $W$
 \end_inset
 
- is calculated using a least squares method, then 
+ is calculated using a least squares method, and then 
 \begin_inset Formula $W$
 \end_inset
 
@@ -3271,7 +3324,7 @@ key "Hoyer2004"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-sparssness(x)=\frac{\sqrt{n}-\left(\sum\left|x_{i}\right|\right)/\sqrt{\sum x_{i}^{2}}}{\sqrt{n}-1}
+sparseness(x)=\frac{\sqrt{n}-\left(\sum\left|x_{i}\right|\right)/\sqrt{\sum x_{i}^{2}}}{\sqrt{n}-1}
 \]
 
 \end_inset
@@ -3289,7 +3342,10 @@ Where
 \end_inset
 
 .
- The developed algorithm is then based on the Euclidean distance objective
+\end_layout
+
+\begin_layout Standard
+The developed algorithm is then based on the Euclidean distance objective
  function, employing a combination of multiplicative update functions (§
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3352,9 +3408,8 @@ ac{NMF}
 \end_inset
 
 .
- The particular methods used largely depend on the specifics of the model
- used.
- However, the general concept is the same.
+ The method used depends on the formulation of the problem, but the general
+ concept is the same.
  It is known that 
 \begin_inset Formula $X$
 \end_inset
@@ -3392,7 +3447,11 @@ description "Indicates an estimated value."
 
 \end_inset
 
+ where the hat 
+\begin_inset Formula $\hat{.}$
+\end_inset
 
+ represents an estimated value.
 \end_layout
 
 \begin_layout Standard
@@ -3458,6 +3517,7 @@ reference "eq:nmf-clean-estimate"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement !b
 wide false
 sideways false
 status open
@@ -3542,6 +3602,23 @@ key "Mohammadiha2013a,Raj2005"
  has been trained on, and thus have reduced flexibility.
 \end_layout
 
+\begin_layout Subsection
+Phoneme-dependent 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -3605,7 +3682,7 @@ ac{NMF}
 
 \end_inset
 
- performance is be improved by forming bases on phonemes.
+ performance may be improved by forming bases on phonemes.
  A novel alternative model was recently proposed by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -3641,14 +3718,15 @@ ac{NMF}
 
  algorithm separating speech from noise, and thus used a temporally probabilisti
 c method to form and estimate of clean speech.
- By doing so, the algorithm accounts for an extra feature outlined in 
+ By doing so, the algorithm accounts for the transitional probability, an
+ extra feature outlined in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:Differentiating-Speech-Babble"
 
 \end_inset
 
-, being the transitional probability.
+.
 \end_layout
 
 \begin_layout Section
@@ -3674,7 +3752,7 @@ reference "fig:Assessment-methods"
  two forms of recognition.
  An area of research proposed is to investigate the relationship between
  human and machine recognition improvement under speech enhancement algorithms,
- to see if one implies the other.
+ to determine if success in one implies the other.
 \end_layout
 
 \begin_layout Standard

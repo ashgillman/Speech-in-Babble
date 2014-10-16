@@ -186,7 +186,7 @@ Bachelor of Engineering with Honours (Electrical and Electronic Engineering)
 \align center
 
 \size larger
-10 October 2014
+16 October 2014
 \end_layout
 
 \begin_layout Standard
@@ -276,6 +276,16 @@ filename "Abstract.lyx"
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "WC.lyx"
 
 \end_inset
 
@@ -409,16 +419,6 @@ filename "Ac.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "WC.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -478,17 +478,7 @@ filename "Ch3.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Ch4.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Ch5.lyx"
+filename "Results_and_Discussion.lyx"
 
 \end_inset
 

@@ -126,7 +126,7 @@ key "Hoyer2004,Brookes1997,Loizou2008,Wojcicki2011"
 \end_layout
 
 \begin_layout Standard
-Data analysis was conducted using R 
+Data analysis was conducted using the R programming language 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RCoreTeam2014"
@@ -145,7 +145,7 @@ Simulations were run on a MacBook Pro 64-bit system with an Intel Core i7
 \end_layout
 
 \begin_layout Standard
-Test data to was drawn from the 
+Test data was drawn from the 
 \begin_inset ERT
 status open
 
@@ -198,9 +198,9 @@ Humanly Perceived Improvement vs.
 \end_layout
 
 \begin_layout Standard
-The first research area sought to answer research question 
+The first research area sought to answer the research question 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "enu:ResQ1"
 
 \end_inset
@@ -1932,7 +1932,7 @@ status open
 
 
 \backslash
-Cref{lst:MOSScript,lst:MOS}
+cref{lst:MOSScript,lst:MOS}
 \end_layout
 
 \end_inset
@@ -3103,7 +3103,7 @@ status open
 
 
 \backslash
-Cref{lst:MFC-config,lst:MFC-proto}
+cref{lst:MFC-config,lst:MFC-proto}
 \end_layout
 
 \end_inset
@@ -3181,7 +3181,7 @@ status open
 
 
 \backslash
-Cref{lst:MFC-config,lst:MFC-proto}
+cref{lst:MFC-config,lst:MFC-proto}
 \end_layout
 
 \end_inset
@@ -4365,7 +4365,7 @@ status open
 
 
 \backslash
-Cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}
+cref{lst:drawPhnSamples,lst:getSpeakerFiles,lst:getPhnData}
 \end_layout
 
 \end_inset
