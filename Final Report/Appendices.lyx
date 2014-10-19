@@ -96,12 +96,32 @@ End
 
 \begin_body
 
-\begin_layout Chapter
-Risk Assessment
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename Risk_Assess.pdf
+	extra LaTeX "pages=1,pagecommand=\chapter{Risk Assessment}"
+	width 100text%
+	height 100theight%
+	keepAspectRatio
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-add Risk Assessment Here
+\begin_inset External
+	template PDFPages
+	filename Risk_Assess.pdf
+	extra LaTeX "pages=2-"
+	width 100text%
+	height 100theight%
+	keepAspectRatio
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -697,10 +717,7 @@ name "lst:varyingTrainingTest"
 \end_layout
 
 \begin_layout Plain Layout
-
 See 
-\lang australian
-
 \begin_inset listings
 lstparams "style=myInline"
 inline true
@@ -1203,10 +1220,7 @@ name "lst:varyingTrainingAnalysis"
 \end_layout
 
 \begin_layout Plain Layout
-
 See 
-\lang australian
-
 \begin_inset listings
 lstparams "style=myInline"
 inline true
@@ -1218,7 +1232,6 @@ CD:/Code/MATLAB/Test/varyingTrainingAnalysis.m
 \end_layout
 
 \end_inset
-
 
  
 \end_layout

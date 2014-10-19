@@ -238,8 +238,8 @@ are implemented in the algorithms \lstinline[breaklines=true]!phonemeIDBM!,
 \lstinline[breaklines=true]!phonemeMMSE!, \lstinline[breaklines=true]!phonemeMohammadiaOnline!
 and \lstinline[breaklines=true]!phonemeMohammadiaSupervised!. The
 changes proposed in \subsecref{Phoneme-Base} are implemented in the
-algorithms \lstinline[breaklines=true]!phonemeModifiedOnline! and\inputencoding{latin1}{}\linebreak{}
-\inputencoding{latin9}\lstinline[breaklines=true]!phonemeModifiedSupervised!.
+algorithms \lstinline[breaklines=true]!phonemeModifiedOnline! and\linebreak{}
+\lstinline[breaklines=true]!phonemeModifiedSupervised!.
 
 
 \subsubsection*{Observations}
@@ -705,12 +705,12 @@ utterances were used.
 
 It was also noted that in some cases, the performance was better in
 the under-trained case, for example in \figref{vary-train-pesq} for
-\lstinline!mohammadiaSupervised! with the\inputencoding{latin1}{}\linebreak{}
-\inputencoding{latin9}\lstinline!c3f(m)+c3c(f)+c35(m)! noise type.
-This indicated that the training method used was not optimal. This
-provided further reason for implementing the phoneme-dependent algorithms,
-in an attempt to optimise the training by reducing the training data
-size whilst maximising the amount of voice information.
+\lstinline!mohammadiaSupervised! with the\linebreak{}
+\lstinline!c3f(m)+c3c(f)+c35(m)! noise type. This indicated that
+the training method used was not optimal. This provided further reason
+for implementing the phoneme-dependent algorithms, in an attempt to
+optimise the training by reducing the training data size whilst maximising
+the amount of voice information.
 
 Thus is was shown that approximately 10 to 20 utterances was required
 to sufficiently train the online and supervised \ac{BNMF} algorithms,

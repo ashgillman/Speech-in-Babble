@@ -118,7 +118,7 @@ begin{titlepage}
 \align center
 \begin_inset Graphics
 	filename fig/JCU_Logo_RGB.eps
-	special width=0.12\paperwidth+0.12\paperheight
+	width 5cm
 
 \end_inset
 
@@ -283,10 +283,6 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-Word Count: 13035
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "stat_dec.lyx"
@@ -332,17 +328,6 @@ addcontentsline{toc}{chapter}{Lists}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\end_inset
-
-
 \begin_inset FloatList figure
 
 \end_inset

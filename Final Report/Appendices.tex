@@ -1,24 +1,93 @@
+\includepdf[pages=1,pagecommand=\chapter{Risk Assessment},width=1\textwidth,height=1\textheight,keepaspectratio]{Risk_Assess}
 
-\chapter{Risk Assessment}
+\includepdf[pages=2-,width=1\textwidth,height=1\textheight,keepaspectratio]{Risk_Assess}
 
-add Risk Assessment Here
 
-%Data\label{chap:Apx-Data}
+\chapter{Data\label{chap:Apx-Data}}
 
-%Data Congregated from Literature\label{sec:litresults}
+\begin{tikzpicture}[dirtree]
+\node {Data (CD)}
+  child {
+    child { node {litresults.csv and litresults.xls - Results gathered from literature} }
+    child { node {MFCOutput.txt - Results of ASR system} }
+    child { node {MOSscores.csv - Results of MOS tests} }
+    child { node {testResults.csv - Congregated data of all tests performed} }
+    child { node {TestSubjects.csv - Data on the MOS test subjects} }
+  };
+\end{tikzpicture}
 
-\includepdf[pages=1,pagecommand=\chapter{Data\label{chap:Apx-Data}} \section{Data Congregated from Literature\label{sec:litresults}},angle=90,width=1\paperwidth,height=0.9\textheight,keepaspectratio]{dat/litresults}
 
-\includepdf[pages=2-last,angle=90,width=0.9\paperwidth,height=1\paperheight,keepaspectratio]{dat/litresults}
+\section{Data Congregated from Literature\label{sec:litresults}}
 
-%Test Data\label{sec:testresults}
+See \lstinline[style=myInline]!CD:/Data/litresults.csv!
 
-\includepdf[pages=1,pagecommand=\section{Test Data\label{sec:testresults}},angle=90,width=1\paperwidth,height=1\textheight,keepaspectratio]{dat/testResults}
 
-\includepdf[pages=2-last,angle=90,width=0.9\paperwidth,height=1\paperheight,keepaspectratio]{dat/testResults}
+\section{Test Data\label{sec:testresults}}
+
+See \lstinline[style=myInline]!CD:/Data/testResults.csv!
 
 
 \chapter{Code}
+
+\begin{tikzpicture}[dirtree]
+\node {Code (CD)}
+  child { node {MATLAB}
+    child { node {BNMF}
+      child { node {$@$NMF/ - Modified NMF Class} }
+      child { node {MySpectrogram.m - Spectrogram for NMF class} }
+    }
+    child { node {mytools}
+      child { node {getAllFiles.m - Get all files in dir} }
+      child { node {getAllFolders.m - Get all folders in dir} }
+      child { node {getfromifo.m - Get WSJCAM0 talker information from their .ifo file} }
+      child { node {normalise.m - Normalise a signal to range [-1, 1]} }
+    }
+    child { node {phonemeDependent}
+      child { node {constructVMatrix.m - Construct spectral component matrix} }
+      child { node {drawPhnSamples.m - Draw a given number of random phoneme samples} }
+      child { node {getPhnData.m - Get a file list of .phn and .wav files for a speaker} }
+      child { node {getSpeakerFiles.m - Get a file list of .phn and .wav files for a speaker} }
+    }
+    child { node {Test}
+      child { node {cprintf.m - print in colour to console} }
+      child { node {createTestDataBabble.m - Create test data using babble noise} }
+      child { node {IDBM.m - Wojcicki's ideal binary mask algorithm} }
+      child { node {MMSE.m - Voicebox's MMSE algorithm} }
+      child { node {modifiedOnline.m - My phoneme base online algorithm} }
+      child { node {modifiedSupervised.m - My phoneme base supervised algorithm} }
+      child { node {mohammadiaOnline.m - Mohammadia's online algorithm} }
+      child { node {mohammadiaSupervised.m - Mohammadia's supervised algorithm} }
+      child { node {MOS.m - MOS function} }
+      child { node {MOSscript.m - Run MOS test} }
+      child { node {varyingTrainingAnalysis.m - Run analysis of enhancement (PESQ, segSNR)} }
+      child { node {varyingTrainingTest.m - Perform enhancement} }
+    }
+  }
+  child { node {Python}
+    child { node {ASR.py - Script to perform HTK} }
+    child { node {MFC HComp VConfig.ini - MFCC config} }
+    child { node {MFCProto - MFCC prototype} }
+  };
+\end{tikzpicture}
+
+\begin{tikzpicture}[dirtree]
+\node {Code (CD)}
+  child {
+    node {R}
+    child { node {dat - Data for plotting} }
+    child { node {fig - Output dir for figures} }
+    child { node {gatherData.R - Gather data from various locations and congregate} }
+    child { node {litdirectComp.R - Direct comparison of data from literature} }
+    child { node {litResCorr.R - Correlogram of literature results} }
+    child { node {litresults.csv and litresults.xlsx - Literature results} }
+    child { node {myCorrgramPanels.R - Panels for custom correlogram} }
+    child { node {myTests.R - Analyse test results} }
+    child { node {statFunctions.R - Calculate confidence intervals} }
+    child { node {trainReq.R - Analyse Utterance Training Requirements} }
+    child { node {trainReqPhn.R - Analyse Phoneme Training Requirements} }
+    child { node {viewMOS.R - View MOS results} }
+  };
+\end{tikzpicture}
 
 
 \section{MATLAB Test Code}
@@ -29,67 +98,69 @@ add Risk Assessment Here
 \protect\caption{Create Test Data MATLAB Code\label{lst:createTestData}}
 
 
-\lstinputlisting[lastline=46]{../Code/MATLAB/Test/createTestDataBabble.m}
+\lstinputlisting[lastline=12]{../Code/MATLAB/Test/createTestDataBabble.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=47,firstnumber=last]{../Code/MATLAB/Test/createTestDataBabble.m}
+%\lstinputlisting[firstline=47,firstnumber=last]{../Code/MATLAB/Test/createTestDataBabble.m}
 
 \begin{listing}[H]
 \protect\caption{``Varying Training'' Test MATLAB Code\label{lst:varyingTrainingTest}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/varyingTrainingTest.m}
+See \lstinline[style=myInline]!CD:/Code/MATLAB/Test/varyingTrainingTest.m!
+
+%\lstinputlisting[lastline=53]{../Code/MATLAB/Test/varyingTrainingTest.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTrainingTest.m}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTrainingTest.m}
 
 \begin{listing}[H]
 \protect\caption{Online \acs{BNMF} MATLAB Code\label{lst:mohammadiaOnline}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/mohammadiaOnline.m}
+\lstinputlisting[lastline=14]{../Code/MATLAB/Test/mohammadiaOnline.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/mohammadiaOnline.m}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/mohammadiaOnline.m}
 
 \begin{listing}[H]
 \protect\caption{Supervised \acs{BNMF} MATLAB Code\label{lst:mohammadiaSupervised}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/mohammadiaSupervised.m}
+\lstinputlisting[lastline=14]{../Code/MATLAB/Test/mohammadiaSupervised.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/mohammadiaSupervised.m}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/mohammadiaSupervised.m}
 
 \begin{listing}[H]
 \protect\caption{Online \acs{BNMF} with Phoneme-Dependent Bases MATLAB Code\label{lst:modifiedOnline}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/modifiedOnline.m}
+\lstinputlisting[lastline=14]{../Code/MATLAB/Test/modifiedOnline.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/modifiedOnline.m}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/modifiedOnline.m}
 
 \begin{listing}[H]
 \protect\caption{Supervised \acs{BNMF} with Phoneme-Dependent Bases MATLAB Code\label{lst:modifiedSupervised}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/modifiedSupervised.m}
+\lstinputlisting[lastline=14]{../Code/MATLAB/Test/modifiedSupervised.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/modifiedSupervised.m}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/modifiedSupervised.m}
 
 \begin{listing}[H]
 \protect\caption{Spectral Subtraction \acs{MMSE} MATLAB Code\label{lst:MMSE}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/MMSE.m}
+\lstinputlisting[lastline=4]{../Code/MATLAB/Test/MMSE.m}
 \end{listing}
 
 
@@ -97,7 +168,7 @@ add Risk Assessment Here
 \protect\caption{Ideal Binary Mask MATLAB Code\label{lst:IDBM}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/IDBM.m}
+\lstinputlisting[lastline=4]{../Code/MATLAB/Test/IDBM.m}
 \end{listing}
 
 
@@ -105,21 +176,23 @@ add Risk Assessment Here
 \protect\caption{``Varying Training'' Analysis MATLAB Code\label{lst:varyingTrainingAnalysis}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/varyingTrainingAnalysis.m}
+See \lstinline[style=myInline]!CD:/Code/MATLAB/Test/varyingTrainingAnalysis.m! 
+
+%\lstinputlisting[lastline=53]{../Code/MATLAB/Test/varyingTrainingAnalysis.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTrainingAnalysis.m}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/varyingTrainingAnalysis.m}
 
 \begin{listing}[H]
 \protect\caption{Draw Phone Samples MATLAB Code\label{lst:drawPhnSamples}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/phonemeDependent/drawPhnSamples.m}
+\lstinputlisting[lastline=9]{../Code/MATLAB/phonemeDependent/drawPhnSamples.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/phonemeDependent/drawPhnSamples.m}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/phonemeDependent/drawPhnSamples.m}
 \begin{listing}[H]
 \protect\caption{Get Speaker Files MATLAB Code\label{lst:getSpeakerFiles}}
 
@@ -153,21 +226,21 @@ directly supplied.
 \protect\caption{Full MOS Test MATLAB Code\label{lst:MOSScript}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/MOSScript.m}
+\lstinputlisting[lastline=3]{../Code/MATLAB/Test/MOSScript.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/MOSScript.m}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/MOSScript.m}
 
 \begin{listing}[H]
 \protect\caption{MOS Test Function MATLAB Code\label{lst:MOS}}
 
 
-\lstinputlisting[lastline=53]{../Code/MATLAB/Test/MOS.m}
+\lstinputlisting[lastline=8]{../Code/MATLAB/Test/MOS.m}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/MOS.m}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/MATLAB/Test/MOS.m}
 
 
 \section{Python Code}
@@ -187,11 +260,11 @@ showstringspaces=false
 \protect\caption{ASR Python Script\label{lst:ASR}}
 
 
-\lstinputlisting[lastline=53]{../Code/python/ASR.py}
+\lstinputlisting[lastline=10]{../Code/python/ASR.py}
 \end{listing}
 
 
-\lstinputlisting[firstline=54,firstnumber=last]{../Code/python/ASR.py}
+%\lstinputlisting[firstline=54,firstnumber=last]{../Code/python/ASR.py}
 
 
 \section{R Analysis Code}
@@ -224,37 +297,29 @@ showstringspaces=false
 \protect\caption{Literature Direct Comparison R Code\label{lst:directComp}}
 
 
-\lstinputlisting[lastline=54]{../Code/R/litdirectComp.R}
+\lstinputlisting[lastline=2]{../Code/R/litdirectComp.R}
 \end{listing}
 
 
-\lstinputlisting[firstline=55,firstnumber=last]{../Code/R/litdirectComp.R}
-
-\begin{listing}[H]
-\protect\caption{Indirect Comparison R Code\label{lst:indirectComp}}
-
-
-\lstinputlisting{../Code/R/indirectComp.R}
-\end{listing}
-
+%\lstinputlisting[firstline=55,firstnumber=last]{../Code/R/litdirectComp.R}
 
 \begin{listing}[H]
 \protect\caption{Training Requirement Comparison R Code\label{lst:trainReq}}
 
 
-\lstinputlisting[lastline=60]{../Code/R/trainReq.R}
+\lstinputlisting[lastline=2]{../Code/R/trainReq.R}
 \end{listing}
 
 
-\lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReq.R}
+%\lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReq.R}
 
 \begin{listing}[H]
 \protect\caption{Training Requirement of Phoneme-dependent algorithms Comparison R
 Code\label{lst:trainReqPhn}}
 
 
-\lstinputlisting[lastline=60]{../Code/R/trainReqPhn.R}
+\lstinputlisting[lastline=2]{../Code/R/trainReqPhn.R}
 \end{listing}
 
 
-\lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReqPhn.R}
+%\lstinputlisting[firstline=61,firstnumber=last]{../Code/R/trainReqPhn.R}
