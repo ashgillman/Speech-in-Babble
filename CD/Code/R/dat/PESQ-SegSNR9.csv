@@ -1,0 +1,11 @@
+algorithm,filename,Input SNR,utterances,pesq,pesqImp,segSNR,segSNRImp
+mohammadiaOnline,mohammadiaOnline_003ut-3dB.wav,-3,3,2.025778,-0.020147,4.338173,4.151531
+mohammadiaOnline,mohammadiaOnline_003ut-6dB.wav,-6,3,1.815713,-0.234477,6.293583,9.040241
+mohammadiaOnline,mohammadiaOnline_003ut00dB.wav,0,3,2.208914,0.012103,4.756576,1.442077
+mohammadiaOnline,mohammadiaOnline_003ut03dB.wav,3,3,2.439477,0.095473,7.543934,0.837446
+mohammadiaOnline,mohammadiaOnline_003ut06dB.wav,6,3,2.649370,0.141924,9.290501,-1.333507
+mohammadiaSupervised,mohammadiaSupervised_003ut-3dB.wav,-3,3,1.891480,-0.154444,8.275421,8.088779
+mohammadiaSupervised,mohammadiaSupervised_003ut-6dB.wav,-6,3,1.806349,-0.243840,8.750162,11.496821
+mohammadiaSupervised,mohammadiaSupervised_003ut00dB.wav,0,3,2.030407,-0.166404,11.091285,7.776786
+mohammadiaSupervised,mohammadiaSupervised_003ut03dB.wav,3,3,2.228944,-0.115060,7.069979,0.363491
+mohammadiaSupervised,mohammadiaSupervised_003ut06dB.wav,6,3,2.352397,-0.155049,10.209771,-0.414237

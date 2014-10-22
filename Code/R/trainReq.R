@@ -1,3 +1,6 @@
+# Anaylyses dat/testResults.csv, and plots performance against the number of
+# utterances used in training.
+
 library(ggplot2)
 library(corrgram)
 library(plyr)

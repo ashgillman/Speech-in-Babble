@@ -1,0 +1,62 @@
+
+
+\documentclass{tikzposter}
+\tikzposterlatexaffectionproofoff
+ % Title, Author, Institute
+\title{Template Poster}
+\author{Author(s)}
+\institute{Institute}
+
+ % Begin document
+\begin{document}
+
+ % Title block
+\titleblock[left fig=logoL.png, left fig height=7cm, embedded=true, separated=false]
+\block{Sample Block}{Test}
+ \begin{columns}
+ % Set first column
+\column{0.52}
+
+ % First column - first block
+\block{Sample Block}{Test\\Test\\Test}
+
+ % First column - second block
+\block{Sample Block}{Test\\Test}
+
+ % First column - third block
+\block{Sample Block}{
+T\\E\\S\\T
+}
+
+ % Set second column
+\column{0.48}
+
+ % Second column - first block
+\block[l]{Sample Block}{Test}
+
+ % Second column - second block
+\block[c,width=0.85\colwidth]{Variable width}{
+Block with smaller width.
+}
+
+ % Second column - third block
+\block{}{
+    Block with no title
+}
+
+ % Second column - subblocks
+\begin{subcolumns}
+    \subcolumn{0.3} \block[r]{1}{First block.} \block{2}{Second block}
+    \subcolumn{0.5} \block{Subblocks}{Sample subblocks}
+    \subcolumn{0.2} \block{4}{Fourth}
+
+\end{subcolumns}
+
+ % Bottomblock
+\block{Bottomblock}{
+    Sample block.
+}
+\end{columns}
+\block[r]{Final Block}{Test}
+\end{document}
+

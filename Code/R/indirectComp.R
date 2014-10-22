@@ -1,3 +1,6 @@
+library(reshape2)
+library(plyr)
+
 rm(list=ls());
 data <- read.csv('litresults.csv',header=T);
 

@@ -1,3 +1,6 @@
+# Perform the direct comparison of human vs. machine results for the results
+# retrieved from literature.
+
 library(ggplot2)
 library(gridExtra)
 

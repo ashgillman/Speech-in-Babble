@@ -1,0 +1,872 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pl",
+				"playSound"
+			],
+			[
+				"boo",
+				"boostFunc"
+			],
+			[
+				"_b",
+				"_boost"
+			],
+			[
+				"thru",
+				"thrust"
+			],
+			[
+				"thr",
+				"thrust"
+			],
+			[
+				"In",
+				"IndexError"
+			],
+			[
+				"stop",
+				"stopRace"
+			],
+			[
+				"fun",
+				"func"
+			],
+			[
+				"_c",
+				"_canDrive"
+			],
+			[
+				"col",
+				"color_pair"
+			],
+			[
+				"ge",
+				"getmaxyx"
+			],
+			[
+				"con",
+				"controller"
+			],
+			[
+				"up",
+				"update"
+			],
+			[
+				"setUp",
+				"setupState"
+			],
+			[
+				"setup",
+				"setupStep"
+			],
+			[
+				"set",
+				"setupState"
+			],
+			[
+				"C",
+				"CountdownTimer"
+			],
+			[
+				"_h",
+				"_handleArgs"
+			],
+			[
+				"prin",
+				"printGameScreen"
+			],
+			[
+				"sta",
+				"startFunc"
+			],
+			[
+				"a",
+				"append"
+			],
+			[
+				"colo",
+				"color_pair"
+			],
+			[
+				"_lo",
+				"_logscr"
+			],
+			[
+				"_l",
+				"_log"
+			],
+			[
+				"_pl",
+				"_plrlogs"
+			],
+			[
+				"_w",
+				"_scrWidth"
+			],
+			[
+				"timer",
+				"timerAscii"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"tim",
+				"timedelta"
+			],
+			[
+				"time",
+				"timer"
+			],
+			[
+				"re",
+				"remaining"
+			],
+			[
+				"l",
+				"_logPanel"
+			],
+			[
+				"_scr",
+				"_scrnWidth"
+			],
+			[
+				"_s",
+				"_scrnWidth"
+			],
+			[
+				"_",
+				"_scrnWidth"
+			],
+			[
+				"no",
+				"noPlayers"
+			],
+			[
+				"get",
+				"getTerminalSize"
+			],
+			[
+				"pa",
+				"parseFloat"
+			],
+			[
+				"te",
+				"tempPeriod"
+			],
+			[
+				"da",
+				"dataFiles"
+			],
+			[
+				"date",
+				"dateStr"
+			],
+			[
+				"rea",
+				"reader"
+			],
+			[
+				"uni",
+				"uni2tex"
+			],
+			[
+				"contro",
+				"controlThrustSteer"
+			],
+			[
+				"stee",
+				"steerFunc"
+			],
+			[
+				"thrus",
+				"thrustFunc"
+			],
+			[
+				"input",
+				"inputDevice"
+			],
+			[
+				"in",
+				"InputDevice"
+			],
+			[
+				"U",
+				"UpdateThread"
+			],
+			[
+				"s",
+				"startGameScreen"
+			],
+			[
+				"p",
+				"print_at"
+			],
+			[
+				"_sc",
+				"_scrnHeight"
+			],
+			[
+				"if",
+				"ifmain	if __name__ == '__main__'"
+			],
+			[
+				"jo",
+				"joystick1"
+			],
+			[
+				"joy",
+				"joystick"
+			],
+			[
+				"steer",
+				"_steeringAxis"
+			],
+			[
+				"j",
+				"joystick1"
+			],
+			[
+				"end",
+				"endControl"
+			],
+			[
+				"sto",
+				"stopped"
+			],
+			[
+				"P",
+				"POWERUP"
+			],
+			[
+				"Wh",
+				"WHITE"
+			],
+			[
+				"conn",
+				"connection"
+			],
+			[
+				"b",
+				"beginControl"
+			],
+			[
+				"_con",
+				"_controlThread"
+			],
+			[
+				"Q",
+				"QUEUE_SIZE"
+			],
+			[
+				"msg",
+				"msgBytes"
+			],
+			[
+				"ass",
+				"assertEqual"
+			],
+			[
+				"ci",
+				"connection"
+			],
+			[
+				"d",
+				"devs"
+			],
+			[
+				"ser",
+				"serial"
+			],
+			[
+				"ch",
+				"choose_serial"
+			],
+			[
+				"c",
+				"configure"
+			],
+			[
+				"st",
+				"start"
+			],
+			[
+				"Se",
+				"serial_ports"
+			],
+			[
+				"for",
+				"format_steering"
+			],
+			[
+				"JOY",
+				"JOYAXISMOTION"
+			],
+			[
+				"rev",
+				"revBtn"
+			],
+			[
+				"fo",
+				"format"
+			],
+			[
+				"steeri",
+				"steeringAxis"
+			],
+			[
+				"Ka",
+				"KartGameModel"
+			],
+			[
+				"K",
+				"KartGameModel"
+			],
+			[
+				"che",
+				"checkpoints"
+			],
+			[
+				"th",
+				"throttle_angle_to_thrust"
+			],
+			[
+				"url",
+				"urllib"
+			],
+			[
+				"xA",
+				"xAxisG"
+			],
+			[
+				"yAxis",
+				"yAxisG"
+			],
+			[
+				"select",
+				"selectAll"
+			],
+			[
+				"dat",
+				"datLength"
+			],
+			[
+				"bar",
+				"barWidth"
+			],
+			[
+				"se",
+				"selectAll"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "content.tex",
+			"settings":
+			{
+				"buffer_size": 25884,
+				"line_ending": "Unix",
+				"name": "%!TEX root = presentation.tex"
+			}
+		},
+		{
+			"file": "/Users/Ash/Dropbox/Uni/2014/EE4000/Assignment/report.tex",
+			"settings":
+			{
+				"buffer_size": 28441,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "presentation.tex",
+			"settings":
+			{
+				"buffer_size": 1426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Ash/Dropbox/Uni/2014/Thesis/Proposal Presentation/Proposal.tex",
+			"settings":
+			{
+				"buffer_size": 16410,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "words",
+			"settings":
+			{
+				"buffer_size": 11229,
+				"line_ending": "Unix",
+				"name": "Welcome?"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				"latex",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 200.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/folders/l8/2ljjp2pn535822pxm59d0qzr0000gn/T/lyx_tmpdir.jHsdIvZqg173/lyx_tmpbuf0/21_Users_Ash_Dropbox_Uni_2014_Thesis_Final_Report_Ch3.tex",
+		"/Users/Ash/Downloads/Beamer-example.tex",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/2.json",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/4.json",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/3.json",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/1.json",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/IET-EA Presentation/bib/image.bib",
+		"/Users/Ash/LaTeXTools.sublime-settings",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/IET-EA Presentation/presentation.tex",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Proposal Presentation/Proposal.tex",
+		"/Users/Ash/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/Ash/Documents/ThesisData/ASR/ClassifierTraining/Results/MFCOutput.txt",
+		"/Users/Ash/.bash_profile",
+		"/Users/Ash/Documents/ThesisData/htk/configure",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/.bash_profile",
+		"/Users/Ash/Downloads/Jubobs-matlab-prettifier-cc855abf9563/README",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/models/dataModels",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Final Report/preamble.tex",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/routes/data.js",
+		"/Volumes/Gillman/Thesis/testdat/1/testmeta.json",
+		"/Users/Ash/Documents/Arduino/libraries/Adafruit_PCD8544/Adafruit_PCD8544.cpp",
+		"/Volumes/Gillman/Thesis/testdat/0dB/testmeta.json",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/.gitignore",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/TeX.gitignore",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/R.gitignore",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Node.gitignore",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/MATLAB.gitignore",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/LyX.gitignore",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/C.gitignore",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/C++.gitignore",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/Game.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/CLI.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/InputDevice.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/readme.md",
+		"/Users/Ash/Documents/workspace/Project-Mario/README.md",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Final Report/bib/library.bib",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/views/status.jade",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/public/javascripts/statusDashboard.js",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/routes/status.js",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/public/javascripts/currentSnpPlot.js",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/routes/upload.js",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/README.md",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/routes/test-pc.js",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/bin/www",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/test/datatools.py",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/test/fakeTestPC.py",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/.gitignore",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/Node.gitignore",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/test/Python.gitignore",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/package.json",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/test/data/20K.DAT",
+		"/Users/Ash/Documents/workspace/nodejs/cryoWeb/test/test.py",
+		"/Users/Ash/Desktop/new.bib",
+		"/Users/Ash/Downloads/composite/pesq.p",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Final Report/bib/IEEEtranN.bst",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/test/joystick.py",
+		"/Users/Ash/Documents/workspace/python/Project-Mario/KartGameModel.py",
+		"/Users/Ash/Downloads/BibTexExample/SocialChoice.bib",
+		"/Users/Ash/Documents/Arduino/libraries/ButtonEvent/ButtonEvent.cpp",
+		"/Users/Ash/Documents/workspace/python/endnoteToBib/refs.bib",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Final Report/bib/refs.bib",
+		"/Users/Ash/Documents/workspace/python/endnoteToBib/reformatBib.py",
+		"/Library/Python/2.7/site-packages/bibtexparser/bwriter.py",
+		"/Users/Ash/Documents/workspace/python/reformatBib.py",
+		"/Users/Ash/Desktop/My EndNote Library.bib",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/test/BTcontrol.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/test/keyboardCtrl.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/test/testSerial.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/BTcontrol.py",
+		"/Users/Ash/Documents/workspace/python/multiCarPOC/keyboardCtrl.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/Pi/BRcontrol.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/readme.md",
+		"/Users/Ash/Documents/Arduino/libraries/ButtonEvent/ButtonEvent.h",
+		"/Users/Ash/Documents/Arduino/libraries/Properties/Properties.h",
+		"/Users/Ash/Documents/Arduino/libraries/Adafruit_PCD8544/Adafruit_PCD8544.h",
+		"/Users/Ash/Documents/Arduino/libraries/Adafruit_GFX/Adafruit_GFX.h",
+		"/Users/Ash/Documents/workspace/python/joystick/joystick.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/pi/joystick.py",
+		"/Users/Ash/Documents/workspace/Project-Mario/.gitignore",
+		"/Users/Ash/Documents/workspace/python/multiCarPOC/controllerinputtest",
+		"/Users/Ash/Documents/workspace/Project-Mario/zumo/readme.md",
+		"/Users/Ash/Documents/workspace/Project-Mario/RFID Station/readme.md",
+		"/Users/Ash/Documents/workspace/Project-Mario/Comms Arduino/readme.md",
+		"/Users/Ash/Documents/workspace/Project-Mario/reamde.md",
+		"/Users/Ash/Documents/workspace/Project-Mario/markdown.md",
+		"/Users/Ash/Documents/workspace/python/lightblue-0.4/setup.py",
+		"/Users/Ash/Documents/workspace/python/lightblue-0.4/src/mac/_lightblue.py",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Assignment/report.tex",
+		"/Users/Ash/Dropbox/Uni/2014/EE3700/assignment 2/report.tex",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/sty/reportFormat.sty",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/tex/body.tex",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/report.tex",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/tex/title.tex",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/code/Stereo_FIR/_algorithm.asm",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/code/Stereo_FIR/isr.asm",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/code/Stereo_FIR/ivt21262.asm",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/code/Stereo_FIR/_initAlgorithm.asm",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/code/Stereo_FIR/main.asm",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/code/Stereo_FIR/init1835viaSPI.asm",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/reportFormat.sty",
+		"/Users/Ash/Dropbox/Uni/2014/EE4000/Lab4/report.sty",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/test/test.py",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Presentation/Proposal.tex",
+		"/usr/local/lib/python2.7/site-packages/requests/api.py",
+		"/Users/Ash/Downloads/analysis-methods-of-performance-by-paper.svg",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Presentation/nmfImplementation.tex",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Presentation/nmfImpementation.tex",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/References/phoneme.svg",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Presentation/babbleSeparation.eps",
+		"/Users/Ash/Dropbox/Uni/2014/proposal.aux",
+		"/Users/Ash/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/Ash/Library/Application Support/Sublime Text 2/Packages/User/LaTeX.sublime-settings",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Report/Charts/circTree/public/javascripts/speechEnhance.js",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Report/Charts/circTree/public/data/speechEnhance.json",
+		"/Users/Ash/Dropbox/Uni/2014/Thesis/Report/Charts/speech-enhancement-methods.svg",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/public/javascripts/currentTempPlot.js",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/public/stylesheets/chart.css",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/views/status.jade",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/views/layout.jade",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/public/stylesheets/style.css",
+		"/Users/Ash/Documents/eclipse/workspace/ZombieGame/zombie.js",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/package.json",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/views/index.jade",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/views/test.html",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/routes/register.js",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/routes/index.js",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/routes/status.js",
+		"/Users/Ash/Documents/eclipse/workspace/cryoWeb/views/status.jad"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"prefix",
+			"%\\",
+			"write",
+			"print",
+			"setC",
+			"pygame",
+			"_scrn",
+			"_screen",
+			"none",
+			"collections",
+			"    ",
+			"        ",
+			"            ",
+			"print",
+			"	",
+			"consol",
+			"?",
+			"frequ",
+			"chi",
+			"\\:",
+			"&",
+			"updateT",
+			"_powBtn",
+			"_revBtn",
+			"_accBtn",
+			"_steeringAxis",
+			"print",
+			"_js",
+			"run",
+			"joystick",
+			"clock",
+			"js",
+			"steeringAxis",
+			"accBtn",
+			"revBtn",
+			"Print",
+			"print",
+			"}\n",
+			"h!",
+			"bar",
+			"}\n",
+			"value",
+			"barHeight",
+			"gray",
+			"log",
+			"listen",
+			"users",
+			"js",
+			"serve"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"_scr",
+			"	",
+			"		",
+			"			",
+			"    ",
+			":"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "content.tex",
+					"settings":
+					{
+						"buffer_size": 25884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23353,
+								23353
+							]
+						],
+						"settings":
+						{
+							"auto_name": "%!TEX root = presentation.tex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 9108.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/Ash/Dropbox/Uni/2014/EE4000/Assignment/report.tex",
+					"settings":
+					{
+						"buffer_size": 28441,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 12156.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "presentation.tex",
+					"settings":
+					{
+						"buffer_size": 1426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								359,
+								359
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/Ash/Dropbox/Uni/2014/Thesis/Proposal Presentation/Proposal.tex",
+					"settings":
+					{
+						"buffer_size": 16410,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7240,
+								7240
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "words",
+					"settings":
+					{
+						"buffer_size": 11229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9762,
+								9285
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Welcome?",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2303.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 157.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 133.0,
+	"status_bar_visible": true
+}
