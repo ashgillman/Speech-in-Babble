@@ -394,7 +394,7 @@ reference "tab:Subjective-classification-noise"
 
 \end_inset
 
- below shows test results by 
+ shows test results by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Krishnamurthy2009"
