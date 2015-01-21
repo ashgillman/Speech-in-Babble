@@ -1,0 +1,1244 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass IEEEtran
+\begin_preamble
+\usepackage{acronym}
+
+% capitalise references
+\renewcommand{\figref}{\Figref}
+%\renewcommand{\figref}[1]{\Vref{fig:#1}}
+\renewcommand{\tabref}{\Tabref}
+\renewcommand{\chapref}{\Chapref}
+\renewcommand{\secref}[1]{\S~\ref{sec:#1}} 
+\newcommand{\subsecref}[1]{\S~\ref{sub:#1}} 
+\newcommand{\lstref}[1]{Listing~\ref{lst:#1}}
+\newcommand{\algref}[1]{Algorithm~\ref{alg:#1}}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language australian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 40mm
+\topmargin 25mm
+\rightmargin 25mm
+\bottommargin 25mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\noindent
+Evaluation of Speech Enhancement and Practical Speech Enhancement in Babble
+ Using Phoneme-Dependent Non-negative Matrix Factorisation
+\end_layout
+
+\begin_layout Author
+Ashley Gillman, Owen Kenny.
+ James Cook University
+\end_layout
+
+\begin_layout Abstract
+Speech enhancement is an important field in modern electronics, finding
+ many applications from hearing aids to enhancing audio/visual recordings
+ and automated speech recognisers in commercial products.
+ A variety of techniques are available to measure speech enhancement, falling
+ into three categories: (1) those for measuring speech enhancement for a
+ human recogniser; (2) those for measuring speech enhancement for a machine
+ recogniser; and (3) those measuring speech enhancement using purely statistical
+ methods.
+ However, when an enhancement algorithm is proposed it is often measured
+ by techniques from only one of those categories.
+ Due to there being fundamental differences from a human listener to a machine
+ listener, it is hypothesised that the use of a variety of enhancement measures
+ is necessary to properly measure the performance of an enhancement algorithm.
+\end_layout
+
+\begin_layout Abstract
+Experiments were performed using a proposed phoneme-dependent modification
+ to existing non-negative matrix factorisation algorithms.
+ This algorithm was found to provide better accuracy for machine recognisers,
+ especially so under in-car noise conditions.
+ The changes did not improve human intelligibility on average, but did perform
+ more consistently, being less likely to distort speech.
+ The system showed capability of performing well for in-car electronics,
+ such as for voice-controlled navigational electronics or car radios.
+\end_layout
+
+\begin_layout Abstract
+Results indicated that the hypothesis was true, and that it is possible
+ for a speech enhancement method that performs well for a machine recogniser
+ to perform poorly for a human recogniser, and vice-versa.
+ Therefore, it is important to encapsulate a variety of measures in testing.
+ The recommended tests include PESQ, ASR performance, statistical measures
+ such as segmental SNR and where possible, MOS.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+renewcommand{
+\backslash
+acsfont}{
+\backslash
+normalfont
+\backslash
+bfseries}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+begin{newacronym}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{ALS}{Alternating Least Squares}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{ASR}{Automated Speech Recognition}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{BNMF}{Bayesian 
+\backslash
+acl{NMF}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{CCR}{Comparison Category Rating}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{DSP}{Digital Signal Processing}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{FFT}{Fast Fourier Transform}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{HI}{Hearing Impaired}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{HMM}{Hidden Markov Model}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{HR}{Human Recognition}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{HTK}{
+\backslash
+acl{HMM} Toolkit}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{ICA}{Independent Component Analysis}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{ITU}{International Telecommunication Union}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{KLT}{Karhunen-Loeve Transform}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{LOESS}{logical regression}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{logMMSE}{log 
+\backslash
+acl{MMSE}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{logMMSE-SPU-1}{first 
+\backslash
+acl{logMMSE} 
+\backslash
+acl{SPU}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{logMMSE-SPU-2}{second 
+\backslash
+acl{logMMSE} 
+\backslash
+acl{SPU}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{logMMSE-SPU-3}{third 
+\backslash
+acl{logMMSE} 
+\backslash
+acl{SPU}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{logMMSE-SPU-4}{fourth 
+\backslash
+acl{logMMSE} 
+\backslash
+acl{SPU}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{LM}{Linear Model}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{MBAND}{Multi-Band spectral subtraction}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{MFCC}{Mel-Frequency Cepstral Coefficient}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{MMSE}{Minimum Mean Square Error}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{MMSE-SPU}{
+\backslash
+acl{MMSE} 
+\backslash
+acl{SPU}}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{MOS}{Mean Opinion Score}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{MR}{Machine Recognition}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{NMF}{Non-negative Matrix Factorisation}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{PESQ}{Perceptual Evaluation of Speech Quality}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{pKLT}{Perceptual Karhunen-Loeve Transform}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{PCA}{Principal Component Analysis}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{PRR}{Phoneme Recognition Rate}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{SD}{Spectral Distortion}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{SDR}{Signal to Distortion Ratio}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{SNR}{Signal-to-Noise Ratio}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{SoI}{Speaker of Interest}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{SPU}{Speech Presence Uncertainty}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{SSN}{Speech-Shaped Noise}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{STFT}{Short-Time Fourier Transform}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{STSA}{Short-Time Spectral Amplitude}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{STSA-wcosh}{
+\backslash
+acl{STSA} with weighted cosh estimator}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{STSA-weuclid}{
+\backslash
+acl{STSA} with weighted Euclidean estimator}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{WRR}{Word Recognition Rate}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+newacro{WSJ}{Wall Street Journal}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+end{newacronym}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+renewcommand{
+\backslash
+acsfont}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Intro
+\end_layout
+
+\begin_layout Standard
+Blah
+\end_layout
+
+\begin_layout Section
+Measurement of Speech Enhancement
+\end_layout
+
+\begin_layout Standard
+Methods for evaluating the intelligibility of speech, and by extension speech
+ enhancement, can be classified by the type of recognition they measure:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ vs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HR}
+\end_layout
+
+\end_inset
+
+.
+ This is necessary since 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ systems often recognise speech through a relatively low dimension feature
+ vector, whereas the human brain is far more sensitive.
+ An algorithm for enhancement may indeed improve the intelligibility for
+ an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system, but side effects may be distracting or distortive to a human listener.
+\end_layout
+
+\begin_layout Standard
+Algorithm proposals tend to limit evaluation methods to either human recognition
+ or machine recognition methods, as seen in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Assessment-methods"
+
+\end_inset
+
+, showing the evaluation measures used in various papers.
+ This data was gathered from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011,Paliwal2010,mohammadiha2013supervised,Plourde2007,Weninger2011,Williamson2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Final Report/fig/R/assessmentMethods.pdf
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Assessment methods used in literature
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Assessment-methods"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The intelligibility of a speech signal to a human is difficult to accurately
+ and quantitatively measure.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ITU}
+\end_layout
+
+\end_inset
+
+ standard for such tests is the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "InternationalTelecommunicationUnion1996"
+
+\end_inset
+
+.
+ The test is designed to give an indication of the quality of telecommunication
+ transmission, but is applicable as a measure of speech intelligibility.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ results are a score calculated by the mean of the listeners’ scores in
+ the range one to five, with one representing the worst quality and five
+ representing the highest quality of intelligibility.
+ Alternatively, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ is the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ITU}
+\end_layout
+
+\end_inset
+
+ standard for evaluation of objective speech quality 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rix2001,InternationalTelecommunicationUnion2001"
+
+\end_inset
+
+.
+ This method provides an algorithm which estimates the improvement quality
+ by comparing a system’s input and output 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rix2001"
+
+\end_inset
+
+.
+ Results show 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PESQ}
+\end_layout
+
+\end_inset
+
+ scores give consistent and reliable estimates on human perception, although
+ are not necessarily directly comparable with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{MOS}
+\end_layout
+
+\end_inset
+
+ scores 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rix2003"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In order to measure machine recognition, an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system is employed and a method is chosen to measure the performance of
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system.
+ The most common technique to evaluate machine recognition quality of speech
+ is to perform a comparison of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{WRR}
+\end_layout
+
+\end_inset
+
+.
+ This method is advantageous as it gives a good indication on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system's ability to extract meaning.
+ An alternative option is to use the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{PRR}
+\end_layout
+
+\end_inset
+
+.
+ The advantage of this method is that it allows a lower-level view of recognitio
+n, and a more accurate representation of the raw enhancement.
+\end_layout
+
+\begin_layout Standard
+For each of the above measures, both the correctness and the accuracy may
+ be measured.
+ Correctness is given by
+\begin_inset Formula 
+\[
+Correctness=\frac{correct\ labels}{actual\ no.\ labels}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and accuracy is given by 
+\begin_inset Formula 
+\[
+Accuracy=\frac{correct\ labels-insertions}{actual\ no.\ labels}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where labels may be either phonemes or words 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Young1997"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Other methods for measuring speech enhancement include long-term 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+, segmental 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SNR}
+\end_layout
+
+\end_inset
+
+, log-likelihood ratio, Itakura-Saito distance, cepstrum distance, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SD}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{SDR}
+\end_layout
+
+\end_inset
+
+ and variations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hu2008"
+
+\end_inset
+
+, visual analysis of the signal spectrogram, as well as others.
+\end_layout
+
+\begin_layout Section
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ can be used in signal analysis, such that 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee1999,Paatero1994"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X_{n_{f}\times n_{s}}\approx V_{n_{f}\times n_{c}}W_{n_{c}\times n_{s}}\label{eq:nmf-approx}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X$
+\end_inset
+
+ represents the signal with rows of frequency bins results from a Fourier
+ transform and columns of time segments;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V$
+\end_inset
+
+ is the spectral components with columns representing typical spectral vectors;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $W$
+\end_inset
+
+ is the activation matrix, where each row represents the activation levels
+ of components at given times;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_{f}$
+\end_inset
+
+ is the number of frequency bins;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_{s}$
+\end_inset
+
+ is the number of samples; and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_{c}$
+\end_inset
+
+ is the number of components.
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $X$
+\end_inset
+
+ is approximated as 
+\begin_inset Formula $V\times W$
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:nmf-approx"
+
+\end_inset
+
+, we can we can reconstruct a desired signal as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{X}_{Desired}=V_{Desired}\times\hat{W}_{Desired}\label{eq:nmf-clean-estimate}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Common algorithms form a component matrix for the desired speaker, and another
+ for the anticipated noise 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Schmidt2006,Raj2005,Wilson2008"
+
+\end_inset
+
+.
+ These are concatenated, and the appropriate 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithms performed again for extraction, this time only applying the
+ appropriate equations to update 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ This process is depicted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:nmf-speech-enhancement"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement t
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../Final Report/fig/nmf_enhancement.eps
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Common 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acl{NMF}
+\end_layout
+
+\end_inset
+
+ speech extraction process
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:nmf-speech-enhancement"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Raj2011"
+
+\end_inset
+
+ proposed a different solution whereby an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system identifies phonemes in speech, and an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{NMF}
+\end_layout
+
+\end_inset
+
+ algorithm is implemented using one of 40 component matrices, one for each
+ phoneme.
+ This model is somewhat limited in its application to babble, in the author’s
+ opinion, as the algorithm relies on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{ASR}
+\end_layout
+
+\end_inset
+
+ system to successfully recognise phonemes within a noisy signal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "IEEEabrv,../Final Report/bib/library"
+options "ieeetr"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
