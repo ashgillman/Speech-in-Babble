@@ -6,6 +6,9 @@
 \begin_preamble
 \usepackage{acronym}
 
+% use instead of standard natbib to compress conecutive references
+\usepackage[numbers, sort&compress]{natbib}
+
 % capitalise references
 \renewcommand{\figref}{\Figref}
 %\renewcommand{\figref}[1]{\Vref{fig:#1}}
@@ -44,7 +47,7 @@ customHeadersFooters
 \spacing onehalf
 \use_hyperref false
 \papersize a4paper
-\use_geometry true
+\use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -91,49 +94,47 @@ customHeadersFooters
 
 \begin_layout Title
 \noindent
-Evaluation of Speech Enhancement and Practical Speech Enhancement in Babble
- Using Phoneme-Dependent Non-negative Matrix Factorisation
+Evaluation of Speech Enhancement Measurement Methods
 \end_layout
 
 \begin_layout Author
-Ashley Gillman, Owen Kenny.
- James Cook University
+Ashley Gillman, Owen Kenny
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+James Cook University
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Abstract
-Speech enhancement is an important field in modern electronics, finding
- many applications from hearing aids to enhancing audio/visual recordings
- and automated speech recognisers in commercial products.
- A variety of techniques are available to measure speech enhancement, falling
- into three categories: (1) those for measuring speech enhancement for a
- human recogniser; (2) those for measuring speech enhancement for a machine
- recogniser; and (3) those measuring speech enhancement using purely statistical
- methods.
- However, when an enhancement algorithm is proposed it is often measured
- by techniques from only one of those categories.
- Due to there being fundamental differences from a human listener to a machine
- listener, it is hypothesised that the use of a variety of enhancement measures
- is necessary to properly measure the performance of an enhancement algorithm.
+A variety of techniques are available to measure speech enhancement, falling
+ into three categories: (1) those measuring speech enhancement for a human
+ recogniser; (2) those measuring speech enhancement for a machine recogniser;
+ and (3) those measuring speech enhancement using purely statistical methods.
+ There are fundamental differences between a human listener and a machine
+ listener, however in algorithm proposals, performance is often measured
+ by techniques from only one category.
+ A phoneme-dependent modification to existing NMF algorithms is introduced,
+ and tested using human, machine, and statistical methods.
+ The algorithm was found to provide better accuracy for machine recognisers.
+ The changes did not improve human intelligibility on average, but did improve
+ consistency, being less likely to distort speech.
+ Results indicated that the hypothesis was true, that speech enhancement
+ methoda that performs well for a machine recogniser do not necessarily
+ perform well for a human recogniser, and vice-versa.
+ Therefore, it is shown it is important to encapsulate a variety of measures
+ in testing.
+ Practical recommended tests include PESQ, ASR performance, statistical
+ measures such as segmental SNR and where possible, MOS.
 \end_layout
 
-\begin_layout Abstract
-Experiments were performed using a proposed phoneme-dependent modification
- to existing non-negative matrix factorisation algorithms.
- This algorithm was found to provide better accuracy for machine recognisers,
- especially so under in-car noise conditions.
- The changes did not improve human intelligibility on average, but did perform
- more consistently, being less likely to distort speech.
- The system showed capability of performing well for in-car electronics,
- such as for voice-controlled navigational electronics or car radios.
-\end_layout
-
-\begin_layout Abstract
-Results indicated that the hypothesis was true, and that it is possible
- for a speech enhancement method that performs well for a machine recogniser
- to perform poorly for a human recogniser, and vice-versa.
- Therefore, it is important to encapsulate a variety of measures in testing.
- The recommended tests include PESQ, ASR performance, statistical measures
- such as segmental SNR and where possible, MOS.
+\begin_layout Keywords
+MOS, NMF, PESQ, Speech Enhancement
 \end_layout
 
 \begin_layout Standard
@@ -513,15 +514,7 @@ acsfont}{}
 \end_layout
 
 \begin_layout Section
-Intro
-\end_layout
-
-\begin_layout Standard
-Blah
-\end_layout
-
-\begin_layout Section
-Measurement of Speech Enhancement
+Introduction
 \end_layout
 
 \begin_layout Standard
@@ -587,6 +580,10 @@ ac{ASR}
  system, but side effects may be distracting or distortive to a human listener.
 \end_layout
 
+\begin_layout Section
+Measurement of Speech Enhancement
+\end_layout
+
 \begin_layout Standard
 Algorithm proposals tend to limit evaluation methods to either human recognition
  or machine recognition methods, as seen in 
@@ -596,8 +593,7 @@ reference "fig:Assessment-methods"
 
 \end_inset
 
-, showing the evaluation measures used in various papers.
- This data was gathered from 
+, showing the evaluation measures used in various papers 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Mohammadiha2013a,Wilson2008,Schmidt2006,Raj2005,Raj2005a,Raj2011,Fevotte2011,Paliwal2010,mohammadiha2013supervised,Plourde2007,Weninger2011,Williamson2014"
@@ -615,9 +611,21 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename ../Final Report/fig/R/assessmentMethods.pdf
 	width 100col%
+	draft
 
 \end_inset
 
@@ -861,9 +869,9 @@ For each of the above measures, both the correctness and the accuracy may
  be measured.
  Correctness is given by
 \begin_inset Formula 
-\[
-Correctness=\frac{correct\ labels}{actual\ no.\ labels}
-\]
+\begin{equation}
+Correctness=\frac{correct\ labels}{actual\ no.\ labels}\label{eq:correctness}
+\end{equation}
 
 \end_inset
 
@@ -873,9 +881,9 @@ Correctness=\frac{correct\ labels}{actual\ no.\ labels}
 \begin_layout Standard
 and accuracy is given by 
 \begin_inset Formula 
-\[
-Accuracy=\frac{correct\ labels-insertions}{actual\ no.\ labels}
-\]
+\begin{equation}
+Accuracy=\frac{correct\ labels-insertions}{actual\ no.\ labels}\label{accuracy}
+\end{equation}
 
 \end_inset
 
@@ -1131,9 +1139,21 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename ../Final Report/fig/nmf_enhancement.eps
 	width 100text%
+	draft
 
 \end_inset
 
